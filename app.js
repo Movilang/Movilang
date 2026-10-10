@@ -172,13 +172,18 @@ function SupabaseBackend(url, key) {
     mode:'supabase',
     getUser: function () { return profile().then(function (u) { cachedUser = u; return u; }); },
     signUp: function (email, pass, name) {
-      return sb.auth.signUp({email:email, password:pass, options:{data:{name:name}}}).then(function (r) {
+      return sb.auth.signUp({email:email.trim(), password:pass, options:{data:{name:name}}}).then(function (r) {
         if (r.error) throw new Error(r.error.message);
-        if (!r.data.session) throw new Error('Перевірте пошту і підтвердіть реєстрацію, потім увійдіть.');
+        if (!r.data.session) throw new Error('Акаунт створено! Перевір пошту (і папку «Спам»), натисни посилання з листа, потім увійди.');
         return profile();
       });
     },
-    signIn: function (email, pass) { return sb.auth.signInWithPassword({email:email, password:pass}).then(function (r) { if (r.error) throw new Error('Невірна пошта або пароль'); return profile(); }); },
+    signIn: function (email, pass) { return sb.auth.signInWithPassword({email:email.trim(), password:pass}).then(function (r) {
+      if (r.error) { var m = (r.error.message || '').toLowerCase();
+        if (m.indexOf('not confirmed') > -1) throw new Error('Пошту не підтверджено. Відкрий лист від Supabase і натисни посилання, потім увійди.');
+        if (m.indexOf('invalid') > -1) throw new Error('Невірна пошта або пароль.');
+        throw new Error('Помилка входу: ' + r.error.message); }
+      return profile(); }); },
     signOut: function () { return sb.auth.signOut(); },
     getSettings: function () { return sb.from('site_settings').select('*').then(function (r) { var o = {}; for (var k in DEFAULT_SETTINGS) o[k] = DEFAULT_SETTINGS[k]; (r.data || []).forEach(function (x) { o[x.key] = x.value; }); return o; }); },
     saveSettings: function (obj) { var rows = Object.keys(obj).map(function (k) { return {key:k, value:obj[k]}; }); return sb.from('site_settings').upsert(rows).then(ok); },
