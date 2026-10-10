@@ -318,3 +318,30 @@ table.tbl{width:100%;border-collapse:collapse;font-size:14px;min-width:560px}
 .bars .b b{font-variant-numeric:tabular-nums;text-align:right}
 .bars .t{height:10px;border-radius:99px;background:var(--bg);overflow:hidden}
 .bars .t i{display:block;height:100%;background:linear-gradient(90deg,var(--violet),var(--neon))}
+
+/* ===== toggles ===== */
+.tgl{font:600 12px var(--f-mono);min-width:36px;height:34px;padding:0 8px;border-radius:9px;border:1px solid var(--line);background:transparent;color:var(--muted);cursor:pointer}
+.tgl.on{background:var(--panel);color:var(--fg);border-color:var(--neon)}
+.tgl:hover{color:var(--fg)}
+#navuser{flex-wrap:wrap;justify-content:flex-end}
+@media (max-width:560px){.userchip .muted{display:none}}
+
+/* ===== light theme ===== */
+:root[data-theme="light"]{
+  --bg:#f6f4fb; --bg2:#ffffff; --panel:#efebf8; --line:#dcd6ea;
+  --fg:#17131f; --muted:#555067; --dim:#7d7791;
+  --red:#e11d48; --violet:#7c3aed; --neon:#0e7490; --gold:#b45309; --ok:#15803d;
+  color-scheme:light;
+}
+:root[data-theme="light"] .price.best{background:linear-gradient(180deg,#ffe4ea,var(--bg2) 60%)}
+:root[data-theme="light"] .hero h1 .w:nth-child(2),:root[data-theme="light"] .hero h1 .w:nth-child(3){text-shadow:none}
+:root[data-theme="light"] .keycode{text-shadow:none}
+:root[data-theme="light"] .ticket{color:#f3f0fa}
+:root[data-theme="light"] .ticket .tk-row b{color:#fff}
+:root[data-theme="light"] .ticket .keycode{color:#3ee7ff}
+:root[data-theme="light"] .ticket .tk-row{color:#cfc8e6}
+:root[data-theme="light"] .ticket::before,:root[data-theme="light"] .ticket::after{background:var(--bg2)}
+:root[data-theme="light"] .step .ico{background:#ede4ff}
+:root[data-theme="light"] .tcard,:root[data-theme="light"] .panel,:root[data-theme="light"] .step,:root[data-theme="light"] .price,:root[data-theme="light"] details,:root[data-theme="light"] .dash{box-shadow:0 1px 2px #1b12330d,0 8px 24px -16px #1b123326}
+:root[data-theme="light"] .topt.right{color:#0b3d1d}
+:root[data-theme="light"] .topt.wrong{color:#5c0a1c}

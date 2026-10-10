@@ -151,3 +151,9 @@ create policy p_set_all on public.site_settings for all using (public.is_admin()
 -- ========== ПІСЛЯ реєстрації на сайті зробіть себе адміном ==========
 -- Замініть пошту на свою і запустіть окремо:
 -- update public.profiles set role = 'admin' where email = 'ВАША@ПОШТА.com';
+
+-- ========== Оновлення 2026-10-10: польська мова ==========
+alter table public.courses add column if not exists title_pl text;
+alter table public.courses add column if not exists description_pl text;
+alter table public.lessons add column if not exists title_pl text;
+alter table public.lessons add column if not exists scene_pl text;
