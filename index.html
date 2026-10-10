@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="uk">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>MovieLang</title>
+<meta name="description" content="MovieLang — онлайн-марафон англійської за фільмами та серіалами. Дивись. Розумій. Говори.">
+<link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+<meta property="og:title" content="MovieLang — англійська за фільмами">
+<meta property="og:description" content="Дивись. Розумій. Говори. Онлайн-марафони англійської за фільмами та серіалами.">
+<meta property="og:type" content="website">
+<meta name="theme-color" content="#0b0a12">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Dela+Gothic+One&family=Onest:wght@400;500;600;700&family=JetBrains+Mono:wght@400;600&display=swap">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<div id="demoBar" class="demo-bar" hidden>Демо-режим: дані зберігаються лише в цьому браузері. Адмін: admin@movielang.demo / admin123</div>
+<nav class="top"><div class="wrap">
+  <a class="logo" href="#/"><span class="logo-mark"><span>ML</span></span><span>MovieLang<small>ENGLISH THROUGH CINEMA</small></span></a>
+  <div class="navlinks" id="navlinks"></div>
+  <div class="row" id="navuser"></div>
+</div></nav>
+<main class="wrap app-main" id="app"></main>
+<footer class="wrap">
+  <span>© 2026 MovieLang · English Through Cinema</span>
+  <span class="disclaimer">Назви фільмів і серіалів використано для опису змісту курсів; проєкт не пов'язаний із правовласниками.</span>
+</footer>
+<script src="config.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.45.4/dist/umd/supabase.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
