@@ -345,3 +345,13 @@ table.tbl{width:100%;border-collapse:collapse;font-size:14px;min-width:560px}
 :root[data-theme="light"] .tcard,:root[data-theme="light"] .panel,:root[data-theme="light"] .step,:root[data-theme="light"] .price,:root[data-theme="light"] details,:root[data-theme="light"] .dash{box-shadow:0 1px 2px #1b12330d,0 8px 24px -16px #1b123326}
 :root[data-theme="light"] .topt.right{color:#0b3d1d}
 :root[data-theme="light"] .topt.wrong{color:#5c0a1c}
+
+/* ===== status colors ===== */
+.msg.ok{color:var(--ok);background:color-mix(in srgb,var(--ok) 12%,transparent);border:1px solid color-mix(in srgb,var(--ok) 45%,transparent);border-radius:10px;padding:10px 12px}
+.msg.err{color:var(--red);background:color-mix(in srgb,var(--red) 10%,transparent);border:1px solid color-mix(in srgb,var(--red) 40%,transparent);border-radius:10px;padding:10px 12px}
+.toast{display:flex;gap:10px;align-items:center}
+.toast .ti{flex:0 0 22px;height:22px;border-radius:50%;display:grid;place-items:center;font-weight:700;font-size:13px;color:#fff;background:var(--dim)}
+.toast.ok{border-color:color-mix(in srgb,var(--ok) 60%,transparent);background:color-mix(in srgb,var(--ok) 14%,var(--panel))}
+.toast.ok .ti{background:var(--ok)}
+.toast.err{border-color:color-mix(in srgb,var(--red) 60%,transparent);background:color-mix(in srgb,var(--red) 12%,var(--panel))}
+.toast.err .ti{background:var(--red)}

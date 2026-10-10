@@ -6,11 +6,11 @@
 /* ================= helpers ================= */
 var $app = document.getElementById('app');
 function esc(s) { return String(s == null ? '' : s).replace(/[&<>"']/g, function (c) { return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]; }); }
-function toast(msg) { var t = document.createElement('div'); t.className = 'toast'; t.setAttribute('role', 'status'); t.textContent = msg; document.body.appendChild(t); setTimeout(function () { t.remove(); }, 3200); }
+function toast(msg, type) { type = type || 'ok'; var t = document.createElement('div'); t.className = 'toast ' + type; t.setAttribute('role', 'status'); t.innerHTML = '<span class="ti">' + (type === 'ok' ? '✓' : type === 'err' ? '!' : 'i') + '</span><span></span>'; t.lastChild.textContent = msg; document.body.appendChild(t); setTimeout(function () { t.remove(); }, 3800); }
 function uid() { return 'id' + Math.random().toString(36).slice(2, 10) + Date.now().toString(36); }
 function fmtDate(d) { if (!d) return '—'; try { return new Date(d).toLocaleDateString(LANG === 'pl' ? 'pl-PL' : 'uk-UA', {day:'2-digit',month:'2-digit',year:'numeric'}); } catch (e) { return d; } }
 function genCode() { var a = 'ABCDEFGHJKLMNPQRSTUVWXYZ23456789', s = ''; for (var i = 0; i < 12; i++) { s += a[Math.floor(Math.random() * a.length)]; if (i === 3 || i === 7) s += '-'; } return s; }
-function say(t) { try { var u = new SpeechSynthesisUtterance(t); u.lang = 'en-GB'; u.rate = .9; speechSynthesis.cancel(); speechSynthesis.speak(u); } catch (e) { toast(t('Озвучення недоступне в цьому браузері')); } }
+function say(t) { try { var u = new SpeechSynthesisUtterance(t); u.lang = 'en-GB'; u.rate = .9; speechSynthesis.cancel(); speechSynthesis.speak(u); } catch (e) { toast(t('Озвучення недоступне в цьому браузері'), 'err'); } }
 var TASK_TYPES = { vocabulary:'VOCABULARY', listening:'LISTENING', subtitles:'SUBTITLES', grammar:'GRAMMAR', speaking:'SPEAKING', quiz:'MINI QUIZ', final:'FINAL' };
 var POSTER_CLASSES = ['p1','p2','p3','p4','p5','p6','p7','p8'];
 
@@ -200,9 +200,9 @@ function SupabaseBackend(url, key) {
     mode:'supabase',
     getUser: function () { return profile().then(function (u) { cachedUser = u; return u; }); },
     signUp: function (email, pass, name) {
-      return sb.auth.signUp({email:email.trim(), password:pass, options:{data:{name:name}, emailRedirectTo: location.origin + '/#/confirmed'}}).then(function (r) {
+      return sb.auth.signUp({email:email.trim(), password:pass, options:{data:{name:name, lang:LANG}, emailRedirectTo: location.origin + '/#/confirmed'}}).then(function (r) {
         if (r.error) throw new Error(r.error.message);
-        if (!r.data.session) throw new Error(t('Акаунт створено! Перевір пошту (і папку «Спам»), натисни посилання з листа, потім увійди.'));
+        if (!r.data.session) return {pending:true};
         return profile();
       });
     },
@@ -340,13 +340,14 @@ function viewAuth(mode) {
     if (reg && !name) { msg.className = 'msg err'; msg.textContent = t('Вкажи своє ім\'я.'); return; }
     msg.className = 'msg'; msg.textContent = t('Зачекай…');
     (reg ? API.signUp(email, pass, name) : API.signIn(email, pass)).then(function (u) {
+      if (u && u.pending) { msg.className = 'msg ok'; msg.textContent = t('Акаунт створено! Перевір пошту (і папку «Спам»), натисни посилання з листа, потім увійди.'); document.getElementById('authForm').querySelector('button[type=submit]').disabled = true; return; }
       USER = u; renderNav(); toast(reg ? t('Кабінет створено!') : t('Вхід виконано')); location.hash = u && u.role === 'admin' ? '#/admin' : '#/cabinet';
     }).catch(function (err) { msg.className = 'msg err'; msg.textContent = err.message; });
   };
   return Promise.resolve();
 }
 
-function requireUser() { if (!USER) { location.hash = '#/login'; toast(t('Спершу увійди в акаунт')); return false; } return true; }
+function requireUser() { if (!USER) { location.hash = '#/login'; toast(t('Спершу увійди в акаунт'), 'info'); return false; } return true; }
 
 function viewCabinet() {
   if (!requireUser()) return Promise.resolve();
@@ -521,7 +522,7 @@ function adminUsers(body) {
         (u.id === USER.id ? t('<span class="muted small">це ви</span>') : '<button class="btn btn-ghost btn-sm" type="button" data-role="' + esc(u.id) + '" data-to="' + (u.role === 'admin' ? 'student' : 'admin') + '">' + (u.role === 'admin' ? t('Зробити учнем') : t('Зробити адміном')) + '</button>') + '</td></tr>';
     }).join('');
     body.innerHTML = t('<p class="muted" style="margin-bottom:14px">Усього: ') + d.users.length + t('</p><div class="tbl-wrap"><table class="tbl"><thead><tr><th>Користувач</th><th>Роль</th><th>Реєстрація</th><th>Курсів</th><th>Уроків</th><th>Сер. бал</th><th>Активність</th><th></th></tr></thead><tbody>') + rows + '</tbody></table></div>';
-    body.querySelectorAll('[data-role]').forEach(function (b) { b.onclick = function () { API.setRole(b.dataset.role, b.dataset.to).then(function () { toast(t('Роль змінено')); viewAdmin(); }).catch(function (e) { toast(e.message); }); }; });
+    body.querySelectorAll('[data-role]').forEach(function (b) { b.onclick = function () { API.setRole(b.dataset.role, b.dataset.to).then(function () { toast(t('Роль змінено')); viewAdmin(); }).catch(function (e) { toast(e.message, 'err'); }); }; });
   });
 }
 
@@ -538,7 +539,7 @@ function adminCourses(body) {
       imp.disabled = true;
       var c = JSON.parse(JSON.stringify(SEED_COURSES[0]));
       API.saveCourse(c).then(function (saved) { return SEED_HP_LESSONS.reduce(function (p, l) { return p.then(function () { var ll = JSON.parse(JSON.stringify(l)); ll.course_id = saved.id; return API.saveLesson(ll); }); }, Promise.resolve()); })
-        .then(function () { toast(t('Демо-курс додано')); viewAdmin(); }).catch(function (e) { toast(e.message); imp.disabled = false; });
+        .then(function () { toast(t('Демо-курс додано')); viewAdmin(); }).catch(function (e) { toast(e.message, 'err'); imp.disabled = false; });
     };
   });
 }
@@ -637,7 +638,7 @@ function adminKeys(body) {
     document.getElementById('kForm').onsubmit = function (e) {
       e.preventDefault();
       var n = Math.min(100, Math.max(1, parseInt(document.getElementById('kN').value, 10) || 1));
-      API.createKeys(document.getElementById('kCourse').value, n).then(function (ks) { toast(t('Створено ключів: ') + ks.length); viewAdmin().then(function () { var box = document.getElementById('kNew'); if (box) box.innerHTML = t('<p class="muted small" style="margin-top:10px">Нові ключі:</p><pre style="font-family:var(--f-mono);color:var(--neon);white-space:pre-wrap;user-select:all">') + ks.map(function (k) { return esc(k.code); }).join('\n') + '</pre>'; }); }).catch(function (err) { toast(err.message); });
+      API.createKeys(document.getElementById('kCourse').value, n).then(function (ks) { toast(t('Створено ключів: ') + ks.length); viewAdmin().then(function () { var box = document.getElementById('kNew'); if (box) box.innerHTML = t('<p class="muted small" style="margin-top:10px">Нові ключі:</p><pre style="font-family:var(--f-mono);color:var(--neon);white-space:pre-wrap;user-select:all">') + ks.map(function (k) { return esc(k.code); }).join('\n') + '</pre>'; }); }).catch(function (err) { toast(err.message, 'err'); });
     };
     body.querySelectorAll('[data-copy]').forEach(function (b) { b.onclick = function () { var c = b.dataset.copy; (navigator.clipboard ? navigator.clipboard.writeText(c) : Promise.reject()).then(function () { toast(t('Скопійовано: ') + c); }).catch(function () { toast(t('Ключ: ') + c); }); }; });
     body.querySelectorAll('[data-kdel]').forEach(function (b) { b.onclick = function () { if (!b.dataset.c) { b.dataset.c = 1; b.textContent = t('Точно?'); return; } API.deleteKey(b.dataset.kdel).then(function () { toast(t('Ключ видалено')); viewAdmin(); }); }; });
@@ -658,7 +659,7 @@ function adminSite(body) {
     document.getElementById('sForm').onsubmit = function (e) {
       e.preventDefault(); var o = {};
       fields.forEach(function (f) { o[f[0]] = document.getElementById('s_' + f[0]).value; });
-      API.saveSettings(o).then(function () { SETTINGS = Object.assign({}, SETTINGS, o); toast(t('Тексти сайту збережено')); }).catch(function (err) { toast(err.message); });
+      API.saveSettings(o).then(function () { SETTINGS = Object.assign({}, SETTINGS, o); toast(t('Тексти сайту збережено')); }).catch(function (err) { toast(err.message, 'err'); });
     };
   });
 }
@@ -690,7 +691,7 @@ Promise.all([API.getUser().catch(function () { return null; }), API.getSettings(
   USER = r[0]; SETTINGS = r[1];
   var h = location.hash;
   if (/access_token=|type=signup|#\/confirmed/.test(h)) { history.replaceState(null, '', location.pathname + (USER ? '#/cabinet' : '#/login')); toast(USER ? t('Пошту підтверджено! Ласкаво просимо до MovieLang.') : t('Пошту підтверджено! Тепер увійди.')); }
-  else if (/error_description=/.test(h)) { history.replaceState(null, '', location.pathname + '#/login'); toast(t('Посилання недійсне або застаріле. Увійди або зареєструйся ще раз.')); }
+  else if (/error_description=/.test(h)) { history.replaceState(null, '', location.pathname + '#/login'); toast(t('Посилання недійсне або застаріле. Увійди або зареєструйся ще раз.'), 'err'); }
   renderNav(); route();
 });
 })();

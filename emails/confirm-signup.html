@@ -1,25 +1,28 @@
 <div style="margin:0;padding:32px 16px;background:#0b0a12;font-family:Arial,Helvetica,sans-serif;color:#f3f0fa">
   <table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="max-width:520px;margin:0 auto;background:#13111d;border:1px solid #2c2840;border-radius:16px;overflow:hidden">
-    <tr><td style="height:5px;background:linear-gradient(90deg,#ff3b4e,#8b5cf6,#3ee7ff);background-color:#8b5cf6"></td></tr>
+    <tr><td style="height:5px;background:#8b5cf6"></td></tr>
     <tr><td style="padding:32px 32px 8px">
       <table role="presentation" cellpadding="0" cellspacing="0"><tr>
         <td style="width:40px;height:40px;border-radius:10px;background:#8b5cf6;color:#fff;font-weight:bold;font-size:15px;text-align:center;vertical-align:middle">ML</td>
         <td style="padding-left:12px;font-size:20px;font-weight:bold;color:#ffffff">MovieLang<br><span style="font-size:11px;letter-spacing:2px;color:#a39dba;font-weight:normal">ENGLISH THROUGH CINEMA</span></td>
       </tr></table>
     </td></tr>
+{{ if eq (printf "%v" .Data.lang) "pl" }}
     <tr><td style="padding:16px 32px 0">
       <h1 style="margin:0 0 12px;font-size:26px;line-height:1.2;color:#ffffff">Witaj w MovieLang! 🎬</h1>
-      <p style="margin:0 0 8px;font-size:16px;line-height:1.6;color:#cfc8e6">Dziękujemy za rejestrację. Kliknij przycisk poniżej, aby potwierdzić adres e-mail i otworzyć swoje konto.</p>
-      <p style="margin:0 0 24px;font-size:14px;line-height:1.6;color:#a39dba">Дякуємо за реєстрацію! Натисни кнопку, щоб підтвердити пошту й відкрити свій кабінет.</p>
-      <a href="{{ .ConfirmationURL }}" style="display:inline-block;background:#ff3b4e;color:#ffffff;text-decoration:none;font-weight:bold;font-size:16px;padding:14px 28px;border-radius:999px">▶ Potwierdź e-mail / Підтвердити</a>
+      <p style="margin:0 0 24px;font-size:16px;line-height:1.6;color:#cfc8e6">Dziękujemy za rejestrację. Kliknij przycisk poniżej, aby potwierdzić adres e-mail i otworzyć swoje konto.</p>
+      <a href="{{ .ConfirmationURL }}" style="display:inline-block;background:#ff3b4e;color:#ffffff;text-decoration:none;font-weight:bold;font-size:16px;padding:14px 28px;border-radius:999px">▶ Potwierdź e-mail</a>
     </td></tr>
-    <tr><td style="padding:28px 32px 8px">
-      <div style="background:#000000;border-radius:8px;padding:12px 16px;text-align:center;font-size:15px;color:#ffffff;font-weight:bold">Watch. Understand. <span style="color:#3ee7ff">Speak.</span></div>
+    <tr><td style="padding:28px 32px 8px"><div style="background:#000000;border-radius:8px;padding:12px 16px;text-align:center;font-size:15px;color:#ffffff;font-weight:bold">Oglądaj. Rozumiej. <span style="color:#3ee7ff">Mów.</span></div></td></tr>
+    <tr><td style="padding:16px 32px 32px;font-size:12px;line-height:1.6;color:#6f6987">Jeśli to nie Ty zakładałeś konto, po prostu zignoruj tę wiadomość.<br><br>MovieLang · movielang.pages.dev · info.movielang@gmail.com</td></tr>
+{{ else }}
+    <tr><td style="padding:16px 32px 0">
+      <h1 style="margin:0 0 12px;font-size:26px;line-height:1.2;color:#ffffff">Вітаємо в MovieLang! 🎬</h1>
+      <p style="margin:0 0 24px;font-size:16px;line-height:1.6;color:#cfc8e6">Дякуємо за реєстрацію! Натисни кнопку нижче, щоб підтвердити пошту й відкрити свій кабінет.</p>
+      <a href="{{ .ConfirmationURL }}" style="display:inline-block;background:#ff3b4e;color:#ffffff;text-decoration:none;font-weight:bold;font-size:16px;padding:14px 28px;border-radius:999px">▶ Підтвердити пошту</a>
     </td></tr>
-    <tr><td style="padding:16px 32px 32px;font-size:12px;line-height:1.6;color:#6f6987">
-      Jeśli to nie Ty zakładałeś konto, po prostu zignoruj tę wiadomość.<br>
-      Якщо ти не реєструвався(лась), просто проігноруй цей лист.<br><br>
-      MovieLang · movielang.pages.dev · info.movielang@gmail.com
-    </td></tr>
+    <tr><td style="padding:28px 32px 8px"><div style="background:#000000;border-radius:8px;padding:12px 16px;text-align:center;font-size:15px;color:#ffffff;font-weight:bold">Дивись. Розумій. <span style="color:#3ee7ff">Говори.</span></div></td></tr>
+    <tr><td style="padding:16px 32px 32px;font-size:12px;line-height:1.6;color:#6f6987">Якщо ти не реєструвався(лась), просто проігноруй цей лист.<br><br>MovieLang · movielang.pages.dev · info.movielang@gmail.com</td></tr>
+{{ end }}
   </table>
 </div>
