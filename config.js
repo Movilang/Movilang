@@ -2,6 +2,6 @@
 // Поки поля порожні, сайт працює в ДЕМО-режимі (дані лише в браузері).
 // Як заповнити — див. README.md, крок 2.
 window.MOVIELANG_CONFIG = {
-  SUPABASE_URL: "",       // напр. "https://abcdefgh.supabase.co"
-  SUPABASE_ANON_KEY: ""   // Project Settings → API → anon public key
+  SUPABASE_URL: "https://pybzpbkmdupvtsmxlqvr.supabase.co",       // напр. "https://abcdefgh.supabase.co"
+  SUPABASE_ANON_KEY: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InB5YnpwYmttZHVwdnRzbXhscXZyIiwicm9sZSI6ImFub24iLCJpYXQiOjE3OTE2MjMxMjMsImV4cCI6MjEwNzE5OTEyM30.2pMZ-wHdsCXhLnkSH0t5DluePC4TInsCSeSf8vMz6w8"   // Project Settings → API → anon public key
 };
