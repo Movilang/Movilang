@@ -464,3 +464,29 @@ section{border-top-color:var(--divider)}
 .logo-mark span{background:var(--logo-inner);color:var(--logo-text)}
 .ava{background:var(--avatar-bg);color:var(--avatar-text)}
 .tgl.on{background:var(--toggle-bg);color:var(--toggle-text);border-color:var(--toggle-border)}
+
+/* ===== lesson player v2 ===== */
+.illu{border-radius:14px;overflow:hidden;border:1px solid var(--border);line-height:0}
+.illu-svg{width:100%;height:auto;display:block;max-height:240px}
+.goals{margin:0;padding-left:20px;display:grid;gap:8px;color:var(--text)}
+.goals li::marker{color:var(--highlight)}
+.oline{min-height:56px;display:flex;flex-wrap:wrap;gap:8px;padding:10px;border:2px dashed var(--border);border-radius:12px;align-items:center}
+.oline.good{border-color:var(--success)} .oline.bad{border-color:var(--error)}
+.ochips{display:flex;flex-wrap:wrap;gap:8px}
+.ochip{font:600 15px var(--f-body);padding:9px 14px;border-radius:999px;border:1px solid var(--border);background:var(--panel-bg);color:var(--text);cursor:pointer}
+.ochip:disabled{opacity:.35;cursor:default}
+.ochip.in{background:var(--card-bg);border-color:var(--link)}
+.match{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.mcol{display:grid;gap:8px;align-content:start}
+.mitem{font:600 14px var(--f-body);text-align:left;padding:11px 14px;border-radius:12px;border:1px solid var(--border);background:var(--panel-bg);color:var(--text);cursor:pointer;transition:border-color .15s}
+.mitem.sel{border-color:var(--link);box-shadow:0 0 0 2px color-mix(in srgb,var(--link) 35%,transparent)}
+.mitem.right{background:color-mix(in srgb,var(--success) 20%,var(--panel-bg));border-color:var(--success)}
+.mitem.wrong{border-color:var(--error);animation:shake .3s}
+.mitem:disabled{cursor:default}
+@keyframes shake{25%{transform:translateX(-4px)}75%{transform:translateX(4px)}}
+.upsell{display:grid;gap:10px;text-align:left;border:1px solid var(--highlight);border-radius:14px;padding:18px;background:var(--panel-bg);margin-block:8px}
+.uplist{margin:0;padding-left:20px;display:grid;gap:6px}
+.price-tag b{font:400 28px var(--f-display);color:var(--heading)}
+.admsw{white-space:nowrap}
+.admsw.on{background:var(--highlight);color:var(--btn-text);border-color:var(--highlight)}
+@media (max-width:560px){.match{grid-template-columns:1fr}}
