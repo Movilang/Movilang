@@ -453,3 +453,14 @@ section{border-top-color:var(--divider)}
 .sw.flash{outline:2px solid var(--highlight);outline-offset:2px;animation:swflash 1.2s ease 2}
 @keyframes swflash{50%{background:color-mix(in srgb,var(--highlight) 25%,var(--panel-bg))}}
 .tgl.pick.on{background:var(--highlight);color:var(--btn-text);border-color:var(--highlight)}
+
+/* ===== logo, avatar, toggles: separately customizable ===== */
+:root,:root[data-theme="dark"],:root[data-theme="light"]{
+  --logo-bg:var(--btn-bg); --logo-inner:var(--page-bg); --logo-text:var(--text);
+  --avatar-bg:var(--btn-bg); --avatar-text:var(--btn-text);
+  --toggle-bg:var(--panel-bg); --toggle-text:var(--text); --toggle-border:var(--link);
+}
+.logo-mark{background:var(--logo-bg)}
+.logo-mark span{background:var(--logo-inner);color:var(--logo-text)}
+.ava{background:var(--avatar-bg);color:var(--avatar-text)}
+.tgl.on{background:var(--toggle-bg);color:var(--toggle-text);border-color:var(--toggle-border)}
