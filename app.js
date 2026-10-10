@@ -200,7 +200,7 @@ function SupabaseBackend(url, key) {
     mode:'supabase',
     getUser: function () { return profile().then(function (u) { cachedUser = u; return u; }); },
     signUp: function (email, pass, name) {
-      return sb.auth.signUp({email:email.trim(), password:pass, options:{data:{name:name, lang:LANG}, emailRedirectTo: location.origin + '/#/confirmed'}}).then(function (r) {
+      return sb.auth.signUp({email:email.trim(), password:pass, options:{data:{name:name, lang:LANG, theme:THEME}, emailRedirectTo: location.origin + '/#/confirmed'}}).then(function (r) {
         if (r.error) throw new Error(r.error.message);
         if (!r.data.session) return {pending:true};
         return profile();
