@@ -530,3 +530,9 @@ section{border-top-color:var(--divider)}
 .ldel:hover{opacity:1;border-color:var(--err,#e66)}
 @media(max-width:560px){.lgo{grid-template-columns:30px 1fr auto}.lname{display:none}}
 .ldone{display:inline-flex;align-items:center;justify-content:center;opacity:1;cursor:default;border-color:var(--ok)}
+.admtools{display:flex;flex-direction:column;gap:8px;margin:16px 0;padding:14px;border:1px dashed var(--nav-admin,var(--red));border-radius:14px}
+.ttimes{display:flex;flex-direction:column;gap:6px}
+.tt{border:1px solid var(--line);border-radius:12px;padding:10px 14px}
+.tt summary{display:grid;grid-template-columns:2fr 2fr auto 60px 90px 90px;gap:10px;align-items:center;cursor:pointer;list-style:none}
+.ttper{display:grid;gap:4px;margin-top:10px;font-size:14px}.ttper div{display:grid;grid-template-columns:1fr 30px 90px;gap:8px;border-top:1px solid var(--line);padding-top:4px}
+@media(max-width:760px){.tt summary{grid-template-columns:1fr 1fr}}

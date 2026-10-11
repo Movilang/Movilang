@@ -34,7 +34,7 @@ function langName(l) { return t({en:'англійська', pl:'польська
 function setLang(l) { LANG = l; try { localStorage.setItem('ml_lang', l); } catch (e) {} applyStatic(); renderNav(); route(); }
 function setLangs(target, sup) { TARGET = target; LANG = sup; LANG_SET = true; try { localStorage.setItem('ml_target', target); localStorage.setItem('ml_lang', sup); } catch (e) {} applyStatic(); renderNav(); route(); }
 function lGram(l) { var v = l.variants; return (TARGET !== 'en' && v && (v[TARGET + '_grammar_' + LANG] || v[TARGET + '_grammar'])) || l.grammar; }
-var CAB_T = null;
+var CAB_T = null, LAST_TIMES = null;
 function tx(o) { return o[LANG] || o.uk; }
 function mbox(html) { var old = document.getElementById('mBox'); if (old) old.remove(); var w = document.createElement('div'); w.id = 'mBox'; w.className = 'lmodal'; w.innerHTML = '<div class="lbox" role="dialog" aria-modal="true">' + html + '</div>'; w.onclick = function (e) { if (e.target === w) w.remove(); }; document.body.appendChild(w); return w; }
 function pickTargetModal(title, exclude, cb) {
@@ -47,7 +47,7 @@ function removeLangFlow(c, tg, langsOfCourse, lessonIds) {
   if (langsOfCourse.length > 1) {
     var w = mbox('<h3>' + tx({uk:'Точно видалити результати?', pl:'Na pewno usunąć wyniki?', en:'Delete your results?'}) + '</h3><p class="muted">' + tx({uk:'Мова «' + ln + '» у марафоні «' + name + '». Ти вже почав(-ла), а кожен урок наближає до мети. Ми в тебе віримо, ще кілька сцен, і буде результат! 💪', pl:'Język „' + ln + '” w maratonie „' + name + '”. Już zacząłeś(-ęłaś), a każda lekcja przybliża cię do celu. Wierzymy w ciebie, jeszcze kilka scen i będzie efekt! 💪', en:'“' + ln + '” in “' + name + '”. You\'ve already started, and every lesson gets you closer. We believe in you: a few more scenes and you\'ll see results! 💪'}) + '</p><div class="row" style="justify-content:flex-end;margin-top:16px;gap:8px"><button class="btn btn-ghost btn-sm" type="button" id="mDel">' + tx({uk:'Так, видалити', pl:'Tak, usuń', en:'Yes, delete'}) + '</button><button class="btn btn-red" type="button" id="mStay">' + tx({uk:'Залишаюсь і вчуся', pl:'Zostaję i się uczę', en:'I\'ll keep learning'}) + '</button></div>');
     w.querySelector('#mStay').onclick = function () { w.remove(); toast(tx({uk:'Так тримати! 🎬', pl:'Tak trzymaj! 🎬', en:'That\'s the spirit! 🎬'})); };
-    w.querySelector('#mDel').onclick = function () { API.removeLang(c.id, tg, lessonIds).then(function () { w.remove(); toast(tx({uk:'Результати видалено', pl:'Wyniki usunięte', en:'Results deleted'})); route(); }).catch(function (e) { toast(e.message, 'err'); }); };
+    w.querySelector('#mDel').onclick = function () { API.removeLang(c.id, tg).then(function () { w.remove(); toast(tx({uk:'Результати видалено', pl:'Wyniki usunięte', en:'Results deleted'})); route(); }).catch(function (e) { toast(e.message, 'err'); }); };
     return;
   }
   var w1 = mbox('<h3>' + tx({uk:'Цю мову не можна анулювати', pl:'Tego języka nie można anulować', en:'This language can\'t be removed'}) + '</h3><p class="muted">' + tx({uk:'У марафоні має бути розпочата хоча б одна мова. Можна лише видалити весь марафон «' + name + '» з кабінету.', pl:'W maratonie musi być rozpoczęty co najmniej jeden język. Możesz tylko usunąć cały maraton „' + name + '” z konta.', en:'A marathon needs at least one started language. You can only remove the whole marathon “' + name + '” from your account.'}) + '</p><div class="row" style="justify-content:flex-end;margin-top:16px;gap:8px"><button class="btn btn-red" type="button" id="mKeep">' + tx({uk:'Залишити', pl:'Zostaw', en:'Keep it'}) + '</button><button class="btn btn-ghost btn-sm" type="button" id="mNext">' + tx({uk:'Видалити весь марафон', pl:'Usuń cały maraton', en:'Remove the whole marathon'}) + '</button></div>');
@@ -62,7 +62,7 @@ function removeLangFlow(c, tg, langsOfCourse, lessonIds) {
       var normP = function (s) { return s.toLowerCase().replace(/[^\p{L}\s]/gu, '').replace(/\s+/g, ' ').trim(); };
       inp.oninput = function () { fb.disabled = normP(inp.value) !== normP(phrase); };
       w3.querySelector('#mCancel').onclick = function () { w3.remove(); };
-      fb.onclick = function () { API.removeCourse(c.id, lessonIds).then(function () { w3.remove(); toast(tx({uk:'Марафон видалено з кабінету', pl:'Maraton usunięty z konta', en:'Marathon removed'})); route(); }).catch(function (e) { toast(e.message, 'err'); }); };
+      fb.onclick = function () { API.removeCourse(c.id, langsOfCourse).then(function () { w3.remove(); toast(tx({uk:'Марафон видалено з кабінету', pl:'Maraton usunięty z konta', en:'Marathon removed'})); route(); }).catch(function (e) { toast(e.message, 'err'); }); };
     };
   };
 }
@@ -269,9 +269,13 @@ function DemoBackend() {
     deleteLesson: function (id) { needAdmin(); var db = load(); db.lessons = db.lessons.filter(function (x) { return x.id !== id; }); save(); return P(true); },
     myEnrollments: function () { var u = me(); if (!u) return P([]); return P(load().enrollments.filter(function (e) { return e.user_id === u.id; }).map(function (e) { return e.course_id; })); },
     myLangs: function () { var u = me(); if (!u) return P([]); return P((load().elangs || []).filter(function (e) { return e.user_id === u.id; })); },
-    addLang: function (cid, tg) { var u = me(); var db = load(); db.elangs = db.elangs || []; if (!db.elangs.some(function (e) { return e.user_id === u.id && e.course_id === cid && e.target === tg; })) db.elangs.push({user_id:u.id, course_id:cid, target:tg}); save(); return P(true); },
-    removeLang: function (cid, tg, lessonIds) { var u = me(); var db = load(); db.elangs = (db.elangs || []).filter(function (e) { return !(e.user_id === u.id && e.course_id === cid && e.target === tg); }); db.progress = db.progress.filter(function (p) { return !(p.user_id === u.id && (p.target || 'en') === tg && lessonIds.indexOf(p.lesson_id) > -1); }); save(); return P(true); },
-    removeCourse: function (cid, lessonIds) { var u = me(); var db = load(); db.elangs = (db.elangs || []).filter(function (e) { return !(e.user_id === u.id && e.course_id === cid); }); db.progress = db.progress.filter(function (p) { return !(p.user_id === u.id && lessonIds.indexOf(p.lesson_id) > -1); }); db.enrollments = db.enrollments.filter(function (e) { return !(e.user_id === u.id && e.course_id === cid); }); save(); return P(true); },
+    addLang: function (cid, tg, hidden) { var u = me(); var db = load(); db.elangs = db.elangs || []; var e = db.elangs.filter(function (e) { return e.user_id === u.id && e.course_id === cid && e.target === tg; })[0]; if (e) e.hidden = !!hidden; else db.elangs.push({user_id:u.id, course_id:cid, target:tg, hidden:!!hidden}); save(); return P(true); },
+    saveTimes: function (lessonId, score, tm) { var u = me(); if (!u) return P(false); var db = load(); db.times = db.times || []; db.times.push({user_id:u.id, lesson_id:lessonId, target:TARGET, score:score, total_sec:tm.total, per_task:tm.per, created_at:new Date().toISOString()}); save(); return P(true); },
+    adminTimes: function () { needAdmin(); var db = load(); return P({times:(db.times || []).slice().reverse(), users:db.users, lessons:db.lessons}); },
+    adminSetProgress: function (lessonIds, tg, score) { var u = me(); var db = load(); lessonIds.forEach(function (lid) { var ex = db.progress.filter(function (p) { return p.user_id === u.id && p.lesson_id === lid && (p.target || 'en') === tg; })[0]; if (ex) { ex.score = score; ex.retry_score = null; } else db.progress.push({user_id:u.id, lesson_id:lid, target:tg, score:score, completed_at:new Date().toISOString()}); }); save(); return P(true); },
+    adminResetOwn: function (lessonIds, tg) { var u = me(); var db = load(); db.progress = db.progress.filter(function (p) { return !(p.user_id === u.id && (p.target || 'en') === tg && lessonIds.indexOf(p.lesson_id) > -1); }); save(); return P(true); },
+    removeLang: function (cid, tg) { return this.addLang(cid, tg, true); },
+    removeCourse: function (cid, langs) { var self = this; var u = me(); langs.forEach(function (l) { self.addLang(cid, l, true); }); var db = load(); db.enrollments = db.enrollments.filter(function (e) { return !(e.user_id === u.id && e.course_id === cid); }); save(); return P(true); },
     activateKey: function (code) {
       var u = me(); if (!u) return Promise.reject(new Error(t('Увійдіть в акаунт')));
       var db = load(); code = code.trim().toUpperCase();
@@ -345,13 +349,13 @@ function SupabaseBackend(url, key) {
     deleteLesson: function (id) { return sb.from('lessons').delete().eq('id', id).then(ok); },
     myEnrollments: function () { if (!cachedUser) return Promise.resolve([]); return sb.from('enrollments').select('course_id').eq('user_id', cachedUser.id).then(ok).then(function (r) { return r.map(function (x) { return x.course_id; }); }); },
     myLangs: function () { if (!cachedUser) return Promise.resolve([]); return sb.from('enrollment_langs').select('*').eq('user_id', cachedUser.id).then(ok); },
-    addLang: function (cid, tg) { return sb.from('enrollment_langs').upsert({user_id:cachedUser.id, course_id:cid, target:tg}).then(ok); },
-    removeLang: function (cid, tg, lessonIds) { var uid = cachedUser.id; var ps = [sb.from('enrollment_langs').delete().eq('user_id', uid).eq('course_id', cid).eq('target', tg)];
-      if (lessonIds.length) ps.push(tg === 'en' ? sb.from('progress').delete().eq('user_id', uid).in('lesson_id', lessonIds) : sb.from('progress_lang').delete().eq('user_id', uid).eq('target', tg).in('lesson_id', lessonIds));
-      return Promise.all(ps).then(function (r) { r.forEach(ok); return true; }); },
-    removeCourse: function (cid, lessonIds) { var uid = cachedUser.id; var ps = [sb.from('enrollment_langs').delete().eq('user_id', uid).eq('course_id', cid)];
-      if (lessonIds.length) { ps.push(sb.from('progress').delete().eq('user_id', uid).in('lesson_id', lessonIds)); ps.push(sb.from('progress_lang').delete().eq('user_id', uid).in('lesson_id', lessonIds)); }
-      return Promise.all(ps).then(function (r) { r.forEach(ok); return sb.from('enrollments').delete().eq('user_id', uid).eq('course_id', cid).then(ok); }); },
+    addLang: function (cid, tg, hidden) { return sb.from('enrollment_langs').upsert({user_id:cachedUser.id, course_id:cid, target:tg, hidden:!!hidden}).then(ok); },
+    saveTimes: function (lessonId, score, tm) { if (!cachedUser) return Promise.resolve(false); return sb.from('task_times').insert({user_id:cachedUser.id, lesson_id:lessonId, target:TARGET, score:score, total_sec:tm.total, per_task:tm.per}).then(ok); },
+    adminTimes: function () { return Promise.all([sb.from('task_times').select('*').order('created_at', {ascending:false}).limit(300), sb.from('profiles').select('id,name,email'), sb.from('lessons').select('id,num,title,title_pl,title_en,course_id')]).then(function (r) { r.forEach(ok); return {times:r[0].data, users:r[1].data, lessons:r[2].data}; }); },
+    adminSetProgress: function (lessonIds, tg, score) { var uid = cachedUser.id, now = new Date().toISOString(); var rows = lessonIds.map(function (lid) { var x = {user_id:uid, lesson_id:lid, score:score, retry_score:null, completed_at:now}; if (tg !== 'en') x.target = tg; return x; }); return sb.from(tg === 'en' ? 'progress' : 'progress_lang').upsert(rows).then(ok); },
+    adminResetOwn: function (lessonIds, tg) { var uid = cachedUser.id; return (tg === 'en' ? sb.from('progress').delete().eq('user_id', uid).in('lesson_id', lessonIds) : sb.from('progress_lang').delete().eq('user_id', uid).eq('target', tg).in('lesson_id', lessonIds)).then(ok); },
+    removeLang: function (cid, tg) { return this.addLang(cid, tg, true); },
+    removeCourse: function (cid, langs) { var uid = cachedUser.id; return sb.from('enrollment_langs').upsert(langs.map(function (l) { return {user_id:uid, course_id:cid, target:l, hidden:true}; })).then(ok).then(function () { return sb.from('enrollments').delete().eq('user_id', uid).eq('course_id', cid).then(ok); }); },
     activateKey: function (code) { return sb.rpc('activate_key', {p_code:code.trim().toUpperCase()}).then(ok); },
     myProgress: function (tg) { tg = tg || TARGET; if (!cachedUser) return Promise.resolve([]); var q = sb.from(tg === 'en' ? 'progress' : 'progress_lang').select('*').eq('user_id', cachedUser.id); if (tg !== 'en') q = q.eq('target', tg); return q.then(ok); },
     saveProgress: function (lessonId, score, answer) {
@@ -491,14 +495,16 @@ function viewCabinet() {
   if (!requireUser()) return Promise.resolve();
   return Promise.all([API.listCourses(true), API.myEnrollments(), API.myProgress('en'), API.myProgress('pl'), API.myProgress('uk'), API.myLangs()]).then(function (r) {
     var byT = {en:r[2], pl:r[3], uk:r[4]}, elangs = r[5];
-    var started = LANGS.filter(function (l) { return byT[l].length || elangs.some(function (e) { return e.target === l; }); });
-    if (!CAB_T || started.indexOf(CAB_T) < 0) CAB_T = started.indexOf(TARGET) > -1 ? TARGET : (started[0] || TARGET);
-    var courses = r[0], enr = r[1], prog = byT[CAB_T];
+    var courses = r[0], enr = r[1], started, prog;
     var lessonPromises = enr.map(function (cid) { return API.listLessons(cid); });
     return Promise.all(lessonPromises).then(function (lessonLists) {
-      var doneIds = {}; prog.forEach(function (p) { doneIds[p.lesson_id] = p; });
+      var doneIds = {};
       var lessonIdsOf = {}; enr.forEach(function (cid, i) { lessonIdsOf[cid] = lessonLists[i].map(function (l) { return l.id; }); });
-      function langsOf(cid) { var ids = lessonIdsOf[cid] || []; return LANGS.filter(function (l) { return elangs.some(function (e) { return e.course_id === cid && e.target === l; }) || byT[l].some(function (p) { return ids.indexOf(p.lesson_id) > -1; }); }); }
+      function langsOf(cid) { var ids = lessonIdsOf[cid] || []; return LANGS.filter(function (l) { var row = elangs.filter(function (e) { return e.course_id === cid && e.target === l; })[0]; return row ? !row.hidden : byT[l].some(function (p) { return ids.indexOf(p.lesson_id) > -1; }); }); }
+      started = LANGS.filter(function (l) { return enr.some(function (cid) { return langsOf(cid).indexOf(l) > -1; }); });
+      if (!CAB_T || started.indexOf(CAB_T) < 0) CAB_T = started.indexOf(TARGET) > -1 ? TARGET : (started[0] || TARGET);
+      var visIds = []; enr.forEach(function (cid) { if (langsOf(cid).indexOf(CAB_T) > -1) visIds = visIds.concat(lessonIdsOf[cid]); });
+      prog = byT[CAB_T].filter(function (p) { return visIds.indexOf(p.lesson_id) > -1; }); doneIds = {}; prog.forEach(function (p) { doneIds[p.lesson_id] = p; });
       var avg = prog.length ? Math.round(prog.reduce(function (a, p) { return a + (+p.score || 0); }, 0) / prog.length) : 0;
       var xp = prog.reduce(function (a, p) { return a + Math.round((+p.score || 0) / 10) * 10; }, 0);
       var days = {}; prog.forEach(function (p) { days[(p.completed_at || '').slice(0, 10)] = 1; });
@@ -548,12 +554,17 @@ function viewCourse(id) {
     $app.innerHTML = '<div class="page"><div class="mcard"><div class="panel"><div class="mhead">' + posterHtml(c, true) + '<div class="mhead-info"><div class="badges"><span class="badge hot">' + esc(c.level) + '</span><span class="badge">' + ls.length + t(' уроків</span><span class="badge">') + (c.kind === 'series' ? t('серіал') : t('фільм')) + '</span>' + (enrolled ? t('<span class="badge" style="color:var(--ok)">доступ відкрито</span>') : '') + '</div>' +
       '<h2 style="font-size:clamp(24px,3.4vw,36px)">' + esc(tr(c, 'title')) + '</h2><p class="muted">' + esc(tr(c, 'description')) + '</p>' +
       (enrolled ? '' : t('<div class="row"><a class="btn btn-red" href="#/buy">Купити ключ · ') + esc(c.price) + '</a>' + (USER ? t('<a class="btn btn-ghost" href="#/cabinet">Активувати ключ</a>') : t('<a class="btn btn-ghost" href="#/register">Створити кабінет</a>')) + '</div>') + '</div></div>' +
+      (isAdm() && ls.length ? '<div class="admtools"><b>🛠 ' + tx({uk:'Тест адміна', pl:'Test admina', en:'Admin test'}) + ' · ' + FLAG[TARGET] + '</b><span class="hint">' + tx({uk:'Змінює лише твої результати', pl:'Zmienia tylko twoje wyniki', en:'Changes only your own results'}) + '</span><div class="row" style="gap:6px;flex-wrap:wrap"><input class="inp-s" id="admPct" type="number" min="0" max="100" value="100" style="width:80px"><button class="btn btn-ghost btn-sm" type="button" id="admFill">' + tx({uk:'Заповнити всі уроки', pl:'Wypełnij wszystkie lekcje', en:'Fill all lessons'}) + '</button><button class="btn btn-ghost btn-sm" type="button" id="admReset">' + tx({uk:'Скинути мої результати', pl:'Wyczyść moje wyniki', en:'Reset my results'}) + '</button></div></div>' : '') +
       (ls.length ? '<ul class="lessons">' + ls.map(function (l, i) {
         var avail = !!lessonTasks(l), open = (enrolled || i === 0) && avail, isDone = done[l.id];
         var inner = '<li class="' + (isDone ? 'done' : '') + '"><span class="lnum">' + (isDone ? '✓ ' : '') + String(l.num).padStart(2, '0') + '</span><span class="ltitle">' + esc(tr(l, 'title')) + '<small>' + esc(lGram(l)) + (i === 0 && !enrolled ? t(' · безкоштовно') : '') + (!avail ? ' · ' + t('Скоро цією мовою') + ' ' + FLAG[TARGET] : '') + '</small></span>' + (open ? (isDone ? '<b class="score">' + esc(scoreTxt(isDone)) + '</b>' : '<span class="lock" style="color:var(--neon)">▶</span>') : '<span class="lock">🔒</span>') + '</li>';
         return open ? '<a class="lesson-link" href="#/lesson/' + esc(l.id) + '">' + inner + '</a>' : inner;
       }).join('') + '</ul>' : t('<div class="empty" style="margin-top:20px">Уроки цього марафону скоро з\'являться.</div>')) +
       t('</div><div class="panel"><h3 style="margin-bottom:18px">Типи завдань у курсі</h3><div class="task-types">') + Object.keys(types).map(function (t) { return '<div class="ttype"><span class="k q">' + esc(t.slice(0, 2).toUpperCase()) + '</span><div><b>' + esc(TASK_TYPES[t] || t) + '</b></div></div>'; }).join('') + '</div></div></div></div>';
+    var af = document.getElementById('admFill');
+    if (af) { var avIds = ls.filter(function (x) { return !!lessonTasks(x); }).map(function (x) { return x.id; });
+      af.onclick = function () { var v = Math.max(0, Math.min(100, +document.getElementById('admPct').value || 0)); API.adminSetProgress(avIds, TARGET, v).then(function () { return API.addLang(id, TARGET); }).then(function () { toast(tx({uk:'Готово: ', pl:'Gotowe: ', en:'Done: '}) + avIds.length + ' × ' + v + '%'); route(); }).catch(function (e) { toast(e.message, 'err'); }); };
+      document.getElementById('admReset').onclick = function () { API.adminResetOwn(avIds, TARGET).then(function () { toast(tx({uk:'Результати скинуто', pl:'Wyniki wyczyszczone', en:'Results reset'})); route(); }).catch(function (e) { toast(e.message, 'err'); }); }; }
   });
 }
 
@@ -592,7 +603,7 @@ var TASK_INS = {vocabulary:'Обери правильне слово', grammar:'
 function shuffle(a) { a = a.slice(); for (var i = a.length - 1; i > 0; i--) { var j = Math.floor(Math.random() * (i + 1)); var x = a[i]; a[i] = a[j]; a[j] = x; } return a; }
 function norm(s) { return String(s || '').toLowerCase().replace(/[’']/g, "'").replace(/[^\p{L}\p{N}' ]+/gu, ' ').replace(/\s+/g, ' ').trim(); }
 function runPlayer(container, lesson, onFinish) {
-  var tasks = lessonTasks(lesson) || [], cur = 0, res = [], finalText = '', snaps = [], maxReached = 0;
+  var tStart = {}, durs = {}, tasks = lessonTasks(lesson) || [], cur = 0, res = [], finalText = '', snaps = [], maxReached = 0;
   var scored = tasks.filter(function (x) { return x.type !== 'intro'; }).length;
   container.innerHTML = '<div class="trial"><div class="tcard" id="tcard" aria-live="polite"></div><div class="tside" id="tside"></div></div>';
   var card = container.querySelector('#tcard'), side = container.querySelector('#tside');
@@ -609,7 +620,7 @@ function runPlayer(container, lesson, onFinish) {
   }
   function foot() { return '<div class="tfb" id="tfb"></div><div class="tnav"><span class="hint">' + t('Завдання') + ': ' + FLAG[TARGET] + ' · ' + t('Підказки') + ': ' + FLAG[LANG] + '</span><button class="btn btn-red" type="button" id="tnext" hidden>' + t('Далі') + '</button></div>'; }
   function render() {
-    var tk = tasks[cur]; if (cur > maxReached) maxReached = cur; renderSide();
+    var tk = tasks[cur]; if (cur > maxReached) maxReached = cur; if (!snaps[cur] && tStart[cur] == null) tStart[cur] = Date.now(); renderSide();
     if (snaps[cur]) { card.innerHTML = '<div class="tlock">🔒 ' + t('Відповідь уже дано. Щоб змінити, пройди урок ще раз.') + '</div>' + snaps[cur]; bindSay(tk); var nb = card.querySelector('#tnext'); if (nb) { nb.hidden = false; nb.disabled = false; nb.textContent = cur < tasks.length - 1 ? t('Далі') : t('Показати результат'); nb.onclick = next; } return; }
     var h = head(tk), type = tk.type;
     if (type === 'intro') {
@@ -685,6 +696,7 @@ function runPlayer(container, lesson, onFinish) {
   }
   function bindSay(tk) { var sb = card.querySelector('#tsay'); if (sb) sb.onclick = function () { say(tk.say); }; }
   function done(ok, text) {
+    durs[cur] = Math.max(1, Math.round((Date.now() - (tStart[cur] || Date.now())) / 1000));
     res[cur] = ok; var fb = card.querySelector('#tfb'); fb.className = 'tfb ' + (ok ? 'ok' : 'err'); fb.textContent = text;
     card.querySelectorAll('.topt,#tsubmit,#tcheck').forEach(function (x) { x.disabled = true; });
     card.querySelectorAll('button:not(#tnext):not(#tsay),input,textarea').forEach(function (x) { x.disabled = true; });
@@ -701,9 +713,10 @@ function runPlayer(container, lesson, onFinish) {
   function next() { if (cur < tasks.length - 1) { cur++; render(); } else if (res.filter(function (x, i) { return tasks[i].type !== 'intro' && x == null; }).length && firstOpen() > -1) { cur = firstOpen(); render(); toast(t('Є завдання без відповіді'), 'info'); } else finish(); }
   function firstOpen() { for (var i = 0; i < tasks.length; i++) if (tasks[i].type !== 'intro' && res[i] == null) return i; return -1; }
   function finish() {
+    var per = tasks.map(function (tk, i) { return {n:i, type:tk.type, sec:durs[i] || 0, ok:res[i] == null ? null : !!res[i]}; }); LAST_TIMES = {total:per.reduce(function (a, x) { return a + x.sec; }, 0), per:per};
     var sc = res.filter(function (x) { return x === true; }).length, pct = scored ? Math.round(sc / scored * 100) : 0; cur = tasks.length; renderSide();
     card.innerHTML = '<div class="tres"><span class="ttag">' + t('РЕЗУЛЬТАТ') + '</span><div class="big">' + sc + ' / ' + scored + '</div><p class="lead" style="text-align:center" id="tresText">' + pct + '%</p><div id="tresExtra" style="width:100%"></div><div class="row" style="justify-content:center" id="tresBtns"></div></div>';
-    onFinish(pct, finalText, card.querySelector('#tresText'), card.querySelector('#tresBtns'), function () { cur = 0; res = []; snaps = []; maxReached = 0; render(); }, card.querySelector('#tresExtra'));
+    onFinish(pct, finalText, card.querySelector('#tresText'), card.querySelector('#tresBtns'), function () { cur = 0; res = []; snaps = []; maxReached = 0; tStart = {}; durs = {}; render(); }, card.querySelector('#tresExtra'));
   }
   if (!tasks.length) { card.innerHTML = t('<div class="empty">У цьому уроці ще немає завдань.</div>'); return; }
   render();
@@ -720,6 +733,7 @@ function viewLesson(id) {
       $app.innerHTML = '<div class="page"><div class="sec-head"><a href="#/course/' + esc(l.course_id) + '" class="muted small">← ' + esc(c ? tr(c, 'title') : t('Марафон')) + t('</a><div class="eyebrow">Урок ') + l.num + ' · ' + esc(lGram(l)) + '</div><h2>' + esc(tr(l, 'title')) + '</h2><p class="lead">' + esc(tr(l, 'scene')) + '</p></div><div id="player"></div></div>';
       runPlayer(document.getElementById('player'), l, function (pct, finalText, textEl, btns, again, extra) {
         if (!enrolled && extra) { var rest = ls.slice(idx + 1); extra.innerHTML = '<div class="upsell"><h3>' + (pct >= 70 ? t('Відмінно! Ти готовий до повного марафону.') : t('Гарний старт! Повний марафон допоможе закріпити.')) + '</h3><p class="muted">' + t('Ще') + ' ' + rest.length + ' ' + t('уроків чекають на тебе:') + '</p><ol class="uplist">' + rest.slice(0, 6).map(function (x) { return '<li><b>' + esc(tr(x, 'title')) + '</b> <span class="muted small">· ' + esc(x.grammar) + '</span></li>'; }).join('') + (rest.length > 6 ? '<li class="muted">+ ' + (rest.length - 6) + ' ' + t('уроків, фінальний проєкт і сертифікат') + '</li>' : '') + '</ol><div class="price-tag"><b>' + esc(c ? c.price : '') + '</b> <span class="muted">' + t('один раз · доступ на 12 місяців') + '</span></div></div>'; }
+        if (USER && LAST_TIMES) API.saveTimes(l.id, pct, LAST_TIMES).catch(function () {});
         if (USER) { API.saveProgress(l.id, pct, finalText).then(function (r) { textEl.textContent = r && r.retry ? t('Повторна спроба: ') + pct + t('%. Перший результат зберігається, новий показано в дужках.') : t('Бал: ') + pct + t('%. Результат збережено в кабінеті.'); }); }
         else textEl.textContent = t('Бал: ') + pct + t('%. Створи кабінет, щоб зберігати прогрес.');
         btns.innerHTML = (nextL && enrolled ? '<a class="btn btn-red" href="#/lesson/' + esc(nextL.id) + t('">Наступний урок</a>') : (!enrolled ? t('<a class="btn btn-red" href="#/buy">Отримати ключ доступу</a>') : '')) + '<a class="btn btn-ghost" href="' + (USER ? '#/cabinet' : '#/register') + '">' + (USER ? t('Мій кабінет') : t('Створити кабінет')) + t('</a><button class="btn btn-ghost" type="button" id="again">Пройти ще раз</button>');
@@ -739,16 +753,25 @@ function viewTrial() {
 
 /* ================= ADMIN ================= */
 var adminTab = 'stats';
+function fmtSec(s) { s = +s || 0; var m = Math.floor(s / 60), r = s % 60; return (m ? m + ' хв ' : '') + r + ' с'; }
+function adminTimes(body) {
+  return API.adminTimes().then(function (d) {
+    var U = {}, L = {}; d.users.forEach(function (u) { U[u.id] = u; }); d.lessons.forEach(function (l) { L[l.id] = l; });
+    if (!d.times.length) { body.innerHTML = '<div class="empty">' + tx({uk:'Ще немає даних. Час записується після кожного проходження уроку.', pl:'Brak danych. Czas zapisuje się po każdym przejściu lekcji.', en:'No data yet. Time is saved after each lesson attempt.'}) + '</div>'; return; }
+    body.innerHTML = '<p class="hint" style="margin-bottom:12px">🔒 ' + tx({uk:'Бачить лише адміністратор.', pl:'Widzi tylko administrator.', en:'Visible to the admin only.'}) + '</p><div class="ttimes">' + d.times.map(function (x, i) { var u = U[x.user_id] || {}, l = L[x.lesson_id] || {};
+      return '<details class="tt"><summary><span><b>' + esc(u.name || u.email || '?') + '</b> <span class="muted small">' + esc(u.email || '') + '</span></span><span>' + (l.num ? l.num + '. ' : '') + esc(tr(l, 'title') || '') + '</span><span class="badge">' + FLAG[x.target || 'en'] + '</span><span>' + (x.score != null ? x.score + '%' : '') + '</span><b>' + fmtSec(x.total_sec) + '</b><span class="muted small">' + fmtDate(x.created_at) + '</span></summary><div class="ttper">' + (x.per_task || []).filter(function (p) { return p.type !== 'intro'; }).map(function (p, k) { return '<div><span>' + (k + 1) + '. ' + esc(TASK_TYPES[p.type] || p.type) + '</span><span>' + (p.ok === true ? '✓' : p.ok === false ? '✗' : '–') + '</span><b>' + fmtSec(p.sec) + '</b></div>'; }).join('') + '</div></details>'; }).join('') + '</div>';
+  });
+}
 function viewAdmin() {
   if (!requireUser()) return Promise.resolve();
   if (USER.role === 'admin' && !ADMIN_MODE) { ADMIN_MODE = true; try { localStorage.setItem('ml_admin_mode', '1'); } catch (e) {} renderNav(); }
   if (USER.role !== 'admin') { $app.innerHTML = t('<div class="page"><div class="empty">Ця сторінка доступна лише адміністратору.</div></div>'); return Promise.resolve(); }
   $app.innerHTML = t('<div class="page"><div class="sec-head"><div class="eyebrow">Адмін-панель</div><h2>Керування MovieLang</h2></div><div class="tabs" role="tablist">') +
-    [['stats',t('Статистика')],['users',t('Користувачі')],['courses',t('Курси й уроки')],['keys',t('Ключі доступу')],['site',t('Тексти сайту')],['look',t('Вигляд і кольори')]].map(function (t) { return '<button class="tab' + (adminTab === t[0] ? ' on' : '') + '" type="button" role="tab" data-t="' + t[0] + '">' + t[1] + '</button>'; }).join('') +
+    [['stats',t('Статистика')],['users',t('Користувачі')],['courses',t('Курси й уроки')],['keys',t('Ключі доступу')],['site',t('Тексти сайту')],['look',t('Вигляд і кольори')],['times','⏱ ' + tx({uk:'Час', pl:'Czas', en:'Time'})]].map(function (t) { return '<button class="tab' + (adminTab === t[0] ? ' on' : '') + '" type="button" role="tab" data-t="' + t[0] + '">' + t[1] + '</button>'; }).join('') +
     t('</div><div id="adminBody"><p class="muted">Завантаження…</p></div></div>');
   $app.querySelectorAll('.tab').forEach(function (b) { b.onclick = function () { adminTab = b.dataset.t; viewAdmin(); }; });
   var body = document.getElementById('adminBody');
-  var f = {stats:adminStats, users:adminUsers, courses:adminCourses, keys:adminKeys, site:adminSite, look:adminLook}[adminTab];
+  var f = {stats:adminStats, users:adminUsers, courses:adminCourses, keys:adminKeys, site:adminSite, look:adminLook, times:adminTimes}[adminTab];
   return f(body).catch(function (e) { body.innerHTML = t('<div class="empty">Помилка: ') + esc(e.message) + '</div>'; });
 }
 
