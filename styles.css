@@ -490,3 +490,4 @@ section{border-top-color:var(--divider)}
 .admsw{white-space:nowrap}
 .admsw.on{background:var(--highlight);color:var(--btn-text);border-color:var(--highlight)}
 @media (max-width:560px){.match{grid-template-columns:1fr}}
+.tins{font:600 12px var(--f-mono);letter-spacing:.06em;text-transform:uppercase;color:var(--text-3)}
