@@ -491,3 +491,12 @@ section{border-top-color:var(--divider)}
 .admsw.on{background:var(--highlight);color:var(--btn-text);border-color:var(--highlight)}
 @media (max-width:560px){.match{grid-template-columns:1fr}}
 .tins{font:600 12px var(--f-mono);letter-spacing:.06em;text-transform:uppercase;color:var(--text-3)}
+.tstep{width:100%;font:inherit;text-align:left;cursor:default}
+.tstep.nav{cursor:pointer} .tstep.nav:hover{border-color:var(--link)}
+.tstep:disabled{opacity:.55}
+.tlock{font-size:13px;color:var(--text-2);background:var(--panel-bg);border:1px dashed var(--border);border-radius:10px;padding:8px 12px}
+.mic{display:grid;gap:10px;justify-items:start}
+.mic-out{min-height:28px;display:grid;gap:6px;width:100%}
+.mic-out .said{font-size:18px;font-weight:600;color:var(--text)}
+.meter{height:8px;border-radius:99px;background:var(--panel-bg);overflow:hidden;max-width:360px}
+.meter i{display:block;height:100%;background:linear-gradient(90deg,var(--progress-1),var(--success))}
