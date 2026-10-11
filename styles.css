@@ -517,3 +517,15 @@ section{border-top-color:var(--divider)}
 .cabtab{display:flex;flex-direction:column;align-items:flex-start;gap:2px;padding:12px 14px;border-radius:14px;border:1px solid var(--line);background:transparent;color:inherit;font:inherit;cursor:pointer;text-align:left}
 .cabtab b{font-size:18px}.cabtab span{font-size:13px}.cabtab small{font-size:12px;opacity:.7}
 .cabtab.on{border-color:var(--red);background:color-mix(in srgb,var(--red) 14%,transparent)}
+.cprog{display:flex;flex-direction:column;gap:8px;padding:14px 0;border-bottom:1px solid var(--line)}
+.cprog:last-of-type{border-bottom:none}
+.cprog .top a{font-weight:600;text-decoration:none;color:inherit}
+.lprog{display:flex;gap:6px;align-items:center}
+.lgo{flex:1;display:grid;grid-template-columns:34px 110px 1fr auto;gap:10px;align-items:center;padding:8px 10px;border-radius:10px;border:1px solid var(--line);background:transparent;color:inherit;font:inherit;cursor:pointer;text-align:left}
+.lgo:hover{border-color:var(--red)}
+.lflag{font-weight:700;font-size:13px}.lname{font-size:13px;opacity:.85}
+.lbar{height:6px;border-radius:6px;background:var(--line);overflow:hidden}.lbar i{display:block;height:100%}
+.lgo b{font-size:12px;white-space:nowrap}
+.ldel{width:30px;height:30px;border-radius:8px;border:1px solid var(--line);background:transparent;color:inherit;opacity:.6;cursor:pointer}
+.ldel:hover{opacity:1;border-color:var(--err,#e66)}
+@media(max-width:560px){.lgo{grid-template-columns:30px 1fr auto}.lname{display:none}}

@@ -35,6 +35,37 @@ function setLang(l) { LANG = l; try { localStorage.setItem('ml_lang', l); } catc
 function setLangs(target, sup) { TARGET = target; LANG = sup; LANG_SET = true; try { localStorage.setItem('ml_target', target); localStorage.setItem('ml_lang', sup); } catch (e) {} applyStatic(); renderNav(); route(); }
 function lGram(l) { var v = l.variants; return (TARGET !== 'en' && v && (v[TARGET + '_grammar_' + LANG] || v[TARGET + '_grammar'])) || l.grammar; }
 var CAB_T = null;
+function tx(o) { return o[LANG] || o.uk; }
+function mbox(html) { var old = document.getElementById('mBox'); if (old) old.remove(); var w = document.createElement('div'); w.id = 'mBox'; w.className = 'lmodal'; w.innerHTML = '<div class="lbox" role="dialog" aria-modal="true">' + html + '</div>'; w.onclick = function (e) { if (e.target === w) w.remove(); }; document.body.appendChild(w); return w; }
+function pickTargetModal(title, exclude, cb) {
+  var opts = LANGS.filter(function (l) { return (exclude || []).indexOf(l) < 0; });
+  var w = mbox('<h3>' + esc(title) + '</h3><div class="lrow" style="margin-top:14px">' + opts.map(function (l) { return '<button type="button" class="lopt" data-pk="' + l + '"><b>' + FLAG[l] + '</b><span>' + esc(langName(l)) + '</span></button>'; }).join('') + '</div>');
+  w.querySelectorAll('[data-pk]').forEach(function (b) { b.onclick = function () { w.remove(); cb(b.dataset.pk); }; });
+}
+function removeLangFlow(c, tg, langsOfCourse, lessonIds) {
+  var name = esc(tr(c, 'title')), ln = esc(langName(tg));
+  if (langsOfCourse.length > 1) {
+    var w = mbox('<h3>' + tx({uk:'Точно видалити результати?', pl:'Na pewno usunąć wyniki?', en:'Delete your results?'}) + '</h3><p class="muted">' + tx({uk:'Мова «' + ln + '» у марафоні «' + name + '». Ти вже почав(-ла), а кожен урок наближає до мети. Ми в тебе віримо, ще кілька сцен, і буде результат! 💪', pl:'Język „' + ln + '” w maratonie „' + name + '”. Już zacząłeś(-ęłaś), a każda lekcja przybliża cię do celu. Wierzymy w ciebie, jeszcze kilka scen i będzie efekt! 💪', en:'“' + ln + '” in “' + name + '”. You\'ve already started, and every lesson gets you closer. We believe in you: a few more scenes and you\'ll see results! 💪'}) + '</p><div class="row" style="justify-content:flex-end;margin-top:16px;gap:8px"><button class="btn btn-ghost btn-sm" type="button" id="mDel">' + tx({uk:'Так, видалити', pl:'Tak, usuń', en:'Yes, delete'}) + '</button><button class="btn btn-red" type="button" id="mStay">' + tx({uk:'Залишаюсь і вчуся', pl:'Zostaję i się uczę', en:'I\'ll keep learning'}) + '</button></div>');
+    w.querySelector('#mStay').onclick = function () { w.remove(); toast(tx({uk:'Так тримати! 🎬', pl:'Tak trzymaj! 🎬', en:'That\'s the spirit! 🎬'})); };
+    w.querySelector('#mDel').onclick = function () { API.removeLang(c.id, tg, lessonIds).then(function () { w.remove(); toast(tx({uk:'Результати видалено', pl:'Wyniki usunięte', en:'Results deleted'})); route(); }).catch(function (e) { toast(e.message, 'err'); }); };
+    return;
+  }
+  var w1 = mbox('<h3>' + tx({uk:'Цю мову не можна анулювати', pl:'Tego języka nie można anulować', en:'This language can\'t be removed'}) + '</h3><p class="muted">' + tx({uk:'У марафоні має бути розпочата хоча б одна мова. Можна лише видалити весь марафон «' + name + '» з кабінету.', pl:'W maratonie musi być rozpoczęty co najmniej jeden język. Możesz tylko usunąć cały maraton „' + name + '” z konta.', en:'A marathon needs at least one started language. You can only remove the whole marathon “' + name + '” from your account.'}) + '</p><div class="row" style="justify-content:flex-end;margin-top:16px;gap:8px"><button class="btn btn-red" type="button" id="mKeep">' + tx({uk:'Залишити', pl:'Zostaw', en:'Keep it'}) + '</button><button class="btn btn-ghost btn-sm" type="button" id="mNext">' + tx({uk:'Видалити весь марафон', pl:'Usuń cały maraton', en:'Remove the whole marathon'}) + '</button></div>');
+  w1.querySelector('#mKeep').onclick = function () { w1.remove(); };
+  w1.querySelector('#mNext').onclick = function () {
+    var w2 = mbox('<h3>' + tx({uk:'Ти впевнений(-а)?', pl:'Jesteś pewien(-na)?', en:'Are you sure?'}) + '</h3><p class="muted">' + tx({uk:'Марафон зникне з кабінету разом з усіма результатами і доступом. Це не можна скасувати.', pl:'Maraton zniknie z konta razem ze wszystkimi wynikami i dostępem. Tego nie można cofnąć.', en:'The marathon will disappear from your account with all results and access. This can\'t be undone.'}) + '</p><div class="row" style="justify-content:flex-end;margin-top:16px;gap:8px"><button class="btn btn-red" type="button" id="mKeep2">' + tx({uk:'Ні, залишити', pl:'Nie, zostaw', en:'No, keep it'}) + '</button><button class="btn btn-ghost btn-sm" type="button" id="mNext2">' + tx({uk:'Так, далі', pl:'Tak, dalej', en:'Yes, continue'}) + '</button></div>');
+    w2.querySelector('#mKeep2').onclick = function () { w2.remove(); };
+    w2.querySelector('#mNext2').onclick = function () {
+      var phrase = tx({uk:'так, хочу', pl:'tak, chcę', en:'yes, I want'});
+      var w3 = mbox('<h3>' + tx({uk:'Останній крок', pl:'Ostatni krok', en:'Last step'}) + '</h3><p class="muted">' + tx({uk:'Щоб підтвердити, введи:', pl:'Aby potwierdzić, wpisz:', en:'To confirm, type:'}) + ' <b>' + esc(phrase) + '</b></p><input class="inp-s" id="mPhrase" autocomplete="off" style="width:100%;margin-top:10px"><div class="row" style="justify-content:flex-end;margin-top:16px;gap:8px"><button class="btn btn-ghost btn-sm" type="button" id="mCancel">' + tx({uk:'Скасувати', pl:'Anuluj', en:'Cancel'}) + '</button><button class="btn btn-danger btn-sm" type="button" id="mFinal" disabled>' + tx({uk:'Видалити марафон', pl:'Usuń maraton', en:'Remove marathon'}) + '</button></div>');
+      var inp = w3.querySelector('#mPhrase'), fb = w3.querySelector('#mFinal'); inp.focus();
+      var normP = function (s) { return s.toLowerCase().replace(/[^\p{L}\s]/gu, '').replace(/\s+/g, ' ').trim(); };
+      inp.oninput = function () { fb.disabled = normP(inp.value) !== normP(phrase); };
+      w3.querySelector('#mCancel').onclick = function () { w3.remove(); };
+      fb.onclick = function () { API.removeCourse(c.id, lessonIds).then(function () { w3.remove(); toast(tx({uk:'Марафон видалено з кабінету', pl:'Maraton usunięty z konta', en:'Marathon removed'})); route(); }).catch(function (e) { toast(e.message, 'err'); }); };
+    };
+  };
+}
 function lessonTasks(l) { if (TARGET === 'en') return l.tasks || []; var v = l.variants && l.variants[TARGET]; return v && v.length ? v : null; }
 function langModal(first) {
   var old = document.getElementById('langModal'); if (old) old.remove();
@@ -54,6 +85,7 @@ function toggleTheme() { THEME = THEME === 'dark' ? 'light' : 'dark'; try { loca
 applyTheme();
 function applyStatic() {
   document.documentElement.lang = LANG;
+  var sl = tx({uk:'МОВИ ЧЕРЕЗ КІНО', pl:'JĘZYKI PRZEZ KINO', en:'LANGUAGES THROUGH CINEMA'}); var lg = document.querySelector('.logo small'); if (lg) lg.textContent = sl; var fs = document.getElementById('footSlogan'); if (fs) fs.textContent = '© 2026 MovieLang · ' + sl.charAt(0) + sl.slice(1).toLowerCase();
   var d = document.getElementById('discl'); if (d) d.textContent = LANG === 'pl' ? 'Tytuły filmów i seriali służą do opisu treści kursów; projekt nie jest powiązany z właścicielami praw.' : "Назви фільмів і серіалів використано для опису змісту курсів; проєкт не пов'язаний із правовласниками.";
   var b = document.getElementById('demoBar'); if (b) b.textContent = LANG === 'pl' ? 'Tryb demo: dane zapisują się tylko w tej przeglądarce. Admin: admin@movielang.demo / admin123' : 'Демо-режим: дані зберігаються лише в цьому браузері. Адмін: admin@movielang.demo / admin123';
 }
@@ -236,6 +268,10 @@ function DemoBackend() {
     saveLesson: function (l) { needAdmin(); var db = load(); if (!l.id) { l.id = uid(); db.lessons.push(l); } else { db.lessons = db.lessons.map(function (x) { return x.id === l.id ? l : x; }); } save(); return P(l); },
     deleteLesson: function (id) { needAdmin(); var db = load(); db.lessons = db.lessons.filter(function (x) { return x.id !== id; }); save(); return P(true); },
     myEnrollments: function () { var u = me(); if (!u) return P([]); return P(load().enrollments.filter(function (e) { return e.user_id === u.id; }).map(function (e) { return e.course_id; })); },
+    myLangs: function () { var u = me(); if (!u) return P([]); return P((load().elangs || []).filter(function (e) { return e.user_id === u.id; })); },
+    addLang: function (cid, tg) { var u = me(); var db = load(); db.elangs = db.elangs || []; if (!db.elangs.some(function (e) { return e.user_id === u.id && e.course_id === cid && e.target === tg; })) db.elangs.push({user_id:u.id, course_id:cid, target:tg}); save(); return P(true); },
+    removeLang: function (cid, tg, lessonIds) { var u = me(); var db = load(); db.elangs = (db.elangs || []).filter(function (e) { return !(e.user_id === u.id && e.course_id === cid && e.target === tg); }); db.progress = db.progress.filter(function (p) { return !(p.user_id === u.id && (p.target || 'en') === tg && lessonIds.indexOf(p.lesson_id) > -1); }); save(); return P(true); },
+    removeCourse: function (cid, lessonIds) { var u = me(); var db = load(); db.elangs = (db.elangs || []).filter(function (e) { return !(e.user_id === u.id && e.course_id === cid); }); db.progress = db.progress.filter(function (p) { return !(p.user_id === u.id && lessonIds.indexOf(p.lesson_id) > -1); }); db.enrollments = db.enrollments.filter(function (e) { return !(e.user_id === u.id && e.course_id === cid); }); save(); return P(true); },
     activateKey: function (code) {
       var u = me(); if (!u) return Promise.reject(new Error(t('Увійдіть в акаунт')));
       var db = load(); code = code.trim().toUpperCase();
@@ -308,6 +344,14 @@ function SupabaseBackend(url, key) {
     saveLesson: function (l) { var row = {course_id:l.course_id, num:l.num, title:l.title, title_pl:l.title_pl || null, scene_pl:l.scene_pl || null, grammar:l.grammar}; if (l.title_en !== undefined) { row.title_en = l.title_en; row.scene_en = l.scene_en; } row = Object.assign(row, {scene:l.scene, tasks:l.tasks}); if (l.variants !== undefined) row.variants = l.variants; if (l.id) row.id = l.id; return sb.from('lessons').upsert(row).select().single().then(ok); },
     deleteLesson: function (id) { return sb.from('lessons').delete().eq('id', id).then(ok); },
     myEnrollments: function () { if (!cachedUser) return Promise.resolve([]); return sb.from('enrollments').select('course_id').eq('user_id', cachedUser.id).then(ok).then(function (r) { return r.map(function (x) { return x.course_id; }); }); },
+    myLangs: function () { if (!cachedUser) return Promise.resolve([]); return sb.from('enrollment_langs').select('*').eq('user_id', cachedUser.id).then(ok); },
+    addLang: function (cid, tg) { return sb.from('enrollment_langs').upsert({user_id:cachedUser.id, course_id:cid, target:tg}).then(ok); },
+    removeLang: function (cid, tg, lessonIds) { var uid = cachedUser.id; var ps = [sb.from('enrollment_langs').delete().eq('user_id', uid).eq('course_id', cid).eq('target', tg)];
+      if (lessonIds.length) ps.push(tg === 'en' ? sb.from('progress').delete().eq('user_id', uid).in('lesson_id', lessonIds) : sb.from('progress_lang').delete().eq('user_id', uid).eq('target', tg).in('lesson_id', lessonIds));
+      return Promise.all(ps).then(function (r) { r.forEach(ok); return true; }); },
+    removeCourse: function (cid, lessonIds) { var uid = cachedUser.id; var ps = [sb.from('enrollment_langs').delete().eq('user_id', uid).eq('course_id', cid)];
+      if (lessonIds.length) { ps.push(sb.from('progress').delete().eq('user_id', uid).in('lesson_id', lessonIds)); ps.push(sb.from('progress_lang').delete().eq('user_id', uid).in('lesson_id', lessonIds)); }
+      return Promise.all(ps).then(function (r) { r.forEach(ok); return sb.from('enrollments').delete().eq('user_id', uid).eq('course_id', cid).then(ok); }); },
     activateKey: function (code) { return sb.rpc('activate_key', {p_code:code.trim().toUpperCase()}).then(ok); },
     myProgress: function (tg) { tg = tg || TARGET; if (!cachedUser) return Promise.resolve([]); var q = sb.from(tg === 'en' ? 'progress' : 'progress_lang').select('*').eq('user_id', cachedUser.id); if (tg !== 'en') q = q.eq('target', tg); return q.then(ok); },
     saveProgress: function (lessonId, score, answer) {
@@ -445,18 +489,25 @@ function requireUser() { if (!USER) { location.hash = '#/login'; toast(t('Спе
 
 function viewCabinet() {
   if (!requireUser()) return Promise.resolve();
-  return Promise.all([API.listCourses(true), API.myEnrollments(), API.myProgress('en'), API.myProgress('pl'), API.myProgress('uk')]).then(function (r) {
-    var byT = {en:r[2], pl:r[3], uk:r[4]}; if (!CAB_T) CAB_T = TARGET;
+  return Promise.all([API.listCourses(true), API.myEnrollments(), API.myProgress('en'), API.myProgress('pl'), API.myProgress('uk'), API.myLangs()]).then(function (r) {
+    var byT = {en:r[2], pl:r[3], uk:r[4]}, elangs = r[5];
+    var started = LANGS.filter(function (l) { return byT[l].length || elangs.some(function (e) { return e.target === l; }); });
+    if (!CAB_T || started.indexOf(CAB_T) < 0) CAB_T = started.indexOf(TARGET) > -1 ? TARGET : (started[0] || TARGET);
     var courses = r[0], enr = r[1], prog = byT[CAB_T];
     var lessonPromises = enr.map(function (cid) { return API.listLessons(cid); });
     return Promise.all(lessonPromises).then(function (lessonLists) {
       var doneIds = {}; prog.forEach(function (p) { doneIds[p.lesson_id] = p; });
+      var lessonIdsOf = {}; enr.forEach(function (cid, i) { lessonIdsOf[cid] = lessonLists[i].map(function (l) { return l.id; }); });
+      function langsOf(cid) { var ids = lessonIdsOf[cid] || []; return LANGS.filter(function (l) { return elangs.some(function (e) { return e.course_id === cid && e.target === l; }) || byT[l].some(function (p) { return ids.indexOf(p.lesson_id) > -1; }); }); }
       var avg = prog.length ? Math.round(prog.reduce(function (a, p) { return a + (+p.score || 0); }, 0) / prog.length) : 0;
       var xp = prog.reduce(function (a, p) { return a + Math.round((+p.score || 0) / 10) * 10; }, 0);
       var days = {}; prog.forEach(function (p) { days[(p.completed_at || '').slice(0, 10)] = 1; });
       var allLessons = {}; lessonLists.forEach(function (ls) { ls.forEach(function (l) { allLessons[l.id] = l; }); });
-      var my = enr.map(function (cid, i) { var c = courses.filter(function (x) { return x.id === cid; })[0]; if (!c) return ''; var ls = lessonLists[i], d = ls.filter(function (l) { return doneIds[l.id]; }).length, pct = ls.length ? Math.round(d / ls.length * 100) : 0;
-        return '<a href="#/course/' + esc(c.id) + '" style="text-decoration:none" class="prog"><div class="top"><span>' + esc(tr(c, 'title')) + '</span><b>' + d + ' / ' + ls.length + '</b></div><div class="bar"><i style="width:' + pct + '%;background:' + (pct === 100 ? 'var(--ok)' : 'linear-gradient(90deg,var(--progress-1),var(--progress-2))') + '"></i></div></a>'; }).join('');
+      var my = enr.map(function (cid, i) { var c = courses.filter(function (x) { return x.id === cid; })[0]; if (!c) return ''; var ls = lessonLists[i], ids = lessonIdsOf[cid], cl = langsOf(cid);
+        var rows = cl.map(function (l) { var pr = byT[l].filter(function (p) { return ids.indexOf(p.lesson_id) > -1; }), avail = ls.filter(function (x) { return l === 'en' || (x.variants && x.variants[l] && x.variants[l].length); }).length || ls.length, d = pr.length, pct = avail ? Math.round(d / avail * 100) : 0, av = d ? Math.round(pr.reduce(function (a, p) { return a + (+p.score || 0); }, 0) / d) : 0;
+          return '<div class="lprog"><button type="button" class="lgo" data-go-c="' + esc(cid) + '" data-go-l="' + l + '"><span class="lflag">' + FLAG[l] + '</span><span class="lname">' + esc(langName(l)) + '</span><span class="lbar"><i style="width:' + pct + '%;background:' + (pct === 100 ? 'var(--ok)' : 'linear-gradient(90deg,var(--progress-1),var(--progress-2))') + '"></i></span><b>' + d + ' / ' + avail + (d ? ' · ' + av + '%' : '') + '</b></button><button type="button" class="ldel" title="' + tx({uk:'Видалити результати', pl:'Usuń wyniki', en:'Delete results'}) + '" data-del-c="' + esc(cid) + '" data-del-l="' + l + '">✕</button></div>'; }).join('');
+        if (!cl.length) rows = '<p class="muted small">' + tx({uk:'Обери мову, щоб почати цей марафон.', pl:'Wybierz język, aby zacząć ten maraton.', en:'Choose a language to start this marathon.'}) + '</p>';
+        return '<div class="cprog"><div class="top"><a href="#/course/' + esc(c.id) + '">' + esc(tr(c, 'title')) + '</a></div>' + rows + (cl.length < 3 ? '<button type="button" class="btn btn-ghost btn-sm" data-add-c="' + esc(cid) + '">+ ' + tx({uk:'Додати мову', pl:'Dodaj język', en:'Add a language'}) + '</button>' : '') + '</div>'; }).join('');
       var recent = prog.slice().sort(function (a, b) { return (b.completed_at || '').localeCompare(a.completed_at || ''); }).slice(0, 6).map(function (p) { var l = allLessons[p.lesson_id]; return '<div><span>' + esc(l ? l.num + '. ' + tr(l, 'title') : t('Урок')) + '</span><b class="score">' + esc(scoreTxt(p)) + '</b></div>'; }).join('');
       var medals = [[prog.length >= 1, '1', t('Перший урок')], [prog.length >= 5, '5', t('П\'ять уроків')], [Object.keys(days).length >= 3, '3🔥', t('Три дні навчання')], [avg >= 90 && prog.length > 0, '★', t('Точність 90%+')], [enr.length >= 2, '2', t('Два марафони')], [lessonLists.some(function (ls) { return ls.length && ls.every(function (l) { return doneIds[l.id]; }); }), '🏁', t('Марафон пройдено')]];
       $app.innerHTML = t('<div class="page"><div class="sec-head"><div class="eyebrow">Особистий кабінет</div><h2>Привіт, ') + esc(USER.name) + '!</h2></div>' +
@@ -464,10 +515,13 @@ function viewCabinet() {
         t('<form class="form" id="keyForm" novalidate><label class="fl" for="keyInput">Активувати ключ<input class="inp" id="keyInput" placeholder="XXXX-XXXX-XXXX" maxlength="14" autocomplete="off" style="font-size:15px;padding:11px 12px"></label><button class="btn btn-red btn-sm" type="submit" style="justify-content:center">Активувати</button><div class="msg small" id="keyMsg" role="status"></div>') +
         (API.mode === 'demo' ? t('<p class="hint">Демо-ключ: HPS1-7KQ4-WZ9M</p>') : '') + '</form>' +
         (isAdm() ? t('<a class="btn btn-ghost btn-sm" href="#/admin" style="justify-content:center">Адмін-панель</a>') : '') + '</aside>' +
-        '<div class="dmain"><div class="cabtabs">' + LANGS.map(function (l) { var pr = byT[l], av = pr.length ? Math.round(pr.reduce(function (a, p) { return a + (+p.score || 0); }, 0) / pr.length) : 0; return '<button type="button" class="cabtab' + (l === CAB_T ? ' on' : '') + '" data-cab="' + l + '"><b>' + FLAG[l] + '</b><span>' + esc(langName(l)) + '</span><small>' + pr.length + ' ' + t('уроків') + (pr.length ? ' · ' + av + '%' : '') + '</small></button>'; }).join('') + '</div><div class="stats"><div class="stat"><b>' + prog.length + t('</b><span>уроків пройдено</span></div><div class="stat"><b>') + avg + t('%</b><span>середній бал</span></div><div class="stat"><b>') + xp + t('</b><span>XP набрано</span></div><div class="stat"><b>') + Object.keys(days).length + t('</b><span>днів навчання</span></div></div>') +
+        '<div class="dmain">' + (started.length > 1 ? '<div class="cabtabs">' + started.map(function (l) { var pr = byT[l], av = pr.length ? Math.round(pr.reduce(function (a, p) { return a + (+p.score || 0); }, 0) / pr.length) : 0; return '<button type="button" class="cabtab' + (l === CAB_T ? ' on' : '') + '" data-cab="' + l + '"><b>' + FLAG[l] + '</b><span>' + esc(langName(l)) + '</span><small>' + pr.length + ' ' + t('уроків') + (pr.length ? ' · ' + av + '%' : '') + '</small></button>'; }).join('') + '</div>' : (started.length ? '<p class="eyebrow" style="margin-bottom:12px">' + FLAG[CAB_T] + ' · ' + esc(langName(CAB_T)) + '</p>' : '')) + '<div class="stats"><div class="stat"><b>' + prog.length + t('</b><span>уроків пройдено</span></div><div class="stat"><b>') + avg + t('%</b><span>середній бал</span></div><div class="stat"><b>') + xp + t('</b><span>XP набрано</span></div><div class="stat"><b>') + Object.keys(days).length + t('</b><span>днів навчання</span></div></div>') +
         t('<div class="rows"><div class="box"><h4>Мої марафони</h4>') + (my || t('<div class="empty small">Марафонів ще немає. Активуй ключ або <a href="#/trial">пройди пробний урок</a>.</div>')) + t('<a class="btn btn-ghost btn-sm" href="#/catalog" style="justify-self:start">Каталог курсів</a></div>') +
         t('<div class="box"><h4>Досягнення</h4><div class="ach">') + medals.map(function (m) { return '<div class="medal' + (m[0] ? '' : ' off') + '"><span class="m" style="border-color:' + (m[0] ? 'var(--gold)' : 'var(--dim)') + ';color:' + (m[0] ? 'var(--gold)' : 'var(--dim)') + '">' + m[1] + '</span>' + m[2] + '</div>'; }).join('') + '</div>' +
         t('<h4>Останні уроки</h4><div class="done-list">') + (recent || t('<span class="muted">Ще немає пройдених уроків</span>')) + '</div></div></div></div></div></div>';
+      document.querySelectorAll('[data-go-c]').forEach(function (b) { b.onclick = function () { setLangs(b.dataset.goL, LANG); location.hash = '#/course/' + b.dataset.goC; }; });
+      document.querySelectorAll('[data-add-c]').forEach(function (b) { b.onclick = function () { var cid = b.dataset.addC; pickTargetModal(tx({uk:'Яку мову додати до марафону?', pl:'Jaki język dodać do maratonu?', en:'Which language do you want to add?'}), langsOf(cid), function (tg) { API.addLang(cid, tg).then(function () { setLangs(tg, LANG); toast(tx({uk:'Мову додано. Успіхів!', pl:'Język dodany. Powodzenia!', en:'Language added. Good luck!'})); location.hash = '#/course/' + cid; }); }); }; });
+      document.querySelectorAll('[data-del-c]').forEach(function (b) { b.onclick = function () { var cid = b.dataset.delC, c = courses.filter(function (x) { return x.id === cid; })[0]; removeLangFlow(c, b.dataset.delL, langsOf(cid), lessonIdsOf[cid] || []); }; });
       document.querySelectorAll('[data-cab]').forEach(function (b) { b.onclick = function () { CAB_T = b.dataset.cab; route(); }; });
       var inp = document.getElementById('keyInput'), msg = document.getElementById('keyMsg');
       inp.oninput = function () { var v = inp.value.toUpperCase().replace(/[^A-Z0-9]/g, '').slice(0, 12); inp.value = v.replace(/(.{4})(?=.)/g, '$1-'); };
@@ -475,7 +529,10 @@ function viewCabinet() {
         e.preventDefault();
         if (inp.value.replace(/-/g, '').length !== 12) { msg.className = 'msg small err'; msg.textContent = t('Ключ має містити 12 символів.'); return; }
         API.activateKey(inp.value).then(function (res) {
-          if (res.ok) { toast(t('Ключ активовано! Марафон відкрито.')); route(); } else { msg.className = 'msg small err'; msg.textContent = res.msg; }
+          if (res.ok) { toast(t('Ключ активовано! Марафон відкрито.'));
+            pickTargetModal(tx({uk:'Якою мовою хочеш вивчати цей марафон?', pl:'W jakim języku chcesz uczyć się w tym maratonie?', en:'Which language do you want to learn in this marathon?'}), [], function (tg) {
+              API.myEnrollments().then(function (ids) { var cids = res.course_id ? [res.course_id] : ids; return Promise.all(cids.map(function (cid) { return API.addLang(cid, tg); })).then(function () { setLangs(tg, LANG); CAB_T = tg; if (res.course_id) location.hash = '#/course/' + res.course_id; else route(); }); });
+            }); } else { msg.className = 'msg small err'; msg.textContent = res.msg; }
         }).catch(function (err) { msg.className = 'msg small err'; msg.textContent = err.message; });
       };
     });
