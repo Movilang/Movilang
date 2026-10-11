@@ -536,3 +536,10 @@ section{border-top-color:var(--divider)}
 .tt summary{display:grid;grid-template-columns:2fr 2fr auto 60px 90px 90px;gap:10px;align-items:center;cursor:pointer;list-style:none}
 .ttper{display:grid;gap:4px;margin-top:10px;font-size:14px}.ttper div{display:grid;grid-template-columns:1fr 30px 90px;gap:8px;border-top:1px solid var(--line);padding-top:4px}
 @media(max-width:760px){.tt summary{grid-template-columns:1fr 1fr}}
+.spk{display:inline-flex;align-items:center;justify-content:center;border:1px solid var(--line);background:transparent;color:inherit;border-radius:999px;font-size:14px;width:30px;height:30px;cursor:pointer;vertical-align:middle;margin-left:6px;padding:0;opacity:.8}
+.spk:hover{opacity:1;border-color:var(--red)}
+.spk-in{width:26px;height:26px;font-size:12px;float:right;margin:-2px -4px 0 8px}
+.qtrw{margin:-4px 0 14px}
+.qtrb{border:1px dashed var(--line);background:transparent;color:inherit;font:inherit;font-size:13px;padding:6px 12px;border-radius:999px;cursor:pointer;opacity:.85}
+.qtrb.on,.qtrb:hover{opacity:1;border-color:var(--red)}
+.qtrt{margin-top:10px;padding:10px 14px;border-left:3px solid var(--red);background:color-mix(in srgb,var(--red) 8%,transparent);border-radius:8px;font-size:16px}

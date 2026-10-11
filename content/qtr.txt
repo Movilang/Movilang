@@ -1,0 +1,351 @@
+# idx | first | second   (en source → uk | pl ; pl source → en | uk ; uk source → en | pl)
+0|З'єднай слова зі сцени з їхніми значеннями.|Połącz słowa ze sceny z ich znaczeniami.
+1|Родина хоче виглядати <b>цілком нормально</b>. Яке слово означає те саме?|Rodzina chce wyglądać <b>zupełnie normalnie</b>. Które słowo znaczy to samo?
+2|Послухай. Що тітка просить Гаррі зробити?|Posłuchaj. O co ciocia prosi Harry'ego?
+3|Щоранку Гаррі ____ сніданок для всієї родини.|Każdego ranku Harry ____ śniadanie dla całej rodziny.
+4|Дивись! Дадлі ____ свої подарунки на день народження, і він незадоволений.|Patrz! Dudley ____ swoje prezenty urodzinowe i nie jest zadowolony.
+5|Розстав слова в правильному порядку, щоб описати життя Гаррі.|Ułóż słowa we właściwej kolejności, aby opisać życie Harry'ego.
+6|Впиши пропущене слово: Гаррі спить у маленькій комірчині ____ сходами.|Wpisz brakujące słowo: Harry śpi w małej komórce ____ schodami.
+7|Кузен Гаррі цього року отримує менше подарунків, ніж торік, і сердиться через це.|Kuzyn Harry'ego dostaje w tym roku mniej prezentów niż w zeszłym i jest o to zły.
+8|Повтори речення з природним ритмом. Наголошуй слова ВЕЛИКИМИ ЛІТЕРАМИ: I'm NOT ALLOWED to ask QUESTIONS here. (Мені тут НЕ МОЖНА ставити ПИТАННЯ.)|Powtórz zdanie w naturalnym rytmie. Akcentuj słowa WIELKIMI LITERAMI: I'm NOT ALLOWED to ask QUESTIONS here. (Tutaj NIE WOLNO mi zadawać PYTAŃ.)
+9|Match the words from the scene with their meanings.|З'єднай слова зі сцени з їхнім значенням.
+10|The family wants to look <b>perfectly normal</b>. Which word means the same?|Родина хоче виглядати <b>цілком нормально</b>. Яке слово означає те саме?
+11|Listen. What does the aunt tell Harry to do?|Послухай. Що тітка наказує Гаррі зробити?
+12|Harry ____ in the cupboard under the stairs.|Гаррі ____ в комірчині під сходами.
+13|The cupboard is under the ____.|Комірчина під ____.
+14|Build the sentence.|Склади речення.
+15|Type the missing word: Dudley is Harry's ____. (cousin)|Впиши пропущене слово: Дадлі — ____ Гаррі. (двоюрідний брат)
+16|True or false? Harry has a big, beautiful room upstairs.|Правда чи неправда? Гаррі має велику гарну кімнату нагорі.
+17|Say it out loud: <i>“I live in the cupboard under the stairs.”</i>|Скажи вголос: <i>«Я живу в комірчині під сходами.»</i>
+18|Match the words from the scene with their meanings.|Połącz słowa ze sceny z ich znaczeniem.
+19|The family wants to look <b>perfectly normal</b>. Which word means the same?|Rodzina chce wyglądać <b>zupełnie normalnie</b>. Które słowo znaczy to samo?
+20|Listen. What does the aunt tell Harry to do?|Posłuchaj. Co ciocia każe zrobić Harry'emu?
+21|Harry ____ in the cupboard under the stairs.|Harry ____ w komórce pod schodami.
+22|The cupboard is under the ____.|Komórka jest pod ____.
+23|Build the sentence.|Ułóż zdanie.
+24|Type the missing word: Dudley is Harry's ____ brother. (cousin)|Wpisz brakujące słowo: Dudley to ____ brat Harry'ego. (kuzyn)
+25|True or false? Harry has a big, nice room on the first floor.|Prawda czy fałsz? Harry ma duży, ładny pokój na piętrze.
+26|Say it out loud: <i>“I live in the cupboard under the stairs.”</i>|Powiedz na głos: <i>„Mieszkam w komórce pod schodami.”</i>
+27|З'єднай слова про зоопарк.|Połącz słowa związane z zoo.
+28|Гаррі ____ зі змією, коли скло раптом зникло.|Harry ____ z wężem, kiedy szyba nagle zniknęła.
+29|Поки Дадлі притискав обличчя до скла, змія ____ назовні.|Kiedy Dudley przyciskał twarz do szyby, wąż ____ na zewnątrz.
+30|Послухай. Звідки походить змія, згідно з табличкою?|Posłuchaj. Skąd pochodzi wąż według tabliczki?
+31|Past Simple від «fall» (падати): Дадлі ____ у воду.|Past Simple od „fall” (upaść): Dudley ____ do wody.
+32|Гаррі знав, що має магічні сили, ще в зоопарку.|Harry wiedział, że ma magiczne moce, już w zoo.
+33|Склади з слів питання в Past Continuous.|Ułóż ze słów pytanie w Past Continuous.
+34|Розкажи як історію. Повтори: I was just standing there when the glass disappeared! (Я просто стояв там, коли скло зникло!)|Opowiedz jak historię. Powtórz: I was just standing there when the glass disappeared! (Po prostu tam stałem, kiedy szyba zniknęła!)
+35|The glass suddenly <b>vanished</b>. What does it mean?|Скло раптом <b>зникло</b>. Що це означає?
+36|Listen. What did the snake do?|Послухай. Що зробила змія?
+37|Yesterday Harry ____ at the zoo. (he)|Учора Гаррі ____ в зоопарку. (він)
+38|Aunt Petunia ____ very angry.|Тітка Петунія ____ дуже сердита.
+39|Harry ____ with the snake. (to talk, he)|Гаррі ____ зі змією. (розмовляти, він)
+40|True or false? The snake was very happy at the zoo.|Правда чи неправда? Змія була в зоопарку дуже щаслива.
+41|Say it out loud: <i>“The glass vanished and the snake escaped.”</i>|Скажи вголос: <i>«Скло зникло, і змія втекла.»</i>
+42|The glass suddenly <b>vanished</b>. What does it mean?|Szkło nagle <b>zniknęło</b>. Co to znaczy?
+43|Listen. What did the snake do?|Posłuchaj. Co zrobił wąż?
+44|Yesterday Harry ____ at the zoo.|Wczoraj Harry ____ w zoo.
+45|Aunt Petunia ____ very angry.|Ciocia Petunia ____ bardzo zła.
+46|Harry ____ with the snake. (to talk, he)|Harry ____ z wężem. (rozmawiać, on)
+47|True or false? The snake had a lot of fun at the zoo.|Prawda czy fałsz? Wąż świetnie się bawił w zoo.
+48|Say it out loud: <i>“The glass vanished and the snake escaped.”</i>|Powiedz na głos: <i>„Szyba zniknęła i wąż uciekł.”</i>
+49|Лист запечатаний червоним воском. Як називається цей віск?|List jest zamknięty czerwonym woskiem. Jak nazywa się ten wosk?
+50|З'єднай дієслова.|Połącz czasowniki.
+51|Сотні листів ____ через комин.|Setki listów ____ przez komin.
+52|Перший лист ____ дядьком Верноном, перш ніж Гаррі встиг його прочитати.|Pierwszy list ____ przez wuja Vernona, zanim Harry zdążył go przeczytać.
+53|Зроби пасив: Хтось доставив листи совою. → Листи були ____ совою.|Zamień na stronę bierną: Ktoś dostarczył listy sową. → Listy zostały ____ sową.
+54|Розстав слова (пасив).|Ułóż słowa (strona bierna).
+55|Послухай. На яку адресу надіслано лист?|Posłuchaj. Na jaki adres jest wysłany list?
+56|Родина залишалася вдома, доки листи не перестали приходити.|Rodzina została w domu, aż listy przestały przychodzić.
+57|There is an <b>address</b> on the envelope. What is it?|На конверті є <b>адреса</b>. Що це?
+58|Listen. Where do the letters fly in from?|Послухай. Звідки влітають листи?
+59|The uncle ____ all the letters and threw them into the fire. (finished action)|Дядько ____ всі листи і кинув їх у вогонь. (завершена дія)
+60|Every day the owls ____ new letters. (repeated action)|Щодня сови ____ нові листи. (повторювана дія)
+61|The uncle ____ the letter before Harry opened it. (to burn, he)|Дядько ____ лист, перш ніж Гаррі його відкрив. (спалити, він)
+62|True or false? The uncle happily gave Harry the letter.|Правда чи неправда? Дядько охоче віддав Гаррі лист.
+63|Say it out loud: <i>“Hundreds of letters are flying in through the chimney!”</i>|Скажи вголос: <i>«Сотні листів влітають через комин!»</i>
+64|There is an <b>address</b> on the envelope. What is it?|Na kopercie jest <b>adres</b>. Co to jest?
+65|Listen. Where are the letters flying from?|Posłuchaj. Skąd lecą listy?
+66|The uncle ____ all the letters and threw them into the fire. (finished action)|Wujek ____ wszystkie listy i wrzucił je do ognia. (czynność zakończona)
+67|Every day the owls ____ new letters. (repeated action)|Każdego dnia sowy ____ nowe listy. (czynność powtarzana)
+68|The uncle ____ the letter before Harry opened it. (to burn, he)|Wujek ____ list, zanim Harry go otworzył. (spalić, on)
+69|True or false? The uncle happily gave Harry the letter.|Prawda czy fałsz? Wujek chętnie oddał Harry'emu list.
+70|Say it out loud: <i>“Hundreds of letters are flying through the chimney!”</i>|Powiedz na głos: <i>„Setki listów lecą przez komin!”</i>
+71|Хагрід: «Ти чарівник». → Хагрід сказав Гаррі, що той ____ чарівник.|Hagrid: „Jesteś czarodziejem.” → Hagrid powiedział Harry'emu, że ____ czarodziejem.
+72|Гаррі: «Ти впевнений?» → Гаррі спитав, чи Хагрід ____ впевнений.|Harry: „Jesteś pewien?” → Harry zapytał, czy Hagrid ____ pewien.
+73|Дядько: «Я не платитиму за ту школу». → Дядько сказав, що він ____ платити за ту школу.|Wuj: „Nie zapłacę za tę szkołę.” → Wuj powiedział, że ____ za tę szkołę.
+74|З'єднай дієслова непрямої мови.|Połącz czasowniki mowy zależnej.
+75|Склади непряме питання.|Ułóż pytanie zależne.
+76|Послухай. Що Хагрід спік для Гаррі?|Posłuchaj. Co Hagrid upiekł dla Harry'ego?
+77|Перекажи! Повтори: He told me that I had been famous all my life. (Він сказав мені, що я був відомим усе життя.)|Przekaż! Powtórz: He told me that I had been famous all my life. (Powiedział mi, że byłem sławny przez całe życie.)
+78|The giant <b>broke down</b> the door. What did he do?|Велетень <b>вибив</b> двері. Що він зробив?
+79|Listen. What did Hagrid bring Harry?|Послухай. Що Хагрід приніс Гаррі?
+80|Hagrid: “You are a wizard.” → Hagrid said that Harry ____ a wizard.|Хагрід: «Ти чарівник». → Хагрід сказав, що Гаррі ____ чарівником.
+81|Harry asked ____ his parents were wizards.|Гаррі спитав, ____ його батьки були чарівниками.
+82|The uncle shouted ____ Harry wasn't going anywhere.|Дядько крикнув, ____ Гаррі нікуди не поїде.
+83|True or false? Harry always knew he was a wizard.|Правда чи неправда? Гаррі завжди знав, що він чарівник.
+84|Say it out loud: <i>“Hagrid said that I am a wizard.”</i>|Скажи вголос: <i>«Хагрід сказав, що я чарівник.»</i>
+85|The giant <b>broke down</b> the door. What did he do?|Olbrzym <b>wyważył</b> drzwi. Co zrobił?
+86|Listen. What did Hagrid bring Harry?|Posłuchaj. Co Hagrid przyniósł Harry'emu?
+87|Hagrid: “I brought a cake.” → Hagrid said that he ____ a cake.|Hagrid: „Przyniosłem tort.” → Hagrid powiedział, że ____ tort.
+88|Harry asked ____ his parents were wizards.|Harry zapytał, ____ jego rodzice byli czarodziejami.
+89|The uncle shouted ____ Harry wasn't going anywhere.|Wujek krzyknął, ____ Harry nigdzie nie pojedzie.
+90|True or false? Harry always knew he was a wizard.|Prawda czy fałsz? Harry zawsze wiedział, że jest czarodziejem.
+91|Say it out loud: <i>“Hagrid said that I am a wizard.”</i>|Powiedz na głos: <i>„Hagrid powiedział, że jestem czarodziejem.”</i>
+92|Чарівна вулиця, повна крамниць. Місце, де гроші зберігають у безпеці, — це…|Magiczna ulica pełna sklepów. Miejsce, gdzie pieniądze są bezpieczne, to…
+93|Список покупок: з'єднай.|Lista zakupów: połącz.
+94|У Гаррі ніколи не було ____ грошей, щоб купити те, що він хоче.|Harry nigdy nie miał ____ pieniędzy, żeby kupić to, czego chce.
+95|Мантії були ____ довгі, тож кравчиня їх укоротила.|Szaty były ____ długie, więc krawcowa je skróciła.
+96|Доповни: На вулиці було так ____ людей, що Гаррі на мить загубився.|Uzupełnij: Na ulicy było tak ____ ludzi, że Harry na chwilę się zgubił.
+97|Гаррі дізнався, що батьки нічого йому не залишили.|Harry dowiedział się, że rodzice nic mu nie zostawili.
+98|Розстав слова.|Ułóż słowa.
+99|Англійська для покупок. Повтори: Excuse me, how much is this? It's a bit too expensive for me. (Перепрошую, скільки це коштує? Для мене трохи задорого.)|Angielski na zakupy. Powtórz: Excuse me, how much is this? It's a bit too expensive for me. (Przepraszam, ile to kosztuje? To dla mnie trochę za drogie.)
+100|Does Harry have <b>too little</b> money? No! In the bank he has…|У Гаррі <b>замало</b> грошей? Ні! У банку в нього…
+101|Listen. How much does the wand cost?|Послухай. Скільки коштує паличка?
+102|There were a lot of ____ in the street.|На вулиці було багато ____.
+103|Harry bought three ____.|Гаррі купив три ____.
+104|Harry doesn't have a single ____. (owl)|У Гаррі немає жодної ____. (сова)
+105|True or false? Harry bought the owl himself.|Правда чи неправда? Гаррі сам купив сову.
+106|Say it out loud: <i>“How much is this cauldron?”</i>|Скажи вголос: <i>«Скільки коштує цей казанок?»</i>
+107|Does Harry have <b>too little</b> money? No! In the bank he has…|Harry ma <b>za mało</b> pieniędzy? Nie! W banku ma ich…
+108|Listen. How much does the wand cost?|Posłuchaj. Ile kosztuje różdżka?
+109|There were a lot of ____ in the street.|Na ulicy było dużo ____.
+110|Harry bought three ____.|Harry kupił trzy ____.
+111|Harry doesn't have a single ____. (owl)|Harry nie ma ani jednej ____. (sowa)
+112|True or false? Harry bought himself the owl.|Prawda czy fałsz? Harry sam kupił sobie sowę.
+113|Say it out loud: <i>“How much is this cauldron?”</i>|Powiedz na głos: <i>„Ile kosztuje ten kociołek?”</i>
+114|Це крамниця, ____ кожен юний чарівник купує паличку.|To sklep, ____ każdy młody czarodziej kupuje różdżkę.
+115|Паличка, ____ обрала Гаррі, має дуже особливе серце.|Różdżka, ____ wybrała Harry'ego, ma bardzo wyjątkowy rdzeń.
+116|Старий, ____ крамниця повна коробок, пам'ятає кожну продану паличку.|Starzec, ____ sklep jest pełen pudełek, pamięta każdą sprzedaną różdżkę.
+117|Доповни одним словом: Гаррі — хлопчик, ____ вижив.|Uzupełnij jednym słowem: Harry to chłopiec, ____ przeżył.
+118|З'єднай описи.|Połącz opisy.
+119|Склади одне речення з підрядним означальним.|Ułóż jedno zdanie ze zdaniem względnym.
+120|Перша паличка, яку спробував Гаррі, ідеально йому підійшла.|Pierwsza różdżka, którą wypróbował Harry, idealnie do niego pasowała.
+121|Опиши як профі. Повтори: It's the kind of place where you feel the magic in the air. (Це таке місце, де магію відчуваєш у повітрі.)|Opisz jak zawodowiec. Powtórz: It's the kind of place where you feel the magic in the air. (To miejsce, w którym czuć magię w powietrzu.)
+122|The wand <b>chooses</b> the wizard. What does it mean?|Паличка <b>обирає</b> чарівника. Що це означає?
+123|Listen. What is inside Harry's wand?|Послухай. Що всередині палички Гаррі?
+124|This is the seller ____ knows every wand.|Це продавець, ____ знає кожну паличку.
+125|This is the wand ____ chose Harry.|Це паличка, ____ обрала Гаррі.
+126|This box, ____ is lying on the shelf, is very old.|Ця коробка, ____ лежить на полиці, дуже стара.
+127|True or false? The first wand suited Harry right away.|Правда чи неправда? Перша паличка одразу підійшла Гаррі.
+128|Say it out loud: <i>“This is the wand that chose me.”</i>|Скажи вголос: <i>«Це паличка, яка обрала мене.»</i>
+129|The wand <b>chooses</b> the wizard. What does it mean?|Różdżka <b>wybiera</b> czarodzieja. Co to znaczy?
+130|Listen. What is inside Harry's wand?|Posłuchaj. Co jest w środku różdżki Harry'ego?
+131|This is the seller ____ knows every wand.|To sprzedawca, ____ zna każdą różdżkę.
+132|This is the wand ____ chose Harry.|To różdżka, ____ wybrała Harry'ego.
+133|This box, ____ is lying on the shelf, is very old.|To pudełko, ____ leży na półce, jest bardzo stare.
+134|True or false? The first wand suited Harry right away.|Prawda czy fałsz? Pierwsza różdżka od razu pasowała do Harry'ego.
+135|Say it out loud: <i>“This is the wand that chose me.”</i>|Powiedz na głos: <i>„To różdżka, która wybrała mnie.”</i>
+136|Між 9 і 10 немає платформи. Вона ____ бути справжньою!|Między 9 a 10 nie ma peronu. On ____ być prawdziwy!
+137|Ця родина штовхає візки із совами. Вони ____ їхати до тієї ж школи.|Ta rodzina pcha wózki z sowami. Oni ____ jechać do tej samej szkoły.
+138|Рон не впевнений щодо цукерок: «Ця ____ мати смак вушної сірки. Обережно!»|Ron nie jest pewien słodyczy: „Ta ____ smakować jak woskowina. Uważaj!”
+139|Доповни: Жінка з візком продає солодощі, тож вона ____ бути дуже популярною серед учнів. (сильне припущення)|Uzupełnij: Pani z wózkiem sprzedaje słodycze, więc ____ być bardzo popularna wśród uczniów. (mocne przypuszczenie)
+140|Слова про подорож.|Słownictwo podróżne.
+141|Послухай. Що питає Рон?|Posłuchaj. O co pyta Ron?
+142|Роби висновки вголос. Повтори: You must be joking! That can't be the right platform. (Ти, мабуть, жартуєш! Це не може бути правильна платформа.)|Wnioskuj na głos. Powtórz: You must be joking! That can't be the right platform. (Chyba żartujesz! To nie może być właściwy peron.)
+143|Platform 9 ¾ <b>isn't</b> on the board. Harry thinks that…|Перону 9 і ¾ <b>немає</b> на табло. Гаррі думає, що…
+144|Listen. How do you get onto the platform?|Послухай. Як потрапити на перон?
+145|The red-haired boys have trunks and an owl. They ____ be wizards!|Руді хлопці мають валізи й сову. Вони ____ бути чарівниками!
+146|Ron has a dirty nose. He ____ be tired because he's been travelling a long time.|У Рона брудний ніс. Він ____ бути втомлений, бо довго їде.
+147|This wall ____ be magic! (must, it)|Ця стіна ____ бути чарівною! (мусити, вона)
+148|True or false? Harry met Ron on the train.|Правда чи неправда? У потязі Гаррі познайомився з Роном.
+149|Say it out loud: <i>“This must be platform nine and three-quarters.”</i>|Скажи вголос: <i>«Це, мабуть, перон дев'ять і три чверті.»</i>
+150|Platform 9¾ <b>isn't</b> on the board. Harry thinks that…|Peronu 9¾ <b>nie ma</b> na tablicy. Harry myśli, że…
+151|Listen. How do you get onto the platform?|Posłuchaj. Jak dostać się na peron?
+152|The red-haired boys have suitcases and an owl. They are ____ wizards!|Rudzi chłopcy mają walizki i sowę. Są ____ czarodziejami!
+153|Ron has a dirty nose. He ____ be tired.|Ron ma brudny nos. ____ być zmęczony.
+154|This wall is ____ magic! (probably)|Ta ściana jest ____ magiczna! (chyba)
+155|True or false? Harry met Ron on the train.|Prawda czy fałsz? W pociągu Harry poznał Rona.
+156|Say it out loud: <i>“This must be platform nine and three-quarters.”</i>|Powiedz na głos: <i>„To chyba peron dziewięć i trzy czwarte.”</i>
+157|Прикметники для опису характеру.|Przymiotniki opisujące charakter.
+158|Якби я ____ Сортувальним капелюхом, я відправив би Гаррі в найсміливіший гуртожиток.|Gdybym ____ Tiarą Przydziału, wysłałbym Harry'ego do najodważniejszego domu.
+159|Якби Гаррі ____ першу ідею капелюха, він потрапив би в інший гуртожиток.|Gdyby Harry ____ pierwszego pomysłu tiary, trafiłby do innego domu.
+160|Доповни: Який гуртожиток ти обрав би, якби ____ (могти) обирати?|Uzupełnij: Który dom byś wybrał, gdybyś ____ (móc) wybierać?
+161|Склади умовне речення.|Ułóż zdanie warunkowe.
+162|Герміона сподівається потрапити в гуртожиток, який цінує сміливість.|Hermiona ma nadzieję trafić do domu, który ceni odwagę.
+163|Стеля схожа на нічне небо. Вона…|Sufit wygląda jak nocne niebo. Jest…
+164|Твоя черга. Повтори, а потім скажи про себе: If I were a student there, I would want to be brave. (Якби я там навчався, я хотів би бути сміливим.)|Twoja kolej. Powtórz, a potem powiedz o sobie: If I were a student there, I would want to be brave. (Gdybym tam był uczniem, chciałbym być odważny.)
+165|The candles hang under the <b>ceiling</b>. Where is that?|Свічки висять під <b>стелею</b>. Де це?
+166|Listen. Where does the hat send Harry?|Послухай. Куди капелюх відправляє Гаррі?
+167|If I were in Slytherin, ____ sad.|Якби я був у Слизерині, я ____ сумний.
+168|If Ron ____ brave, he would go to Gryffindor.|Якби Рон ____ сміливий, він пішов би в Гріфіндор.
+169|If you could, ____ (go) home? (you)|Якби ти міг, ти ____ (поїхати) додому?
+170|True or false? The hat knew right away where to send Harry.|Правда чи неправда? Капелюх одразу знав, куди відправити Гаррі.
+171|Say it out loud: <i>“If I could choose, I would choose Gryffindor.”</i>|Скажи вголос: <i>«Якби я міг обрати, я обрав би Гріфіндор.»</i>
+172|The candles hang under the <b>ceiling</b>. Where is that?|Świece wiszą pod <b>sufitem</b>. Gdzie to jest?
+173|Listen. Where does the hat send Harry?|Posłuchaj. Gdzie tiara wysyła Harry'ego?
+174|If I were in Slytherin, I ____ sad.|Gdybym był w Slytherinie, ____ smutny.
+175|If Ron ____ brave, he would go to Gryffindor.|Gdyby Ron ____ odważny, poszedłby do Gryffindoru.
+176|If you could, ____ you go home?|Gdybyś mógł, ____ pojechał do domu?
+177|True or false? The hat knew right away where to send Harry.|Prawda czy fałsz? Tiara od razu wiedziała, gdzie wysłać Harry'ego.
+178|Say it out loud: <i>“If I could choose, I would choose Gryffindor.”</i>|Powiedz na głos: <i>„Gdybym mógł wybrać, wybrałbym Gryffindor.”</i>
+179|Учитель, який дуже суворий і неприязний, — …|Nauczyciel, który jest bardzo surowy i nieprzyjazny, jest…
+180|Фразові дієслова з уроку.|Czasowniki frazowe z lekcji.
+181|Не хвилюйся, просто ____ зі своїм зіллям. У тебе все добре виходить.|Nie martw się, po prostu ____ ze swoim eliksirem. Dobrze ci idzie.
+182|Якщо не знаєш відповіді, ____ її ____ в книжці.|Jeśli nie znasz odpowiedzi, ____ ją ____ w książce.
+183|Інструкції: розстав слова.|Instrukcje: ułóż słowa.
+184|Доповни: Чому вчитель завжди чіпляється ____ Гаррі?|Uzupełnij: Dlaczego nauczyciel zawsze czepia się ____ Harry'ego?
+185|Гаррі знав усі відповіді на першому уроці зілля.|Harry znał wszystkie odpowiedzi na pierwszej lekcji eliksirów.
+186|Дай інструкцію. Повтори: First, read the instructions carefully. Then, add the ingredients one by one. (Спочатку уважно прочитай інструкцію. Потім додавай інгредієнти по одному.)|Wydaj polecenie. Powtórz: First, read the instructions carefully. Then, add the ingredients one by one. (Najpierw uważnie przeczytaj instrukcję. Potem dodawaj składniki po kolei.)
+187|The teacher is very <b>strict</b>. What is he like?|Учитель дуже <b>суворий</b>. Який він?
+188|Listen. What do you have to do first?|Послухай. Що треба зробити спочатку?
+189|____ the potion slowly! (to stir, you)|____ зілля повільно! (мішати, ти)
+190|Don't ____ this cauldron! (to touch, you)|Не ____ цього казанка! (чіпати, ти)
+191|____ this ingredient to the cauldron! (to add, you)|____ цей інгредієнт у казанок! (додати, ти)
+192|True or false? Snape likes Harry from the first lesson.|Правда чи неправда? Снейп любить Гаррі з першого уроку.
+193|Say it out loud: <i>“Stir slowly and don't touch anything!”</i>|Скажи вголос: <i>«Мішай повільно і нічого не чіпай!»</i>
+194|The teacher is very <b>strict</b>. What is he like?|Nauczyciel jest bardzo <b>surowy</b>. Jaki jest?
+195|Listen. What do you have to do first?|Posłuchaj. Co trzeba zrobić najpierw?
+196|____ the potion slowly! (to stir, you)|____ eliksir powoli! (mieszać, ty)
+197|Don't ____ this cauldron! (to touch, you)|Nie ____ tego kociołka! (dotykać, ty)
+198|____ this ingredient to the cauldron! (to add, you)|____ ten składnik do kociołka! (dodać, ty)
+199|True or false? Snape likes Harry from the first lesson.|Prawda czy fałsz? Snape lubi Harry'ego od pierwszej lekcji.
+200|Say it out loud: <i>“Stir slowly and don't touch anything!”</i>|Powiedz na głos: <i>„Mieszaj powoli i niczego nie dotykaj!”</i>
+201|Учням ____ літати, поки вчителька відсутня. Це проти правил!|Uczniowie ____ latać, kiedy nauczycielki nie ma. To wbrew zasadom!
+202|Тобі ____ бути експертом у перший день. Просто старайся.|Nie ____ być ekspertem pierwszego dnia. Po prostu się staraj.
+203|Учора Невілу ____ піти в лікарняне крило після падіння.|Wczoraj Neville ____ iść do skrzydła szpitalnego po upadku.
+204|Доповни: Кожен ____ тримати мітлу правою рукою. (обов'язок, теперішній час)|Uzupełnij: Każdy ____ trzymać miotłę prawą ręką. (obowiązek, czas teraźniejszy)
+205|Слова про політ.|Słowa o lataniu.
+206|Гаррі впіймав скляну кульку після довгого піке, і вчителька це побачила.|Harry złapał szklaną kulę po długim nurkowaniu, a nauczycielka to zobaczyła.
+207|Розстав правило.|Ułóż zasadę.
+208|Розкажи про правила у своєму житті. Повтори: At my school we had to wear a uniform, but we didn't have to stand up. (У моїй школі ми мусили носити форму, але не мусили вставати.)|Opowiedz o zasadach w swoim życiu. Powtórz: At my school we had to wear a uniform, but we didn't have to stand up. (W mojej szkole musieliśmy nosić mundurek, ale nie musieliśmy wstawać.)
+209|Neville <b>fell</b> off the broom. What happened?|Невіл <b>впав</b> з мітли. Що сталося?
+210|Listen. What is not allowed?|Послухай. Чого не можна робити?
+211|Harry ____ give the remembrall back to Neville. (has to)|Гаррі ____ повернути нагадайко Невілу. (мусить)
+212|At school you are ____ allowed to walk the corridors at night.|У школі ____ можна ходити коридорами вночі.
+213|You ____ be afraid, it's easy! (don't have to, you)|Ти не ____ боятися, це легко! (не мусиш)
+214|True or false? Harry was expelled from school for flying.|Правда чи неправда? Гаррі вигнали зі школи за політ.
+215|Say it out loud: <i>“Flying without a teacher is not allowed.”</i>|Скажи вголос: <i>«Не можна літати без учителя.»</i>
+216|Neville <b>fell</b> off the broom. What happened?|Neville <b>spadł</b> z miotły. Co się stało?
+217|Listen. What is not allowed?|Posłuchaj. Czego nie wolno robić?
+218|Harry ____ give the remembrall back to Neville. (has to)|Harry ____ oddać przypominajkę Neville'owi. (musi)
+219|At school you are ____ allowed to walk the corridors at night.|W szkole ____ wolno chodzić nocą po korytarzach.
+220|You ____ be afraid, it's easy! (don't have to)|Nie ____ się bać, to łatwe! (nie musisz)
+221|True or false? Harry was expelled from school for flying.|Prawda czy fałsz? Harry został wyrzucony ze szkoły za latanie.
+222|Say it out loud: <i>“Flying without a teacher is not allowed.”</i>|Powiedz na głos: <i>„Nie wolno latać bez nauczyciela.”</i>
+223|Коли хлопці прийшли, троль ____ вже ____ у вбиральню.|Kiedy chłopcy przyszli, troll ____ już ____ do łazienki.
+224|Герміона плакала, бо Рон ____ щось неприємне раніше того дня.|Hermiona płakała, bo Ron ____ coś niemiłego wcześniej tego dnia.
+225|Доповни: Коли прийшли вчителі, хлопці ____ вже перемогли троля. (have)|Uzupełnij: Kiedy przyszli nauczyciele, chłopcy ____ już pokonali trolla. (have)
+226|Слова про Гелловін.|Słownictwo na Halloween.
+227|Розстав речення.|Ułóż zdanie.
+228|Після тієї ночі Герміона стала подругою Гаррі й Рона.|Po tej nocy Hermiona zaprzyjaźniła się z Harrym i Ronem.
+229|Драматична розповідь. Повтори: I had never seen anything so big in my whole life! (Я ніколи в житті не бачив нічого такого величезного!)|Dramatyczna opowieść. Powtórz: I had never seen anything so big in my whole life! (Nigdy w życiu nie widziałem czegoś tak wielkiego!)
+230|Hermione <b>is afraid</b> of the troll. What does she feel?|Герміона <b>боїться</b> троля. Що вона відчуває?
+231|Listen. What is the professor shouting?|Послухай. Що кричить професор?
+232|The troll ____ the bathroom. (went in)|Троль ____ у вбиральню. (увійшов)
+233|Harry and Ron quickly ____ the hall. (went out)|Гаррі й Рон швидко ____ із зали. (вийшли)
+234|Did the troll ____ of the bathroom? No, it fell! (to go out, it)|Троль ____ з вбиральні? Ні, він упав! (вийти, він)
+235|True or false? After that night Hermione became the boys' friend.|Правда чи неправда? Після тієї ночі Герміона стала подругою хлопців.
+236|Say it out loud: <i>“The troll went into the bathroom!”</i>|Скажи вголос: <i>«Троль увійшов у вбиральню!»</i>
+237|Hermione <b>is afraid</b> of the troll. What does she feel?|Hermiona <b>boi się</b> trolla. Co czuje?
+238|Listen. What is the professor shouting?|Posłuchaj. Co krzyczy profesor?
+239|The troll ____ the bathroom. (went in)|Troll ____ do łazienki. (wszedł)
+240|Harry and Ron quickly ____ the hall. (went out)|Harry i Ron szybko ____ z sali. (wyszli)
+241|Did the troll ____ of the bathroom? No, it fell! (to go out, it)|Troll ____ z łazienki? Nie, upadł! (wyjść, on)
+242|True or false? After that night Hermione became the boys' friend.|Prawda czy fałsz? Po tej nocy Hermiona została przyjaciółką chłopców.
+243|Say it out loud: <i>“The troll went into the bathroom!”</i>|Powiedz na głos: <i>„Troll wszedł do łazienki!”</i>
+244|Гаррі — ____ ловець, якого команда мала за століття.|Harry to ____ szukający, jakiego drużyna miała od stulecia.
+245|Золотий м'ячик рухається ____, ніж будь-який інший м'яч.|Złota piłka porusza się ____ niż każda inna piłka.
+246|Під час матчу його мітла почала ____ трястися.|Podczas meczu jego miotła zaczęła się ____ trząść.
+247|Доповни: Це був ____ (захопливий) матч сезону.|Uzupełnij: To był ____ (ekscytujący) mecz sezonu.
+248|Спортивні слова.|Słownictwo sportowe.
+249|Гаррі впіймав золотий м'ячик руками.|Harry złapał złotą piłkę rękami.
+250|Коментуй! Повтори: He's flying faster and faster — what an incredible catch! (Він летить усе швидше — неймовірний перехват!)|Komentuj! Powtórz: He's flying faster and faster — what an incredible catch! (Leci coraz szybciej — co za niesamowity chwyt!)
+251|Harry <b>caught</b> the snitch. What did he do?|Гаррі <b>спіймав</b> снич. Що він зробив?
+252|Listen. Who won the match?|Послухай. Хто виграв матч?
+253|The Nimbus is ____ than the old broom.|Німбус ____, ніж стара мітла.
+254|Harry is the ____ Seeker in the school's history. (the youngest)|Гаррі — ____ ловець в історії школи. (наймолодший)
+255|The broom flew ____ and ____. (higher)|Мітла летіла все ____. (вище)
+256|True or false? Harry's broom behaved normally during the match.|Правда чи неправда? Мітла Гаррі під час матчу поводилася нормально.
+257|Say it out loud: <i>“Gryffindor wins! It's the best match!”</i>|Скажи вголос: <i>«Гріфіндор перемагає! Це найкращий матч!»</i>
+258|Harry <b>caught</b> the snitch. What did he do?|Harry <b>złapał</b> znicz. Co zrobił?
+259|Listen. Who won the match?|Posłuchaj. Kto wygrał mecz?
+260|The Nimbus is ____ than the old broom.|Nimbus jest ____ niż stara miotła.
+261|Harry is the ____ Seeker in the school's history. (the youngest)|Harry to ____ szukający w historii szkoły. (najmłodszy)
+262|The broom flew ever ____. (higher)|Miotła leciała coraz ____. (wyżej)
+263|True or false? Harry's broom behaved normally during the match.|Prawda czy fałsz? Miotła Harry'ego zachowywała się w meczu normalnie.
+264|Say it out loud: <i>“Gryffindor wins! It's the best match!”</i>|Powiedz na głos: <i>„Gryffindor wygrywa! To najlepszy mecz!”</i>
+265|Гаррі хотів би, щоб він ____ своїх батьків.|Harry chciałby ____ swoich rodziców.
+266|Рон хотів би ____ успішнішим за своїх братів.|Ron chciałby ____ bardziej utalentowany niż jego bracia.
+267|Якби ж я ____ того дзеркала! Тепер не можу перестати про нього думати. (жаль про минуле)|Gdybym tylko ____ tego lustra! Teraz nie mogę przestać o nim myśleć. (żal o przeszłość)
+268|Доповни: Хотів би я, щоб Різдво ____ (бути) щодня.|Uzupełnij: Chciałbym, żeby Boże Narodzenie ____ (być) codziennie.
+269|Почуття.|Uczucia.
+270|Директор радить Гаррі приходити до дзеркала щоночі.|Dyrektor radzi Harry'emu przychodzić do lustra co noc.
+271|Розстав пораду директора (нашими словами).|Ułóż radę dyrektora (naszymi słowami).
+272|Загадай бажання. Повтори, а потім придумай своє: I wish I could speak English as fluently as a native speaker. (Хотів би я говорити англійською так само вільно, як носій мови.)|Pomyśl życzenie. Powtórz, a potem wymyśl własne: I wish I could speak English as fluently as a native speaker. (Chciałbym mówić po angielsku tak płynnie jak native speaker.)
+273|Harry <b>misses</b> his parents. What does he feel?|Гаррі <b>сумує</b> за батьками. Що він відчуває?
+274|Listen. What does the mirror show?|Послухай. Що показує дзеркало?
+275|____ to see mum and dad again. (I would like)|Я ____ знову побачити маму й тата. (хотів би)
+276|Ron dreams ____ he were the team captain.|Рон мріє, ____ бути капітаном команди.
+277|Ron ____ to win the cup. (to want, he, conditional)|Рон ____ би здобути кубок. (хотіти, він)
+278|True or false? Dumbledore advises Harry to look into the mirror every day.|Правда чи неправда? Дамблдор радить Гаррі щодня дивитися в дзеркало.
+279|Say it out loud: <i>“I would like to see my parents again.”</i>|Скажи вголос: <i>«Я хотів би знову побачити батьків.»</i>
+280|Harry <b>misses</b> his parents. What does he feel?|Harry <b>tęskni</b> za rodzicami. Co czuje?
+281|Listen. What does the mirror show?|Posłuchaj. Co pokazuje lustro?
+282|I ____ to see mum and dad again. (would like)|____ znowu zobaczyć mamę i tatę. (chciałbym)
+283|Ron dreams ____ becoming the team captain.|Ron marzy, ____ zostać kapitanem drużyny.
+284|Ron ____ like to win the cup. (to want, he)|Ron ____, żeby zdobyć puchar. (chcieć, on)
+285|True or false? Dumbledore advises Harry to look into the mirror every day.|Prawda czy fałsz? Dumbledore radzi Harry'emu codziennie patrzeć w lustro.
+286|Say it out loud: <i>“I would like to see my parents again.”</i>|Powiedz na głos: <i>„Chciałbym znowu zobaczyć rodziców.”</i>
+287|Якби вони не ____ після півночі, їх би не покарали.|Gdyby nie ____ po północy, nie dostaliby kary.
+288|Якби кентавр не прибув, сталося б ____ щось жахливе.|Gdyby centaur nie przybył, ____ się coś strasznego.
+289|Доповни: Якби Гаррі залишився в ліжку, він ____ побачив би постать у каптурі.|Uzupełnij: Gdyby Harry został w łóżku, ____ zobaczyłby postaci w kapturze.
+290|Слова про ліс.|Słownictwo leśne.
+291|Склади умовне речення третього типу.|Ułóż trzeci tryb warunkowy.
+292|Хлопці опинилися в лісі за покарання.|Chłopcy byli w lesie za karę.
+293|Жаль і полегшення. Повтори: If you hadn't come, we would have been in serious trouble. (Якби ти не прийшов, у нас були б серйозні проблеми.)|Żal i ulga. Powtórz: If you hadn't come, we would have been in serious trouble. (Gdybyś nie przyszedł, mielibyśmy poważne kłopoty.)
+294|It's very <b>dark</b> in the forest. What is it like?|У лісі дуже <b>темно</b>. Як там?
+295|Listen. Who saved Harry?|Послухай. Хто врятував Гаррі?
+296|If it weren't for the centaur, Harry ____ have died.|Якби не кентавр, Гаррі ____ загинути.
+297|If the boys hadn't broken the rules, they wouldn't ____ a punishment.|Якби хлопці не порушили правил, вони не ____ покарання.
+298|If I had been there, I ____ have been scared. (would)|Якби я там був, я ____ боявся. (б)
+299|True or false? Someone in the forest was drinking unicorn blood.|Правда чи неправда? У лісі хтось пив кров єдинорога.
+300|Say it out loud: <i>“If it weren't for the centaur, I would have got lost in the forest.”</i>|Скажи вголос: <i>«Якби не кентавр, я заблукав би в лісі.»</i>
+301|It's very <b>dark</b> in the forest. What is it like?|W lesie jest bardzo <b>ciemno</b>. Jak tam jest?
+302|Listen. Who saved Harry?|Posłuchaj. Kto uratował Harry'ego?
+303|If it weren't for the centaur, Harry ____ have died.|Gdyby nie centaur, Harry ____ zginąć.
+304|If the boys hadn't broken the rules, they wouldn't ____ a punishment.|Gdyby chłopcy nie złamali zasad, nie ____ kary.
+305|If I had been there, I ____ have been scared.|Gdybym tam był, ____ się bał.
+306|True or false? Someone in the forest was drinking unicorn blood.|Prawda czy fałsz? W lesie ktoś pił krew jednorożca.
+307|Say it out loud: <i>“If it weren't for the centaur, I would have got lost in the forest.”</i>|Powiedz na głos: <i>„Gdyby nie centaur, zgubiłbym się w lesie.”</i>
+308|Рон грає в шахи з дитинства, але він ____ такої партії раніше.|Ron gra w szachy od dziecka, ale ____ wcześniej takiej partii.
+309|Минулої ночі троє друзів ____ крізь люк.|Zeszłej nocy trójka przyjaciół ____ przez klapę.
+310|Герміона: «Я ____ загадку! Це найменша пляшечка».|Hermiona: „____ zagadkę! To najmniejsza buteleczka.”
+311|Доповни: Ти колись ____ у шахи? (play)|Uzupełnij: Czy kiedykolwiek ____ w szachy? (play)
+312|Слова випробувань.|Słownictwo prób.
+313|Рон дозволяє збити себе в шаховій партії, щоб Гаррі міг іти далі.|Ron pozwala się zbić w partii szachów, żeby Harry mógł iść dalej.
+314|Твій досвід. Повтори, а потім скажи правду про себе: I've been to London, but I've never seen a real castle. (Я був у Лондоні, але ніколи не бачив справжнього замку.)|Twoje doświadczenie. Powtórz, a potem powiedz prawdę o sobie: I've been to London, but I've never seen a real castle. (Byłem w Londynie, ale nigdy nie widziałem prawdziwego zamku.)
+315|Ron <b>sacrifices himself</b> in the chess game. What is he doing?|Рон <b>жертвує собою</b> в шахах. Що він робить?
+316|Listen. Who will go on?|Послухай. Хто піде далі?
+317|Tomorrow Harry ____ the stone. (once, result)|Завтра Гаррі ____ камінь. (один раз, результат)
+318|During the holidays Hermione ____ every day. (repeated)|На канікулах Герміона ____ щодня. (повторювано)
+319|You ____ on, Harry! (to go, you)|Ти ____ далі, Гаррі! (піти, ти)
+320|True or false? Hermione solved the potion riddle.|Правда чи неправда? Герміона розв'язала загадку із зіллям.
+321|Say it out loud: <i>“I'll go back and bring help!”</i>|Скажи вголос: <i>«Я повернуся і приведу допомогу!»</i>
+322|Ron <b>sacrifices himself</b> in the chess game. What is he doing?|Ron <b>poświęca się</b> w szachach. Co robi?
+323|Listen. Who will go on?|Posłuchaj. Kto pójdzie dalej?
+324|Tomorrow Harry ____ the stone. (result)|Jutro Harry ____ kamień. (rezultat)
+325|During the holidays Hermione ____ every day. (repeatedly)|W wakacje Hermiona ____ codziennie. (czynność powtarzana)
+326|You ____ on, Harry! (to go, you)|Ty ____ dalej, Harry! (pójść, ty)
+327|True or false? Hermione solved the potion riddle.|Prawda czy fałsz? Hermiona rozwiązała zagadkę z eliksirami.
+328|Say it out loud: <i>“I'll go back and bring help!”</i>|Powiedz na głos: <i>„Wrócę i sprowadzę pomoc!”</i>
+329|Гаррі подивився в дзеркало і раптом відчув, що камінь ____ йому в кишеню.|Harry spojrzał w lustro i nagle poczuł, że kamień ____ mu do kieszeni.
+330|Поки вчитель ____, Гаррі думав про маму.|Kiedy nauczyciel ____, Harry myślał o mamie.
+331|Повторення: з'єднай граматику з прикладом.|Powtórka: połącz gramatykę z przykładem.
+332|Який гуртожиток здобуває кубок наприкінці?|Który dom zdobywa puchar na końcu?
+333|Гаррі повертається на літо до тітки й дядька.|Harry wraca na lato do ciotki i wuja.
+334|Фінальне говоріння. Повтори: This story taught me that friendship and courage matter more than anything. (Ця історія навчила мене, що дружба і сміливість важливіші за все.)|Mówienie na koniec. Powtórz: This story taught me that friendship and courage matter more than anything. (Ta historia nauczyła mnie, że przyjaźń i odwaga są ważniejsze niż wszystko.)
+335|ФІНАЛЬНИЙ ПРОЄКТ: Опиши свою улюблену сцену з фільму (100–150 слів). Використай щонайменше: 2 форми Past Perfect, 1 умовне речення, 1 пасив і 5 слів з марафону.|PROJEKT KOŃCOWY: Opisz swoją ulubioną scenę z filmu (100–150 słów). Użyj co najmniej: 2 form Past Perfect, 1 zdania warunkowego, 1 strony biernej i 5 słów z maratonu.
+336|Suddenly the stone was in Harry's <b>pocket</b>. Where?|Камінь раптом був у <b>кишені</b> Гаррі. Де?
+337|Listen. Who won the House Cup?|Послухай. Хто здобув Кубок гуртожитків?
+338|Harry ____ into the mirror and saw himself with the stone.|Гаррі ____ у дзеркало і побачив себе з каменем.
+339|Next year Harry ____ to Hogwarts.|Наступного року Гаррі ____ до Гоґвортсу.
+340|Tell it: “This year I ____ many adventures.” (to have, I)|Розкажи: «Цього року я ____ багато пригод». (мати, я)
+341|True or false? In the end the stone was destroyed.|Правда чи неправда? Наприкінці камінь було знищено.
+342|Say it out loud: <i>“This year I had many adventures, but I'll come back!”</i>|Скажи вголос: <i>«Цього року я мав багато пригод, але я повернуся!»</i>
+343|Suddenly the stone was in Harry's <b>pocket</b>. Where?|Kamień nagle znalazł się w <b>kieszeni</b> Harry'ego. Gdzie?
+344|Listen. Who won the House Cup?|Posłuchaj. Kto zdobył Puchar Domów?
+345|Harry ____ into the mirror and saw himself with the stone.|Harry ____ w lustro i zobaczył siebie z kamieniem.
+346|Next year Harry ____ to Hogwarts.|W przyszłym roku Harry ____ do Hogwartu.
+347|Tell it: “This year I ____ many adventures.” (to have, I)|Opowiedz: „W tym roku ____ wiele przygód.” (mieć, ja)
+348|True or false? In the end the stone was destroyed.|Prawda czy fałsz? Na końcu kamień został zniszczony.
+349|Say it out loud: <i>“This year I had many adventures, but I'll come back!”</i>|Powiedz na głos: <i>„W tym roku miałem wiele przygód, ale wrócę!”</i>

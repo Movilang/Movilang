@@ -10,7 +10,22 @@ function toast(msg, type) { type = type || 'ok'; var t = document.createElement(
 function uid() { return 'id' + Math.random().toString(36).slice(2, 10) + Date.now().toString(36); }
 function fmtDate(d) { if (!d) return '—'; try { return new Date(d).toLocaleDateString(SPEECH[LANG], {day:'2-digit',month:'2-digit',year:'numeric'}); } catch (e) { return d; } }
 function genCode() { var a = 'ABCDEFGHJKLMNPQRSTUVWXYZ23456789', s = ''; for (var i = 0; i < 12; i++) { s += a[Math.floor(Math.random() * a.length)]; if (i === 3 || i === 7) s += '-'; } return s; }
-function say(txt) { try { var u = new SpeechSynthesisUtterance(txt); u.lang = SPEECH[TARGET]; u.rate = .9; speechSynthesis.cancel(); speechSynthesis.speak(u); } catch (e) { toast(t('Озвучення недоступне в цьому браузері'), 'err'); } }
+var VOICE_CACHE = {};
+function bestVoice(lang) {
+  if (VOICE_CACHE[lang]) return VOICE_CACHE[lang];
+  var vs = (window.speechSynthesis && speechSynthesis.getVoices()) || [], pre = lang.slice(0, 2).toLowerCase();
+  var c = vs.filter(function (v) { return (v.lang || '').replace('_', '-').toLowerCase().indexOf(pre) === 0; });
+  if (!c.length) return null;
+  function sc(v) { var n = v.name || '', s = 0; if (/natural|neural/i.test(n)) s += 10; if (/online/i.test(n)) s += 6; if (/premium|enhanced|siri/i.test(n)) s += 6; if (/google/i.test(n)) s += 4; if ((v.lang || '').replace('_', '-').toLowerCase() === lang.toLowerCase()) s += 2; if (/compact|espeak/i.test(n)) s -= 8; return s; }
+  c.sort(function (a, b) { return sc(b) - sc(a); });
+  return (VOICE_CACHE[lang] = c[0]);
+}
+try { speechSynthesis.onvoiceschanged = function () { VOICE_CACHE = {}; }; } catch (e) {}
+function say(txt, lang) { try { lang = lang || SPEECH[TARGET]; var u = new SpeechSynthesisUtterance(String(txt).replace(/_{2,}/g, '…')); u.lang = lang; var v = bestVoice(lang); if (v) u.voice = v; u.rate = v && /natural|neural|online|premium|enhanced/i.test(v.name) ? 1 : .92; u.pitch = 1; speechSynthesis.cancel(); speechSynthesis.speak(u); } catch (e) { toast(t('Озвучення недоступне в цьому браузері'), 'err'); } }
+var TT_L = {
+  uk:{intro:'СТАРТ', match:'ПАРИ', order:'ПОРЯДОК СЛІВ', type:'ВПИШИ', tf:'ПРАВДА / НІ', vocabulary:'СЛОВНИК', listening:'АУДІЮВАННЯ', subtitles:'СУБТИТРИ', grammar:'ГРАМАТИКА', speaking:'ГОВОРІННЯ', quiz:'МІНІ-КВІЗ', final:'ФІНАЛ'},
+  pl:{intro:'START', match:'PARY', order:'SZYK ZDANIA', type:'WPISZ', tf:'PRAWDA / FAŁSZ', vocabulary:'SŁOWNICTWO', listening:'SŁUCHANIE', subtitles:'NAPISY', grammar:'GRAMATYKA', speaking:'MÓWIENIE', quiz:'MINI QUIZ', final:'FINAŁ'}};
+function ttName(k) { return (TT_L[LANG] && TT_L[LANG][k]) || TASK_TYPES[k] || k; }
 var TASK_TYPES = { intro:'START', match:'MATCH', order:'WORD ORDER', type:'TYPE IT', tf:'TRUE / FALSE', vocabulary:'VOCABULARY', listening:'LISTENING', subtitles:'SUBTITLES', grammar:'GRAMMAR', speaking:'SPEAKING', quiz:'MINI QUIZ', final:'FINAL' };
 var POSTER_CLASSES = ['p1','p2','p3','p4','p5','p6','p7','p8'];
 
@@ -560,7 +575,7 @@ function viewCourse(id) {
         var inner = '<li class="' + (isDone ? 'done' : '') + '"><span class="lnum">' + (isDone ? '✓ ' : '') + String(l.num).padStart(2, '0') + '</span><span class="ltitle">' + esc(tr(l, 'title')) + '<small>' + esc(lGram(l)) + (i === 0 && !enrolled ? t(' · безкоштовно') : '') + (!avail ? ' · ' + t('Скоро цією мовою') + ' ' + FLAG[TARGET] : '') + '</small></span>' + (open ? (isDone ? '<b class="score">' + esc(scoreTxt(isDone)) + '</b>' : '<span class="lock" style="color:var(--neon)">▶</span>') : '<span class="lock">🔒</span>') + '</li>';
         return open ? '<a class="lesson-link" href="#/lesson/' + esc(l.id) + '">' + inner + '</a>' : inner;
       }).join('') + '</ul>' : t('<div class="empty" style="margin-top:20px">Уроки цього марафону скоро з\'являться.</div>')) +
-      t('</div><div class="panel"><h3 style="margin-bottom:18px">Типи завдань у курсі</h3><div class="task-types">') + Object.keys(types).map(function (t) { return '<div class="ttype"><span class="k q">' + esc(t.slice(0, 2).toUpperCase()) + '</span><div><b>' + esc(TASK_TYPES[t] || t) + '</b></div></div>'; }).join('') + '</div></div></div></div>';
+      t('</div><div class="panel"><h3 style="margin-bottom:18px">Типи завдань у курсі</h3><div class="task-types">') + Object.keys(types).map(function (t) { return '<div class="ttype"><span class="k q">' + esc(t.slice(0, 2).toUpperCase()) + '</span><div><b>' + esc(ttName(t)) + '</b></div></div>'; }).join('') + '</div></div></div></div>';
     var af = document.getElementById('admFill');
     if (af) { var avIds = ls.filter(function (x) { return !!lessonTasks(x); }).map(function (x) { return x.id; });
       var pick = function () { var s = document.getElementById('admLes').value; return s ? [s] : avIds; };
@@ -608,15 +623,17 @@ function runPlayer(container, lesson, onFinish) {
   var scored = tasks.filter(function (x) { return x.type !== 'intro'; }).length;
   container.innerHTML = '<div class="trial"><div class="tcard" id="tcard" aria-live="polite"></div><div class="tside" id="tside"></div></div>';
   var card = container.querySelector('#tcard'), side = container.querySelector('#tside');
-  function renderSide() { side.innerHTML = tasks.map(function (tk, i) { var c = i === cur ? 'on' : ''; if (res[i] === true) c += ' ok'; if (res[i] === false) c += ' bad'; return '<button type="button" class="tstep ' + c + (i <= maxReached && i !== cur ? ' nav' : '') + '" data-go="' + i + '"' + (i > maxReached ? ' disabled' : '') + '><i>' + (tk.type === 'intro' ? '▶' : i + (tasks[0] && tasks[0].type === 'intro' ? 0 : 1)) + '</i>' + esc(TASK_TYPES[tk.type] || tk.type) + (res[i] != null ? '' : '') + '</button>'; }).join('');
+  function renderSide() { side.innerHTML = tasks.map(function (tk, i) { var c = i === cur ? 'on' : ''; if (res[i] === true) c += ' ok'; if (res[i] === false) c += ' bad'; return '<button type="button" class="tstep ' + c + (i <= maxReached && i !== cur ? ' nav' : '') + '" data-go="' + i + '"' + (i > maxReached ? ' disabled' : '') + '><i>' + (tk.type === 'intro' ? '▶' : i + (tasks[0] && tasks[0].type === 'intro' ? 0 : 1)) + '</i>' + esc(ttName(tk.type)) + (res[i] != null ? '' : '') + '</button>'; }).join('');
     side.querySelectorAll('[data-go]').forEach(function (b) { b.onclick = function () { var i = +b.dataset.go; if (i <= maxReached && i !== cur) { cur = i; render(); } }; }); }
+  function plainQ(s) { return String(s || '').replace(/<[^>]+>/g, '').replace(/_{2,}/g, '…'); }
   function qHtml(tk) { return esc(lf(tk, 'q')).replace(/&lt;(\/?)(b|i)&gt;/g, '<$1$2>').replace(/_{3,}/g, '<span class="gap">____</span>'); }
   function head(tk) {
     var n = tasks[0] && tasks[0].type === 'intro' ? cur : cur + 1;
-    return '<div class="ttop"><span class="ttag">' + esc(TASK_TYPES[tk.type] || tk.type) + '</span>' + (tk.type === 'intro' ? '' : '<span class="tcount">' + n + ' / ' + scored + '</span>') + '</div>' +
+    return '<div class="ttop"><span class="ttag">' + esc(ttName(tk.type)) + '</span>' + (tk.type === 'intro' ? '' : '<span class="tcount">' + n + ' / ' + scored + '</span>') + '</div>' +
       (tk.img ? '<div class="illu">' + illu(tk.img) + '</div>' : '') +
       (TASK_INS[tk.type] ? '<div class="tins">' + t(TASK_INS[tk.type]) + '</div>' : '') +
-      (tk.scene ? '<div class="tscene"><b>' + t('Сцена:') + '</b> ' + esc(lf(tk, 'scene')) + '</div>' : '') + '<div class="tq">' + (tk.type === 'intro' ? esc(lf(tk, 'q')) : qHtml(tk)) + '</div>' +
+      (tk.scene ? '<div class="tscene"><b>' + t('Сцена:') + '</b> ' + esc(lf(tk, 'scene')) + '</div>' : '') + '<div class="tq">' + (tk.type === 'intro' ? esc(lf(tk, 'q')) : qHtml(tk)) + (tk.type !== 'intro' && !tk['q_' + LANG] ? ' <button type="button" class="spk" data-say="' + esc(plainQ(tk.q)) + '" title="' + tx({uk:'Прослухати', pl:'Odsłuchaj', en:'Listen'}) + '">🔊</button>' : '') + '</div>' +
+      (tk.type !== 'intro' && !tk['q_' + LANG] && tk['qt_' + LANG] ? '<div class="qtrw"><button type="button" class="qtrb" id="qtrBtn">🌐 ' + tx({uk:'Перекласти питання', pl:'Przetłumacz pytanie', en:'Translate the question'}) + '</button><div class="qtrt" id="qtrText" hidden>' + esc(tk['qt_' + LANG]).replace(/&lt;(\/?)(b|i)&gt;/g, '<$1$2>').replace(/_{3,}/g, '<span class="gap">____</span>') + '</div></div>' : '') +
       (tk.say ? '<div><button class="speak" type="button" id="tsay"><span class="play"></span>' + t('Прослухати') + '</button></div>' : '');
   }
   function foot() { return '<div class="tfb" id="tfb"></div><div class="tnav"><span class="hint">' + t('Завдання') + ': ' + FLAG[TARGET] + ' · ' + t('Підказки') + ': ' + FLAG[LANG] + '</span><button class="btn btn-red" type="button" id="tnext" hidden>' + t('Далі') + '</button></div>'; }
@@ -634,9 +651,9 @@ function runPlayer(container, lesson, onFinish) {
     else if (type === 'order') h += '<div class="oline" id="oline"><span class="hint">' + t('Натискай слова в правильному порядку…') + '</span></div><div class="ochips" id="ochips">' + shuffle((tk.options || []).map(function (w, i) { return {w:w, i:i}; })).map(function (o) { return '<button class="ochip" type="button" data-oi="' + o.i + '">' + esc(o.w) + '</button>'; }).join('') + '</div><div class="row"><button class="btn btn-red" type="button" id="tcheck">' + t('Перевірити') + '</button><button class="btn btn-ghost btn-sm" type="button" id="oclear">' + t('Очистити') + '</button></div>';
     else if (type === 'match') {
       var pairs = (lf(tk, 'options') || []).map(function (p, i) { var s = String(p).split('='); return {l:s[0].trim(), r:(s[1] || '').trim(), i:i}; });
-      h += '<div class="match"><div class="mcol">' + pairs.map(function (p) { return '<button class="mitem" type="button" data-ml="' + p.i + '">' + esc(p.l) + '</button>'; }).join('') + '</div><div class="mcol">' + shuffle(pairs).map(function (p) { return '<button class="mitem" type="button" data-mr="' + p.i + '">' + esc(p.r) + '</button>'; }).join('') + '</div></div>';
+      h += '<div class="match"><div class="mcol">' + pairs.map(function (p) { return '<button class="mitem" type="button" data-ml="' + p.i + '">' + esc(p.l) + '<span class="spk spk-in" role="button" data-say="' + esc(p.l) + '">🔊</span></button>'; }).join('') + '</div><div class="mcol">' + shuffle(pairs).map(function (p) { return '<button class="mitem" type="button" data-mr="' + p.i + '">' + esc(p.r) + '</button>'; }).join('') + '</div></div>';
     }
-    else h += '<div class="topts">' + (tk.options || []).map(function (o, i) { return '<button class="topt" type="button" data-i="' + i + '">' + esc(tk.type === 'tf' ? t(o === 'True' ? 'Правда' : 'Неправда') : o) + '</button>'; }).join('') + '</div>';
+    else h += '<div class="topts">' + (tk.options || []).map(function (o, i) { return '<button class="topt" type="button" data-i="' + i + '">' + esc(tk.type === 'tf' ? t(o === 'True' ? 'Правда' : 'Неправда') : o) + (tk.type !== 'tf' ? '<span class="spk spk-in" role="button" data-say="' + esc(o) + '">🔊</span>' : '') + '</button>'; }).join('') + '</div>';
     h += foot(); card.innerHTML = h; bindSay(tk);
     card.querySelectorAll('.topt').forEach(function (b) { b.onclick = function () { answerMC(b); }; });
     if (type === 'type') { var inp = card.querySelector('#ttype'); inp.focus(); var chk = function () { var ok = (tk.options || []).some(function (a) { return norm(a) === norm(inp.value); }); inp.disabled = true; done(ok, (ok ? t('Правильно! ') : t('Відповідь: ') + tk.options[0] + '. ') + (lf(tk, 'tip') || '')); }; card.querySelector('#tcheck').onclick = chk; inp.onkeydown = function (e) { if (e.key === 'Enter') chk(); }; }
@@ -695,7 +712,9 @@ function runPlayer(container, lesson, onFinish) {
       };
     } else { btn.disabled = true; out.innerHTML = '<span class="hint">' + t('Твій браузер не підтримує мікрофон. Повтори вголос і натисни «Пропустити».') + '</span>'; }
   }
-  function bindSay(tk) { var sb = card.querySelector('#tsay'); if (sb) sb.onclick = function () { say(tk.say); }; }
+  function bindSay(tk) { var sb = card.querySelector('#tsay'); if (sb) sb.onclick = function () { say(tk.say); };
+    var qb = card.querySelector('#qtrBtn'); if (qb) qb.onclick = function () { var tt = card.querySelector('#qtrText'); tt.hidden = !tt.hidden; qb.classList.toggle('on', !tt.hidden); };
+    card.querySelectorAll('.spk').forEach(function (s) { s.addEventListener('click', function (e) { e.stopPropagation(); e.preventDefault(); say(s.dataset.say); }, true); }); }
   function done(ok, text) {
     durs[cur] = Math.max(1, Math.round((Date.now() - (tStart[cur] || Date.now())) / 1000));
     res[cur] = ok; var fb = card.querySelector('#tfb'); fb.className = 'tfb ' + (ok ? 'ok' : 'err'); fb.textContent = text;
@@ -760,7 +779,7 @@ function adminTimes(body) {
     var U = {}, L = {}; d.users.forEach(function (u) { U[u.id] = u; }); d.lessons.forEach(function (l) { L[l.id] = l; });
     if (!d.times.length) { body.innerHTML = '<div class="empty">' + tx({uk:'Ще немає даних. Час записується після кожного проходження уроку.', pl:'Brak danych. Czas zapisuje się po każdym przejściu lekcji.', en:'No data yet. Time is saved after each lesson attempt.'}) + '</div>'; return; }
     body.innerHTML = '<p class="hint" style="margin-bottom:12px">🔒 ' + tx({uk:'Бачить лише адміністратор.', pl:'Widzi tylko administrator.', en:'Visible to the admin only.'}) + '</p><div class="ttimes">' + d.times.map(function (x, i) { var u = U[x.user_id] || {}, l = L[x.lesson_id] || {};
-      return '<details class="tt"><summary><span><b>' + esc(u.name || u.email || '?') + '</b> <span class="muted small">' + esc(u.email || '') + '</span></span><span>' + (l.num ? l.num + '. ' : '') + esc(tr(l, 'title') || '') + '</span><span class="badge">' + FLAG[x.target || 'en'] + '</span><span>' + (x.score != null ? x.score + '%' : '') + '</span><b>' + fmtSec(x.total_sec) + '</b><span class="muted small">' + fmtDate(x.created_at) + '</span></summary><div class="ttper">' + (x.per_task || []).filter(function (p) { return p.type !== 'intro'; }).map(function (p, k) { return '<div><span>' + (k + 1) + '. ' + esc(TASK_TYPES[p.type] || p.type) + '</span><span>' + (p.ok === true ? '✓' : p.ok === false ? '✗' : '–') + '</span><b>' + fmtSec(p.sec) + '</b></div>'; }).join('') + '</div></details>'; }).join('') + '</div>';
+      return '<details class="tt"><summary><span><b>' + esc(u.name || u.email || '?') + '</b> <span class="muted small">' + esc(u.email || '') + '</span></span><span>' + (l.num ? l.num + '. ' : '') + esc(tr(l, 'title') || '') + '</span><span class="badge">' + FLAG[x.target || 'en'] + '</span><span>' + (x.score != null ? x.score + '%' : '') + '</span><b>' + fmtSec(x.total_sec) + '</b><span class="muted small">' + fmtDate(x.created_at) + '</span></summary><div class="ttper">' + (x.per_task || []).filter(function (p) { return p.type !== 'intro'; }).map(function (p, k) { return '<div><span>' + (k + 1) + '. ' + esc(ttName(p.type)) + '</span><span>' + (p.ok === true ? '✓' : p.ok === false ? '✗' : '–') + '</span><b>' + fmtSec(p.sec) + '</b></div>'; }).join('') + '</div></details>'; }).join('') + '</div>';
   });
 }
 function viewAdmin() {
