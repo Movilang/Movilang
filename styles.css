@@ -543,3 +543,4 @@ section{border-top-color:var(--divider)}
 .qtrb{border:1px dashed var(--line);background:transparent;color:inherit;font:inherit;font-size:13px;padding:6px 12px;border-radius:999px;cursor:pointer;opacity:.85}
 .qtrb.on,.qtrb:hover{opacity:1;border-color:var(--red)}
 .qtrt{margin-top:10px;padding:10px 14px;border-left:3px solid var(--red);background:color-mix(in srgb,var(--red) 8%,transparent);border-radius:8px;font-size:16px}
+.admnav{margin-bottom:12px;padding:10px 14px;border:1px dashed var(--nav-admin,var(--red));border-radius:12px;font-size:14px}

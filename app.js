@@ -21,7 +21,21 @@ function bestVoice(lang) {
   return (VOICE_CACHE[lang] = c[0]);
 }
 try { speechSynthesis.onvoiceschanged = function () { VOICE_CACHE = {}; }; } catch (e) {}
-function say(txt, lang) { try { lang = lang || SPEECH[TARGET]; var u = new SpeechSynthesisUtterance(String(txt).replace(/_{2,}/g, '…')); u.lang = lang; var v = bestVoice(lang); if (v) u.voice = v; u.rate = v && /natural|neural|online|premium|enhanced/i.test(v.name) ? 1 : .92; u.pitch = 1; speechSynthesis.cancel(); speechSynthesis.speak(u); } catch (e) { toast(t('Озвучення недоступне в цьому браузері'), 'err'); } }
+var TTS_OK = null, TTS_URLS = {}, TTS_AUDIO = null;
+function say(txt, lang) {
+  lang = lang || SPEECH[TARGET]; var code = lang.slice(0, 2), clean = String(txt || '').replace(/<[^>]+>/g, '').replace(/_{2,}/g, '…').trim();
+  var C = window.MOVIELANG_CONFIG || {};
+  if (!clean) return;
+  if (TTS_OK === false || !C.SUPABASE_URL || !C.SUPABASE_ANON_KEY) return sayLocal(clean, lang);
+  try { speechSynthesis.cancel(); } catch (e) {} if (TTS_AUDIO) { try { TTS_AUDIO.pause(); } catch (e) {} }
+  var k = code + '|' + clean, play = function (u) { TTS_AUDIO = new Audio(u); TTS_AUDIO.play().catch(function () { sayLocal(clean, lang); }); };
+  if (TTS_URLS[k]) return play(TTS_URLS[k]);
+  fetch(C.SUPABASE_URL + '/functions/v1/tts', {method:'POST', headers:{'Content-Type':'application/json', apikey:C.SUPABASE_ANON_KEY, Authorization:'Bearer ' + C.SUPABASE_ANON_KEY}, body:JSON.stringify({text:clean, lang:code})})
+    .then(function (r) { return r.json().then(function (j) { return {ok:r.ok, j:j}; }); })
+    .then(function (x) { if (x.ok && x.j.url) { TTS_OK = true; TTS_URLS[k] = x.j.url; play(x.j.url); } else { if (x.j && x.j.error === 'no_key') TTS_OK = false; sayLocal(clean, lang); } })
+    .catch(function () { sayLocal(clean, lang); });
+}
+function sayLocal(txt, lang) { try { lang = lang || SPEECH[TARGET]; var u = new SpeechSynthesisUtterance(String(txt).replace(/_{2,}/g, '…')); u.lang = lang; var v = bestVoice(lang); if (v) u.voice = v; u.rate = v && /natural|neural|online|premium|enhanced/i.test(v.name) ? 1 : .92; u.pitch = 1; speechSynthesis.cancel(); speechSynthesis.speak(u); } catch (e) { toast(t('Озвучення недоступне в цьому браузері'), 'err'); } }
 var TT_L = {
   uk:{intro:'СТАРТ', match:'ПАРИ', order:'ПОРЯДОК СЛІВ', type:'ВПИШИ', tf:'ПРАВДА / НІ', vocabulary:'СЛОВНИК', listening:'АУДІЮВАННЯ', subtitles:'СУБТИТРИ', grammar:'ГРАМАТИКА', speaking:'ГОВОРІННЯ', quiz:'МІНІ-КВІЗ', final:'ФІНАЛ'},
   pl:{intro:'START', match:'PARY', order:'SZYK ZDANIA', type:'WPISZ', tf:'PRAWDA / FAŁSZ', vocabulary:'SŁOWNICTWO', listening:'SŁUCHANIE', subtitles:'NAPISY', grammar:'GRAMATYKA', speaking:'MÓWIENIE', quiz:'MINI QUIZ', final:'FINAŁ'}};
@@ -620,8 +634,9 @@ function shuffle(a) { a = a.slice(); for (var i = a.length - 1; i > 0; i--) { va
 function norm(s) { return String(s || '').toLowerCase().replace(/[’']/g, "'").replace(/[^\p{L}\p{N}' ]+/gu, ' ').replace(/\s+/g, ' ').trim(); }
 function runPlayer(container, lesson, onFinish) {
   var tStart = {}, durs = {}, tasks = lessonTasks(lesson) || [], cur = 0, res = [], finalText = '', snaps = [], maxReached = 0;
+  var FREE = isAdm() && ADMIN_MODE; if (FREE) maxReached = tasks.length - 1;
   var scored = tasks.filter(function (x) { return x.type !== 'intro'; }).length;
-  container.innerHTML = '<div class="trial"><div class="tcard" id="tcard" aria-live="polite"></div><div class="tside" id="tside"></div></div>';
+  container.innerHTML = (FREE ? '<div class="admnav">🛠 ' + tx({uk:'Режим адміна: можна вільно переходити між завданнями справа, не відповідаючи.', pl:'Tryb admina: możesz swobodnie przechodzić między zadaniami po prawej, bez odpowiadania.', en:'Admin mode: jump freely between tasks on the right without answering.'}) + '</div>' : '') + '<div class="trial"><div class="tcard" id="tcard" aria-live="polite"></div><div class="tside" id="tside"></div></div>';
   var card = container.querySelector('#tcard'), side = container.querySelector('#tside');
   function renderSide() { side.innerHTML = tasks.map(function (tk, i) { var c = i === cur ? 'on' : ''; if (res[i] === true) c += ' ok'; if (res[i] === false) c += ' bad'; return '<button type="button" class="tstep ' + c + (i <= maxReached && i !== cur ? ' nav' : '') + '" data-go="' + i + '"' + (i > maxReached ? ' disabled' : '') + '><i>' + (tk.type === 'intro' ? '▶' : i + (tasks[0] && tasks[0].type === 'intro' ? 0 : 1)) + '</i>' + esc(ttName(tk.type)) + (res[i] != null ? '' : '') + '</button>'; }).join('');
     side.querySelectorAll('[data-go]').forEach(function (b) { b.onclick = function () { var i = +b.dataset.go; if (i <= maxReached && i !== cur) { cur = i; render(); } }; }); }
@@ -655,6 +670,7 @@ function runPlayer(container, lesson, onFinish) {
     }
     else h += '<div class="topts">' + (tk.options || []).map(function (o, i) { return '<button class="topt" type="button" data-i="' + i + '">' + esc(tk.type === 'tf' ? t(o === 'True' ? 'Правда' : 'Неправда') : o) + (tk.type !== 'tf' ? '<span class="spk spk-in" role="button" data-say="' + esc(o) + '">🔊</span>' : '') + '</button>'; }).join('') + '</div>';
     h += foot(); card.innerHTML = h; bindSay(tk);
+    if (FREE && cur < tasks.length - 1) { var nb2 = card.querySelector('#tnext'); nb2.hidden = false; nb2.textContent = '⏭ ' + tx({uk:'Пропустити (адмін)', pl:'Pomiń (admin)', en:'Skip (admin)'}); nb2.onclick = function () { cur++; render(); }; }
     card.querySelectorAll('.topt').forEach(function (b) { b.onclick = function () { answerMC(b); }; });
     if (type === 'type') { var inp = card.querySelector('#ttype'); inp.focus(); var chk = function () { var ok = (tk.options || []).some(function (a) { return norm(a) === norm(inp.value); }); inp.disabled = true; done(ok, (ok ? t('Правильно! ') : t('Відповідь: ') + tk.options[0] + '. ') + (lf(tk, 'tip') || '')); }; card.querySelector('#tcheck').onclick = chk; inp.onkeydown = function (e) { if (e.key === 'Enter') chk(); }; }
     if (type === 'order') {
@@ -736,7 +752,7 @@ function runPlayer(container, lesson, onFinish) {
     var per = tasks.map(function (tk, i) { return {n:i, type:tk.type, sec:durs[i] || 0, ok:res[i] == null ? null : !!res[i]}; }); LAST_TIMES = {total:per.reduce(function (a, x) { return a + x.sec; }, 0), per:per};
     var sc = res.filter(function (x) { return x === true; }).length, pct = scored ? Math.round(sc / scored * 100) : 0; cur = tasks.length; renderSide();
     card.innerHTML = '<div class="tres"><span class="ttag">' + t('РЕЗУЛЬТАТ') + '</span><div class="big">' + sc + ' / ' + scored + '</div><p class="lead" style="text-align:center" id="tresText">' + pct + '%</p><div id="tresExtra" style="width:100%"></div><div class="row" style="justify-content:center" id="tresBtns"></div></div>';
-    onFinish(pct, finalText, card.querySelector('#tresText'), card.querySelector('#tresBtns'), function () { cur = 0; res = []; snaps = []; maxReached = 0; tStart = {}; durs = {}; render(); }, card.querySelector('#tresExtra'));
+    onFinish(pct, finalText, card.querySelector('#tresText'), card.querySelector('#tresBtns'), function () { cur = 0; res = []; snaps = []; maxReached = FREE ? tasks.length - 1 : 0; tStart = {}; durs = {}; render(); }, card.querySelector('#tresExtra'));
   }
   if (!tasks.length) { card.innerHTML = t('<div class="empty">У цьому уроці ще немає завдань.</div>'); return; }
   render();
