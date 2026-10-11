@@ -500,3 +500,5 @@ section{border-top-color:var(--divider)}
 .mic-out .said{font-size:18px;font-weight:600;color:var(--text)}
 .meter{height:8px;border-radius:99px;background:var(--panel-bg);overflow:hidden;max-width:360px}
 .meter i{display:block;height:100%;background:linear-gradient(90deg,var(--progress-1),var(--success))}
+.seo-static{padding-block:48px;display:grid;gap:14px;max-width:760px}
+.seo-static h1{font-family:var(--f-display);font-size:clamp(28px,4vw,44px)}

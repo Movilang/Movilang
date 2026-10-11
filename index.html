@@ -3,16 +3,35 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<title>MovieLang</title>
-<meta name="description" content="MovieLang — онлайн-марафон англійської за фільмами та серіалами. Дивись. Розумій. Говори.">
+<title>MovieLang — angielski z filmów i seriali | англійська за фільмами</title>
+<meta name="description" content="MovieLang: ucz się angielskiego na scenach z filmów i seriali. Interaktywne lekcje B1–B2, mówienie, gramatyka w kontekście. Англійська за фільмами та серіалами онлайн.">
 <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
-<meta property="og:title" content="MovieLang — англійська за фільмами">
-<meta property="og:description" content="Дивись. Розумій. Говори. Онлайн-марафони англійської за фільмами та серіалами.">
+<link rel="canonical" href="https://movielang.pages.dev/">
+<meta property="og:site_name" content="MovieLang">
+<meta property="og:title" content="MovieLang — angielski z filmów i seriali">
+<meta property="og:description" content="Oglądaj. Rozumiej. Mów. Interaktywne maratony angielskiego na podstawie filmów i seriali (B1–B2). Darmowa lekcja próbna.">
 <meta property="og:type" content="website">
+<meta property="og:url" content="https://movielang.pages.dev/">
+<meta property="og:image" content="https://movielang.pages.dev/assets/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:locale" content="pl_PL">
+<meta property="og:locale:alternate" content="uk_UA">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="MovieLang — angielski z filmów i seriali">
+<meta name="twitter:description" content="Oglądaj. Rozumiej. Mów. Darmowa lekcja próbna.">
+<meta name="twitter:image" content="https://movielang.pages.dev/assets/og.png">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@graph":[
+ {"@type":"Organization","@id":"https://movielang.pages.dev/#org","name":"MovieLang","url":"https://movielang.pages.dev/","logo":"https://movielang.pages.dev/assets/favicon.svg","email":"info.movielang@gmail.com","description":"Online English courses based on films and TV series."},
+ {"@type":"WebSite","name":"MovieLang","url":"https://movielang.pages.dev/","inLanguage":["pl","uk"],"publisher":{"@id":"https://movielang.pages.dev/#org"}},
+ {"@type":"Course","name":"Harry Potter i Kamień Filozoficzny — maraton angielskiego B1–B2","description":"16 interaktywnych lekcji angielskiego na podstawie scen z filmu: gramatyka B1–B2, słownictwo, słuchanie i mówienie.","inLanguage":"en","educationalLevel":"B1–B2","provider":{"@id":"https://movielang.pages.dev/#org"},"offers":{"@type":"Offer","category":"Paid","price":"49","priceCurrency":"PLN"},"hasCourseInstance":{"@type":"CourseInstance","courseMode":"online","courseWorkload":"PT4H"}}
+]}
+</script>
 <meta name="theme-color" content="#3e3329">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Dela+Gothic+One&family=Onest:wght@400;500;600;700&family=JetBrains+Mono:wght@400;600&display=swap">
-<link rel="stylesheet" href="styles.css?v=16">
+<link rel="stylesheet" href="styles.css?v=17">
 </head>
 <body>
 <div id="demoBar" class="demo-bar" hidden>Демо-режим: дані зберігаються лише в цьому браузері. Адмін: admin@movielang.demo / admin123</div>
@@ -21,13 +40,23 @@
   <div class="navlinks" id="navlinks"></div>
   <div class="row" id="navuser"></div>
 </div></nav>
-<main class="wrap app-main" id="app"></main>
+<main class="wrap app-main" id="app">
+<section class="seo-static">
+  <h1>MovieLang — angielski z filmów i seriali</h1>
+  <p>MovieLang to online maratony języka angielskiego oparte na scenach z ulubionych filmów i seriali. Kupujesz osobisty klucz dostępu, otwierasz maraton i codziennie wykonujesz krótkie interaktywne zadania: słownictwo ze sceny, słuchanie, napisy z lukami, gramatyka w kontekście i mówienie. Poziom B1–B2, wskazówki po polsku.</p>
+  <h2>Pierwszy maraton: Harry Potter i Kamień Filozoficzny</h2>
+  <p>16 lekcji, 130 zadań: Present Simple i Continuous, Past Perfect, strona bierna, mowa zależna, tryby warunkowe, phrasal verbs i projekt końcowy. Darmowa lekcja próbna bez rejestracji.</p>
+  <h2>MovieLang — англійська за фільмами та серіалами</h2>
+  <p>Онлайн-марафони англійської за сценами з фільмів і серіалів: інтерактивні завдання, граматика B1–B2, аудіювання і говоріння. Пояснення українською.</p>
+  <p><a href="#/trial">Darmowa lekcja próbna</a> · <a href="#/catalog">Katalog kursów</a> · <a href="#/pricing">Cennik</a></p>
+</section>
+</main>
 <footer class="wrap">
   <span>© 2026 MovieLang · English Through Cinema</span>
   <span class="disclaimer" id="discl">Назви фільмів і серіалів використано для опису змісту курсів; проєкт не пов'язаний із правовласниками.</span>
 </footer>
-<script src="config.js?v=16"></script>
+<script src="config.js?v=17"></script>
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.45.4/dist/umd/supabase.js"></script>
-<script src="app.js?v=16"></script>
+<script src="app.js?v=17"></script>
 </body>
 </html>
