@@ -33,7 +33,8 @@ function t(s) {
 function langName(l) { return t({en:'англійська', pl:'польська', uk:'українська'}[l]); }
 function setLang(l) { LANG = l; try { localStorage.setItem('ml_lang', l); } catch (e) {} applyStatic(); renderNav(); route(); }
 function setLangs(target, sup) { TARGET = target; LANG = sup; LANG_SET = true; try { localStorage.setItem('ml_target', target); localStorage.setItem('ml_lang', sup); } catch (e) {} applyStatic(); renderNav(); route(); }
-function lGram(l) { return (TARGET !== 'en' && l.variants && l.variants[TARGET + '_grammar']) || l.grammar; }
+function lGram(l) { var v = l.variants; return (TARGET !== 'en' && v && (v[TARGET + '_grammar_' + LANG] || v[TARGET + '_grammar'])) || l.grammar; }
+var CAB_T = null;
 function lessonTasks(l) { if (TARGET === 'en') return l.tasks || []; var v = l.variants && l.variants[TARGET]; return v && v.length ? v : null; }
 function langModal(first) {
   var old = document.getElementById('langModal'); if (old) old.remove();
@@ -246,12 +247,12 @@ function DemoBackend() {
       ids.forEach(function (cid) { if (!db.enrollments.some(function (e) { return e.user_id === u.id && e.course_id === cid; })) db.enrollments.push({user_id:u.id, course_id:cid, created_at:new Date().toISOString()}); });
       save(); return P({ok:true, course_id:k.course_id});
     },
-    myProgress: function () { var u = me(); if (!u) return P([]); return P(load().progress.filter(function (p) { return p.user_id === u.id; })); },
+    myProgress: function (tg) { tg = tg || TARGET; var u = me(); if (!u) return P([]); return P(load().progress.filter(function (p) { return p.user_id === u.id && (p.target || 'en') === tg; })); },
     saveProgress: function (lessonId, score, answer) {
       var u = me(); if (!u) return P(false); var db = load();
-      var ex = db.progress.filter(function (p) { return p.user_id === u.id && p.lesson_id === lessonId; })[0];
+      var ex = db.progress.filter(function (p) { return p.user_id === u.id && p.lesson_id === lessonId && (p.target || 'en') === TARGET; })[0];
       if (ex) { ex.retry_score = score; ex.retry_at = new Date().toISOString(); if (answer) ex.answer = answer; save(); return P({retry:true}); }
-      db.progress.push({user_id:u.id, lesson_id:lessonId, score:score, answer:answer || null, completed_at:new Date().toISOString()}); save(); return P({retry:false});
+      db.progress.push({user_id:u.id, lesson_id:lessonId, target:TARGET, score:score, answer:answer || null, completed_at:new Date().toISOString()}); save(); return P({retry:false});
     },
     adminData: function () { needAdmin(); var db = load(); return P({users:db.users.map(function (u) { return {id:u.id, email:u.email, name:u.name, role:u.role, created_at:u.created_at}; }), keys:db.keys.slice(), enrollments:db.enrollments.slice(), progress:db.progress.slice()}); },
     createKeys: function (courseId, n) { needAdmin(); var db = load(), out = []; for (var i = 0; i < n; i++) { var k = {code:genCode(), course_id:courseId || null, created_at:new Date().toISOString(), activated_by:null, activated_at:null}; db.keys.push(k); out.push(k); } save(); return P(out); },
@@ -304,16 +305,19 @@ function SupabaseBackend(url, key) {
     deleteCourse: function (id) { return sb.from('courses').delete().eq('id', id).then(ok); },
     listLessons: function (courseId) { return sb.from('lessons').select('*').eq('course_id', courseId).order('num').then(ok); },
     getLesson: function (id) { return sb.from('lessons').select('*').eq('id', id).maybeSingle().then(ok); },
-    saveLesson: function (l) { var row = {course_id:l.course_id, num:l.num, title:l.title, title_pl:l.title_pl || null, scene_pl:l.scene_pl || null, grammar:l.grammar, scene:l.scene, tasks:l.tasks}; if (l.variants !== undefined) row.variants = l.variants; if (l.id) row.id = l.id; return sb.from('lessons').upsert(row).select().single().then(ok); },
+    saveLesson: function (l) { var row = {course_id:l.course_id, num:l.num, title:l.title, title_pl:l.title_pl || null, scene_pl:l.scene_pl || null, grammar:l.grammar}; if (l.title_en !== undefined) { row.title_en = l.title_en; row.scene_en = l.scene_en; } row = Object.assign(row, {scene:l.scene, tasks:l.tasks}); if (l.variants !== undefined) row.variants = l.variants; if (l.id) row.id = l.id; return sb.from('lessons').upsert(row).select().single().then(ok); },
     deleteLesson: function (id) { return sb.from('lessons').delete().eq('id', id).then(ok); },
     myEnrollments: function () { if (!cachedUser) return Promise.resolve([]); return sb.from('enrollments').select('course_id').eq('user_id', cachedUser.id).then(ok).then(function (r) { return r.map(function (x) { return x.course_id; }); }); },
     activateKey: function (code) { return sb.rpc('activate_key', {p_code:code.trim().toUpperCase()}).then(ok); },
-    myProgress: function () { if (!cachedUser) return Promise.resolve([]); return sb.from('progress').select('*').eq('user_id', cachedUser.id).then(ok); },
+    myProgress: function (tg) { tg = tg || TARGET; if (!cachedUser) return Promise.resolve([]); var q = sb.from(tg === 'en' ? 'progress' : 'progress_lang').select('*').eq('user_id', cachedUser.id); if (tg !== 'en') q = q.eq('target', tg); return q.then(ok); },
     saveProgress: function (lessonId, score, answer) {
       if (!cachedUser) return Promise.resolve(false);
-      return sb.from('progress').select('lesson_id').eq('user_id', cachedUser.id).eq('lesson_id', lessonId).maybeSingle().then(function (r) {
-        if (r.data) { var upd = {retry_score:score, retry_at:new Date().toISOString()}; if (answer) upd.answer = answer; return sb.from('progress').update(upd).eq('user_id', cachedUser.id).eq('lesson_id', lessonId).then(ok).then(function () { return {retry:true}; }); }
-        return sb.from('progress').insert({user_id:cachedUser.id, lesson_id:lessonId, score:score, answer:answer || null, completed_at:new Date().toISOString()}).then(ok).then(function () { return {retry:false}; });
+      var tb = TARGET === 'en' ? 'progress' : 'progress_lang', tg = TARGET;
+      function f(q) { return tg === 'en' ? q : q.eq('target', tg); }
+      return f(sb.from(tb).select('lesson_id').eq('user_id', cachedUser.id).eq('lesson_id', lessonId)).maybeSingle().then(function (r) {
+        if (r.data) { var upd = {retry_score:score, retry_at:new Date().toISOString()}; if (answer) upd.answer = answer; return f(sb.from(tb).update(upd).eq('user_id', cachedUser.id).eq('lesson_id', lessonId)).then(ok).then(function () { return {retry:true}; }); }
+        var row = {user_id:cachedUser.id, lesson_id:lessonId, score:score, answer:answer || null, completed_at:new Date().toISOString()}; if (tg !== 'en') row.target = tg;
+        return sb.from(tb).insert(row).then(ok).then(function () { return {retry:false}; });
       });
     },
     adminData: function () {
@@ -441,8 +445,9 @@ function requireUser() { if (!USER) { location.hash = '#/login'; toast(t('Спе
 
 function viewCabinet() {
   if (!requireUser()) return Promise.resolve();
-  return Promise.all([API.listCourses(true), API.myEnrollments(), API.myProgress()]).then(function (r) {
-    var courses = r[0], enr = r[1], prog = r[2];
+  return Promise.all([API.listCourses(true), API.myEnrollments(), API.myProgress('en'), API.myProgress('pl'), API.myProgress('uk')]).then(function (r) {
+    var byT = {en:r[2], pl:r[3], uk:r[4]}; if (!CAB_T) CAB_T = TARGET;
+    var courses = r[0], enr = r[1], prog = byT[CAB_T];
     var lessonPromises = enr.map(function (cid) { return API.listLessons(cid); });
     return Promise.all(lessonPromises).then(function (lessonLists) {
       var doneIds = {}; prog.forEach(function (p) { doneIds[p.lesson_id] = p; });
@@ -459,10 +464,11 @@ function viewCabinet() {
         t('<form class="form" id="keyForm" novalidate><label class="fl" for="keyInput">Активувати ключ<input class="inp" id="keyInput" placeholder="XXXX-XXXX-XXXX" maxlength="14" autocomplete="off" style="font-size:15px;padding:11px 12px"></label><button class="btn btn-red btn-sm" type="submit" style="justify-content:center">Активувати</button><div class="msg small" id="keyMsg" role="status"></div>') +
         (API.mode === 'demo' ? t('<p class="hint">Демо-ключ: HPS1-7KQ4-WZ9M</p>') : '') + '</form>' +
         (isAdm() ? t('<a class="btn btn-ghost btn-sm" href="#/admin" style="justify-content:center">Адмін-панель</a>') : '') + '</aside>' +
-        '<div class="dmain"><div class="stats"><div class="stat"><b>' + prog.length + t('</b><span>уроків пройдено</span></div><div class="stat"><b>') + avg + t('%</b><span>середній бал</span></div><div class="stat"><b>') + xp + t('</b><span>XP набрано</span></div><div class="stat"><b>') + Object.keys(days).length + t('</b><span>днів навчання</span></div></div>') +
+        '<div class="dmain"><div class="cabtabs">' + LANGS.map(function (l) { var pr = byT[l], av = pr.length ? Math.round(pr.reduce(function (a, p) { return a + (+p.score || 0); }, 0) / pr.length) : 0; return '<button type="button" class="cabtab' + (l === CAB_T ? ' on' : '') + '" data-cab="' + l + '"><b>' + FLAG[l] + '</b><span>' + esc(langName(l)) + '</span><small>' + pr.length + ' ' + t('уроків') + (pr.length ? ' · ' + av + '%' : '') + '</small></button>'; }).join('') + '</div><div class="stats"><div class="stat"><b>' + prog.length + t('</b><span>уроків пройдено</span></div><div class="stat"><b>') + avg + t('%</b><span>середній бал</span></div><div class="stat"><b>') + xp + t('</b><span>XP набрано</span></div><div class="stat"><b>') + Object.keys(days).length + t('</b><span>днів навчання</span></div></div>') +
         t('<div class="rows"><div class="box"><h4>Мої марафони</h4>') + (my || t('<div class="empty small">Марафонів ще немає. Активуй ключ або <a href="#/trial">пройди пробний урок</a>.</div>')) + t('<a class="btn btn-ghost btn-sm" href="#/catalog" style="justify-self:start">Каталог курсів</a></div>') +
         t('<div class="box"><h4>Досягнення</h4><div class="ach">') + medals.map(function (m) { return '<div class="medal' + (m[0] ? '' : ' off') + '"><span class="m" style="border-color:' + (m[0] ? 'var(--gold)' : 'var(--dim)') + ';color:' + (m[0] ? 'var(--gold)' : 'var(--dim)') + '">' + m[1] + '</span>' + m[2] + '</div>'; }).join('') + '</div>' +
         t('<h4>Останні уроки</h4><div class="done-list">') + (recent || t('<span class="muted">Ще немає пройдених уроків</span>')) + '</div></div></div></div></div></div>';
+      document.querySelectorAll('[data-cab]').forEach(function (b) { b.onclick = function () { CAB_T = b.dataset.cab; route(); }; });
       var inp = document.getElementById('keyInput'), msg = document.getElementById('keyMsg');
       inp.oninput = function () { var v = inp.value.toUpperCase().replace(/[^A-Z0-9]/g, '').slice(0, 12); inp.value = v.replace(/(.{4})(?=.)/g, '$1-'); };
       document.getElementById('keyForm').onsubmit = function (e) {
@@ -781,7 +787,7 @@ function courseEditor(body, id) {
       fetch('content/hp1.json?v=' + Date.now()).then(function (r) { return r.json(); }).then(function (data) {
         var byNum = {}; ls.forEach(function (l) { byNum[l.num] = l; });
         var keep = {}; data.forEach(function (d) { keep[d.num] = 1; });
-        var ops = data.map(function (d) { var row = {course_id:id, num:d.num, title:d.title, title_pl:d.title_pl, grammar:d.grammar, scene:d.scene, scene_pl:d.scene_pl, variants:d.variants || null, tasks:d.tasks}; if (byNum[d.num]) row.id = byNum[d.num].id; return row; });
+        var ops = data.map(function (d) { var row = {course_id:id, num:d.num, title:d.title, title_pl:d.title_pl, title_en:d.title_en || null, scene_en:d.scene_en || null, grammar:d.grammar, scene:d.scene, scene_pl:d.scene_pl, variants:d.variants || null, tasks:d.tasks}; if (byNum[d.num]) row.id = byNum[d.num].id; return row; });
         var extra = ls.filter(function (l) { return !keep[l.num]; });
         return ops.reduce(function (p, row, i) { return p.then(function () { msg.textContent = (i + 1) + ' / ' + ops.length; return API.saveLesson(row); }); }, Promise.resolve())
           .then(function () { return Promise.all(extra.map(function (l) { return API.deleteLesson(l.id); })); })

@@ -513,3 +513,7 @@ section{border-top-color:var(--divider)}
 .lopt b{font-size:18px}.lopt span{font-size:12px;opacity:.8}
 .lopt.on{border-color:var(--red,#e86);background:color-mix(in srgb,var(--red,#e86) 18%,transparent)}
 .langbtn{white-space:nowrap}
+.cabtabs{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-bottom:16px}
+.cabtab{display:flex;flex-direction:column;align-items:flex-start;gap:2px;padding:12px 14px;border-radius:14px;border:1px solid var(--line);background:transparent;color:inherit;font:inherit;cursor:pointer;text-align:left}
+.cabtab b{font-size:18px}.cabtab span{font-size:13px}.cabtab small{font-size:12px;opacity:.7}
+.cabtab.on{border-color:var(--red);background:color-mix(in srgb,var(--red) 14%,transparent)}

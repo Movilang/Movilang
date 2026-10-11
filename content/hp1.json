@@ -502,8 +502,16 @@
     }
    ],
    "pl_grammar": "Czas teraźniejszy · pod + narzędnik",
-   "uk_grammar": "Теперішній час · під + орудний відмінок"
-  }
+   "uk_grammar": "Теперішній час · під + орудний відмінок",
+   "pl_grammar_en": "Present tense · pod + instrumental",
+   "pl_grammar_uk": "Теперішній час · pod + орудний",
+   "pl_grammar_pl": "Czas teraźniejszy · pod + narzędnik",
+   "uk_grammar_en": "Present tense · під + instrumental",
+   "uk_grammar_uk": "Теперішній час · під + орудний",
+   "uk_grammar_pl": "Czas teraźniejszy · під + narzędnik"
+  },
+  "title_en": "The Boy Under the Stairs",
+  "scene_en": "An ordinary suburban house. A boy lives in the cupboard under the stairs while the family celebrates his cousin's birthday."
  },
  {
   "num": 2,
@@ -632,7 +640,349 @@
     "tip_uk": "Past Continuous + when + Past Simple — ідеальна схема для розповіді.",
     "tip_pl": "Past Continuous + when + Past Simple — idealny schemat do opowiadania."
    }
-  ]
+  ],
+  "title_en": "Trouble at the Zoo",
+  "scene_en": "The family takes the boy to the zoo. At the glass of a huge snake something strange happens: the glass suddenly vanishes.",
+  "variants": {
+   "pl": [
+    {
+     "type": "intro",
+     "q": "Lekcja 2. Wchodzimy do kolejnej sceny!",
+     "q_en": "Lesson 2. Into the next scene!",
+     "q_uk": "Урок 2. Вирушаємо в наступну сцену!",
+     "q_pl": "Lekcja 2. Wchodzimy do kolejnej sceny!",
+     "options_en": [
+      "5 new Polish words from the scene",
+      "Listening at natural speed",
+      "Grammar: Past tense: -łem / -łam / -ł / -ła",
+      "Speaking: say a line from the scene"
+     ],
+     "options_uk": [
+      "5 нових польських слів зі сцени",
+      "Аудіювання в природному темпі",
+      "Граматика: Минулий час: -łem / -łam / -ł / -ła",
+      "Говоріння: скажи фразу зі сцени"
+     ],
+     "options_pl": [
+      "5 nowych słów ze sceny",
+      "Słuchanie w naturalnym tempie",
+      "Gramatyka: Czas przeszły: -łem / -łam / -ł / -ła",
+      "Mówienie: powiedz kwestię ze sceny"
+     ],
+     "tip": "Start",
+     "tip_en": "Start the lesson",
+     "tip_uk": "Почати урок",
+     "tip_pl": "Zacznij lekcję"
+    },
+    {
+     "type": "match",
+     "q": "Połącz słowa ze sceny z ich znaczeniem.",
+     "options_en": [
+      "wąż=snake",
+      "szyba=glass pane",
+      "zniknąć=to vanish",
+      "krzyczeć=to scream",
+      "uciec=to escape"
+     ],
+     "options_uk": [
+      "wąż=змія",
+      "szyba=скло, шибка",
+      "zniknąć=зникнути",
+      "krzyczeć=кричати",
+      "uciec=втекти"
+     ],
+     "options_pl": [
+      "wąż=długie zwierzę bez nóg",
+      "szyba=szkło w oknie lub w terrarium",
+      "zniknąć=przestać być widocznym",
+      "krzyczeć=mówić bardzo głośno ze strachu",
+      "uciec=szybko się wydostać"
+     ],
+     "tip_en": "Say each new word out loud as you match it: it sticks better.",
+     "tip_uk": "Промовляй кожне нове слово вголос, коли з'єднуєш: так воно краще запам'ятовується.",
+     "tip_pl": "Wypowiadaj każde nowe słowo na głos, gdy je łączysz: lepiej zostaje w pamięci."
+    },
+    {
+     "type": "vocabulary",
+     "q": "Szkło nagle <b>zniknęło</b>. Co to znaczy?",
+     "options": [
+      "Szkło się stłukło",
+      "Szkła już nie było",
+      "Szkło było brudne",
+      "Szkło było grube"
+     ],
+     "answer": 1,
+     "tip_en": "Zniknąć = to vanish: it was there, then it wasn't.",
+     "tip_uk": "Zniknąć = зникнути: було — і раптом немає.",
+     "tip_pl": "Zniknąć = przestać być widocznym, jakby się rozpłynęło."
+    },
+    {
+     "type": "listening",
+     "q": "Posłuchaj. Co zrobił wąż?",
+     "options": [
+      "Zasnął",
+      "Uciekł z terrarium",
+      "Zjadł obiad",
+      "Ugryzł kuzyna"
+     ],
+     "answer": 1,
+     "tip_en": "The snake slid out and escaped. Listen for wypełzł and uciekł.",
+     "tip_uk": "Змія виповзла й утекла. Шукай на слух wypełzł і uciekł.",
+     "tip_pl": "Wąż wypełzł i uciekł. Wsłuchaj się w czasowniki.",
+     "say": "Szyba zniknęła, a wąż wypełzł i uciekł. Kuzyn krzyczał bardzo głośno."
+    },
+    {
+     "type": "grammar",
+     "q": "Wczoraj Harry ____ w zoo. (on)",
+     "options": [
+      "był",
+      "była",
+      "byłem",
+      "byli"
+     ],
+     "answer": 0,
+     "tip_en": "Past tense of być for on (he): był. Ona była, ja byłem, oni byli.",
+     "tip_uk": "Минулий час від być для on (він): był. Ona była, ja byłem, oni byli.",
+     "tip_pl": "On był, ona była, ja byłem (mężczyzna), oni byli."
+    },
+    {
+     "type": "grammar",
+     "q": "Ciocia Petunia ____ bardzo zła.",
+     "options": [
+      "była",
+      "był",
+      "byłam",
+      "było"
+     ],
+     "answer": 0,
+     "tip_en": "Feminine 3rd person: -ła. Ciocia → ona → była.",
+     "tip_uk": "Жіночий рід, 3-тя особа: -ła. Ciocia → ona → była, як і в нас «була».",
+     "tip_pl": "Rodzaj żeński: ona była, ona krzyczała."
+    },
+    {
+     "type": "order",
+     "q": "Ułóż zdanie.",
+     "options": [
+      "Wąż",
+      "nagle",
+      "wypełzł",
+      "z",
+      "terrarium"
+     ],
+     "tip_en": "Z (out of) + genitive: z terrarium, z domu, z zoo.",
+     "tip_uk": "Z (з) + родовий відмінок: z terrarium, z domu.",
+     "tip_pl": "Z + dopełniacz: z terrarium, z domu.",
+     "q_en": "Build the sentence: “The snake suddenly crawled out of the terrarium.”",
+     "q_uk": "Склади речення: «Змія раптом виповзла з тераріуму.»",
+     "q_pl": "Ułóż zdanie: „Wąż nagle wypełzł z terrarium”"
+    },
+    {
+     "type": "type",
+     "q": "Harry ____ z wężem. (rozmawiać, on)",
+     "options": [
+      "rozmawiał"
+     ],
+     "tip_en": "Past tense, masculine: take the stem rozmawia- and add -ł.",
+     "tip_uk": "Минулий час, чоловічий рід: основа rozmawia- + -ł, як «розмовля-в».",
+     "tip_pl": "Czas przeszły: rozmawia- + -ł = rozmawiał.",
+     "q_en": "Harry ____ z wężem. (rozmawiać, on) (talked)",
+     "q_uk": "Harry ____ z wężem. (rozmawiać, on) (розмовляв)",
+     "q_pl": "Harry ____ z wężem. (rozmawiać, on) (rozmawiać, on)"
+    },
+    {
+     "type": "tf",
+     "q": "Prawda czy fałsz? Wąż był w zoo bardzo szczęśliwy.",
+     "options": [
+      "True",
+      "False"
+     ],
+     "answer": 1,
+     "tip_en": "False: the snake had never seen Brazil and was bored behind the glass.",
+     "tip_uk": "Неправда: змія нудьгувала за склом і ніколи не бачила Бразилії.",
+     "tip_pl": "Fałsz: wąż nudził się za szybą i nigdy nie widział Brazylii."
+    },
+    {
+     "type": "speaking",
+     "q": "Powiedz na głos: <i>„Szyba zniknęła i wąż uciekł.”</i>",
+     "say": "Szyba zniknęła i wąż uciekł.",
+     "tip_en": "ę in zniknęła sounds like a nasal 'en'. Keep ł soft, like English 'w'.",
+     "tip_uk": "ę у zniknęła — носове «ен», ł звучить як українське «в» в кінці «був».",
+     "tip_pl": "Uważaj na ę i ł: zniknęła, uciekł."
+    }
+   ],
+   "uk": [
+    {
+     "type": "intro",
+     "q": "Урок 2. Вирушаємо в наступну сцену!",
+     "q_en": "Lesson 2. Into the next scene!",
+     "q_uk": "Урок 2. Вирушаємо в наступну сцену!",
+     "q_pl": "Lekcja 2. Wchodzimy do kolejnej sceny!",
+     "options_en": [
+      "5 new Ukrainian words from the scene",
+      "Listening at natural speed",
+      "Grammar: Past tense: -в / -ла / -ли",
+      "Speaking: say a line from the scene"
+     ],
+     "options_uk": [
+      "5 нових слів зі сцени",
+      "Аудіювання в природному темпі",
+      "Граматика: Минулий час: -в / -ла / -ли",
+      "Говоріння: скажи фразу зі сцени"
+     ],
+     "options_pl": [
+      "5 nowych ukraińskich słów ze sceny",
+      "Słuchanie w naturalnym tempie",
+      "Gramatyka: Czas przeszły: -в / -ла / -ли",
+      "Mówienie: powiedz kwestię ze sceny"
+     ],
+     "tip": "Start",
+     "tip_en": "Start the lesson",
+     "tip_uk": "Почати урок",
+     "tip_pl": "Zacznij lekcję"
+    },
+    {
+     "type": "match",
+     "q": "З'єднай слова зі сцени з їхнім значенням.",
+     "options_en": [
+      "змія=snake",
+      "скло=glass",
+      "зникнути=to vanish",
+      "кричати=to scream",
+      "втекти=to escape"
+     ],
+     "options_uk": [
+      "змія=довга тварина без ніг",
+      "скло=прозорий матеріал у вікні",
+      "зникнути=перестати бути видимим",
+      "кричати=голосно говорити від страху",
+      "втекти=швидко вибратися"
+     ],
+     "options_pl": [
+      "змія=wąż",
+      "скло=szkło, szyba",
+      "зникнути=zniknąć",
+      "кричати=krzyczeć",
+      "втекти=uciec"
+     ],
+     "tip_en": "Say each new word out loud as you match it: it sticks better.",
+     "tip_uk": "Промовляй кожне нове слово вголос, коли з'єднуєш: так воно краще запам'ятовується.",
+     "tip_pl": "Wypowiadaj każde nowe słowo na głos, gdy je łączysz: lepiej zostaje w pamięci."
+    },
+    {
+     "type": "vocabulary",
+     "q": "Скло раптом <b>зникло</b>. Що це означає?",
+     "options": [
+      "Скло розбилося",
+      "Скла більше не було",
+      "Скло було брудне",
+      "Скло було товсте"
+     ],
+     "answer": 1,
+     "tip_en": "Зникнути = to vanish: it was there, then it wasn't.",
+     "tip_uk": "Зникнути — перестати бути видимим, ніби розтанути.",
+     "tip_pl": "Зникнути = zniknąć: było i nagle nie ma."
+    },
+    {
+     "type": "listening",
+     "q": "Послухай. Що зробила змія?",
+     "options": [
+      "Заснула",
+      "Втекла з тераріуму",
+      "Пообідала",
+      "Вкусила кузена"
+     ],
+     "answer": 1,
+     "tip_en": "The snake crawled out and escaped. Listen for виповзла and втекла.",
+     "tip_uk": "Змія виповзла і втекла. Слухай дієслова.",
+     "tip_pl": "Wąż wypełzł i uciekł. Słuchaj: виповзла, втекла.",
+     "say": "Скло зникло, а змія виповзла і втекла. Кузен дуже голосно кричав."
+    },
+    {
+     "type": "grammar",
+     "q": "Учора Гаррі ____ в зоопарку.",
+     "options": [
+      "був",
+      "була",
+      "були",
+      "було"
+     ],
+     "answer": 0,
+     "tip_en": "Past tense of бути for він (he): був. Вона була, вони були.",
+     "tip_uk": "Він був, вона була, воно було, вони були.",
+     "tip_pl": "Czas przeszły od бути dla він (on): був = był. Вона була = była."
+    },
+    {
+     "type": "grammar",
+     "q": "Тітка Петунія ____ дуже сердита.",
+     "options": [
+      "була",
+      "був",
+      "було",
+      "були"
+     ],
+     "answer": 0,
+     "tip_en": "Feminine past ends in -ла: вона була, вона кричала.",
+     "tip_uk": "Жіночий рід у минулому: -ла: була, кричала.",
+     "tip_pl": "Rodzaj żeński: -ла, jak polskie -ła: була = była."
+    },
+    {
+     "type": "order",
+     "q": "Склади речення.",
+     "options": [
+      "Змія",
+      "раптом",
+      "виповзла",
+      "з",
+      "тераріуму"
+     ],
+     "tip_en": "З (out of) + genitive: з тераріуму, з дому.",
+     "tip_uk": "З + родовий відмінок: з тераріуму, з дому.",
+     "tip_pl": "З + dopełniacz, jak po polsku: з тераріуму = z terrarium.",
+     "q_en": "Build the sentence: “The snake suddenly crawled out of the terrarium.”",
+     "q_uk": "Склади речення: «Змія раптом виповзла з тераріуму»",
+     "q_pl": "Ułóż zdanie: „Wąż nagle wypełzł z terrarium.”"
+    },
+    {
+     "type": "type",
+     "q": "Гаррі ____ зі змією. (розмовляти, він)",
+     "options": [
+      "розмовляв"
+     ],
+     "tip_en": "Masculine past: stem розмовля- + -в.",
+     "tip_uk": "Чоловічий рід, минулий час: розмовля- + -в = розмовляв.",
+     "tip_pl": "Czas przeszły, rodzaj męski: -в, jak polskie -ł: розмовляв = rozmawiał.",
+     "q_en": "Гаррі ____ зі змією. (розмовляти, він) (talked)",
+     "q_uk": "Гаррі ____ зі змією. (розмовляти, він) (розмовляти, він)",
+     "q_pl": "Гаррі ____ зі змією. (розмовляти, він) (rozmawiał)"
+    },
+    {
+     "type": "tf",
+     "q": "Правда чи неправда? Змії в зоопарку було дуже весело.",
+     "options": [
+      "True",
+      "False"
+     ],
+     "answer": 1,
+     "tip_en": "False: the snake was bored behind the glass and had never seen Brazil.",
+     "tip_uk": "Неправда: змія нудьгувала за склом і ніколи не бачила Бразилії.",
+     "tip_pl": "Fałsz: wąż nudził się za szybą i nigdy nie widział Brazylii."
+    },
+    {
+     "type": "speaking",
+     "q": "Скажи вголос: <i>«Скло зникло, і змія втекла.»</i>",
+     "say": "Скло зникло, і змія втекла.",
+     "tip_en": "Ukrainian г is a soft breathy 'h'; и is a short 'i' as in 'sit'.",
+     "tip_uk": "Чітко вимовляй «зникло» і «втекла».",
+     "tip_pl": "Ukraińskie и brzmi jak polskie y: зникло ≈ znykło."
+    }
+   ],
+   "pl_grammar_en": "Past tense: -łem / -łam / -ł / -ła",
+   "pl_grammar_uk": "Минулий час: -łem / -łam / -ł / -ła",
+   "pl_grammar_pl": "Czas przeszły: -łem / -łam / -ł / -ła",
+   "uk_grammar_en": "Past tense: -в / -ла / -ли",
+   "uk_grammar_uk": "Минулий час: -в / -ла / -ли",
+   "uk_grammar_pl": "Czas przeszły: -в / -ла / -ли"
+  }
  },
  {
   "num": 3,
@@ -766,7 +1116,349 @@
     "tip_uk": "Вони втекли в готель, а потім у крихітний будиночок на скелі посеред моря.",
     "tip_pl": "Uciekli do hotelu, a potem do maleńkiego domku na skale pośrodku morza."
    }
-  ]
+  ],
+  "title_en": "Letters from Nowhere",
+  "scene_en": "Letters start arriving for the boy. His uncle destroys them, but the next day there are even more.",
+  "variants": {
+   "pl": [
+    {
+     "type": "intro",
+     "q": "Lekcja 3. Wchodzimy do kolejnej sceny!",
+     "q_en": "Lesson 3. Into the next scene!",
+     "q_uk": "Урок 3. Вирушаємо в наступну сцену!",
+     "q_pl": "Lekcja 3. Wchodzimy do kolejnej sceny!",
+     "options_en": [
+      "5 new Polish words from the scene",
+      "Listening at natural speed",
+      "Grammar: Verb aspect: pisać / napisać",
+      "Speaking: say a line from the scene"
+     ],
+     "options_uk": [
+      "5 нових польських слів зі сцени",
+      "Аудіювання в природному темпі",
+      "Граматика: Вид дієслова: pisać / napisać",
+      "Говоріння: скажи фразу зі сцени"
+     ],
+     "options_pl": [
+      "5 nowych słów ze sceny",
+      "Słuchanie w naturalnym tempie",
+      "Gramatyka: Aspekt: pisać / napisać",
+      "Mówienie: powiedz kwestię ze sceny"
+     ],
+     "tip": "Start",
+     "tip_en": "Start the lesson",
+     "tip_uk": "Почати урок",
+     "tip_pl": "Zacznij lekcję"
+    },
+    {
+     "type": "match",
+     "q": "Połącz słowa ze sceny z ich znaczeniem.",
+     "options_en": [
+      "list=letter",
+      "koperta=envelope",
+      "wujek=uncle",
+      "spalić=to burn",
+      "komin=chimney"
+     ],
+     "options_uk": [
+      "list=лист",
+      "koperta=конверт",
+      "wujek=дядько",
+      "spalić=спалити",
+      "komin=комин"
+     ],
+     "options_pl": [
+      "list=wiadomość na papierze",
+      "koperta=papier, w którym jest list",
+      "wujek=brat mamy lub taty",
+      "spalić=zniszczyć ogniem",
+      "komin=przez niego wychodzi dym"
+     ],
+     "tip_en": "Say each new word out loud as you match it: it sticks better.",
+     "tip_uk": "Промовляй кожне нове слово вголос, коли з'єднуєш: так воно краще запам'ятовується.",
+     "tip_pl": "Wypowiadaj każde nowe słowo na głos, gdy je łączysz: lepiej zostaje w pamięci."
+    },
+    {
+     "type": "vocabulary",
+     "q": "Na kopercie jest <b>adres</b>. Co to jest?",
+     "options": [
+      "Imię kota",
+      "Miejsce, gdzie ktoś mieszka",
+      "Data urodzin",
+      "Cena znaczka"
+     ],
+     "answer": 1,
+     "tip_en": "Adres = address: the place where someone lives.",
+     "tip_uk": "Adres = адреса: місце, де хтось живе.",
+     "tip_pl": "Adres to miejsce zamieszkania: ulica, dom, miasto."
+    },
+    {
+     "type": "listening",
+     "q": "Posłuchaj. Skąd wpadają listy?",
+     "options": [
+      "Przez okno",
+      "Przez komin",
+      "Pod drzwiami",
+      "Z lodówki"
+     ],
+     "answer": 1,
+     "tip_en": "Przez komin = through the chimney. Hundreds of letters fly in!",
+     "tip_uk": "Przez komin = через комин. Сотні листів!",
+     "tip_pl": "Listy wlatują przez komin, setki listów!",
+     "say": "Setki listów wlatują przez komin! Wujek jest wściekły."
+    },
+    {
+     "type": "grammar",
+     "q": "Wujek ____ wszystkie listy i wyrzucił je do ognia. (finished action)",
+     "options": [
+      "zebrał",
+      "zbierał",
+      "zbiera",
+      "zbierać"
+     ],
+     "answer": 0,
+     "tip_en": "Perfective zebrał = he gathered them (done, result). Imperfective zbierał = was gathering.",
+     "tip_uk": "Доконаний вид zebrał = зібрав (результат). Недоконаний zbierał = збирав.",
+     "tip_pl": "Aspekt dokonany: zebrał (skończone). Niedokonany: zbierał (proces)."
+    },
+    {
+     "type": "grammar",
+     "q": "Każdego dnia sowy ____ nowe listy. (repeated action)",
+     "options": [
+      "przynosiły",
+      "przyniosły",
+      "przyniosą",
+      "przynieść"
+     ],
+     "answer": 0,
+     "tip_en": "Repeated action → imperfective: przynosiły (used to bring, every day).",
+     "tip_uk": "Повторювана дія → недоконаний вид: przynosiły (приносили щодня).",
+     "tip_pl": "Czynność powtarzana → aspekt niedokonany: przynosiły."
+    },
+    {
+     "type": "order",
+     "q": "Ułóż zdanie.",
+     "options": [
+      "Harry",
+      "w końcu",
+      "przeczytał",
+      "swój",
+      "list"
+     ],
+     "tip_en": "Przeczytał (perfective): he read it to the end. W końcu = finally.",
+     "tip_uk": "Przeczytał (доконаний) — прочитав до кінця. W końcu = нарешті.",
+     "tip_pl": "Przeczytał: czynność zakończona. W końcu = nareszcie.",
+     "q_en": "Build the sentence: “Harry finally read his letter.”",
+     "q_uk": "Склади речення: «Гаррі нарешті прочитав свій лист.»",
+     "q_pl": "Ułóż zdanie: „Harry w końcu przeczytał swój list”"
+    },
+    {
+     "type": "type",
+     "q": "Wujek ____ list, zanim Harry go otworzył. (spalić, on)",
+     "options": [
+      "spalił"
+     ],
+     "tip_en": "Spalić is perfective: spalił = burned (completely).",
+     "tip_uk": "Spalić — доконаний вид: spalił = спалив.",
+     "tip_pl": "Spalić (dokonany) → spalił.",
+     "q_en": "Wujek ____ list, zanim Harry go otworzył. (spalić, on) (burned)",
+     "q_uk": "Wujek ____ list, zanim Harry go otworzył. (spalić, on) (спалив)",
+     "q_pl": "Wujek ____ list, zanim Harry go otworzył. (spalić, on) (spalić, on)"
+    },
+    {
+     "type": "tf",
+     "q": "Prawda czy fałsz? Wujek chętnie dał Harry'emu list.",
+     "options": [
+      "True",
+      "False"
+     ],
+     "answer": 1,
+     "tip_en": "False: he tore up and burned the letters and even moved the family to an island.",
+     "tip_uk": "Неправда: він рвав і палив листи й навіть утік з родиною на острів.",
+     "tip_pl": "Fałsz: darł i palił listy, a nawet uciekł z rodziną na wyspę."
+    },
+    {
+     "type": "speaking",
+     "q": "Powiedz na głos: <i>„Setki listów wlatują przez komin!”</i>",
+     "say": "Setki listów wlatują przez komin!",
+     "tip_en": "Setki and listów: the genitive plural after numbers like setki.",
+     "tip_uk": "Setki listów — «сотні листів», родовий після числівника.",
+     "tip_pl": "Setki + dopełniacz: setki listów."
+    }
+   ],
+   "uk": [
+    {
+     "type": "intro",
+     "q": "Урок 3. Вирушаємо в наступну сцену!",
+     "q_en": "Lesson 3. Into the next scene!",
+     "q_uk": "Урок 3. Вирушаємо в наступну сцену!",
+     "q_pl": "Lekcja 3. Wchodzimy do kolejnej sceny!",
+     "options_en": [
+      "5 new Ukrainian words from the scene",
+      "Listening at natural speed",
+      "Grammar: Verb aspect: писати / написати",
+      "Speaking: say a line from the scene"
+     ],
+     "options_uk": [
+      "5 нових слів зі сцени",
+      "Аудіювання в природному темпі",
+      "Граматика: Вид дієслова: писати / написати",
+      "Говоріння: скажи фразу зі сцени"
+     ],
+     "options_pl": [
+      "5 nowych ukraińskich słów ze sceny",
+      "Słuchanie w naturalnym tempie",
+      "Gramatyka: Aspekt: писати / написати",
+      "Mówienie: powiedz kwestię ze sceny"
+     ],
+     "tip": "Start",
+     "tip_en": "Start the lesson",
+     "tip_uk": "Почати урок",
+     "tip_pl": "Zacznij lekcję"
+    },
+    {
+     "type": "match",
+     "q": "З'єднай слова зі сцени з їхнім значенням.",
+     "options_en": [
+      "лист=letter",
+      "конверт=envelope",
+      "дядько=uncle",
+      "спалити=to burn",
+      "комин=chimney"
+     ],
+     "options_uk": [
+      "лист=повідомлення на папері",
+      "конверт=папір, у якому лежить лист",
+      "дядько=брат мами чи тата",
+      "спалити=знищити вогнем",
+      "комин=через нього виходить дим"
+     ],
+     "options_pl": [
+      "лист=list",
+      "конверт=koperta",
+      "дядько=wujek",
+      "спалити=spalić",
+      "комин=komin"
+     ],
+     "tip_en": "Say each new word out loud as you match it: it sticks better.",
+     "tip_uk": "Промовляй кожне нове слово вголос, коли з'єднуєш: так воно краще запам'ятовується.",
+     "tip_pl": "Wypowiadaj każde nowe słowo na głos, gdy je łączysz: lepiej zostaje w pamięci."
+    },
+    {
+     "type": "vocabulary",
+     "q": "На конверті є <b>адреса</b>. Що це?",
+     "options": [
+      "Ім'я кота",
+      "Місце, де хтось живе",
+      "Дата народження",
+      "Ціна марки"
+     ],
+     "answer": 1,
+     "tip_en": "Адреса = address: the place where someone lives.",
+     "tip_uk": "Адреса — місце проживання: вулиця, будинок, місто.",
+     "tip_pl": "Адреса = adres: miejsce zamieszkania."
+    },
+    {
+     "type": "listening",
+     "q": "Послухай. Звідки летять листи?",
+     "options": [
+      "Через вікно",
+      "Через комин",
+      "З-під дверей",
+      "З холодильника"
+     ],
+     "answer": 1,
+     "tip_en": "Через комин = through the chimney. Hundreds of letters!",
+     "tip_uk": "Сотні листів летять через комин!",
+     "tip_pl": "Через комин = przez komin. Setki listów!",
+     "say": "Сотні листів летять через комин! Дядько страшенно злий."
+    },
+    {
+     "type": "grammar",
+     "q": "Дядько ____ всі листи і кинув їх у вогонь. (завершена дія)",
+     "options": [
+      "зібрав",
+      "збирав",
+      "збирає",
+      "збирати"
+     ],
+     "answer": 0,
+     "tip_en": "Perfective зібрав = gathered (done, result). Imperfective збирав = was gathering.",
+     "tip_uk": "Доконаний вид «зібрав» — дію завершено, є результат.",
+     "tip_pl": "Aspekt dokonany: зібрав = zebrał. Niedokonany: збирав = zbierał."
+    },
+    {
+     "type": "grammar",
+     "q": "Щодня сови ____ нові листи. (повторювана дія)",
+     "options": [
+      "приносили",
+      "принесли",
+      "принесуть",
+      "принести"
+     ],
+     "answer": 0,
+     "tip_en": "Repeated action → imperfective: приносили (brought every day).",
+     "tip_uk": "Повторювана дія → недоконаний вид: приносили.",
+     "tip_pl": "Czynność powtarzana → niedokonany: приносили = przynosiły."
+    },
+    {
+     "type": "order",
+     "q": "Склади речення.",
+     "options": [
+      "Гаррі",
+      "нарешті",
+      "прочитав",
+      "свій",
+      "лист"
+     ],
+     "tip_en": "Прочитав (perfective): read to the end. Нарешті = finally.",
+     "tip_uk": "Прочитав — доконаний вид. Нарешті — після довгого чекання.",
+     "tip_pl": "Прочитав = przeczytał (dokonany). Нарешті = w końcu.",
+     "q_en": "Build the sentence: “Harry finally read his letter.”",
+     "q_uk": "Склади речення: «Гаррі нарешті прочитав свій лист»",
+     "q_pl": "Ułóż zdanie: „Harry w końcu przeczytał swój list.”"
+    },
+    {
+     "type": "type",
+     "q": "Дядько ____ лист, перш ніж Гаррі його відкрив. (спалити, він)",
+     "options": [
+      "спалив"
+     ],
+     "tip_en": "Спалити is perfective: спалив = burned completely.",
+     "tip_uk": "Спалити — доконаний вид: спалив.",
+     "tip_pl": "Спалити (dokonany) → спалив = spalił.",
+     "q_en": "Дядько ____ лист, перш ніж Гаррі його відкрив. (спалити, він) (burned)",
+     "q_uk": "Дядько ____ лист, перш ніж Гаррі його відкрив. (спалити, він) (спалити, він)",
+     "q_pl": "Дядько ____ лист, перш ніж Гаррі його відкрив. (спалити, він) (spalił)"
+    },
+    {
+     "type": "tf",
+     "q": "Правда чи неправда? Дядько охоче віддав Гаррі лист.",
+     "options": [
+      "True",
+      "False"
+     ],
+     "answer": 1,
+     "tip_en": "False: he tore up and burned the letters and even fled to an island.",
+     "tip_uk": "Неправда: він рвав і палив листи й навіть утік на острів.",
+     "tip_pl": "Fałsz: darł i palił listy, a nawet uciekł na wyspę."
+    },
+    {
+     "type": "speaking",
+     "q": "Скажи вголос: <i>«Сотні листів летять через комин!»</i>",
+     "say": "Сотні листів летять через комин!",
+     "tip_en": "Ukrainian и in листів sounds like a short 'i' in 'sit'.",
+     "tip_uk": "Чітко вимовляй «сотні листів».",
+     "tip_pl": "и w листів brzmi jak polskie y."
+    }
+   ],
+   "pl_grammar_en": "Verb aspect: pisać / napisać",
+   "pl_grammar_uk": "Вид дієслова: pisać / napisać",
+   "pl_grammar_pl": "Aspekt: pisać / napisać",
+   "uk_grammar_en": "Verb aspect: писати / написати",
+   "uk_grammar_uk": "Вид дієслова: писати / написати",
+   "uk_grammar_pl": "Aspekt: писати / написати"
+  }
  },
  {
   "num": 4,
@@ -908,7 +1600,351 @@
     "tip_uk": "Past Perfect у непрямій мові: had been.",
     "tip_pl": "Past Perfect w mowie zależnej: had been."
    }
-  ]
+  ],
+  "title_en": "The Keeper of Keys",
+  "scene_en": "A stormy night on an island. A giant breaks down the door, brings a cake and tells the boy the truth about his parents.",
+  "variants": {
+   "pl": [
+    {
+     "type": "intro",
+     "q": "Lekcja 4. Wchodzimy do kolejnej sceny!",
+     "q_en": "Lesson 4. Into the next scene!",
+     "q_uk": "Урок 4. Вирушаємо в наступну сцену!",
+     "q_pl": "Lekcja 4. Wchodzimy do kolejnej sceny!",
+     "options_en": [
+      "5 new Polish words from the scene",
+      "Listening at natural speed",
+      "Grammar: Reported speech: powiedział, że…",
+      "Speaking: say a line from the scene"
+     ],
+     "options_uk": [
+      "5 нових польських слів зі сцени",
+      "Аудіювання в природному темпі",
+      "Граматика: Непряма мова: powiedział, że…",
+      "Говоріння: скажи фразу зі сцени"
+     ],
+     "options_pl": [
+      "5 nowych słów ze sceny",
+      "Słuchanie w naturalnym tempie",
+      "Gramatyka: Mowa zależna: powiedział, że…",
+      "Mówienie: powiedz kwestię ze sceny"
+     ],
+     "tip": "Start",
+     "tip_en": "Start the lesson",
+     "tip_uk": "Почати урок",
+     "tip_pl": "Zacznij lekcję"
+    },
+    {
+     "type": "match",
+     "q": "Połącz słowa ze sceny z ich znaczeniem.",
+     "options_en": [
+      "olbrzym=giant",
+      "burza=storm",
+      "drzwi=door",
+      "tort=cake",
+      "czarodziej=wizard"
+     ],
+     "options_uk": [
+      "olbrzym=велетень",
+      "burza=буря",
+      "drzwi=двері",
+      "tort=торт",
+      "czarodziej=чарівник"
+     ],
+     "options_pl": [
+      "olbrzym=bardzo, bardzo duży człowiek",
+      "burza=silny wiatr, deszcz i grzmoty",
+      "drzwi=przez nie wchodzisz do domu",
+      "tort=słodkie ciasto na urodziny",
+      "czarodziej=ktoś, kto umie czarować"
+     ],
+     "tip_en": "Say each new word out loud as you match it: it sticks better.",
+     "tip_uk": "Промовляй кожне нове слово вголос, коли з'єднуєш: так воно краще запам'ятовується.",
+     "tip_pl": "Wypowiadaj każde nowe słowo na głos, gdy je łączysz: lepiej zostaje w pamięci."
+    },
+    {
+     "type": "vocabulary",
+     "q": "Olbrzym <b>wyważył</b> drzwi. Co zrobił?",
+     "options": [
+      "Pomalował je",
+      "Otworzył je siłą",
+      "Zamknął na klucz",
+      "Zapukał cicho"
+     ],
+     "answer": 1,
+     "tip_en": "Wyważyć drzwi = to break the door down by force.",
+     "tip_uk": "Wyważyć drzwi = вибити двері силою.",
+     "tip_pl": "Wyważyć drzwi = otworzyć je siłą."
+    },
+    {
+     "type": "listening",
+     "q": "Posłuchaj. Co Hagrid przyniósł Harry'emu?",
+     "options": [
+      "Książkę",
+      "Tort urodzinowy",
+      "Miotłę",
+      "Sowę"
+     ],
+     "answer": 1,
+     "tip_en": "Tort urodzinowy = birthday cake. Wszystkiego najlepszego = happy birthday.",
+     "tip_uk": "Tort urodzinowy = торт на день народження.",
+     "tip_pl": "Tort urodzinowy i życzenia: wszystkiego najlepszego!",
+     "say": "Wszystkiego najlepszego, Harry! Przyniosłem ci tort urodzinowy."
+    },
+    {
+     "type": "grammar",
+     "q": "Hagrid: „Jesteś czarodziejem.” → Hagrid powiedział, że Harry ____ czarodziejem.",
+     "options": [
+      "jest",
+      "był",
+      "będzie",
+      "jestem"
+     ],
+     "answer": 0,
+     "tip_en": "Polish keeps the original tense after że: powiedział, że jest (no backshift!).",
+     "tip_uk": "У польській після że час не змінюється: powiedział, że jest — як і в українській.",
+     "tip_pl": "Po że zostaje ten sam czas: powiedział, że jest."
+    },
+    {
+     "type": "grammar",
+     "q": "Harry zapytał, ____ jego rodzice byli czarodziejami.",
+     "options": [
+      "czy",
+      "że",
+      "co",
+      "gdzie"
+     ],
+     "answer": 0,
+     "tip_en": "Reported yes/no question: zapytał, czy… (asked whether…).",
+     "tip_uk": "Непряме загальне питання: zapytał, czy… (спитав, чи…).",
+     "tip_pl": "Pytanie zależne tak/nie: zapytał, czy…"
+    },
+    {
+     "type": "order",
+     "q": "Ułóż zdanie.",
+     "options": [
+      "Hagrid",
+      "powiedział",
+      "że",
+      "Harry",
+      "jest",
+      "sławny"
+     ],
+     "tip_en": "Że = that. A comma always goes before że in Polish.",
+     "tip_uk": "Że = що. Перед że завжди кома.",
+     "tip_pl": "Przed że zawsze stawiamy przecinek.",
+     "q_en": "Build the sentence: “Hagrid said that Harry is famous.”",
+     "q_uk": "Склади речення: «Хагрід сказав, що Гаррі відомий.»",
+     "q_pl": "Ułóż zdanie: „Hagrid powiedział że Harry jest sławny”"
+    },
+    {
+     "type": "type",
+     "q": "Wujek krzyknął, ____ Harry nigdzie nie pojedzie.",
+     "options": [
+      "że"
+     ],
+     "tip_en": "Że introduces reported statements: krzyknął, że…",
+     "tip_uk": "Że вводить непряму мову: krzyknął, że… (крикнув, що…).",
+     "tip_pl": "Że wprowadza mowę zależną.",
+     "q_en": "Wujek krzyknął, ____ Harry nigdzie nie pojedzie. (that)",
+     "q_uk": "Wujek krzyknął, ____ Harry nigdzie nie pojedzie. (що)",
+     "q_pl": "Wujek krzyknął, ____ Harry nigdzie nie pojedzie. (spójnik)"
+    },
+    {
+     "type": "tf",
+     "q": "Prawda czy fałsz? Harry od zawsze wiedział, że jest czarodziejem.",
+     "options": [
+      "True",
+      "False"
+     ],
+     "answer": 1,
+     "tip_en": "False: he learned it from Hagrid on his 11th birthday.",
+     "tip_uk": "Неправда: він дізнався про це від Хагріда на 11-й день народження.",
+     "tip_pl": "Fałsz: dowiedział się od Hagrida w swoje 11. urodziny."
+    },
+    {
+     "type": "speaking",
+     "q": "Powiedz na głos: <i>„Hagrid powiedział, że jestem czarodziejem.”</i>",
+     "say": "Hagrid powiedział, że jestem czarodziejem.",
+     "tip_en": "rz in powiedział? No: it's ie + dz. Say it smoothly: po-wie-dział.",
+     "tip_uk": "Powiedział читається «по-вє-джяв».",
+     "tip_pl": "Powiedział: wymawiaj płynnie, ł jak u."
+    }
+   ],
+   "uk": [
+    {
+     "type": "intro",
+     "q": "Урок 4. Вирушаємо в наступну сцену!",
+     "q_en": "Lesson 4. Into the next scene!",
+     "q_uk": "Урок 4. Вирушаємо в наступну сцену!",
+     "q_pl": "Lekcja 4. Wchodzimy do kolejnej sceny!",
+     "options_en": [
+      "5 new Ukrainian words from the scene",
+      "Listening at natural speed",
+      "Grammar: Reported speech: сказав, що…",
+      "Speaking: say a line from the scene"
+     ],
+     "options_uk": [
+      "5 нових слів зі сцени",
+      "Аудіювання в природному темпі",
+      "Граматика: Непряма мова: сказав, що…",
+      "Говоріння: скажи фразу зі сцени"
+     ],
+     "options_pl": [
+      "5 nowych ukraińskich słów ze sceny",
+      "Słuchanie w naturalnym tempie",
+      "Gramatyka: Mowa zależna: сказав, що…",
+      "Mówienie: powiedz kwestię ze sceny"
+     ],
+     "tip": "Start",
+     "tip_en": "Start the lesson",
+     "tip_uk": "Почати урок",
+     "tip_pl": "Zacznij lekcję"
+    },
+    {
+     "type": "match",
+     "q": "З'єднай слова зі сцени з їхнім значенням.",
+     "options_en": [
+      "велетень=giant",
+      "буря=storm",
+      "двері=door",
+      "торт=cake",
+      "чарівник=wizard"
+     ],
+     "options_uk": [
+      "велетень=дуже-дуже велика людина",
+      "буря=сильний вітер, дощ і грім",
+      "двері=через них заходиш у дім",
+      "торт=солодкий пиріг на свято",
+      "чарівник=той, хто вміє чаклувати"
+     ],
+     "options_pl": [
+      "велетень=olbrzym",
+      "буря=burza",
+      "двері=drzwi",
+      "торт=tort",
+      "чарівник=czarodziej"
+     ],
+     "tip_en": "Say each new word out loud as you match it: it sticks better.",
+     "tip_uk": "Промовляй кожне нове слово вголос, коли з'єднуєш: так воно краще запам'ятовується.",
+     "tip_pl": "Wypowiadaj każde nowe słowo na głos, gdy je łączysz: lepiej zostaje w pamięci."
+    },
+    {
+     "type": "vocabulary",
+     "q": "Велетень <b>вибив</b> двері. Що він зробив?",
+     "options": [
+      "Пофарбував їх",
+      "Відчинив силою",
+      "Замкнув на ключ",
+      "Тихо постукав"
+     ],
+     "answer": 1,
+     "tip_en": "Вибити двері = to break the door down.",
+     "tip_uk": "Вибити двері — відчинити їх силою.",
+     "tip_pl": "Вибити двері = wyważyć drzwi."
+    },
+    {
+     "type": "listening",
+     "q": "Послухай. Що Хагрід приніс Гаррі?",
+     "options": [
+      "Книжку",
+      "Торт на день народження",
+      "Мітлу",
+      "Сову"
+     ],
+     "answer": 1,
+     "tip_en": "Торт = cake. З днем народження = happy birthday.",
+     "tip_uk": "Торт на день народження і привітання.",
+     "tip_pl": "Торт = tort. З днем народження = wszystkiego najlepszego.",
+     "say": "З днем народження, Гаррі! Я приніс тобі торт."
+    },
+    {
+     "type": "grammar",
+     "q": "Хагрід: «Я приніс торт». → Хагрід сказав, що він ____ торт.",
+     "options": [
+      "приніс",
+      "приносить",
+      "принесе",
+      "принести"
+     ],
+     "answer": 0,
+     "tip_en": "Ukrainian keeps the original tense after що: no backshift.",
+     "tip_uk": "Після «що» час не змінюється: сказав, що приніс.",
+     "tip_pl": "Po що czas się nie zmienia, jak po polsku po że."
+    },
+    {
+     "type": "grammar",
+     "q": "Гаррі спитав, ____ його батьки були чарівниками.",
+     "options": [
+      "чи",
+      "що",
+      "де",
+      "коли"
+     ],
+     "answer": 0,
+     "tip_en": "Reported yes/no question: спитав, чи… (asked whether…).",
+     "tip_uk": "Непряме загальне питання: спитав, чи…",
+     "tip_pl": "Pytanie zależne: спитав, чи… = zapytał, czy…"
+    },
+    {
+     "type": "order",
+     "q": "Склади речення.",
+     "options": [
+      "Хагрід",
+      "сказав",
+      "що",
+      "Гаррі",
+      "дуже",
+      "відомий"
+     ],
+     "tip_en": "Що = that. Put a comma before що.",
+     "tip_uk": "Перед «що» ставимо кому.",
+     "tip_pl": "Що = że. Przed що przecinek.",
+     "q_en": "Build the sentence: “Hagrid said that Harry is very famous.”",
+     "q_uk": "Склади речення: «Хагрід сказав що Гаррі дуже відомий»",
+     "q_pl": "Ułóż zdanie: „Hagrid powiedział, że Harry jest bardzo sławny.”"
+    },
+    {
+     "type": "type",
+     "q": "Дядько крикнув, ____ Гаррі нікуди не поїде.",
+     "options": [
+      "що"
+     ],
+     "tip_en": "Що introduces reported statements.",
+     "tip_uk": "«Що» вводить непряму мову.",
+     "tip_pl": "Що = że: krzyknął, że…",
+     "q_en": "Дядько крикнув, ____ Гаррі нікуди не поїде. (that)",
+     "q_uk": "Дядько крикнув, ____ Гаррі нікуди не поїде. (сполучник)",
+     "q_pl": "Дядько крикнув, ____ Гаррі нікуди не поїде. (że)"
+    },
+    {
+     "type": "tf",
+     "q": "Правда чи неправда? Гаррі завжди знав, що він чарівник.",
+     "options": [
+      "True",
+      "False"
+     ],
+     "answer": 1,
+     "tip_en": "False: he learned it from Hagrid on his 11th birthday.",
+     "tip_uk": "Неправда: дізнався від Хагріда на свій 11-й день народження.",
+     "tip_pl": "Fałsz: dowiedział się od Hagrida w 11. urodziny."
+    },
+    {
+     "type": "speaking",
+     "q": "Скажи вголос: <i>«Хагрід сказав, що я чарівник.»</i>",
+     "say": "Хагрід сказав, що я чарівник.",
+     "tip_en": "ч is 'ch', р is rolled.",
+     "tip_uk": "Чітко: чарівник, сказав.",
+     "tip_pl": "ч = cz, р wibrujące jak polskie r."
+    }
+   ],
+   "pl_grammar_en": "Reported speech: powiedział, że…",
+   "pl_grammar_uk": "Непряма мова: powiedział, że…",
+   "pl_grammar_pl": "Mowa zależna: powiedział, że…",
+   "uk_grammar_en": "Reported speech: сказав, що…",
+   "uk_grammar_uk": "Непряма мова: сказав, що…",
+   "uk_grammar_pl": "Mowa zależna: сказав, що…"
+  }
  },
  {
   "num": 5,
@@ -1036,7 +2072,349 @@
     "tip_uk": "Ввічлива і корисна фраза для справжніх магазинів.",
     "tip_pl": "Uprzejme i przydatne zdanie do prawdziwych sklepów."
    }
-  ]
+  ],
+  "title_en": "The Magic Shopping Street",
+  "scene_en": "The giant leads the boy to a hidden street of shops: a bank, robes, books, cauldrons.",
+  "variants": {
+   "pl": [
+    {
+     "type": "intro",
+     "q": "Lekcja 5. Wchodzimy do kolejnej sceny!",
+     "q_en": "Lesson 5. Into the next scene!",
+     "q_uk": "Урок 5. Вирушаємо в наступну сцену!",
+     "q_pl": "Lekcja 5. Wchodzimy do kolejnej sceny!",
+     "options_en": [
+      "5 new Polish words from the scene",
+      "Listening at natural speed",
+      "Grammar: Quantities: dużo / mało / kilka + genitive",
+      "Speaking: say a line from the scene"
+     ],
+     "options_uk": [
+      "5 нових польських слів зі сцени",
+      "Аудіювання в природному темпі",
+      "Граматика: Кількість: dużo / mało / kilka + родовий",
+      "Говоріння: скажи фразу зі сцени"
+     ],
+     "options_pl": [
+      "5 nowych słów ze sceny",
+      "Słuchanie w naturalnym tempie",
+      "Gramatyka: Ilość: dużo / mało / kilka + dopełniacz",
+      "Mówienie: powiedz kwestię ze sceny"
+     ],
+     "tip": "Start",
+     "tip_en": "Start the lesson",
+     "tip_uk": "Почати урок",
+     "tip_pl": "Zacznij lekcję"
+    },
+    {
+     "type": "match",
+     "q": "Połącz słowa ze sceny z ich znaczeniem.",
+     "options_en": [
+      "sklep=shop",
+      "bank=bank",
+      "kociołek=cauldron",
+      "szata=robe",
+      "pieniądze=money"
+     ],
+     "options_uk": [
+      "sklep=крамниця",
+      "bank=банк",
+      "kociołek=казанок",
+      "szata=мантія",
+      "pieniądze=гроші"
+     ],
+     "options_pl": [
+      "sklep=miejsce, gdzie się coś kupuje",
+      "bank=tu trzyma się pieniądze",
+      "kociołek=garnek do eliksirów",
+      "szata=długie ubranie czarodzieja",
+      "pieniądze=tym płacisz w sklepie"
+     ],
+     "tip_en": "Say each new word out loud as you match it: it sticks better.",
+     "tip_uk": "Промовляй кожне нове слово вголос, коли з'єднуєш: так воно краще запам'ятовується.",
+     "tip_pl": "Wypowiadaj każde nowe słowo na głos, gdy je łączysz: lepiej zostaje w pamięci."
+    },
+    {
+     "type": "vocabulary",
+     "q": "Harry ma <b>za mało</b> pieniędzy? Nie! W banku ma ich…",
+     "options": [
+      "bardzo dużo",
+      "zero",
+      "trochę za mało",
+      "tylko jedną monetę"
+     ],
+     "answer": 0,
+     "tip_en": "Za mało = too little; bardzo dużo = very much. His parents left him gold.",
+     "tip_uk": "Za mało = замало; bardzo dużo = дуже багато. Батьки залишили йому золото.",
+     "tip_pl": "Za mało ≠ bardzo dużo. Rodzice zostawili mu złoto."
+    },
+    {
+     "type": "listening",
+     "q": "Posłuchaj. Ile kosztuje różdżka?",
+     "options": [
+      "Siedem galeonów",
+      "Dwa sykle",
+      "Sto galeonów",
+      "Nic"
+     ],
+     "answer": 0,
+     "tip_en": "Siedem galeonów: after 5+ the noun is genitive plural.",
+     "tip_uk": "Siedem galeonów: після 5+ іменник у родовому множини.",
+     "tip_pl": "Siedem + dopełniacz l.mn.: siedem galeonów.",
+     "say": "Ta różdżka kosztuje siedem galeonów. To niedużo za tak dobrą różdżkę."
+    },
+    {
+     "type": "grammar",
+     "q": "Na ulicy było dużo ____.",
+     "options": [
+      "sklepów",
+      "sklepy",
+      "sklep",
+      "sklepami"
+     ],
+     "answer": 0,
+     "tip_en": "Dużo + genitive plural: dużo sklepów.",
+     "tip_uk": "Dużo + родовий множини: dużo sklepów (багато крамниць).",
+     "tip_pl": "Dużo + dopełniacz: dużo sklepów."
+    },
+    {
+     "type": "grammar",
+     "q": "Harry kupił trzy ____.",
+     "options": [
+      "książki",
+      "książek",
+      "książka",
+      "książkami"
+     ],
+     "answer": 0,
+     "tip_en": "2, 3, 4 take nominative plural: trzy książki. 5+ takes genitive: pięć książek.",
+     "tip_uk": "2, 3, 4 + називний множини: trzy książki; 5+ — родовий: pięć książek. Як у нас: три книжки, п'ять книжок.",
+     "tip_pl": "2–4 + mianownik: trzy książki; 5+ dopełniacz: pięć książek."
+    },
+    {
+     "type": "order",
+     "q": "Ułóż zdanie.",
+     "options": [
+      "Na",
+      "ulicy",
+      "jest",
+      "mnóstwo",
+      "czarodziejów"
+     ],
+     "tip_en": "Mnóstwo = loads of, + genitive plural.",
+     "tip_uk": "Mnóstwo = безліч, + родовий множини.",
+     "tip_pl": "Mnóstwo + dopełniacz l.mn.",
+     "q_en": "Build the sentence: “There are loads of wizards on the street.”",
+     "q_uk": "Склади речення: «На вулиці безліч чарівників.»",
+     "q_pl": "Ułóż zdanie: „Na ulicy jest mnóstwo czarodziejów”"
+    },
+    {
+     "type": "type",
+     "q": "Harry nie ma ani jednej ____. (sowa)",
+     "options": [
+      "sowy"
+     ],
+     "tip_en": "After negation (nie ma) Polish uses genitive: nie ma sowy.",
+     "tip_uk": "Після заперечення nie ma — родовий: nie ma sowy (немає сови).",
+     "tip_pl": "Po przeczeniu dopełniacz: nie ma sowy.",
+     "q_en": "Harry nie ma ani jednej ____. (sowa) (owl)",
+     "q_uk": "Harry nie ma ani jednej ____. (sowa) (сова)",
+     "q_pl": "Harry nie ma ani jednej ____. (sowa) (sowa)"
+    },
+    {
+     "type": "tf",
+     "q": "Prawda czy fałsz? Harry kupił sowę.",
+     "options": [
+      "True",
+      "False"
+     ],
+     "answer": 1,
+     "tip_en": "False: Hagrid bought him the owl as a birthday present.",
+     "tip_uk": "Неправда: сову йому подарував Хагрід.",
+     "tip_pl": "Fałsz: sowę kupił mu Hagrid w prezencie."
+    },
+    {
+     "type": "speaking",
+     "q": "Powiedz na głos: <i>„Ile kosztuje ten kociołek?”</i>",
+     "say": "Ile kosztuje ten kociołek?",
+     "tip_en": "Ile = how much/many. ó in kociołek? No: o + ł.",
+     "tip_uk": "Ile kosztuje — скільки коштує.",
+     "tip_pl": "Pytanie o cenę: ile kosztuje…?"
+    }
+   ],
+   "uk": [
+    {
+     "type": "intro",
+     "q": "Урок 5. Вирушаємо в наступну сцену!",
+     "q_en": "Lesson 5. Into the next scene!",
+     "q_uk": "Урок 5. Вирушаємо в наступну сцену!",
+     "q_pl": "Lekcja 5. Wchodzimy do kolejnej sceny!",
+     "options_en": [
+      "5 new Ukrainian words from the scene",
+      "Listening at natural speed",
+      "Grammar: Quantities: багато / мало / кілька + genitive",
+      "Speaking: say a line from the scene"
+     ],
+     "options_uk": [
+      "5 нових слів зі сцени",
+      "Аудіювання в природному темпі",
+      "Граматика: Кількість: багато / мало / кілька + родовий",
+      "Говоріння: скажи фразу зі сцени"
+     ],
+     "options_pl": [
+      "5 nowych ukraińskich słów ze sceny",
+      "Słuchanie w naturalnym tempie",
+      "Gramatyka: Ilość: багато / мало / кілька + dopełniacz",
+      "Mówienie: powiedz kwestię ze sceny"
+     ],
+     "tip": "Start",
+     "tip_en": "Start the lesson",
+     "tip_uk": "Почати урок",
+     "tip_pl": "Zacznij lekcję"
+    },
+    {
+     "type": "match",
+     "q": "З'єднай слова зі сцени з їхнім значенням.",
+     "options_en": [
+      "крамниця=shop",
+      "банк=bank",
+      "казанок=cauldron",
+      "мантія=robe",
+      "гроші=money"
+     ],
+     "options_uk": [
+      "крамниця=місце, де щось купують",
+      "банк=тут зберігають гроші",
+      "казанок=горщик для зілля",
+      "мантія=довгий одяг чарівника",
+      "гроші=ними платять у крамниці"
+     ],
+     "options_pl": [
+      "крамниця=sklep",
+      "банк=bank",
+      "казанок=kociołek",
+      "мантія=szata",
+      "гроші=pieniądze"
+     ],
+     "tip_en": "Say each new word out loud as you match it: it sticks better.",
+     "tip_uk": "Промовляй кожне нове слово вголос, коли з'єднуєш: так воно краще запам'ятовується.",
+     "tip_pl": "Wypowiadaj każde nowe słowo na głos, gdy je łączysz: lepiej zostaje w pamięci."
+    },
+    {
+     "type": "vocabulary",
+     "q": "У Гаррі <b>замало</b> грошей? Ні! У банку їх…",
+     "options": [
+      "дуже багато",
+      "нуль",
+      "трохи замало",
+      "лише одна монета"
+     ],
+     "answer": 0,
+     "tip_en": "Замало = too little; дуже багато = very much.",
+     "tip_uk": "Замало ≠ дуже багато. Батьки залишили йому золото.",
+     "tip_pl": "Замало = za mało; дуже багато = bardzo dużo."
+    },
+    {
+     "type": "listening",
+     "q": "Послухай. Скільки коштує паличка?",
+     "options": [
+      "Сім галеонів",
+      "Два серпики",
+      "Сто галеонів",
+      "Нічого"
+     ],
+     "answer": 0,
+     "tip_en": "Сім галеонів: after 5+ the noun is genitive plural.",
+     "tip_uk": "Сім + родовий множини: сім галеонів.",
+     "tip_pl": "Сім галеонів = siedem galeonów (dopełniacz).",
+     "say": "Ця паличка коштує сім галеонів. Це небагато за таку гарну паличку."
+    },
+    {
+     "type": "grammar",
+     "q": "На вулиці було багато ____.",
+     "options": [
+      "крамниць",
+      "крамниці",
+      "крамниця",
+      "крамницями"
+     ],
+     "answer": 0,
+     "tip_en": "Багато + genitive plural: багато крамниць.",
+     "tip_uk": "Багато + родовий множини: багато крамниць.",
+     "tip_pl": "Багато + dopełniacz: багато крамниць = dużo sklepów."
+    },
+    {
+     "type": "grammar",
+     "q": "Гаррі купив три ____.",
+     "options": [
+      "книжки",
+      "книжок",
+      "книжка",
+      "книжками"
+     ],
+     "answer": 0,
+     "tip_en": "2, 3, 4 take nominative plural (три книжки); 5+ genitive (п'ять книжок).",
+     "tip_uk": "2–4: три книжки; 5+: п'ять книжок.",
+     "tip_pl": "2–4 + mianownik: три книжки; 5+ dopełniacz: п'ять книжок."
+    },
+    {
+     "type": "order",
+     "q": "Склади речення.",
+     "options": [
+      "На",
+      "вулиці",
+      "безліч",
+      "різних",
+      "чарівників"
+     ],
+     "tip_en": "Безліч = loads of, + genitive plural.",
+     "tip_uk": "Безліч + родовий множини.",
+     "tip_pl": "Безліч = mnóstwo, + dopełniacz.",
+     "q_en": "Build the sentence: “There are loads of different wizards on the street.”",
+     "q_uk": "Склади речення: «На вулиці безліч різних чарівників»",
+     "q_pl": "Ułóż zdanie: „Na ulicy jest mnóstwo różnych czarodziejów.”"
+    },
+    {
+     "type": "type",
+     "q": "У Гаррі немає жодної ____. (сова)",
+     "options": [
+      "сови"
+     ],
+     "tip_en": "After немає Ukrainian uses genitive: немає сови.",
+     "tip_uk": "Після «немає» — родовий: немає сови.",
+     "tip_pl": "Po немає dopełniacz, jak po polsku: nie ma sowy.",
+     "q_en": "У Гаррі немає жодної ____. (сова) (owl)",
+     "q_uk": "У Гаррі немає жодної ____. (сова) (сова)",
+     "q_pl": "У Гаррі немає жодної ____. (сова) (sowa)"
+    },
+    {
+     "type": "tf",
+     "q": "Правда чи неправда? Гаррі сам купив собі сову.",
+     "options": [
+      "True",
+      "False"
+     ],
+     "answer": 1,
+     "tip_en": "False: Hagrid gave him the owl as a birthday present.",
+     "tip_uk": "Неправда: сову подарував Хагрід.",
+     "tip_pl": "Fałsz: sowę dał mu Hagrid w prezencie."
+    },
+    {
+     "type": "speaking",
+     "q": "Скажи вголос: <i>«Скільки коштує цей казанок?»</i>",
+     "say": "Скільки коштує цей казанок?",
+     "tip_en": "Stress: СКІЛЬки, КОШтує, казаНОК.",
+     "tip_uk": "Наголоси: скільки, коштує, казанок.",
+     "tip_pl": "Akcent: СКІЛЬки, КОШтує, казаНОК."
+    }
+   ],
+   "pl_grammar_en": "Quantities: dużo / mało / kilka + genitive",
+   "pl_grammar_uk": "Кількість: dużo / mało / kilka + родовий",
+   "pl_grammar_pl": "Ilość: dużo / mało / kilka + dopełniacz",
+   "uk_grammar_en": "Quantities: багато / мало / кілька + genitive",
+   "uk_grammar_uk": "Кількість: багато / мало / кілька + родовий",
+   "uk_grammar_pl": "Ilość: багато / мало / кілька + dopełniacz"
+  }
  },
  {
   "num": 6,
@@ -1165,7 +2543,352 @@
     "tip_uk": "The kind of place where… — чудова фраза рівня B2.",
     "tip_pl": "The kind of place where… to świetne wyrażenie na poziomie B2."
    }
-  ]
+  ],
+  "title_en": "The Wand Chooses the Wizard",
+  "scene_en": "An old wand shop. The boy tries several wands until one chooses him.",
+  "variants": {
+   "pl": [
+    {
+     "type": "intro",
+     "q": "Lekcja 6. Wchodzimy do kolejnej sceny!",
+     "q_en": "Lesson 6. Into the next scene!",
+     "q_uk": "Урок 6. Вирушаємо в наступну сцену!",
+     "q_pl": "Lekcja 6. Wchodzimy do kolejnej sceny!",
+     "options_en": [
+      "5 new Polish words from the scene",
+      "Listening at natural speed",
+      "Grammar: Relative clauses: który / która / które",
+      "Speaking: say a line from the scene"
+     ],
+     "options_uk": [
+      "5 нових польських слів зі сцени",
+      "Аудіювання в природному темпі",
+      "Граматика: Підрядні: który / która / które",
+      "Говоріння: скажи фразу зі сцени"
+     ],
+     "options_pl": [
+      "5 nowych słów ze sceny",
+      "Słuchanie w naturalnym tempie",
+      "Gramatyka: Zdania względne: który / która / które",
+      "Mówienie: powiedz kwestię ze sceny"
+     ],
+     "tip": "Start",
+     "tip_en": "Start the lesson",
+     "tip_uk": "Почати урок",
+     "tip_pl": "Zacznij lekcję"
+    },
+    {
+     "type": "match",
+     "q": "Połącz słowa ze sceny z ich znaczeniem.",
+     "options_en": [
+      "różdżka=wand",
+      "sprzedawca=seller",
+      "pudełko=box",
+      "pióro=feather",
+      "wybierać=to choose"
+     ],
+     "options_uk": [
+      "różdżka=чарівна паличка",
+      "sprzedawca=продавець",
+      "pudełko=коробка",
+      "pióro=перо",
+      "wybierać=обирати"
+     ],
+     "options_pl": [
+      "różdżka=patyk do czarowania",
+      "sprzedawca=osoba, która sprzedaje",
+      "pudełko=w nim coś leży",
+      "pióro=rośnie ptakom",
+      "wybierać=decydować, co wziąć"
+     ],
+     "tip_en": "Say each new word out loud as you match it: it sticks better.",
+     "tip_uk": "Промовляй кожне нове слово вголос, коли з'єднуєш: так воно краще запам'ятовується.",
+     "tip_pl": "Wypowiadaj każde nowe słowo na głos, gdy je łączysz: lepiej zostaje w pamięci."
+    },
+    {
+     "type": "vocabulary",
+     "q": "Różdżka <b>wybiera</b> czarodzieja. Co to znaczy?",
+     "options": [
+      "Czarodziej jej szuka",
+      "Różdżka decyduje",
+      "Różdżka się psuje",
+      "Różdżka jest tania"
+     ],
+     "answer": 1,
+     "tip_en": "Wybierać = to choose. Here the wand decides!",
+     "tip_uk": "Wybierać = обирати. Тут вирішує паличка!",
+     "tip_pl": "Wybierać = decydować. Tu decyduje różdżka."
+    },
+    {
+     "type": "listening",
+     "q": "Posłuchaj. Co jest w środku różdżki Harry'ego?",
+     "options": [
+      "Włos jednorożca",
+      "Pióro feniksa",
+      "Smocze serce",
+      "Złoto"
+     ],
+     "answer": 1,
+     "tip_en": "Pióro feniksa = phoenix feather.",
+     "tip_uk": "Pióro feniksa = перо фенікса.",
+     "tip_pl": "Pióro feniksa — jak różdżka Voldemorta!",
+     "say": "Ta różdżka ma w środku pióro feniksa. Ten sam feniks dał jeszcze jedno pióro."
+    },
+    {
+     "type": "grammar",
+     "q": "To jest sprzedawca, ____ zna każdą różdżkę.",
+     "options": [
+      "który",
+      "która",
+      "które",
+      "których"
+     ],
+     "answer": 0,
+     "tip_en": "Sprzedawca is masculine → który.",
+     "tip_uk": "Sprzedawca — чоловічий рід → który (який).",
+     "tip_pl": "Rodzaj męski → który."
+    },
+    {
+     "type": "grammar",
+     "q": "To różdżka, ____ wybrała Harry'ego.",
+     "options": [
+      "która",
+      "który",
+      "które",
+      "którą"
+     ],
+     "answer": 0,
+     "tip_en": "Różdżka is feminine and it's the subject → która.",
+     "tip_uk": "Różdżka — жіночий рід і підмет → która (яка).",
+     "tip_pl": "Rodzaj żeński, podmiot → która."
+    },
+    {
+     "type": "order",
+     "q": "Ułóż zdanie.",
+     "options": [
+      "To",
+      "sklep",
+      "w",
+      "którym",
+      "kupuje",
+      "się",
+      "różdżki"
+     ],
+     "tip_en": "W którym = in which (locative). Kupuje się = one buys.",
+     "tip_uk": "W którym = в якому (місцевий відмінок). Kupuje się = купують.",
+     "tip_pl": "W + miejscownik: w którym.",
+     "q_en": "Build the sentence: “This is the shop where you buy wands.”",
+     "q_uk": "Склади речення: «Це крамниця, в якій купують палички.»",
+     "q_pl": "Ułóż zdanie: „To sklep w którym kupuje się różdżki”"
+    },
+    {
+     "type": "type",
+     "q": "To pudełko, ____ leży na półce, jest bardzo stare.",
+     "options": [
+      "które"
+     ],
+     "tip_en": "Pudełko is neuter → które.",
+     "tip_uk": "Pudełko — середній рід → które (яке).",
+     "tip_pl": "Rodzaj nijaki → które.",
+     "q_en": "To pudełko, ____ leży na półce, jest bardzo stare. (which)",
+     "q_uk": "To pudełko, ____ leży na półce, jest bardzo stare. (яке)",
+     "q_pl": "To pudełko, ____ leży na półce, jest bardzo stare. (zaimek względny)"
+    },
+    {
+     "type": "tf",
+     "q": "Prawda czy fałsz? Pierwsza różdżka od razu pasowała do Harry'ego.",
+     "options": [
+      "True",
+      "False"
+     ],
+     "answer": 1,
+     "tip_en": "False: he tried several wands before the right one chose him.",
+     "tip_uk": "Неправда: він спробував кілька паличок, поки одна не обрала його.",
+     "tip_pl": "Fałsz: próbował kilku, zanim właściwa go wybrała."
+    },
+    {
+     "type": "speaking",
+     "q": "Powiedz na głos: <i>„To różdżka, która wybrała mnie.”</i>",
+     "say": "To różdżka, która wybrała mnie.",
+     "tip_en": "ó in która sounds like 'u'.",
+     "tip_uk": "ó в która читається як «у».",
+     "tip_pl": "ó = u: która."
+    }
+   ],
+   "uk": [
+    {
+     "type": "intro",
+     "q": "Урок 6. Вирушаємо в наступну сцену!",
+     "q_en": "Lesson 6. Into the next scene!",
+     "q_uk": "Урок 6. Вирушаємо в наступну сцену!",
+     "q_pl": "Lekcja 6. Wchodzimy do kolejnej sceny!",
+     "options_en": [
+      "5 new Ukrainian words from the scene",
+      "Listening at natural speed",
+      "Grammar: Relative clauses: який / яка / яке",
+      "Speaking: say a line from the scene"
+     ],
+     "options_uk": [
+      "5 нових слів зі сцени",
+      "Аудіювання в природному темпі",
+      "Граматика: Підрядні: який / яка / яке",
+      "Говоріння: скажи фразу зі сцени"
+     ],
+     "options_pl": [
+      "5 nowych ukraińskich słów ze sceny",
+      "Słuchanie w naturalnym tempie",
+      "Gramatyka: Zdania względne: який / яка / яке",
+      "Mówienie: powiedz kwestię ze sceny"
+     ],
+     "tip": "Start",
+     "tip_en": "Start the lesson",
+     "tip_uk": "Почати урок",
+     "tip_pl": "Zacznij lekcję"
+    },
+    {
+     "type": "match",
+     "q": "З'єднай слова зі сцени з їхнім значенням.",
+     "options_en": [
+      "паличка=wand",
+      "продавець=seller",
+      "коробка=box",
+      "перо=feather",
+      "обирати=to choose"
+     ],
+     "options_uk": [
+      "паличка=нею чаклують",
+      "продавець=людина, яка продає",
+      "коробка=у ній щось лежить",
+      "перо=росте в птахів",
+      "обирати=вирішувати, що взяти"
+     ],
+     "options_pl": [
+      "паличка=różdżka",
+      "продавець=sprzedawca",
+      "коробка=pudełko",
+      "перо=pióro",
+      "обирати=wybierać"
+     ],
+     "tip_en": "Say each new word out loud as you match it: it sticks better.",
+     "tip_uk": "Промовляй кожне нове слово вголос, коли з'єднуєш: так воно краще запам'ятовується.",
+     "tip_pl": "Wypowiadaj każde nowe słowo na głos, gdy je łączysz: lepiej zostaje w pamięci."
+    },
+    {
+     "type": "vocabulary",
+     "q": "Паличка <b>обирає</b> чарівника. Що це означає?",
+     "options": [
+      "Чарівник її шукає",
+      "Паличка вирішує",
+      "Паличка ламається",
+      "Паличка дешева"
+     ],
+     "answer": 1,
+     "tip_en": "Обирати = to choose. Here the wand decides!",
+     "tip_uk": "Тут вирішує саме паличка!",
+     "tip_pl": "Обирати = wybierać. Decyduje różdżka."
+    },
+    {
+     "type": "listening",
+     "q": "Послухай. Що всередині палички Гаррі?",
+     "options": [
+      "Волосина єдинорога",
+      "Перо фенікса",
+      "Серце дракона",
+      "Золото"
+     ],
+     "answer": 1,
+     "tip_en": "Перо фенікса = phoenix feather.",
+     "tip_uk": "Перо фенікса — як у паличці Волдеморта!",
+     "tip_pl": "Перо фенікса = pióro feniksa.",
+     "say": "У цій паличці перо фенікса. Той самий фенікс дав ще одне перо."
+    },
+    {
+     "type": "grammar",
+     "q": "Це продавець, ____ знає кожну паличку.",
+     "options": [
+      "який",
+      "яка",
+      "яке",
+      "які"
+     ],
+     "answer": 0,
+     "tip_en": "Продавець is masculine → який.",
+     "tip_uk": "Чоловічий рід → який.",
+     "tip_pl": "Rodzaj męski → який = który."
+    },
+    {
+     "type": "grammar",
+     "q": "Це паличка, ____ обрала Гаррі.",
+     "options": [
+      "яка",
+      "який",
+      "яке",
+      "яку"
+     ],
+     "answer": 0,
+     "tip_en": "Паличка is feminine and the subject → яка.",
+     "tip_uk": "Жіночий рід, підмет → яка.",
+     "tip_pl": "Rodzaj żeński, podmiot → яка = która."
+    },
+    {
+     "type": "order",
+     "q": "Склади речення.",
+     "options": [
+      "Це",
+      "крамниця",
+      "в",
+      "якій",
+      "продають",
+      "палички"
+     ],
+     "tip_en": "В якій = in which (locative).",
+     "tip_uk": "В якій — місцевий відмінок.",
+     "tip_pl": "В якій = w którym (miejscownik).",
+     "q_en": "Build the sentence: “This is the shop where they sell wands.”",
+     "q_uk": "Склади речення: «Це крамниця в якій продають палички»",
+     "q_pl": "Ułóż zdanie: „To sklep, w którym sprzedają różdżki.”"
+    },
+    {
+     "type": "type",
+     "q": "Ця коробка, ____ лежить на полиці, дуже стара.",
+     "options": [
+      "яка"
+     ],
+     "tip_en": "Коробка is feminine → яка.",
+     "tip_uk": "Коробка — жіночий рід → яка.",
+     "tip_pl": "Коробка jest rodzaju żeńskiego → яка (choć pudełko jest nijakie!).",
+     "q_en": "Ця коробка, ____ лежить на полиці, дуже стара. (which)",
+     "q_uk": "Ця коробка, ____ лежить на полиці, дуже стара. (займенник)",
+     "q_pl": "Ця коробка, ____ лежить на полиці, дуже стара. (który/która)"
+    },
+    {
+     "type": "tf",
+     "q": "Правда чи неправда? Перша паличка одразу підійшла Гаррі.",
+     "options": [
+      "True",
+      "False"
+     ],
+     "answer": 1,
+     "tip_en": "False: he tried several before the right one chose him.",
+     "tip_uk": "Неправда: він пробував кілька паличок.",
+     "tip_pl": "Fałsz: próbował kilku różdżek."
+    },
+    {
+     "type": "speaking",
+     "q": "Скажи вголос: <i>«Це паличка, яка обрала мене.»</i>",
+     "say": "Це паличка, яка обрала мене.",
+     "tip_en": "я is 'ya': яка = 'yaka'.",
+     "tip_uk": "Чітко: яка обрала мене.",
+     "tip_pl": "я = ja: яка ≈ jaka."
+    }
+   ],
+   "pl_grammar_en": "Relative clauses: który / która / które",
+   "pl_grammar_uk": "Підрядні: który / która / które",
+   "pl_grammar_pl": "Zdania względne: który / która / które",
+   "uk_grammar_en": "Relative clauses: який / яка / яке",
+   "uk_grammar_uk": "Підрядні: який / яка / яке",
+   "uk_grammar_pl": "Zdania względne: який / яка / яке"
+  }
  },
  {
   "num": 7,
@@ -1304,7 +3027,352 @@
     "tip_uk": "Природна реакція + висновок.",
     "tip_pl": "Naturalna reakcja + wniosek."
    }
-  ]
+  ],
+  "title_en": "Platform Nine and Three-Quarters",
+  "scene_en": "A London station. The boy looks for a platform that doesn't exist, then meets a new friend on the train.",
+  "variants": {
+   "pl": [
+    {
+     "type": "intro",
+     "q": "Lekcja 7. Wchodzimy do kolejnej sceny!",
+     "q_en": "Lesson 7. Into the next scene!",
+     "q_uk": "Урок 7. Вирушаємо в наступну сцену!",
+     "q_pl": "Lekcja 7. Wchodzimy do kolejnej sceny!",
+     "options_en": [
+      "5 new Polish words from the scene",
+      "Listening at natural speed",
+      "Grammar: Guessing: musi / może / nie może być",
+      "Speaking: say a line from the scene"
+     ],
+     "options_uk": [
+      "5 нових польських слів зі сцени",
+      "Аудіювання в природному темпі",
+      "Граматика: Припущення: musi / może / nie może być",
+      "Говоріння: скажи фразу зі сцени"
+     ],
+     "options_pl": [
+      "5 nowych słów ze sceny",
+      "Słuchanie w naturalnym tempie",
+      "Gramatyka: Przypuszczenia: musi / może / nie może być",
+      "Mówienie: powiedz kwestię ze sceny"
+     ],
+     "tip": "Start",
+     "tip_en": "Start the lesson",
+     "tip_uk": "Почати урок",
+     "tip_pl": "Zacznij lekcję"
+    },
+    {
+     "type": "match",
+     "q": "Połącz słowa ze sceny z ich znaczeniem.",
+     "options_en": [
+      "peron=platform",
+      "dworzec=station",
+      "pociąg=train",
+      "ściana=wall",
+      "przyjaciel=friend"
+     ],
+     "options_uk": [
+      "peron=перон, платформа",
+      "dworzec=вокзал",
+      "pociąg=потяг",
+      "ściana=стіна",
+      "przyjaciel=друг"
+     ],
+     "options_pl": [
+      "peron=miejsce, gdzie staje pociąg",
+      "dworzec=budynek, z którego jadą pociągi",
+      "pociąg=jedzie po torach",
+      "ściana=część pokoju lub budynku",
+      "przyjaciel=ktoś bliski, kogo lubisz"
+     ],
+     "tip_en": "Say each new word out loud as you match it: it sticks better.",
+     "tip_uk": "Промовляй кожне нове слово вголос, коли з'єднуєш: так воно краще запам'ятовується.",
+     "tip_pl": "Wypowiadaj każde nowe słowo na głos, gdy je łączysz: lepiej zostaje w pamięci."
+    },
+    {
+     "type": "vocabulary",
+     "q": "Peronu 9 i ¾ <b>nie ma</b> na tablicy. Harry myśli, że…",
+     "options": [
+      "to musi być żart",
+      "to musi być bank",
+      "to łatwe",
+      "pociąg już jest"
+     ],
+     "answer": 0,
+     "tip_en": "To musi być żart = it must be a joke (strong guess).",
+     "tip_uk": "To musi być żart = це, мабуть, жарт.",
+     "tip_pl": "Musi być = jestem prawie pewien."
+    },
+    {
+     "type": "listening",
+     "q": "Posłuchaj. Jak dostać się na peron?",
+     "options": [
+      "Przejść przez ścianę",
+      "Pojechać taksówką",
+      "Zapytać konduktora",
+      "Wspiąć się na dach"
+     ],
+     "answer": 0,
+     "tip_en": "Przejść przez ścianę = go through the wall.",
+     "tip_uk": "Przejść przez ścianę = пройти крізь стіну.",
+     "tip_pl": "Trzeba przejść przez ścianę!",
+     "say": "Po prostu przejdź przez ścianę między peronem dziewiątym a dziesiątym. Nie bój się."
+    },
+    {
+     "type": "grammar",
+     "q": "Rudzi chłopcy mają kufry i sowę. To ____ być czarodzieje!",
+     "options": [
+      "muszą",
+      "nie mogą",
+      "mogę",
+      "musi"
+     ],
+     "answer": 0,
+     "tip_en": "Strong guess, plural → muszą być.",
+     "tip_uk": "Сильне припущення, множина → muszą być (мабуть, вони).",
+     "tip_pl": "Prawie pewność, l.mn. → muszą być."
+    },
+    {
+     "type": "grammar",
+     "q": "Ron ma brudny nos. On ____ być zmęczony, bo jedzie długo.",
+     "options": [
+      "może",
+      "musisz",
+      "mogą",
+      "muszę"
+     ],
+     "answer": 0,
+     "tip_en": "Possibility → może być (he may be).",
+     "tip_uk": "Можливість → może być (може бути).",
+     "tip_pl": "Możliwość → może być."
+    },
+    {
+     "type": "order",
+     "q": "Ułóż zdanie.",
+     "options": [
+      "To",
+      "nie",
+      "może",
+      "być",
+      "prawdziwy",
+      "peron"
+     ],
+     "tip_en": "Nie może być = can't be (sure it's not true).",
+     "tip_uk": "Nie może być = не може бути.",
+     "tip_pl": "Nie może być = jestem pewien, że nie.",
+     "q_en": "Build the sentence: “That can't be a real platform.”",
+     "q_uk": "Склади речення: «Це не може бути справжній перон.»",
+     "q_pl": "Ułóż zdanie: „To nie może być prawdziwy peron”"
+    },
+    {
+     "type": "type",
+     "q": "Ta ściana ____ być magiczna! (musieć, ona)",
+     "options": [
+      "musi"
+     ],
+     "tip_en": "Musieć → ona musi.",
+     "tip_uk": "Musieć → ona musi (вона мусить).",
+     "tip_pl": "Ona musi.",
+     "q_en": "Ta ściana ____ być magiczna! (musieć, ona) (must)",
+     "q_uk": "Ta ściana ____ być magiczna! (musieć, ona) (мусить, мабуть)",
+     "q_pl": "Ta ściana ____ być magiczna! (musieć, ona) (musieć, ona)"
+    },
+    {
+     "type": "tf",
+     "q": "Prawda czy fałsz? W pociągu Harry poznał Rona.",
+     "options": [
+      "True",
+      "False"
+     ],
+     "answer": 0,
+     "tip_en": "True: they shared sweets and became friends on the train.",
+     "tip_uk": "Правда: у потязі вони поділилися солодощами й потоваришували.",
+     "tip_pl": "Prawda: w pociągu dzielili się słodyczami."
+    },
+    {
+     "type": "speaking",
+     "q": "Powiedz na głos: <i>„To musi być peron dziewięć i trzy czwarte.”</i>",
+     "say": "To musi być peron dziewięć i trzy czwarte.",
+     "tip_en": "ć in być is a soft 'ch'; trzy starts with 'tsh'.",
+     "tip_uk": "być — м'яке «чь», trzy — «тши».",
+     "tip_pl": "Uważaj: być, trzy czwarte."
+    }
+   ],
+   "uk": [
+    {
+     "type": "intro",
+     "q": "Урок 7. Вирушаємо в наступну сцену!",
+     "q_en": "Lesson 7. Into the next scene!",
+     "q_uk": "Урок 7. Вирушаємо в наступну сцену!",
+     "q_pl": "Lekcja 7. Wchodzimy do kolejnej sceny!",
+     "options_en": [
+      "5 new Ukrainian words from the scene",
+      "Listening at natural speed",
+      "Grammar: Guessing: мабуть / напевно / не може бути",
+      "Speaking: say a line from the scene"
+     ],
+     "options_uk": [
+      "5 нових слів зі сцени",
+      "Аудіювання в природному темпі",
+      "Граматика: Припущення: мабуть / напевно / не може бути",
+      "Говоріння: скажи фразу зі сцени"
+     ],
+     "options_pl": [
+      "5 nowych ukraińskich słów ze sceny",
+      "Słuchanie w naturalnym tempie",
+      "Gramatyka: Przypuszczenia: мабуть / напевно / не може бути",
+      "Mówienie: powiedz kwestię ze sceny"
+     ],
+     "tip": "Start",
+     "tip_en": "Start the lesson",
+     "tip_uk": "Почати урок",
+     "tip_pl": "Zacznij lekcję"
+    },
+    {
+     "type": "match",
+     "q": "З'єднай слова зі сцени з їхнім значенням.",
+     "options_en": [
+      "перон=platform",
+      "вокзал=station",
+      "потяг=train",
+      "стіна=wall",
+      "друг=friend"
+     ],
+     "options_uk": [
+      "перон=місце, де зупиняється потяг",
+      "вокзал=будівля, звідки їдуть потяги",
+      "потяг=їде по рейках",
+      "стіна=частина кімнати чи будинку",
+      "друг=близька людина"
+     ],
+     "options_pl": [
+      "перон=peron",
+      "вокзал=dworzec",
+      "потяг=pociąg",
+      "стіна=ściana",
+      "друг=przyjaciel"
+     ],
+     "tip_en": "Say each new word out loud as you match it: it sticks better.",
+     "tip_uk": "Промовляй кожне нове слово вголос, коли з'єднуєш: так воно краще запам'ятовується.",
+     "tip_pl": "Wypowiadaj każde nowe słowo na głos, gdy je łączysz: lepiej zostaje w pamięci."
+    },
+    {
+     "type": "vocabulary",
+     "q": "Перону 9¾ <b>немає</b> на табло. Гаррі думає, що…",
+     "options": [
+      "це, мабуть, жарт",
+      "це, мабуть, банк",
+      "це легко",
+      "потяг уже тут"
+     ],
+     "answer": 0,
+     "tip_en": "Мабуть = probably/must be.",
+     "tip_uk": "Мабуть — майже впевнене припущення.",
+     "tip_pl": "Мабуть = chyba, pewnie."
+    },
+    {
+     "type": "listening",
+     "q": "Послухай. Як потрапити на перон?",
+     "options": [
+      "Пройти крізь стіну",
+      "Поїхати таксі",
+      "Спитати кондуктора",
+      "Вилізти на дах"
+     ],
+     "answer": 0,
+     "tip_en": "Крізь стіну = through the wall.",
+     "tip_uk": "Треба пройти крізь стіну!",
+     "tip_pl": "Крізь стіну = przez ścianę.",
+     "say": "Просто пройди крізь стіну між дев'ятим і десятим пероном. Не бійся."
+    },
+    {
+     "type": "grammar",
+     "q": "Руді хлопці мають валізи й сову. Вони, ____, чарівники!",
+     "options": [
+      "напевно",
+      "ніколи",
+      "вчора",
+      "далеко"
+     ],
+     "answer": 0,
+     "tip_en": "Напевно = surely, must be.",
+     "tip_uk": "Напевно — сильне припущення.",
+     "tip_pl": "Напевно = na pewno, chyba."
+    },
+    {
+     "type": "grammar",
+     "q": "У Рона брудний ніс. Він ____ бути втомлений.",
+     "options": [
+      "може",
+      "мусиш",
+      "можу",
+      "можемо"
+     ],
+     "answer": 0,
+     "tip_en": "Може бути = may be.",
+     "tip_uk": "Може бути — можливість.",
+     "tip_pl": "Може бути = może być."
+    },
+    {
+     "type": "order",
+     "q": "Склади речення.",
+     "options": [
+      "Це",
+      "не",
+      "може",
+      "бути",
+      "справжній",
+      "перон"
+     ],
+     "tip_en": "Не може бути = can't be.",
+     "tip_uk": "Не може бути — впевненість, що ні.",
+     "tip_pl": "Не може бути = nie może być.",
+     "q_en": "Build the sentence: “That can't be a real platform.”",
+     "q_uk": "Склади речення: «Це не може бути справжній перон»",
+     "q_pl": "Ułóż zdanie: „To nie może być prawdziwy peron.”"
+    },
+    {
+     "type": "type",
+     "q": "Ця стіна, ____, чарівна! (probably)",
+     "options": [
+      "мабуть",
+      "напевно"
+     ],
+     "tip_en": "Мабуть is set off by commas.",
+     "tip_uk": "«Мабуть» виділяємо комами.",
+     "tip_pl": "Мабуть oddzielamy przecinkami.",
+     "q_en": "Ця стіна, ____, чарівна! (probably) (probably)",
+     "q_uk": "Ця стіна, ____, чарівна! (probably) (слово-припущення)",
+     "q_pl": "Ця стіна, ____, чарівна! (probably) (chyba, pewnie)"
+    },
+    {
+     "type": "tf",
+     "q": "Правда чи неправда? У потязі Гаррі познайомився з Роном.",
+     "options": [
+      "True",
+      "False"
+     ],
+     "answer": 0,
+     "tip_en": "True: they shared sweets and became friends.",
+     "tip_uk": "Правда: вони поділилися солодощами.",
+     "tip_pl": "Prawda: dzielili się słodyczami."
+    },
+    {
+     "type": "speaking",
+     "q": "Скажи вголос: <i>«Це, мабуть, перон дев'ять і три чверті.»</i>",
+     "say": "Це, мабуть, перон дев'ять і три чверті.",
+     "tip_en": "Apostrophe in дев'ять: a tiny pause before я.",
+     "tip_uk": "Апостроф: дев'ять — «дев-ять».",
+     "tip_pl": "Apostrof: дев'ять ≈ dew-jat'."
+    }
+   ],
+   "pl_grammar_en": "Guessing: musi / może / nie może być",
+   "pl_grammar_uk": "Припущення: musi / może / nie może być",
+   "pl_grammar_pl": "Przypuszczenia: musi / może / nie może być",
+   "uk_grammar_en": "Guessing: мабуть / напевно / не може бути",
+   "uk_grammar_uk": "Припущення: мабуть / напевно / не може бути",
+   "uk_grammar_pl": "Przypuszczenia: мабуть / напевно / не може бути"
+  }
  },
  {
   "num": 8,
@@ -1433,7 +3501,351 @@
     "tip_uk": "Зміни прикметник, щоб описати СЕБЕ.",
     "tip_pl": "Zmień przymiotnik, aby opisać SIEBIE."
    }
-  ]
+  ],
+  "title_en": "The Sorting Hat",
+  "scene_en": "A great hall with candles under the ceiling. An old hat decides which house each student joins.",
+  "variants": {
+   "pl": [
+    {
+     "type": "intro",
+     "q": "Lekcja 8. Wchodzimy do kolejnej sceny!",
+     "q_en": "Lesson 8. Into the next scene!",
+     "q_uk": "Урок 8. Вирушаємо в наступну сцену!",
+     "q_pl": "Lekcja 8. Wchodzimy do kolejnej sceny!",
+     "options_en": [
+      "5 new Polish words from the scene",
+      "Listening at natural speed",
+      "Grammar: Conditional: gdybym…, -bym",
+      "Speaking: say a line from the scene"
+     ],
+     "options_uk": [
+      "5 нових польських слів зі сцени",
+      "Аудіювання в природному темпі",
+      "Граматика: Умовний спосіб: gdybym…, -bym",
+      "Говоріння: скажи фразу зі сцени"
+     ],
+     "options_pl": [
+      "5 nowych słów ze sceny",
+      "Słuchanie w naturalnym tempie",
+      "Gramatyka: Tryb przypuszczający: gdybym…, -bym",
+      "Mówienie: powiedz kwestię ze sceny"
+     ],
+     "tip": "Start",
+     "tip_en": "Start the lesson",
+     "tip_uk": "Почати урок",
+     "tip_pl": "Zacznij lekcję"
+    },
+    {
+     "type": "match",
+     "q": "Połącz słowa ze sceny z ich znaczeniem.",
+     "options_en": [
+      "tiara=hat",
+      "dom=house (school team)",
+      "świeca=candle",
+      "odważny=brave",
+      "sufit=ceiling"
+     ],
+     "options_uk": [
+      "tiara=капелюх",
+      "dom=гуртожиток, дім",
+      "świeca=свічка",
+      "odważny=сміливий",
+      "sufit=стеля"
+     ],
+     "options_pl": [
+      "tiara=stary kapelusz, który mówi",
+      "dom=drużyna w szkole",
+      "świeca=daje światło, gdy się pali",
+      "odważny=nie boi się",
+      "sufit=góra pokoju"
+     ],
+     "tip_en": "Say each new word out loud as you match it: it sticks better.",
+     "tip_uk": "Промовляй кожне нове слово вголос, коли з'єднуєш: так воно краще запам'ятовується.",
+     "tip_pl": "Wypowiadaj każde nowe słowo na głos, gdy je łączysz: lepiej zostaje w pamięci."
+    },
+    {
+     "type": "vocabulary",
+     "q": "Świece wiszą pod <b>sufitem</b>. Gdzie to jest?",
+     "options": [
+      "Na podłodze",
+      "Na górze sali",
+      "Za oknem",
+      "W szafie"
+     ],
+     "answer": 1,
+     "tip_en": "Sufit = ceiling. Pod sufitem: under the ceiling (instrumental again!).",
+     "tip_uk": "Sufit = стеля. Pod sufitem — орудний, як pod schodami.",
+     "tip_pl": "Pod + narzędnik: pod sufitem."
+    },
+    {
+     "type": "listening",
+     "q": "Posłuchaj. Gdzie tiara wysyła Harry'ego?",
+     "options": [
+      "Do Slytherinu",
+      "Do Gryffindoru",
+      "Do Hufflepuffu",
+      "Do domu"
+     ],
+     "answer": 1,
+     "tip_en": "Gryffindor! The house of the brave.",
+     "tip_uk": "Гріфіндор! Дім сміливих.",
+     "tip_pl": "Gryffindor: dom odważnych.",
+     "say": "Hm, trudne… Odwagi ci nie brakuje. Skoro nie Slytherin, to… Gryffindor!"
+    },
+    {
+     "type": "grammar",
+     "q": "Gdybym był w Slytherinie, ____ smutny.",
+     "options": [
+      "byłbym",
+      "jestem",
+      "będę",
+      "byłem"
+     ],
+     "answer": 0,
+     "tip_en": "Conditional: gdybym…, byłbym (I would be).",
+     "tip_uk": "Умовний: gdybym…, byłbym (я був би).",
+     "tip_pl": "Gdybym…, byłbym."
+    },
+    {
+     "type": "grammar",
+     "q": "Gdyby Ron ____ odważny, poszedłby do Gryffindoru.",
+     "options": [
+      "był",
+      "jest",
+      "będzie",
+      "bądź"
+     ],
+     "answer": 0,
+     "tip_en": "After gdyby use the past form: gdyby był.",
+     "tip_uk": "Після gdyby — форма минулого: gdyby był (якби був).",
+     "tip_pl": "Gdyby + forma przeszła: gdyby był."
+    },
+    {
+     "type": "order",
+     "q": "Ułóż zdanie.",
+     "options": [
+      "Gdybym",
+      "miał",
+      "wybór",
+      "wybrałbym",
+      "Gryffindor"
+     ],
+     "tip_en": "-bym sticks to the verb: wybrałbym.",
+     "tip_uk": "-bym приєднується до дієслова: wybrałbym (обрав би).",
+     "tip_pl": "Końcówka -bym: wybrałbym.",
+     "q_en": "Build the sentence: “If I had a choice, I would choose Gryffindor.”",
+     "q_uk": "Склади речення: «Якби я мав вибір, я обрав би Гріфіндор.»",
+     "q_pl": "Ułóż zdanie: „Gdybym miał wybór wybrałbym Gryffindor”"
+    },
+    {
+     "type": "type",
+     "q": "Gdybyś mógł, ____ (pojechać) do domu? (ty)",
+     "options": [
+      "pojechałbyś"
+     ],
+     "tip_en": "You (ty) → -łbyś: pojechałbyś.",
+     "tip_uk": "Ти → -łbyś: pojechałbyś (поїхав би).",
+     "tip_pl": "Ty → -łbyś.",
+     "q_en": "Gdybyś mógł, ____ (pojechać) do domu? (ty) (would you go)",
+     "q_uk": "Gdybyś mógł, ____ (pojechać) do domu? (ty) (ти поїхав би)",
+     "q_pl": "Gdybyś mógł, ____ (pojechać) do domu? (ty) (pojechać, ty)"
+    },
+    {
+     "type": "tf",
+     "q": "Prawda czy fałsz? Tiara od razu wiedziała, gdzie wysłać Harry'ego.",
+     "options": [
+      "True",
+      "False"
+     ],
+     "answer": 1,
+     "tip_en": "False: she hesitated and thought about Slytherin.",
+     "tip_uk": "Неправда: капелюх вагався і думав про Слизерин.",
+     "tip_pl": "Fałsz: tiara wahała się i myślała o Slytherinie."
+    },
+    {
+     "type": "speaking",
+     "q": "Powiedz na głos: <i>„Gdybym mógł wybrać, wybrałbym Gryffindor.”</i>",
+     "say": "Gdybym mógł wybrać, wybrałbym Gryffindor.",
+     "tip_en": "Gdybym: say 'g-dy-bym' clearly.",
+     "tip_uk": "Gdybym читається «гдибим».",
+     "tip_pl": "Wymawiaj wyraźnie: gdybym, wybrałbym."
+    }
+   ],
+   "uk": [
+    {
+     "type": "intro",
+     "q": "Урок 8. Вирушаємо в наступну сцену!",
+     "q_en": "Lesson 8. Into the next scene!",
+     "q_uk": "Урок 8. Вирушаємо в наступну сцену!",
+     "q_pl": "Lekcja 8. Wchodzimy do kolejnej sceny!",
+     "options_en": [
+      "5 new Ukrainian words from the scene",
+      "Listening at natural speed",
+      "Grammar: Conditional: якби…, би",
+      "Speaking: say a line from the scene"
+     ],
+     "options_uk": [
+      "5 нових слів зі сцени",
+      "Аудіювання в природному темпі",
+      "Граматика: Умовний спосіб: якби…, би",
+      "Говоріння: скажи фразу зі сцени"
+     ],
+     "options_pl": [
+      "5 nowych ukraińskich słów ze sceny",
+      "Słuchanie w naturalnym tempie",
+      "Gramatyka: Tryb przypuszczający: якби…, би",
+      "Mówienie: powiedz kwestię ze sceny"
+     ],
+     "tip": "Start",
+     "tip_en": "Start the lesson",
+     "tip_uk": "Почати урок",
+     "tip_pl": "Zacznij lekcję"
+    },
+    {
+     "type": "match",
+     "q": "З'єднай слова зі сцени з їхнім значенням.",
+     "options_en": [
+      "капелюх=hat",
+      "гуртожиток=house (school team)",
+      "свічка=candle",
+      "сміливий=brave",
+      "стеля=ceiling"
+     ],
+     "options_uk": [
+      "капелюх=головний убір, що говорить",
+      "гуртожиток=команда у школі",
+      "свічка=дає світло, коли горить",
+      "сміливий=не боїться",
+      "стеля=верх кімнати"
+     ],
+     "options_pl": [
+      "капелюх=tiara, kapelusz",
+      "гуртожиток=dom",
+      "свічка=świeca",
+      "сміливий=odważny",
+      "стеля=sufit"
+     ],
+     "tip_en": "Say each new word out loud as you match it: it sticks better.",
+     "tip_uk": "Промовляй кожне нове слово вголос, коли з'єднуєш: так воно краще запам'ятовується.",
+     "tip_pl": "Wypowiadaj każde nowe słowo na głos, gdy je łączysz: lepiej zostaje w pamięci."
+    },
+    {
+     "type": "vocabulary",
+     "q": "Свічки висять під <b>стелею</b>. Де це?",
+     "options": [
+      "На підлозі",
+      "Угорі зали",
+      "За вікном",
+      "У шафі"
+     ],
+     "answer": 1,
+     "tip_en": "Стеля = ceiling. Під стелею: instrumental again!",
+     "tip_uk": "Під + орудний: під стелею.",
+     "tip_pl": "Під стелею = pod sufitem."
+    },
+    {
+     "type": "listening",
+     "q": "Послухай. Куди капелюх відправляє Гаррі?",
+     "options": [
+      "У Слизерин",
+      "У Гріфіндор",
+      "У Гафелпаф",
+      "Додому"
+     ],
+     "answer": 1,
+     "tip_en": "Gryffindor, the house of the brave.",
+     "tip_uk": "Гріфіндор — дім сміливих.",
+     "tip_pl": "Gryffindor: dom odważnych.",
+     "say": "Гм, складно… Сміливості тобі не бракує. Якщо не Слизерин, то… Гріфіндор!"
+    },
+    {
+     "type": "grammar",
+     "q": "Якби я був у Слизерині, я ____ сумний.",
+     "options": [
+      "був би",
+      "є",
+      "буду",
+      "був"
+     ],
+     "answer": 0,
+     "tip_en": "Conditional: якби…, був би.",
+     "tip_uk": "Умовний спосіб: якби…, був би.",
+     "tip_pl": "Якби…, був би = gdybym…, byłbym."
+    },
+    {
+     "type": "grammar",
+     "q": "Якби Рон ____ сміливий, він пішов би в Гріфіндор.",
+     "options": [
+      "був",
+      "є",
+      "буде",
+      "будь"
+     ],
+     "answer": 0,
+     "tip_en": "After якби use the past form: якби був.",
+     "tip_uk": "Після «якби» — минула форма.",
+     "tip_pl": "Po якби forma przeszła: якби був = gdyby był."
+    },
+    {
+     "type": "order",
+     "q": "Склади речення.",
+     "options": [
+      "Якби",
+      "я",
+      "мав",
+      "вибір",
+      "обрав",
+      "би",
+      "Гріфіндор"
+     ],
+     "tip_en": "Би is a separate word in Ukrainian (би / б).",
+     "tip_uk": "«Би» пишемо окремо.",
+     "tip_pl": "Po ukraińsku би piszemy osobno, po polsku -bym razem.",
+     "q_en": "Build the sentence: “If I had a choice, I would choose Gryffindor.”",
+     "q_uk": "Склади речення: «Якби я мав вибір обрав би Гріфіндор»",
+     "q_pl": "Ułóż zdanie: „Gdybym miał wybór, wybrałbym Gryffindor.”"
+    },
+    {
+     "type": "type",
+     "q": "Якби ти міг, ти ____ поїхав додому?",
+     "options": [
+      "би"
+     ],
+     "tip_en": "Би marks the conditional.",
+     "tip_uk": "Частка «би» — ознака умовного способу.",
+     "tip_pl": "Би = -by/-byś.",
+     "q_en": "Якби ти міг, ти ____ поїхав додому? (would)",
+     "q_uk": "Якби ти міг, ти ____ поїхав додому? (частка)",
+     "q_pl": "Якби ти міг, ти ____ поїхав додому? (-byś)"
+    },
+    {
+     "type": "tf",
+     "q": "Правда чи неправда? Капелюх одразу знав, куди відправити Гаррі.",
+     "options": [
+      "True",
+      "False"
+     ],
+     "answer": 1,
+     "tip_en": "False: it hesitated and thought of Slytherin.",
+     "tip_uk": "Неправда: капелюх вагався.",
+     "tip_pl": "Fałsz: tiara się wahała."
+    },
+    {
+     "type": "speaking",
+     "q": "Скажи вголос: <i>«Якби я міг обрати, я обрав би Гріфіндор.»</i>",
+     "say": "Якби я міг обрати, я обрав би Гріфіндор.",
+     "tip_en": "и in якби is short, like 'i' in 'sit'.",
+     "tip_uk": "Чітко: якби, обрав би.",
+     "tip_pl": "и w якби = polskie y."
+    }
+   ],
+   "pl_grammar_en": "Conditional: gdybym…, -bym",
+   "pl_grammar_uk": "Умовний спосіб: gdybym…, -bym",
+   "pl_grammar_pl": "Tryb przypuszczający: gdybym…, -bym",
+   "uk_grammar_en": "Conditional: якби…, би",
+   "uk_grammar_uk": "Умовний спосіб: якби…, би",
+   "uk_grammar_pl": "Tryb przypuszczający: якби…, би"
+  }
  },
  {
   "num": 9,
@@ -1562,7 +3974,349 @@
     "tip_uk": "Слова послідовності: first, then, after that, finally.",
     "tip_pl": "Słowa porządkujące: first, then, after that, finally."
    }
-  ]
+  ],
+  "title_en": "The Potions Lesson",
+  "scene_en": "Cold dungeons and a strict teacher who asks the boy hard questions in the first lesson.",
+  "variants": {
+   "pl": [
+    {
+     "type": "intro",
+     "q": "Lekcja 9. Wchodzimy do kolejnej sceny!",
+     "q_en": "Lesson 9. Into the next scene!",
+     "q_uk": "Урок 9. Вирушаємо в наступну сцену!",
+     "q_pl": "Lekcja 9. Wchodzimy do kolejnej sceny!",
+     "options_en": [
+      "5 new Polish words from the scene",
+      "Listening at natural speed",
+      "Grammar: Imperative: dodaj! mieszaj! nie dotykaj!",
+      "Speaking: say a line from the scene"
+     ],
+     "options_uk": [
+      "5 нових польських слів зі сцени",
+      "Аудіювання в природному темпі",
+      "Граматика: Наказовий спосіб: dodaj! mieszaj! nie dotykaj!",
+      "Говоріння: скажи фразу зі сцени"
+     ],
+     "options_pl": [
+      "5 nowych słów ze sceny",
+      "Słuchanie w naturalnym tempie",
+      "Gramatyka: Tryb rozkazujący: dodaj! mieszaj! nie dotykaj!",
+      "Mówienie: powiedz kwestię ze sceny"
+     ],
+     "tip": "Start",
+     "tip_en": "Start the lesson",
+     "tip_uk": "Почати урок",
+     "tip_pl": "Zacznij lekcję"
+    },
+    {
+     "type": "match",
+     "q": "Połącz słowa ze sceny z ich znaczeniem.",
+     "options_en": [
+      "eliksir=potion",
+      "lochy=dungeons",
+      "surowy=strict",
+      "mieszać=to stir",
+      "składnik=ingredient"
+     ],
+     "options_uk": [
+      "eliksir=зілля",
+      "lochy=підземелля",
+      "surowy=суворий",
+      "mieszać=мішати",
+      "składnik=інгредієнт"
+     ],
+     "options_pl": [
+      "eliksir=magiczny napój",
+      "lochy=zimne sale pod zamkiem",
+      "surowy=wymaga dużo, rzadko się uśmiecha",
+      "mieszać=kręcić łyżką w garnku",
+      "składnik=część przepisu"
+     ],
+     "tip_en": "Say each new word out loud as you match it: it sticks better.",
+     "tip_uk": "Промовляй кожне нове слово вголос, коли з'єднуєш: так воно краще запам'ятовується.",
+     "tip_pl": "Wypowiadaj każde nowe słowo na głos, gdy je łączysz: lepiej zostaje w pamięci."
+    },
+    {
+     "type": "vocabulary",
+     "q": "Nauczyciel jest bardzo <b>surowy</b>. Jaki jest?",
+     "options": [
+      "Wesoły i miły",
+      "Wymagający i zimny",
+      "Młody i nowy",
+      "Zmęczony"
+     ],
+     "answer": 1,
+     "tip_en": "Surowy = strict (also: raw, for food!).",
+     "tip_uk": "Surowy = суворий (а про їжу — сирий!).",
+     "tip_pl": "Surowy = wymagający."
+    },
+    {
+     "type": "listening",
+     "q": "Posłuchaj. Co trzeba zrobić najpierw?",
+     "options": [
+      "Dodać korzeń",
+      "Wymieszać siedem razy",
+      "Wypić eliksir",
+      "Wyjść z klasy"
+     ],
+     "answer": 0,
+     "tip_en": "Najpierw dodaj = first add.",
+     "tip_uk": "Najpierw dodaj = спочатку додай.",
+     "tip_pl": "Najpierw dodaj, potem mieszaj.",
+     "say": "Najpierw dodaj korzeń, potem mieszaj siedem razy. I niczego nie dotykaj!"
+    },
+    {
+     "type": "grammar",
+     "q": "____ eliksir powoli! (mieszać, ty)",
+     "options": [
+      "Mieszaj",
+      "Mieszać",
+      "Mieszam",
+      "Miesza"
+     ],
+     "answer": 0,
+     "tip_en": "Imperative of mieszać for ty: mieszaj!",
+     "tip_uk": "Наказовий для ty: mieszaj! (мішай!)",
+     "tip_pl": "Ty → mieszaj!"
+    },
+    {
+     "type": "grammar",
+     "q": "Nie ____ tego kociołka! (dotykać, ty)",
+     "options": [
+      "dotykaj",
+      "dotknąć",
+      "dotykam",
+      "dotyka"
+     ],
+     "answer": 0,
+     "tip_en": "Negative orders use the imperfective: nie dotykaj!",
+     "tip_uk": "Заборона — недоконаний вид: nie dotykaj! (не чіпай!)",
+     "tip_pl": "Zakaz: nie + niedokonany: nie dotykaj!"
+    },
+    {
+     "type": "order",
+     "q": "Ułóż zdanie.",
+     "options": [
+      "Otwórzcie",
+      "książki",
+      "na",
+      "stronie",
+      "dziesiątej"
+     ],
+     "tip_en": "Otwórzcie = open (you all). -cie = plural imperative.",
+     "tip_uk": "Otwórzcie = відкрийте (ви). -cie — множина.",
+     "tip_pl": "-cie: rozkaz do wielu osób.",
+     "q_en": "Build the sentence: “Open your books at page ten.”",
+     "q_uk": "Склади речення: «Відкрийте книжки на десятій сторінці.»",
+     "q_pl": "Ułóż zdanie: „Otwórzcie książki na stronie dziesiątej”"
+    },
+    {
+     "type": "type",
+     "q": "____ ten składnik do kociołka! (dodać, ty)",
+     "options": [
+      "Dodaj"
+     ],
+     "tip_en": "Dodać → dodaj!",
+     "tip_uk": "Dodać → dodaj! (додай!)",
+     "tip_pl": "Dodać → dodaj!",
+     "q_en": "____ ten składnik do kociołka! (dodać, ty) (add)",
+     "q_uk": "____ ten składnik do kociołka! (dodać, ty) (додай)",
+     "q_pl": "____ ten składnik do kociołka! (dodać, ty) (dodać, ty)"
+    },
+    {
+     "type": "tf",
+     "q": "Prawda czy fałsz? Snape lubi Harry'ego od pierwszej lekcji.",
+     "options": [
+      "True",
+      "False"
+     ],
+     "answer": 1,
+     "tip_en": "False: he asks Harry hard questions to embarrass him.",
+     "tip_uk": "Неправда: він ставить Гаррі важкі питання, щоб присоромити.",
+     "tip_pl": "Fałsz: zadaje mu trudne pytania, żeby go zawstydzić."
+    },
+    {
+     "type": "speaking",
+     "q": "Powiedz na głos: <i>„Mieszaj powoli i niczego nie dotykaj!”</i>",
+     "say": "Mieszaj powoli i niczego nie dotykaj!",
+     "tip_en": "sz in mieszaj = 'sh'.",
+     "tip_uk": "sz = «ш»: mieszaj.",
+     "tip_pl": "sz: mieszaj."
+    }
+   ],
+   "uk": [
+    {
+     "type": "intro",
+     "q": "Урок 9. Вирушаємо в наступну сцену!",
+     "q_en": "Lesson 9. Into the next scene!",
+     "q_uk": "Урок 9. Вирушаємо в наступну сцену!",
+     "q_pl": "Lekcja 9. Wchodzimy do kolejnej sceny!",
+     "options_en": [
+      "5 new Ukrainian words from the scene",
+      "Listening at natural speed",
+      "Grammar: Imperative: додай! мішай! не чіпай!",
+      "Speaking: say a line from the scene"
+     ],
+     "options_uk": [
+      "5 нових слів зі сцени",
+      "Аудіювання в природному темпі",
+      "Граматика: Наказовий спосіб: додай! мішай! не чіпай!",
+      "Говоріння: скажи фразу зі сцени"
+     ],
+     "options_pl": [
+      "5 nowych ukraińskich słów ze sceny",
+      "Słuchanie w naturalnym tempie",
+      "Gramatyka: Tryb rozkazujący: додай! мішай! не чіпай!",
+      "Mówienie: powiedz kwestię ze sceny"
+     ],
+     "tip": "Start",
+     "tip_en": "Start the lesson",
+     "tip_uk": "Почати урок",
+     "tip_pl": "Zacznij lekcję"
+    },
+    {
+     "type": "match",
+     "q": "З'єднай слова зі сцени з їхнім значенням.",
+     "options_en": [
+      "зілля=potion",
+      "підземелля=dungeons",
+      "суворий=strict",
+      "мішати=to stir",
+      "інгредієнт=ingredient"
+     ],
+     "options_uk": [
+      "зілля=чарівний напій",
+      "підземелля=холодні зали під замком",
+      "суворий=вимогливий, рідко всміхається",
+      "мішати=крутити ложкою в горщику",
+      "інгредієнт=частина рецепта"
+     ],
+     "options_pl": [
+      "зілля=eliksir",
+      "підземелля=lochy",
+      "суворий=surowy",
+      "мішати=mieszać",
+      "інгредієнт=składnik"
+     ],
+     "tip_en": "Say each new word out loud as you match it: it sticks better.",
+     "tip_uk": "Промовляй кожне нове слово вголос, коли з'єднуєш: так воно краще запам'ятовується.",
+     "tip_pl": "Wypowiadaj każde nowe słowo na głos, gdy je łączysz: lepiej zostaje w pamięci."
+    },
+    {
+     "type": "vocabulary",
+     "q": "Учитель дуже <b>суворий</b>. Який він?",
+     "options": [
+      "Веселий і милий",
+      "Вимогливий і холодний",
+      "Молодий і новий",
+      "Втомлений"
+     ],
+     "answer": 1,
+     "tip_en": "Суворий = strict.",
+     "tip_uk": "Суворий — вимогливий.",
+     "tip_pl": "Суворий = surowy (ale nie o jedzeniu!)."
+    },
+    {
+     "type": "listening",
+     "q": "Послухай. Що треба зробити спочатку?",
+     "options": [
+      "Додати корінь",
+      "Помішати сім разів",
+      "Випити зілля",
+      "Вийти з класу"
+     ],
+     "answer": 0,
+     "tip_en": "Спочатку додай = first add.",
+     "tip_uk": "Спочатку додай, потім мішай.",
+     "tip_pl": "Спочатку додай = najpierw dodaj.",
+     "say": "Спочатку додай корінь, потім помішай сім разів. І нічого не чіпай!"
+    },
+    {
+     "type": "grammar",
+     "q": "____ зілля повільно! (мішати, ти)",
+     "options": [
+      "Мішай",
+      "Мішати",
+      "Мішаю",
+      "Мішає"
+     ],
+     "answer": 0,
+     "tip_en": "Imperative for ти: мішай!",
+     "tip_uk": "Наказовий для «ти»: мішай!",
+     "tip_pl": "Ty → мішай! = mieszaj!"
+    },
+    {
+     "type": "grammar",
+     "q": "Не ____ цього казанка! (чіпати, ти)",
+     "options": [
+      "чіпай",
+      "чіпати",
+      "чіпаю",
+      "чіпає"
+     ],
+     "answer": 0,
+     "tip_en": "Negative order: не чіпай!",
+     "tip_uk": "Заборона: не чіпай!",
+     "tip_pl": "Zakaz: не чіпай! = nie dotykaj!"
+    },
+    {
+     "type": "order",
+     "q": "Склади речення.",
+     "options": [
+      "Відкрийте",
+      "книжки",
+      "на",
+      "десятій",
+      "сторінці"
+     ],
+     "tip_en": "-те = plural/polite imperative: відкрийте.",
+     "tip_uk": "-те — звертання до багатьох: відкрийте.",
+     "tip_pl": "-те = -cie: відкрийте = otwórzcie.",
+     "q_en": "Build the sentence: “Open your books at page ten.”",
+     "q_uk": "Склади речення: «Відкрийте книжки на десятій сторінці»",
+     "q_pl": "Ułóż zdanie: „Otwórzcie książki na stronie dziesiątej.”"
+    },
+    {
+     "type": "type",
+     "q": "____ цей інгредієнт у казанок! (додати, ти)",
+     "options": [
+      "Додай"
+     ],
+     "tip_en": "Додати → додай!",
+     "tip_uk": "Додати → додай!",
+     "tip_pl": "Додати → додай = dodaj.",
+     "q_en": "____ цей інгредієнт у казанок! (додати, ти) (add)",
+     "q_uk": "____ цей інгредієнт у казанок! (додати, ти) (додати, ти)",
+     "q_pl": "____ цей інгредієнт у казанок! (додати, ти) (dodaj)"
+    },
+    {
+     "type": "tf",
+     "q": "Правда чи неправда? Снейп любить Гаррі з першого уроку.",
+     "options": [
+      "True",
+      "False"
+     ],
+     "answer": 1,
+     "tip_en": "False: he asks Harry hard questions to embarrass him.",
+     "tip_uk": "Неправда: він ставить важкі питання, щоб присоромити.",
+     "tip_pl": "Fałsz: zadaje mu trudne pytania."
+    },
+    {
+     "type": "speaking",
+     "q": "Скажи вголос: <i>«Мішай повільно і нічого не чіпай!»</i>",
+     "say": "Мішай повільно і нічого не чіпай!",
+     "tip_en": "ш = 'sh', ч = 'ch', і = 'ee'.",
+     "tip_uk": "Чітко: мішай, нічого, чіпай.",
+     "tip_pl": "ш = sz, ч = cz."
+    }
+   ],
+   "pl_grammar_en": "Imperative: dodaj! mieszaj! nie dotykaj!",
+   "pl_grammar_uk": "Наказовий спосіб: dodaj! mieszaj! nie dotykaj!",
+   "pl_grammar_pl": "Tryb rozkazujący: dodaj! mieszaj! nie dotykaj!",
+   "uk_grammar_en": "Imperative: додай! мішай! не чіпай!",
+   "uk_grammar_uk": "Наказовий спосіб: додай! мішай! не чіпай!",
+   "uk_grammar_pl": "Tryb rozkazujący: додай! мішай! не чіпай!"
+  }
  },
  {
   "num": 10,
@@ -1691,7 +4445,351 @@
     "tip_uk": "Обов'язок у минулому і його відсутність.",
     "tip_pl": "Obowiązek w przeszłości i jego brak."
    }
-  ]
+  ],
+  "title_en": "The First Flying Lesson",
+  "scene_en": "Students hold broomsticks for the first time. One boy falls, another grabs his thing and soars high.",
+  "variants": {
+   "pl": [
+    {
+     "type": "intro",
+     "q": "Lekcja 10. Wchodzimy do kolejnej sceny!",
+     "q_en": "Lesson 10. Into the next scene!",
+     "q_uk": "Урок 10. Вирушаємо в наступну сцену!",
+     "q_pl": "Lekcja 10. Wchodzimy do kolejnej sceny!",
+     "options_en": [
+      "5 new Polish words from the scene",
+      "Listening at natural speed",
+      "Grammar: Obligation: muszę / trzeba / nie wolno",
+      "Speaking: say a line from the scene"
+     ],
+     "options_uk": [
+      "5 нових польських слів зі сцени",
+      "Аудіювання в природному темпі",
+      "Граматика: Обов'язок: muszę / trzeba / nie wolno",
+      "Говоріння: скажи фразу зі сцени"
+     ],
+     "options_pl": [
+      "5 nowych słów ze sceny",
+      "Słuchanie w naturalnym tempie",
+      "Gramatyka: Obowiązek: muszę / trzeba / nie wolno",
+      "Mówienie: powiedz kwestię ze sceny"
+     ],
+     "tip": "Start",
+     "tip_en": "Start the lesson",
+     "tip_uk": "Почати урок",
+     "tip_pl": "Zacznij lekcję"
+    },
+    {
+     "type": "match",
+     "q": "Połącz słowa ze sceny z ich znaczeniem.",
+     "options_en": [
+      "miotła=broomstick",
+      "latać=to fly",
+      "spaść=to fall",
+      "nadgarstek=wrist",
+      "przypominajka=remembrall"
+     ],
+     "options_uk": [
+      "miotła=мітла",
+      "latać=літати",
+      "spaść=впасти",
+      "nadgarstek=зап'ястя",
+      "przypominajka=нагадайко"
+     ],
+     "options_pl": [
+      "miotła=na niej latają czarodzieje",
+      "latać=poruszać się w powietrzu",
+      "spaść=szybko polecieć w dół",
+      "nadgarstek=między ręką a dłonią",
+      "przypominajka=szklana kula, która przypomina"
+     ],
+     "tip_en": "Say each new word out loud as you match it: it sticks better.",
+     "tip_uk": "Промовляй кожне нове слово вголос, коли з'єднуєш: так воно краще запам'ятовується.",
+     "tip_pl": "Wypowiadaj każde nowe słowo na głos, gdy je łączysz: lepiej zostaje w pamięci."
+    },
+    {
+     "type": "vocabulary",
+     "q": "Neville <b>spadł</b> z miotły. Co się stało?",
+     "options": [
+      "Poleciał wysoko",
+      "Upadł na ziemię",
+      "Zasnął",
+      "Wygrał"
+     ],
+     "answer": 1,
+     "tip_en": "Spaść = to fall. He broke his wrist.",
+     "tip_uk": "Spaść = впасти. Він зламав зап'ястя.",
+     "tip_pl": "Spaść = upaść w dół."
+    },
+    {
+     "type": "listening",
+     "q": "Posłuchaj. Czego nie wolno robić?",
+     "options": [
+      "Wstawać z łóżek",
+      "Latać, gdy nauczycielki nie ma",
+      "Jeść obiadu",
+      "Czytać"
+     ],
+     "answer": 1,
+     "tip_en": "Nie wolno latać = flying is not allowed.",
+     "tip_uk": "Nie wolno latać = не можна літати.",
+     "tip_pl": "Nie wolno = zakaz.",
+     "say": "Kiedy mnie nie będzie, nikomu nie wolno latać. Kto wzleci, wyleci ze szkoły!"
+    },
+    {
+     "type": "grammar",
+     "q": "Harry ____ oddać przypominajkę Neville'owi. (has to)",
+     "options": [
+      "musi",
+      "muszę",
+      "musimy",
+      "musieć"
+     ],
+     "answer": 0,
+     "tip_en": "Musieć → on musi (he has to).",
+     "tip_uk": "Musieć → on musi (він мусить).",
+     "tip_pl": "On musi."
+    },
+    {
+     "type": "grammar",
+     "q": "W szkole ____ wolno chodzić nocą po korytarzach.",
+     "options": [
+      "nie",
+      "nic",
+      "nikt",
+      "trzeba"
+     ],
+     "answer": 0,
+     "tip_en": "Nie wolno = it's forbidden.",
+     "tip_uk": "Nie wolno = не можна.",
+     "tip_pl": "Nie wolno = zakaz."
+    },
+    {
+     "type": "order",
+     "q": "Ułóż zdanie.",
+     "options": [
+      "Trzeba",
+      "mocno",
+      "trzymać",
+      "miotłę",
+      "obiema",
+      "rękami"
+     ],
+     "tip_en": "Trzeba + infinitive = one has to.",
+     "tip_uk": "Trzeba + інфінітив = треба.",
+     "tip_pl": "Trzeba + bezokolicznik.",
+     "q_en": "Build the sentence: “You have to hold the broom tightly with both hands.”",
+     "q_uk": "Склади речення: «Треба міцно тримати мітлу обома руками.»",
+     "q_pl": "Ułóż zdanie: „Trzeba mocno trzymać miotłę obiema rękami”"
+    },
+    {
+     "type": "type",
+     "q": "Nie ____ się bać, to łatwe! (don't have to, ty)",
+     "options": [
+      "musisz"
+     ],
+     "tip_en": "Nie musisz = you don't have to (it's not necessary).",
+     "tip_uk": "Nie musisz = не мусиш (не обов'язково).",
+     "tip_pl": "Nie musisz ≠ nie wolno.",
+     "q_en": "Nie ____ się bać, to łatwe! (don't have to, ty) (you don't have to)",
+     "q_uk": "Nie ____ się bać, to łatwe! (don't have to, ty) (не мусиш)",
+     "q_pl": "Nie ____ się bać, to łatwe! (don't have to, ty) (musieć, ty)"
+    },
+    {
+     "type": "tf",
+     "q": "Prawda czy fałsz? Za latanie Harry został wyrzucony ze szkoły.",
+     "options": [
+      "True",
+      "False"
+     ],
+     "answer": 1,
+     "tip_en": "False: he was made Seeker of the house team!",
+     "tip_uk": "Неправда: його взяли ловцем у команду!",
+     "tip_pl": "Fałsz: został szukającym w drużynie!"
+    },
+    {
+     "type": "speaking",
+     "q": "Powiedz na głos: <i>„Nie wolno latać bez nauczyciela.”</i>",
+     "say": "Nie wolno latać bez nauczyciela.",
+     "tip_en": "w in wolno sounds like 'v'.",
+     "tip_uk": "w = «в»: wolno.",
+     "tip_pl": "Wyraźnie: nie wolno."
+    }
+   ],
+   "uk": [
+    {
+     "type": "intro",
+     "q": "Урок 10. Вирушаємо в наступну сцену!",
+     "q_en": "Lesson 10. Into the next scene!",
+     "q_uk": "Урок 10. Вирушаємо в наступну сцену!",
+     "q_pl": "Lekcja 10. Wchodzimy do kolejnej sceny!",
+     "options_en": [
+      "5 new Ukrainian words from the scene",
+      "Listening at natural speed",
+      "Grammar: Obligation: мушу / треба / не можна",
+      "Speaking: say a line from the scene"
+     ],
+     "options_uk": [
+      "5 нових слів зі сцени",
+      "Аудіювання в природному темпі",
+      "Граматика: Обов'язок: мушу / треба / не можна",
+      "Говоріння: скажи фразу зі сцени"
+     ],
+     "options_pl": [
+      "5 nowych ukraińskich słów ze sceny",
+      "Słuchanie w naturalnym tempie",
+      "Gramatyka: Obowiązek: мушу / треба / не можна",
+      "Mówienie: powiedz kwestię ze sceny"
+     ],
+     "tip": "Start",
+     "tip_en": "Start the lesson",
+     "tip_uk": "Почати урок",
+     "tip_pl": "Zacznij lekcję"
+    },
+    {
+     "type": "match",
+     "q": "З'єднай слова зі сцени з їхнім значенням.",
+     "options_en": [
+      "мітла=broomstick",
+      "літати=to fly",
+      "впасти=to fall",
+      "зап'ястя=wrist",
+      "нагадайко=remembrall"
+     ],
+     "options_uk": [
+      "мітла=на ній літають чарівники",
+      "літати=рухатися в повітрі",
+      "впасти=швидко полетіти вниз",
+      "зап'ястя=між рукою і долонею",
+      "нагадайко=скляна кулька, що нагадує"
+     ],
+     "options_pl": [
+      "мітла=miotła",
+      "літати=latać",
+      "впасти=spaść",
+      "зап'ястя=nadgarstek",
+      "нагадайко=przypominajka"
+     ],
+     "tip_en": "Say each new word out loud as you match it: it sticks better.",
+     "tip_uk": "Промовляй кожне нове слово вголос, коли з'єднуєш: так воно краще запам'ятовується.",
+     "tip_pl": "Wypowiadaj każde nowe słowo na głos, gdy je łączysz: lepiej zostaje w pamięci."
+    },
+    {
+     "type": "vocabulary",
+     "q": "Невіл <b>впав</b> з мітли. Що сталося?",
+     "options": [
+      "Полетів високо",
+      "Опинився на землі",
+      "Заснув",
+      "Виграв"
+     ],
+     "answer": 1,
+     "tip_en": "Впасти = to fall. He broke his wrist.",
+     "tip_uk": "Він зламав зап'ястя.",
+     "tip_pl": "Впасти = spaść."
+    },
+    {
+     "type": "listening",
+     "q": "Послухай. Чого не можна робити?",
+     "options": [
+      "Вставати з ліжок",
+      "Літати, поки вчительки немає",
+      "Обідати",
+      "Читати"
+     ],
+     "answer": 1,
+     "tip_en": "Не можна літати = flying is not allowed.",
+     "tip_uk": "Не можна — заборона.",
+     "tip_pl": "Не можна = nie wolno.",
+     "say": "Поки мене не буде, нікому не можна літати. Хто злетить, вилетить зі школи!"
+    },
+    {
+     "type": "grammar",
+     "q": "Гаррі ____ повернути нагадайко Невілу. (has to)",
+     "options": [
+      "мусить",
+      "мушу",
+      "мусимо",
+      "мусити"
+     ],
+     "answer": 0,
+     "tip_en": "Мусити → він мусить.",
+     "tip_uk": "Він мусить.",
+     "tip_pl": "Мусити → мусить = musi."
+    },
+    {
+     "type": "grammar",
+     "q": "У школі ____ можна ходити вночі коридорами.",
+     "options": [
+      "не",
+      "ні",
+      "ніхто",
+      "треба"
+     ],
+     "answer": 0,
+     "tip_en": "Не можна = it's forbidden.",
+     "tip_uk": "Не можна — заборона.",
+     "tip_pl": "Не можна = nie wolno."
+    },
+    {
+     "type": "order",
+     "q": "Склади речення.",
+     "options": [
+      "Треба",
+      "міцно",
+      "тримати",
+      "мітлу",
+      "обома",
+      "руками"
+     ],
+     "tip_en": "Треба + infinitive.",
+     "tip_uk": "Треба + інфінітив.",
+     "tip_pl": "Треба = trzeba.",
+     "q_en": "Build the sentence: “You have to hold the broom tightly with both hands.”",
+     "q_uk": "Склади речення: «Треба міцно тримати мітлу обома руками»",
+     "q_pl": "Ułóż zdanie: „Trzeba mocno trzymać miotłę obiema rękami.”"
+    },
+    {
+     "type": "type",
+     "q": "Ти не ____ боятися, це легко! (don't have to)",
+     "options": [
+      "мусиш"
+     ],
+     "tip_en": "Не мусиш = you don't have to.",
+     "tip_uk": "Не мусиш — не обов'язково.",
+     "tip_pl": "Не мусиш = nie musisz.",
+     "q_en": "Ти не ____ боятися, це легко! (don't have to) (don't have to)",
+     "q_uk": "Ти не ____ боятися, це легко! (don't have to) (мусити, ти)",
+     "q_pl": "Ти не ____ боятися, це легко! (don't have to) (musisz)"
+    },
+    {
+     "type": "tf",
+     "q": "Правда чи неправда? За політ Гаррі вигнали зі школи.",
+     "options": [
+      "True",
+      "False"
+     ],
+     "answer": 1,
+     "tip_en": "False: he became Seeker of the house team!",
+     "tip_uk": "Неправда: його взяли ловцем!",
+     "tip_pl": "Fałsz: został szukającym!"
+    },
+    {
+     "type": "speaking",
+     "q": "Скажи вголос: <i>«Не можна літати без учителя.»</i>",
+     "say": "Не можна літати без учителя.",
+     "tip_en": "Stress: ЛІтати, учиТЕля.",
+     "tip_uk": "Наголоси: літати, учителя.",
+     "tip_pl": "Akcent: ЛІтати."
+    }
+   ],
+   "pl_grammar_en": "Obligation: muszę / trzeba / nie wolno",
+   "pl_grammar_uk": "Обов'язок: muszę / trzeba / nie wolno",
+   "pl_grammar_pl": "Obowiązek: muszę / trzeba / nie wolno",
+   "uk_grammar_en": "Obligation: мушу / треба / не можна",
+   "uk_grammar_uk": "Обов'язок: мушу / треба / не можна",
+   "uk_grammar_pl": "Obowiązek: мушу / треба / не можна"
+  }
  },
  {
   "num": 11,
@@ -1832,7 +4930,349 @@
     "tip_uk": "had never + третя форма = сильна емоція.",
     "tip_pl": "had never + trzecia forma = silna emocja."
    }
-  ]
+  ],
+  "title_en": "A Troll in the Dungeons",
+  "scene_en": "Halloween. A troll has got into the school and a girl is alone in the bathroom.",
+  "variants": {
+   "pl": [
+    {
+     "type": "intro",
+     "q": "Lekcja 11. Wchodzimy do kolejnej sceny!",
+     "q_en": "Lesson 11. Into the next scene!",
+     "q_uk": "Урок 11. Вирушаємо в наступну сцену!",
+     "q_pl": "Lekcja 11. Wchodzimy do kolejnej sceny!",
+     "options_en": [
+      "5 new Polish words from the scene",
+      "Listening at natural speed",
+      "Grammar: Motion verbs with prefixes: wejść / wyjść / przyjść",
+      "Speaking: say a line from the scene"
+     ],
+     "options_uk": [
+      "5 нових польських слів зі сцени",
+      "Аудіювання в природному темпі",
+      "Граматика: Дієслова руху з префіксами: wejść / wyjść / przyjść",
+      "Говоріння: скажи фразу зі сцени"
+     ],
+     "options_pl": [
+      "5 nowych słów ze sceny",
+      "Słuchanie w naturalnym tempie",
+      "Gramatyka: Czasowniki ruchu z przedrostkami: wejść / wyjść / przyjść",
+      "Mówienie: powiedz kwestię ze sceny"
+     ],
+     "tip": "Start",
+     "tip_en": "Start the lesson",
+     "tip_uk": "Почати урок",
+     "tip_pl": "Zacznij lekcję"
+    },
+    {
+     "type": "match",
+     "q": "Połącz słowa ze sceny z ich znaczeniem.",
+     "options_en": [
+      "troll=troll",
+      "łazienka=bathroom",
+      "maczuga=club",
+      "ratować=to save",
+      "bać się=to be afraid"
+     ],
+     "options_uk": [
+      "troll=троль",
+      "łazienka=ванна кімната",
+      "maczuga=палиця, булава",
+      "ratować=рятувати",
+      "bać się=боятися"
+     ],
+     "options_pl": [
+      "troll=ogromny, głupi potwór",
+      "łazienka=tu myjesz ręce",
+      "maczuga=ciężki kij",
+      "ratować=pomagać komuś w niebezpieczeństwie",
+      "bać się=czuć strach"
+     ],
+     "tip_en": "Say each new word out loud as you match it: it sticks better.",
+     "tip_uk": "Промовляй кожне нове слово вголос, коли з'єднуєш: так воно краще запам'ятовується.",
+     "tip_pl": "Wypowiadaj każde nowe słowo na głos, gdy je łączysz: lepiej zostaje w pamięci."
+    },
+    {
+     "type": "vocabulary",
+     "q": "Hermiona <b>boi się</b> trolla. Co czuje?",
+     "options": [
+      "Radość",
+      "Strach",
+      "Głód",
+      "Nudę"
+     ],
+     "answer": 1,
+     "tip_en": "Bać się = to be afraid. Boi się + genitive: trolla.",
+     "tip_uk": "Bać się = боятися. Boi się trolla — родовий, як «боїться троля».",
+     "tip_pl": "Bać się + dopełniacz."
+    },
+    {
+     "type": "listening",
+     "q": "Posłuchaj. Co krzyczy profesor?",
+     "options": [
+      "Troll w lochach!",
+      "Obiad gotowy!",
+      "Lekcja skończona!",
+      "Wesołych świąt!"
+     ],
+     "answer": 0,
+     "tip_en": "Troll w lochach = troll in the dungeons.",
+     "tip_uk": "Troll w lochach = троль у підземеллі!",
+     "tip_pl": "Troll w lochach!",
+     "say": "Troll! Troll w lochach! Myślałem, że powinniście wiedzieć."
+    },
+    {
+     "type": "grammar",
+     "q": "Troll ____ do łazienki. (went in)",
+     "options": [
+      "wszedł",
+      "wyszedł",
+      "przyszedł",
+      "odszedł"
+     ],
+     "answer": 0,
+     "tip_en": "W- = in: wejść → wszedł (went in).",
+     "tip_uk": "W- = у: wszedł = увійшов.",
+     "tip_pl": "W- = do środka: wszedł."
+    },
+    {
+     "type": "grammar",
+     "q": "Harry i Ron szybko ____ z sali. (went out)",
+     "options": [
+      "wyszli",
+      "weszli",
+      "przyszli",
+      "zeszli"
+     ],
+     "answer": 0,
+     "tip_en": "Wy- = out: wyszli.",
+     "tip_uk": "Wy- = ви-: wyszli = вийшли.",
+     "tip_pl": "Wy- = na zewnątrz: wyszli."
+    },
+    {
+     "type": "order",
+     "q": "Ułóż zdanie.",
+     "options": [
+      "Chłopcy",
+      "przyszli",
+      "Hermionie",
+      "na",
+      "ratunek"
+     ],
+     "tip_en": "Przy- = arrive: przyszli (came).",
+     "tip_uk": "Przy- = при-: przyszli = прийшли.",
+     "tip_pl": "Przy-: przybyć, przyjść.",
+     "q_en": "Build the sentence: “The boys came to Hermione's rescue.”",
+     "q_uk": "Склади речення: «Хлопці прийшли Герміоні на порятунок.»",
+     "q_pl": "Ułóż zdanie: „Chłopcy przyszli Hermionie na ratunek”"
+    },
+    {
+     "type": "type",
+     "q": "Troll ____ z łazienki? Nie, upadł! (wyjść, on)",
+     "options": [
+      "wyszedł"
+     ],
+     "tip_en": "Wyjść → wyszedł (irregular past!).",
+     "tip_uk": "Wyjść → wyszedł (неправильна форма).",
+     "tip_pl": "Wyjść → wyszedł.",
+     "q_en": "Troll ____ z łazienki? Nie, upadł! (wyjść, on) (went out)",
+     "q_uk": "Troll ____ z łazienki? Nie, upadł! (wyjść, on) (вийшов)",
+     "q_pl": "Troll ____ z łazienki? Nie, upadł! (wyjść, on) (wyjść, on)"
+    },
+    {
+     "type": "tf",
+     "q": "Prawda czy fałsz? Po tej nocy Hermiona została przyjaciółką chłopców.",
+     "options": [
+      "True",
+      "False"
+     ],
+     "answer": 0,
+     "tip_en": "True: from then on they were three friends.",
+     "tip_uk": "Правда: відтоді їх було троє друзів.",
+     "tip_pl": "Prawda: od tej pory byli we trójkę."
+    },
+    {
+     "type": "speaking",
+     "q": "Powiedz na głos: <i>„Troll wszedł do łazienki!”</i>",
+     "say": "Troll wszedł do łazienki!",
+     "tip_en": "wszedł: 'fshedw', tricky cluster!",
+     "tip_uk": "wszedł ≈ «вшедв».",
+     "tip_pl": "Trudne: wszedł."
+    }
+   ],
+   "uk": [
+    {
+     "type": "intro",
+     "q": "Урок 11. Вирушаємо в наступну сцену!",
+     "q_en": "Lesson 11. Into the next scene!",
+     "q_uk": "Урок 11. Вирушаємо в наступну сцену!",
+     "q_pl": "Lekcja 11. Wchodzimy do kolejnej sceny!",
+     "options_en": [
+      "5 new Ukrainian words from the scene",
+      "Listening at natural speed",
+      "Grammar: Motion verbs with prefixes: увійти / вийти / прийти",
+      "Speaking: say a line from the scene"
+     ],
+     "options_uk": [
+      "5 нових слів зі сцени",
+      "Аудіювання в природному темпі",
+      "Граматика: Дієслова руху з префіксами: увійти / вийти / прийти",
+      "Говоріння: скажи фразу зі сцени"
+     ],
+     "options_pl": [
+      "5 nowych ukraińskich słów ze sceny",
+      "Słuchanie w naturalnym tempie",
+      "Gramatyka: Czasowniki ruchu z przedrostkami: увійти / вийти / прийти",
+      "Mówienie: powiedz kwestię ze sceny"
+     ],
+     "tip": "Start",
+     "tip_en": "Start the lesson",
+     "tip_uk": "Почати урок",
+     "tip_pl": "Zacznij lekcję"
+    },
+    {
+     "type": "match",
+     "q": "З'єднай слова зі сцени з їхнім значенням.",
+     "options_en": [
+      "троль=troll",
+      "вбиральня=bathroom",
+      "палиця=club",
+      "рятувати=to save",
+      "боятися=to be afraid"
+     ],
+     "options_uk": [
+      "троль=величезне дурне чудовисько",
+      "вбиральня=тут миють руки",
+      "палиця=важкий кийок",
+      "рятувати=допомагати в небезпеці",
+      "боятися=відчувати страх"
+     ],
+     "options_pl": [
+      "троль=troll",
+      "вбиральня=łazienka",
+      "палиця=maczuga",
+      "рятувати=ratować",
+      "боятися=bać się"
+     ],
+     "tip_en": "Say each new word out loud as you match it: it sticks better.",
+     "tip_uk": "Промовляй кожне нове слово вголос, коли з'єднуєш: так воно краще запам'ятовується.",
+     "tip_pl": "Wypowiadaj każde nowe słowo na głos, gdy je łączysz: lepiej zostaje w pamięci."
+    },
+    {
+     "type": "vocabulary",
+     "q": "Герміона <b>боїться</b> троля. Що вона відчуває?",
+     "options": [
+      "Радість",
+      "Страх",
+      "Голод",
+      "Нудьгу"
+     ],
+     "answer": 1,
+     "tip_en": "Боятися = to be afraid; боїться + genitive: троля.",
+     "tip_uk": "Боятися кого? — родовий: троля.",
+     "tip_pl": "Боятися + dopełniacz, jak bać się trolla."
+    },
+    {
+     "type": "listening",
+     "q": "Послухай. Що кричить професор?",
+     "options": [
+      "Троль у підземеллі!",
+      "Обід готовий!",
+      "Урок закінчено!",
+      "Веселих свят!"
+     ],
+     "answer": 0,
+     "tip_en": "Троль у підземеллі = troll in the dungeons.",
+     "tip_uk": "Троль у підземеллі!",
+     "tip_pl": "Троль у підземеллі = troll w lochach.",
+     "say": "Троль! Троль у підземеллі! Я подумав, що ви маєте знати."
+    },
+    {
+     "type": "grammar",
+     "q": "Троль ____ у вбиральню. (went in)",
+     "options": [
+      "увійшов",
+      "вийшов",
+      "прийшов",
+      "пішов"
+     ],
+     "answer": 0,
+     "tip_en": "У- = in: увійшов.",
+     "tip_uk": "У- = всередину.",
+     "tip_pl": "У- = w-: увійшов = wszedł."
+    },
+    {
+     "type": "grammar",
+     "q": "Гаррі й Рон швидко ____ із зали. (went out)",
+     "options": [
+      "вийшли",
+      "увійшли",
+      "прийшли",
+      "зійшли"
+     ],
+     "answer": 0,
+     "tip_en": "Ви- = out: вийшли.",
+     "tip_uk": "Ви- = назовні.",
+     "tip_pl": "Ви- = wy-: вийшли = wyszli."
+    },
+    {
+     "type": "order",
+     "q": "Склади речення.",
+     "options": [
+      "Хлопці",
+      "прийшли",
+      "Герміоні",
+      "на",
+      "порятунок"
+     ],
+     "tip_en": "При- = arrive: прийшли.",
+     "tip_uk": "При- = прибуття.",
+     "tip_pl": "При- = przy-.",
+     "q_en": "Build the sentence: “The boys came to Hermione's rescue.”",
+     "q_uk": "Склади речення: «Хлопці прийшли Герміоні на порятунок»",
+     "q_pl": "Ułóż zdanie: „Chłopcy przyszli Hermionie na ratunek.”"
+    },
+    {
+     "type": "type",
+     "q": "Троль ____ з вбиральні? Ні, він упав! (вийти, він)",
+     "options": [
+      "вийшов"
+     ],
+     "tip_en": "Вийти → вийшов.",
+     "tip_uk": "Вийти → вийшов.",
+     "tip_pl": "Вийти → вийшов = wyszedł.",
+     "q_en": "Троль ____ з вбиральні? Ні, він упав! (вийти, він) (went out)",
+     "q_uk": "Троль ____ з вбиральні? Ні, він упав! (вийти, він) (вийти, він)",
+     "q_pl": "Троль ____ з вбиральні? Ні, він упав! (вийти, він) (wyszedł)"
+    },
+    {
+     "type": "tf",
+     "q": "Правда чи неправда? Після тієї ночі Герміона стала подругою хлопців.",
+     "options": [
+      "True",
+      "False"
+     ],
+     "answer": 0,
+     "tip_en": "True: from then on they were three friends.",
+     "tip_uk": "Правда: відтоді їх троє.",
+     "tip_pl": "Prawda: od tej pory we trójkę."
+    },
+    {
+     "type": "speaking",
+     "q": "Скажи вголос: <i>«Троль увійшов у вбиральню!»</i>",
+     "say": "Троль увійшов у вбиральню!",
+     "tip_en": "й is a short 'y' sound: увійшов.",
+     "tip_uk": "Чітко: увійшов.",
+     "tip_pl": "й = j: увійшов ≈ uwijszow."
+    }
+   ],
+   "pl_grammar_en": "Motion verbs with prefixes: wejść / wyjść / przyjść",
+   "pl_grammar_uk": "Дієслова руху з префіксами: wejść / wyjść / przyjść",
+   "pl_grammar_pl": "Czasowniki ruchu z przedrostkami: wejść / wyjść / przyjść",
+   "uk_grammar_en": "Motion verbs with prefixes: увійти / вийти / прийти",
+   "uk_grammar_uk": "Дієслова руху з префіксами: увійти / вийти / прийти",
+   "uk_grammar_pl": "Czasowniki ruchu z przedrostkami: увійти / вийти / прийти"
+  }
  },
  {
   "num": 12,
@@ -1962,7 +5402,351 @@
     "tip_uk": "faster and faster = дедалі швидше.",
     "tip_pl": "faster and faster = coraz szybciej."
    }
-  ]
+  ],
+  "title_en": "The First Match",
+  "scene_en": "A pitch with hoops on tall posts and fans in the stands. The boy plays his first match as Seeker.",
+  "variants": {
+   "pl": [
+    {
+     "type": "intro",
+     "q": "Lekcja 12. Wchodzimy do kolejnej sceny!",
+     "q_en": "Lesson 12. Into the next scene!",
+     "q_uk": "Урок 12. Вирушаємо в наступну сцену!",
+     "q_pl": "Lekcja 12. Wchodzimy do kolejnej sceny!",
+     "options_en": [
+      "5 new Polish words from the scene",
+      "Listening at natural speed",
+      "Grammar: Comparison: szybki → szybszy → najszybszy",
+      "Speaking: say a line from the scene"
+     ],
+     "options_uk": [
+      "5 нових польських слів зі сцени",
+      "Аудіювання в природному темпі",
+      "Граматика: Ступені порівняння: szybki → szybszy → najszybszy",
+      "Говоріння: скажи фразу зі сцени"
+     ],
+     "options_pl": [
+      "5 nowych słów ze sceny",
+      "Słuchanie w naturalnym tempie",
+      "Gramatyka: Stopniowanie: szybki → szybszy → najszybszy",
+      "Mówienie: powiedz kwestię ze sceny"
+     ],
+     "tip": "Start",
+     "tip_en": "Start the lesson",
+     "tip_uk": "Почати урок",
+     "tip_pl": "Zacznij lekcję"
+    },
+    {
+     "type": "match",
+     "q": "Połącz słowa ze sceny z ich znaczeniem.",
+     "options_en": [
+      "mecz=match",
+      "kibic=fan",
+      "szukający=Seeker",
+      "złapać=to catch",
+      "wygrać=to win"
+     ],
+     "options_uk": [
+      "mecz=матч",
+      "kibic=вболівальник",
+      "szukający=ловець",
+      "złapać=спіймати",
+      "wygrać=виграти"
+     ],
+     "options_pl": [
+      "mecz=sportowa gra dwóch drużyn",
+      "kibic=ogląda i dopinguje",
+      "szukający=łapie złoty znicz",
+      "złapać=chwycić coś, co leci",
+      "wygrać=być pierwszym, zdobyć zwycięstwo"
+     ],
+     "tip_en": "Say each new word out loud as you match it: it sticks better.",
+     "tip_uk": "Промовляй кожне нове слово вголос, коли з'єднуєш: так воно краще запам'ятовується.",
+     "tip_pl": "Wypowiadaj każde nowe słowo na głos, gdy je łączysz: lepiej zostaje w pamięci."
+    },
+    {
+     "type": "vocabulary",
+     "q": "Harry <b>złapał</b> znicz. Co zrobił?",
+     "options": [
+      "Upuścił go",
+      "Chwycił go",
+      "Zgubił go",
+      "Kupił go"
+     ],
+     "answer": 1,
+     "tip_en": "Złapać = to catch. He nearly swallowed it!",
+     "tip_uk": "Złapać = спіймати. Він ледь його не проковтнув!",
+     "tip_pl": "Złapać = chwycić."
+    },
+    {
+     "type": "listening",
+     "q": "Posłuchaj. Kto wygrał mecz?",
+     "options": [
+      "Gryffindor",
+      "Slytherin",
+      "Nikt",
+      "Nauczyciele"
+     ],
+     "answer": 0,
+     "tip_en": "Gryffindor wygrywa = Gryffindor wins!",
+     "tip_uk": "Gryffindor wygrywa = Гріфіндор перемагає!",
+     "tip_pl": "Gryffindor wygrywa!",
+     "say": "Potter ma znicz! Gryffindor wygrywa sto siedemdziesiąt do sześćdziesięciu!"
+    },
+    {
+     "type": "grammar",
+     "q": "Nimbus jest ____ niż stara miotła.",
+     "options": [
+      "szybszy",
+      "szybki",
+      "najszybszy",
+      "szybko"
+     ],
+     "answer": 0,
+     "tip_en": "Comparative: szybki → szybszy (+ niż = than).",
+     "tip_uk": "Вищий ступінь: szybszy niż… (швидший, ніж…).",
+     "tip_pl": "Stopień wyższy + niż."
+    },
+    {
+     "type": "grammar",
+     "q": "Harry jest ____ szukającym w historii szkoły. (the youngest)",
+     "options": [
+      "najmłodszym",
+      "młodszym",
+      "młodym",
+      "młodo"
+     ],
+     "answer": 0,
+     "tip_en": "Superlative: naj- + comparative: najmłodszy (here instrumental after jest).",
+     "tip_uk": "Найвищий: naj- (як наш най-): najmłodszy.",
+     "tip_pl": "Stopień najwyższy: naj-."
+    },
+    {
+     "type": "order",
+     "q": "Ułóż zdanie.",
+     "options": [
+      "To",
+      "był",
+      "najlepszy",
+      "mecz",
+      "w",
+      "roku"
+     ],
+     "tip_en": "Dobry → lepszy → najlepszy (irregular).",
+     "tip_uk": "Dobry → lepszy → najlepszy (неправильне, як добрий → кращий).",
+     "tip_pl": "Nieregularne: dobry, lepszy, najlepszy.",
+     "q_en": "Build the sentence: “It was the best match of the year.”",
+     "q_uk": "Склади речення: «Це був найкращий матч року.»",
+     "q_pl": "Ułóż zdanie: „To był najlepszy mecz w roku”"
+    },
+    {
+     "type": "type",
+     "q": "Miotła leciała coraz ____. (wyżej/niżej → higher)",
+     "options": [
+      "wyżej"
+     ],
+     "tip_en": "Adverb comparative: wysoko → wyżej.",
+     "tip_uk": "Прислівник: wysoko → wyżej (вище).",
+     "tip_pl": "Wysoko → wyżej.",
+     "q_en": "Miotła leciała coraz ____. (wyżej/niżej → higher) (higher)",
+     "q_uk": "Miotła leciała coraz ____. (wyżej/niżej → higher) (вище)",
+     "q_pl": "Miotła leciała coraz ____. (wyżej/niżej → higher) (wysoko → ?)"
+    },
+    {
+     "type": "tf",
+     "q": "Prawda czy fałsz? Miotła Harry'ego w meczu zachowywała się normalnie.",
+     "options": [
+      "True",
+      "False"
+     ],
+     "answer": 1,
+     "tip_en": "False: someone was jinxing it and it tried to throw him off.",
+     "tip_uk": "Неправда: хтось зачаровував мітлу, і вона намагалася його скинути.",
+     "tip_pl": "Fałsz: ktoś rzucał na nią urok."
+    },
+    {
+     "type": "speaking",
+     "q": "Powiedz na głos: <i>„Gryffindor wygrywa! To najlepszy mecz!”</i>",
+     "say": "Gryffindor wygrywa! To najlepszy mecz!",
+     "tip_en": "rz in wygrywa? No: just 'gr'. Najlepszy: 'sh' sound in -szy.",
+     "tip_uk": "-szy читається як «ши».",
+     "tip_pl": "Wyraźnie: najlepszy."
+    }
+   ],
+   "uk": [
+    {
+     "type": "intro",
+     "q": "Урок 12. Вирушаємо в наступну сцену!",
+     "q_en": "Lesson 12. Into the next scene!",
+     "q_uk": "Урок 12. Вирушаємо в наступну сцену!",
+     "q_pl": "Lekcja 12. Wchodzimy do kolejnej sceny!",
+     "options_en": [
+      "5 new Ukrainian words from the scene",
+      "Listening at natural speed",
+      "Grammar: Comparison: швидкий → швидший → найшвидший",
+      "Speaking: say a line from the scene"
+     ],
+     "options_uk": [
+      "5 нових слів зі сцени",
+      "Аудіювання в природному темпі",
+      "Граматика: Ступені порівняння: швидкий → швидший → найшвидший",
+      "Говоріння: скажи фразу зі сцени"
+     ],
+     "options_pl": [
+      "5 nowych ukraińskich słów ze sceny",
+      "Słuchanie w naturalnym tempie",
+      "Gramatyka: Stopniowanie: швидкий → швидший → найшвидший",
+      "Mówienie: powiedz kwestię ze sceny"
+     ],
+     "tip": "Start",
+     "tip_en": "Start the lesson",
+     "tip_uk": "Почати урок",
+     "tip_pl": "Zacznij lekcję"
+    },
+    {
+     "type": "match",
+     "q": "З'єднай слова зі сцени з їхнім значенням.",
+     "options_en": [
+      "матч=match",
+      "вболівальник=fan",
+      "ловець=Seeker",
+      "спіймати=to catch",
+      "виграти=to win"
+     ],
+     "options_uk": [
+      "матч=спортивна гра двох команд",
+      "вболівальник=дивиться і підтримує",
+      "ловець=ловить золотий снич",
+      "спіймати=схопити те, що летить",
+      "виграти=бути першим"
+     ],
+     "options_pl": [
+      "матч=mecz",
+      "вболівальник=kibic",
+      "ловець=szukający",
+      "спіймати=złapać",
+      "виграти=wygrać"
+     ],
+     "tip_en": "Say each new word out loud as you match it: it sticks better.",
+     "tip_uk": "Промовляй кожне нове слово вголос, коли з'єднуєш: так воно краще запам'ятовується.",
+     "tip_pl": "Wypowiadaj każde nowe słowo na głos, gdy je łączysz: lepiej zostaje w pamięci."
+    },
+    {
+     "type": "vocabulary",
+     "q": "Гаррі <b>спіймав</b> снич. Що він зробив?",
+     "options": [
+      "Впустив",
+      "Схопив",
+      "Загубив",
+      "Купив"
+     ],
+     "answer": 1,
+     "tip_en": "Спіймати = to catch.",
+     "tip_uk": "Спіймати — схопити. Він мало не проковтнув снич!",
+     "tip_pl": "Спіймати = złapać."
+    },
+    {
+     "type": "listening",
+     "q": "Послухай. Хто виграв матч?",
+     "options": [
+      "Гріфіндор",
+      "Слизерин",
+      "Ніхто",
+      "Учителі"
+     ],
+     "answer": 0,
+     "tip_en": "Гріфіндор перемагає = Gryffindor wins!",
+     "tip_uk": "Гріфіндор перемагає!",
+     "tip_pl": "Гріфіндор перемагає = Gryffindor wygrywa.",
+     "say": "Поттер упіймав снича! Гріфіндор перемагає з рахунком сто сімдесят — шістдесят!"
+    },
+    {
+     "type": "grammar",
+     "q": "Німбус ____ за стару мітлу.",
+     "options": [
+      "швидший",
+      "швидкий",
+      "найшвидший",
+      "швидко"
+     ],
+     "answer": 0,
+     "tip_en": "Comparative: швидкий → швидший (за = than).",
+     "tip_uk": "Вищий ступінь: швидший за…",
+     "tip_pl": "Швидший за = szybszy niż."
+    },
+    {
+     "type": "grammar",
+     "q": "Гаррі — ____ ловець в історії школи. (the youngest)",
+     "options": [
+      "наймолодший",
+      "молодший",
+      "молодий",
+      "молодо"
+     ],
+     "answer": 0,
+     "tip_en": "Superlative: най- + comparative.",
+     "tip_uk": "Найвищий ступінь: най-.",
+     "tip_pl": "Най- = naj-."
+    },
+    {
+     "type": "order",
+     "q": "Склади речення.",
+     "options": [
+      "Це",
+      "був",
+      "найкращий",
+      "матч",
+      "цього",
+      "року"
+     ],
+     "tip_en": "Добрий → кращий → найкращий (irregular).",
+     "tip_uk": "Добрий → кращий → найкращий.",
+     "tip_pl": "Добрий → кращий → найкращий = dobry → lepszy → najlepszy.",
+     "q_en": "Build the sentence: “It was the best match of the year.”",
+     "q_uk": "Склади речення: «Це був найкращий матч цього року»",
+     "q_pl": "Ułóż zdanie: „To był najlepszy mecz w tym roku.”"
+    },
+    {
+     "type": "type",
+     "q": "Мітла летіла все ____. (higher)",
+     "options": [
+      "вище"
+     ],
+     "tip_en": "Високо → вище.",
+     "tip_uk": "Прислівник: високо → вище.",
+     "tip_pl": "Високо → вище = wyżej.",
+     "q_en": "Мітла летіла все ____. (higher) (higher)",
+     "q_uk": "Мітла летіла все ____. (higher) (високо → ?)",
+     "q_pl": "Мітла летіла все ____. (higher) (wyżej)"
+    },
+    {
+     "type": "tf",
+     "q": "Правда чи неправда? Мітла Гаррі під час матчу поводилася звичайно.",
+     "options": [
+      "True",
+      "False"
+     ],
+     "answer": 1,
+     "tip_en": "False: someone jinxed it.",
+     "tip_uk": "Неправда: хтось зачаровував мітлу.",
+     "tip_pl": "Fałsz: ktoś rzucił urok."
+    },
+    {
+     "type": "speaking",
+     "q": "Скажи вголос: <i>«Гріфіндор перемагає! Це найкращий матч!»</i>",
+     "say": "Гріфіндор перемагає! Це найкращий матч!",
+     "tip_en": "г is a soft breathy 'h'.",
+     "tip_uk": "Чітко: Гріфіндор, найкращий.",
+     "tip_pl": "г ≈ polskie h."
+    }
+   ],
+   "pl_grammar_en": "Comparison: szybki → szybszy → najszybszy",
+   "pl_grammar_uk": "Ступені порівняння: szybki → szybszy → najszybszy",
+   "pl_grammar_pl": "Stopniowanie: szybki → szybszy → najszybszy",
+   "uk_grammar_en": "Comparison: швидкий → швидший → найшвидший",
+   "uk_grammar_uk": "Ступені порівняння: швидкий → швидший → найшвидший",
+   "uk_grammar_pl": "Stopniowanie: швидкий → швидший → найшвидший"
+  }
  },
  {
   "num": 13,
@@ -2090,7 +5874,350 @@
     "tip_uk": "wish + could = уміння, яке хотілося б мати.",
     "tip_pl": "wish + could = umiejętność, którą chciałbyś mieć."
    }
-  ]
+  ],
+  "title_en": "The Mirror of Desire",
+  "scene_en": "An empty room at night. The boy finds a mirror that shows not a reflection but his deepest wish.",
+  "variants": {
+   "pl": [
+    {
+     "type": "intro",
+     "q": "Lekcja 13. Wchodzimy do kolejnej sceny!",
+     "q_en": "Lesson 13. Into the next scene!",
+     "q_uk": "Урок 13. Вирушаємо в наступну сцену!",
+     "q_pl": "Lekcja 13. Wchodzimy do kolejnej sceny!",
+     "options_en": [
+      "5 new Polish words from the scene",
+      "Listening at natural speed",
+      "Grammar: Wishes: chciałbym… / żeby…",
+      "Speaking: say a line from the scene"
+     ],
+     "options_uk": [
+      "5 нових польських слів зі сцени",
+      "Аудіювання в природному темпі",
+      "Граматика: Бажання: chciałbym… / żeby…",
+      "Говоріння: скажи фразу зі сцени"
+     ],
+     "options_pl": [
+      "5 nowych słów ze sceny",
+      "Słuchanie w naturalnym tempie",
+      "Gramatyka: Życzenia: chciałbym… / żeby…",
+      "Mówienie: powiedz kwestię ze sceny"
+     ],
+     "tip": "Start",
+     "tip_en": "Start the lesson",
+     "tip_uk": "Почати урок",
+     "tip_pl": "Zacznij lekcję"
+    },
+    {
+     "type": "match",
+     "q": "Połącz słowa ze sceny z ich znaczeniem.",
+     "options_en": [
+      "lustro=mirror",
+      "pragnienie=wish, desire",
+      "odbicie=reflection",
+      "tęsknić=to miss (someone)",
+      "peleryna=cloak"
+     ],
+     "options_uk": [
+      "lustro=дзеркало",
+      "pragnienie=бажання",
+      "odbicie=відображення",
+      "tęsknić=сумувати",
+      "peleryna=плащ"
+     ],
+     "options_pl": [
+      "lustro=w nim widzisz siebie",
+      "pragnienie=to, czego bardzo chcesz",
+      "odbicie=obraz w lustrze",
+      "tęsknić=być smutnym bez kogoś",
+      "peleryna=długie okrycie bez rękawów"
+     ],
+     "tip_en": "Say each new word out loud as you match it: it sticks better.",
+     "tip_uk": "Промовляй кожне нове слово вголос, коли з'єднуєш: так воно краще запам'ятовується.",
+     "tip_pl": "Wypowiadaj każde nowe słowo na głos, gdy je łączysz: lepiej zostaje w pamięci."
+    },
+    {
+     "type": "vocabulary",
+     "q": "Harry <b>tęskni</b> za rodzicami. Co czuje?",
+     "options": [
+      "Złość",
+      "Smutek, bo ich nie ma",
+      "Strach",
+      "Radość"
+     ],
+     "answer": 1,
+     "tip_en": "Tęsknić za kimś = to miss someone.",
+     "tip_uk": "Tęsknić za kimś = сумувати за кимось.",
+     "tip_pl": "Tęsknić za + narzędnik."
+    },
+    {
+     "type": "listening",
+     "q": "Posłuchaj. Co pokazuje lustro?",
+     "options": [
+      "Przyszłość",
+      "Najgłębsze pragnienie",
+      "Pogodę",
+      "Twoje odbicie"
+     ],
+     "answer": 1,
+     "tip_en": "The mirror shows your deepest wish, not the truth.",
+     "tip_uk": "Дзеркало показує найглибше бажання.",
+     "tip_pl": "Lustro pokazuje najgłębsze pragnienie.",
+     "say": "To lustro nie pokazuje przyszłości. Pokazuje tylko najgłębsze pragnienie naszego serca."
+    },
+    {
+     "type": "grammar",
+     "q": "____ znowu zobaczyć mamę i tatę. (I would like)",
+     "options": [
+      "Chciałbym",
+      "Chcę by",
+      "Chciałem",
+      "Chcieć"
+     ],
+     "answer": 0,
+     "tip_en": "Chciałbym = I would like (polite wish).",
+     "tip_uk": "Chciałbym = я хотів би.",
+     "tip_pl": "Chciałbym = życzenie."
+    },
+    {
+     "type": "grammar",
+     "q": "Ron marzy, ____ był kapitanem drużyny.",
+     "options": [
+      "żeby",
+      "że",
+      "czy",
+      "bo"
+     ],
+     "answer": 0,
+     "tip_en": "Wish about something: żeby + past form.",
+     "tip_uk": "Бажання: żeby + форма минулого (щоб був).",
+     "tip_pl": "Marzyć, żeby…"
+    },
+    {
+     "type": "order",
+     "q": "Ułóż zdanie.",
+     "options": [
+      "Chciałbym",
+      "żeby",
+      "moi",
+      "rodzice",
+      "żyli"
+     ],
+     "tip_en": "Żeby + past tense form expresses a wish.",
+     "tip_uk": "Żeby + минулий час = щоб…",
+     "tip_pl": "Żeby + forma przeszła.",
+     "q_en": "Build the sentence: “I wish my parents were alive.”",
+     "q_uk": "Склади речення: «Я хотів би, щоб мої батьки були живі.»",
+     "q_pl": "Ułóż zdanie: „Chciałbym żeby moi rodzice żyli”"
+    },
+    {
+     "type": "type",
+     "q": "Ron ____, żeby zdobyć puchar. (chcieć, on, conditional)",
+     "options": [
+      "chciałby"
+     ],
+     "tip_en": "Chcieć → chciałby (he would like).",
+     "tip_uk": "Chcieć → chciałby (хотів би).",
+     "tip_pl": "On chciałby.",
+     "q_en": "Ron ____, żeby zdobyć puchar. (chcieć, on, conditional) (would like)",
+     "q_uk": "Ron ____, żeby zdobyć puchar. (chcieć, on, conditional) (хотів би)",
+     "q_pl": "Ron ____, żeby zdobyć puchar. (chcieć, on, conditional) (chcieć, on, tryb przypuszczający)"
+    },
+    {
+     "type": "tf",
+     "q": "Prawda czy fałsz? Dumbledore radzi Harry'emu codziennie patrzeć w lustro.",
+     "options": [
+      "True",
+      "False"
+     ],
+     "answer": 1,
+     "tip_en": "False: he says it's not good to live in dreams and forget to live.",
+     "tip_uk": "Неправда: він каже, що не можна жити мріями й забувати жити.",
+     "tip_pl": "Fałsz: mówi, że nie wolno żyć marzeniami."
+    },
+    {
+     "type": "speaking",
+     "q": "Powiedz na głos: <i>„Chciałbym znowu zobaczyć rodziców.”</i>",
+     "say": "Chciałbym znowu zobaczyć rodziców.",
+     "tip_en": "ch is a breathy 'h'; ia is like 'ya'.",
+     "tip_uk": "ch = «х»: chciałbym ≈ «хцявбим».",
+     "tip_pl": "Wyraźnie: chciałbym."
+    }
+   ],
+   "uk": [
+    {
+     "type": "intro",
+     "q": "Урок 13. Вирушаємо в наступну сцену!",
+     "q_en": "Lesson 13. Into the next scene!",
+     "q_uk": "Урок 13. Вирушаємо в наступну сцену!",
+     "q_pl": "Lekcja 13. Wchodzimy do kolejnej sceny!",
+     "options_en": [
+      "5 new Ukrainian words from the scene",
+      "Listening at natural speed",
+      "Grammar: Wishes: хотів би… / якби ж…",
+      "Speaking: say a line from the scene"
+     ],
+     "options_uk": [
+      "5 нових слів зі сцени",
+      "Аудіювання в природному темпі",
+      "Граматика: Бажання: хотів би… / якби ж…",
+      "Говоріння: скажи фразу зі сцени"
+     ],
+     "options_pl": [
+      "5 nowych ukraińskich słów ze sceny",
+      "Słuchanie w naturalnym tempie",
+      "Gramatyka: Życzenia: хотів би… / якби ж…",
+      "Mówienie: powiedz kwestię ze sceny"
+     ],
+     "tip": "Start",
+     "tip_en": "Start the lesson",
+     "tip_uk": "Почати урок",
+     "tip_pl": "Zacznij lekcję"
+    },
+    {
+     "type": "match",
+     "q": "З'єднай слова зі сцени з їхнім значенням.",
+     "options_en": [
+      "дзеркало=mirror",
+      "бажання=wish",
+      "відображення=reflection",
+      "сумувати=to miss",
+      "плащ=cloak"
+     ],
+     "options_uk": [
+      "дзеркало=у ньому бачиш себе",
+      "бажання=те, чого дуже хочеш",
+      "відображення=образ у дзеркалі",
+      "сумувати=бути сумним без когось",
+      "плащ=довгий одяг без рукавів"
+     ],
+     "options_pl": [
+      "дзеркало=lustro",
+      "бажання=pragnienie",
+      "відображення=odbicie",
+      "сумувати=tęsknić",
+      "плащ=peleryna"
+     ],
+     "tip_en": "Say each new word out loud as you match it: it sticks better.",
+     "tip_uk": "Промовляй кожне нове слово вголос, коли з'єднуєш: так воно краще запам'ятовується.",
+     "tip_pl": "Wypowiadaj każde nowe słowo na głos, gdy je łączysz: lepiej zostaje w pamięci."
+    },
+    {
+     "type": "vocabulary",
+     "q": "Гаррі <b>сумує</b> за батьками. Що він відчуває?",
+     "options": [
+      "Злість",
+      "Смуток, бо їх немає",
+      "Страх",
+      "Радість"
+     ],
+     "answer": 1,
+     "tip_en": "Сумувати за кимось = to miss someone.",
+     "tip_uk": "Сумувати за + орудний: за батьками.",
+     "tip_pl": "Сумувати за = tęsknić za."
+    },
+    {
+     "type": "listening",
+     "q": "Послухай. Що показує дзеркало?",
+     "options": [
+      "Майбутнє",
+      "Найглибше бажання",
+      "Погоду",
+      "Твоє відображення"
+     ],
+     "answer": 1,
+     "tip_en": "It shows your deepest wish.",
+     "tip_uk": "Дзеркало показує найглибше бажання серця.",
+     "tip_pl": "Najgłębsze pragnienie.",
+     "say": "Це дзеркало не показує майбутнього. Воно показує лише найглибше бажання нашого серця."
+    },
+    {
+     "type": "grammar",
+     "q": "Я ____ знову побачити маму й тата. (would like)",
+     "options": [
+      "хотів би",
+      "хочу б",
+      "хотів",
+      "хотіти"
+     ],
+     "answer": 0,
+     "tip_en": "Хотів би = I would like.",
+     "tip_uk": "Хотів би — бажання.",
+     "tip_pl": "Хотів би = chciałbym."
+    },
+    {
+     "type": "grammar",
+     "q": "Рон мріє, ____ стати капітаном команди.",
+     "options": [
+      "щоб",
+      "що",
+      "чи",
+      "бо"
+     ],
+     "answer": 0,
+     "tip_en": "Wish: мріяти, щоб…",
+     "tip_uk": "Мріяти, щоб…",
+     "tip_pl": "Щоб = żeby."
+    },
+    {
+     "type": "order",
+     "q": "Склади речення.",
+     "options": [
+      "Якби",
+      "ж",
+      "мої",
+      "батьки",
+      "були",
+      "живі"
+     ],
+     "tip_en": "Якби ж = if only.",
+     "tip_uk": "«Якби ж» — сильне бажання.",
+     "tip_pl": "Якби ж = gdyby tylko.",
+     "q_en": "Build the sentence: “If only my parents were alive.”",
+     "q_uk": "Склади речення: «Якби ж мої батьки були живі»",
+     "q_pl": "Ułóż zdanie: „Gdyby tylko moi rodzice żyli.”"
+    },
+    {
+     "type": "type",
+     "q": "Рон ____ би здобути кубок. (хотіти, він)",
+     "options": [
+      "хотів"
+     ],
+     "tip_en": "Хотіти → хотів би.",
+     "tip_uk": "Він хотів би.",
+     "tip_pl": "Хотів би = chciałby.",
+     "q_en": "Рон ____ би здобути кубок. (хотіти, він) (would like)",
+     "q_uk": "Рон ____ би здобути кубок. (хотіти, він) (хотіти, він)",
+     "q_pl": "Рон ____ би здобути кубок. (хотіти, він) (chciałby)"
+    },
+    {
+     "type": "tf",
+     "q": "Правда чи неправда? Дамблдор радить Гаррі щодня дивитися в дзеркало.",
+     "options": [
+      "True",
+      "False"
+     ],
+     "answer": 1,
+     "tip_en": "False: he warns against living in dreams.",
+     "tip_uk": "Неправда: не можна жити мріями.",
+     "tip_pl": "Fałsz: ostrzega przed życiem marzeniami."
+    },
+    {
+     "type": "speaking",
+     "q": "Скажи вголос: <i>«Я хотів би знову побачити батьків.»</i>",
+     "say": "Я хотів би знову побачити батьків.",
+     "tip_en": "х is a rough 'h', like Scottish 'loch'.",
+     "tip_uk": "Чітко: хотів би.",
+     "tip_pl": "х = ch."
+    }
+   ],
+   "pl_grammar_en": "Wishes: chciałbym… / żeby…",
+   "pl_grammar_uk": "Бажання: chciałbym… / żeby…",
+   "pl_grammar_pl": "Życzenia: chciałbym… / żeby…",
+   "uk_grammar_en": "Wishes: хотів би… / якби ж…",
+   "uk_grammar_uk": "Бажання: хотів би… / якби ж…",
+   "uk_grammar_pl": "Życzenia: хотів би… / якби ж…"
+  }
  },
  {
   "num": 14,
@@ -2232,7 +6359,353 @@
     "tip_uk": "Дуже природний спосіб подякувати за допомогу.",
     "tip_pl": "Bardzo naturalny sposób, by podziękować za pomoc."
    }
-  ]
+  ],
+  "title_en": "The Forbidden Forest",
+  "scene_en": "A night detention in a dark forest. The boys see something terrible and a centaur saves them.",
+  "variants": {
+   "pl": [
+    {
+     "type": "intro",
+     "q": "Lekcja 14. Wchodzimy do kolejnej sceny!",
+     "q_en": "Lesson 14. Into the next scene!",
+     "q_uk": "Урок 14. Вирушаємо в наступну сцену!",
+     "q_pl": "Lekcja 14. Wchodzimy do kolejnej sceny!",
+     "options_en": [
+      "5 new Polish words from the scene",
+      "Listening at natural speed",
+      "Grammar: Past conditional: gdyby nie…, to by…",
+      "Speaking: say a line from the scene"
+     ],
+     "options_uk": [
+      "5 нових польських слів зі сцени",
+      "Аудіювання в природному темпі",
+      "Граматика: Нереальна умова в минулому: gdyby nie…, to by…",
+      "Говоріння: скажи фразу зі сцени"
+     ],
+     "options_pl": [
+      "5 nowych słów ze sceny",
+      "Słuchanie w naturalnym tempie",
+      "Gramatyka: Warunek nierzeczywisty: gdyby nie…, to by…",
+      "Mówienie: powiedz kwestię ze sceny"
+     ],
+     "tip": "Start",
+     "tip_en": "Start the lesson",
+     "tip_uk": "Почати урок",
+     "tip_pl": "Zacznij lekcję"
+    },
+    {
+     "type": "match",
+     "q": "Połącz słowa ze sceny z ich znaczeniem.",
+     "options_en": [
+      "las=forest",
+      "kara=punishment, detention",
+      "centaur=centaur",
+      "ciemny=dark",
+      "jednorożec=unicorn"
+     ],
+     "options_uk": [
+      "las=ліс",
+      "kara=покарання",
+      "centaur=кентавр",
+      "ciemny=темний",
+      "jednorożec=єдиноріг"
+     ],
+     "options_pl": [
+      "las=dużo drzew",
+      "kara=za złe zachowanie",
+      "centaur=pół człowiek, pół koń",
+      "ciemny=bez światła",
+      "jednorożec=biały koń z rogiem"
+     ],
+     "tip_en": "Say each new word out loud as you match it: it sticks better.",
+     "tip_uk": "Промовляй кожне нове слово вголос, коли з'єднуєш: так воно краще запам'ятовується.",
+     "tip_pl": "Wypowiadaj każde nowe słowo na głos, gdy je łączysz: lepiej zostaje w pamięci."
+    },
+    {
+     "type": "vocabulary",
+     "q": "W lesie jest bardzo <b>ciemno</b>. Jak jest?",
+     "options": [
+      "Jasno",
+      "Bez światła",
+      "Gorąco",
+      "Głośno"
+     ],
+     "answer": 1,
+     "tip_en": "Ciemno = dark.",
+     "tip_uk": "Ciemno = темно.",
+     "tip_pl": "Ciemno ≠ jasno."
+    },
+    {
+     "type": "listening",
+     "q": "Posłuchaj. Kto uratował Harry'ego?",
+     "options": [
+      "Centaur",
+      "Troll",
+      "Hagrid",
+      "Sowa"
+     ],
+     "answer": 0,
+     "tip_en": "Firenze the centaur saved him.",
+     "tip_uk": "Його врятував кентавр Флоренц.",
+     "tip_pl": "Uratował go centaur.",
+     "say": "Szybko, wsiadaj mi na grzbiet! Las nie jest bezpieczny w nocy."
+    },
+    {
+     "type": "grammar",
+     "q": "Gdyby nie centaur, Harry ____ zginąć.",
+     "options": [
+      "mógłby",
+      "może",
+      "mógł",
+      "będzie mógł"
+     ],
+     "answer": 0,
+     "tip_en": "Gdyby nie…, mógłby… = if it weren't for…, he could have…",
+     "tip_uk": "Gdyby nie…, mógłby… = якби не…, міг би…",
+     "tip_pl": "Gdyby nie…, mógłby…"
+    },
+    {
+     "type": "grammar",
+     "q": "Gdyby chłopcy nie złamali zasad, nie ____ kary.",
+     "options": [
+      "dostaliby",
+      "dostali",
+      "dostają",
+      "dostaną"
+     ],
+     "answer": 0,
+     "tip_en": "Conditional plural: -liby.",
+     "tip_uk": "Умовний, множина: dostaliby (отримали б).",
+     "tip_pl": "Oni → -liby."
+    },
+    {
+     "type": "order",
+     "q": "Ułóż zdanie.",
+     "options": [
+      "Gdyby",
+      "nie",
+      "Hagrid",
+      "zgubiliby",
+      "się",
+      "w",
+      "lesie"
+     ],
+     "tip_en": "Zgubić się = to get lost.",
+     "tip_uk": "Zgubić się = заблукати.",
+     "tip_pl": "Zgubić się w lesie.",
+     "q_en": "Build the sentence: “If it weren't for Hagrid, they would have got lost in the forest.”",
+     "q_uk": "Склади речення: «Якби не Хагрід, вони заблукали б у лісі.»",
+     "q_pl": "Ułóż zdanie: „Gdyby nie Hagrid zgubiliby się w lesie”"
+    },
+    {
+     "type": "type",
+     "q": "Gdybym tam był, ____ się bał. (być, ja → would)",
+     "options": [
+      "bym"
+     ],
+     "tip_en": "Particle bym: ja bym się bał.",
+     "tip_uk": "Частка bym: ja bym się bał (я б боявся).",
+     "tip_pl": "Ja bym…",
+     "q_en": "Gdybym tam był, ____ się bał. (być, ja → would) (would)",
+     "q_uk": "Gdybym tam był, ____ się bał. (być, ja → would) (б)",
+     "q_pl": "Gdybym tam był, ____ się bał. (być, ja → would) (cząstka)"
+    },
+    {
+     "type": "tf",
+     "q": "Prawda czy fałsz? W lesie ktoś pił krew jednorożca.",
+     "options": [
+      "True",
+      "False"
+     ],
+     "answer": 0,
+     "tip_en": "True: a hooded figure was drinking unicorn blood.",
+     "tip_uk": "Правда: постать у каптурі пила кров єдинорога.",
+     "tip_pl": "Prawda: postać w kapturze piła krew."
+    },
+    {
+     "type": "speaking",
+     "q": "Powiedz na głos: <i>„Gdyby nie centaur, zgubiłbym się w lesie.”</i>",
+     "say": "Gdyby nie centaur, zgubiłbym się w lesie.",
+     "tip_en": "zgubiłbym: g-u-b, ł like 'w'.",
+     "tip_uk": "zgubiłbym ≈ «згубівбим».",
+     "tip_pl": "Wyraźnie: zgubiłbym."
+    }
+   ],
+   "uk": [
+    {
+     "type": "intro",
+     "q": "Урок 14. Вирушаємо в наступну сцену!",
+     "q_en": "Lesson 14. Into the next scene!",
+     "q_uk": "Урок 14. Вирушаємо в наступну сцену!",
+     "q_pl": "Lekcja 14. Wchodzimy do kolejnej sceny!",
+     "options_en": [
+      "5 new Ukrainian words from the scene",
+      "Listening at natural speed",
+      "Grammar: Past conditional: якби не…, то б…",
+      "Speaking: say a line from the scene"
+     ],
+     "options_uk": [
+      "5 нових слів зі сцени",
+      "Аудіювання в природному темпі",
+      "Граматика: Нереальна умова: якби не…, то б…",
+      "Говоріння: скажи фразу зі сцени"
+     ],
+     "options_pl": [
+      "5 nowych ukraińskich słów ze sceny",
+      "Słuchanie w naturalnym tempie",
+      "Gramatyka: Warunek nierzeczywisty: якби не…, то б…",
+      "Mówienie: powiedz kwestię ze sceny"
+     ],
+     "tip": "Start",
+     "tip_en": "Start the lesson",
+     "tip_uk": "Почати урок",
+     "tip_pl": "Zacznij lekcję"
+    },
+    {
+     "type": "match",
+     "q": "З'єднай слова зі сцени з їхнім значенням.",
+     "options_en": [
+      "ліс=forest",
+      "покарання=punishment",
+      "кентавр=centaur",
+      "темний=dark",
+      "єдиноріг=unicorn"
+     ],
+     "options_uk": [
+      "ліс=багато дерев",
+      "покарання=за погану поведінку",
+      "кентавр=наполовину людина, наполовину кінь",
+      "темний=без світла",
+      "єдиноріг=білий кінь з рогом"
+     ],
+     "options_pl": [
+      "ліс=las",
+      "покарання=kara",
+      "кентавр=centaur",
+      "темний=ciemny",
+      "єдиноріг=jednorożec"
+     ],
+     "tip_en": "Say each new word out loud as you match it: it sticks better.",
+     "tip_uk": "Промовляй кожне нове слово вголос, коли з'єднуєш: так воно краще запам'ятовується.",
+     "tip_pl": "Wypowiadaj każde nowe słowo na głos, gdy je łączysz: lepiej zostaje w pamięci."
+    },
+    {
+     "type": "vocabulary",
+     "q": "У лісі дуже <b>темно</b>. Як там?",
+     "options": [
+      "Світло",
+      "Без світла",
+      "Жарко",
+      "Гучно"
+     ],
+     "answer": 1,
+     "tip_en": "Темно = dark.",
+     "tip_uk": "Темно — без світла.",
+     "tip_pl": "Темно = ciemno."
+    },
+    {
+     "type": "listening",
+     "q": "Послухай. Хто врятував Гаррі?",
+     "options": [
+      "Кентавр",
+      "Троль",
+      "Хагрід",
+      "Сова"
+     ],
+     "answer": 0,
+     "tip_en": "The centaur saved him.",
+     "tip_uk": "Кентавр Флоренц.",
+     "tip_pl": "Uratował go centaur.",
+     "say": "Швидко, сідай мені на спину! Ліс уночі небезпечний."
+    },
+    {
+     "type": "grammar",
+     "q": "Якби не кентавр, Гаррі ____ загинути.",
+     "options": [
+      "міг би",
+      "може",
+      "міг",
+      "зможе"
+     ],
+     "answer": 0,
+     "tip_en": "Якби не…, міг би…",
+     "tip_uk": "Якби не…, міг би…",
+     "tip_pl": "Якби не… = gdyby nie…"
+    },
+    {
+     "type": "grammar",
+     "q": "Якби хлопці не порушили правил, вони не ____ покарання.",
+     "options": [
+      "отримали б",
+      "отримали",
+      "отримують",
+      "отримають"
+     ],
+     "answer": 0,
+     "tip_en": "Conditional: past form + б.",
+     "tip_uk": "Минула форма + б.",
+     "tip_pl": "Отримали б = dostaliby."
+    },
+    {
+     "type": "order",
+     "q": "Склади речення.",
+     "options": [
+      "Якби",
+      "не",
+      "Хагрід",
+      "вони",
+      "заблукали",
+      "б"
+     ],
+     "tip_en": "Заблукати = to get lost.",
+     "tip_uk": "Заблукати — загубити дорогу.",
+     "tip_pl": "Заблукати = zgubić się.",
+     "q_en": "Build the sentence: “If it weren't for Hagrid, they would have got lost.”",
+     "q_uk": "Склади речення: «Якби не Хагрід вони заблукали б»",
+     "q_pl": "Ułóż zdanie: „Gdyby nie Hagrid, zgubiliby się.”"
+    },
+    {
+     "type": "type",
+     "q": "Якби я там був, я ____ боявся.",
+     "options": [
+      "б",
+      "би"
+     ],
+     "tip_en": "Б / би marks the conditional.",
+     "tip_uk": "Частка б/би.",
+     "tip_pl": "Б = by.",
+     "q_en": "Якби я там був, я ____ боявся. (would)",
+     "q_uk": "Якби я там був, я ____ боявся. (частка)",
+     "q_pl": "Якби я там був, я ____ боявся. (bym)"
+    },
+    {
+     "type": "tf",
+     "q": "Правда чи неправда? У лісі хтось пив кров єдинорога.",
+     "options": [
+      "True",
+      "False"
+     ],
+     "answer": 0,
+     "tip_en": "True: a hooded figure.",
+     "tip_uk": "Правда: постать у каптурі.",
+     "tip_pl": "Prawda: postać w kapturze."
+    },
+    {
+     "type": "speaking",
+     "q": "Скажи вголос: <i>«Якби не кентавр, я заблукав би в лісі.»</i>",
+     "say": "Якби не кентавр, я заблукав би в лісі.",
+     "tip_en": "є = 'ye'; ліс has a soft л.",
+     "tip_uk": "Чітко: заблукав би.",
+     "tip_pl": "л przed і miękkie."
+    }
+   ],
+   "pl_grammar_en": "Past conditional: gdyby nie…, to by…",
+   "pl_grammar_uk": "Нереальна умова в минулому: gdyby nie…, to by…",
+   "pl_grammar_pl": "Warunek nierzeczywisty: gdyby nie…, to by…",
+   "uk_grammar_en": "Past conditional: якби не…, то б…",
+   "uk_grammar_uk": "Нереальна умова: якби не…, то б…",
+   "uk_grammar_pl": "Warunek nierzeczywisty: якби не…, то б…"
+  }
  },
  {
   "num": 15,
@@ -2361,7 +6834,349 @@
     "tip_uk": "been to = побував і повернувся.",
     "tip_pl": "been to = byłem i wróciłem."
    }
-  ]
+  ],
+  "title_en": "Through the Trapdoor",
+  "scene_en": "Three friends pass tests under the school: giant chess, a potion riddle and fire.",
+  "variants": {
+   "pl": [
+    {
+     "type": "intro",
+     "q": "Lekcja 15. Wchodzimy do kolejnej sceny!",
+     "q_en": "Lesson 15. Into the next scene!",
+     "q_uk": "Урок 15. Вирушаємо в наступну сцену!",
+     "q_pl": "Lekcja 15. Wchodzimy do kolejnej sceny!",
+     "options_en": [
+      "5 new Polish words from the scene",
+      "Listening at natural speed",
+      "Grammar: Future: zrobię vs będę robić",
+      "Speaking: say a line from the scene"
+     ],
+     "options_uk": [
+      "5 нових польських слів зі сцени",
+      "Аудіювання в природному темпі",
+      "Граматика: Майбутній час: zrobię vs będę robić",
+      "Говоріння: скажи фразу зі сцени"
+     ],
+     "options_pl": [
+      "5 nowych słów ze sceny",
+      "Słuchanie w naturalnym tempie",
+      "Gramatyka: Czas przyszły: zrobię vs będę robić",
+      "Mówienie: powiedz kwestię ze sceny"
+     ],
+     "tip": "Start",
+     "tip_en": "Start the lesson",
+     "tip_uk": "Почати урок",
+     "tip_pl": "Zacznij lekcję"
+    },
+    {
+     "type": "match",
+     "q": "Połącz słowa ze sceny z ich znaczeniem.",
+     "options_en": [
+      "klapa=trapdoor",
+      "szachy=chess",
+      "zagadka=riddle",
+      "ogień=fire",
+      "poświęcić się=to sacrifice oneself"
+     ],
+     "options_uk": [
+      "klapa=люк",
+      "szachy=шахи",
+      "zagadka=загадка",
+      "ogień=вогонь",
+      "poświęcić się=пожертвувати собою"
+     ],
+     "options_pl": [
+      "klapa=drzwi w podłodze",
+      "szachy=gra z królem i wieżą",
+      "zagadka=pytanie do rozwiązania",
+      "ogień=pali się i grzeje",
+      "poświęcić się=oddać siebie dla innych"
+     ],
+     "tip_en": "Say each new word out loud as you match it: it sticks better.",
+     "tip_uk": "Промовляй кожне нове слово вголос, коли з'єднуєш: так воно краще запам'ятовується.",
+     "tip_pl": "Wypowiadaj każde nowe słowo na głos, gdy je łączysz: lepiej zostaje w pamięci."
+    },
+    {
+     "type": "vocabulary",
+     "q": "Ron <b>poświęca się</b> w szachach. Co robi?",
+     "options": [
+      "Ucieka",
+      "Oddaje siebie, żeby inni wygrali",
+      "Śpi",
+      "Oszukuje"
+     ],
+     "answer": 1,
+     "tip_en": "Poświęcić się = to sacrifice yourself.",
+     "tip_uk": "Poświęcić się = пожертвувати собою.",
+     "tip_pl": "Poświęcić się dla innych."
+    },
+    {
+     "type": "listening",
+     "q": "Posłuchaj. Kto pójdzie dalej?",
+     "options": [
+      "Harry",
+      "Ron",
+      "Hermiona",
+      "Wszyscy"
+     ],
+     "answer": 0,
+     "tip_en": "Harry pójdzie dalej sam.",
+     "tip_uk": "Гаррі піде далі сам.",
+     "tip_pl": "Harry pójdzie sam.",
+     "say": "Ten eliksir wystarczy tylko dla jednej osoby. Ty pójdziesz dalej, Harry. Ja wrócę po pomoc."
+    },
+    {
+     "type": "grammar",
+     "q": "Jutro Harry ____ kamień. (once, result)",
+     "options": [
+      "znajdzie",
+      "będzie znajdować",
+      "znalazł",
+      "znajduje"
+     ],
+     "answer": 0,
+     "tip_en": "Perfective future (one result): znajdzie.",
+     "tip_uk": "Доконаний майбутній: znajdzie (знайде).",
+     "tip_pl": "Dokonany: znajdzie."
+    },
+    {
+     "type": "grammar",
+     "q": "W wakacje Hermiona ____ się codziennie. (repeated)",
+     "options": [
+      "będzie uczyć",
+      "nauczy",
+      "uczyła",
+      "uczy się"
+     ],
+     "answer": 0,
+     "tip_en": "Imperfective future = będę + infinitive: będzie się uczyć.",
+     "tip_uk": "Недоконаний майбутній: będzie się uczyć (буде вчитися).",
+     "tip_pl": "Będzie + bezokolicznik."
+    },
+    {
+     "type": "order",
+     "q": "Ułóż zdanie.",
+     "options": [
+      "Ja",
+      "wrócę",
+      "i",
+      "sprowadzę",
+      "pomoc"
+     ],
+     "tip_en": "Wrócę, sprowadzę: perfective future.",
+     "tip_uk": "Wrócę, sprowadzę — доконаний майбутній.",
+     "tip_pl": "Dokonany: wrócę.",
+     "q_en": "Build the sentence: “I'll go back and bring help.”",
+     "q_uk": "Склади речення: «Я повернуся і приведу допомогу.»",
+     "q_pl": "Ułóż zdanie: „Ja wrócę i sprowadzę pomoc”"
+    },
+    {
+     "type": "type",
+     "q": "Ty ____ dalej, Harry! (pójść, ty)",
+     "options": [
+      "pójdziesz"
+     ],
+     "tip_en": "Pójść → ty pójdziesz.",
+     "tip_uk": "Pójść → pójdziesz (підеш).",
+     "tip_pl": "Ty pójdziesz.",
+     "q_en": "Ty ____ dalej, Harry! (pójść, ty) (will go)",
+     "q_uk": "Ty ____ dalej, Harry! (pójść, ty) (підеш)",
+     "q_pl": "Ty ____ dalej, Harry! (pójść, ty) (pójść, ty)"
+    },
+    {
+     "type": "tf",
+     "q": "Prawda czy fałsz? Hermiona rozwiązała zagadkę z eliksirami.",
+     "options": [
+      "True",
+      "False"
+     ],
+     "answer": 0,
+     "tip_en": "True: logic, not magic!",
+     "tip_uk": "Правда: логіка, а не магія!",
+     "tip_pl": "Prawda: logika, nie magia!"
+    },
+    {
+     "type": "speaking",
+     "q": "Powiedz na głos: <i>„Ja wrócę i sprowadzę pomoc!”</i>",
+     "say": "Ja wrócę i sprowadzę pomoc!",
+     "tip_en": "ę at the end is nearly silent: wrócę ≈ 'vroo-tse'.",
+     "tip_uk": "ę в кінці майже не чути: wrócę.",
+     "tip_pl": "Końcowe ę wymawiamy słabo."
+    }
+   ],
+   "uk": [
+    {
+     "type": "intro",
+     "q": "Урок 15. Вирушаємо в наступну сцену!",
+     "q_en": "Lesson 15. Into the next scene!",
+     "q_uk": "Урок 15. Вирушаємо в наступну сцену!",
+     "q_pl": "Lekcja 15. Wchodzimy do kolejnej sceny!",
+     "options_en": [
+      "5 new Ukrainian words from the scene",
+      "Listening at natural speed",
+      "Grammar: Future: зроблю vs буду робити",
+      "Speaking: say a line from the scene"
+     ],
+     "options_uk": [
+      "5 нових слів зі сцени",
+      "Аудіювання в природному темпі",
+      "Граматика: Майбутній час: зроблю vs буду робити",
+      "Говоріння: скажи фразу зі сцени"
+     ],
+     "options_pl": [
+      "5 nowych ukraińskich słów ze sceny",
+      "Słuchanie w naturalnym tempie",
+      "Gramatyka: Czas przyszły: зроблю vs буду робити",
+      "Mówienie: powiedz kwestię ze sceny"
+     ],
+     "tip": "Start",
+     "tip_en": "Start the lesson",
+     "tip_uk": "Почати урок",
+     "tip_pl": "Zacznij lekcję"
+    },
+    {
+     "type": "match",
+     "q": "З'єднай слова зі сцени з їхнім значенням.",
+     "options_en": [
+      "люк=trapdoor",
+      "шахи=chess",
+      "загадка=riddle",
+      "вогонь=fire",
+      "пожертвувати=to sacrifice"
+     ],
+     "options_uk": [
+      "люк=двері в підлозі",
+      "шахи=гра з королем і турою",
+      "загадка=питання, яке треба розв'язати",
+      "вогонь=горить і гріє",
+      "пожертвувати=віддати себе заради інших"
+     ],
+     "options_pl": [
+      "люк=klapa",
+      "шахи=szachy",
+      "загадка=zagadka",
+      "вогонь=ogień",
+      "пожертвувати=poświęcić"
+     ],
+     "tip_en": "Say each new word out loud as you match it: it sticks better.",
+     "tip_uk": "Промовляй кожне нове слово вголос, коли з'єднуєш: так воно краще запам'ятовується.",
+     "tip_pl": "Wypowiadaj każde nowe słowo na głos, gdy je łączysz: lepiej zostaje w pamięci."
+    },
+    {
+     "type": "vocabulary",
+     "q": "Рон <b>жертвує</b> собою в шахах. Що він робить?",
+     "options": [
+      "Тікає",
+      "Віддає себе, щоб інші перемогли",
+      "Спить",
+      "Шахраює"
+     ],
+     "answer": 1,
+     "tip_en": "Жертвувати собою = to sacrifice yourself.",
+     "tip_uk": "Жертвувати собою заради інших.",
+     "tip_pl": "Жертвувати = poświęcać się."
+    },
+    {
+     "type": "listening",
+     "q": "Послухай. Хто піде далі?",
+     "options": [
+      "Гаррі",
+      "Рон",
+      "Герміона",
+      "Усі"
+     ],
+     "answer": 0,
+     "tip_en": "Harry will go on alone.",
+     "tip_uk": "Гаррі піде далі сам.",
+     "tip_pl": "Harry pójdzie sam.",
+     "say": "Цього зілля вистачить лише на одного. Ти підеш далі, Гаррі. Я повернуся по допомогу."
+    },
+    {
+     "type": "grammar",
+     "q": "Завтра Гаррі ____ камінь. (результат)",
+     "options": [
+      "знайде",
+      "буде шукати",
+      "знайшов",
+      "знаходить"
+     ],
+     "answer": 0,
+     "tip_en": "Perfective future: знайде.",
+     "tip_uk": "Доконаний майбутній: знайде.",
+     "tip_pl": "Знайде = znajdzie."
+    },
+    {
+     "type": "grammar",
+     "q": "На канікулах Герміона ____ щодня. (повторювано)",
+     "options": [
+      "буде вчитися",
+      "навчиться",
+      "вчилася",
+      "вчиться"
+     ],
+     "answer": 0,
+     "tip_en": "Imperfective future: буде + infinitive.",
+     "tip_uk": "Недоконаний майбутній: буде вчитися (або вчитиметься).",
+     "tip_pl": "Буде вчитися = będzie się uczyć."
+    },
+    {
+     "type": "order",
+     "q": "Склади речення.",
+     "options": [
+      "Я",
+      "повернуся",
+      "і",
+      "приведу",
+      "допомогу"
+     ],
+     "tip_en": "Perfective future forms.",
+     "tip_uk": "Доконаний майбутній.",
+     "tip_pl": "Повернуся = wrócę.",
+     "q_en": "Build the sentence: “I'll go back and bring help.”",
+     "q_uk": "Склади речення: «Я повернуся і приведу допомогу»",
+     "q_pl": "Ułóż zdanie: „Wrócę i sprowadzę pomoc.”"
+    },
+    {
+     "type": "type",
+     "q": "Ти ____ далі, Гаррі! (піти, ти)",
+     "options": [
+      "підеш"
+     ],
+     "tip_en": "Піти → ти підеш.",
+     "tip_uk": "Піти → підеш.",
+     "tip_pl": "Підеш = pójdziesz.",
+     "q_en": "Ти ____ далі, Гаррі! (піти, ти) (will go)",
+     "q_uk": "Ти ____ далі, Гаррі! (піти, ти) (піти, ти)",
+     "q_pl": "Ти ____ далі, Гаррі! (піти, ти) (pójdziesz)"
+    },
+    {
+     "type": "tf",
+     "q": "Правда чи неправда? Герміона розв'язала загадку із зіллям.",
+     "options": [
+      "True",
+      "False"
+     ],
+     "answer": 0,
+     "tip_en": "True: logic, not magic!",
+     "tip_uk": "Правда: логіка, а не магія!",
+     "tip_pl": "Prawda: logika!"
+    },
+    {
+     "type": "speaking",
+     "q": "Скажи вголос: <i>«Я повернуся і приведу допомогу!»</i>",
+     "say": "Я повернуся і приведу допомогу!",
+     "tip_en": "ся is 'sya': повернуся.",
+     "tip_uk": "Чітко: повернуся.",
+     "tip_pl": "-ся ≈ -sia."
+    }
+   ],
+   "pl_grammar_en": "Future: zrobię vs będę robić",
+   "pl_grammar_uk": "Майбутній час: zrobię vs będę robić",
+   "pl_grammar_pl": "Czas przyszły: zrobię vs będę robić",
+   "uk_grammar_en": "Future: зроблю vs буду робити",
+   "uk_grammar_uk": "Майбутній час: зроблю vs буду робити",
+   "uk_grammar_pl": "Czas przyszły: зроблю vs буду робити"
+  }
  },
  {
   "num": 16,
@@ -2484,6 +7299,352 @@
     "tip_uk": "Збережено! Відповідь видно у твоєму кабінеті. Вітаємо із завершенням марафону!",
     "tip_pl": "Zapisano! Odpowiedź znajdziesz na swoim koncie. Gratulacje ukończenia maratonu!"
    }
-  ]
+  ],
+  "title_en": "Finale: the Stone and Your Story",
+  "scene_en": "A last meeting at the mirror, a red stone in a pocket and the farewell feast. You tell the story yourself.",
+  "variants": {
+   "pl": [
+    {
+     "type": "intro",
+     "q": "Lekcja 16. Wchodzimy do kolejnej sceny!",
+     "q_en": "Lesson 16. Into the next scene!",
+     "q_uk": "Урок 16. Вирушаємо в наступну сцену!",
+     "q_pl": "Lekcja 16. Wchodzimy do kolejnej sceny!",
+     "options_en": [
+      "5 new Polish words from the scene",
+      "Listening at natural speed",
+      "Grammar: Review: past, future, cases",
+      "Speaking: say a line from the scene"
+     ],
+     "options_uk": [
+      "5 нових польських слів зі сцени",
+      "Аудіювання в природному темпі",
+      "Граматика: Повторення: минулий, майбутній, відмінки",
+      "Говоріння: скажи фразу зі сцени"
+     ],
+     "options_pl": [
+      "5 nowych słów ze sceny",
+      "Słuchanie w naturalnym tempie",
+      "Gramatyka: Powtórka: przeszły, przyszły, przypadki",
+      "Mówienie: powiedz kwestię ze sceny"
+     ],
+     "tip": "Start",
+     "tip_en": "Start the lesson",
+     "tip_uk": "Почати урок",
+     "tip_pl": "Zacznij lekcję"
+    },
+    {
+     "type": "match",
+     "q": "Połącz słowa ze sceny z ich znaczeniem.",
+     "options_en": [
+      "kamień=stone",
+      "kieszeń=pocket",
+      "uczta=feast",
+      "puchar=cup (trophy)",
+      "pożegnanie=farewell"
+     ],
+     "options_uk": [
+      "kamień=камінь",
+      "kieszeń=кишеня",
+      "uczta=бенкет",
+      "puchar=кубок",
+      "pożegnanie=прощання"
+     ],
+     "options_pl": [
+      "kamień=twarda rzecz z ziemi",
+      "kieszeń=w niej trzymasz rzeczy",
+      "uczta=wielka, uroczysta kolacja",
+      "puchar=nagroda dla zwycięzcy",
+      "pożegnanie=gdy mówisz do widzenia"
+     ],
+     "tip_en": "Say each new word out loud as you match it: it sticks better.",
+     "tip_uk": "Промовляй кожне нове слово вголос, коли з'єднуєш: так воно краще запам'ятовується.",
+     "tip_pl": "Wypowiadaj każde nowe słowo na głos, gdy je łączysz: lepiej zostaje w pamięci."
+    },
+    {
+     "type": "vocabulary",
+     "q": "Kamień nagle był w <b>kieszeni</b> Harry'ego. Gdzie?",
+     "options": [
+      "W ręce",
+      "W kieszeni",
+      "W bucie",
+      "W książce"
+     ],
+     "answer": 1,
+     "tip_en": "W kieszeni = in the pocket (locative).",
+     "tip_uk": "W kieszeni = у кишені (місцевий).",
+     "tip_pl": "W + miejscownik: w kieszeni."
+    },
+    {
+     "type": "listening",
+     "q": "Posłuchaj. Kto zdobył puchar domów?",
+     "options": [
+      "Slytherin",
+      "Gryffindor",
+      "Ravenclaw",
+      "Nikt"
+     ],
+     "answer": 1,
+     "tip_en": "The last points went to Neville!",
+     "tip_uk": "Останні бали отримав Невіл!",
+     "tip_pl": "Ostatnie punkty dostał Neville!",
+     "say": "Za odwagę wobec przyjaciół: dziesięć punktów dla Neville'a. Puchar zdobywa Gryffindor!"
+    },
+    {
+     "type": "grammar",
+     "q": "Harry ____ w lustro i zobaczył siebie z kamieniem.",
+     "options": [
+      "spojrzał",
+      "spojrzy",
+      "patrzy",
+      "spojrzeć"
+     ],
+     "answer": 0,
+     "tip_en": "Past, completed: spojrzał.",
+     "tip_uk": "Минулий доконаний: spojrzał (подивився).",
+     "tip_pl": "Przeszły dokonany."
+    },
+    {
+     "type": "grammar",
+     "q": "W przyszłym roku Harry ____ do Hogwartu.",
+     "options": [
+      "wróci",
+      "wrócił",
+      "wraca",
+      "wrócić"
+     ],
+     "answer": 0,
+     "tip_en": "Future perfective: wróci.",
+     "tip_uk": "Майбутній: wróci (повернеться).",
+     "tip_pl": "Przyszły: wróci."
+    },
+    {
+     "type": "order",
+     "q": "Ułóż zdanie.",
+     "options": [
+      "Harry",
+      "wrócił",
+      "na",
+      "wakacje",
+      "do",
+      "wujostwa"
+     ],
+     "tip_en": "Do + genitive: do wujostwa.",
+     "tip_uk": "Do + родовий: do wujostwa.",
+     "tip_pl": "Do + dopełniacz.",
+     "q_en": "Build the sentence: “Harry went back to his aunt and uncle for the holidays.”",
+     "q_uk": "Склади речення: «Гаррі повернувся на канікули до дядька й тітки.»",
+     "q_pl": "Ułóż zdanie: „Harry wrócił na wakacje do wujostwa”"
+    },
+    {
+     "type": "type",
+     "q": "Opowiedz: „W tym roku ____ wiele przygód.” (mieć, ja)",
+     "options": [
+      "miałem",
+      "miałam"
+     ],
+     "tip_en": "Past: miałem (male) / miałam (female).",
+     "tip_uk": "Минулий: miałem (ч.) / miałam (ж.).",
+     "tip_pl": "Miałem / miałam.",
+     "q_en": "Opowiedz: „W tym roku ____ wiele przygód.” (mieć, ja) (I had)",
+     "q_uk": "Opowiedz: „W tym roku ____ wiele przygód.” (mieć, ja) (я мав/мала)",
+     "q_pl": "Opowiedz: „W tym roku ____ wiele przygód.” (mieć, ja) (mieć, ja)"
+    },
+    {
+     "type": "tf",
+     "q": "Prawda czy fałsz? Na końcu kamień został zniszczony.",
+     "options": [
+      "True",
+      "False"
+     ],
+     "answer": 0,
+     "tip_en": "True: Dumbledore and Flamel decided to destroy it.",
+     "tip_uk": "Правда: Дамблдор і Фламель вирішили його знищити.",
+     "tip_pl": "Prawda: zdecydowali go zniszczyć."
+    },
+    {
+     "type": "speaking",
+     "q": "Powiedz na głos: <i>„W tym roku miałem wiele przygód, ale wrócę!”</i>",
+     "say": "W tym roku miałem wiele przygód, ale wrócę!",
+     "tip_en": "Tell your own story: past (miałem), future (wrócę).",
+     "tip_uk": "Розкажи свою історію: минулий + майбутній.",
+     "tip_pl": "Twoja historia: przeszły i przyszły."
+    }
+   ],
+   "uk": [
+    {
+     "type": "intro",
+     "q": "Урок 16. Вирушаємо в наступну сцену!",
+     "q_en": "Lesson 16. Into the next scene!",
+     "q_uk": "Урок 16. Вирушаємо в наступну сцену!",
+     "q_pl": "Lekcja 16. Wchodzimy do kolejnej sceny!",
+     "options_en": [
+      "5 new Ukrainian words from the scene",
+      "Listening at natural speed",
+      "Grammar: Review: past, future, cases",
+      "Speaking: say a line from the scene"
+     ],
+     "options_uk": [
+      "5 нових слів зі сцени",
+      "Аудіювання в природному темпі",
+      "Граматика: Повторення: минулий, майбутній, відмінки",
+      "Говоріння: скажи фразу зі сцени"
+     ],
+     "options_pl": [
+      "5 nowych ukraińskich słów ze sceny",
+      "Słuchanie w naturalnym tempie",
+      "Gramatyka: Powtórka: przeszły, przyszły, przypadki",
+      "Mówienie: powiedz kwestię ze sceny"
+     ],
+     "tip": "Start",
+     "tip_en": "Start the lesson",
+     "tip_uk": "Почати урок",
+     "tip_pl": "Zacznij lekcję"
+    },
+    {
+     "type": "match",
+     "q": "З'єднай слова зі сцени з їхнім значенням.",
+     "options_en": [
+      "камінь=stone",
+      "кишеня=pocket",
+      "бенкет=feast",
+      "кубок=cup (trophy)",
+      "прощання=farewell"
+     ],
+     "options_uk": [
+      "камінь=тверда річ із землі",
+      "кишеня=у ній тримаєш речі",
+      "бенкет=велика урочиста вечеря",
+      "кубок=нагорода переможцю",
+      "прощання=коли кажеш «до побачення»"
+     ],
+     "options_pl": [
+      "камінь=kamień",
+      "кишеня=kieszeń",
+      "бенкет=uczta",
+      "кубок=puchar",
+      "прощання=pożegnanie"
+     ],
+     "tip_en": "Say each new word out loud as you match it: it sticks better.",
+     "tip_uk": "Промовляй кожне нове слово вголос, коли з'єднуєш: так воно краще запам'ятовується.",
+     "tip_pl": "Wypowiadaj każde nowe słowo na głos, gdy je łączysz: lepiej zostaje w pamięci."
+    },
+    {
+     "type": "vocabulary",
+     "q": "Камінь раптом опинився в <b>кишені</b> Гаррі. Де?",
+     "options": [
+      "У руці",
+      "У кишені",
+      "У черевику",
+      "У книжці"
+     ],
+     "answer": 1,
+     "tip_en": "У кишені = in the pocket (locative).",
+     "tip_uk": "У кишені — місцевий відмінок.",
+     "tip_pl": "У кишені = w kieszeni."
+    },
+    {
+     "type": "listening",
+     "q": "Послухай. Хто здобув кубок гуртожитків?",
+     "options": [
+      "Слизерин",
+      "Гріфіндор",
+      "Рейвенклов",
+      "Ніхто"
+     ],
+     "answer": 1,
+     "tip_en": "The last points went to Neville!",
+     "tip_uk": "Останні бали — Невілу!",
+     "tip_pl": "Ostatnie punkty dla Neville'a!",
+     "say": "За сміливість перед друзями: десять балів Невілу Лонгботому. Кубок здобуває Гріфіндор!"
+    },
+    {
+     "type": "grammar",
+     "q": "Гаррі ____ у дзеркало і побачив себе з каменем.",
+     "options": [
+      "подивився",
+      "подивиться",
+      "дивиться",
+      "подивитися"
+     ],
+     "answer": 0,
+     "tip_en": "Past perfective: подивився.",
+     "tip_uk": "Минулий доконаний.",
+     "tip_pl": "Подивився = spojrzał."
+    },
+    {
+     "type": "grammar",
+     "q": "Наступного року Гаррі ____ до Гоґвортсу.",
+     "options": [
+      "повернеться",
+      "повернувся",
+      "повертається",
+      "повернутися"
+     ],
+     "answer": 0,
+     "tip_en": "Future perfective: повернеться.",
+     "tip_uk": "Майбутній доконаний.",
+     "tip_pl": "Повернеться = wróci."
+    },
+    {
+     "type": "order",
+     "q": "Склади речення.",
+     "options": [
+      "Гаррі",
+      "повернувся",
+      "на",
+      "канікули",
+      "до",
+      "дядька"
+     ],
+     "tip_en": "До + genitive: до дядька.",
+     "tip_uk": "До + родовий.",
+     "tip_pl": "До + dopełniacz.",
+     "q_en": "Build the sentence: “Harry went back to his uncle for the holidays.”",
+     "q_uk": "Склади речення: «Гаррі повернувся на канікули до дядька»",
+     "q_pl": "Ułóż zdanie: „Harry wrócił na wakacje do wujka.”"
+    },
+    {
+     "type": "type",
+     "q": "Розкажи: «Цього року я ____ багато пригод.» (мати, я)",
+     "options": [
+      "мав",
+      "мала"
+     ],
+     "tip_en": "Past: мав (male) / мала (female).",
+     "tip_uk": "Мав / мала.",
+     "tip_pl": "Мав = miałem, мала = miałam.",
+     "q_en": "Розкажи: «Цього року я ____ багато пригод.» (мати, я) (I had)",
+     "q_uk": "Розкажи: «Цього року я ____ багато пригод.» (мати, я) (мати, я)",
+     "q_pl": "Розкажи: «Цього року я ____ багато пригод.» (мати, я) (miałem/miałam)"
+    },
+    {
+     "type": "tf",
+     "q": "Правда чи неправда? Наприкінці камінь знищили.",
+     "options": [
+      "True",
+      "False"
+     ],
+     "answer": 0,
+     "tip_en": "True: Dumbledore and Flamel decided to destroy it.",
+     "tip_uk": "Правда.",
+     "tip_pl": "Prawda."
+    },
+    {
+     "type": "speaking",
+     "q": "Скажи вголос: <i>«Цього року я мав багато пригод, але я повернуся!»</i>",
+     "say": "Цього року я мав багато пригод, але я повернуся!",
+     "tip_en": "Tell your own story: past + future.",
+     "tip_uk": "Твоя історія: минулий і майбутній час.",
+     "tip_pl": "Twoja historia: przeszły i przyszły."
+    }
+   ],
+   "pl_grammar_en": "Review: past, future, cases",
+   "pl_grammar_uk": "Повторення: минулий, майбутній, відмінки",
+   "pl_grammar_pl": "Powtórka: przeszły, przyszły, przypadki",
+   "uk_grammar_en": "Review: past, future, cases",
+   "uk_grammar_uk": "Повторення: минулий, майбутній, відмінки",
+   "uk_grammar_pl": "Powtórka: przeszły, przyszły, przypadki"
+  }
  }
 ]
