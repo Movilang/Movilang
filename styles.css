@@ -529,3 +529,4 @@ section{border-top-color:var(--divider)}
 .ldel{width:30px;height:30px;border-radius:8px;border:1px solid var(--line);background:transparent;color:inherit;opacity:.6;cursor:pointer}
 .ldel:hover{opacity:1;border-color:var(--err,#e66)}
 @media(max-width:560px){.lgo{grid-template-columns:30px 1fr auto}.lname{display:none}}
+.ldone{display:inline-flex;align-items:center;justify-content:center;opacity:1;cursor:default;border-color:var(--ok)}
