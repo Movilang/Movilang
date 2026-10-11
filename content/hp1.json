@@ -1,1 +1,2489 @@
-[{"num":1,"title":"Хлопчик під сходами","title_pl":"Chłopiec pod schodami","grammar":"Present Simple vs Present Continuous","scene":"Звичайний будинок у передмісті. Хлопчик живе в комірчині під сходами, а родина святкує день народження кузена.","scene_pl":"Zwyczajny dom na przedmieściach. Chłopiec mieszka w komórce pod schodami, a rodzina świętuje urodziny kuzyna.","tasks":[{"type":"intro","q":"Welcome to your first MovieLang lesson! In 10 minutes you will step into the opening scenes of the story.","options":["Learn 8 words for family life and feelings","Hear real-speed English and catch key phrases","Master Present Simple vs Present Continuous in context","Say your first lines out loud like the characters"],"img":"stairs","tip":"Start the free lesson","q_uk":"Вітаємо на першому уроці MovieLang! За 10 хвилин ти опинишся в перших сценах історії.","q_pl":"Witaj na pierwszej lekcji MovieLang! W 10 minut przeniesiesz się do pierwszych scen historii.","options_uk":["Вивчиш 8 слів про родину й почуття","Почуєш англійську в реальному темпі","Опануєш Present Simple і Present Continuous у контексті","Скажеш перші репліки вголос, як герої"],"options_pl":["Poznasz 8 słów o rodzinie i uczuciach","Usłyszysz angielski w prawdziwym tempie","Opanujesz Present Simple i Present Continuous w kontekście","Powiesz pierwsze kwestie na głos jak bohaterowie"],"tip_uk":"Почати безкоштовний урок","tip_pl":"Zacznij darmową lekcję"},{"type":"match","q":"Match the words from the scene with their meanings.","options":["cupboard=a small room for storing things","cousin=your aunt's or uncle's child","spoiled=given too much, so behaves badly","ordinary=normal, nothing special","chores=boring jobs in the house"],"tip":"These five words describe the world Harry lives in before the magic starts.","img":"stairs","tip_uk":"Ці п'ять слів описують світ Гаррі до того, як почалася магія.","tip_pl":"Te pięć słów opisuje świat Harry'ego, zanim pojawiła się magia.","options_uk":["cupboard=комірчина","cousin=двоюрідний брат","spoiled=розпещений","ordinary=звичайний","chores=хатні обов'язки"],"options_pl":["cupboard=komórka","cousin=kuzyn","spoiled=rozpieszczony","ordinary=zwyczajny","chores=obowiązki domowe"]},{"type":"vocabulary","q":"The family wants to look <b>perfectly normal</b>. Which word means the same?","options":["ordinary","strange","magical","famous"],"answer":0,"tip":"'Ordinary' = normal, typical. The opposite in this story is 'extraordinary'.","tip_uk":"Ordinary = звичайний. Протилежність у цій історії — extraordinary (надзвичайний).","tip_pl":"Ordinary = zwyczajny. Przeciwieństwo w tej historii to extraordinary (niezwykły)."},{"type":"listening","q":"Listen. What is the aunt asking Harry to do?","options":["Wake up and make breakfast","Go to school early","Clean his cousin's room","Open the presents"],"answer":0,"tip":"'Get up' and 'cook' are typical morning chores. Notice how fast the order sounds!","say":"Up! Get up now and come and cook the breakfast. And don't burn anything today.","tip_uk":"Get up (вставай) і cook (готуй) — типові ранкові обов'язки. Зверни увагу, як швидко звучить наказ!","tip_pl":"Get up (wstawaj) i cook (gotuj) to typowe poranne obowiązki. Zwróć uwagę, jak szybko brzmi polecenie!"},{"type":"grammar","q":"Every morning Harry ____ breakfast for the whole family.","options":["makes","is making","make","made"],"answer":0,"tip":"A routine or habit → Present Simple: he makes. Signal words: every morning, usually, always.","tip_uk":"Звичка або рутина → Present Simple: he makes. Слова-сигнали: every morning, usually, always.","tip_pl":"Nawyk lub rutyna → Present Simple: he makes. Słowa-sygnały: every morning, usually, always."},{"type":"grammar","q":"Look! Dudley ____ his birthday presents and he isn't happy.","options":["counts","is counting","count","has count"],"answer":1,"tip":"'Look!' shows an action happening right now → Present Continuous: is counting.","tip_uk":"Look! показує дію просто зараз → Present Continuous: is counting.","tip_pl":"Look! pokazuje czynność dziejącą się teraz → Present Continuous: is counting."},{"type":"order","q":"Put the words in the right order to describe Harry's life.","options":["Harry","doesn't","have","a","real","bedroom"],"tip":"Negative Present Simple: subject + doesn't + base verb.","tip_uk":"Заперечення в Present Simple: підмет + doesn't + дієслово без закінчення.","tip_pl":"Przeczenie w Present Simple: podmiot + doesn't + czasownik w formie podstawowej."},{"type":"type","q":"Type the missing word: Harry sleeps in a small cupboard ____ the stairs.","options":["under","beneath","below"],"tip":"Preposition of place: under / beneath the stairs.","tip_uk":"Прийменник місця: under / beneath the stairs — під сходами.","tip_pl":"Przyimek miejsca: under / beneath the stairs — pod schodami."},{"type":"tf","q":"Harry's cousin gets fewer presents this year than last year, and he is angry about it.","options":["True","False"],"answer":0,"tip":"He counts them and finds there are fewer than last year, so he complains loudly.","scene":"At breakfast, the cousin counts a big pile of presents.","tip_uk":"Він рахує подарунки, бачить, що їх менше, ніж торік, і голосно скаржиться.","tip_pl":"Liczy prezenty, widzi, że jest ich mniej niż w zeszłym roku, i głośno narzeka."},{"type":"speaking","q":"Repeat the sentence with natural rhythm. Stress the words in CAPITALS: I'm NOT ALLOWED to ask QUESTIONS here.","say":"I'm not allowed to ask questions here.","tip":"'Not allowed to' = it is forbidden. Great phrase for talking about rules.","tip_uk":"Not allowed to = заборонено. Чудова фраза, щоб говорити про правила.","tip_pl":"Not allowed to = nie wolno. Świetne wyrażenie do mówienia o zasadach."}]},{"num":2,"title":"Пригода в зоопарку","title_pl":"Przygoda w zoo","grammar":"Past Simple vs Past Continuous","scene":"Родина бере хлопчика до зоопарку. Біля скла з великою змією стається щось дивне: скло раптом зникає.","scene_pl":"Rodzina zabiera chłopca do zoo. Przy szybie z wielkim wężem dzieje się coś dziwnego: szkło nagle znika.","tasks":[{"type":"match","q":"Match the zoo words.","options":["reptile house=building for snakes and lizards","glass=the clear wall of a tank","to hiss=to make a long 'sss' sound","to vanish=to disappear suddenly","to escape=to get free"],"tip":"You need these to retell the zoo scene.","img":"snake","tip_uk":"Ці слова знадобляться, щоб переказати сцену в зоопарку.","tip_pl":"Te słowa przydadzą się do opowiedzenia sceny w zoo.","options_uk":["reptile house=тераріум","glass=скло","to hiss=шипіти","to vanish=зникнути","to escape=втекти"],"options_pl":["reptile house=terrarium","glass=szkło","to hiss=syczeć","to vanish=zniknąć","to escape=uciec"]},{"type":"grammar","q":"Harry ____ to the snake when the glass suddenly disappeared.","options":["talked","was talking","talks","has talked"],"answer":1,"tip":"Longer background action (was talking) interrupted by a short event (disappeared).","img":"snake","tip_uk":"Тривала фонова дія (was talking) перервана короткою подією (disappeared).","tip_pl":"Dłuższa czynność w tle (was talking) przerwana krótkim zdarzeniem (disappeared)."},{"type":"grammar","q":"While Dudley was pressing his face to the glass, the snake ____ out.","options":["was sliding","slid","slides","has slid"],"answer":1,"tip":"Short completed event in the past → Past Simple: slid.","tip_uk":"Коротка завершена подія в минулому → Past Simple: slid.","tip_pl":"Krótkie zakończone zdarzenie w przeszłości → Past Simple: slid."},{"type":"listening","q":"Listen. Where is the snake originally from, according to the sign?","options":["Brazil","Egypt","Australia","India"],"answer":0,"tip":"The sign says it was bred in the zoo, but the species comes from Brazil.","say":"This snake was born here at the zoo, but its family originally comes from Brazil.","tip_uk":"Змія народилася в зоопарку, але її вид походить з Бразилії.","tip_pl":"Wąż urodził się w zoo, ale jego gatunek pochodzi z Brazylii."},{"type":"type","q":"Past Simple of 'fall': Dudley ____ into the water.","options":["fell"],"tip":"fall → fell → fallen (irregular).","tip_uk":"fall → fell → fallen (неправильне дієслово).","tip_pl":"fall → fell → fallen (czasownik nieregularny)."},{"type":"tf","q":"Harry knew he had magic powers at the zoo.","options":["True","False"],"answer":1,"tip":"He had no idea. He only realised later that strange things happened around him.","tip_uk":"Він гадки не мав. Лише згодом зрозумів, що навколо нього стаються дивні речі.","tip_pl":"Nie miał pojęcia. Dopiero później zrozumiał, że wokół niego dzieją się dziwne rzeczy."},{"type":"order","q":"Order the words to make a Past Continuous question.","options":["What","were","you","doing","when","it","happened"],"tip":"Question: What + were/was + subject + -ing?","tip_uk":"Питання: What + were/was + підмет + дієслово з -ing?","tip_pl":"Pytanie: What + were/was + podmiot + czasownik z -ing?"},{"type":"speaking","q":"Tell it like a story. Repeat: I was just standing there when the glass disappeared!","say":"I was just standing there when the glass disappeared!","tip":"Past Continuous + when + Past Simple = perfect storytelling pattern.","tip_uk":"Past Continuous + when + Past Simple — ідеальна схема для розповіді.","tip_pl":"Past Continuous + when + Past Simple — idealny schemat do opowiadania."}]},{"num":3,"title":"Листи нізвідки","title_pl":"Listy znikąd","grammar":"Passive voice (past)","scene":"Хлопчику починають приходити листи. Дядько їх знищує, але наступного дня листів стає дедалі більше.","scene_pl":"Do chłopca zaczynają przychodzić listy. Wuj je niszczy, ale następnego dnia listów jest coraz więcej.","tasks":[{"type":"vocabulary","q":"A letter is closed with red wax. What is the wax called?","options":["a seal","a stamp","a ribbon","a label"],"answer":0,"tip":"A seal is wax pressed with a symbol. A stamp is what you pay postage with.","img":"letter","tip_uk":"Seal — це воскова печатка з символом. Stamp — поштова марка.","tip_pl":"Seal to woskowa pieczęć z symbolem. Stamp to znaczek pocztowy."},{"type":"match","q":"Match the verbs.","options":["to deliver=to bring post to a place","to tear up=to rip into pieces","to hide=to put where no one can see","to board up=to cover with wooden planks","to flood=to fill completely"],"tip":"Uncle tries everything: he hides, tears up and even boards up the letterbox.","img":"letter","tip_uk":"Дядько робить усе: ховає, рве і навіть забиває поштову скриньку дошками.","tip_pl":"Wuj próbuje wszystkiego: chowa, drze, a nawet zabija skrzynkę deskami.","options_uk":["to deliver=доставити","to tear up=порвати","to hide=сховати","to board up=забити дошками","to flood=заполонити"],"options_pl":["to deliver=dostarczyć","to tear up=podrzeć","to hide=schować","to board up=zabić deskami","to flood=zalać"]},{"type":"grammar","q":"Hundreds of letters ____ through the chimney.","options":["were sent","sent","was sent","are send"],"answer":0,"tip":"Passive, past, plural: were + past participle (sent).","tip_uk":"Пасив, минулий час, множина: were + третя форма дієслова (sent).","tip_pl":"Strona bierna, czas przeszły, liczba mnoga: were + trzecia forma (sent)."},{"type":"grammar","q":"The first letter ____ by Uncle Vernon before Harry could read it.","options":["was taken","took","was took","is taken"],"answer":0,"tip":"was + past participle. Take → took → taken.","tip_uk":"was + третя форма. Take → took → taken.","tip_pl":"was + trzecia forma. Take → took → taken."},{"type":"type","q":"Make it passive: Someone delivered the letters by owl. → The letters were ____ by owl.","options":["delivered"],"tip":"were + delivered (past participle).","tip_uk":"were + delivered (третя форма дієслова).","tip_pl":"were + delivered (trzecia forma czasownika)."},{"type":"order","q":"Order the words (passive).","options":["The","house","was","filled","with","letters"],"tip":"Subject + was + past participle + with...","tip_uk":"Підмет + was + третя форма + with...","tip_pl":"Podmiot + was + trzecia forma + with..."},{"type":"listening","q":"Listen. Where is the letter addressed to?","options":["The cupboard under the stairs","The smallest bedroom","The kitchen","The garden shed"],"answer":0,"tip":"The address is so exact that it shows someone knows where Harry sleeps.","say":"Mr H. Potter, The Cupboard under the Stairs, Number Four.","tip_uk":"Адреса настільки точна, що хтось явно знає, де спить Гаррі.","tip_pl":"Adres jest tak dokładny, że ktoś najwyraźniej wie, gdzie śpi Harry."},{"type":"tf","q":"The family stayed at home until the letters stopped.","options":["True","False"],"answer":1,"tip":"They ran away to a hotel and then to a tiny house on a rock in the sea.","tip_uk":"Вони втекли в готель, а потім у крихітний будиночок на скелі посеред моря.","tip_pl":"Uciekli do hotelu, a potem do maleńkiego domku na skale pośrodku morza."}]},{"num":4,"title":"Хранитель ключів","title_pl":"Strażnik kluczy","grammar":"Reported speech","scene":"Штормова ніч на острові. Велетень вибиває двері, приносить торт і розповідає хлопчику правду про його батьків.","scene_pl":"Burzowa noc na wyspie. Olbrzym wyważa drzwi, przynosi tort i opowiada chłopcu prawdę o jego rodzicach.","tasks":[{"type":"intro","q":"A giant knocks on the door at midnight. Today you learn to report what people said.","options":["Report statements: he said that…","Report questions: she asked if…","Shift tenses back correctly"],"img":"cake","tip":"Let's go","q_uk":"Опівночі у двері стукає велетень. Сьогодні вчимося переказувати чужі слова.","q_pl":"O północy do drzwi puka olbrzym. Dziś uczymy się przekazywać cudze słowa.","options_uk":["Твердження: he said that…","Питання: she asked if…","Правильно зсувати часи"],"options_pl":["Zdania twierdzące: he said that…","Pytania: she asked if…","Poprawne przesuwanie czasów"],"tip_uk":"Поїхали","tip_pl":"Zaczynamy"},{"type":"grammar","q":"Hagrid: 'You are a wizard.' → Hagrid told Harry that he ____ a wizard.","options":["is","was","were","has been"],"answer":1,"tip":"Reported speech: present → past (are → was).","img":"cake","tip_uk":"Непряма мова: теперішній час → минулий (are → was).","tip_pl":"Mowa zależna: czas teraźniejszy → przeszły (are → was)."},{"type":"grammar","q":"Harry: 'Are you sure?' → Harry asked if Hagrid ____ sure.","options":["is","was","were being","be"],"answer":1,"tip":"Yes/no questions: asked + if/whether + subject + past verb.","tip_uk":"Питання так/ні: asked + if/whether + підмет + дієслово в минулому.","tip_pl":"Pytania tak/nie: asked + if/whether + podmiot + czasownik w przeszłym."},{"type":"type","q":"Uncle: 'I won't pay for that school.' → Uncle said that he ____ pay for that school.","options":["wouldn't","would not"],"tip":"will → would; won't → wouldn't.","tip_uk":"will → would; won't → wouldn't.","tip_pl":"will → would; won't → wouldn't."},{"type":"match","q":"Match the reporting verbs.","options":["to admit=to agree something is true, unwillingly","to promise=to say you will surely do it","to refuse=to say you won't do it","to explain=to make something clear","to warn=to say something bad may happen"],"tip":"Better than just 'said' — these verbs make your stories vivid.","tip_uk":"Краще, ніж просто said: ці дієслова роблять розповідь живою.","tip_pl":"Lepsze niż samo said: te czasowniki ożywiają opowieść.","options_uk":["to admit=визнати","to promise=пообіцяти","to refuse=відмовитися","to explain=пояснити","to warn=попередити"],"options_pl":["to admit=przyznać","to promise=obiecać","to refuse=odmówić","to explain=wyjaśnić","to warn=ostrzec"]},{"type":"order","q":"Order the reported question.","options":["He","asked","who","his","parents","really","were"],"tip":"In reported questions, NO question word order: who + subject + verb.","tip_uk":"У непрямих питаннях НЕМАЄ питального порядку слів: who + підмет + дієслово.","tip_pl":"W pytaniach zależnych NIE MA szyku pytającego: who + podmiot + czasownik."},{"type":"listening","q":"Listen. What did Hagrid bake for Harry?","options":["A birthday cake","Bread","Cookies","A pie"],"answer":0,"tip":"It's a little squashed, but made with love.","say":"I made you a birthday cake. It got a bit squashed on the way, but it should still taste good.","tip_uk":"Трохи прим'ятий, але зроблений з любов'ю.","tip_pl":"Trochę zgnieciony, ale zrobiony z miłością."},{"type":"speaking","q":"Report it! Repeat: He told me that I had been famous all my life.","say":"He told me that I had been famous all my life.","tip":"Past perfect in reported speech: had been.","tip_uk":"Past Perfect у непрямій мові: had been.","tip_pl":"Past Perfect w mowie zależnej: had been."}]},{"num":5,"title":"Чарівна вулиця покупок","title_pl":"Magiczna ulica zakupów","grammar":"Quantifiers: too / enough / a lot of / few","scene":"Велетень веде хлопчика на приховану вулицю з крамницями: банк, мантії, книги, котли.","scene_pl":"Olbrzym prowadzi chłopca na ukrytą ulicę ze sklepami: bank, szaty, książki, kociołki.","tasks":[{"type":"vocabulary","q":"A magical street full of shops. A place where money is kept safely is a…","options":["bank","market","library","pharmacy"],"answer":0,"tip":"The bank is run by goblins and has very deep vaults.","img":"alley","tip_uk":"Банком керують гобліни, а його сховища дуже глибокі.","tip_pl":"Bankiem zarządzają gobliny, a jego skarbce są bardzo głębokie."},{"type":"match","q":"Shopping list: match.","options":["robes=long clothes for school","cauldron=a big pot for potions","quill=a feather pen","parchment=old-style paper","vault=a safe room in a bank"],"tip":"You will see all of these at the school too.","tip_uk":"Усе це ти побачиш і в школі.","tip_pl":"Wszystko to zobaczysz także w szkole.","options_uk":["robes=мантії","cauldron=котел","quill=перо для письма","parchment=пергамент","vault=сховище"],"options_pl":["robes=szaty","cauldron=kociołek","quill=pióro gęsie","parchment=pergamin","vault=skarbiec"]},{"type":"grammar","q":"Harry has never had ____ money to buy what he wants.","options":["enough","too","too much","a few"],"answer":0,"tip":"enough + noun = the right amount. 'Too' needs an adjective: too expensive.","tip_uk":"enough + іменник = достатньо. Too вживаємо з прикметником: too expensive.","tip_pl":"enough + rzeczownik = wystarczająco. Too łączymy z przymiotnikiem: too expensive."},{"type":"grammar","q":"The robes were ____ long, so the tailor shortened them.","options":["enough","too","much","few"],"answer":1,"tip":"too + adjective = more than needed.","tip_uk":"too + прикметник = більше, ніж потрібно.","tip_pl":"too + przymiotnik = więcej, niż trzeba."},{"type":"type","q":"Complete: There were so ____ people in the street that Harry got lost for a moment.","options":["many"],"tip":"many + countable plural (people).","tip_uk":"many + злічувані іменники в множині (people).","tip_pl":"many + rzeczowniki policzalne w liczbie mnogiej (people)."},{"type":"tf","q":"Harry discovered that his parents had left him nothing.","options":["True","False"],"answer":1,"tip":"There was a vault full of gold coins waiting for him.","tip_uk":"На нього чекало сховище, повне золотих монет.","tip_pl":"Czekał na niego skarbiec pełen złotych monet."},{"type":"order","q":"Order the words.","options":["We","don't","have","enough","time","to","buy","everything"],"tip":"enough + noun + to-infinitive.","tip_uk":"enough + іменник + to + дієслово.","tip_pl":"enough + rzeczownik + to + czasownik."},{"type":"speaking","q":"Shopping English. Repeat: Excuse me, how much is this? It's a bit too expensive for me.","say":"Excuse me, how much is this? It's a bit too expensive for me.","tip":"A polite, useful phrase for real shops.","tip_uk":"Ввічлива і корисна фраза для справжніх магазинів.","tip_pl":"Uprzejme i przydatne zdanie do prawdziwych sklepów."}]},{"num":6,"title":"Паличка обирає чарівника","title_pl":"Różdżka wybiera czarodzieja","grammar":"Relative clauses (who / which / where / whose)","scene":"Старовинна крамниця паличок. Хлопчик пробує кілька, доки одна не обирає його.","scene_pl":"Stary sklep z różdżkami. Chłopiec próbuje kilku, aż jedna wybiera jego.","tasks":[{"type":"grammar","q":"This is the shop ____ every young wizard buys a wand.","options":["which","where","who","whose"],"answer":1,"tip":"Place → where.","img":"wand","tip_uk":"Місце → where.","tip_pl":"Miejsce → where."},{"type":"grammar","q":"The wand ____ chose Harry has a very special core.","options":["who","which","where","whose"],"answer":1,"tip":"Thing → which / that.","tip_uk":"Предмет → which / that.","tip_pl":"Rzecz → which / that."},{"type":"grammar","q":"The old man ____ shop is full of boxes remembers every wand he has sold.","options":["who","which","whose","that"],"answer":2,"tip":"Possession → whose (his shop → whose shop).","tip_uk":"Приналежність → whose (his shop → whose shop).","tip_pl":"Przynależność → whose (his shop → whose shop)."},{"type":"type","q":"Complete with one word: Harry is the boy ____ survived.","options":["who","that"],"tip":"Person → who / that.","tip_uk":"Людина → who / that.","tip_pl":"Osoba → who / that."},{"type":"match","q":"Match the descriptions.","options":["wand-maker=a person who makes wands","dusty=covered with fine dirt","core=the magic material inside","curious=strange, surprising","brother wand=a wand which shares the same core"],"tip":"Notice how definitions themselves use relative clauses!","tip_uk":"Зверни увагу: самі пояснення теж мають підрядні речення!","tip_pl":"Zauważ: same definicje też zawierają zdania względne!","options_uk":["wand-maker=майстер паличок","dusty=запилений","core=серцевина","curious=дивовижний","brother wand=паличка-близнюк"],"options_pl":["wand-maker=wytwórca różdżek","dusty=zakurzony","core=rdzeń","curious=zadziwiający","brother wand=różdżka bliźniacza"]},{"type":"order","q":"Make one sentence with a relative clause.","options":["The","owl","which","Hagrid","bought","is","snowy","white"],"tip":"Relative clause in the middle: The owl (which Hagrid bought) is…","tip_uk":"Підрядне речення посередині: The owl (which Hagrid bought) is…","tip_pl":"Zdanie względne w środku: The owl (which Hagrid bought) is…"},{"type":"tf","q":"The first wand Harry tried was perfect for him.","options":["True","False"],"answer":1,"tip":"Several wands caused chaos before the right one chose him.","tip_uk":"Кілька паличок наробили хаосу, перш ніж правильна обрала його.","tip_pl":"Kilka różdżek narobiło chaosu, zanim właściwa wybrała jego."},{"type":"speaking","q":"Describe like a pro: Repeat: It's the kind of place where you feel the magic in the air.","say":"It's the kind of place where you feel the magic in the air.","tip":"'The kind of place where…' is a great B2 phrase.","tip_uk":"The kind of place where… — чудова фраза рівня B2.","tip_pl":"The kind of place where… to świetne wyrażenie na poziomie B2."}]},{"num":7,"title":"Платформа дев'ять і три чверті","title_pl":"Peron dziewięć i trzy czwarte","grammar":"Modals of deduction: must / might / can't","scene":"Вокзал у Лондоні. Хлопчик шукає неіснуючу платформу, а потім у поїзді знайомиться з новим другом.","scene_pl":"Dworzec w Londynie. Chłopiec szuka nieistniejącego peronu, a potem w pociągu poznaje nowego przyjaciela.","tasks":[{"type":"intro","q":"Platform nine and three-quarters doesn't exist… or does it? Today: guessing and deducing.","options":["must = I'm almost sure it's true","can't = I'm sure it's impossible","might / could = maybe"],"img":"train","tip":"Board the train","q_uk":"Платформи дев'ять і три чверті не існує… чи існує? Сьогодні — здогадки й висновки.","q_pl":"Peron dziewięć i trzy czwarte nie istnieje… a może jednak? Dziś: przypuszczenia i wnioski.","options_uk":["must = я майже впевнений","can't = точно неможливо","might / could = можливо"],"options_pl":["must = jestem prawie pewien","can't = na pewno niemożliwe","might / could = może"],"tip_uk":"Сісти в поїзд","tip_pl":"Wsiadaj do pociągu"},{"type":"grammar","q":"There's no platform between 9 and 10. It ____ be real!","options":["must","can't","should","has to"],"answer":1,"tip":"Deduction that something is impossible → can't be.","img":"train","tip_uk":"Висновок, що щось неможливо → can't be.","tip_pl":"Wniosek, że coś jest niemożliwe → can't be."},{"type":"grammar","q":"That family is pushing trolleys with owls. They ____ be going to the same school.","options":["must","can't","mustn't","needn't"],"answer":0,"tip":"Strong evidence → must be.","tip_uk":"Сильні докази → must be.","tip_pl":"Mocne dowody → must be."},{"type":"grammar","q":"Ron isn't sure about the sweets: 'This one ____ taste like earwax. Be careful!'","options":["might","must","can't","has"],"answer":0,"tip":"Possibility → might.","tip_uk":"Можливість → might.","tip_pl":"Możliwość → might."},{"type":"type","q":"Complete: The trolley lady sells sweets, so she ____ be very popular with the students. (strong guess)","options":["must"],"tip":"must = logical certainty.","tip_uk":"must = логічна впевненість.","tip_pl":"must = logiczna pewność."},{"type":"match","q":"Travel vocabulary.","options":["platform=where you get on a train","trolley=a cart for luggage","compartment=a small room in a train","luggage=bags and cases","ticket inspector=checks your ticket"],"tip":"Useful for real trips too!","tip_uk":"Знадобиться і в справжніх подорожах!","tip_pl":"Przyda się też w prawdziwych podróżach!","options_uk":["platform=платформа","trolley=візок","compartment=купе","luggage=багаж","ticket inspector=контролер"],"options_pl":["platform=peron","trolley=wózek","compartment=przedział","luggage=bagaż","ticket inspector=konduktor"]},{"type":"listening","q":"Listen. What does Ron ask?","options":["Is anyone sitting there?","Where is the train?","Do you have food?","What time is it?"],"answer":0,"tip":"Polite way to ask for a seat.","say":"Excuse me, do you mind? Is anyone sitting there? Everywhere else is full.","tip_uk":"Ввічливий спосіб спитати про вільне місце.","tip_pl":"Uprzejmy sposób, by zapytać o wolne miejsce."},{"type":"speaking","q":"Deduce out loud. Repeat: You must be joking! That can't be the right platform.","say":"You must be joking! That can't be the right platform.","tip":"Natural reaction + deduction.","tip_uk":"Природна реакція + висновок.","tip_pl":"Naturalna reakcja + wniosek."}]},{"num":8,"title":"Капелюх розподілу","title_pl":"Tiara przydziału","grammar":"Second conditional","scene":"Великий зал зі свічками під стелею. Старий капелюх вирішує, до якого гуртожитку піде кожен учень.","scene_pl":"Wielka Sala ze świecami pod sufitem. Stara tiara decyduje, do którego domu trafi każdy uczeń.","tasks":[{"type":"match","q":"Personality adjectives.","options":["brave=not afraid of danger","loyal=always supports friends","ambitious=really wants to succeed","wise=clever and sensible","cunning=clever in a tricky way"],"tip":"Each school house values different qualities.","img":"hat","tip_uk":"Кожен гуртожиток цінує різні якості.","tip_pl":"Każdy dom ceni inne cechy.","options_uk":["brave=хоробрий","loyal=вірний","ambitious=амбітний","wise=мудрий","cunning=хитрий"],"options_pl":["brave=odważny","loyal=lojalny","ambitious=ambitny","wise=mądry","cunning=przebiegły"]},{"type":"grammar","q":"If I ____ the Sorting Hat, I would put Harry in the bravest house.","options":["am","were","will be","had been"],"answer":1,"tip":"Second conditional: If + past (were) + would.","img":"hat","tip_uk":"Другий умовний: If + минулий час (were) + would.","tip_pl":"Drugi tryb warunkowy: If + czas przeszły (were) + would."},{"type":"grammar","q":"If Harry ____ to the hat's first idea, he would join a different house.","options":["listens","listened","will listen","has listened"],"answer":1,"tip":"Unreal present/future: If + Past Simple.","tip_uk":"Нереальна теперішня/майбутня ситуація: If + Past Simple.","tip_pl":"Nierealna sytuacja teraźniejsza/przyszła: If + Past Simple."},{"type":"type","q":"Complete: What house would you choose if you ____ (can) choose?","options":["could"],"tip":"can → could in second conditional.","tip_uk":"can → could у другому умовному.","tip_pl":"can → could w drugim trybie warunkowym."},{"type":"order","q":"Order the conditional sentence.","options":["I","would","feel","nervous","if","everyone","watched","me"],"tip":"would + verb … if + past.","tip_uk":"would + дієслово … if + минулий час.","tip_pl":"would + czasownik … if + czas przeszły."},{"type":"tf","q":"Hermione hopes to be in the house that values courage.","options":["True","False"],"answer":0,"tip":"She has read about the houses and has strong opinions.","tip_uk":"Вона начиталася про гуртожитки і має чітку думку.","tip_pl":"Naczytała się o domach i ma wyraźne zdanie."},{"type":"vocabulary","q":"The ceiling looks like the night sky. It is…","options":["enchanted","painted","broken","empty"],"answer":0,"tip":"Enchanted = under a magic spell.","tip_uk":"Enchanted = зачарований.","tip_pl":"Enchanted = zaczarowany."},{"type":"speaking","q":"Your turn. Repeat and then say it about yourself: If I were a student there, I would want to be brave.","say":"If I were a student there, I would want to be brave.","tip":"Change the adjective to describe YOU.","tip_uk":"Зміни прикметник, щоб описати СЕБЕ.","tip_pl":"Zmień przymiotnik, aby opisać SIEBIE."}]},{"num":9,"title":"Урок зілля","title_pl":"Lekcja eliksirów","grammar":"Phrasal verbs & instructions","scene":"Холодний підвал, суворий учитель. Він ставить хлопчику складні питання на першому ж уроці.","scene_pl":"Zimne lochy, surowy nauczyciel. Na pierwszej lekcji zadaje chłopcu trudne pytania.","tasks":[{"type":"vocabulary","q":"A teacher who is very strict and unfriendly is…","options":["harsh","kind","relaxed","funny"],"answer":0,"tip":"Harsh = severe, unkind.","img":"potion","tip_uk":"Harsh = суворий, недоброзичливий.","tip_pl":"Harsh = surowy, nieprzyjazny."},{"type":"match","q":"Phrasal verbs from the classroom.","options":["to pick on=to treat someone unfairly","to look up=to find information","to carry on=to continue","to point out=to show or mention","to put off=to delay"],"tip":"Phrasal verbs are everywhere in natural English!","tip_uk":"Фразові дієслова всюди в живій англійській!","tip_pl":"Phrasal verbs są wszędzie w naturalnym angielskim!","options_uk":["to pick on=чіплятися","to look up=пошукати (інформацію)","to carry on=продовжувати","to point out=вказати","to put off=відкласти"],"options_pl":["to pick on=czepiać się","to look up=sprawdzić (informację)","to carry on=kontynuować","to point out=wskazać","to put off=odłożyć"]},{"type":"grammar","q":"Don't worry, just ____ with your potion. You're doing fine.","options":["carry on","put off","pick on","look up"],"answer":0,"tip":"carry on = continue.","tip_uk":"carry on = продовжувати.","tip_pl":"carry on = kontynuować."},{"type":"grammar","q":"If you don't know the answer, ____ it ____ in the book.","options":["look / up","pick / on","carry / on","point / out"],"answer":0,"tip":"Separable phrasal verb: look it up.","tip_uk":"Роздільне фразове дієслово: look it up.","tip_pl":"Rozdzielny phrasal verb: look it up."},{"type":"order","q":"Instructions: order the words.","options":["Stir","the","potion","slowly","and","then","add","the","leaves"],"tip":"Imperatives for instructions.","tip_uk":"Наказовий спосіб для інструкцій.","tip_pl":"Tryb rozkazujący w instrukcjach."},{"type":"type","q":"Complete: Why does the teacher always pick ____ Harry?","options":["on"],"tip":"pick on someone.","tip_uk":"pick on someone = чіплятися до когось.","tip_pl":"pick on someone = czepiać się kogoś."},{"type":"tf","q":"Harry knew all the answers in his first potions lesson.","options":["True","False"],"answer":1,"tip":"He didn't — and Hermione's hand was up the whole time.","tip_uk":"Ні, а рука Герміони весь час була піднята.","tip_pl":"Nie, a ręka Hermiony cały czas była w górze."},{"type":"speaking","q":"Give an instruction. Repeat: First, read the instructions carefully. Then, add the ingredients one by one.","say":"First, read the instructions carefully. Then, add the ingredients one by one.","tip":"Sequencers: first, then, after that, finally.","tip_uk":"Слова послідовності: first, then, after that, finally.","tip_pl":"Słowa porządkujące: first, then, after that, finally."}]},{"num":10,"title":"Перший урок польотів","title_pl":"Pierwsza lekcja latania","grammar":"Obligation: must / have to / mustn't / don't have to","scene":"Учні вперше тримають мітли. Один хлопчик падає, а інший забирає його річ і злітає високо в небо.","scene_pl":"Uczniowie pierwszy raz trzymają miotły. Jeden chłopiec spada, a drugi zabiera jego rzecz i wzlatuje wysoko.","tasks":[{"type":"grammar","q":"Students ____ fly while the teacher is away. It's against the rules!","options":["mustn't","don't have to","must","needn't"],"answer":0,"tip":"mustn't = it is forbidden.","img":"broom","tip_uk":"mustn't = заборонено.","tip_pl":"mustn't = nie wolno."},{"type":"grammar","q":"You ____ be an expert on your first day. Just try your best.","options":["mustn't","don't have to","have to","must"],"answer":1,"tip":"don't have to = it's not necessary.","tip_uk":"don't have to = не обов'язково.","tip_pl":"don't have to = nie trzeba."},{"type":"grammar","q":"Yesterday, Neville ____ go to the hospital wing after his fall.","options":["must","had to","has to","mustn't"],"answer":1,"tip":"Past obligation → had to (must has no past form).","tip_uk":"Обов'язок у минулому → had to (must не має минулої форми).","tip_pl":"Obowiązek w przeszłości → had to (must nie ma formy przeszłej)."},{"type":"type","q":"Complete: Everyone ____ to hold the broom with their right hand. (obligation, present)","options":["has","needs"],"tip":"has to = rule/obligation.","tip_uk":"has to = правило, обов'язок.","tip_pl":"has to = zasada, obowiązek."},{"type":"match","q":"Flying words.","options":["to hover=to stay in the air in one place","to dive=to go down fast","to grab=to take quickly","to land=to come back to the ground","a natural=someone born with a talent"],"tip":"Harry turns out to be a natural!","tip_uk":"Гаррі виявився природженим талантом!","tip_pl":"Harry okazał się urodzonym talentem!","options_uk":["to hover=зависати в повітрі","to dive=пірнати вниз","to grab=схопити","to land=приземлитися","a natural=природжений талант"],"options_pl":["to hover=unosić się w miejscu","to dive=nurkować","to grab=chwycić","to land=wylądować","a natural=urodzony talent"]},{"type":"tf","q":"Harry caught a glass ball after a long dive, and a teacher saw it.","options":["True","False"],"answer":0,"tip":"Instead of punishment, he got a place on the team.","tip_uk":"Замість покарання він отримав місце в команді.","tip_pl":"Zamiast kary dostał miejsce w drużynie."},{"type":"order","q":"Order the rule.","options":["You","must","keep","your","feet","on","the","ground"],"tip":"must + base verb.","tip_uk":"must + дієслово без to.","tip_pl":"must + czasownik bez to."},{"type":"speaking","q":"Talk about rules in your life. Repeat: At my school we had to wear a uniform, but we didn't have to stand up.","say":"At my school we had to wear a uniform, but we didn't have to stand up.","tip":"Past obligation vs no obligation.","tip_uk":"Обов'язок у минулому і його відсутність.","tip_pl":"Obowiązek w przeszłości i jego brak."}]},{"num":11,"title":"Троль у підземеллі","title_pl":"Troll w lochach","grammar":"Past Perfect","scene":"Свято Гелловіну. У школу пробрався троль, а одна учениця залишилася сама у вбиральні.","scene_pl":"Halloween. Do szkoły dostał się troll, a jedna uczennica została sama w łazience.","tasks":[{"type":"intro","q":"Halloween night — and something huge is in the castle. Today: the tense of 'what had already happened'.","options":["Past Perfect: had + past participle","Order two past events clearly","Tell a dramatic story in English"],"img":"troll","tip":"Enter the castle","q_uk":"Ніч Гелловіну — і в замку щось величезне. Сьогодні: час того, «що вже сталося раніше».","q_pl":"Noc Halloween — a w zamku jest coś ogromnego. Dziś: czas tego, „co wydarzyło się wcześniej”.","options_uk":["Past Perfect: had + третя форма","Чітко впорядковуй дві події в минулому","Розкажи драматичну історію англійською"],"options_pl":["Past Perfect: had + trzecia forma","Porządkuj dwa zdarzenia z przeszłości","Opowiedz dramatyczną historię po angielsku"],"tip_uk":"Увійти в замок","tip_pl":"Wejdź do zamku"},{"type":"grammar","q":"When the boys arrived, the troll ____ already ____ into the bathroom.","options":["had / gone","has / gone","was / going","did / go"],"answer":0,"tip":"The earlier action → had gone.","img":"troll","tip_uk":"Раніша дія → had gone.","tip_pl":"Wcześniejsza czynność → had gone."},{"type":"grammar","q":"Hermione was crying because Ron ____ something unkind earlier that day.","options":["said","had said","has said","was saying"],"answer":1,"tip":"Earlier past → Past Perfect: had said.","tip_uk":"Раніше в минулому → Past Perfect: had said.","tip_pl":"Wcześniej w przeszłości → Past Perfect: had said."},{"type":"type","q":"Complete: By the time the teachers came, the boys ____ already defeated the troll. (have)","options":["had"],"tip":"had + defeated.","tip_uk":"had + defeated.","tip_pl":"had + defeated."},{"type":"match","q":"Halloween vocabulary.","options":["feast=a big special meal","dungeon=an underground room","to faint=to suddenly lose consciousness","club=a heavy wooden weapon","to knock out=to make unconscious"],"tip":"Useful for retelling the scene.","tip_uk":"Знадобиться, щоб переказати сцену.","tip_pl":"Przyda się do opowiedzenia sceny.","options_uk":["feast=бенкет","dungeon=підземелля","to faint=знепритомніти","club=дубина","to knock out=вирубити"],"options_pl":["feast=uczta","dungeon=loch","to faint=zemdleć","club=maczuga","to knock out=ogłuszyć"]},{"type":"order","q":"Order the sentence.","options":["They","became","friends","after","they","had","faced","the","troll","together"],"tip":"after + Past Perfect.","tip_uk":"after + Past Perfect.","tip_pl":"after + Past Perfect."},{"type":"tf","q":"After that night, Hermione became friends with Harry and Ron.","options":["True","False"],"answer":0,"tip":"Facing danger together changed everything.","tip_uk":"Спільна небезпека все змінила.","tip_pl":"Wspólne niebezpieczeństwo wszystko zmieniło."},{"type":"speaking","q":"Dramatic storytelling. Repeat: I had never seen anything so big in my whole life!","say":"I had never seen anything so big in my whole life!","tip":"had never + past participle = strong emotion.","tip_uk":"had never + третя форма = сильна емоція.","tip_pl":"had never + trzecia forma = silna emocja."}]},{"num":12,"title":"Перший матч","title_pl":"Pierwszy mecz","grammar":"Comparatives, superlatives & adverbs","scene":"Стадіон, обручі на високих стовпах, глядачі на трибунах. Хлопчик грає свій перший матч у ролі ловця.","scene_pl":"Stadion, obręcze na wysokich słupach, kibice na trybunach. Chłopiec gra swój pierwszy mecz jako szukający.","tasks":[{"type":"grammar","q":"Harry is the ____ Seeker the team has had in a century.","options":["youngest","younger","most young","young"],"answer":0,"tip":"One-syllable adjective → -est.","img":"pitch","tip_uk":"Односкладовий прикметник → -est.","tip_pl":"Jednosylabowy przymiotnik → -est."},{"type":"grammar","q":"The golden ball moves ____ than any other ball.","options":["fast","faster","fastest","more fast"],"answer":1,"tip":"Comparative + than.","tip_uk":"Вища ступінь + than.","tip_pl":"Stopień wyższy + than."},{"type":"grammar","q":"His broom started to shake ____ during the match.","options":["dangerous","dangerously","danger","more dangerous"],"answer":1,"tip":"Adverb describes HOW it shook.","tip_uk":"Прислівник описує, ЯК вона трусилася.","tip_pl":"Przysłówek opisuje, JAK się trzęsła."},{"type":"type","q":"Complete: This was the ____ (exciting) match of the season.","options":["most exciting"],"tip":"Long adjective → the most + adj.","tip_uk":"Довгий прикметник → the most + прикметник.","tip_pl":"Długi przymiotnik → the most + przymiotnik."},{"type":"match","q":"Sports vocabulary.","options":["pitch=the field where you play","score=to get points","referee=the person who controls the game","crowd=the people watching","cheat=to break rules to win"],"tip":"Works for football too!","tip_uk":"Підходить і для футболу!","tip_pl":"Pasuje też do piłki nożnej!","options_uk":["pitch=ігрове поле","score=забити (очки)","referee=суддя","crowd=натовп глядачів","cheat=шахраювати"],"options_pl":["pitch=boisko","score=zdobyć punkty","referee=sędzia","crowd=tłum kibiców","cheat=oszukiwać"]},{"type":"tf","q":"Harry caught the golden ball with his hands.","options":["True","False"],"answer":1,"tip":"He almost swallowed it — and it still counted!","tip_uk":"Він ледь не проковтнув його — і це все одно зарахували!","tip_pl":"Prawie go połknął — i i tak się liczyło!"},{"type":"order","q":"Order the sentence.","options":["It","was","the","best","day","of","his","life","so","far"],"tip":"the best = superlative of good.","tip_uk":"the best = найвищий ступінь від good.","tip_pl":"the best = stopień najwyższy od good."},{"type":"speaking","q":"Commentate! Repeat: He's flying faster and faster — what an incredible catch!","say":"He's flying faster and faster — what an incredible catch!","tip":"faster and faster = increasing speed.","tip_uk":"faster and faster = дедалі швидше.","tip_pl":"faster and faster = coraz szybciej."}]},{"num":13,"title":"Дзеркало бажань","title_pl":"Zwierciadło pragnień","grammar":"Wishes: I wish / If only","scene":"Порожній клас уночі. Хлопчик знаходить дзеркало, яке показує не відображення, а найглибше бажання.","scene_pl":"Pusta sala w nocy. Chłopiec znajduje lustro, które pokazuje nie odbicie, lecz najgłębsze pragnienie.","tasks":[{"type":"grammar","q":"Harry wishes he ____ his parents.","options":["knows","knew","will know","has known"],"answer":1,"tip":"Wish about the present → past simple.","img":"mirror","tip_uk":"Бажання щодо теперішнього → Past Simple.","tip_pl":"Życzenie dotyczące teraźniejszości → Past Simple."},{"type":"grammar","q":"Ron wishes he ____ more successful than his brothers.","options":["is","were","will be","be"],"answer":1,"tip":"wish + were (formal, correct for all persons).","tip_uk":"wish + were (формально, правильно для всіх осіб).","tip_pl":"wish + were (formalnie, poprawne dla wszystkich osób)."},{"type":"grammar","q":"If only I ____ that mirror! Now I can't stop thinking about it. (regret about the past)","options":["didn't find","hadn't found","don't find","wouldn't find"],"answer":1,"tip":"Regret about the past → If only + Past Perfect.","tip_uk":"Жаль про минуле → If only + Past Perfect.","tip_pl":"Żal o przeszłość → If only + Past Perfect."},{"type":"type","q":"Complete: I wish it ____ (be) Christmas every day.","options":["were","was"],"tip":"were is more formal; was is common in speech.","tip_uk":"were — формальніше; was часто вживають у розмові.","tip_pl":"were jest bardziej formalne; was często słychać w mowie."},{"type":"match","q":"Feelings.","options":["longing=a strong wish for something","lonely=sad because alone","obsessed=can't stop thinking about something","grateful=thankful","homesick=missing home or family"],"tip":"Emotions make your English richer.","tip_uk":"Емоції роблять твою англійську багатшою.","tip_pl":"Emocje wzbogacają Twój angielski.","options_uk":["longing=туга","lonely=самотній","obsessed=одержимий","grateful=вдячний","homesick=сумую за домом"],"options_pl":["longing=tęsknota","lonely=samotny","obsessed=opętany obsesją","grateful=wdzięczny","homesick=tęskniący za domem"]},{"type":"tf","q":"The headmaster advises Harry to keep visiting the mirror every night.","options":["True","False"],"answer":1,"tip":"He warns that living in dreams means forgetting to live.","tip_uk":"Він попереджає: жити мріями — означає забути жити.","tip_pl":"Ostrzega, że życie marzeniami oznacza zapomnienie o życiu."},{"type":"order","q":"Order the advice from the headmaster (in our words).","options":["Real","life","is","more","important","than","dreams"],"tip":"The idea of the scene: don't get lost in dreams.","tip_uk":"Ідея сцени: не губися у мріях.","tip_pl":"Myśl sceny: nie zgub się w marzeniach."},{"type":"speaking","q":"Make a wish. Repeat, then make your own: I wish I could speak English as fluently as a native speaker.","say":"I wish I could speak English as fluently as a native speaker.","tip":"wish + could = ability you'd like to have.","tip_uk":"wish + could = уміння, яке хотілося б мати.","tip_pl":"wish + could = umiejętność, którą chciałbyś mieć."}]},{"num":14,"title":"Заборонений ліс","title_pl":"Zakazany Las","grammar":"Third conditional","scene":"Покарання вночі в темному лісі. Хлопчики бачать щось страшне, і їх рятує кентавр.","scene_pl":"Kara w nocy w ciemnym lesie. Chłopcy widzą coś strasznego, a ratuje ich centaur.","tasks":[{"type":"intro","q":"A night in the Forbidden Forest. Today: imagining how the past could have been different.","options":["Third conditional: If + had done, would have done","Talk about regrets and lucky escapes","Night & forest vocabulary"],"img":"forest","tip":"Into the forest","q_uk":"Ніч у Забороненому лісі. Сьогодні уявляємо, яким могло бути минуле.","q_pl":"Noc w Zakazanym Lesie. Dziś wyobrażamy sobie, jak mogła wyglądać przeszłość.","options_uk":["Третій умовний: If + had done, would have done","Говоримо про жаль і щасливі порятунки","Слова про ніч і ліс"],"options_pl":["Trzeci tryb warunkowy: If + had done, would have done","Mówimy o żalu i szczęśliwych ucieczkach","Słownictwo o nocy i lesie"],"tip_uk":"У ліс","tip_pl":"Do lasu"},{"type":"grammar","q":"If they ____ out after midnight, they wouldn't have got a detention.","options":["didn't go","hadn't gone","wouldn't go","haven't gone"],"answer":1,"tip":"If + Past Perfect…","img":"forest","tip_uk":"If + Past Perfect…","tip_pl":"If + Past Perfect…"},{"type":"grammar","q":"If the centaur hadn't arrived, something terrible ____.","options":["would happen","would have happened","had happened","will happen"],"answer":1,"tip":"…would have + past participle.","tip_uk":"…would have + третя форма.","tip_pl":"…would have + trzecia forma."},{"type":"type","q":"Complete: If Harry had stayed in bed, he ____ have seen the hooded figure.","options":["wouldn't","would not"],"tip":"wouldn't have seen.","tip_uk":"wouldn't have seen.","tip_pl":"wouldn't have seen."},{"type":"match","q":"Forest vocabulary.","options":["detention=a punishment at school","lantern=a lamp you carry","hooded=wearing a hood","to creep=to move slowly and quietly","silver blood=magic creature's blood (unicorn)"],"tip":"Atmosphere words for scary stories.","tip_uk":"Атмосферні слова для страшних історій.","tip_pl":"Klimatyczne słowa do strasznych historii.","options_uk":["detention=покарання (після уроків)","lantern=ліхтар","hooded=у каптурі","to creep=підкрадатися","silver blood=срібна кров"],"options_pl":["detention=kara (koza)","lantern=latarnia","hooded=w kapturze","to creep=skradać się","silver blood=srebrna krew"]},{"type":"order","q":"Order the third conditional.","options":["We","would","have","been","lost","if","you","hadn't","helped","us"],"tip":"would have + pp … if + had + pp.","tip_uk":"would have + третя форма … if + had + третя форма.","tip_pl":"would have + trzecia forma … if + had + trzecia forma."},{"type":"tf","q":"The boys were in the forest as a punishment.","options":["True","False"],"answer":0,"tip":"It was their detention.","tip_uk":"Це було їхнє покарання.","tip_pl":"To była ich kara."},{"type":"speaking","q":"Regret and relief. Repeat: If you hadn't come, we would have been in serious trouble.","say":"If you hadn't come, we would have been in serious trouble.","tip":"Very natural way to say thank you after help.","tip_uk":"Дуже природний спосіб подякувати за допомогу.","tip_pl":"Bardzo naturalny sposób, by podziękować za pomoc."}]},{"num":15,"title":"Крізь люк","title_pl":"Przez klapę","grammar":"Present Perfect vs Past Simple","scene":"Троє друзів проходять випробування під школою: гігантські шахи, загадка з зіллям і вогонь.","scene_pl":"Trójka przyjaciół przechodzi próby pod szkołą: gigantyczne szachy, zagadka z eliksirami i ogień.","tasks":[{"type":"grammar","q":"Ron has played chess since he was a child, but he ____ a game like this before.","options":["never played","has never played","had never play","didn't ever"],"answer":1,"tip":"Life experience up to now → Present Perfect.","img":"chess","tip_uk":"Життєвий досвід до сьогодні → Present Perfect.","tip_pl":"Doświadczenie życiowe do teraz → Present Perfect."},{"type":"grammar","q":"Last night, the three friends ____ through the trapdoor.","options":["have climbed","climbed","climb","were climb"],"answer":1,"tip":"Finished time (last night) → Past Simple.","tip_uk":"Завершений час (last night) → Past Simple.","tip_pl":"Zakończony czas (last night) → Past Simple."},{"type":"grammar","q":"Hermione: 'I ____ the riddle! It's the smallest bottle.'","options":["solved","have solved","solve","had solved"],"answer":1,"tip":"Result now, no time given → Present Perfect.","tip_uk":"Результат зараз, час не вказано → Present Perfect.","tip_pl":"Rezultat teraz, bez podanego czasu → Present Perfect."},{"type":"type","q":"Complete: Have you ever ____ chess? (play)","options":["played"],"tip":"Have you ever + past participle = experience question.","tip_uk":"Have you ever + третя форма = питання про досвід.","tip_pl":"Have you ever + trzecia forma = pytanie o doświadczenie."},{"type":"match","q":"Challenge vocabulary.","options":["trapdoor=a door in the floor","riddle=a puzzle in words","sacrifice=giving something up for others","to checkmate=to win at chess","flames=fire"],"tip":"Words of the final adventure.","tip_uk":"Слова фінальної пригоди.","tip_pl":"Słowa finałowej przygody.","options_uk":["trapdoor=люк","riddle=загадка","sacrifice=жертва","to checkmate=поставити мат","flames=полум'я"],"options_pl":["trapdoor=klapa w podłodze","riddle=zagadka","sacrifice=poświęcenie","to checkmate=dać mata","flames=płomienie"]},{"type":"tf","q":"Ron lets himself be taken in the chess game so Harry can go on.","options":["True","False"],"answer":0,"tip":"A real sacrifice for his friend.","tip_uk":"Справжня жертва заради друга.","tip_pl":"Prawdziwe poświęcenie dla przyjaciela."},{"type":"order","q":"Order the sentence.","options":["I","have","never","been","so","scared","in","my","life"],"tip":"Present Perfect + never + superlative feeling.","tip_uk":"Present Perfect + never + найсильніше почуття.","tip_pl":"Present Perfect + never + najsilniejsze uczucie."},{"type":"speaking","q":"Your experience. Repeat, then make it true for you: I've been to London, but I've never seen a real castle.","say":"I've been to London, but I've never seen a real castle.","tip":"been to = visited and came back.","tip_uk":"been to = побував і повернувся.","tip_pl":"been to = byłem i wróciłem."}]},{"num":16,"title":"Фінал: камінь і твоя історія","title_pl":"Finał: kamień i twoja historia","grammar":"Narrative tenses — review","scene":"Остання зустріч біля дзеркала, червоний камінь у кишені і прощальне свято. Ти розповідаєш історію сам.","scene_pl":"Ostatnie spotkanie przy lustrze, czerwony kamień w kieszeni i pożegnalna uczta. Opowiadasz historię sam.","tasks":[{"type":"intro","q":"The final lesson! Put together everything you learned and tell the story in your own words.","options":["Review narrative tenses","Use 10+ words from the marathon","Write and record your own retelling","Get your MovieLang certificate"],"img":"stone","tip":"Begin the finale","q_uk":"Фінальний урок! Збери все, що вивчив, і розкажи історію своїми словами.","q_pl":"Ostatnia lekcja! Połącz wszystko, czego się nauczyłeś, i opowiedz historię własnymi słowami.","options_uk":["Повторення часів для розповіді","Використай 10+ слів із марафону","Напиши й запиши свій переказ","Отримай сертифікат MovieLang"],"options_pl":["Powtórka czasów narracyjnych","Użyj 10+ słów z maratonu","Napisz i nagraj swoją opowieść","Odbierz certyfikat MovieLang"],"tip_uk":"Почати фінал","tip_pl":"Rozpocznij finał"},{"type":"grammar","q":"Harry looked in the mirror and suddenly felt that the stone ____ into his pocket.","options":["dropped","had dropped","has dropped","was drop"],"answer":1,"tip":"Earlier past event → had dropped.","img":"stone","tip_uk":"Раніша подія в минулому → had dropped.","tip_pl":"Wcześniejsze zdarzenie w przeszłości → had dropped."},{"type":"grammar","q":"While the teacher ____, Harry was thinking about his mother.","options":["talked","was talking","has talked","talks"],"answer":1,"tip":"Background action → Past Continuous.","tip_uk":"Фонова дія → Past Continuous.","tip_pl":"Czynność w tle → Past Continuous."},{"type":"match","q":"Review: match the grammar to the example.","options":["Past Perfect=had already left","Second conditional=If I were you","Passive=was delivered by owl","Reported speech=He said he was tired","Wish=I wish I knew"],"tip":"Everything you practised in 16 lessons!","tip_uk":"Усе, що ти тренував за 16 уроків!","tip_pl":"Wszystko, co ćwiczyłeś przez 16 lekcji!"},{"type":"quiz","q":"Which school house wins the cup at the end?","options":["The house of the brave","The house of the wise","The house of the loyal","The house of the cunning"],"answer":0,"tip":"Last-minute points for courage and friendship.","tip_uk":"Останні бали — за сміливість і дружбу.","tip_pl":"Ostatnie punkty — za odwagę i przyjaźń."},{"type":"tf","q":"Harry goes back to his aunt and uncle for the summer.","options":["True","False"],"answer":0,"tip":"But now he knows who he really is.","tip_uk":"Але тепер він знає, хто він насправді.","tip_pl":"Ale teraz wie, kim naprawdę jest."},{"type":"speaking","q":"Final speaking. Repeat: This story taught me that friendship and courage matter more than anything.","say":"This story taught me that friendship and courage matter more than anything.","tip":"Use this as the last line of your retelling.","tip_uk":"Використай це як останнє речення свого переказу.","tip_pl":"Użyj tego jako ostatniego zdania swojej opowieści."},{"type":"final","q":"FINAL PROJECT: Write your favourite scene from the film (100–150 words). Use at least: 2 Past Perfect forms, 1 conditional, 1 passive, and 5 words from the marathon.","answer":100,"tip":"Saved! Your teacher (or you) can review it in your account. Congratulations on finishing the marathon!","tip_uk":"Збережено! Відповідь видно у твоєму кабінеті. Вітаємо із завершенням марафону!","tip_pl":"Zapisano! Odpowiedź znajdziesz na swoim koncie. Gratulacje ukończenia maratonu!"}]}]
+[
+ {
+  "num": 1,
+  "title": "Хлопчик під сходами",
+  "title_pl": "Chłopiec pod schodami",
+  "grammar": "Present Simple vs Present Continuous",
+  "scene": "Звичайний будинок у передмісті. Хлопчик живе в комірчині під сходами, а родина святкує день народження кузена.",
+  "scene_pl": "Zwyczajny dom na przedmieściach. Chłopiec mieszka w komórce pod schodami, a rodzina świętuje urodziny kuzyna.",
+  "tasks": [
+   {
+    "type": "intro",
+    "q": "Welcome to your first MovieLang lesson! In 10 minutes you will step into the opening scenes of the story.",
+    "options": [
+     "Learn 8 words for family life and feelings",
+     "Hear real-speed English and catch key phrases",
+     "Master Present Simple vs Present Continuous in context",
+     "Say your first lines out loud like the characters"
+    ],
+    "img": "stairs",
+    "tip": "Start the free lesson",
+    "q_uk": "Вітаємо на першому уроці MovieLang! За 10 хвилин ти опинишся в перших сценах історії.",
+    "q_pl": "Witaj na pierwszej lekcji MovieLang! W 10 minut przeniesiesz się do pierwszych scen historii.",
+    "options_uk": [
+     "Вивчиш 8 слів про родину й почуття",
+     "Почуєш англійську в реальному темпі",
+     "Опануєш Present Simple і Present Continuous у контексті",
+     "Скажеш перші репліки вголос, як герої"
+    ],
+    "options_pl": [
+     "Poznasz 8 słów o rodzinie i uczuciach",
+     "Usłyszysz angielski w prawdziwym tempie",
+     "Opanujesz Present Simple i Present Continuous w kontekście",
+     "Powiesz pierwsze kwestie na głos jak bohaterowie"
+    ],
+    "tip_uk": "Почати безкоштовний урок",
+    "tip_pl": "Zacznij darmową lekcję"
+   },
+   {
+    "type": "match",
+    "q": "Match the words from the scene with their meanings.",
+    "options": [
+     "cupboard=a small room for storing things",
+     "cousin=your aunt's or uncle's child",
+     "spoiled=given too much, so behaves badly",
+     "ordinary=normal, nothing special",
+     "chores=boring jobs in the house"
+    ],
+    "tip": "These five words describe the world Harry lives in before the magic starts.",
+    "img": "stairs",
+    "tip_uk": "Ці п'ять слів описують світ Гаррі до того, як почалася магія.",
+    "tip_pl": "Te pięć słów opisuje świat Harry'ego, zanim pojawiła się magia.",
+    "options_uk": [
+     "cupboard=комірчина",
+     "cousin=двоюрідний брат",
+     "spoiled=розпещений",
+     "ordinary=звичайний",
+     "chores=хатні обов'язки"
+    ],
+    "options_pl": [
+     "cupboard=komórka",
+     "cousin=kuzyn",
+     "spoiled=rozpieszczony",
+     "ordinary=zwyczajny",
+     "chores=obowiązki domowe"
+    ]
+   },
+   {
+    "type": "vocabulary",
+    "q": "The family wants to look <b>perfectly normal</b>. Which word means the same?",
+    "options": [
+     "ordinary",
+     "strange",
+     "magical",
+     "famous"
+    ],
+    "answer": 0,
+    "tip": "'Ordinary' = normal, typical. The opposite in this story is 'extraordinary'.",
+    "tip_uk": "Ordinary = звичайний. Протилежність у цій історії — extraordinary (надзвичайний).",
+    "tip_pl": "Ordinary = zwyczajny. Przeciwieństwo w tej historii to extraordinary (niezwykły)."
+   },
+   {
+    "type": "listening",
+    "q": "Listen. What is the aunt asking Harry to do?",
+    "options": [
+     "Wake up and make breakfast",
+     "Go to school early",
+     "Clean his cousin's room",
+     "Open the presents"
+    ],
+    "answer": 0,
+    "tip": "'Get up' and 'cook' are typical morning chores. Notice how fast the order sounds!",
+    "say": "Up! Get up now and come and cook the breakfast. And don't burn anything today.",
+    "tip_uk": "Get up (вставай) і cook (готуй) — типові ранкові обов'язки. Зверни увагу, як швидко звучить наказ!",
+    "tip_pl": "Get up (wstawaj) i cook (gotuj) to typowe poranne obowiązki. Zwróć uwagę, jak szybko brzmi polecenie!"
+   },
+   {
+    "type": "grammar",
+    "q": "Every morning Harry ____ breakfast for the whole family.",
+    "options": [
+     "makes",
+     "is making",
+     "make",
+     "made"
+    ],
+    "answer": 0,
+    "tip": "A routine or habit → Present Simple: he makes. Signal words: every morning, usually, always.",
+    "tip_uk": "Звичка або рутина → Present Simple: he makes. Слова-сигнали: every morning, usually, always.",
+    "tip_pl": "Nawyk lub rutyna → Present Simple: he makes. Słowa-sygnały: every morning, usually, always."
+   },
+   {
+    "type": "grammar",
+    "q": "Look! Dudley ____ his birthday presents and he isn't happy.",
+    "options": [
+     "counts",
+     "is counting",
+     "count",
+     "has count"
+    ],
+    "answer": 1,
+    "tip": "'Look!' shows an action happening right now → Present Continuous: is counting.",
+    "tip_uk": "Look! показує дію просто зараз → Present Continuous: is counting.",
+    "tip_pl": "Look! pokazuje czynność dziejącą się teraz → Present Continuous: is counting."
+   },
+   {
+    "type": "order",
+    "q": "Put the words in the right order to describe Harry's life.",
+    "options": [
+     "Harry",
+     "doesn't",
+     "have",
+     "a",
+     "real",
+     "bedroom"
+    ],
+    "tip": "Negative Present Simple: subject + doesn't + base verb.",
+    "tip_uk": "Заперечення в Present Simple: підмет + doesn't + дієслово без закінчення.",
+    "tip_pl": "Przeczenie w Present Simple: podmiot + doesn't + czasownik w formie podstawowej."
+   },
+   {
+    "type": "type",
+    "q": "Type the missing word: Harry sleeps in a small cupboard ____ the stairs.",
+    "options": [
+     "under",
+     "beneath",
+     "below"
+    ],
+    "tip": "Preposition of place: under / beneath the stairs.",
+    "tip_uk": "Прийменник місця: under / beneath the stairs — під сходами.",
+    "tip_pl": "Przyimek miejsca: under / beneath the stairs — pod schodami."
+   },
+   {
+    "type": "tf",
+    "q": "Harry's cousin gets fewer presents this year than last year, and he is angry about it.",
+    "options": [
+     "True",
+     "False"
+    ],
+    "answer": 0,
+    "tip": "He counts them and finds there are fewer than last year, so he complains loudly.",
+    "scene": "At breakfast, the cousin counts a big pile of presents.",
+    "tip_uk": "Він рахує подарунки, бачить, що їх менше, ніж торік, і голосно скаржиться.",
+    "tip_pl": "Liczy prezenty, widzi, że jest ich mniej niż w zeszłym roku, i głośno narzeka."
+   },
+   {
+    "type": "speaking",
+    "q": "Repeat the sentence with natural rhythm. Stress the words in CAPITALS: I'm NOT ALLOWED to ask QUESTIONS here.",
+    "say": "I'm not allowed to ask questions here.",
+    "tip": "'Not allowed to' = it is forbidden. Great phrase for talking about rules.",
+    "tip_uk": "Not allowed to = заборонено. Чудова фраза, щоб говорити про правила.",
+    "tip_pl": "Not allowed to = nie wolno. Świetne wyrażenie do mówienia o zasadach."
+   }
+  ],
+  "variants": {
+   "pl": [
+    {
+     "type": "intro",
+     "img": "stairs",
+     "q": "Witaj na pierwszej lekcji! Wchodzisz do zwyczajnego domu, w którym mieszka niezwykły chłopiec.",
+     "q_en": "Welcome to your first Polish lesson! You step into an ordinary house where an extraordinary boy lives.",
+     "q_uk": "Вітаємо на першому уроці польської! Ти заходиш у звичайний дім, де живе незвичайний хлопчик.",
+     "q_pl": "Witaj na pierwszej lekcji! Wchodzisz do zwyczajnego domu, w którym mieszka niezwykły chłopiec.",
+     "options_en": [
+      "Learn 8 Polish words for home and family",
+      "Hear natural-speed Polish",
+      "Use the present tense: mieszkam, mieszka",
+      "Say where things are: pod schodami (preposition + instrumental)"
+     ],
+     "options_uk": [
+      "8 польських слів про дім і родину",
+      "Польська в природному темпі",
+      "Теперішній час: mieszkam, mieszka",
+      "Де що знаходиться: pod schodami (прийменник + орудний відмінок)"
+     ],
+     "options_pl": [
+      "8 słów o domu i rodzinie",
+      "Polski w naturalnym tempie",
+      "Czas teraźniejszy: mieszkam, mieszka",
+      "Gdzie coś jest: pod schodami (przyimek + narzędnik)"
+     ],
+     "tip": "Zaczynamy",
+     "tip_en": "Start the free lesson",
+     "tip_uk": "Почати безкоштовний урок",
+     "tip_pl": "Zacznij darmową lekcję"
+    },
+    {
+     "type": "match",
+     "img": "stairs",
+     "q": "Połącz słowa ze sceny z ich znaczeniem.",
+     "options_en": [
+      "komórka=cupboard, small storeroom",
+      "kuzyn=cousin",
+      "schody=stairs",
+      "ciocia=aunt",
+      "obowiązki=chores, duties"
+     ],
+     "options_uk": [
+      "komórka=комірчина",
+      "kuzyn=двоюрідний брат",
+      "schody=сходи",
+      "ciocia=тітка",
+      "obowiązki=обов'язки"
+     ],
+     "options_pl": [
+      "komórka=małe pomieszczenie na rzeczy",
+      "kuzyn=syn wujka lub cioci",
+      "schody=łączą piętra domu",
+      "ciocia=siostra mamy lub taty",
+      "obowiązki=prace, które musisz wykonać"
+     ],
+     "tip_en": "Komórka is a false friend: here it is a tiny room, not a mobile phone (although Poles say komórka for a phone too!).",
+     "tip_uk": "Komórka — підступне слово: тут це комірчина, хоча в розмові поляки так називають і мобільний телефон.",
+     "tip_pl": "Komórka ma dwa znaczenia: małe pomieszczenie i potocznie telefon komórkowy."
+    },
+    {
+     "type": "vocabulary",
+     "q": "Rodzina chce wyglądać <b>zupełnie normalnie</b>. Które słowo znaczy to samo?",
+     "options": [
+      "zwyczajna",
+      "dziwna",
+      "magiczna",
+      "sławna"
+     ],
+     "answer": 0,
+     "tip_en": "Zwyczajny/zwyczajna = ordinary. The opposite in this story: niezwykły (extraordinary).",
+     "tip_uk": "Zwyczajny/zwyczajna = звичайний. Протилежність у цій історії — niezwykły (надзвичайний).",
+     "tip_pl": "Zwyczajny = normalny, typowy. Przeciwieństwo: niezwykły."
+    },
+    {
+     "type": "listening",
+     "q": "Posłuchaj. Co ciocia każe zrobić Harry'emu?",
+     "options": [
+      "Wstać i zrobić śniadanie",
+      "Iść wcześniej do szkoły",
+      "Posprzątać pokój kuzyna",
+      "Otworzyć prezenty"
+     ],
+     "answer": 0,
+     "say": "Wstawaj! Szybko, zrób śniadanie. I nic dziś nie przypal!",
+     "tip_en": "Wstawaj = get up, zrób śniadanie = make breakfast. Imperatives in Polish often end in -aj or have no ending at all.",
+     "tip_uk": "Wstawaj = вставай, zrób śniadanie = зроби сніданок. Наказовий спосіб у польській часто закінчується на -aj.",
+     "tip_pl": "Wstawaj i zrób to tryb rozkazujący: krótkie, mocne polecenia."
+    },
+    {
+     "type": "grammar",
+     "q": "Harry ____ w komórce pod schodami.",
+     "options": [
+      "mieszka",
+      "mieszkam",
+      "mieszkają",
+      "mieszkać"
+     ],
+     "answer": 0,
+     "tip_en": "Present tense, 3rd person singular (on/ona): mieszka. Ja mieszkam, oni mieszkają, mieszkać is the infinitive.",
+     "tip_uk": "Теперішній час, 3-тя особа однини (on/ona): mieszka. Ja mieszkam, oni mieszkają, mieszkać — інфінітив.",
+     "tip_pl": "On/ona mieszka; ja mieszkam; oni mieszkają."
+    },
+    {
+     "type": "grammar",
+     "q": "Komórka jest pod ____.",
+     "options": [
+      "schodami",
+      "schody",
+      "schodach",
+      "schodów"
+     ],
+     "answer": 0,
+     "tip_en": "Pod (under) + instrumental when it means location: pod schodami, pod stołem, pod łóżkiem.",
+     "tip_uk": "Pod (під) + орудний відмінок, коли йдеться про місце: pod schodami, pod stołem — як і в українській «під сходами».",
+     "tip_pl": "Pod + narzędnik (kim? czym?), gdy mówimy o miejscu: pod schodami, pod stołem."
+    },
+    {
+     "type": "order",
+     "q": "Ułóż zdanie.",
+     "q_en": "Build the sentence: “Dudley gets a lot of presents today.”",
+     "q_uk": "Склади речення: «Дадлі сьогодні отримує багато подарунків.»",
+     "q_pl": "Ułóż zdanie: Dudley dostaje dzisiaj dużo prezentów.",
+     "options": [
+      "Dudley",
+      "dostaje",
+      "dzisiaj",
+      "dużo",
+      "prezentów"
+     ],
+     "tip_en": "After dużo (a lot of) Polish uses the genitive plural: dużo prezentów, dużo listów.",
+     "tip_uk": "Після dużo (багато) йде родовий відмінок множини: dużo prezentów — як «багато подарунків».",
+     "tip_pl": "Po słowie dużo używamy dopełniacza: dużo prezentów."
+    },
+    {
+     "type": "type",
+     "q": "Wpisz brakujące słowo: Dudley jest ____ Harry'ego. (cousin)",
+     "options": [
+      "kuzynem"
+     ],
+     "tip_en": "Być (to be) + noun takes the instrumental: jest kuzynem, jest nauczycielem.",
+     "tip_uk": "Після być (бути) іменник стоїть в орудному: jest kuzynem — «є двоюрідним братом».",
+     "tip_pl": "Być + narzędnik: jest kuzynem, jest uczniem."
+    },
+    {
+     "type": "tf",
+     "q": "Prawda czy fałsz? Harry ma duży, piękny pokój na piętrze.",
+     "options": [
+      "True",
+      "False"
+     ],
+     "answer": 1,
+     "tip_en": "False: he sleeps in the cupboard under the stairs, while Dudley has two rooms.",
+     "tip_uk": "Неправда: він спить у комірчині під сходами, а в Дадлі аж дві кімнати.",
+     "tip_pl": "Fałsz: śpi w komórce pod schodami, a Dudley ma dwa pokoje."
+    },
+    {
+     "type": "speaking",
+     "q": "Powiedz na głos: <i>„Mieszkam w komórce pod schodami.”</i>",
+     "say": "Mieszkam w komórce pod schodami.",
+     "tip_en": "Watch the sounds: sz in mieszkam = English 'sh', ó = 'u'.",
+     "tip_uk": "Зверни увагу: sz у mieszkam читається як «ш», ó — як «у».",
+     "tip_pl": "Uważaj na sz i ó: mieszkam, komórce."
+    }
+   ],
+   "uk": [
+    {
+     "type": "intro",
+     "img": "stairs",
+     "q": "Вітаємо на першому уроці! Ти заходиш у звичайний дім, де живе незвичайний хлопчик.",
+     "q_en": "Welcome to your first Ukrainian lesson! You step into an ordinary house where an extraordinary boy lives.",
+     "q_uk": "Вітаємо на першому уроці! Ти заходиш у звичайний дім, де живе незвичайний хлопчик.",
+     "q_pl": "Witaj na pierwszej lekcji ukraińskiego! Wchodzisz do zwyczajnego domu, w którym mieszka niezwykły chłopiec.",
+     "options_en": [
+      "Learn 8 Ukrainian words for home and family",
+      "Hear natural-speed Ukrainian",
+      "Use the present tense: живу, живе",
+      "Say where things are: під сходами (preposition + instrumental)"
+     ],
+     "options_uk": [
+      "8 слів про дім і родину",
+      "Українська в природному темпі",
+      "Теперішній час: живу, живе",
+      "Де що знаходиться: під сходами (прийменник + орудний відмінок)"
+     ],
+     "options_pl": [
+      "8 ukraińskich słów o domu i rodzinie",
+      "Ukraiński w naturalnym tempie",
+      "Czas teraźniejszy: живу, живе",
+      "Gdzie coś jest: під сходами (przyimek + narzędnik)"
+     ],
+     "tip": "Почати",
+     "tip_en": "Start the free lesson",
+     "tip_uk": "Почати безкоштовний урок",
+     "tip_pl": "Zacznij darmową lekcję"
+    },
+    {
+     "type": "match",
+     "img": "stairs",
+     "q": "З'єднай слова зі сцени з їхнім значенням.",
+     "options_en": [
+      "комірчина=cupboard, small storeroom",
+      "двоюрідний брат=cousin",
+      "сходи=stairs",
+      "тітка=aunt",
+      "обов'язки=chores, duties"
+     ],
+     "options_uk": [
+      "комірчина=маленька кімната для речей",
+      "двоюрідний брат=син дядька або тітки",
+      "сходи=з'єднують поверхи",
+      "тітка=сестра мами чи тата",
+      "обов'язки=справи, які треба зробити"
+     ],
+     "options_pl": [
+      "комірчина=komórka",
+      "двоюрідний брат=kuzyn",
+      "сходи=schody",
+      "тітка=ciocia",
+      "обов'язки=obowiązki"
+     ],
+     "tip_en": "Двоюрідний брат literally means 'brother of the second degree': that's how Ukrainian says cousin.",
+     "tip_uk": "Двоюрідний брат — дослівно «брат другого ступеня».",
+     "tip_pl": "Двоюрідний брат to dosłownie „brat drugiego stopnia”: tak po ukraińsku mówi się kuzyn."
+    },
+    {
+     "type": "vocabulary",
+     "q": "Родина хоче виглядати <b>цілком нормально</b>. Яке слово означає те саме?",
+     "options": [
+      "звичайна",
+      "дивна",
+      "чарівна",
+      "відома"
+     ],
+     "answer": 0,
+     "tip_en": "Звичайний/звичайна = ordinary. The opposite in this story: незвичайний (extraordinary).",
+     "tip_uk": "Звичайний = нормальний, типовий. Протилежність: незвичайний.",
+     "tip_pl": "Звичайний = zwyczajny. Przeciwieństwo w tej historii: незвичайний (niezwykły)."
+    },
+    {
+     "type": "listening",
+     "q": "Послухай. Що тітка наказує Гаррі зробити?",
+     "options": [
+      "Встати і приготувати сніданок",
+      "Піти раніше до школи",
+      "Прибрати кімнату кузена",
+      "Відкрити подарунки"
+     ],
+     "answer": 0,
+     "say": "Вставай! Швидко готуй сніданок. І нічого сьогодні не спали!",
+     "tip_en": "Вставай = get up, готуй = cook. Ukrainian imperatives often end in -й.",
+     "tip_uk": "Вставай, готуй, не спали — наказовий спосіб: короткі, різкі накази.",
+     "tip_pl": "Вставай = wstawaj, готуй = gotuj. Ukraiński tryb rozkazujący często kończy się na -й, jak polskie -aj."
+    },
+    {
+     "type": "grammar",
+     "q": "Гаррі ____ в комірчині під сходами.",
+     "options": [
+      "живе",
+      "живу",
+      "живуть",
+      "жити"
+     ],
+     "answer": 0,
+     "tip_en": "Present tense, 3rd person singular (він/вона): живе. Я живу, вони живуть, жити is the infinitive.",
+     "tip_uk": "Він/вона живе; я живу; вони живуть.",
+     "tip_pl": "Czas teraźniejszy, 3. osoba (він/вона): живе. Я живу, вони живуть, жити to bezokolicznik."
+    },
+    {
+     "type": "grammar",
+     "q": "Комірчина під ____.",
+     "options": [
+      "сходами",
+      "сходи",
+      "сходах",
+      "сходів"
+     ],
+     "answer": 0,
+     "tip_en": "Під (under) + instrumental for location: під сходами, під столом, під ліжком.",
+     "tip_uk": "Під + орудний відмінок (ким? чим?), коли йдеться про місце: під сходами, під столом.",
+     "tip_pl": "Під + narzędnik, tak jak po polsku: під сходами = pod schodami."
+    },
+    {
+     "type": "order",
+     "q": "Склади речення.",
+     "q_en": "Build the sentence: “Dudley gets a lot of presents today.”",
+     "q_uk": "Склади речення: Дадлі сьогодні отримує багато подарунків.",
+     "q_pl": "Ułóż zdanie: „Dudley dostaje dzisiaj dużo prezentów.”",
+     "options": [
+      "Дадлі",
+      "сьогодні",
+      "отримує",
+      "багато",
+      "подарунків"
+     ],
+     "tip_en": "After багато (a lot of) Ukrainian uses the genitive plural: багато подарунків, багато листів.",
+     "tip_uk": "Після «багато» — родовий відмінок множини: багато подарунків.",
+     "tip_pl": "Po багато (dużo) używamy dopełniacza, jak po polsku: багато подарунків = dużo prezentów."
+    },
+    {
+     "type": "type",
+     "q": "Впиши пропущене слово: Дадлі — ____ брат Гаррі. (cousin)",
+     "options": [
+      "двоюрідний"
+     ],
+     "tip_en": "Двоюрідний брат = male cousin, двоюрідна сестра = female cousin.",
+     "tip_uk": "Двоюрідний брат, двоюрідна сестра.",
+     "tip_pl": "Двоюрідний брат = kuzyn, двоюрідна сестра = kuzynka."
+    },
+    {
+     "type": "tf",
+     "q": "Правда чи неправда? Гаррі має велику гарну кімнату на другому поверсі.",
+     "options": [
+      "True",
+      "False"
+     ],
+     "answer": 1,
+     "tip_en": "False: he sleeps in the cupboard under the stairs, while Dudley has two rooms.",
+     "tip_uk": "Неправда: він спить у комірчині під сходами, а в Дадлі аж дві кімнати.",
+     "tip_pl": "Fałsz: śpi w komórce pod schodami, a Dudley ma dwa pokoje."
+    },
+    {
+     "type": "speaking",
+     "q": "Скажи вголос: <i>«Я живу в комірчині під сходами.»</i>",
+     "say": "Я живу в комірчині під сходами.",
+     "tip_en": "Watch the sounds: и is a short 'i' like in 'sit', і is 'ee', х is like German 'ch'.",
+     "tip_uk": "Чітко вимовляй «и» та «і»: комірчині, сходами.",
+     "tip_pl": "Uważaj: и brzmi jak polskie y, і jak polskie i, х jak ch."
+    }
+   ],
+   "pl_grammar": "Czas teraźniejszy · pod + narzędnik",
+   "uk_grammar": "Теперішній час · під + орудний відмінок"
+  }
+ },
+ {
+  "num": 2,
+  "title": "Пригода в зоопарку",
+  "title_pl": "Przygoda w zoo",
+  "grammar": "Past Simple vs Past Continuous",
+  "scene": "Родина бере хлопчика до зоопарку. Біля скла з великою змією стається щось дивне: скло раптом зникає.",
+  "scene_pl": "Rodzina zabiera chłopca do zoo. Przy szybie z wielkim wężem dzieje się coś dziwnego: szkło nagle znika.",
+  "tasks": [
+   {
+    "type": "match",
+    "q": "Match the zoo words.",
+    "options": [
+     "reptile house=building for snakes and lizards",
+     "glass=the clear wall of a tank",
+     "to hiss=to make a long 'sss' sound",
+     "to vanish=to disappear suddenly",
+     "to escape=to get free"
+    ],
+    "tip": "You need these to retell the zoo scene.",
+    "img": "snake",
+    "tip_uk": "Ці слова знадобляться, щоб переказати сцену в зоопарку.",
+    "tip_pl": "Te słowa przydadzą się do opowiedzenia sceny w zoo.",
+    "options_uk": [
+     "reptile house=тераріум",
+     "glass=скло",
+     "to hiss=шипіти",
+     "to vanish=зникнути",
+     "to escape=втекти"
+    ],
+    "options_pl": [
+     "reptile house=terrarium",
+     "glass=szkło",
+     "to hiss=syczeć",
+     "to vanish=zniknąć",
+     "to escape=uciec"
+    ]
+   },
+   {
+    "type": "grammar",
+    "q": "Harry ____ to the snake when the glass suddenly disappeared.",
+    "options": [
+     "talked",
+     "was talking",
+     "talks",
+     "has talked"
+    ],
+    "answer": 1,
+    "tip": "Longer background action (was talking) interrupted by a short event (disappeared).",
+    "img": "snake",
+    "tip_uk": "Тривала фонова дія (was talking) перервана короткою подією (disappeared).",
+    "tip_pl": "Dłuższa czynność w tle (was talking) przerwana krótkim zdarzeniem (disappeared)."
+   },
+   {
+    "type": "grammar",
+    "q": "While Dudley was pressing his face to the glass, the snake ____ out.",
+    "options": [
+     "was sliding",
+     "slid",
+     "slides",
+     "has slid"
+    ],
+    "answer": 1,
+    "tip": "Short completed event in the past → Past Simple: slid.",
+    "tip_uk": "Коротка завершена подія в минулому → Past Simple: slid.",
+    "tip_pl": "Krótkie zakończone zdarzenie w przeszłości → Past Simple: slid."
+   },
+   {
+    "type": "listening",
+    "q": "Listen. Where is the snake originally from, according to the sign?",
+    "options": [
+     "Brazil",
+     "Egypt",
+     "Australia",
+     "India"
+    ],
+    "answer": 0,
+    "tip": "The sign says it was bred in the zoo, but the species comes from Brazil.",
+    "say": "This snake was born here at the zoo, but its family originally comes from Brazil.",
+    "tip_uk": "Змія народилася в зоопарку, але її вид походить з Бразилії.",
+    "tip_pl": "Wąż urodził się w zoo, ale jego gatunek pochodzi z Brazylii."
+   },
+   {
+    "type": "type",
+    "q": "Past Simple of 'fall': Dudley ____ into the water.",
+    "options": [
+     "fell"
+    ],
+    "tip": "fall → fell → fallen (irregular).",
+    "tip_uk": "fall → fell → fallen (неправильне дієслово).",
+    "tip_pl": "fall → fell → fallen (czasownik nieregularny)."
+   },
+   {
+    "type": "tf",
+    "q": "Harry knew he had magic powers at the zoo.",
+    "options": [
+     "True",
+     "False"
+    ],
+    "answer": 1,
+    "tip": "He had no idea. He only realised later that strange things happened around him.",
+    "tip_uk": "Він гадки не мав. Лише згодом зрозумів, що навколо нього стаються дивні речі.",
+    "tip_pl": "Nie miał pojęcia. Dopiero później zrozumiał, że wokół niego dzieją się dziwne rzeczy."
+   },
+   {
+    "type": "order",
+    "q": "Order the words to make a Past Continuous question.",
+    "options": [
+     "What",
+     "were",
+     "you",
+     "doing",
+     "when",
+     "it",
+     "happened"
+    ],
+    "tip": "Question: What + were/was + subject + -ing?",
+    "tip_uk": "Питання: What + were/was + підмет + дієслово з -ing?",
+    "tip_pl": "Pytanie: What + were/was + podmiot + czasownik z -ing?"
+   },
+   {
+    "type": "speaking",
+    "q": "Tell it like a story. Repeat: I was just standing there when the glass disappeared!",
+    "say": "I was just standing there when the glass disappeared!",
+    "tip": "Past Continuous + when + Past Simple = perfect storytelling pattern.",
+    "tip_uk": "Past Continuous + when + Past Simple — ідеальна схема для розповіді.",
+    "tip_pl": "Past Continuous + when + Past Simple — idealny schemat do opowiadania."
+   }
+  ]
+ },
+ {
+  "num": 3,
+  "title": "Листи нізвідки",
+  "title_pl": "Listy znikąd",
+  "grammar": "Passive voice (past)",
+  "scene": "Хлопчику починають приходити листи. Дядько їх знищує, але наступного дня листів стає дедалі більше.",
+  "scene_pl": "Do chłopca zaczynają przychodzić listy. Wuj je niszczy, ale następnego dnia listów jest coraz więcej.",
+  "tasks": [
+   {
+    "type": "vocabulary",
+    "q": "A letter is closed with red wax. What is the wax called?",
+    "options": [
+     "a seal",
+     "a stamp",
+     "a ribbon",
+     "a label"
+    ],
+    "answer": 0,
+    "tip": "A seal is wax pressed with a symbol. A stamp is what you pay postage with.",
+    "img": "letter",
+    "tip_uk": "Seal — це воскова печатка з символом. Stamp — поштова марка.",
+    "tip_pl": "Seal to woskowa pieczęć z symbolem. Stamp to znaczek pocztowy."
+   },
+   {
+    "type": "match",
+    "q": "Match the verbs.",
+    "options": [
+     "to deliver=to bring post to a place",
+     "to tear up=to rip into pieces",
+     "to hide=to put where no one can see",
+     "to board up=to cover with wooden planks",
+     "to flood=to fill completely"
+    ],
+    "tip": "Uncle tries everything: he hides, tears up and even boards up the letterbox.",
+    "img": "letter",
+    "tip_uk": "Дядько робить усе: ховає, рве і навіть забиває поштову скриньку дошками.",
+    "tip_pl": "Wuj próbuje wszystkiego: chowa, drze, a nawet zabija skrzynkę deskami.",
+    "options_uk": [
+     "to deliver=доставити",
+     "to tear up=порвати",
+     "to hide=сховати",
+     "to board up=забити дошками",
+     "to flood=заполонити"
+    ],
+    "options_pl": [
+     "to deliver=dostarczyć",
+     "to tear up=podrzeć",
+     "to hide=schować",
+     "to board up=zabić deskami",
+     "to flood=zalać"
+    ]
+   },
+   {
+    "type": "grammar",
+    "q": "Hundreds of letters ____ through the chimney.",
+    "options": [
+     "were sent",
+     "sent",
+     "was sent",
+     "are send"
+    ],
+    "answer": 0,
+    "tip": "Passive, past, plural: were + past participle (sent).",
+    "tip_uk": "Пасив, минулий час, множина: were + третя форма дієслова (sent).",
+    "tip_pl": "Strona bierna, czas przeszły, liczba mnoga: were + trzecia forma (sent)."
+   },
+   {
+    "type": "grammar",
+    "q": "The first letter ____ by Uncle Vernon before Harry could read it.",
+    "options": [
+     "was taken",
+     "took",
+     "was took",
+     "is taken"
+    ],
+    "answer": 0,
+    "tip": "was + past participle. Take → took → taken.",
+    "tip_uk": "was + третя форма. Take → took → taken.",
+    "tip_pl": "was + trzecia forma. Take → took → taken."
+   },
+   {
+    "type": "type",
+    "q": "Make it passive: Someone delivered the letters by owl. → The letters were ____ by owl.",
+    "options": [
+     "delivered"
+    ],
+    "tip": "were + delivered (past participle).",
+    "tip_uk": "were + delivered (третя форма дієслова).",
+    "tip_pl": "were + delivered (trzecia forma czasownika)."
+   },
+   {
+    "type": "order",
+    "q": "Order the words (passive).",
+    "options": [
+     "The",
+     "house",
+     "was",
+     "filled",
+     "with",
+     "letters"
+    ],
+    "tip": "Subject + was + past participle + with...",
+    "tip_uk": "Підмет + was + третя форма + with...",
+    "tip_pl": "Podmiot + was + trzecia forma + with..."
+   },
+   {
+    "type": "listening",
+    "q": "Listen. Where is the letter addressed to?",
+    "options": [
+     "The cupboard under the stairs",
+     "The smallest bedroom",
+     "The kitchen",
+     "The garden shed"
+    ],
+    "answer": 0,
+    "tip": "The address is so exact that it shows someone knows where Harry sleeps.",
+    "say": "Mr H. Potter, The Cupboard under the Stairs, Number Four.",
+    "tip_uk": "Адреса настільки точна, що хтось явно знає, де спить Гаррі.",
+    "tip_pl": "Adres jest tak dokładny, że ktoś najwyraźniej wie, gdzie śpi Harry."
+   },
+   {
+    "type": "tf",
+    "q": "The family stayed at home until the letters stopped.",
+    "options": [
+     "True",
+     "False"
+    ],
+    "answer": 1,
+    "tip": "They ran away to a hotel and then to a tiny house on a rock in the sea.",
+    "tip_uk": "Вони втекли в готель, а потім у крихітний будиночок на скелі посеред моря.",
+    "tip_pl": "Uciekli do hotelu, a potem do maleńkiego domku na skale pośrodku morza."
+   }
+  ]
+ },
+ {
+  "num": 4,
+  "title": "Хранитель ключів",
+  "title_pl": "Strażnik kluczy",
+  "grammar": "Reported speech",
+  "scene": "Штормова ніч на острові. Велетень вибиває двері, приносить торт і розповідає хлопчику правду про його батьків.",
+  "scene_pl": "Burzowa noc na wyspie. Olbrzym wyważa drzwi, przynosi tort i opowiada chłopcu prawdę o jego rodzicach.",
+  "tasks": [
+   {
+    "type": "intro",
+    "q": "A giant knocks on the door at midnight. Today you learn to report what people said.",
+    "options": [
+     "Report statements: he said that…",
+     "Report questions: she asked if…",
+     "Shift tenses back correctly"
+    ],
+    "img": "cake",
+    "tip": "Let's go",
+    "q_uk": "Опівночі у двері стукає велетень. Сьогодні вчимося переказувати чужі слова.",
+    "q_pl": "O północy do drzwi puka olbrzym. Dziś uczymy się przekazywać cudze słowa.",
+    "options_uk": [
+     "Твердження: he said that…",
+     "Питання: she asked if…",
+     "Правильно зсувати часи"
+    ],
+    "options_pl": [
+     "Zdania twierdzące: he said that…",
+     "Pytania: she asked if…",
+     "Poprawne przesuwanie czasów"
+    ],
+    "tip_uk": "Поїхали",
+    "tip_pl": "Zaczynamy"
+   },
+   {
+    "type": "grammar",
+    "q": "Hagrid: 'You are a wizard.' → Hagrid told Harry that he ____ a wizard.",
+    "options": [
+     "is",
+     "was",
+     "were",
+     "has been"
+    ],
+    "answer": 1,
+    "tip": "Reported speech: present → past (are → was).",
+    "img": "cake",
+    "tip_uk": "Непряма мова: теперішній час → минулий (are → was).",
+    "tip_pl": "Mowa zależna: czas teraźniejszy → przeszły (are → was)."
+   },
+   {
+    "type": "grammar",
+    "q": "Harry: 'Are you sure?' → Harry asked if Hagrid ____ sure.",
+    "options": [
+     "is",
+     "was",
+     "were being",
+     "be"
+    ],
+    "answer": 1,
+    "tip": "Yes/no questions: asked + if/whether + subject + past verb.",
+    "tip_uk": "Питання так/ні: asked + if/whether + підмет + дієслово в минулому.",
+    "tip_pl": "Pytania tak/nie: asked + if/whether + podmiot + czasownik w przeszłym."
+   },
+   {
+    "type": "type",
+    "q": "Uncle: 'I won't pay for that school.' → Uncle said that he ____ pay for that school.",
+    "options": [
+     "wouldn't",
+     "would not"
+    ],
+    "tip": "will → would; won't → wouldn't.",
+    "tip_uk": "will → would; won't → wouldn't.",
+    "tip_pl": "will → would; won't → wouldn't."
+   },
+   {
+    "type": "match",
+    "q": "Match the reporting verbs.",
+    "options": [
+     "to admit=to agree something is true, unwillingly",
+     "to promise=to say you will surely do it",
+     "to refuse=to say you won't do it",
+     "to explain=to make something clear",
+     "to warn=to say something bad may happen"
+    ],
+    "tip": "Better than just 'said' — these verbs make your stories vivid.",
+    "tip_uk": "Краще, ніж просто said: ці дієслова роблять розповідь живою.",
+    "tip_pl": "Lepsze niż samo said: te czasowniki ożywiają opowieść.",
+    "options_uk": [
+     "to admit=визнати",
+     "to promise=пообіцяти",
+     "to refuse=відмовитися",
+     "to explain=пояснити",
+     "to warn=попередити"
+    ],
+    "options_pl": [
+     "to admit=przyznać",
+     "to promise=obiecać",
+     "to refuse=odmówić",
+     "to explain=wyjaśnić",
+     "to warn=ostrzec"
+    ]
+   },
+   {
+    "type": "order",
+    "q": "Order the reported question.",
+    "options": [
+     "He",
+     "asked",
+     "who",
+     "his",
+     "parents",
+     "really",
+     "were"
+    ],
+    "tip": "In reported questions, NO question word order: who + subject + verb.",
+    "tip_uk": "У непрямих питаннях НЕМАЄ питального порядку слів: who + підмет + дієслово.",
+    "tip_pl": "W pytaniach zależnych NIE MA szyku pytającego: who + podmiot + czasownik."
+   },
+   {
+    "type": "listening",
+    "q": "Listen. What did Hagrid bake for Harry?",
+    "options": [
+     "A birthday cake",
+     "Bread",
+     "Cookies",
+     "A pie"
+    ],
+    "answer": 0,
+    "tip": "It's a little squashed, but made with love.",
+    "say": "I made you a birthday cake. It got a bit squashed on the way, but it should still taste good.",
+    "tip_uk": "Трохи прим'ятий, але зроблений з любов'ю.",
+    "tip_pl": "Trochę zgnieciony, ale zrobiony z miłością."
+   },
+   {
+    "type": "speaking",
+    "q": "Report it! Repeat: He told me that I had been famous all my life.",
+    "say": "He told me that I had been famous all my life.",
+    "tip": "Past perfect in reported speech: had been.",
+    "tip_uk": "Past Perfect у непрямій мові: had been.",
+    "tip_pl": "Past Perfect w mowie zależnej: had been."
+   }
+  ]
+ },
+ {
+  "num": 5,
+  "title": "Чарівна вулиця покупок",
+  "title_pl": "Magiczna ulica zakupów",
+  "grammar": "Quantifiers: too / enough / a lot of / few",
+  "scene": "Велетень веде хлопчика на приховану вулицю з крамницями: банк, мантії, книги, котли.",
+  "scene_pl": "Olbrzym prowadzi chłopca na ukrytą ulicę ze sklepami: bank, szaty, książki, kociołki.",
+  "tasks": [
+   {
+    "type": "vocabulary",
+    "q": "A magical street full of shops. A place where money is kept safely is a…",
+    "options": [
+     "bank",
+     "market",
+     "library",
+     "pharmacy"
+    ],
+    "answer": 0,
+    "tip": "The bank is run by goblins and has very deep vaults.",
+    "img": "alley",
+    "tip_uk": "Банком керують гобліни, а його сховища дуже глибокі.",
+    "tip_pl": "Bankiem zarządzają gobliny, a jego skarbce są bardzo głębokie."
+   },
+   {
+    "type": "match",
+    "q": "Shopping list: match.",
+    "options": [
+     "robes=long clothes for school",
+     "cauldron=a big pot for potions",
+     "quill=a feather pen",
+     "parchment=old-style paper",
+     "vault=a safe room in a bank"
+    ],
+    "tip": "You will see all of these at the school too.",
+    "tip_uk": "Усе це ти побачиш і в школі.",
+    "tip_pl": "Wszystko to zobaczysz także w szkole.",
+    "options_uk": [
+     "robes=мантії",
+     "cauldron=котел",
+     "quill=перо для письма",
+     "parchment=пергамент",
+     "vault=сховище"
+    ],
+    "options_pl": [
+     "robes=szaty",
+     "cauldron=kociołek",
+     "quill=pióro gęsie",
+     "parchment=pergamin",
+     "vault=skarbiec"
+    ]
+   },
+   {
+    "type": "grammar",
+    "q": "Harry has never had ____ money to buy what he wants.",
+    "options": [
+     "enough",
+     "too",
+     "too much",
+     "a few"
+    ],
+    "answer": 0,
+    "tip": "enough + noun = the right amount. 'Too' needs an adjective: too expensive.",
+    "tip_uk": "enough + іменник = достатньо. Too вживаємо з прикметником: too expensive.",
+    "tip_pl": "enough + rzeczownik = wystarczająco. Too łączymy z przymiotnikiem: too expensive."
+   },
+   {
+    "type": "grammar",
+    "q": "The robes were ____ long, so the tailor shortened them.",
+    "options": [
+     "enough",
+     "too",
+     "much",
+     "few"
+    ],
+    "answer": 1,
+    "tip": "too + adjective = more than needed.",
+    "tip_uk": "too + прикметник = більше, ніж потрібно.",
+    "tip_pl": "too + przymiotnik = więcej, niż trzeba."
+   },
+   {
+    "type": "type",
+    "q": "Complete: There were so ____ people in the street that Harry got lost for a moment.",
+    "options": [
+     "many"
+    ],
+    "tip": "many + countable plural (people).",
+    "tip_uk": "many + злічувані іменники в множині (people).",
+    "tip_pl": "many + rzeczowniki policzalne w liczbie mnogiej (people)."
+   },
+   {
+    "type": "tf",
+    "q": "Harry discovered that his parents had left him nothing.",
+    "options": [
+     "True",
+     "False"
+    ],
+    "answer": 1,
+    "tip": "There was a vault full of gold coins waiting for him.",
+    "tip_uk": "На нього чекало сховище, повне золотих монет.",
+    "tip_pl": "Czekał na niego skarbiec pełen złotych monet."
+   },
+   {
+    "type": "order",
+    "q": "Order the words.",
+    "options": [
+     "We",
+     "don't",
+     "have",
+     "enough",
+     "time",
+     "to",
+     "buy",
+     "everything"
+    ],
+    "tip": "enough + noun + to-infinitive.",
+    "tip_uk": "enough + іменник + to + дієслово.",
+    "tip_pl": "enough + rzeczownik + to + czasownik."
+   },
+   {
+    "type": "speaking",
+    "q": "Shopping English. Repeat: Excuse me, how much is this? It's a bit too expensive for me.",
+    "say": "Excuse me, how much is this? It's a bit too expensive for me.",
+    "tip": "A polite, useful phrase for real shops.",
+    "tip_uk": "Ввічлива і корисна фраза для справжніх магазинів.",
+    "tip_pl": "Uprzejme i przydatne zdanie do prawdziwych sklepów."
+   }
+  ]
+ },
+ {
+  "num": 6,
+  "title": "Паличка обирає чарівника",
+  "title_pl": "Różdżka wybiera czarodzieja",
+  "grammar": "Relative clauses (who / which / where / whose)",
+  "scene": "Старовинна крамниця паличок. Хлопчик пробує кілька, доки одна не обирає його.",
+  "scene_pl": "Stary sklep z różdżkami. Chłopiec próbuje kilku, aż jedna wybiera jego.",
+  "tasks": [
+   {
+    "type": "grammar",
+    "q": "This is the shop ____ every young wizard buys a wand.",
+    "options": [
+     "which",
+     "where",
+     "who",
+     "whose"
+    ],
+    "answer": 1,
+    "tip": "Place → where.",
+    "img": "wand",
+    "tip_uk": "Місце → where.",
+    "tip_pl": "Miejsce → where."
+   },
+   {
+    "type": "grammar",
+    "q": "The wand ____ chose Harry has a very special core.",
+    "options": [
+     "who",
+     "which",
+     "where",
+     "whose"
+    ],
+    "answer": 1,
+    "tip": "Thing → which / that.",
+    "tip_uk": "Предмет → which / that.",
+    "tip_pl": "Rzecz → which / that."
+   },
+   {
+    "type": "grammar",
+    "q": "The old man ____ shop is full of boxes remembers every wand he has sold.",
+    "options": [
+     "who",
+     "which",
+     "whose",
+     "that"
+    ],
+    "answer": 2,
+    "tip": "Possession → whose (his shop → whose shop).",
+    "tip_uk": "Приналежність → whose (his shop → whose shop).",
+    "tip_pl": "Przynależność → whose (his shop → whose shop)."
+   },
+   {
+    "type": "type",
+    "q": "Complete with one word: Harry is the boy ____ survived.",
+    "options": [
+     "who",
+     "that"
+    ],
+    "tip": "Person → who / that.",
+    "tip_uk": "Людина → who / that.",
+    "tip_pl": "Osoba → who / that."
+   },
+   {
+    "type": "match",
+    "q": "Match the descriptions.",
+    "options": [
+     "wand-maker=a person who makes wands",
+     "dusty=covered with fine dirt",
+     "core=the magic material inside",
+     "curious=strange, surprising",
+     "brother wand=a wand which shares the same core"
+    ],
+    "tip": "Notice how definitions themselves use relative clauses!",
+    "tip_uk": "Зверни увагу: самі пояснення теж мають підрядні речення!",
+    "tip_pl": "Zauważ: same definicje też zawierają zdania względne!",
+    "options_uk": [
+     "wand-maker=майстер паличок",
+     "dusty=запилений",
+     "core=серцевина",
+     "curious=дивовижний",
+     "brother wand=паличка-близнюк"
+    ],
+    "options_pl": [
+     "wand-maker=wytwórca różdżek",
+     "dusty=zakurzony",
+     "core=rdzeń",
+     "curious=zadziwiający",
+     "brother wand=różdżka bliźniacza"
+    ]
+   },
+   {
+    "type": "order",
+    "q": "Make one sentence with a relative clause.",
+    "options": [
+     "The",
+     "owl",
+     "which",
+     "Hagrid",
+     "bought",
+     "is",
+     "snowy",
+     "white"
+    ],
+    "tip": "Relative clause in the middle: The owl (which Hagrid bought) is…",
+    "tip_uk": "Підрядне речення посередині: The owl (which Hagrid bought) is…",
+    "tip_pl": "Zdanie względne w środku: The owl (which Hagrid bought) is…"
+   },
+   {
+    "type": "tf",
+    "q": "The first wand Harry tried was perfect for him.",
+    "options": [
+     "True",
+     "False"
+    ],
+    "answer": 1,
+    "tip": "Several wands caused chaos before the right one chose him.",
+    "tip_uk": "Кілька паличок наробили хаосу, перш ніж правильна обрала його.",
+    "tip_pl": "Kilka różdżek narobiło chaosu, zanim właściwa wybrała jego."
+   },
+   {
+    "type": "speaking",
+    "q": "Describe like a pro: Repeat: It's the kind of place where you feel the magic in the air.",
+    "say": "It's the kind of place where you feel the magic in the air.",
+    "tip": "'The kind of place where…' is a great B2 phrase.",
+    "tip_uk": "The kind of place where… — чудова фраза рівня B2.",
+    "tip_pl": "The kind of place where… to świetne wyrażenie na poziomie B2."
+   }
+  ]
+ },
+ {
+  "num": 7,
+  "title": "Платформа дев'ять і три чверті",
+  "title_pl": "Peron dziewięć i trzy czwarte",
+  "grammar": "Modals of deduction: must / might / can't",
+  "scene": "Вокзал у Лондоні. Хлопчик шукає неіснуючу платформу, а потім у поїзді знайомиться з новим другом.",
+  "scene_pl": "Dworzec w Londynie. Chłopiec szuka nieistniejącego peronu, a potem w pociągu poznaje nowego przyjaciela.",
+  "tasks": [
+   {
+    "type": "intro",
+    "q": "Platform nine and three-quarters doesn't exist… or does it? Today: guessing and deducing.",
+    "options": [
+     "must = I'm almost sure it's true",
+     "can't = I'm sure it's impossible",
+     "might / could = maybe"
+    ],
+    "img": "train",
+    "tip": "Board the train",
+    "q_uk": "Платформи дев'ять і три чверті не існує… чи існує? Сьогодні — здогадки й висновки.",
+    "q_pl": "Peron dziewięć i trzy czwarte nie istnieje… a może jednak? Dziś: przypuszczenia i wnioski.",
+    "options_uk": [
+     "must = я майже впевнений",
+     "can't = точно неможливо",
+     "might / could = можливо"
+    ],
+    "options_pl": [
+     "must = jestem prawie pewien",
+     "can't = na pewno niemożliwe",
+     "might / could = może"
+    ],
+    "tip_uk": "Сісти в поїзд",
+    "tip_pl": "Wsiadaj do pociągu"
+   },
+   {
+    "type": "grammar",
+    "q": "There's no platform between 9 and 10. It ____ be real!",
+    "options": [
+     "must",
+     "can't",
+     "should",
+     "has to"
+    ],
+    "answer": 1,
+    "tip": "Deduction that something is impossible → can't be.",
+    "img": "train",
+    "tip_uk": "Висновок, що щось неможливо → can't be.",
+    "tip_pl": "Wniosek, że coś jest niemożliwe → can't be."
+   },
+   {
+    "type": "grammar",
+    "q": "That family is pushing trolleys with owls. They ____ be going to the same school.",
+    "options": [
+     "must",
+     "can't",
+     "mustn't",
+     "needn't"
+    ],
+    "answer": 0,
+    "tip": "Strong evidence → must be.",
+    "tip_uk": "Сильні докази → must be.",
+    "tip_pl": "Mocne dowody → must be."
+   },
+   {
+    "type": "grammar",
+    "q": "Ron isn't sure about the sweets: 'This one ____ taste like earwax. Be careful!'",
+    "options": [
+     "might",
+     "must",
+     "can't",
+     "has"
+    ],
+    "answer": 0,
+    "tip": "Possibility → might.",
+    "tip_uk": "Можливість → might.",
+    "tip_pl": "Możliwość → might."
+   },
+   {
+    "type": "type",
+    "q": "Complete: The trolley lady sells sweets, so she ____ be very popular with the students. (strong guess)",
+    "options": [
+     "must"
+    ],
+    "tip": "must = logical certainty.",
+    "tip_uk": "must = логічна впевненість.",
+    "tip_pl": "must = logiczna pewność."
+   },
+   {
+    "type": "match",
+    "q": "Travel vocabulary.",
+    "options": [
+     "platform=where you get on a train",
+     "trolley=a cart for luggage",
+     "compartment=a small room in a train",
+     "luggage=bags and cases",
+     "ticket inspector=checks your ticket"
+    ],
+    "tip": "Useful for real trips too!",
+    "tip_uk": "Знадобиться і в справжніх подорожах!",
+    "tip_pl": "Przyda się też w prawdziwych podróżach!",
+    "options_uk": [
+     "platform=платформа",
+     "trolley=візок",
+     "compartment=купе",
+     "luggage=багаж",
+     "ticket inspector=контролер"
+    ],
+    "options_pl": [
+     "platform=peron",
+     "trolley=wózek",
+     "compartment=przedział",
+     "luggage=bagaż",
+     "ticket inspector=konduktor"
+    ]
+   },
+   {
+    "type": "listening",
+    "q": "Listen. What does Ron ask?",
+    "options": [
+     "Is anyone sitting there?",
+     "Where is the train?",
+     "Do you have food?",
+     "What time is it?"
+    ],
+    "answer": 0,
+    "tip": "Polite way to ask for a seat.",
+    "say": "Excuse me, do you mind? Is anyone sitting there? Everywhere else is full.",
+    "tip_uk": "Ввічливий спосіб спитати про вільне місце.",
+    "tip_pl": "Uprzejmy sposób, by zapytać o wolne miejsce."
+   },
+   {
+    "type": "speaking",
+    "q": "Deduce out loud. Repeat: You must be joking! That can't be the right platform.",
+    "say": "You must be joking! That can't be the right platform.",
+    "tip": "Natural reaction + deduction.",
+    "tip_uk": "Природна реакція + висновок.",
+    "tip_pl": "Naturalna reakcja + wniosek."
+   }
+  ]
+ },
+ {
+  "num": 8,
+  "title": "Капелюх розподілу",
+  "title_pl": "Tiara przydziału",
+  "grammar": "Second conditional",
+  "scene": "Великий зал зі свічками під стелею. Старий капелюх вирішує, до якого гуртожитку піде кожен учень.",
+  "scene_pl": "Wielka Sala ze świecami pod sufitem. Stara tiara decyduje, do którego domu trafi każdy uczeń.",
+  "tasks": [
+   {
+    "type": "match",
+    "q": "Personality adjectives.",
+    "options": [
+     "brave=not afraid of danger",
+     "loyal=always supports friends",
+     "ambitious=really wants to succeed",
+     "wise=clever and sensible",
+     "cunning=clever in a tricky way"
+    ],
+    "tip": "Each school house values different qualities.",
+    "img": "hat",
+    "tip_uk": "Кожен гуртожиток цінує різні якості.",
+    "tip_pl": "Każdy dom ceni inne cechy.",
+    "options_uk": [
+     "brave=хоробрий",
+     "loyal=вірний",
+     "ambitious=амбітний",
+     "wise=мудрий",
+     "cunning=хитрий"
+    ],
+    "options_pl": [
+     "brave=odważny",
+     "loyal=lojalny",
+     "ambitious=ambitny",
+     "wise=mądry",
+     "cunning=przebiegły"
+    ]
+   },
+   {
+    "type": "grammar",
+    "q": "If I ____ the Sorting Hat, I would put Harry in the bravest house.",
+    "options": [
+     "am",
+     "were",
+     "will be",
+     "had been"
+    ],
+    "answer": 1,
+    "tip": "Second conditional: If + past (were) + would.",
+    "img": "hat",
+    "tip_uk": "Другий умовний: If + минулий час (were) + would.",
+    "tip_pl": "Drugi tryb warunkowy: If + czas przeszły (were) + would."
+   },
+   {
+    "type": "grammar",
+    "q": "If Harry ____ to the hat's first idea, he would join a different house.",
+    "options": [
+     "listens",
+     "listened",
+     "will listen",
+     "has listened"
+    ],
+    "answer": 1,
+    "tip": "Unreal present/future: If + Past Simple.",
+    "tip_uk": "Нереальна теперішня/майбутня ситуація: If + Past Simple.",
+    "tip_pl": "Nierealna sytuacja teraźniejsza/przyszła: If + Past Simple."
+   },
+   {
+    "type": "type",
+    "q": "Complete: What house would you choose if you ____ (can) choose?",
+    "options": [
+     "could"
+    ],
+    "tip": "can → could in second conditional.",
+    "tip_uk": "can → could у другому умовному.",
+    "tip_pl": "can → could w drugim trybie warunkowym."
+   },
+   {
+    "type": "order",
+    "q": "Order the conditional sentence.",
+    "options": [
+     "I",
+     "would",
+     "feel",
+     "nervous",
+     "if",
+     "everyone",
+     "watched",
+     "me"
+    ],
+    "tip": "would + verb … if + past.",
+    "tip_uk": "would + дієслово … if + минулий час.",
+    "tip_pl": "would + czasownik … if + czas przeszły."
+   },
+   {
+    "type": "tf",
+    "q": "Hermione hopes to be in the house that values courage.",
+    "options": [
+     "True",
+     "False"
+    ],
+    "answer": 0,
+    "tip": "She has read about the houses and has strong opinions.",
+    "tip_uk": "Вона начиталася про гуртожитки і має чітку думку.",
+    "tip_pl": "Naczytała się o domach i ma wyraźne zdanie."
+   },
+   {
+    "type": "vocabulary",
+    "q": "The ceiling looks like the night sky. It is…",
+    "options": [
+     "enchanted",
+     "painted",
+     "broken",
+     "empty"
+    ],
+    "answer": 0,
+    "tip": "Enchanted = under a magic spell.",
+    "tip_uk": "Enchanted = зачарований.",
+    "tip_pl": "Enchanted = zaczarowany."
+   },
+   {
+    "type": "speaking",
+    "q": "Your turn. Repeat and then say it about yourself: If I were a student there, I would want to be brave.",
+    "say": "If I were a student there, I would want to be brave.",
+    "tip": "Change the adjective to describe YOU.",
+    "tip_uk": "Зміни прикметник, щоб описати СЕБЕ.",
+    "tip_pl": "Zmień przymiotnik, aby opisać SIEBIE."
+   }
+  ]
+ },
+ {
+  "num": 9,
+  "title": "Урок зілля",
+  "title_pl": "Lekcja eliksirów",
+  "grammar": "Phrasal verbs & instructions",
+  "scene": "Холодний підвал, суворий учитель. Він ставить хлопчику складні питання на першому ж уроці.",
+  "scene_pl": "Zimne lochy, surowy nauczyciel. Na pierwszej lekcji zadaje chłopcu trudne pytania.",
+  "tasks": [
+   {
+    "type": "vocabulary",
+    "q": "A teacher who is very strict and unfriendly is…",
+    "options": [
+     "harsh",
+     "kind",
+     "relaxed",
+     "funny"
+    ],
+    "answer": 0,
+    "tip": "Harsh = severe, unkind.",
+    "img": "potion",
+    "tip_uk": "Harsh = суворий, недоброзичливий.",
+    "tip_pl": "Harsh = surowy, nieprzyjazny."
+   },
+   {
+    "type": "match",
+    "q": "Phrasal verbs from the classroom.",
+    "options": [
+     "to pick on=to treat someone unfairly",
+     "to look up=to find information",
+     "to carry on=to continue",
+     "to point out=to show or mention",
+     "to put off=to delay"
+    ],
+    "tip": "Phrasal verbs are everywhere in natural English!",
+    "tip_uk": "Фразові дієслова всюди в живій англійській!",
+    "tip_pl": "Phrasal verbs są wszędzie w naturalnym angielskim!",
+    "options_uk": [
+     "to pick on=чіплятися",
+     "to look up=пошукати (інформацію)",
+     "to carry on=продовжувати",
+     "to point out=вказати",
+     "to put off=відкласти"
+    ],
+    "options_pl": [
+     "to pick on=czepiać się",
+     "to look up=sprawdzić (informację)",
+     "to carry on=kontynuować",
+     "to point out=wskazać",
+     "to put off=odłożyć"
+    ]
+   },
+   {
+    "type": "grammar",
+    "q": "Don't worry, just ____ with your potion. You're doing fine.",
+    "options": [
+     "carry on",
+     "put off",
+     "pick on",
+     "look up"
+    ],
+    "answer": 0,
+    "tip": "carry on = continue.",
+    "tip_uk": "carry on = продовжувати.",
+    "tip_pl": "carry on = kontynuować."
+   },
+   {
+    "type": "grammar",
+    "q": "If you don't know the answer, ____ it ____ in the book.",
+    "options": [
+     "look / up",
+     "pick / on",
+     "carry / on",
+     "point / out"
+    ],
+    "answer": 0,
+    "tip": "Separable phrasal verb: look it up.",
+    "tip_uk": "Роздільне фразове дієслово: look it up.",
+    "tip_pl": "Rozdzielny phrasal verb: look it up."
+   },
+   {
+    "type": "order",
+    "q": "Instructions: order the words.",
+    "options": [
+     "Stir",
+     "the",
+     "potion",
+     "slowly",
+     "and",
+     "then",
+     "add",
+     "the",
+     "leaves"
+    ],
+    "tip": "Imperatives for instructions.",
+    "tip_uk": "Наказовий спосіб для інструкцій.",
+    "tip_pl": "Tryb rozkazujący w instrukcjach."
+   },
+   {
+    "type": "type",
+    "q": "Complete: Why does the teacher always pick ____ Harry?",
+    "options": [
+     "on"
+    ],
+    "tip": "pick on someone.",
+    "tip_uk": "pick on someone = чіплятися до когось.",
+    "tip_pl": "pick on someone = czepiać się kogoś."
+   },
+   {
+    "type": "tf",
+    "q": "Harry knew all the answers in his first potions lesson.",
+    "options": [
+     "True",
+     "False"
+    ],
+    "answer": 1,
+    "tip": "He didn't — and Hermione's hand was up the whole time.",
+    "tip_uk": "Ні, а рука Герміони весь час була піднята.",
+    "tip_pl": "Nie, a ręka Hermiony cały czas była w górze."
+   },
+   {
+    "type": "speaking",
+    "q": "Give an instruction. Repeat: First, read the instructions carefully. Then, add the ingredients one by one.",
+    "say": "First, read the instructions carefully. Then, add the ingredients one by one.",
+    "tip": "Sequencers: first, then, after that, finally.",
+    "tip_uk": "Слова послідовності: first, then, after that, finally.",
+    "tip_pl": "Słowa porządkujące: first, then, after that, finally."
+   }
+  ]
+ },
+ {
+  "num": 10,
+  "title": "Перший урок польотів",
+  "title_pl": "Pierwsza lekcja latania",
+  "grammar": "Obligation: must / have to / mustn't / don't have to",
+  "scene": "Учні вперше тримають мітли. Один хлопчик падає, а інший забирає його річ і злітає високо в небо.",
+  "scene_pl": "Uczniowie pierwszy raz trzymają miotły. Jeden chłopiec spada, a drugi zabiera jego rzecz i wzlatuje wysoko.",
+  "tasks": [
+   {
+    "type": "grammar",
+    "q": "Students ____ fly while the teacher is away. It's against the rules!",
+    "options": [
+     "mustn't",
+     "don't have to",
+     "must",
+     "needn't"
+    ],
+    "answer": 0,
+    "tip": "mustn't = it is forbidden.",
+    "img": "broom",
+    "tip_uk": "mustn't = заборонено.",
+    "tip_pl": "mustn't = nie wolno."
+   },
+   {
+    "type": "grammar",
+    "q": "You ____ be an expert on your first day. Just try your best.",
+    "options": [
+     "mustn't",
+     "don't have to",
+     "have to",
+     "must"
+    ],
+    "answer": 1,
+    "tip": "don't have to = it's not necessary.",
+    "tip_uk": "don't have to = не обов'язково.",
+    "tip_pl": "don't have to = nie trzeba."
+   },
+   {
+    "type": "grammar",
+    "q": "Yesterday, Neville ____ go to the hospital wing after his fall.",
+    "options": [
+     "must",
+     "had to",
+     "has to",
+     "mustn't"
+    ],
+    "answer": 1,
+    "tip": "Past obligation → had to (must has no past form).",
+    "tip_uk": "Обов'язок у минулому → had to (must не має минулої форми).",
+    "tip_pl": "Obowiązek w przeszłości → had to (must nie ma formy przeszłej)."
+   },
+   {
+    "type": "type",
+    "q": "Complete: Everyone ____ to hold the broom with their right hand. (obligation, present)",
+    "options": [
+     "has",
+     "needs"
+    ],
+    "tip": "has to = rule/obligation.",
+    "tip_uk": "has to = правило, обов'язок.",
+    "tip_pl": "has to = zasada, obowiązek."
+   },
+   {
+    "type": "match",
+    "q": "Flying words.",
+    "options": [
+     "to hover=to stay in the air in one place",
+     "to dive=to go down fast",
+     "to grab=to take quickly",
+     "to land=to come back to the ground",
+     "a natural=someone born with a talent"
+    ],
+    "tip": "Harry turns out to be a natural!",
+    "tip_uk": "Гаррі виявився природженим талантом!",
+    "tip_pl": "Harry okazał się urodzonym talentem!",
+    "options_uk": [
+     "to hover=зависати в повітрі",
+     "to dive=пірнати вниз",
+     "to grab=схопити",
+     "to land=приземлитися",
+     "a natural=природжений талант"
+    ],
+    "options_pl": [
+     "to hover=unosić się w miejscu",
+     "to dive=nurkować",
+     "to grab=chwycić",
+     "to land=wylądować",
+     "a natural=urodzony talent"
+    ]
+   },
+   {
+    "type": "tf",
+    "q": "Harry caught a glass ball after a long dive, and a teacher saw it.",
+    "options": [
+     "True",
+     "False"
+    ],
+    "answer": 0,
+    "tip": "Instead of punishment, he got a place on the team.",
+    "tip_uk": "Замість покарання він отримав місце в команді.",
+    "tip_pl": "Zamiast kary dostał miejsce w drużynie."
+   },
+   {
+    "type": "order",
+    "q": "Order the rule.",
+    "options": [
+     "You",
+     "must",
+     "keep",
+     "your",
+     "feet",
+     "on",
+     "the",
+     "ground"
+    ],
+    "tip": "must + base verb.",
+    "tip_uk": "must + дієслово без to.",
+    "tip_pl": "must + czasownik bez to."
+   },
+   {
+    "type": "speaking",
+    "q": "Talk about rules in your life. Repeat: At my school we had to wear a uniform, but we didn't have to stand up.",
+    "say": "At my school we had to wear a uniform, but we didn't have to stand up.",
+    "tip": "Past obligation vs no obligation.",
+    "tip_uk": "Обов'язок у минулому і його відсутність.",
+    "tip_pl": "Obowiązek w przeszłości i jego brak."
+   }
+  ]
+ },
+ {
+  "num": 11,
+  "title": "Троль у підземеллі",
+  "title_pl": "Troll w lochach",
+  "grammar": "Past Perfect",
+  "scene": "Свято Гелловіну. У школу пробрався троль, а одна учениця залишилася сама у вбиральні.",
+  "scene_pl": "Halloween. Do szkoły dostał się troll, a jedna uczennica została sama w łazience.",
+  "tasks": [
+   {
+    "type": "intro",
+    "q": "Halloween night — and something huge is in the castle. Today: the tense of 'what had already happened'.",
+    "options": [
+     "Past Perfect: had + past participle",
+     "Order two past events clearly",
+     "Tell a dramatic story in English"
+    ],
+    "img": "troll",
+    "tip": "Enter the castle",
+    "q_uk": "Ніч Гелловіну — і в замку щось величезне. Сьогодні: час того, «що вже сталося раніше».",
+    "q_pl": "Noc Halloween — a w zamku jest coś ogromnego. Dziś: czas tego, „co wydarzyło się wcześniej”.",
+    "options_uk": [
+     "Past Perfect: had + третя форма",
+     "Чітко впорядковуй дві події в минулому",
+     "Розкажи драматичну історію англійською"
+    ],
+    "options_pl": [
+     "Past Perfect: had + trzecia forma",
+     "Porządkuj dwa zdarzenia z przeszłości",
+     "Opowiedz dramatyczną historię po angielsku"
+    ],
+    "tip_uk": "Увійти в замок",
+    "tip_pl": "Wejdź do zamku"
+   },
+   {
+    "type": "grammar",
+    "q": "When the boys arrived, the troll ____ already ____ into the bathroom.",
+    "options": [
+     "had / gone",
+     "has / gone",
+     "was / going",
+     "did / go"
+    ],
+    "answer": 0,
+    "tip": "The earlier action → had gone.",
+    "img": "troll",
+    "tip_uk": "Раніша дія → had gone.",
+    "tip_pl": "Wcześniejsza czynność → had gone."
+   },
+   {
+    "type": "grammar",
+    "q": "Hermione was crying because Ron ____ something unkind earlier that day.",
+    "options": [
+     "said",
+     "had said",
+     "has said",
+     "was saying"
+    ],
+    "answer": 1,
+    "tip": "Earlier past → Past Perfect: had said.",
+    "tip_uk": "Раніше в минулому → Past Perfect: had said.",
+    "tip_pl": "Wcześniej w przeszłości → Past Perfect: had said."
+   },
+   {
+    "type": "type",
+    "q": "Complete: By the time the teachers came, the boys ____ already defeated the troll. (have)",
+    "options": [
+     "had"
+    ],
+    "tip": "had + defeated.",
+    "tip_uk": "had + defeated.",
+    "tip_pl": "had + defeated."
+   },
+   {
+    "type": "match",
+    "q": "Halloween vocabulary.",
+    "options": [
+     "feast=a big special meal",
+     "dungeon=an underground room",
+     "to faint=to suddenly lose consciousness",
+     "club=a heavy wooden weapon",
+     "to knock out=to make unconscious"
+    ],
+    "tip": "Useful for retelling the scene.",
+    "tip_uk": "Знадобиться, щоб переказати сцену.",
+    "tip_pl": "Przyda się do opowiedzenia sceny.",
+    "options_uk": [
+     "feast=бенкет",
+     "dungeon=підземелля",
+     "to faint=знепритомніти",
+     "club=дубина",
+     "to knock out=вирубити"
+    ],
+    "options_pl": [
+     "feast=uczta",
+     "dungeon=loch",
+     "to faint=zemdleć",
+     "club=maczuga",
+     "to knock out=ogłuszyć"
+    ]
+   },
+   {
+    "type": "order",
+    "q": "Order the sentence.",
+    "options": [
+     "They",
+     "became",
+     "friends",
+     "after",
+     "they",
+     "had",
+     "faced",
+     "the",
+     "troll",
+     "together"
+    ],
+    "tip": "after + Past Perfect.",
+    "tip_uk": "after + Past Perfect.",
+    "tip_pl": "after + Past Perfect."
+   },
+   {
+    "type": "tf",
+    "q": "After that night, Hermione became friends with Harry and Ron.",
+    "options": [
+     "True",
+     "False"
+    ],
+    "answer": 0,
+    "tip": "Facing danger together changed everything.",
+    "tip_uk": "Спільна небезпека все змінила.",
+    "tip_pl": "Wspólne niebezpieczeństwo wszystko zmieniło."
+   },
+   {
+    "type": "speaking",
+    "q": "Dramatic storytelling. Repeat: I had never seen anything so big in my whole life!",
+    "say": "I had never seen anything so big in my whole life!",
+    "tip": "had never + past participle = strong emotion.",
+    "tip_uk": "had never + третя форма = сильна емоція.",
+    "tip_pl": "had never + trzecia forma = silna emocja."
+   }
+  ]
+ },
+ {
+  "num": 12,
+  "title": "Перший матч",
+  "title_pl": "Pierwszy mecz",
+  "grammar": "Comparatives, superlatives & adverbs",
+  "scene": "Стадіон, обручі на високих стовпах, глядачі на трибунах. Хлопчик грає свій перший матч у ролі ловця.",
+  "scene_pl": "Stadion, obręcze na wysokich słupach, kibice na trybunach. Chłopiec gra swój pierwszy mecz jako szukający.",
+  "tasks": [
+   {
+    "type": "grammar",
+    "q": "Harry is the ____ Seeker the team has had in a century.",
+    "options": [
+     "youngest",
+     "younger",
+     "most young",
+     "young"
+    ],
+    "answer": 0,
+    "tip": "One-syllable adjective → -est.",
+    "img": "pitch",
+    "tip_uk": "Односкладовий прикметник → -est.",
+    "tip_pl": "Jednosylabowy przymiotnik → -est."
+   },
+   {
+    "type": "grammar",
+    "q": "The golden ball moves ____ than any other ball.",
+    "options": [
+     "fast",
+     "faster",
+     "fastest",
+     "more fast"
+    ],
+    "answer": 1,
+    "tip": "Comparative + than.",
+    "tip_uk": "Вища ступінь + than.",
+    "tip_pl": "Stopień wyższy + than."
+   },
+   {
+    "type": "grammar",
+    "q": "His broom started to shake ____ during the match.",
+    "options": [
+     "dangerous",
+     "dangerously",
+     "danger",
+     "more dangerous"
+    ],
+    "answer": 1,
+    "tip": "Adverb describes HOW it shook.",
+    "tip_uk": "Прислівник описує, ЯК вона трусилася.",
+    "tip_pl": "Przysłówek opisuje, JAK się trzęsła."
+   },
+   {
+    "type": "type",
+    "q": "Complete: This was the ____ (exciting) match of the season.",
+    "options": [
+     "most exciting"
+    ],
+    "tip": "Long adjective → the most + adj.",
+    "tip_uk": "Довгий прикметник → the most + прикметник.",
+    "tip_pl": "Długi przymiotnik → the most + przymiotnik."
+   },
+   {
+    "type": "match",
+    "q": "Sports vocabulary.",
+    "options": [
+     "pitch=the field where you play",
+     "score=to get points",
+     "referee=the person who controls the game",
+     "crowd=the people watching",
+     "cheat=to break rules to win"
+    ],
+    "tip": "Works for football too!",
+    "tip_uk": "Підходить і для футболу!",
+    "tip_pl": "Pasuje też do piłki nożnej!",
+    "options_uk": [
+     "pitch=ігрове поле",
+     "score=забити (очки)",
+     "referee=суддя",
+     "crowd=натовп глядачів",
+     "cheat=шахраювати"
+    ],
+    "options_pl": [
+     "pitch=boisko",
+     "score=zdobyć punkty",
+     "referee=sędzia",
+     "crowd=tłum kibiców",
+     "cheat=oszukiwać"
+    ]
+   },
+   {
+    "type": "tf",
+    "q": "Harry caught the golden ball with his hands.",
+    "options": [
+     "True",
+     "False"
+    ],
+    "answer": 1,
+    "tip": "He almost swallowed it — and it still counted!",
+    "tip_uk": "Він ледь не проковтнув його — і це все одно зарахували!",
+    "tip_pl": "Prawie go połknął — i i tak się liczyło!"
+   },
+   {
+    "type": "order",
+    "q": "Order the sentence.",
+    "options": [
+     "It",
+     "was",
+     "the",
+     "best",
+     "day",
+     "of",
+     "his",
+     "life",
+     "so",
+     "far"
+    ],
+    "tip": "the best = superlative of good.",
+    "tip_uk": "the best = найвищий ступінь від good.",
+    "tip_pl": "the best = stopień najwyższy od good."
+   },
+   {
+    "type": "speaking",
+    "q": "Commentate! Repeat: He's flying faster and faster — what an incredible catch!",
+    "say": "He's flying faster and faster — what an incredible catch!",
+    "tip": "faster and faster = increasing speed.",
+    "tip_uk": "faster and faster = дедалі швидше.",
+    "tip_pl": "faster and faster = coraz szybciej."
+   }
+  ]
+ },
+ {
+  "num": 13,
+  "title": "Дзеркало бажань",
+  "title_pl": "Zwierciadło pragnień",
+  "grammar": "Wishes: I wish / If only",
+  "scene": "Порожній клас уночі. Хлопчик знаходить дзеркало, яке показує не відображення, а найглибше бажання.",
+  "scene_pl": "Pusta sala w nocy. Chłopiec znajduje lustro, które pokazuje nie odbicie, lecz najgłębsze pragnienie.",
+  "tasks": [
+   {
+    "type": "grammar",
+    "q": "Harry wishes he ____ his parents.",
+    "options": [
+     "knows",
+     "knew",
+     "will know",
+     "has known"
+    ],
+    "answer": 1,
+    "tip": "Wish about the present → past simple.",
+    "img": "mirror",
+    "tip_uk": "Бажання щодо теперішнього → Past Simple.",
+    "tip_pl": "Życzenie dotyczące teraźniejszości → Past Simple."
+   },
+   {
+    "type": "grammar",
+    "q": "Ron wishes he ____ more successful than his brothers.",
+    "options": [
+     "is",
+     "were",
+     "will be",
+     "be"
+    ],
+    "answer": 1,
+    "tip": "wish + were (formal, correct for all persons).",
+    "tip_uk": "wish + were (формально, правильно для всіх осіб).",
+    "tip_pl": "wish + were (formalnie, poprawne dla wszystkich osób)."
+   },
+   {
+    "type": "grammar",
+    "q": "If only I ____ that mirror! Now I can't stop thinking about it. (regret about the past)",
+    "options": [
+     "didn't find",
+     "hadn't found",
+     "don't find",
+     "wouldn't find"
+    ],
+    "answer": 1,
+    "tip": "Regret about the past → If only + Past Perfect.",
+    "tip_uk": "Жаль про минуле → If only + Past Perfect.",
+    "tip_pl": "Żal o przeszłość → If only + Past Perfect."
+   },
+   {
+    "type": "type",
+    "q": "Complete: I wish it ____ (be) Christmas every day.",
+    "options": [
+     "were",
+     "was"
+    ],
+    "tip": "were is more formal; was is common in speech.",
+    "tip_uk": "were — формальніше; was часто вживають у розмові.",
+    "tip_pl": "were jest bardziej formalne; was często słychać w mowie."
+   },
+   {
+    "type": "match",
+    "q": "Feelings.",
+    "options": [
+     "longing=a strong wish for something",
+     "lonely=sad because alone",
+     "obsessed=can't stop thinking about something",
+     "grateful=thankful",
+     "homesick=missing home or family"
+    ],
+    "tip": "Emotions make your English richer.",
+    "tip_uk": "Емоції роблять твою англійську багатшою.",
+    "tip_pl": "Emocje wzbogacają Twój angielski.",
+    "options_uk": [
+     "longing=туга",
+     "lonely=самотній",
+     "obsessed=одержимий",
+     "grateful=вдячний",
+     "homesick=сумую за домом"
+    ],
+    "options_pl": [
+     "longing=tęsknota",
+     "lonely=samotny",
+     "obsessed=opętany obsesją",
+     "grateful=wdzięczny",
+     "homesick=tęskniący za domem"
+    ]
+   },
+   {
+    "type": "tf",
+    "q": "The headmaster advises Harry to keep visiting the mirror every night.",
+    "options": [
+     "True",
+     "False"
+    ],
+    "answer": 1,
+    "tip": "He warns that living in dreams means forgetting to live.",
+    "tip_uk": "Він попереджає: жити мріями — означає забути жити.",
+    "tip_pl": "Ostrzega, że życie marzeniami oznacza zapomnienie o życiu."
+   },
+   {
+    "type": "order",
+    "q": "Order the advice from the headmaster (in our words).",
+    "options": [
+     "Real",
+     "life",
+     "is",
+     "more",
+     "important",
+     "than",
+     "dreams"
+    ],
+    "tip": "The idea of the scene: don't get lost in dreams.",
+    "tip_uk": "Ідея сцени: не губися у мріях.",
+    "tip_pl": "Myśl sceny: nie zgub się w marzeniach."
+   },
+   {
+    "type": "speaking",
+    "q": "Make a wish. Repeat, then make your own: I wish I could speak English as fluently as a native speaker.",
+    "say": "I wish I could speak English as fluently as a native speaker.",
+    "tip": "wish + could = ability you'd like to have.",
+    "tip_uk": "wish + could = уміння, яке хотілося б мати.",
+    "tip_pl": "wish + could = umiejętność, którą chciałbyś mieć."
+   }
+  ]
+ },
+ {
+  "num": 14,
+  "title": "Заборонений ліс",
+  "title_pl": "Zakazany Las",
+  "grammar": "Third conditional",
+  "scene": "Покарання вночі в темному лісі. Хлопчики бачать щось страшне, і їх рятує кентавр.",
+  "scene_pl": "Kara w nocy w ciemnym lesie. Chłopcy widzą coś strasznego, a ratuje ich centaur.",
+  "tasks": [
+   {
+    "type": "intro",
+    "q": "A night in the Forbidden Forest. Today: imagining how the past could have been different.",
+    "options": [
+     "Third conditional: If + had done, would have done",
+     "Talk about regrets and lucky escapes",
+     "Night & forest vocabulary"
+    ],
+    "img": "forest",
+    "tip": "Into the forest",
+    "q_uk": "Ніч у Забороненому лісі. Сьогодні уявляємо, яким могло бути минуле.",
+    "q_pl": "Noc w Zakazanym Lesie. Dziś wyobrażamy sobie, jak mogła wyglądać przeszłość.",
+    "options_uk": [
+     "Третій умовний: If + had done, would have done",
+     "Говоримо про жаль і щасливі порятунки",
+     "Слова про ніч і ліс"
+    ],
+    "options_pl": [
+     "Trzeci tryb warunkowy: If + had done, would have done",
+     "Mówimy o żalu i szczęśliwych ucieczkach",
+     "Słownictwo o nocy i lesie"
+    ],
+    "tip_uk": "У ліс",
+    "tip_pl": "Do lasu"
+   },
+   {
+    "type": "grammar",
+    "q": "If they ____ out after midnight, they wouldn't have got a detention.",
+    "options": [
+     "didn't go",
+     "hadn't gone",
+     "wouldn't go",
+     "haven't gone"
+    ],
+    "answer": 1,
+    "tip": "If + Past Perfect…",
+    "img": "forest",
+    "tip_uk": "If + Past Perfect…",
+    "tip_pl": "If + Past Perfect…"
+   },
+   {
+    "type": "grammar",
+    "q": "If the centaur hadn't arrived, something terrible ____.",
+    "options": [
+     "would happen",
+     "would have happened",
+     "had happened",
+     "will happen"
+    ],
+    "answer": 1,
+    "tip": "…would have + past participle.",
+    "tip_uk": "…would have + третя форма.",
+    "tip_pl": "…would have + trzecia forma."
+   },
+   {
+    "type": "type",
+    "q": "Complete: If Harry had stayed in bed, he ____ have seen the hooded figure.",
+    "options": [
+     "wouldn't",
+     "would not"
+    ],
+    "tip": "wouldn't have seen.",
+    "tip_uk": "wouldn't have seen.",
+    "tip_pl": "wouldn't have seen."
+   },
+   {
+    "type": "match",
+    "q": "Forest vocabulary.",
+    "options": [
+     "detention=a punishment at school",
+     "lantern=a lamp you carry",
+     "hooded=wearing a hood",
+     "to creep=to move slowly and quietly",
+     "silver blood=magic creature's blood (unicorn)"
+    ],
+    "tip": "Atmosphere words for scary stories.",
+    "tip_uk": "Атмосферні слова для страшних історій.",
+    "tip_pl": "Klimatyczne słowa do strasznych historii.",
+    "options_uk": [
+     "detention=покарання (після уроків)",
+     "lantern=ліхтар",
+     "hooded=у каптурі",
+     "to creep=підкрадатися",
+     "silver blood=срібна кров"
+    ],
+    "options_pl": [
+     "detention=kara (koza)",
+     "lantern=latarnia",
+     "hooded=w kapturze",
+     "to creep=skradać się",
+     "silver blood=srebrna krew"
+    ]
+   },
+   {
+    "type": "order",
+    "q": "Order the third conditional.",
+    "options": [
+     "We",
+     "would",
+     "have",
+     "been",
+     "lost",
+     "if",
+     "you",
+     "hadn't",
+     "helped",
+     "us"
+    ],
+    "tip": "would have + pp … if + had + pp.",
+    "tip_uk": "would have + третя форма … if + had + третя форма.",
+    "tip_pl": "would have + trzecia forma … if + had + trzecia forma."
+   },
+   {
+    "type": "tf",
+    "q": "The boys were in the forest as a punishment.",
+    "options": [
+     "True",
+     "False"
+    ],
+    "answer": 0,
+    "tip": "It was their detention.",
+    "tip_uk": "Це було їхнє покарання.",
+    "tip_pl": "To była ich kara."
+   },
+   {
+    "type": "speaking",
+    "q": "Regret and relief. Repeat: If you hadn't come, we would have been in serious trouble.",
+    "say": "If you hadn't come, we would have been in serious trouble.",
+    "tip": "Very natural way to say thank you after help.",
+    "tip_uk": "Дуже природний спосіб подякувати за допомогу.",
+    "tip_pl": "Bardzo naturalny sposób, by podziękować za pomoc."
+   }
+  ]
+ },
+ {
+  "num": 15,
+  "title": "Крізь люк",
+  "title_pl": "Przez klapę",
+  "grammar": "Present Perfect vs Past Simple",
+  "scene": "Троє друзів проходять випробування під школою: гігантські шахи, загадка з зіллям і вогонь.",
+  "scene_pl": "Trójka przyjaciół przechodzi próby pod szkołą: gigantyczne szachy, zagadka z eliksirami i ogień.",
+  "tasks": [
+   {
+    "type": "grammar",
+    "q": "Ron has played chess since he was a child, but he ____ a game like this before.",
+    "options": [
+     "never played",
+     "has never played",
+     "had never play",
+     "didn't ever"
+    ],
+    "answer": 1,
+    "tip": "Life experience up to now → Present Perfect.",
+    "img": "chess",
+    "tip_uk": "Життєвий досвід до сьогодні → Present Perfect.",
+    "tip_pl": "Doświadczenie życiowe do teraz → Present Perfect."
+   },
+   {
+    "type": "grammar",
+    "q": "Last night, the three friends ____ through the trapdoor.",
+    "options": [
+     "have climbed",
+     "climbed",
+     "climb",
+     "were climb"
+    ],
+    "answer": 1,
+    "tip": "Finished time (last night) → Past Simple.",
+    "tip_uk": "Завершений час (last night) → Past Simple.",
+    "tip_pl": "Zakończony czas (last night) → Past Simple."
+   },
+   {
+    "type": "grammar",
+    "q": "Hermione: 'I ____ the riddle! It's the smallest bottle.'",
+    "options": [
+     "solved",
+     "have solved",
+     "solve",
+     "had solved"
+    ],
+    "answer": 1,
+    "tip": "Result now, no time given → Present Perfect.",
+    "tip_uk": "Результат зараз, час не вказано → Present Perfect.",
+    "tip_pl": "Rezultat teraz, bez podanego czasu → Present Perfect."
+   },
+   {
+    "type": "type",
+    "q": "Complete: Have you ever ____ chess? (play)",
+    "options": [
+     "played"
+    ],
+    "tip": "Have you ever + past participle = experience question.",
+    "tip_uk": "Have you ever + третя форма = питання про досвід.",
+    "tip_pl": "Have you ever + trzecia forma = pytanie o doświadczenie."
+   },
+   {
+    "type": "match",
+    "q": "Challenge vocabulary.",
+    "options": [
+     "trapdoor=a door in the floor",
+     "riddle=a puzzle in words",
+     "sacrifice=giving something up for others",
+     "to checkmate=to win at chess",
+     "flames=fire"
+    ],
+    "tip": "Words of the final adventure.",
+    "tip_uk": "Слова фінальної пригоди.",
+    "tip_pl": "Słowa finałowej przygody.",
+    "options_uk": [
+     "trapdoor=люк",
+     "riddle=загадка",
+     "sacrifice=жертва",
+     "to checkmate=поставити мат",
+     "flames=полум'я"
+    ],
+    "options_pl": [
+     "trapdoor=klapa w podłodze",
+     "riddle=zagadka",
+     "sacrifice=poświęcenie",
+     "to checkmate=dać mata",
+     "flames=płomienie"
+    ]
+   },
+   {
+    "type": "tf",
+    "q": "Ron lets himself be taken in the chess game so Harry can go on.",
+    "options": [
+     "True",
+     "False"
+    ],
+    "answer": 0,
+    "tip": "A real sacrifice for his friend.",
+    "tip_uk": "Справжня жертва заради друга.",
+    "tip_pl": "Prawdziwe poświęcenie dla przyjaciela."
+   },
+   {
+    "type": "order",
+    "q": "Order the sentence.",
+    "options": [
+     "I",
+     "have",
+     "never",
+     "been",
+     "so",
+     "scared",
+     "in",
+     "my",
+     "life"
+    ],
+    "tip": "Present Perfect + never + superlative feeling.",
+    "tip_uk": "Present Perfect + never + найсильніше почуття.",
+    "tip_pl": "Present Perfect + never + najsilniejsze uczucie."
+   },
+   {
+    "type": "speaking",
+    "q": "Your experience. Repeat, then make it true for you: I've been to London, but I've never seen a real castle.",
+    "say": "I've been to London, but I've never seen a real castle.",
+    "tip": "been to = visited and came back.",
+    "tip_uk": "been to = побував і повернувся.",
+    "tip_pl": "been to = byłem i wróciłem."
+   }
+  ]
+ },
+ {
+  "num": 16,
+  "title": "Фінал: камінь і твоя історія",
+  "title_pl": "Finał: kamień i twoja historia",
+  "grammar": "Narrative tenses — review",
+  "scene": "Остання зустріч біля дзеркала, червоний камінь у кишені і прощальне свято. Ти розповідаєш історію сам.",
+  "scene_pl": "Ostatnie spotkanie przy lustrze, czerwony kamień w kieszeni i pożegnalna uczta. Opowiadasz historię sam.",
+  "tasks": [
+   {
+    "type": "intro",
+    "q": "The final lesson! Put together everything you learned and tell the story in your own words.",
+    "options": [
+     "Review narrative tenses",
+     "Use 10+ words from the marathon",
+     "Write and record your own retelling",
+     "Get your MovieLang certificate"
+    ],
+    "img": "stone",
+    "tip": "Begin the finale",
+    "q_uk": "Фінальний урок! Збери все, що вивчив, і розкажи історію своїми словами.",
+    "q_pl": "Ostatnia lekcja! Połącz wszystko, czego się nauczyłeś, i opowiedz historię własnymi słowami.",
+    "options_uk": [
+     "Повторення часів для розповіді",
+     "Використай 10+ слів із марафону",
+     "Напиши й запиши свій переказ",
+     "Отримай сертифікат MovieLang"
+    ],
+    "options_pl": [
+     "Powtórka czasów narracyjnych",
+     "Użyj 10+ słów z maratonu",
+     "Napisz i nagraj swoją opowieść",
+     "Odbierz certyfikat MovieLang"
+    ],
+    "tip_uk": "Почати фінал",
+    "tip_pl": "Rozpocznij finał"
+   },
+   {
+    "type": "grammar",
+    "q": "Harry looked in the mirror and suddenly felt that the stone ____ into his pocket.",
+    "options": [
+     "dropped",
+     "had dropped",
+     "has dropped",
+     "was drop"
+    ],
+    "answer": 1,
+    "tip": "Earlier past event → had dropped.",
+    "img": "stone",
+    "tip_uk": "Раніша подія в минулому → had dropped.",
+    "tip_pl": "Wcześniejsze zdarzenie w przeszłości → had dropped."
+   },
+   {
+    "type": "grammar",
+    "q": "While the teacher ____, Harry was thinking about his mother.",
+    "options": [
+     "talked",
+     "was talking",
+     "has talked",
+     "talks"
+    ],
+    "answer": 1,
+    "tip": "Background action → Past Continuous.",
+    "tip_uk": "Фонова дія → Past Continuous.",
+    "tip_pl": "Czynność w tle → Past Continuous."
+   },
+   {
+    "type": "match",
+    "q": "Review: match the grammar to the example.",
+    "options": [
+     "Past Perfect=had already left",
+     "Second conditional=If I were you",
+     "Passive=was delivered by owl",
+     "Reported speech=He said he was tired",
+     "Wish=I wish I knew"
+    ],
+    "tip": "Everything you practised in 16 lessons!",
+    "tip_uk": "Усе, що ти тренував за 16 уроків!",
+    "tip_pl": "Wszystko, co ćwiczyłeś przez 16 lekcji!"
+   },
+   {
+    "type": "quiz",
+    "q": "Which school house wins the cup at the end?",
+    "options": [
+     "The house of the brave",
+     "The house of the wise",
+     "The house of the loyal",
+     "The house of the cunning"
+    ],
+    "answer": 0,
+    "tip": "Last-minute points for courage and friendship.",
+    "tip_uk": "Останні бали — за сміливість і дружбу.",
+    "tip_pl": "Ostatnie punkty — za odwagę i przyjaźń."
+   },
+   {
+    "type": "tf",
+    "q": "Harry goes back to his aunt and uncle for the summer.",
+    "options": [
+     "True",
+     "False"
+    ],
+    "answer": 0,
+    "tip": "But now he knows who he really is.",
+    "tip_uk": "Але тепер він знає, хто він насправді.",
+    "tip_pl": "Ale teraz wie, kim naprawdę jest."
+   },
+   {
+    "type": "speaking",
+    "q": "Final speaking. Repeat: This story taught me that friendship and courage matter more than anything.",
+    "say": "This story taught me that friendship and courage matter more than anything.",
+    "tip": "Use this as the last line of your retelling.",
+    "tip_uk": "Використай це як останнє речення свого переказу.",
+    "tip_pl": "Użyj tego jako ostatniego zdania swojej opowieści."
+   },
+   {
+    "type": "final",
+    "q": "FINAL PROJECT: Write your favourite scene from the film (100–150 words). Use at least: 2 Past Perfect forms, 1 conditional, 1 passive, and 5 words from the marathon.",
+    "answer": 100,
+    "tip": "Saved! Your teacher (or you) can review it in your account. Congratulations on finishing the marathon!",
+    "tip_uk": "Збережено! Відповідь видно у твоєму кабінеті. Вітаємо із завершенням марафону!",
+    "tip_pl": "Zapisano! Odpowiedź znajdziesz na swoim koncie. Gratulacje ukończenia maratonu!"
+   }
+  ]
+ }
+]
