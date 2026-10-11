@@ -21,7 +21,8 @@ function bestVoice(lang) {
   return (VOICE_CACHE[lang] = c[0]);
 }
 try { speechSynthesis.onvoiceschanged = function () { VOICE_CACHE = {}; }; } catch (e) {}
-var TTS_OK = null, TTS_URLS = {}, TTS_AUDIO = null;
+var TTS_OK = false, // server voice (OpenAI) off: device voice only
+    TTS_URLS = {}, TTS_AUDIO = null;
 function say(txt, lang) {
   lang = lang || SPEECH[TARGET]; var code = lang.slice(0, 2), clean = String(txt || '').replace(/<[^>]+>/g, '').replace(/_{2,}/g, '…').trim();
   var C = window.MOVIELANG_CONFIG || {};
