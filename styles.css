@@ -564,3 +564,22 @@ section{border-top-color:var(--divider)}
   .mitemrow b{font-size:13px;opacity:.8}
 }
 @media (max-width:760px){.toast{bottom:calc(100px + env(safe-area-inset-bottom,0px))}}
+
+/* ===== smooth transitions ===== */
+#app{transition:opacity .14s ease}
+#app.pg-leave{opacity:.25}
+#app.pg-in{animation:pgIn .32s cubic-bezier(.2,.7,.2,1) both}
+@keyframes pgIn{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
+.lmodal{animation:fadeIn .18s ease both}
+.lmodal .lbox{animation:popIn .24s cubic-bezier(.2,.8,.2,1) both}
+@keyframes fadeIn{from{opacity:0}to{opacity:1}}
+@keyframes popIn{from{opacity:0;transform:translateY(8px) scale(.98)}to{opacity:1;transform:none}}
+@media (max-width:760px){.msheetw .lbox{animation:sheetUp .3s cubic-bezier(.2,.8,.2,1) both}}
+@keyframes sheetUp{from{transform:translateY(100%)}to{transform:none}}
+.mnav a,.mnav button{transition:background-color .2s ease,color .2s ease,transform .12s ease}
+.mnav a:active,.mnav button:active{transform:scale(.92)}
+.tcard.tin{animation:pgIn .26s cubic-bezier(.2,.7,.2,1) both}
+.btn,.topt,.mitem,.tstep,.lopt,.cabtab,.lgo{transition:background-color .18s ease,border-color .18s ease,color .18s ease,transform .1s ease,opacity .18s ease}
+.btn:active,.topt:active,.lopt:active{transform:scale(.97)}
+html{scroll-behavior:smooth}
+@media (prefers-reduced-motion:reduce){#app.pg-in,.lmodal,.lmodal .lbox,.tcard.tin{animation:none!important}html{scroll-behavior:auto}}

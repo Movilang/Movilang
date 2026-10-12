@@ -688,6 +688,7 @@ function runPlayer(container, lesson, onFinish) {
   }
   function foot() { return '<div class="tfb" id="tfb"></div><div class="tnav"><span class="hint">' + t('Завдання') + ': ' + FLAG[TARGET] + ' · ' + t('Підказки') + ': ' + FLAG[LANG] + '</span><button class="btn btn-red" type="button" id="tnext" hidden>' + t('Далі') + '</button></div>'; }
   function render() {
+    card.classList.remove('tin'); void card.offsetWidth; card.classList.add('tin');
     var tk = tasks[cur]; if (cur > maxReached) maxReached = cur; if (!snaps[cur] && tStart[cur] == null) tStart[cur] = Date.now(); renderSide();
     if (snaps[cur]) { card.innerHTML = '<div class="tlock">🔒 ' + t('Відповідь уже дано. Щоб змінити, пройди урок ще раз.') + '</div>' + snaps[cur]; bindSay(tk); var nb = card.querySelector('#tnext'); if (nb) { nb.hidden = false; nb.disabled = false; nb.textContent = cur < tasks.length - 1 ? t('Далі') : t('Показати результат'); nb.onclick = next; } return; }
     var h = head(tk), type = tk.type;
@@ -1189,7 +1190,8 @@ function adminSite(body) {
 /* ================= router ================= */
 function route() {
   var h = location.hash.replace(/^#\/?/, ''), parts = h.split('/'), p;
-  window.scrollTo(0, 0);
+  var nav = ROUTE_LAST !== h; ROUTE_LAST = h;
+  if (nav) { $app.classList.remove('pg-in'); $app.classList.add('pg-leave'); window.scrollTo(0, 0); }
   switch (parts[0]) {
     case '': p = viewHome(); break;
     case 'catalog': p = viewCatalog(); break;
@@ -1204,8 +1206,10 @@ function route() {
     case 'admin': p = viewAdmin(); break;
     default: $app.innerHTML = t('<div class="page"><div class="empty">Сторінку не знайдено. <a href="#/">На головну</a></div></div>'); p = Promise.resolve();
   }
-  Promise.resolve(p).catch(function (e) { $app.innerHTML = t('<div class="page"><div class="empty">Помилка: ') + esc(e.message) + '</div></div>'; });
+  Promise.resolve(p).catch(function (e) { $app.innerHTML = t('<div class="page"><div class="empty">Помилка: ') + esc(e.message) + '</div></div>'; })
+    .then(function () { if (!nav) return; $app.classList.remove('pg-leave'); void $app.offsetWidth; $app.classList.add('pg-in'); });
 }
+var ROUTE_LAST = null;
 window.addEventListener('hashchange', route);
 $app.innerHTML = t('<div class="page"><p class="muted">Завантаження…</p></div>');
 applyStatic();
