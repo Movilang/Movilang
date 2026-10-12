@@ -638,6 +638,7 @@ function viewCabinet() {
 function viewCourse(id) {
   return Promise.all([API.getCourse(id), API.listLessons(id), API.myEnrollments(), API.myProgress()]).then(function (r) {
     var c = r[0], ls = r[1], enrolled = r[2].indexOf(id) > -1 || isAdm(), done = {};
+    setAmbient(ambTheme(c));
     if (!c) { $app.innerHTML = t('<div class="page"><div class="empty">Курс не знайдено. <a href="#/catalog">До каталогу</a></div></div>'); return; }
     r[3].forEach(function (p) { done[p.lesson_id] = p; });
     var types = {}; ls.forEach(function (l) { (l.tasks || []).forEach(function (t) { types[t.type] = 1; }); });
@@ -693,7 +694,7 @@ function illu(key) {
     comet: '<path d="M140 240L430 90" stroke="url(#cmt)" stroke-width="18" stroke-linecap="round"/><defs><linearGradient id="cmt" x1="0" x2="1"><stop offset="0" stop-color="#9fd8ff" stop-opacity="0"/><stop offset="1" stop-color="#e8f6ff"/></linearGradient></defs><circle cx="440" cy="85" r="16" fill="#fff"/><path d="M100 262q110-50 220-20t220-10" fill="#0a0a12" stroke="#2c2840" stroke-width="3"/>'
   }[key];
   if (!art) return '';
-  return '<svg class="illu-svg" viewBox="0 0 640 300" role="img" aria-label="' + esc(key) + '"><defs><radialGradient id="ig' + key + '" cx="50%" cy="35%" r="75%"><stop offset="0" stop-color="#2b2350"/><stop offset="1" stop-color="#0b0a14"/></radialGradient></defs><rect width="640" height="300" fill="url(#ig' + key + ')"/><g fill="#fff" opacity=".5"><circle cx="60" cy="40" r="1.6"/><circle cx="580" cy="60" r="1.4"/><circle cx="520" cy="30" r="1.2"/><circle cx="110" cy="120" r="1.2"/></g>' + art + '<text x="16" y="24" font-family="monospace" font-size="12" fill="#fff" opacity=".7">● SCENE</text></svg>';
+  return '<svg class="illu-svg ik-' + key + '" viewBox="0 0 640 300" role="img" aria-label="' + esc(key) + '"><defs><radialGradient id="ig' + key + '" cx="50%" cy="35%" r="75%"><stop offset="0" stop-color="#2b2350"/><stop offset="1" stop-color="#0b0a14"/></radialGradient></defs><rect width="640" height="300" fill="url(#ig' + key + ')"/><g fill="#fff" opacity=".5"><circle cx="60" cy="40" r="1.6"/><circle cx="580" cy="60" r="1.4"/><circle cx="520" cy="30" r="1.2"/><circle cx="110" cy="120" r="1.2"/></g><g class="art">' + art + '</g><text x="16" y="24" font-family="monospace" font-size="12" fill="#fff" opacity=".7">● SCENE</text></svg>';
 }
 
 
@@ -942,6 +943,7 @@ function viewLesson(id) {
     if (!l) { $app.innerHTML = t('<div class="page"><div class="empty">Урок не знайдено.</div></div>'); return; }
     return Promise.all([API.getCourse(l.course_id), API.listLessons(l.course_id), API.myEnrollments()]).then(function (r) {
       var c = r[0], ls = r[1], enrolled = r[2].indexOf(l.course_id) > -1 || isAdm();
+      setAmbient(ambTheme(c));
       var isFirst = ls.length && ls[0].id === l.id && !(c && c.free_first === false), idx = ls.map(function (x) { return x.id; }).indexOf(l.id), nextL = ls[idx + 1];
       if (!lessonTasks(l)) { $app.innerHTML = '<div class="page"><div class="empty">' + t('Цей урок ще недоступний обраною мовою. Скоро!') + ' <a href="#/course/' + esc(l.course_id) + '">' + t('До марафону') + '</a></div></div>'; return; }
       if (!enrolled && !isFirst) { $app.innerHTML = t('<div class="page"><div class="empty">Цей урок відкривається після активації ключа. <a href="#/course/') + esc(l.course_id) + t('">До марафону</a></div></div>'); return; }
@@ -1402,9 +1404,30 @@ function adminSite(body) {
 }
 
 /* ================= router ================= */
+/* ---------- ambient course backgrounds (subtle) ---------- */
+function ambTheme(c) { var s = (c && (c.slug || '')) || ''; return /^harry/.test(s) ? 'hp' : /^vampire/.test(s) ? 'tvd' : null; }
+var AMB_CUR = null;
+function setAmbient(theme) {
+  if (theme === AMB_CUR) return; AMB_CUR = theme;
+  var el = document.getElementById('amb'); if (el) el.remove();
+  document.body.classList.toggle('has-amb', !!theme);
+  if (!theme) return;
+  el = document.createElement('div'); el.id = 'amb'; el.className = 'amb amb-' + theme; el.setAttribute('aria-hidden', 'true');
+  var h = '', i;
+  if (theme === 'hp') {
+    var spots = [[6,18],[14,62],[22,34],[31,78],[44,12],[57,55],[66,26],[74,70],[83,40],[92,16],[38,88],[88,82]];
+    for (i = 0; i < spots.length; i++) h += '<span class="cdl" style="left:' + spots[i][0] + '%;top:' + spots[i][1] + '%;--d:' + (6 + (i % 5)) + 's;--o:' + (-i * 1.3) + 's;--s:' + (0.7 + (i % 3) * 0.2) + '"><i></i></span>';
+  } else if (theme === 'tvd') {
+    h = '<span class="moon"></span><span class="fog f1"></span><span class="fog f2"></span>';
+    for (i = 0; i < 3; i++) h += '<span class="bat" style="--o:' + (-i * 9) + 's;--y:' + (12 + i * 14) + '%"><svg viewBox="0 0 64 24" width="34" height="13"><path d="M32 14c-2-4-6-6-10-4 1-4-3-7-7-6 2 2 2 4 1 6-4-3-9-3-12 0 6 0 9 3 10 6 3-2 7-2 10 0 2-1 5-2 8-2 3 0 6 1 8 2 3-2 7-2 10 0 1-3 4-6 10-6-3-3-8-3-12 0-1-2-1-4 1-6-4-1-8 2-7 6-4-2-8 0-10 4z" fill="currentColor"/></svg></span>';
+  }
+  el.innerHTML = h; document.body.insertBefore(el, document.body.firstChild);
+}
+document.addEventListener('visibilitychange', function () { document.body.classList.toggle('amb-paused', document.hidden); });
 function route() {
   var h = location.hash.replace(/^#\/?/, ''), parts = h.split('/'), p;
   var nav = ROUTE_LAST !== h; ROUTE_LAST = h;
+  if (nav && parts[0] !== 'course' && parts[0] !== 'lesson') setAmbient(null);
   if (nav) { $app.classList.remove('pg-in'); $app.classList.add('pg-leave'); window.scrollTo(0, 0); }
   switch (parts[0]) {
     case '': p = viewHome(); break;

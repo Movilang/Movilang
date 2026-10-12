@@ -665,3 +665,52 @@ textarea.mono{font-family:var(--f-mono,monospace);font-size:12px}
 .frow.fworst .fbar i{background:var(--err,#e0705f)}.frow.fworst .fl0{color:var(--err,#e0705f)}
 .frow.fhead{order:-1}
 @media(max-width:640px){.frow{grid-template-columns:1fr 34px 44px;}.frow .fbar{grid-column:1/-1;order:2}.frow span.muted:last-child{display:none}}
+
+/* ===== animated illustrations (gentle) ===== */
+.illu-svg .art{animation:iFloat 7s ease-in-out infinite;transform-box:fill-box;transform-origin:center}
+@keyframes iFloat{0%,100%{transform:translateY(0)}50%{transform:translateY(-4px)}}
+.illu-svg > g[opacity] circle{animation:twk 3.5s ease-in-out infinite}
+.illu-svg > g[opacity] circle:nth-child(2){animation-delay:-1.2s}.illu-svg > g[opacity] circle:nth-child(3){animation-delay:-2.1s}
+@keyframes twk{0%,100%{opacity:.3}50%{opacity:1}}
+.ik-candles g[fill="#ffb347"] path{animation:flick 1.4s ease-in-out infinite alternate;transform-box:fill-box;transform-origin:50% 100%}
+.ik-candles g[fill="#ffb347"] path:nth-child(2){animation-duration:1.7s}.ik-candles g[fill="#ffb347"] path:nth-child(3){animation-duration:1.2s}
+@keyframes flick{0%{transform:scale(1,1);opacity:.9}50%{transform:scale(.92,1.08);opacity:1}100%{transform:scale(1.05,.94);opacity:.85}}
+.ik-potion g[fill="#fff"] circle{animation:bub 3.2s ease-in infinite;transform-box:fill-box}
+.ik-potion g[fill="#fff"] circle:nth-child(2){animation-delay:-1s}.ik-potion g[fill="#fff"] circle:nth-child(3){animation-delay:-2s}
+@keyframes bub{0%{transform:translateY(0);opacity:.8}100%{transform:translateY(-40px);opacity:0}}
+.ik-owl circle[r="9"]{animation:blink 5s infinite;transform-box:fill-box;transform-origin:center}
+@keyframes blink{0%,94%,100%{transform:scaleY(1)}97%{transform:scaleY(.1)}}
+.ik-manor g[fill="#ffcf6b"] rect{animation:win 4s ease-in-out infinite alternate}
+.ik-manor g[fill="#ffcf6b"] rect:nth-child(2n){animation-delay:-2s}
+@keyframes win{0%{opacity:.45}100%{opacity:.95}}
+.ik-mirror ellipse{animation:shim 5s ease-in-out infinite}
+@keyframes shim{0%,100%{opacity:.15}50%{opacity:.4}}
+.ik-crow circle:first-child,.ik-stone path:first-child,.ik-ring path{animation:glow 4s ease-in-out infinite}
+@keyframes glow{0%,100%{filter:drop-shadow(0 0 0 transparent)}50%{filter:drop-shadow(0 0 10px rgba(255,220,160,.6))}}
+.ik-letter .art,.ik-broom .art,.ik-wand .art{animation-duration:4.5s}
+.ik-snake path[stroke="#6fbf73"]{animation:wig 3s ease-in-out infinite;transform-box:fill-box}
+@keyframes wig{0%,100%{transform:translateX(0)}50%{transform:translateX(6px)}}
+.ik-comet path{animation:shim 3s ease-in-out infinite}
+
+/* ===== ambient course backgrounds ===== */
+.amb{position:fixed;inset:0;z-index:0;pointer-events:none;overflow:hidden}
+body.has-amb #app,body.has-amb footer{position:relative;z-index:1}
+.amb-paused .amb *{animation-play-state:paused!important}
+/* Harry Potter: floating candles */
+.cdl{position:absolute;width:8px;height:calc(34px*var(--s));background:linear-gradient(#f3ead6,#cdbf9f);border-radius:2px;opacity:.4;animation:cdlF var(--d) ease-in-out infinite;animation-delay:var(--o);transform:scale(var(--s))}
+.cdl i{position:absolute;left:50%;top:-14px;width:9px;height:14px;margin-left:-4.5px;border-radius:50% 50% 45% 45%;background:radial-gradient(circle at 50% 70%,#fff4c2,#ffb347 55%,transparent 70%);box-shadow:0 0 14px 6px rgba(255,180,80,.35);animation:flame 1.6s ease-in-out infinite alternate}
+@keyframes cdlF{0%,100%{transform:translateY(0) scale(var(--s))}50%{transform:translateY(-14px) scale(var(--s))}}
+@keyframes flame{0%{transform:scale(1,1);opacity:.85}100%{transform:scale(.85,1.15);opacity:1}}
+:root[data-theme="light"] .cdl{opacity:.18}
+/* Vampire Diaries: moon, fog, bats */
+.amb-tvd .moon{position:absolute;right:6%;top:9%;width:110px;height:110px;border-radius:50%;background:radial-gradient(circle at 40% 40%,#f4f0e6,#d8d2c4 60%,#b9b2a3);opacity:.13;box-shadow:0 0 80px 30px rgba(220,215,200,.08)}
+.amb-tvd .fog{position:absolute;left:-50%;width:200%;height:40%;background:radial-gradient(ellipse at 30% 50%,rgba(200,205,220,.07),transparent 60%),radial-gradient(ellipse at 75% 60%,rgba(200,205,220,.05),transparent 55%);animation:fog 60s linear infinite}
+.amb-tvd .f1{bottom:0}.amb-tvd .f2{bottom:15%;animation-duration:90s;animation-direction:reverse;opacity:.7}
+@keyframes fog{from{transform:translateX(0)}to{transform:translateX(25%)}}
+.amb-tvd .bat{position:absolute;left:-60px;top:var(--y);color:#120d16;opacity:.35;animation:bat 28s linear infinite;animation-delay:var(--o)}
+:root[data-theme="dark"] .amb-tvd .bat{color:#3a2f44}
+.amb-tvd .bat svg{animation:flap .35s ease-in-out infinite alternate;transform-origin:center}
+@keyframes bat{0%{transform:translate(0,0)}25%{transform:translate(30vw,-20px)}50%{transform:translate(60vw,10px)}75%{transform:translate(90vw,-15px)}100%{transform:translate(115vw,0)}}
+@keyframes flap{from{transform:scaleY(1)}to{transform:scaleY(.45)}}
+@media (prefers-reduced-motion:reduce){.amb *,.illu-svg *{animation:none!important}}
+@media (max-width:760px){.cdl:nth-child(n+8){display:none}}
