@@ -411,6 +411,27 @@ function SupabaseBackend(url, key) {
 /* ================= init ================= */
 var cfg = window.MOVIELANG_CONFIG || {};
 var API = (cfg.SUPABASE_URL && cfg.SUPABASE_ANON_KEY && window.supabase) ? SupabaseBackend(cfg.SUPABASE_URL, cfg.SUPABASE_ANON_KEY) : DemoBackend();
+/* ---- read cache: makes navigation instant after the first load ---- */
+(function () {
+  var C = {}, TTL = 5 * 60 * 1000, READS = {listCourses:1, getCourse:1, listLessons:1, getLesson:1, myEnrollments:1, myProgress:1, myLangs:1, getSettings:1};
+  var keep = {getUser:1, mode:1, signIn:0};
+  function memo(name, fn) { return function () { var k = name + '|' + JSON.stringify([].slice.call(arguments)) + (name === 'myProgress' && !arguments.length ? '|' + TARGET : ''), e = C[k];
+    if (e && Date.now() - e.t < TTL) return e.p;
+    var pr = fn.apply(API, arguments); C[k] = {t:Date.now(), p:pr}; pr.catch(function () { delete C[k]; }); return pr; }; }
+  Object.keys(API).forEach(function (n) {
+    if (typeof API[n] !== 'function') return; var fn = API[n];
+    if (READS[n]) API[n] = memo(n, fn);
+    else if (n !== 'getUser') API[n] = function () { C = {}; return fn.apply(API, arguments); };
+  });
+  var gl = API.getLesson, gc = API.getCourse;
+  API.getLesson = function (id) { for (var k in C) if (k.indexOf('listLessons|') === 0 && C[k].done) { var l = C[k].done.filter(function (x) { return x.id === id; })[0]; if (l) return Promise.resolve(l); } return gl(id); };
+  API.getCourse = function (id) { for (var k in C) if (k.indexOf('listCourses|') === 0 && C[k].done) { var c = C[k].done.filter(function (x) { return x.id === id; })[0]; if (c) return Promise.resolve(c); } return gc(id); };
+  var ll = API.listLessons, lc = API.listCourses;
+  API.listLessons = function (cid) { var p = ll(cid); var k = 'listLessons|' + JSON.stringify([cid]); p.then(function (r) { if (C[k]) C[k].done = r; }); return p; };
+  API.listCourses = function (all) { var p = lc(all); var k = 'listCourses|' + JSON.stringify(all === undefined ? [] : [all]); p.then(function (r) { if (C[k]) C[k].done = r; }); return p; };
+  API.clearCache = function () { C = {}; };
+  API.prefetch = function () { API.listCourses(false).then(function (cs) { cs.forEach(function (c) { if (c.lessons_count) API.listLessons(c.id); }); }).catch(function () {}); };
+})();
 if (API.mode === 'demo') document.getElementById('demoBar').hidden = false;
 var USER = null, SETTINGS = DEFAULT_SETTINGS;
 var ADMIN_MODE = true; try { ADMIN_MODE = localStorage.getItem('ml_admin_mode') !== '0'; } catch (e) {}
@@ -1221,5 +1242,6 @@ Promise.all([API.getUser().catch(function () { return null; }), API.getSettings(
   else if (/error_description=/.test(h)) { history.replaceState(null, '', location.pathname + '#/login'); toast(t('Посилання недійсне або застаріле. Увійди або зареєструйся ще раз.'), 'err'); }
   renderNav(); route();
   if (!LANG_SET) langModal(true);
+  setTimeout(function () { API.prefetch(); }, 300);
 });
 })();
