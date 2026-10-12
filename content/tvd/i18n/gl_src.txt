@@ -1,0 +1,551 @@
+0	diary	щоденник	pamiętnik	Dear Diary, today will be different.	I keep a diary when I travel.
+1	to be different	бути іншим	być innym	Today will be different.	This year will be different, I promise.
+2	to move on	жити далі	żyć dalej	I have to move on.	After the divorce, she finally moved on.
+3	to pretend	вдавати	udawać	I'll pretend I'm fine.	He pretended he didn't see me.
+4	to be fine	бути в порядку	być w porządku	I'm fine. Really.	Don't worry, I'm fine.
+5	guardian	опікун	opiekun	She's our guardian now.	His uncle became his legal guardian.
+6	toast	тост	tost	I can make toast.	I had toast and coffee for breakfast.
+7	to be late	запізнюватися	spóźnić się	We're going to be late!	Hurry up, or we'll be late.
+8	lunch money	гроші на обід	pieniądze na obiad	Does anyone need lunch money?	Mom gave me lunch money.
+9	new guy	новенький	nowy	Who's the new guy?	The new guy in our office is really quiet.
+10	hallway	коридор	korytarz	Everybody is staring in the hallway.	I met her in the hallway after class.
+11	to stare	пильно дивитися	gapić się	Stop staring at him!	It's rude to stare at people.
+12	mysterious	загадковий	tajemniczy	He's so mysterious.	A mysterious man called me last night.
+13	to check out	розглядати	przyglądać się	Is he checking you out?	She checked out the new teacher.
+14	history class	урок історії	lekcja historii	See you in history class.	History class is my favourite.
+15	Civil War	Громадянська війна	wojna secesyjna	Mystic Falls during the Civil War.	My grandfather loves books about the Civil War.
+16	psychic	ясновидиця	jasnowidzka	Grams says I'm psychic.	She thinks she's psychic, but she just guesses.
+17	witch	відьма	czarownica	Our ancestors were witches.	In the story, the witch lives in the forest.
+18	cemetery	кладовище	cmentarz	I come to the cemetery to write.	There is an old cemetery behind the church.
+19	crow	ворона	wrona	That crow is watching me.	A crow sat on the roof all morning.
+20	fog	туман	mgła	The fog came out of nowhere.	We drove slowly because of the fog.
+21	creepy	моторошний	niesamowity	Okay, that's creepy.	That old house is really creepy at night.
+22	to bleed	кровоточити	krwawić	You're bleeding.	My finger is bleeding — do you have a plaster?
+23	the Falls	водоспад	wodospad	Party at the Falls tonight!	We had a picnic near the falls.
+24	bonfire	багаття	ognisko	Let's go to the bonfire.	We sang songs around the bonfire.
+25	animal attack	напад тварини	atak zwierzęcia	The police say it was an animal attack.	The farmer lost two sheep in an animal attack.
+26	brother	брат	brat	Hello, brother.	My brother lives in Kyiv.
+27	comet	комета	kometa	The comet is back.	You can see the comet without a telescope.
+28	to pass (over)	пролітати	przelatywać	It passes every 145 years.	A plane passed over our house.
+29	candlelight vigil	вечір зі свічками	wieczór ze świecami	Light your candle for the comet.	We held a candlelight vigil for the victims.
+30	to light	запалювати	zapalać	Can I light your candle?	Can you light the fire?
+31	sign	знак	znak	They say it's a bad sign.	Is it a good sign or a bad one?
+32	to sneak out	вислизнути з дому непомітно	wymknąć się z domu	Did you sneak out again?	As a teenager, I often sneaked out at night.
+33	pills	пігулки	tabletki	I brought you some pills.	Take two pills after dinner.
+34	to hook up	мати несерйозні стосунки	mieć niezobowiązującą relację	Are you hooking up with Tyler?	They hooked up at a party once.
+35	jealous	ревнивий	zazdrosny	You're jealous, admit it.	He gets jealous when she talks to other guys.
+36	hospital	лікарня	szpital	She's still in the hospital.	My grandmother is in hospital.
+37	blood loss	втрата крові	utrata krwi	She lost a lot of blood.	The patient almost died from blood loss.
+38	vampire	вампір	wampir	Vampire...	In the film, the vampire sleeps in a coffin.
+39	to remember	пам'ятати	pamiętać	I don't remember anything.	Do you remember his name?
+40	to forget	забувати	zapominać	You will forget.	Don't forget your keys.
+41	to compel	навіювати	wmawiać	Look at me. You'll forget.	In the show, vampires can compel humans.
+42	compulsion	навіювання	perswazja	Compulsion doesn't always work.	Under compulsion, she told him everything.
+43	to cover up	приховувати	ukrywać	We have to cover this up.	The company tried to cover up the mistake.
+44	weak	слабкий	słaby	You're weak, Stefan.	I felt weak after the flu.
+45	to show up	з'являтися	pojawić się	I just showed up.	He showed up two hours late.
+46	ex	колишній	były	Stefan's ex.	I saw my ex at the party.
+47	to break someone's heart	розбити комусь серце	złamać komuś serce	She broke his heart.	He broke her heart when he left.
+48	charming	чарівний	czarujący	You're charming.	The waiter was very charming.
+49	to be in a hurry	поспішати	spieszyć się	What's the hurry?	Sorry, I'm in a hurry.
+50	bored	знуджений	znudzony	I'm bored.	The kids got bored after an hour.
+51	brotherly love	братська любов	braterska miłość	Oh, brotherly love.	That's not brotherly love — that's control.
+52	to mess with	чіплятися	zadzierać	Don't mess with her.	Don't mess with my computer!
+53	a little	трохи	trochę	I'm a little dangerous.	I'm a little tired today.
+54	tryouts	відбір	nabór	Are you coming to tryouts?	Tryouts for the school play are on Monday.
+55	cheer squad	група підтримки	grupa cheerleaderek	Are you back on the squad?	She's the captain of the cheer squad.
+56	cheerleading	черлідинг	cheerleading	I quit cheerleading.	Cheerleading is harder than it looks.
+57	to quit	кинути	rzucić	I quit the team.	He quit his job last year.
+58	captain	капітан	kapitan	I'm the captain, remember?	She is the captain of our team.
+59	totally	абсолютно	absolutnie	That's totally not fair.	You're totally right.
+60	to get over (it)	пережити	przeboleć	Get over it!	It took her months to get over him.
+61	drama	драма	drama	I don't need this drama.	There's always drama in this group.
+62	to show off	хизуватися	popisywać się	He's just showing off.	Stop showing off your new phone.
+63	to get along	ладнати	dogadywać się	I want you two to get along.	I get along well with my neighbours.
+64	awkward	незручний	niezręczny	This is so awkward.	There was an awkward silence.
+65	to invite in	запросити зайти	zaprosić do środka	Come in.	She invited me in for tea.
+66	to be invited	бути запрошеним	zostać zaproszonym	You need to be invited.	Were you invited to the wedding?
+67	necklace	намисто	naszyjnik	I want you to have this.	She wore a silver necklace.
+68	vervain	вербена	werbena	It's vervain.	Vervain is a plant with purple flowers.
+69	to protect	захищати	chronić	It will protect you.	A good helmet protects your head.
+70	to wear	носити	nosić	Wear it every day.	I always wear my glasses.
+71	host	господар	gospodarz	Some host I am.	Our host made a wonderful dinner.
+72	game	матч	mecz	Are you coming to the game?	We won the game 3–1.
+73	pep rally	мітинг підтримки команди перед грою	wiec kibiców przed meczem	See you at the pep rally.	The whole school came to the pep rally.
+74	team	команда	drużyna	Welcome to the team.	She plays for the school team.
+75	coach	тренер	trener	The coach hates me.	The coach told us to run faster.
+76	to make the team	потрапити до команди	dostać się do drużyny	You made the team.	I didn't make the team this year.
+77	parking lot	автостоянка	parking	Meet me in the parking lot.	The parking lot was empty at night.
+78	to kill	убити	zabić	He killed him.	The storm killed three people.
+79	on purpose	навмисно	celowo	You did that on purpose.	Did you break it on purpose?
+80	to warn	попереджати	ostrzegać	I'm warning you.	They warned us about the storm.
+81	founder	засновник	założyciel	Our founding families.	He is one of the founders of the company.
+82	Founders' Party	бал засновників	bal założycieli	Are you going to the Founders' Party?	We dressed up for the Founders' Party.
+83	registry	реєстр	rejestr	Look at the old registry.	Their names are in the town registry.
+84	heirloom	сімейна реліквія	pamiątka rodzinna	It's a family heirloom.	This ring is a family heirloom.
+85	date	пара	partner	Who's your date tonight?	Do you have a date for the party?
+86	to dance	танцювати	tańczyć	Would you like to dance?	We danced all night.
+87	crystal	кристал	kryształ	That crystal belongs to my family.	She wears a blue crystal on a chain.
+88	to belong to	належати	należeć do	It belongs to me.	Does this bag belong to you?
+89	signature	підпис	podpis	Whose signature is this?	Put your signature here, please.
+90	Founders' Council	Рада засновників	Rada Założycieli	The Council meets tonight.	The council voted on the new plan.
+91	secret	таємниця	tajemnica	Nobody can know about this.	Can you keep a secret?
+92	to be back	повернутися	wrócić	They're back.	When will you be back?
+93	evidence	докази	dowody	The evidence says otherwise.	The police found new evidence.
+94	to be killed	бути вбитим	zostać zabitym	Two people were killed.	Many soldiers were killed in the war.
+95	to be founded	бути заснованим	zostać założonym	The town was founded in 1860.	The school was founded by monks.
+96	to deal with	розібратися з	poradzić sobie z	We'll deal with it.	I can't deal with this right now.
+97	to keep an eye on	наглядати	mieć na oku	Keep an eye on the new people.	Can you keep an eye on my bag?
+98	history repeats itself	історія повторюється	historia się powtarza	History repeats itself.	Be careful — history repeats itself.
+99	daylight ring	перстень	pierścień chroniący przed słońcem	Without the ring, I'd burn.	In the show, a daylight ring protects vampires from the sun.
+100	to burn	горіти	palić się	The sun will burn you.	Be careful, you'll burn your hand.
+101	cellar	підвал	piwnica	Lock him in the cellar.	We keep wine in the cellar.
+102	to lock up	замикати	zamknąć	Lock him up.	Lock up the house before you leave.
+103	to trust	довіряти	ufać	Never trust a Salvatore.	I trust you completely.
+104	to betray	зрадити	zdradzić	You betrayed me.	He betrayed his best friend.
+105	to spike (a drink)	непомітно підмішати щось у напій	ukradkiem coś dosypać do napoju	Someone spiked my drink.	Never leave your drink — someone could spike it.
+106	to give up	здатися	poddać się	Just give up, Damon.	Don't give up — try again!
+107	to starve	голодувати	głodować	You're starving me.	Many animals starve in winter.
+108	to dry out	висихати	wysychać	I'm drying out down here.	Leave the clothes to dry out.
+109	desperate	у відчаї	zdesperowany	Desperate times, brother.	He was desperate for help.
+110	to let out	випустити	wypuścić	Let me out!	Let the dog out, please.
+111	door	двері	drzwi	Open the door.	Close the door behind you.
+112	to beg	благати	błagać	I'm not going to beg.	She begged him to stay.
+113	temper	запальність	porywczość	Watch your temper.	He has a terrible temper.
+114	patience	терпіння	cierpliwość	I'm a patient man.	Teaching needs a lot of patience.
+115	to get out	вибратися	wydostać się	I will get out.	We have to get out of here!
+116	car wash	мийка машин	myjnia samochodowa	Car wash! Five dollars!	There's a car wash near the school.
+117	to raise money	збирати гроші	zbierać pieniądze	We need to raise money.	They raised money for the hospital.
+118	charity	благодійність	dobroczynność	It's for charity!	She gives money to charity.
+119	bucket	відро	wiadro	Pass me the bucket.	He filled the bucket with water.
+120	sponge	губка	gąbka	Grab a sponge.	Clean the table with a sponge.
+121	soaked	мокрий до нитки	przemoczony do suchej nitki	I'm totally soaked.	We got soaked in the rain.
+122	sunburn	сонячний опік	oparzenie słoneczne	You'll get a sunburn.	I got a bad sunburn at the beach.
+123	to volunteer	зголоситися добровільно	zgłosić się na ochotnika	Who volunteers?	I volunteer at the animal shelter.
+124	to be in charge	бути відповідальним	być odpowiedzialnym	I'm in charge here.	Who's in charge of this project?
+125	to find out	дізнатися	dowiedzieć się	I'll find out myself.	Did you find out his name?
+126	to search	шукати	szukać	I searched online.	Search the web for the answer.
+127	old photo	старе фото	stare zdjęcie	Look at this old photo.	I found an old photo of my parents.
+128	impossible	неможливий	niemożliwy	That's impossible.	Nothing is impossible.
+129	to explain	пояснити	wyjaśnić	Explain this.	Can you explain the rules?
+130	to lie to someone	брехати комусь	okłamywać kogoś	Don't lie to me.	He lied to his parents.
+131	What are you?	Хто	Kim	What are you?	— (питання з серіалу; у житті краще: Who are you?)
+132	to step back	відступити	cofnąć się	Step back.	Step back from the edge!
+133	truth	правда	prawda	I want the truth.	Always tell the truth.
+134	to be born	народитися	urodzić się	I was born in 1847.	I was born in Lviv.
+135	to fall in love	закохатися	zakochać się	We both fell in love with her.	They fell in love in Paris.
+136	to turn (someone)	перетворити	przemienić	She turned us.	In the show, a vampire can turn a human.
+137	to feed on	харчуватися	żywić się	I don't feed on people.	Bats feed on insects.
+138	animal blood	кров тварин	krew zwierząt	I survive on animal blood.	— (термін серіалу)
+139	to survive	виживати	przeżyć	That's how I survive.	Only two people survived the crash.
+140	to keep a secret	тримати в таємниці	zachować w tajemnicy	Can you keep a secret?	I promise to keep your secret.
+141	centuries	століття	stulecia	For more than a century.	The castle has stood for centuries.
+142	regret	жаль	żal	I regret so much.	I don't regret anything.
+143	to party	тусуватися	imprezować	Let's party!	We partied until morning.
+144	to hang out	проводити час разом	spędzać razem czas	Want to hang out?	We hang out at the mall.
+145	reckless	безрозсудний	lekkomyślny	You're reckless. I like that.	Reckless driving causes accidents.
+146	to be fun	бути веселим	być zabawnym	You're fun.	The party was really fun.
+147	pain	біль	ból	No more pain.	I have a pain in my back.
+148	to take away	забрати	zabrać	I can take it away.	This pill will take away the pain.
+149	to snap	зламати	złamać	Snap.	He snapped the stick in two.
+150	whatever	та байдуже	wszystko jedno	Whatever.	“Clean your room!” — “Whatever.”
+151	to get bored	занудьгувати	znudzić się	I got bored.	Kids get bored easily.
+152	transition	перехід	przemiana	She's in transition.	The country is in a period of transition.
+153	to wake up	прокинутися	obudzić się	She woke up.	I woke up at six.
+154	hungry	голодний	głodny	I'm so hungry.	I'm hungry — let's eat.
+155	to complete	завершити	dokończyć	She has to complete it.	Complete the form, please.
+156	human blood	людська кров	ludzka krew	She needs human blood.	— (термін серіалу)
+157	choice	вибір	wybór	You have a choice.	It was a difficult choice.
+158	to promise	обіцяти	obiecywać	I promise.	You promised to call me!
+159	to be scared	боятися	bać się	I'm scared.	Don't be scared of the dog.
+160	to trust someone with something	довірити комусь щось	powierzyć komuś coś	I trust you with this.	I trust you with my life.
+161	to control	контролювати	kontrolować	You can control it.	Try to control your anger.
+162	craving	сильне бажання	silna chęć	The craving is too strong.	I have a craving for chocolate.
+163	to hurt	завдавати болю	zranić	I don't want to hurt anyone.	My head hurts.
+164	to calm down	заспокоїтися	uspokoić się	Calm down. Breathe.	Calm down, it's not a big deal.
+165	deer	олень	jeleń	Start with a deer.	We saw a deer in the forest.
+166	sunlight	сонячне світло	światło słoneczne	The sunlight hurts.	Plants need sunlight.
+167	to hide	ховатися	chować się	You have to hide.	The cat hid under the bed.
+168	dangerous	небезпечний	niebezpieczny	You're dangerous now.	Swimming here is dangerous.
+169	to slip	зірватися	potknąć się	If you slip, someone dies.	Be careful, don't slip on the ice.
+170	costume	костюм	kostium	What's your costume?	She wore a cat costume.
+171	Halloween	Гелловін	Halloween	Happy Halloween!	Kids go trick-or-treating on Halloween.
+172	haunted house	будинок з привидами	nawiedzony dom	Welcome to the haunted house.	There's a haunted house at the fair.
+173	ghost story	історія про привидів	historia o duchach	Want to hear a ghost story?	Grandpa told us a ghost story.
+174	to scare	лякати	straszyć	Did I scare you?	The noise scared the baby.
+175	cute	милий	słodki	Cute costume!	What a cute puppy!
+176	lame	відстійний	słaby	That's so lame.	His excuse was really lame.
+177	seriously	серйозно?	serio?	Seriously?	Seriously, you need to stop.
+178	creepy-crawly	моторошна комашня	straszne robactwo	Ew, creepy-crawlies.	The garden is full of creepy-crawlies.
+179	to stake	проткнути кілком	przebić kołkiem	— (дія без слів)	In old stories, people stake vampires.
+180	stake	кілок	kołek	A wooden stake.	He put a stake in the ground.
+181	to erase	стерти	wymazać	Make him forget.	Erase the board, please.
+182	to make someone forget	змусити когось забути	sprawić	Can you make him forget?	This song makes me forget my problems.
+183	memory	спогад	wspomnienie	His memories of her.	I have a good memory for faces.
+184	to leave town	поїхати з міста	wyjechać z miasta	She left town.	He left town without saying goodbye.
+185	loss	втрата	strata	Too much loss.	The loss of his job was hard.
+186	to protect from	захищати від	chronić przed	I want to protect him from this.	Sunglasses protect your eyes from the sun.
+187	to be okay	бути в порядку	być w porządku	I want him to be okay.	Are you okay?
+188	best friend	найкращий друг	najlepszy przyjaciel	She's my best friend.	My best friend lives next door.
+189	birthday	день народження	urodziny	Happy birthday, Stefan.	When is your birthday?
+190	to drop by	заскочити в гості	wpaść w odwiedziny	I just dropped by.	Drop by any time!
+191	to catch up	наздогнати новини одне одного	nadrobić zaległości	We have so much to catch up on.	Let's meet and catch up.
+192	humanity	людяність	człowieczeństwo	You still have your humanity.	The story is about love and humanity.
+193	to switch off	вимкнути	wyłączyć	Don't switch it off.	Switch off the light, please.
+194	to remind	нагадувати	przypominać	Let me remind you.	Remind me to call Mom.
+195	roommate	сусід по кімнаті	współlokator	Hi, roommate.	My roommate is from Spain.
+196	old soul	«стара душа»	„stara dusza”	He's an old soul.	My daughter is an old soul.
+197	to frame	підставити	wrobić	Someone framed her.	He was framed for a crime he didn't commit.
+198	trap	пастка	pułapka	It's a trap.	The mouse walked into the trap.
+199	to earn trust	заслужити довіру	zdobyć zaufanie	I need their trust.	You have to earn their trust.
+200	to owe	бути винним	być winnym	You owe me.	I owe you ten dollars.
+201	party animal	любитель вечірок	imprezowicz	She's a party animal.	Jake is a real party animal.
+202	to be up to something	щось замишляти	coś knuć	What are you up to?	The kids are up to something.
+203	to play along	підігравати	grać razem	Just play along.	I didn't know the plan, but I played along.
+204	cold-blooded	холоднокровний	z zimną krwią	That was cold-blooded.	It was a cold-blooded murder.
+205	sacrifice	жертва	ofiara	A necessary sacrifice.	Parents make sacrifices for their kids.
+206	to throw away	викинути	wyrzucić	I threw it away.	Don't throw away that box.
+207	ancestor	предок	przodek	Your ancestor.	My ancestors came from Ukraine.
+208	power	сила	moc	Your power is growing.	She has the power to heal.
+209	to accept	прийняти	zaakceptować	You have to accept it.	Please accept my apology.
+210	to freak out	психувати	panikować	I'm freaking out.	Don't freak out, it's just a spider.
+211	coincidence	збіг	zbieg okoliczności	It's just a coincidence.	What a coincidence — me too!
+212	Grams	бабуся	babcia	I need to talk to Grams.	My Grams makes the best pie.
+213	substitute teacher	учитель на заміну	nauczyciel na zastępstwo	I'm your new history teacher.	We had a substitute teacher today.
+214	to take over	перейняти	przejąć	I'm taking over this class.	She took over the family business.
+215	local history	історія краю	historia regionu	I love local history.	The museum shows our local history.
+216	to research	досліджувати	badać	Research your family.	She researches old buildings.
+217	essay	есе	esej	A short essay, please.	I have to write an essay tonight.
+218	to be curious	бути допитливим	być ciekawym	I'm just curious.	Cats are very curious animals.
+219	widower	вдівець	wdowiec	My wife is gone.	He's been a widower for ten years.
+220	to disappear	зникнути	zniknąć	She disappeared.	The keys disappeared again.
+221	to move here	переїхати сюди	przeprowadzić się tutaj	Why did you move here?	We moved here last year.
+222	séance	спіритичний сеанс	seans spirytystyczny	Let's have a séance.	They held a séance at midnight.
+223	spirit	дух	duch	The spirits are angry.	They believed in good spirits.
+224	to possess	вселитися	opętać	She's possessed.	In the film, a ghost possesses the girl.
+225	dream	сон	sen	I keep having this dream.	I had a strange dream last night.
+226	spell	заклинання	zaklęcie	It's a spell.	The witch cast a spell on him.
+227	candle	свічка	świeca	Light the candles.	Blow out the candles!
+228	to shatter	розбитися вщент	roztrzaskać się	It shattered.	The glass shattered on the floor.
+229	to get rid of	позбутися	pozbyć się	Get rid of it.	I need to get rid of these old clothes.
+230	the tomb	склеп	grobowiec	She's in the tomb.	They found an ancient tomb.
+231	church	церква	kościół	Under the old church.	There's a church in the village.
+232	ruins	руїни	ruiny	Meet me at the ruins.	We visited the ruins of the castle.
+233	to be trapped	бути в пастці	być uwięzionym	She's been trapped since 1864.	The cat was trapped in the tree.
+234	to free	звільнити	uwolnić	I'm going to free her.	They freed the prisoners.
+235	plan	план	plan	That was the plan.	What's the plan for tonight?
+236	all along	увесь час	przez cały czas	You wanted this all along.	I knew it all along.
+237	to ruin	зіпсувати	zrujnować	You ruined everything.	The rain ruined our picnic.
+238	145 years	145 років	145 lat	I waited 145 years.	— (число з серіалу)
+239	to come back	повернутися	wrócić	He came back.	She came back from Italy.
+240	newbie	новачок	nowicjusz	A newbie vampire.	I'm a newbie at this job.
+241	to hunt	полювати	polować	He's hunting.	They hunt deer in autumn.
+242	rules	правила	zasady	Nobody told him the rules.	Follow the rules, please.
+243	who turned you	хто тебе перетворив	kto cię przemienił	Who turned me?	— (питання з серіалу)
+244	to answer	відповідати	odpowiadać	Answer me!	Please answer the question.
+245	must be	мабуть	musi być	It must be Logan.	You must be tired.
+246	can't be	не може бути	nie może być	It can't be him.	That can't be true!
+247	might be	може бути	może być	He might be one of them.	It might rain later.
+248	to stay over	залишитися на ніч	zostać na noc	Stay with me.	Can I stay over at your place?
+249	close	близький	bliski	We're close.	We're very close friends.
+250	to open up	відкритися	otworzyć się	I want to open up to you.	It's hard for him to open up.
+251	vulnerable	вразливий	bezbronny	I feel vulnerable.	Small children are vulnerable.
+252	to belong	бути на своєму місці	być na swoim miejscu	I belong here.	I feel I don't belong here.
+253	desk	стіл	biurko	On his desk.	The book is on my desk.
+254	frame	рамка	ramka	An old frame.	I put the photo in a frame.
+255	to look like	бути схожим	być podobnym	She looks just like me.	You look like your mother.
+256	look-alike	двійник	sobowtór	My look-alike.	He's an Elvis look-alike.
+257	resemblance	схожість	podobieństwo	The resemblance is…	There's a strong family resemblance.
+258	to run away	втекти	uciec	Elena, wait!	The dog ran away.
+259	to be used	бути використаним	zostać wykorzystanym	Was I just a replacement?	I feel used.
+260	replacement	заміна	zastępstwo	Am I a replacement?	We need a replacement for the old printer.
+261	to make sense	мати сенс	mieć sens	It all makes sense now.	This doesn't make sense.
+262	to drive off	поїхати	odjechać	She drove off.	He got in the car and drove off.
+263	headlights	фари	reflektory	— (нічна дорога)	Turn on your headlights.
+264	to stay away	триматися подалі	trzymać się z daleka	Stay away from me.	Stay away from the fire!
+265	car crash	автомобільна аварія	wypadek samochodowy	You were in a car crash.	Nobody was hurt in the car crash.
+266	to flip over	перекинутися	dachować	The car flipped over.	The boat flipped over in the storm.
+267	road trip	подорож машиною	podróż samochodem	We're on a road trip.	We went on a road trip across Spain.
+268	to kidnap	викрасти	porwać	Are you kidnapping me?	They kidnapped the director's son.
+269	Georgia	Джорджія	Georgia	We're in Georgia.	— (назва штату)
+270	to pull over	зупинитися на узбіччі	zjechać na pobocze	Pull over!	The police told him to pull over.
+271	seatbelt	ремінь безпеки	pas bezpieczeństwa	Seatbelt.	Fasten your seatbelt.
+272	to give someone a ride	підвезти	podwieźć	I'll give you a ride.	Can you give me a ride to school?
+273	bar	бар	bar	Welcome to my bar.	Let's meet at the bar.
+274	shot	чарка	kieliszek	One shot.	He ordered a shot of whiskey.
+275	old friend	давній друг	dawny przyjaciel	She's an old friend.	I met an old friend yesterday.
+276	to loosen up	розслабитися	wyluzować	Loosen up.	Loosen up, it's a party!
+277	to have fun	розважатися	dobrze się bawić	Are you having fun?	Have fun at the concert!
+278	to admit	визнавати	przyznać	Admit it.	He admitted his mistake.
+279	to get even	поквитатися	wyrównać rachunki	I'll get even.	I'll get even with him one day.
+280	grimoire	гримуар	grimuar	You need a grimoire.	The witch kept her spells in a grimoire.
+281	adopted	усиновлена	adoptowana	I was adopted.	My cousin was adopted from Brazil.
+282	birth certificate	свідоцтво про народження	akt urodzenia	My birth certificate.	You need your birth certificate.
+283	records	записи	dokumentacja	Hospital records.	The school keeps student records.
+284	to hide something from	приховувати від	ukrywać przed	You hid it from me.	They hid the truth from us.
+285	bloodline	родовід	rodowód	My bloodline.	The horse has a famous bloodline.
+286	real parents	біологічні батьки	biologiczni rodzice	Who are my real parents?	— (питання з серіалу)
+287	library	бібліотека	biblioteka	I'm at the library.	The library closes at six.
+288	journal	журнал	dziennik	An old family journal.	My great-grandfather kept a journal.
+289	decade dance	танці «десятиліття»	tańce „dekady”	It's a decade dance.	This year's decade dance is the '80s.
+290	poodle skirt	спідниця-колокол 50-х	rozkloszowana spódnica z lat 50.	I love my poodle skirt.	She wore a pink poodle skirt.
+291	jukebox	музичний автомат	szafa grająca	Put a coin in the jukebox.	The jukebox played old rock and roll.
+292	to dress up	наряджатися	stroić się	Are you dressing up?	We dressed up for the wedding.
+293	back then	тоді	wtedy	Back then, things were different.	Back then, we had no phones.
+294	used to	колись	kiedyś	I used to dance like this.	I used to live in Odesa.
+295	to swing dance	танцювати свінг	tańczyć swinga	Do you swing dance?	They swing dance every Friday.
+296	chaperone	дорослий наглядач на вечірці	dorosły opiekun na imprezie	I'm a chaperone tonight.	The trip needs two chaperones.
+297	to cut in	перебити	odbić	May I cut in?	He cut in to dance with my wife.
+298	to borrow	позичити	pożyczyć	Can I borrow it?	Can I borrow your pen?
+299	handwriting	почерк	pismo	The handwriting is hard to read.	Your handwriting is beautiful.
+300	to make up	вигадати	zmyślić	He made it all up.	She made up an excuse.
+301	fiction	вигадка	fikcja	It's just fiction.	I prefer fiction to history.
+302	invention	винахід	wynalazek	He loved inventions.	The phone is a great invention.
+303	to be obsessed with	бути одержимим	mieć obsesję	He was obsessed with vampires.	He's obsessed with football.
+304	to suspect	підозрювати	podejrzewać	I suspect her.	I suspect he knows the truth.
+305	stalker	переслідувач	prześladowca	I have a stalker.	The singer had a stalker for years.
+306	to stalk	переслідувати	śledzić	Someone's stalking me.	The cat stalked the bird.
+307	phone call	телефонний дзвінок	telefon	Another phone call.	I got a strange phone call.
+308	to hang up	покласти слухавку	rozłączyć się	He hung up.	Don't hang up!
+309	to sneak up on	підкрастися	podkraść się	Don't sneak up on me!	The cat sneaked up on the mouse.
+310	to fight back	давати відсіч	bronić się	Fight back!	She fought back and escaped.
+311	uninvited	непроханий	nieproszony	An uninvited guest.	An uninvited guest came to the party.
+312	public place	публічне місце	miejsce publiczne	It's a public place.	Don't smoke in a public place.
+313	flashback	флешбек	retrospekcja	Back to 1864.	The film has many flashbacks.
+314	apothecary	аптека	apteka	At the apothecary.	The apothecary sold herbs and medicine.
+315	compass	компас	kompas	The compass points to vampires.	We used a compass in the forest.
+316	to point to	вказувати на	wskazywać na	It's pointing at her.	The arrow points to the exit.
+317	to round up	зігнати	spędzić	Round them up.	The police rounded up the gang.
+318	to hunt down	вистежити і схопити	wytropić i schwytać	Hunt them down.	The police hunted down the thief.
+319	to be caught	бути спійманим	zostać złapanym	They were caught.	The thief was caught.
+320	to escape	втекти	uciec	She escaped.	The bird escaped from the cage.
+321	to dig up	викопати	wykopać	Dig it up.	The dog dug up a bone.
+322	grave	могила	grób	In his grave.	They put flowers on the grave.
+323	shovel	лопата	łopata	Pass me the shovel.	He took a shovel and dug a hole.
+324	to bury	поховати	pochować	It was buried with him.	They buried the treasure on the island.
+325	hidden	схований	ukryty	It's well hidden.	There's a hidden door.
+326	to look for	шукати	szukać	What are you looking for?	I'm looking for my keys.
+327	to be worth it	бути вартим того	być wartym tego	Is it worth it?	The trip was long, but worth it.
+328	dirt	земля	ziemia	Covered in dirt.	Wipe the dirt off your shoes.
+329	deal	угода	układ	Let's make a deal.	We made a deal.
+330	to keep one's word	дотримати слова	dotrzymać słowa	I'll keep my word.	He always keeps his word.
+331	to double-cross	обдурити партнера	oszukać wspólnika	Don't double-cross me.	His partner double-crossed him.
+332	in exchange for	в обмін на	w zamian za	In exchange for the book.	I'll help you in exchange for a coffee.
+333	condition	умова	warunek	One condition.	I'll go on one condition.
+334	to be on someone's side	бути на чиємусь боці	być po czyjejś stronie	Whose side are you on?	I'm on your side.
+335	risk	ризик	ryzyko	It's too risky.	There's always a risk.
+336	to trust someone	довіряти	ufać	I don't trust you.	Trust me.
+337	to hide from	приховувати	ukrywać	You hid it from me.	Don't hide things from me.
+338	to cast a spell	накласти заклинання	rzucić zaklęcie	Cast the spell.	She cast a spell on the prince.
+339	torch	смолоскип	pochodnia	Light the torches.	Take a torch, it's dark.
+340	to be about to	от-от	zaraz coś zrobić	It's about to open.	The film is about to start.
+341	to hold	тримати	utrzymać	I can't hold it much longer.	Hold my hand.
+342	promise	обіцянка	obietnica	Promise me.	I'll keep my promise.
+343	price	ціна	cena	There's always a price.	The price is too high.
+344	to go down	спуститися	zejść	I'm going down.	Go down the stairs.
+345	darkness	темрява	ciemność	Total darkness.	The house was in darkness.
+346	dried-up	висохлий	wyschnięty	They're all dried up.	The river was dried up.
+347	empty	порожній	pusty	It's empty.	The fridge is empty.
+348	to be gone	зникнути	zniknąć	She's gone.	My keys are gone!
+349	to fool someone	обдурити	oszukać	She fooled us.	Don't let him fool you.
+350	heartbroken	з розбитим серцем	ze złamanym sercem	He's heartbroken.	She was heartbroken after the breakup.
+351	to be stuck	застрягти	utknąć	I'm stuck!	We were stuck in traffic.
+352	exhausted	виснажений	wyczerpany	I'm exhausted.	I was exhausted after work.
+353	to rest	відпочити	odpocząć	I need to rest.	Sit down and rest.
+354	to pass away	відійти	odejść	She passed away.	My grandfather passed away last year.
+355	grief	горе	żałoba	Her grief.	Grief takes time.
+356	to blame	звинувачувати	obwiniać	I blame you.	Don't blame yourself.
+357	funeral	похорон	pogrzeb	At the funeral.	The funeral is on Friday.
+358	to comfort	утішати	pocieszać	Let me comfort you.	She comforted the crying child.
+359	to be sorry for your loss	співчуваю вашій втраті	wyrazy współczucia z powodu straty	I'm so sorry for your loss.	I'm sorry for your loss.
+360	never again	ніколи більше	nigdy więcej	Never again.	Never again, I promise.
+361	bourbon	бурбон	bourbon	Pour me a bourbon.	He ordered a glass of bourbon.
+362	to drown one's sorrows	заливати горе	topić smutki	Drowning my sorrows.	After the breakup he drowned his sorrows.
+363	to get drunk	напитися	upić się	He's drunk.	Don't get drunk at the party.
+364	to lash out	зриватися на когось	wyżywać się na kimś	Don't lash out at me.	He lashed out at his friends.
+365	to care	піклуватися	troszczyć się	I don't care.	I care about you.
+366	pathetic	жалюгідний	żałosny	Pathetic.	That's a pathetic excuse.
+367	to be over	закінчитися	skończyć się	It's over.	The party is over.
+368	lonely	самотній	samotny	I'm not lonely.	She felt lonely in the new city.
+369	birth mother	біологічна мати	biologiczna matka	I want to find my birth mother.	She met her birth mother at 30.
+370	to track down	розшукати	odnaleźć	I tracked her down.	The police tracked down the car.
+371	researcher	дослідниця	badaczka	She was a researcher.	She works as a cancer researcher.
+372	paranormal	паранормальний	paranormalny	Paranormal research.	He studies paranormal activity.
+373	folklore	фольклор	folklor	Local folklore.	Vampires are part of European folklore.
+374	to be related	бути родичем	być spokrewnionym	We're related.	Are you two related?
+375	to match	збігатися	zgadzać się	Everything matches.	Your shoes match your bag.
+376	small world	світ тісний	świat jest mały	Small world.	You know him too? Small world!
+377	whose	чий	czyj	Whose photo is this?	Whose bag is this?
+378	hunter	мисливець	łowca	A vampire hunter.	The hunter came back with nothing.
+379	to avenge	помститися	pomścić	I'll avenge her.	He swore to avenge his father.
+380	revenge	помста	zemsta	This is about revenge.	He wanted revenge.
+381	to hold a grudge	тримати образу	chować urazę	He holds a grudge.	She never holds a grudge.
+382	to confess	зізнатися	przyznać się	I confess.	He confessed to the crime.
+383	to ask for something	просити про щось	prosić o coś	She asked for it.	She asked for help.
+384	to make amends	загладити провину	naprawić krzywdę	I want to make amends.	He tried to make amends for his mistake.
+385	weapon	зброя	broń	Your weapon.	The police found the weapon.
+386	to stand a chance	мати шанс	mieć szansę	You don't stand a chance.	We don't stand a chance against them.
+387	double date	подвійне побачення	podwójna randka	Let's go on a double date.	We went on a double date with our friends.
+388	normal	нормальний	normalny	I want one normal night.	It was a normal day.
+389	to enjoy	насолоджуватися	cieszyć się	Enjoy yourself.	I enjoy reading.
+390	to avoid	уникати	unikać	Avoid talking about it.	Avoid eating late.
+391	small talk	світська розмова	rozmowa o niczym	Just small talk.	I'm not good at small talk.
+392	to get to know	познайомитися ближче	poznać się bliżej	I want to get to know you.	Let's get to know each other.
+393	to look forward to	чекати з нетерпінням	nie móc się doczekać	I'm looking forward to it.	I look forward to seeing you.
+394	awkward silence	ніякова тиша	niezręczna cisza	Awkward silence.	There was an awkward silence.
+395	to turn someone	перетворити на вампіра	przemienić w wampira	Turn me.	— (термін серіалу)
+396	forever	назавжди	na zawsze	Forever.	I'll love you forever.
+397	to stop feeling	перестати відчувати	przestać czuć	I want to stop feeling this.	Stop worrying!
+398	to risk	ризикувати	ryzykować	I'll risk it.	Don't risk your life.
+399	to regret	шкодувати	żałować	You'll regret it.	I regret saying that.
+400	to refuse	відмовитися	odmówić	I refuse to do it.	He refused to answer.
+401	to deserve	заслуговувати	zasługiwać	You deserve a real life.	You deserve a break.
+402	neighborhood	район	okolica	There goes the neighborhood.	We live in a quiet neighborhood.
+403	to settle in	облаштуватися	urządzić się	We're settling in.	Are you settling in well?
+404	to adjust	пристосуватися	przystosować się	It's hard to adjust.	It takes time to adjust to a new job.
+405	technology	технології	technologie	So much technology.	Technology changes fast.
+406	to take revenge on	помститися комусь	zemścić się na kimś	They want revenge on the founders.	He took revenge on his enemies.
+407	founding families	родини-засновниці	rodziny założycieli	The founding families.	The founding families built the town.
+408	to keep a low profile	не висовуватися	nie rzucać się w oczy	Keep a low profile.	After the scandal, he kept a low profile.
+409	threat	загроза	zagrożenie	They're a threat.	The storm is a threat to farmers.
+410	to make a move	почати діяти	zacząć działać	When will they make a move?	Don't make a move yet.
+411	storm	буря	burza	There's a storm coming.	The storm knocked down trees.
+412	to be taken	бути схопленим	zostać porwanym	He's been taken.	My bike has been taken!
+413	to go missing	зникнути безвісти	zaginąć	He's gone missing.	Their cat has gone missing.
+414	to be held	утримуватися	być przetrzymywanym	He's being held there.	The hostages were held for days.
+415	power outage	відключення світла	przerwa w dostawie prądu	The power's out.	We had a power outage last night.
+416	to call for help	кликати на допомогу	wzywać pomocy	Call for help.	She called for help.
+417	to be soaked	змокнути	przemoknąć	I'm soaked.	We got soaked in the storm.
+418	rescue	порятунок	ratunek	We need a rescue plan.	The firemen rescued the boy.
+419	invitation	запрошення	zaproszenie	No invitation needed.	Thanks for the invitation.
+420	owner	власник	właściciel	The owner is dead.	The owner of the shop is my friend.
+421	to let in	впустити	wpuścić	Let me in.	Don't let anyone in.
+422	can't get in	не може увійти	nie może wejść	I can't get in.	I can't get in — I lost my key.
+423	to be invited in	бути запрошеним досередини	zostać zaproszonym do środka	I need to be invited in.	We were invited in for coffee.
+424	basement	підвал	piwnica	He's in the basement.	We keep bikes in the basement.
+425	wooden	дерев'яний	drewniany	Wooden stakes.	A wooden table.
+426	to torture	катувати	torturować	They're torturing him.	— (історичний контекст)
+427	to offer	пропонувати	proponować	I'm offering.	She offered me a cup of tea.
+428	strength	сила	moc	It'll give you strength.	You need strength for this job.
+429	to crave	жадати	pożądać	I crave it.	I'm craving pizza.
+430	to recover	одужати	wyzdrowieć	You'll recover.	She recovered after the operation.
+431	to lose control	втратити контроль	stracić kontrolę	I can't lose control.	He lost control of the car.
+432	to be addicted	бути залежним	być uzależnionym	I was addicted once.	He's addicted to his phone.
+433	cut	поріз	skaleczenie	A small cut.	I have a cut on my finger.
+434	to save someone's life	врятувати комусь життя	uratować komuś życie	You saved my life.	The doctor saved his life.
+435	uncle	дядько	wujek	Uncle John is here.	My uncle lives in Canada.
+436	to stay with	зупинитися в когось	zatrzymać się u kogoś	He's staying with us.	I'm staying with my aunt.
+437	to get along with	ладнати з	dogadywać się z	We don't get along.	I get along with my boss.
+438	to look down on	зверхньо ставитися	traktować z góry	Don't look down on me.	He looks down on poor people.
+439	to bring up	порушити	poruszyć	Don't bring it up.	Don't bring up politics at dinner.
+440	to be up to	замишляти	knuć	What's he up to?	What are you up to?
+441	under control	під контролем	pod kontrolą	It's under control.	Everything is under control.
+442	addiction	залежність	uzależnienie	It's an addiction.	He fought his addiction for years.
+443	to sneak	робити щось крадькома	robić coś ukradkiem	He sneaks blood bags.	She sneaked into the kitchen.
+444	blood bag	пакет крові	worek z krwią	Blood bags from the hospital.	The hospital needs more blood bags.
+445	to cut back on	зменшити	ograniczyć	I'll cut back.	I'm cutting back on sugar.
+446	to give in	піддатися	ulec	Don't give in.	She finally gave in and said yes.
+447	to be used to	бути звиклим до	być przyzwyczajonym do	I'm not used to it.	I'm used to getting up early.
+448	to get used to	звикати до	przyzwyczajać się do	You'll get used to it.	You'll get used to the cold.
+449	mood swings	перепади настрою	wahania nastroju	What's with the mood swings?	Teenagers have mood swings.
+450	speech	промова	przemowa	Give a speech.	The president gave a speech.
+451	to toast	виголосити тост	wznieść toast	Let's toast to Mystic Falls.	They toasted the bride.
+452	to lose one's temper	вийти з себе	stracić panowanie nad sobą	He lost his temper.	Don't lose your temper with the kids.
+453	to break up (a fight)	розборонити	rozdzielić	Break it up!	The teacher broke up the fight.
+454	to blow up	вибухнути	wybuchnąć	He blew up at me.	Dad blew up when he saw my grades.
+455	anger	гнів	gniew	So much anger.	She couldn't hide her anger.
+456	to run in the family	передаватися в родині	być rodzinną cechą	It runs in the family.	Red hair runs in our family.
+457	to fool	обдурити	oszukać	She fooled us.	You can't fool me.
+458	pageant	конкурс краси	konkurs piękności	The Miss Mystic Falls pageant.	She won a beauty pageant.
+459	Miss Mystic Falls	«Міс Містик Фоллс»	„Miss Mystic Falls”	I'm going to be Miss Mystic Falls.	— (титул з серіалу)
+460	contestant	учасниця	uczestniczka	Contestants, line up!	The contestants waited backstage.
+461	escort	кавалер	partner	Who's your escort?	She arrived with her escort.
+462	sash	стрічка	szarfa	Look at my sash!	The winner wore a red sash.
+463	gown	вечірня сукня	suknia wieczorowa	What a gown!	She wore a long blue gown.
+464	rehearsal	репетиція	próba	Rehearsal starts at five.	We had a rehearsal before the show.
+465	to be meant to be	бути призначеним долею	być pisanym przez los	It's meant to be.	We were meant to be together.
+466	oh my God	о Боже	o mój Boże	Oh my God, it's perfect!	Oh my God, I forgot my keys!
+467	cheer captain	капітанка групи підтримки	kapitan cheerleaderek	Once a cheer captain, always a cheer captain.	She was cheer captain in high school.
+468	backstage	за лаштунками	za kulisami	I'm backstage.	We met the band backstage.
+469	to stand someone up	не прийти на зустріч	wystawić kogoś do wiatru	Did he stand you up?	My date stood me up.
+470	to fill in	замінити когось	zastąpić kogoś	I'll fill in.	Can you fill in for me tomorrow?
+471	staircase	сходи	schody	Down the staircase.	A long staircase.
+472	to take someone's hand	узяти за руку	wziąć za rękę	Take my hand.	He took her hand.
+473	graceful	граційний	pełen gracji	You're graceful.	The dancer was very graceful.
+474	I wish	шкода	szkoda	I wish he were here.	I wish I had more time.
+475	woods	ліс	las	In the woods.	We walked in the woods.
+476	to attack	напасти	zaatakować	He attacked her.	The dog attacked the postman.
+477	to stop	зупинитися	zjechać na bok	Stop!	Stop the car!
+478	headache	головний біль	ból głowy	My head!	I have a terrible headache.
+479	to lock oneself up	замкнутися	zamknąć się	Lock me up.	She locked herself in her room.
+480	to detox	очиститися	oczyścić się	I need to detox.	He went to a clinic to detox.
+481	if only	якби ж тільки	gdyby tylko	If only I were stronger.	If only I had listened!
+482	winner	переможниця	zwyciężczyni	And the winner is…	The winner gets a prize.
+483	father	батько	ojciec	Father, please.	My father is a doctor.
+484	to disown	зректися	wyrzec się	You're no son of mine.	His family disowned him.
+485	soldier	солдат	żołnierz	A Confederate soldier.	My grandfather was a soldier.
+486	to arrest	заарештувати	aresztować	They arrested her.	The police arrested two men.
+487	to rescue	рятувати	ratować	We have to rescue her.	Firefighters rescued the family.
+488	to shoot	вистрілити	strzelić	He shot them.	Don't shoot!
+489	gunshot	постріл	wystrzał	A gunshot.	We heard a gunshot.
+490	betrayal	зрада	zdrada	The ultimate betrayal.	It was a terrible betrayal.
+491	to be ashamed	соромитися	wstydzić się	I'm ashamed of you.	I'm ashamed of what I did.
+492	to complete the transition	завершити перехід	dokończyć przemianę	Complete the transition.	— (термін серіалу)
+493	to convince	переконати	przekonać	I convinced him.	She convinced me to come.
+494	eternity	вічність	wieczność	An eternity.	It felt like an eternity.
+495	misery	страждання	cierpienie	An eternity of misery.	The war brought misery to millions.
+496	to vow	присягнутися	przysiąc	I vow.	He vowed to return.
+497	to hate	ненавидіти	nienawidzić	I hate you.	I hate waiting.
+498	sire	«творець» вампіра	„stwórca” wampira	— (бонус, без репліки з епізоду)	In vampire stories, your sire is the one who turned you.
+499	to blame for	звинувачувати в	obwiniać o	I blame you for this.	Don't blame me for your mistakes.
+500	withdrawal	ломка	głód	Withdrawal is hard.	Withdrawal from coffee gives me headaches.
+501	to suffer	страждати	cierpieć	He's suffering.	She suffers from allergies.
+502	to stay by someone's side	бути поруч	być przy kimś	I'm not leaving your side.	She stayed by his side all night.
+503	to get through	пережити	przetrwać	We'll get through this.	We'll get through this together.
+504	should have	слід було	powinien był	I should have stopped.	You should have called me.
+505	could have	міг би	mógł był	I could have saved him.	We could have won.
+506	must have	мабуть	musiał	It must have hurt.	She must have forgotten.
+507	to forgive	пробачити	przebaczyć	Can you forgive me?	Please forgive me.
+508	to give up (a baby)	відмовитися від дитини	oddać dziecko	I gave you up.	She gave up her baby for adoption.
+509	cold	холодний	zimny	You're so cold.	He's cold and distant.
+510	to switch off one's humanity	«вимкнути» людяність	„wyłączyć” człowieczeństwo	I switched it off.	— (термін серіалу)
+511	to meet	зустрітися	spotkać się	Meet me at the Grill.	Let's meet tomorrow.
+512	to owe someone an explanation	бути винним пояснення	być winnym wyjaśnienie	You owe me an explanation.	You owe me an explanation.
+513	to be disappointed	бути розчарованим	być rozczarowanym	I'm disappointed.	I was disappointed with the film.
+514	to threaten	погрожувати	grozić	Are you threatening me?	He threatened to call the police.
+515	device	пристрій	urządzenie	The Gilbert device.	This device measures heat.
+516	to work on	діяти на	działać na	It works on vampires.	Does this work on all phones?
+517	to hand over	передати	przekazać	Hand it over.	Hand over your keys.
+518	victim	жертва	ofiara	Jenna was the victim.	The victims got help.
+519	to back off	відступити	cofnąć się	Back off!	Back off, it's mine!
+520	leverage	важіль тиску	karta przetargowa	She has leverage.	They used the photos as leverage.
+521	deadline	кінцевий термін	ostateczny termin	You have until tomorrow.	The deadline is Friday.
+522	biological father	біологічний батько	biologiczny ojciec	Your biological father.	He met his biological father.
+523	to reveal	розкрити	ujawnić	She revealed the truth.	The magician never reveals his secrets.
+524	to be in shock	бути в шоці	być w szoku	I'm in shock.	After the news, we were in shock.
+525	goodbye	до побачення	do widzenia	Goodbye, Elena.	Say goodbye to your friends.
+526	closure	завершеність	domknięcie	I needed closure.	The funeral gave us closure.
+527	to be better off	бути в кращому становищі	mieć się lepiej	I'm better off without her.	You're better off without him.
+528	parade	парад	parada	The Founder's Day parade.	We watched the parade.
+529	float	святкова платформа	platforma	Look at the float!	The school built a float for the parade.
+530	Founder's Day	День засновників	Dzień Założycieli	Happy Founder's Day!	— (свято з серіалу)
+531	fireworks	феєрверк	fajerwerki	Fireworks at nine.	We watched the fireworks.
+532	crowd	натовп	tłum	In the crowd.	A huge crowd came.
+533	to wave	махати	machać	Wave to the crowd!	She waved goodbye.
+534	to celebrate	святкувати	świętować	Let's celebrate.	We celebrated his birthday.
+535	heritage	спадщина	dziedzictwo	Our heritage.	This castle is part of our heritage.
+536	tradition	традиція	tradycja	It's a tradition.	It's a family tradition.
+537	to activate	увімкнути	włączyć	Activate the device.	Activate your account.
+538	frequency	частота	częstotliwość	A high frequency.	The radio uses a different frequency.
+539	to collapse	знепритомніти	stracić przytomność	He collapsed.	The old bridge collapsed.
+540	to be rounded up	бути зігнаними	zostać wyłapanym	They were rounded up.	The suspects were rounded up.
+541	to set on fire	підпалити	podpalić	They set it on fire.	Someone set the car on fire.
+542	strange	дивний	dziwny	That's strange.	I heard a strange noise.
+543	to fall for	закохатися	zakochać się	Did you fall for it?	I fell for her immediately.
+544	kiss	поцілунок	pocałunek	One kiss.	He kissed her goodnight.
+545	porch	ґанок	ganek	On the porch.	We sat on the porch.
+546	to pretend to be	видавати себе за	podawać się za	She pretended to be Elena.	He pretended to be a doctor.
+547	identical	ідентичний	identyczny	Identical faces.	The twins are identical.
+548	cliffhanger	кліфгенгер	cliffhanger	What a cliffhanger!	The book ends on a cliffhanger.
+549	season finale	фінал сезону	finał sezonu	The season finale.	Did you watch the season finale?
+550	to be continued	далі буде	ciąg dalszy nastąpi	To be continued…	— (фінальний титр)

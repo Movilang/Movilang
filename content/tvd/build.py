@@ -44,7 +44,7 @@ for line in open(os.path.join(HERE, "i18n", "src.txt"), encoding="utf-8"):
     i, t = line.rstrip("\n").split("\t", 1); SRC[t] = int(i)
 TR = {}
 for f in sorted(os.listdir(os.path.join(HERE, "i18n"))):
-    if not f.endswith(".tsv"): continue
+    if not (f.startswith("t0") and f.endswith(".tsv")): continue
     for line in open(os.path.join(HERE, "i18n", f), encoding="utf-8"):
         if not line.strip(): continue
         i, pl, en = line.rstrip("\n").split("\t")
@@ -75,7 +75,24 @@ for l in L:
     for k in ("pl", "en"):
         if l.get("grammar_" + k): l["variants"]["grammar_" + k] = l.pop("grammar_" + k)
 
+import variants
+variants.prepare(L)
+vmiss = variants.build(L, repeat.R, None)
+
 errs, warns = [], []
+if vmiss: errs.append(f"варіанти: немає перекладу слів: {list(vmiss)[:5]}")
+LAT = re.compile(r"[a-ząćęłńóśźż]", re.I)
+for l in L:
+    for T in ("pl", "uk"):
+        vt = l["variants"].get(T) or []
+        sc = [t for t in vt if t["type"] not in INFO]
+        if len(sc) < 9: errs.append(f"#{l['num']} {T}: лише {len(sc)} завдань")
+        for t in sc:
+            for o in (t.get("options") or []) + [t.get("say") or ""]:
+                if t["type"] == "match": continue
+                if T == "pl" and CYR.search(o): errs.append(f"#{l['num']} pl: кирилиця у варіанті «{o[:40]}»")
+                if T == "uk" and t["type"] != "match" and re.search(r"[a-z]{3}", o) and not o.startswith("("): errs.append(f"#{l['num']} uk: латиниця «{o[:40]}»")
+            if t["type"] in ("vocabulary", "grammar") and len(t.get("why_en", [])) != len(t["options"]): errs.append(f"#{l['num']} {T}: why")
 if missing: errs.append(f"без перекладу: {len(missing)} → " + " | ".join(list(missing)[:5]))
 for l in L:
     n, ts = l["num"], l["tasks"]
@@ -124,6 +141,7 @@ json.dump(L, open(os.path.join(HERE, "tvd1.json"), "w", encoding="utf-8"), ensur
 print("уроків:", len(L), "| арки:", ARCS)
 for l in L:
     ts = l["tasks"]; sc = [t for t in ts if t["type"] not in INFO]
-    print(f"  {l['num']:>2}. {l['title'][:38]:<38} словник {sum(len(t['items']) for t in ts if t['type']=='glossary'):>2} · завдань {len(sc):>2} · типів {len({t.get('label') for t in sc})}")
+    vp = len([t for t in l["variants"]["pl"] if t["type"] not in INFO]); vu = len([t for t in l["variants"]["uk"] if t["type"] not in INFO])
+    print(f"  {l['num']:>2}. pl {vp:>2} · uk {vu:>2} · {l['title'][:30]:<30} словник {sum(len(t['items']) for t in ts if t['type']=='glossary'):>2} · завдань {len(sc):>2} · типів {len({t.get('label') for t in sc})}")
 print("\n".join(errs) if errs else "✓ помилок немає")
 sys.exit(1 if errs else 0)
