@@ -40,10 +40,10 @@ function say(txt, lang) {
 function noVoice(code) { toast(tx({uk:'На цьому пристрої немає голосу для мови «' + code + '». Відкрий урок у Chrome або додай голос у налаштуваннях системи.', pl:'To urządzenie nie ma głosu dla języka „' + code + '”. Otwórz lekcję w Chrome albo dodaj głos w ustawieniach systemu.', en:'This device has no voice for “' + code + '”. Open the lesson in Chrome or add a voice in system settings.'}), 'info'); }
 function sayLocal(txt, lang) { try { lang = lang || SPEECH[TARGET]; var u = new SpeechSynthesisUtterance(String(txt).replace(/_{2,}/g, '…')); u.lang = lang; var v = bestVoice(lang); if (v) u.voice = v; u.rate = v && /natural|neural|online|premium|enhanced/i.test(v.name) ? 1 : .92; u.pitch = 1; speechSynthesis.cancel(); speechSynthesis.speak(u); } catch (e) { toast(t('Озвучення недоступне в цьому браузері'), 'err'); } }
 var TT_L = {
-  uk:{intro:'СТАРТ', match:'ПАРИ', order:'ПОРЯДОК СЛІВ', type:'ВПИШИ', tf:'ПРАВДА / НІ', vocabulary:'СЛОВНИК', listening:'АУДІЮВАННЯ', subtitles:'СУБТИТРИ', grammar:'ГРАМАТИКА', speaking:'ГОВОРІННЯ', quiz:'МІНІ-КВІЗ', final:'ФІНАЛ', cards:'ПЕРСОНАЖІ', glossary:'СЛОВНИК СЦЕНИ', quest:'КВЕСТ'},
-  pl:{intro:'START', match:'PARY', order:'SZYK ZDANIA', type:'WPISZ', tf:'PRAWDA / FAŁSZ', vocabulary:'SŁOWNICTWO', listening:'SŁUCHANIE', subtitles:'NAPISY', grammar:'GRAMATYKA', speaking:'MÓWIENIE', quiz:'MINI QUIZ', final:'FINAŁ', cards:'POSTACIE', glossary:'SŁOWNIK SCENY', quest:'QUEST'}};
+  uk:{intro:'СТАРТ', match:'ПАРИ', order:'ПОРЯДОК СЛІВ', type:'ВПИШИ', tf:'ПРАВДА / НІ', vocabulary:'СЛОВНИК', listening:'АУДІЮВАННЯ', subtitles:'СУБТИТРИ', grammar:'ГРАМАТИКА', speaking:'ГОВОРІННЯ', quiz:'МІНІ-КВІЗ', final:'ФІНАЛ', cards:'ПЕРСОНАЖІ', glossary:'СЛОВНИК СЦЕНИ', quest:'КВЕСТ', drill:'ТРЕНУВАННЯ'},
+  pl:{intro:'START', match:'PARY', order:'SZYK ZDANIA', type:'WPISZ', tf:'PRAWDA / FAŁSZ', vocabulary:'SŁOWNICTWO', listening:'SŁUCHANIE', subtitles:'NAPISY', grammar:'GRAMATYKA', speaking:'MÓWIENIE', quiz:'MINI QUIZ', final:'FINAŁ', cards:'POSTACIE', glossary:'SŁOWNIK SCENY', quest:'QUEST', drill:'TRENING'}};
 function ttName(k) { return (TT_L[LANG] && TT_L[LANG][k]) || TASK_TYPES[k] || k; }
-var TASK_TYPES = { intro:'START', match:'MATCH', order:'WORD ORDER', type:'TYPE IT', tf:'TRUE / FALSE', vocabulary:'VOCABULARY', listening:'LISTENING', subtitles:'SUBTITLES', grammar:'GRAMMAR', speaking:'SPEAKING', quiz:'MINI QUIZ', final:'FINAL', cards:'CHARACTERS', glossary:'SCENE GLOSSARY', quest:'QUEST' };
+var TASK_TYPES = { intro:'START', match:'MATCH', order:'WORD ORDER', type:'TYPE IT', tf:'TRUE / FALSE', vocabulary:'VOCABULARY', listening:'LISTENING', subtitles:'SUBTITLES', grammar:'GRAMMAR', speaking:'SPEAKING', quiz:'MINI QUIZ', final:'FINAL', cards:'CHARACTERS', glossary:'SCENE GLOSSARY', quest:'QUEST', drill:'DRILL' };
 function isInfo(k) { return k === 'intro' || k === 'cards' || k === 'glossary'; }
 var POSTER_CLASSES = ['p1','p2','p3','p4','p5','p6','p7','p8'];
 
@@ -797,6 +797,26 @@ function runPlayer(container, lesson, onFinish) {
       else h += '<div class="gloss">' + (tk.items || []).map(function (w) { return '<details class="gw"><summary><b>' + esc(w.w) + '</b> <span class="spk spk-in" role="button" data-say="' + esc(w.w) + '">🔊</span> <span class="gw-ipa">' + esc(w.ipa || '') + '</span><span class="gw-uk">' + esc(lf(w, 'uk')) + '</span></summary><div class="gw-b"><div class="gw-meta">' + esc(w.pos || '') + (w.lvl ? ' · <b>' + esc(w.lvl) + '</b>' : '') + '</div>' + (w.who ? '<p>🎬 ' + esc(lf(w, 'who')) + '</p>' : '') + (w.line ? '<p class="gw-line">«' + esc(w.line) + '» <span class="spk spk-in" role="button" data-say="' + esc(w.line) + '">🔊</span></p>' : '') + (w.ex ? '<p class="gw-ex">✎ ' + esc(w.ex) + ' <span class="spk spk-in" role="button" data-say="' + esc(w.ex) + '">🔊</span></p>' : '') + '</div></details>'; }).join('') + '</div>';
       h += '<div class="row"><button class="btn btn-red" type="button" id="tstart">' + tx({uk:'Далі', pl:'Dalej', en:'Next'}) + '</button></div>';
       card.innerHTML = h; card.querySelector('#tstart').onclick = function () { res[cur] = null; next(); }; bindSay(tk); return;
+    }
+    if (type === 'drill') {
+      var its = tk.items || [], got = 0, answered = 0;
+      h += '<div class="drill">' + its.map(function (it, k) { return '<div class="dr-it" data-k="' + k + '"><div class="dr-q"><span class="dr-n">' + (k + 1) + '</span> ' + qHtml({q:lf(it, 'q')}) + (it['q_' + LANG] ? '' : ' <button type="button" class="spk" data-say="' + esc(plainQ(it.q)) + '">🔊</button>') + '</div><div class="dr-opts">' + (it.options || []).map(function (o, j) { return '<button type="button" class="dr-o" data-j="' + j + '">' + esc(o) + '</button>'; }).join('') + '</div><div class="dr-fb"></div></div>'; }).join('') + '</div><div class="dr-score" id="drScore">0 / ' + its.length + '</div>' + foot();
+      card.innerHTML = h; bindSay(tk);
+      card.querySelectorAll('.dr-it').forEach(function (row) {
+        var it = its[+row.dataset.k];
+        row.querySelectorAll('.dr-o').forEach(function (b) { b.onclick = function () {
+          var j = +b.dataset.j, ok = j === +it.answer; answered++; if (ok) got++;
+          row.querySelectorAll('.dr-o').forEach(function (x) { x.disabled = true; if (+x.dataset.j === +it.answer) x.classList.add('right'); });
+          if (!ok) b.classList.add('wrong');
+          var g = row.querySelector('.gap'); if (g) g.textContent = it.options[it.answer];
+          row.classList.add(ok ? 'ok' : 'bad');
+          row.querySelector('.dr-fb').textContent = (ok ? '✓ ' : '✗ ') + (lf(it, 'exp') || '');
+          card.querySelector('#drScore').textContent = got + ' / ' + its.length;
+          if (answered === its.length) done(got / its.length >= 0.7, got + ' / ' + its.length + '. ' + (lf(tk, 'tip') || ''));
+        }; });
+      });
+      if (FREE && cur < tasks.length - 1) { var nbd = card.querySelector('#tnext'); nbd.hidden = false; nbd.textContent = '⏭ ' + tx({uk:'Пропустити (адмін)', pl:'Pomiń (admin)', en:'Skip (admin)'}); nbd.onclick = function () { cur++; render(); }; }
+      return;
     }
     if (type === 'quest') {
       h += '<div class="quest" id="quest"></div>' + foot(); card.innerHTML = h; bindSay(tk);

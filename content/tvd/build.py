@@ -75,9 +75,20 @@ for l in L:
     for k in ("pl", "en"):
         if l.get("grammar_" + k): l["variants"]["grammar_" + k] = l.pop("grammar_" + k)
 
-import variants
+import variants, drills
 variants.prepare(L)
 vmiss = variants.build(L, repeat.R, None)
+def _words_of(l, T):
+    ws = []
+    for t in l["tasks"]:
+        if t["type"] != "glossary": continue
+        for it in t["items"]:
+            for w in variants.GLALL[T]:
+                if w[2]["w"] == it["w"]: ws.append(w); break
+    return ws
+drills.apply_en(L)
+drills.apply_target(L, "pl", _words_of)
+drills.apply_target(L, "uk", _words_of)
 
 errs, warns = [], []
 if vmiss: errs.append(f"варіанти: немає перекладу слів: {list(vmiss)[:5]}")
@@ -102,7 +113,7 @@ for l in L:
     labels = {t.get("label", t["type"]) for t in scored}
     if not boss:
         if not 25 <= gl <= 40: errs.append(f"#{n}: словник {gl} (треба 25–40)")
-        if not 10 <= len(scored) <= 14: errs.append(f"#{n}: завдань {len(scored)} (треба 10–14)")
+        if not 10 <= len(scored) <= 16: errs.append(f"#{n}: завдань {len(scored)} (треба 10–16 з тренуваннями)")
         if len(labels) < 6: errs.append(f"#{n}: лише {len(labels)} типів")
         if ts[-1]["type"] != "final": errs.append(f"#{n}: останнє завдання не «Щоденник Олени»")
         if ts[0]["type"] != "cards": errs.append(f"#{n}: немає карток/переказу на початку")

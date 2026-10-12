@@ -641,3 +641,14 @@ html{scroll-behavior:smooth}
 .bdg:hover{transform:translateY(-3px) rotate(-1deg);border-color:var(--gold)}
 .bdg-i{font-size:34px}.bdg small{color:var(--muted);font-size:11px}
 @media print{body *{visibility:hidden}.cert3d.printing,.cert3d.printing *{visibility:visible}.cert3d.printing{position:fixed;inset:30px}.cert3d.printing .c3-back,.cert3d.printing .c3-hint,.cert3d.printing button{display:none}}
+
+/* ===== Тренування: кілька питань в одній картці ===== */
+.drill{display:grid;gap:10px}
+.dr-it{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:12px 14px;display:grid;gap:8px}
+.dr-it.ok{border-color:var(--ok)}.dr-it.bad{border-color:var(--red)}
+.dr-q{font-size:16px;line-height:1.5}.dr-n{display:inline-grid;place-items:center;width:22px;height:22px;border-radius:50%;background:var(--bg2);font:600 12px var(--f-mono);margin-right:4px}
+.dr-opts{display:flex;flex-wrap:wrap;gap:6px}
+.dr-o{font:600 14px var(--f-body);color:var(--fg);background:var(--bg2);border:1px solid var(--line);border-radius:10px;padding:8px 12px;cursor:pointer}
+.dr-o.right{border-color:var(--ok);background:color-mix(in srgb,var(--ok) 20%,var(--bg2))}.dr-o.wrong{border-color:var(--red);background:color-mix(in srgb,var(--red) 20%,var(--bg2))}
+.dr-fb{font-size:13px;color:var(--muted);line-height:1.45}.dr-fb:empty{display:none}
+.dr-score{font:600 14px var(--f-mono);color:var(--gold);text-align:right}
