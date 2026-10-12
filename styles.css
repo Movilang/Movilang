@@ -544,3 +544,23 @@ section{border-top-color:var(--divider)}
 .qtrb.on,.qtrb:hover{opacity:1;border-color:var(--red)}
 .qtrt{margin-top:10px;padding:10px 14px;border-left:3px solid var(--red);background:color-mix(in srgb,var(--red) 8%,transparent);border-radius:8px;font-size:16px}
 .admnav{margin-bottom:12px;padding:10px 14px;border:1px dashed var(--nav-admin,var(--red));border-radius:12px;font-size:14px}
+
+/* ===== mobile navigation ===== */
+.mnav{display:none}
+@media (max-width:760px){
+  #navuser{display:none!important}
+  nav.top{padding-top:10px;padding-bottom:10px}
+  nav.top .logo small{display:none}
+  .mnav{display:grid;grid-template-columns:repeat(5,1fr);position:fixed;left:10px;right:10px;bottom:calc(10px + env(safe-area-inset-bottom,0px));z-index:60;padding:6px;border-radius:22px;background:color-mix(in srgb,var(--nav-bg,var(--bg)) 88%,transparent);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border:1px solid var(--divider,var(--line));box-shadow:0 10px 30px rgba(0,0,0,.35)}
+  .mnav a,.mnav button{display:flex;flex-direction:column;align-items:center;gap:3px;padding:7px 2px;border-radius:16px;border:0;background:transparent;color:var(--nav-link,var(--muted));font:inherit;font-size:11px;text-decoration:none;cursor:pointer;-webkit-tap-highlight-color:transparent}
+  .mnav a.on{color:var(--fg);background:color-mix(in srgb,var(--red) 16%,transparent)}
+  .mnav a.on svg{color:var(--red)}
+  body{padding-bottom:calc(92px + env(safe-area-inset-bottom,0px))}
+  .msheetw{align-items:flex-end;padding:0}
+  .msheetw .lbox{width:100%;border-radius:22px 22px 0 0;padding:14px 14px calc(18px + env(safe-area-inset-bottom,0px))}
+  .msheet{display:flex;flex-direction:column;gap:6px}
+  .msheet .mrow{padding:6px 8px}
+  .mitemrow{display:flex;justify-content:space-between;align-items:center;width:100%;padding:14px 14px;border-radius:14px;border:1px solid var(--line);background:transparent;color:inherit;font:inherit;font-size:15px;text-decoration:none;text-align:left;cursor:pointer}
+  .mitemrow b{font-size:13px;opacity:.8}
+}
+@media (max-width:760px){.toast{bottom:calc(100px + env(safe-area-inset-bottom,0px))}}

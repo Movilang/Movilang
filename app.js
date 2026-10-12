@@ -417,6 +417,39 @@ var ADMIN_MODE = true; try { ADMIN_MODE = localStorage.getItem('ml_admin_mode') 
 function isAdm() { return !!(USER && USER.role === 'admin' && ADMIN_MODE); }
 function setAdminMode(on) { ADMIN_MODE = on; try { localStorage.setItem('ml_admin_mode', on ? '1' : '0'); } catch (e) {} renderNav(); if (on) location.hash = '#/admin'; else if (/^#\/admin/.test(location.hash)) location.hash = '#/'; else route(); toast(on ? t('Режим адміністратора увімкнено') : t('Ти бачиш сайт як учень'), 'info'); }
 
+var MI = {
+  home:'<svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11l9-7 9 7"/><path d="M5 10v10h14V10"/></svg>',
+  cat:'<svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M7 4v16M17 4v16M3 9h4M3 15h4M17 9h4M17 15h4"/></svg>',
+  play:'<svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M10 8.5l6 3.5-6 3.5z"/></svg>',
+  user:'<svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 21c1.5-4 4.5-6 8-6s6.5 2 8 6"/></svg>',
+  more:'<svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg>'
+};
+function mActive() { var h = location.hash || '#/'; document.querySelectorAll('.mnav a[data-m]').forEach(function (a) { var m = a.dataset.m, on = m === '#/' ? (h === '#/' || h === '') : h.indexOf(m) === 0 || (m === '#/catalog' && h.indexOf('#/course') === 0) || (m === '#/trial' && h.indexOf('#/lesson') === 0); a.classList.toggle('on', on); }); }
+function renderMobileNav() {
+  var n = document.getElementById('mnav'); if (!n) { n = document.createElement('nav'); n.id = 'mnav'; n.className = 'mnav'; document.body.appendChild(n); window.addEventListener('hashchange', mActive); }
+  var L = function (uk, pl, en) { return tx({uk:uk, pl:pl, en:en}); };
+  n.innerHTML = '<a href="#/" data-m="#/">' + MI.home + '<span>' + L('Головна', 'Start', 'Home') + '</span></a>' +
+    '<a href="#/catalog" data-m="#/catalog">' + MI.cat + '<span>' + L('Каталог', 'Katalog', 'Catalogue') + '</span></a>' +
+    '<a href="#/trial" data-m="#/trial">' + MI.play + '<span>' + L('Урок', 'Lekcja', 'Lesson') + '</span></a>' +
+    '<a href="' + (USER ? '#/cabinet' : '#/login') + '" data-m="' + (USER ? '#/cabinet' : '#/login') + '">' + MI.user + '<span>' + (USER ? L('Кабінет', 'Konto', 'Account') : L('Увійти', 'Zaloguj', 'Log in')) + '</span></a>' +
+    '<button type="button" id="mMore">' + MI.more + '<span>' + L('Ще', 'Więcej', 'More') + '</span></button>';
+  mActive();
+  document.getElementById('mMore').onclick = function () {
+    var adm = USER && USER.role === 'admin';
+    var w = mbox('<div class="msheet">' + (USER ? '<div class="mrow muted small">' + esc(USER.name || '') + ' · ' + esc(USER.email || '') + '</div>' : '') +
+      '<button type="button" class="mitemrow" id="msLang">🌐 ' + L('Мови', 'Języki', 'Languages') + '<b>🎬 ' + FLAG[TARGET] + ' · 💬 ' + FLAG[LANG] + '</b></button>' +
+      '<button type="button" class="mitemrow" id="msTheme">' + (THEME === 'dark' ? '☀ ' + L('Світла тема', 'Jasny motyw', 'Light theme') : '☾ ' + L('Темна тема', 'Ciemny motyw', 'Dark theme')) + '</button>' +
+      '<a class="mitemrow" href="#/pricing">💳 ' + L('Тарифи', 'Cennik', 'Pricing') + '</a>' +
+      (adm ? '<button type="button" class="mitemrow" id="msAdm">⚙ ' + L('Режим адміна', 'Tryb admina', 'Admin mode') + '<b>' + (ADMIN_MODE ? L('увімк.', 'wł.', 'on') : L('вимк.', 'wył.', 'off')) + '</b></button>' + (ADMIN_MODE ? '<a class="mitemrow" href="#/admin">🛠 ' + L('Адмін-панель', 'Panel admina', 'Admin panel') + '</a>' : '') : '') +
+      (USER ? '<button type="button" class="mitemrow" id="msOut">↩ ' + L('Вийти', 'Wyloguj', 'Log out') + '</button>' : '<a class="mitemrow" href="#/register">✦ ' + L('Реєстрація', 'Rejestracja', 'Sign up') + '</a>') + '</div>');
+    w.classList.add('msheetw');
+    w.querySelectorAll('a').forEach(function (a) { a.addEventListener('click', function () { w.remove(); }); });
+    w.querySelector('#msLang').onclick = function () { w.remove(); langModal(false); };
+    w.querySelector('#msTheme').onclick = function () { w.remove(); toggleTheme(); };
+    var ma = w.querySelector('#msAdm'); if (ma) ma.onclick = function () { w.remove(); setAdminMode(!ADMIN_MODE); };
+    var mo = w.querySelector('#msOut'); if (mo) mo.onclick = function () { w.remove(); API.signOut().then(function () { USER = null; location.hash = '#/'; renderNav(); route(); }); };
+  };
+}
 function renderNav() {
   var links = t('<a href="#/">Головна</a><a href="#/catalog">Каталог</a><a href="#/trial">Пробний урок</a><a href="#/pricing">Тарифи</a>');
   if (USER) links += t('<a href="#/cabinet">Кабінет</a>');
@@ -430,6 +463,7 @@ function renderNav() {
   document.getElementById('langBtn').onclick = function () { langModal(false); };
   document.getElementById('themeBtn').onclick = toggleTheme;
   var asw = document.getElementById('admSw'); if (asw) asw.onclick = function () { setAdminMode(!ADMIN_MODE); };
+  renderMobileNav();
   var lb = document.getElementById('logoutBtn');
   if (lb) lb.onclick = function () { API.signOut().then(function () { USER = null; toast(t('Ви вийшли з акаунта')); location.hash = '#/'; renderNav(); route(); }); };
 }
