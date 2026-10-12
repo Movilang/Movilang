@@ -9,7 +9,7 @@ L = sorted(common.L, key=lambda l: l["num"])
 INFO = {"intro", "cards", "glossary"}
 # Спойлери: слово/ім'я не може з'являтися раніше вказаного уроку (наскрізна нумерація 1–28)
 SPOIL = {r"\bLexi\b|Лексі": 9, r"Alaric|Аларік|Saltzman": 10, r"Isobel|Ізобел": 10, r"\bEmily\b|Емілі": 9,
-         r"\bAnna\b|Анн[аиу]\b": 13, r"\bPearl\b|Перл": 15, r"adopted|удочер": 13, r"birth mother|біологічн": 18,
+         r"\bAnna\b|Анн[аиу]\b": 13, r"\bPearl\b|Перл": 15, r"adopted|удочер": 13, r"birth mother|біологічна мат|біологічну мат|біологічної мат": 18,
          r"\bJohn Gilbert\b|Джон Гілберт|дядько Джон|Uncle John": 21, r"grimoire|гримуар": 10,
          r"\bdevice\b|пристрій": 21, r"werewolf|перевертн": 99, r"\bsire\b": 99}
 NAMES_BAD = [r"Містік", r"Фолс\b", r"Ґріль\b", r"Гриль\b", r"Деймен", r"Кароліна", r"\bМет\b", r"Віккі", r"Кетрин\b",
