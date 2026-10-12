@@ -157,3 +157,6 @@ alter table public.courses add column if not exists title_pl text;
 alter table public.courses add column if not exists description_pl text;
 alter table public.lessons add column if not exists title_pl text;
 alter table public.lessons add column if not exists scene_pl text;
+
+-- ========== Оновлення 2026-10-12: курс без безкоштовного першого уроку ==========
+alter table public.courses add column if not exists free_first boolean not null default true;

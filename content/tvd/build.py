@@ -4,14 +4,29 @@ HERE = os.path.dirname(os.path.abspath(__file__)); sys.path.insert(0, HERE)
 import common
 ARCS = [a for a in ("arc1", "arc2", "arc3", "arc4", "arc5") if os.path.exists(os.path.join(HERE, a + ".py"))]
 for a in ARCS: importlib.import_module(a)
+import repeat
 L = sorted(common.L, key=lambda l: l["num"])
+
+# Перемішуємо варіанти (детерміновано), щоб правильна відповідь не була завжди першою
+import random
+for l in L:
+    rnd = random.Random(1000 + l["num"])
+    for t in l["tasks"]:
+        if t["type"] in ("quiz", "grammar", "vocabulary", "listening") and len(t["options"]) > 1:
+            idx = list(range(len(t["options"]))); rnd.shuffle(idx)
+            t["options"] = [t["options"][i] for i in idx]
+            if "why" in t: t["why"] = [t["why"][i] for i in idx]
+            t["answer"] = idx.index(t["answer"])
+        if t["type"] == "quest":
+            for st in t["steps"].values():
+                rnd.shuffle(st["choices"])
 
 INFO = {"intro", "cards", "glossary"}
 # Спойлери: слово/ім'я не може з'являтися раніше вказаного уроку (наскрізна нумерація 1–28)
 SPOIL = {r"\bLexi\b|Лексі": 9, r"Alaric|Аларік|Saltzman": 10, r"Isobel|Ізобел": 10, r"\bEmily\b|Емілі": 9,
          r"\bAnna\b|Анн[аиу]\b": 13, r"\bPearl\b|Перл": 15, r"adopted|удочер": 13, r"birth mother|біологічна мат|біологічну мат|біологічної мат": 18,
          r"\bJohn Gilbert\b|Джон Гілберт|дядько Джон|Uncle John": 21, r"grimoire|гримуар": 10,
-         r"\bdevice\b|пристрій": 21, r"werewolf|перевертн": 99, r"\bsire\b": 99}
+         r"\bdevice\b|пристрій": 21, r"werewolf|перевертн": 99, r"\bsire\b": 24}
 NAMES_BAD = [r"Містік", r"Фолс\b", r"Ґріль\b", r"Гриль\b", r"Деймен", r"Кароліна", r"\bМет\b", r"Віккі", r"Кетрин\b",
              r"Ізабел[ья]", r"Бонi", r"Сальватор\b", r"Елена\b", r"Стєфан"]
 
@@ -58,6 +73,7 @@ for l in L:
         for s in strings(t):
             for q in re.findall(r"“([^”]+)”", s):
                 if words(q) > 10: errs.append(tag + f": цитата >10 слів «{q}»")
+    if "іспит" in l["title"].lower() and len(scored) != 30: errs.append(f"#{n}: в іспиті {len(scored)} завдань (треба 30)")
     if boss and "Бос" in l["title"] and not 40 <= gl <= 60: errs.append(f"#{n}: у босі повторюється {gl} слів (треба 40–60)")
     for s in list(strings(l)):
         if s == "ГРИМУАР": continue
