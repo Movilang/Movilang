@@ -613,3 +613,31 @@ html{scroll-behavior:smooth}
 .cert h3{color:var(--gold);text-align:center}
 @media print{body *{visibility:hidden}.cert,.cert *{visibility:visible}.cert{position:fixed;inset:40px;border-color:#b45309}.cert button{display:none}}
 .tq.tq-info{font-size:16px;font-weight:400;line-height:1.6;color:var(--muted)}
+
+/* ===== Досягнення і 3D-сертифікати ===== */
+.ach-go{justify-self:start;margin-bottom:10px}
+.certs{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:20px}
+.cert3d{perspective:1200px;cursor:pointer;min-height:360px;--gx:50%;--gy:30%}
+.c3-in{position:relative;width:100%;height:100%;min-height:360px;transform-style:preserve-3d;transition:transform .6s cubic-bezier(.2,.8,.2,1)}
+.cert3d.flip .c3-in{transform:rotateY(180deg)}
+.c3-face{position:absolute;inset:0;backface-visibility:hidden;-webkit-backface-visibility:hidden;border-radius:20px;padding:22px;display:grid;gap:8px;align-content:start;text-align:center;justify-items:center;overflow:hidden;
+ background:linear-gradient(150deg,color-mix(in srgb,var(--gold) 18%,var(--panel)),var(--panel) 55%);border:2px solid var(--gold);box-shadow:0 18px 50px -20px #000a}
+.c3-back{transform:rotateY(180deg);align-content:center}
+.c3-glow{position:absolute;inset:0;background:radial-gradient(circle at var(--gx) var(--gy),#ffffff38,transparent 45%);pointer-events:none}
+.c3-seal{font-size:44px;filter:drop-shadow(0 4px 10px #0007);animation:c3float 4s ease-in-out infinite}
+@keyframes c3float{50%{transform:translateY(-6px) rotate(-4deg)}}
+.c3-face h3{color:var(--gold);font-size:22px;line-height:1.2}
+.c3-name{font:600 20px var(--f-display);margin:2px 0}
+.c3-dates{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;width:100%;margin-top:6px}
+.c3-dates div{display:grid;gap:2px;background:var(--bg2);border-radius:10px;padding:8px 4px}
+.c3-dates small{font-size:11px;color:var(--muted);text-transform:uppercase;letter-spacing:.06em}
+.c3-prog{width:100%;height:8px;border-radius:9px;background:var(--line);overflow:hidden}.c3-prog i{display:block;height:100%;background:var(--gold)}
+.c3-hint{font-size:12px;color:var(--muted);margin-top:auto}
+.c3-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;width:100%}
+.c3-stats div{display:grid;background:var(--bg2);border-radius:12px;padding:12px 4px}.c3-stats b{font:400 28px var(--f-display);color:var(--gold)}.c3-stats span{font-size:12px;color:var(--muted)}
+.cert3d.locked .c3-face{border-color:var(--line);filter:saturate(.4)}
+.bdgs{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:12px}
+.bdg{display:grid;gap:4px;justify-items:center;text-align:center;background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:14px 10px;transition:transform .2s}
+.bdg:hover{transform:translateY(-3px) rotate(-1deg);border-color:var(--gold)}
+.bdg-i{font-size:34px}.bdg small{color:var(--muted);font-size:11px}
+@media print{body *{visibility:hidden}.cert3d.printing,.cert3d.printing *{visibility:visible}.cert3d.printing{position:fixed;inset:30px}.cert3d.printing .c3-back,.cert3d.printing .c3-hint,.cert3d.printing button{display:none}}

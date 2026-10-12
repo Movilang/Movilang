@@ -27,15 +27,17 @@ function say(txt, lang) {
   lang = lang || SPEECH[TARGET]; var code = lang.slice(0, 2), clean = String(txt || '').replace(/<[^>]+>/g, '').replace(/_{2,}/g, '…').trim();
   var C = window.MOVIELANG_CONFIG || {};
   if (!clean) return;
-  if (TTS_OK === false || !C.SUPABASE_URL || !C.SUPABASE_ANON_KEY) return sayLocal(clean, lang);
+  var vsAll = (window.speechSynthesis && speechSynthesis.getVoices()) || [], noLocal = vsAll.length > 0 && !bestVoice(lang);
+  if ((TTS_OK === false && !noLocal) || !C.SUPABASE_URL || !C.SUPABASE_ANON_KEY) return noLocal ? noVoice(code) : sayLocal(clean, lang);
   try { speechSynthesis.cancel(); } catch (e) {} if (TTS_AUDIO) { try { TTS_AUDIO.pause(); } catch (e) {} }
   var k = code + '|' + clean, play = function (u) { TTS_AUDIO = new Audio(u); TTS_AUDIO.play().catch(function () { sayLocal(clean, lang); }); };
   if (TTS_URLS[k]) return play(TTS_URLS[k]);
   fetch(C.SUPABASE_URL + '/functions/v1/tts', {method:'POST', headers:{'Content-Type':'application/json', apikey:C.SUPABASE_ANON_KEY, Authorization:'Bearer ' + C.SUPABASE_ANON_KEY}, body:JSON.stringify({text:clean, lang:code})})
     .then(function (r) { return r.json().then(function (j) { return {ok:r.ok, j:j}; }); })
-    .then(function (x) { if (x.ok && x.j.url) { TTS_OK = true; TTS_URLS[k] = x.j.url; play(x.j.url); } else { if (x.j && x.j.error === 'no_key') TTS_OK = false; sayLocal(clean, lang); } })
-    .catch(function () { sayLocal(clean, lang); });
+    .then(function (x) { if (x.ok && x.j.url) { TTS_OK = true; TTS_URLS[k] = x.j.url; play(x.j.url); } else { if (x.j && x.j.error === 'no_key') TTS_OK = false; noLocal ? noVoice(code) : sayLocal(clean, lang); } })
+    .catch(function () { noLocal ? noVoice(code) : sayLocal(clean, lang); });
 }
+function noVoice(code) { toast(tx({uk:'На цьому пристрої немає голосу для мови «' + code + '». Відкрий урок у Chrome або додай голос у налаштуваннях системи.', pl:'To urządzenie nie ma głosu dla języka „' + code + '”. Otwórz lekcję w Chrome albo dodaj głos w ustawieniach systemu.', en:'This device has no voice for “' + code + '”. Open the lesson in Chrome or add a voice in system settings.'}), 'info'); }
 function sayLocal(txt, lang) { try { lang = lang || SPEECH[TARGET]; var u = new SpeechSynthesisUtterance(String(txt).replace(/_{2,}/g, '…')); u.lang = lang; var v = bestVoice(lang); if (v) u.voice = v; u.rate = v && /natural|neural|online|premium|enhanced/i.test(v.name) ? 1 : .92; u.pitch = 1; speechSynthesis.cancel(); speechSynthesis.speak(u); } catch (e) { toast(t('Озвучення недоступне в цьому браузері'), 'err'); } }
 var TT_L = {
   uk:{intro:'СТАРТ', match:'ПАРИ', order:'ПОРЯДОК СЛІВ', type:'ВПИШИ', tf:'ПРАВДА / НІ', vocabulary:'СЛОВНИК', listening:'АУДІЮВАННЯ', subtitles:'СУБТИТРИ', grammar:'ГРАМАТИКА', speaking:'ГОВОРІННЯ', quiz:'МІНІ-КВІЗ', final:'ФІНАЛ', cards:'ПЕРСОНАЖІ', glossary:'СЛОВНИК СЦЕНИ', quest:'КВЕСТ'},
@@ -609,7 +611,7 @@ function viewCabinet() {
         (isAdm() ? t('<a class="btn btn-ghost btn-sm" href="#/admin" style="justify-content:center">Адмін-панель</a>') : '') + '</aside>' +
         '<div class="dmain">' + (started.length > 1 ? '<div class="cabtabs">' + started.map(function (l) { var pr = byT[l], av = pr.length ? Math.round(pr.reduce(function (a, p) { return a + (+p.score || 0); }, 0) / pr.length) : 0; return '<button type="button" class="cabtab' + (l === CAB_T ? ' on' : '') + '" data-cab="' + l + '"><b>' + FLAG[l] + '</b><span>' + esc(langName(l)) + '</span><small>' + pr.length + ' ' + t('уроків') + (pr.length ? ' · ' + av + '%' : '') + '</small></button>'; }).join('') + '</div>' : (started.length ? '<p class="eyebrow" style="margin-bottom:12px">' + FLAG[CAB_T] + ' · ' + esc(langName(CAB_T)) + '</p>' : '')) + '<div class="stats"><div class="stat"><b>' + prog.length + t('</b><span>уроків пройдено</span></div><div class="stat"><b>') + avg + t('%</b><span>середній бал</span></div><div class="stat"><b>') + xp + t('</b><span>XP набрано</span></div><div class="stat"><b>') + Object.keys(days).length + t('</b><span>днів навчання</span></div></div>') +
         t('<div class="rows"><div class="box"><h4>Мої марафони</h4>') + (my || t('<div class="empty small">Марафонів ще немає. Активуй ключ або <a href="#/trial">пройди пробний урок</a>.</div>')) + t('<a class="btn btn-ghost btn-sm" href="#/catalog" style="justify-self:start">Каталог курсів</a></div>') +
-        t('<div class="box"><h4>Досягнення</h4><div class="ach">') + medals.map(function (m) { return '<div class="medal' + (m[0] ? '' : ' off') + '"><span class="m" style="border-color:' + (m[0] ? 'var(--gold)' : 'var(--dim)') + ';color:' + (m[0] ? 'var(--gold)' : 'var(--dim)') + '">' + m[1] + '</span>' + m[2] + '</div>'; }).join('') + '</div>' +
+        t('<div class="box"><h4>Досягнення</h4>') + '<a class="btn btn-red btn-sm ach-go" href="#/achievements">🏆 ' + tx({uk:'Мої нагороди і сертифікати', pl:'Moje nagrody i certyfikaty', en:'My rewards and certificates'}) + '</a>' + t('<div class="ach">') + medals.map(function (m) { return '<div class="medal' + (m[0] ? '' : ' off') + '"><span class="m" style="border-color:' + (m[0] ? 'var(--gold)' : 'var(--dim)') + ';color:' + (m[0] ? 'var(--gold)' : 'var(--dim)') + '">' + m[1] + '</span>' + m[2] + '</div>'; }).join('') + '</div>' +
         t('<h4>Останні уроки</h4><div class="done-list">') + (recent || t('<span class="muted">Ще немає пройдених уроків</span>')) + '</div></div></div></div></div></div>';
       document.querySelectorAll('[data-go-c]').forEach(function (b) { b.onclick = function () { setLangs(b.dataset.goL, LANG); location.hash = '#/course/' + b.dataset.goC; }; });
       document.querySelectorAll('[data-add-c]').forEach(function (b) { b.onclick = function () { var cid = b.dataset.addC; pickTargetModal(tx({uk:'Яку мову додати до марафону?', pl:'Jaki język dodać do maratonu?', en:'Which language do you want to add?'}), langsOf(cid), function (tg) { API.addLang(cid, tg).then(function () { setLangs(tg, LANG); toast(tx({uk:'Мову додано. Успіхів!', pl:'Język dodany. Powodzenia!', en:'Language added. Good luck!'})); location.hash = '#/course/' + cid; }); }); }; });
@@ -692,6 +694,67 @@ function illu(key) {
   return '<svg class="illu-svg" viewBox="0 0 640 300" role="img" aria-label="' + esc(key) + '"><defs><radialGradient id="ig' + key + '" cx="50%" cy="35%" r="75%"><stop offset="0" stop-color="#2b2350"/><stop offset="1" stop-color="#0b0a14"/></radialGradient></defs><rect width="640" height="300" fill="url(#ig' + key + ')"/><g fill="#fff" opacity=".5"><circle cx="60" cy="40" r="1.6"/><circle cx="580" cy="60" r="1.4"/><circle cx="520" cy="30" r="1.2"/><circle cx="110" cy="120" r="1.2"/></g>' + art + '<text x="16" y="24" font-family="monospace" font-size="12" fill="#fff" opacity=".7">● SCENE</text></svg>';
 }
 
+
+/* ---------- achievements & certificates ---------- */
+function viewAchievements() {
+  if (!requireUser()) return Promise.resolve();
+  return Promise.all([API.listCourses(true), API.myEnrollments(), API.myProgress('en'), API.myProgress('pl'), API.myProgress('uk')]).then(function (r) {
+    var courses = r[0], enr = r[1], byT = {en:r[2], pl:r[3], uk:r[4]};
+    return Promise.all(enr.map(function (cid) { return API.listLessons(cid); })).then(function (lists) {
+      var certs = [], badges = [], totalLessons = 0;
+      enr.forEach(function (cid, i) {
+        var c = courses.filter(function (x) { return x.id === cid; })[0]; if (!c) return;
+        var ls = lists[i];
+        LANGS.forEach(function (lg) {
+          var avail = ls.filter(function (x) { return lg === 'en' || (x.variants && x.variants[lg] && x.variants[lg].length); });
+          if (!avail.length) return;
+          var pr = byT[lg].filter(function (p) { return avail.some(function (x) { return x.id === p.lesson_id; }); });
+          if (!pr.length) return;
+          totalLessons += pr.length;
+          pr.forEach(function (p) { var l = avail.filter(function (x) { return x.id === p.lesson_id; })[0], b = l && l.variants && l.variants.badge;
+            badges.push({icon:b ? b.icon : '🎬', name:b ? lf(b, 'name') : tr(l, 'title'), text:b ? lf(b, 'text') : '', course:tr(c, 'title'), lang:lg, score:+p.score || 0, date:p.completed_at, num:l ? l.num : 0}); });
+          var dates = pr.map(function (p) { return p.completed_at || ''; }).filter(Boolean).sort();
+          var avg = Math.round(pr.reduce(function (a, p) { return a + (+p.score || 0); }, 0) / pr.length);
+          var last = avail[avail.length - 1], lastP = pr.filter(function (p) { return p.lesson_id === last.id; })[0];
+          var certName = (last.variants && (last.variants['cert_' + LANG] || last.variants.cert)) || tx({uk:'Випускник марафону', pl:'Absolwent maratonu', en:'Marathon graduate'});
+          var done = pr.length >= avail.length && (!lastP || (+lastP.score || 0) >= 70);
+          certs.push({c:c, lang:lg, done:done, title:certName, start:dates[0], end:dates[dates.length - 1], avg:avg, n:pr.length, total:avail.length,
+            badges:pr.length, id:'ML-' + String(cid).replace(/[^a-z0-9]/gi, '').slice(0, 4).toUpperCase() + '-' + lg.toUpperCase() + '-' + String(USER.id || '').replace(/[^a-z0-9]/gi, '').slice(-4).toUpperCase()});
+        });
+      });
+      badges.sort(function (a, b) { return (b.date || '').localeCompare(a.date || ''); });
+      var L3 = function (o) { return tx(o); };
+      var certHtml = certs.map(function (k, i) {
+        var pct = Math.round(k.n / k.total * 100);
+        return '<div class="cert3d' + (k.done ? '' : ' locked') + '" data-ci="' + i + '"><div class="c3-in">' +
+          '<div class="c3-face c3-front"><div class="c3-glow"></div><div class="c3-seal">' + (k.done ? '🏆' : '🔒') + '</div>' +
+          '<div class="eyebrow">' + L3({uk:'Сертифікат MovieLang', pl:'Certyfikat MovieLang', en:'MovieLang Certificate'}) + ' · ' + FLAG[k.lang] + '</div>' +
+          '<h3>' + esc(k.done ? k.title : L3({uk:'Ще не відкрито', pl:'Jeszcze zablokowany', en:'Not unlocked yet'})) + '</h3>' +
+          '<p class="c3-name">' + esc(USER.name || USER.email) + '</p>' +
+          '<p class="muted small">' + esc(tr(k.c, 'title')) + ' · ' + esc(langName(k.lang)) + '</p>' +
+          '<div class="c3-dates"><div><small>' + L3({uk:'Початок', pl:'Start', en:'Started'}) + '</small><b>' + fmtDate(k.start) + '</b></div><div><small>' + L3({uk:'Завершення', pl:'Ukończenie', en:'Completed'}) + '</small><b>' + (k.done ? fmtDate(k.end) : '—') + '</b></div><div><small>' + L3({uk:'Середній бал', pl:'Średni wynik', en:'Average'}) + '</small><b>' + k.avg + '%</b></div></div>' +
+          (k.done ? '' : '<div class="c3-prog"><i style="width:' + pct + '%"></i></div><p class="small muted">' + k.n + ' / ' + k.total + ' · ' + L3({uk:'фінальний іспит від 70%', pl:'egzamin końcowy od 70%', en:'final exam 70%+'}) + '</p>') +
+          '<p class="c3-hint">' + L3({uk:'Натисни, щоб перевернути', pl:'Kliknij, aby odwrócić', en:'Tap to flip'}) + ' ↻</p></div>' +
+          '<div class="c3-face c3-back"><div class="eyebrow">' + L3({uk:'Деталі', pl:'Szczegóły', en:'Details'}) + '</div>' +
+          '<div class="c3-stats"><div><b>' + k.n + '</b><span>' + L3({uk:'уроків', pl:'lekcji', en:'lessons'}) + '</span></div><div><b>' + k.avg + '%</b><span>' + L3({uk:'точність', pl:'trafność', en:'accuracy'}) + '</span></div><div><b>' + k.badges + '</b><span>' + L3({uk:'нагород', pl:'nagród', en:'rewards'}) + '</span></div></div>' +
+          '<p class="small muted">ID: ' + esc(k.id) + '</p>' +
+          (k.done ? '<div class="row" style="justify-content:center"><button class="btn btn-red btn-sm" type="button" data-print="' + i + '">🖨 ' + L3({uk:'Друкувати / PDF', pl:'Drukuj / PDF', en:'Print / PDF'}) + '</button></div>' : '<a class="btn btn-ghost btn-sm" href="#/course/' + esc(k.c.id) + '">' + L3({uk:'Продовжити марафон', pl:'Kontynuuj maraton', en:'Continue the marathon'}) + '</a>') +
+          '</div></div></div>';
+      }).join('');
+      var badgeHtml = badges.map(function (b) { return '<div class="bdg" title="' + esc(b.text) + '"><span class="bdg-i">' + esc(b.icon) + '</span><b>' + esc(b.name) + '</b><small>' + FLAG[b.lang] + ' ' + esc(b.course) + ' · ' + b.score + '%</small></div>'; }).join('');
+      $app.innerHTML = '<div class="page"><div class="sec-head"><a href="#/cabinet" class="muted small">← ' + t('Мій кабінет') + '</a><div class="eyebrow">' + L3({uk:'Досягнення', pl:'Osiągnięcia', en:'Achievements'}) + '</div><h2>' + L3({uk:'Мої нагороди і сертифікати', pl:'Moje nagrody i certyfikaty', en:'My rewards and certificates'}) + '</h2><p class="lead">' + totalLessons + ' ' + L3({uk:'пройдених уроків', pl:'ukończonych lekcji', en:'lessons completed'}) + ' · ' + badges.length + ' ' + L3({uk:'нагород', pl:'nagród', en:'rewards'}) + ' · ' + certs.filter(function (k) { return k.done; }).length + ' ' + L3({uk:'сертифікатів', pl:'certyfikatów', en:'certificates'}) + '</p></div>' +
+        '<h3 style="margin:8px 0 14px">' + L3({uk:'Сертифікати', pl:'Certyfikaty', en:'Certificates'}) + '</h3>' + (certHtml ? '<div class="certs">' + certHtml + '</div>' : '<div class="empty">' + L3({uk:'Почни марафон — тут з\'явиться твій сертифікат.', pl:'Zacznij maraton — tu pojawi się twój certyfikat.', en:'Start a marathon — your certificate will appear here.'}) + '</div>') +
+        '<h3 style="margin:28px 0 14px">' + L3({uk:'Колекція нагород', pl:'Kolekcja nagród', en:'Reward collection'}) + '</h3>' + (badgeHtml ? '<div class="bdgs">' + badgeHtml + '</div>' : '<div class="empty">' + L3({uk:'Пройди перший урок, щоб отримати нагороду.', pl:'Ukończ pierwszą lekcję, aby zdobyć nagrodę.', en:'Finish your first lesson to earn a reward.'}) + '</div>') + '</div>';
+      document.querySelectorAll('.cert3d').forEach(function (el) {
+        var inn = el.querySelector('.c3-in'), flipped = false;
+        el.onclick = function (e) { if (e.target.closest('button,a')) return; flipped = !flipped; el.classList.toggle('flip', flipped); inn.style.transform = flipped ? 'rotateY(180deg)' : ''; };
+        el.onmousemove = function (e) { var r = el.getBoundingClientRect(), x = (e.clientX - r.left) / r.width - .5, y = (e.clientY - r.top) / r.height - .5; inn.style.transform = 'rotateY(' + ((flipped ? 180 : 0) + x * 16) + 'deg) rotateX(' + (-y * 12) + 'deg)'; el.style.setProperty('--gx', (x + .5) * 100 + '%'); el.style.setProperty('--gy', (y + .5) * 100 + '%'); };
+        el.onmouseleave = function () { inn.style.transform = ''; };
+      });
+      document.querySelectorAll('[data-print]').forEach(function (b) { b.onclick = function () { var el = b.closest('.cert3d'); el.classList.remove('flip'); el.classList.add('printing'); setTimeout(function () { window.print(); el.classList.remove('printing'); }, 300); }; });
+    });
+  });
+}
 /* ---------- lesson player ---------- */
 function scoreTxt(p) { return p.score + '%' + (p.retry_score != null ? ' (' + p.retry_score + '%)' : ''); }
 function lf(tk, k) { var v = tk[k + '_' + LANG]; return v != null && v !== '' ? v : tk[k]; }
@@ -1262,6 +1325,7 @@ function route() {
     case 'login': p = viewAuth('login'); break;
     case 'register': p = viewAuth('register'); break;
     case 'cabinet': p = viewCabinet(); break;
+    case 'achievements': p = viewAchievements(); break;
     case 'course': p = viewCourse(parts[1]); break;
     case 'lesson': p = viewLesson(parts[1]); break;
     case 'admin': p = viewAdmin(); break;
