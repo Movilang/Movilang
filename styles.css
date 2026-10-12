@@ -583,3 +583,33 @@ section{border-top-color:var(--divider)}
 .btn:active,.topt:active,.lopt:active{transform:scale(.97)}
 html{scroll-behavior:smooth}
 @media (prefers-reduced-motion:reduce){#app.pg-in,.lmodal,.lmodal .lbox,.tcard.tin{animation:none!important}html{scroll-behavior:auto}}
+
+/* ===== Сюжетні курси: картки персонажів, словник сцени, квест, арки, нагороди ===== */
+.pcards{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:10px}
+.pcard{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:12px 14px;display:grid;gap:6px}
+.pcard.upd{border-color:var(--gold)}
+.pc-n b{color:var(--fg)} .pc-r{font-size:14px;color:var(--muted);line-height:1.45}
+.pc-u{font:600 11px var(--f-mono);color:var(--gold);text-transform:uppercase;letter-spacing:.08em}
+.gloss{display:grid;gap:6px}
+.gw{background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:10px 12px}
+.gw summary{cursor:pointer;display:flex;flex-wrap:wrap;gap:6px 10px;align-items:baseline;list-style:none}
+.gw summary::-webkit-details-marker{display:none}
+.gw[open]{border-color:var(--neon)}
+.gw-ipa{font:400 13px var(--f-mono);color:var(--muted)} .gw-uk{margin-left:auto;color:var(--gold);font-size:14px}
+.gw-b{display:grid;gap:6px;margin-top:8px;font-size:14px;line-height:1.5}
+.gw-b p{margin:0} .gw-meta{font:400 12px var(--f-mono);color:var(--muted);text-transform:uppercase;letter-spacing:.06em}
+.gw-line{font-style:italic} .gw-ex{color:var(--muted)}
+.quest{display:grid;gap:12px}
+.qstep{display:grid;gap:12px;animation:qin .25s ease}
+@keyframes qin{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
+.qnum{font:600 12px var(--f-mono);color:var(--gold);text-transform:uppercase;letter-spacing:.12em}
+.qfb{display:grid;gap:8px;font-size:15px;line-height:1.5} .qfb p{margin:0;color:var(--muted)}
+.qend{border-radius:12px;padding:14px;border:1px solid var(--line);background:var(--panel)}
+.qend.good{border-color:var(--ok)} .qend.bad{border-color:var(--red)} .qend p{margin:6px 0 0;color:var(--muted)}
+.lessons li.arc-h{display:block;background:none;padding:18px 4px 4px;font:600 12px var(--f-mono);letter-spacing:.14em;text-transform:uppercase;color:var(--gold);border:0}
+.badge-win{display:flex;gap:14px;align-items:center;text-align:left;background:var(--panel);border:1px solid var(--gold);border-radius:14px;padding:12px 16px;margin-bottom:12px}
+.badge-win .bw-i{font-size:36px} .badge-win p{margin:4px 0 0}
+.cert{margin-top:14px;border:2px solid var(--gold);border-radius:16px;padding:20px;display:grid;gap:6px;justify-items:center;background:var(--panel)}
+.cert h3{color:var(--gold);text-align:center}
+@media print{body *{visibility:hidden}.cert,.cert *{visibility:visible}.cert{position:fixed;inset:40px;border-color:#b45309}.cert button{display:none}}
+.tq.tq-info{font-size:16px;font-weight:400;line-height:1.6;color:var(--muted)}

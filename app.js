@@ -38,10 +38,11 @@ function say(txt, lang) {
 }
 function sayLocal(txt, lang) { try { lang = lang || SPEECH[TARGET]; var u = new SpeechSynthesisUtterance(String(txt).replace(/_{2,}/g, '…')); u.lang = lang; var v = bestVoice(lang); if (v) u.voice = v; u.rate = v && /natural|neural|online|premium|enhanced/i.test(v.name) ? 1 : .92; u.pitch = 1; speechSynthesis.cancel(); speechSynthesis.speak(u); } catch (e) { toast(t('Озвучення недоступне в цьому браузері'), 'err'); } }
 var TT_L = {
-  uk:{intro:'СТАРТ', match:'ПАРИ', order:'ПОРЯДОК СЛІВ', type:'ВПИШИ', tf:'ПРАВДА / НІ', vocabulary:'СЛОВНИК', listening:'АУДІЮВАННЯ', subtitles:'СУБТИТРИ', grammar:'ГРАМАТИКА', speaking:'ГОВОРІННЯ', quiz:'МІНІ-КВІЗ', final:'ФІНАЛ'},
-  pl:{intro:'START', match:'PARY', order:'SZYK ZDANIA', type:'WPISZ', tf:'PRAWDA / FAŁSZ', vocabulary:'SŁOWNICTWO', listening:'SŁUCHANIE', subtitles:'NAPISY', grammar:'GRAMATYKA', speaking:'MÓWIENIE', quiz:'MINI QUIZ', final:'FINAŁ'}};
+  uk:{intro:'СТАРТ', match:'ПАРИ', order:'ПОРЯДОК СЛІВ', type:'ВПИШИ', tf:'ПРАВДА / НІ', vocabulary:'СЛОВНИК', listening:'АУДІЮВАННЯ', subtitles:'СУБТИТРИ', grammar:'ГРАМАТИКА', speaking:'ГОВОРІННЯ', quiz:'МІНІ-КВІЗ', final:'ФІНАЛ', cards:'ПЕРСОНАЖІ', glossary:'СЛОВНИК СЦЕНИ', quest:'КВЕСТ'},
+  pl:{intro:'START', match:'PARY', order:'SZYK ZDANIA', type:'WPISZ', tf:'PRAWDA / FAŁSZ', vocabulary:'SŁOWNICTWO', listening:'SŁUCHANIE', subtitles:'NAPISY', grammar:'GRAMATYKA', speaking:'MÓWIENIE', quiz:'MINI QUIZ', final:'FINAŁ', cards:'POSTACIE', glossary:'SŁOWNIK SCENY', quest:'QUEST'}};
 function ttName(k) { return (TT_L[LANG] && TT_L[LANG][k]) || TASK_TYPES[k] || k; }
-var TASK_TYPES = { intro:'START', match:'MATCH', order:'WORD ORDER', type:'TYPE IT', tf:'TRUE / FALSE', vocabulary:'VOCABULARY', listening:'LISTENING', subtitles:'SUBTITLES', grammar:'GRAMMAR', speaking:'SPEAKING', quiz:'MINI QUIZ', final:'FINAL' };
+var TASK_TYPES = { intro:'START', match:'MATCH', order:'WORD ORDER', type:'TYPE IT', tf:'TRUE / FALSE', vocabulary:'VOCABULARY', listening:'LISTENING', subtitles:'SUBTITLES', grammar:'GRAMMAR', speaking:'SPEAKING', quiz:'MINI QUIZ', final:'FINAL', cards:'CHARACTERS', glossary:'SCENE GLOSSARY', quest:'QUEST' };
+function isInfo(k) { return k === 'intro' || k === 'cards' || k === 'glossary'; }
 var POSTER_CLASSES = ['p1','p2','p3','p4','p5','p6','p7','p8'];
 
 
@@ -641,9 +642,10 @@ function viewCourse(id) {
       (enrolled ? '' : t('<div class="row"><a class="btn btn-red" href="#/buy">Купити ключ · ') + esc(c.price) + '</a>' + (USER ? t('<a class="btn btn-ghost" href="#/cabinet">Активувати ключ</a>') : t('<a class="btn btn-ghost" href="#/register">Створити кабінет</a>')) + '</div>') + '</div></div>' +
       (isAdm() && ls.length ? '<div class="admtools"><b>🛠 ' + tx({uk:'Тест адміна', pl:'Test admina', en:'Admin test'}) + ' · ' + FLAG[TARGET] + '</b><span class="hint">' + tx({uk:'Змінює лише твої результати', pl:'Zmienia tylko twoje wyniki', en:'Changes only your own results'}) + '</span><div class="row" style="gap:6px;flex-wrap:wrap"><select class="inp-s" id="admLes" style="max-width:260px"><option value="">' + tx({uk:'Усі уроки', pl:'Wszystkie lekcje', en:'All lessons'}) + '</option>' + ls.filter(function (x) { return !!lessonTasks(x); }).map(function (x) { return '<option value="' + esc(x.id) + '">' + x.num + '. ' + esc(tr(x, 'title')) + '</option>'; }).join('') + '</select><input class="inp-s" id="admPct" type="number" min="0" max="100" value="100" style="width:80px"><button class="btn btn-ghost btn-sm" type="button" id="admFill">' + tx({uk:'Зарахувати', pl:'Zalicz', en:'Apply'}) + '</button><button class="btn btn-ghost btn-sm" type="button" id="admReset">' + tx({uk:'Скинути мої результати', pl:'Wyczyść moje wyniki', en:'Reset my results'}) + '</button></div></div>' : '') +
       (ls.length ? '<ul class="lessons">' + ls.map(function (l, i) {
-        var avail = !!lessonTasks(l), open = (enrolled || i === 0) && avail, isDone = done[l.id];
-        var inner = '<li class="' + (isDone ? 'done' : '') + '"><span class="lnum">' + (isDone ? '✓ ' : '') + String(l.num).padStart(2, '0') + '</span><span class="ltitle">' + esc(tr(l, 'title')) + '<small>' + esc(lGram(l)) + (i === 0 && !enrolled ? t(' · безкоштовно') : '') + (!avail ? ' · ' + t('Скоро цією мовою') + ' ' + FLAG[TARGET] : '') + '</small></span>' + (open ? (isDone ? '<b class="score">' + esc(scoreTxt(isDone)) + '</b>' : '<span class="lock" style="color:var(--neon)">▶</span>') : '<span class="lock">🔒</span>') + '</li>';
-        return open ? '<a class="lesson-link" href="#/lesson/' + esc(l.id) + '">' + inner + '</a>' : inner;
+        var arc = l.variants && l.variants.arc, prevArc = i && ls[i - 1].variants && ls[i - 1].variants.arc, arcH = arc && arc !== prevArc ? '<li class="arc-h">' + esc(arc) + '</li>' : '';
+        var avail = !!lessonTasks(l), free0 = i === 0 && c.free_first !== false, open = (enrolled || free0) && avail, isDone = done[l.id];
+        var inner = '<li class="' + (isDone ? 'done' : '') + '"><span class="lnum">' + (isDone ? '✓ ' : '') + String(l.num).padStart(2, '0') + '</span><span class="ltitle">' + esc(tr(l, 'title')) + '<small>' + esc(lGram(l)) + (free0 && !enrolled ? t(' · безкоштовно') : '') + (!avail ? ' · ' + t('Скоро цією мовою') + ' ' + FLAG[TARGET] : '') + '</small></span>' + (open ? (isDone ? '<b class="score">' + esc(scoreTxt(isDone)) + '</b>' : '<span class="lock" style="color:var(--neon)">▶</span>') : '<span class="lock">🔒</span>') + '</li>';
+        return arcH + (open ? '<a class="lesson-link" href="#/lesson/' + esc(l.id) + '">' + inner + '</a>' : inner);
       }).join('') + '</ul>' : t('<div class="empty" style="margin-top:20px">Уроки цього марафону скоро з\'являться.</div>')) +
       t('</div><div class="panel"><h3 style="margin-bottom:18px">Типи завдань у курсі</h3><div class="task-types">') + Object.keys(types).map(function (t) { return '<div class="ttype"><span class="k q">' + esc(t.slice(0, 2).toUpperCase()) + '</span><div><b>' + esc(ttName(t)) + '</b></div></div>'; }).join('') + '</div></div></div></div>';
     var af = document.getElementById('admFill');
@@ -655,7 +657,7 @@ function viewCourse(id) {
 }
 
 /* ---------- illustrations (original SVG, no film stills) ---------- */
-var ILLU_KEYS = ['castle','stairs','snake','letter','cake','alley','wand','train','hat','potion','broom','troll','pitch','mirror','forest','chess','stone','owl'];
+var ILLU_KEYS = ['castle','stairs','snake','letter','cake','alley','wand','train','hat','potion','broom','troll','pitch','mirror','forest','chess','stone','owl','tomb','crow','ring','vervain','diary','candles','manor','comet'];
 function illu(key) {
   var g = '#f1c27d', c = '#efe2c4', d = '#0b0b14', a = '#e8253a';
   var art = {
@@ -676,7 +678,15 @@ function illu(key) {
     forest: '<g fill="#0f2a1c" stroke="#3b6b4a" stroke-width="2"><path d="M140 260l40-140 40 140z"/><path d="M200 260l50-170 50 170z"/><path d="M380 260l50-170 50 170z"/><path d="M450 260l40-130 40 130z"/></g><ellipse cx="330" cy="240" rx="40" ry="8" fill="#cfe8ff" opacity=".8"/>',
     chess: '<g>' + [0,1,2,3,4,5].map(function (r) { return [0,1,2,3,4,5,6,7].map(function (q) { return '<rect x="' + (192 + q * 32) + '" y="' + (70 + r * 32) + '" width="32" height="32" fill="' + ((r + q) % 2 ? '#3a2e24' : c) + '"/>'; }).join(''); }).join('') + '</g><path d="M300 150c0-30 40-40 50-10l10 20-20 0 0 40h-40z" fill="' + d + '" stroke="' + g + '" stroke-width="3"/>',
     stone: '<path d="M320 70l60 60-60 120-60-120z" fill="' + a + '" stroke="#ff9aa8" stroke-width="3"/><path d="M260 130h120M320 70l-20 60 20 120 20-120z" stroke="#ff9aa8" stroke-width="2" fill="none" opacity=".7"/>',
-    owl: '<ellipse cx="320" cy="170" rx="70" ry="85" fill="#e8e1d8"/><circle cx="295" cy="140" r="20" fill="#fff"/><circle cx="345" cy="140" r="20" fill="#fff"/><circle cx="295" cy="140" r="9" fill="' + d + '"/><circle cx="345" cy="140" r="9" fill="' + d + '"/><path d="M312 165l8 14 8-14z" fill="' + g + '"/><rect x="380" y="200" width="70" height="44" rx="4" fill="' + c + '" transform="rotate(-12 415 222)"/>'
+    owl: '<ellipse cx="320" cy="170" rx="70" ry="85" fill="#e8e1d8"/><circle cx="295" cy="140" r="20" fill="#fff"/><circle cx="345" cy="140" r="20" fill="#fff"/><circle cx="295" cy="140" r="9" fill="' + d + '"/><circle cx="345" cy="140" r="9" fill="' + d + '"/><path d="M312 165l8 14 8-14z" fill="' + g + '"/><rect x="380" y="200" width="70" height="44" rx="4" fill="' + c + '" transform="rotate(-12 415 222)"/>',
+    tomb: '<path d="M210 260V150q110-90 220 0v110z" fill="#1a1626" stroke="' + g + '" stroke-width="4"/><path d="M270 260v-80q50-40 100 0v80" fill="' + d + '" stroke="' + c + '" stroke-width="3"/><path d="M320 120v-30M305 105h30" stroke="' + g + '" stroke-width="4"/><path d="M120 262h400" stroke="#4a4560" stroke-width="4"/><g fill="#3d5a3a"><path d="M150 262q10-40 25 0z"/><path d="M470 262q12-50 28 0z"/></g>',
+    crow: '<circle cx="470" cy="80" r="42" fill="' + c + '" opacity=".85"/><path d="M180 230q120-30 260 0" stroke="#4a3a2a" stroke-width="10" fill="none"/><path d="M300 215q-10-45 25-70q30-15 55 5l25-5-20 18q5 40-30 55z" fill="' + d + '" stroke="#26203a" stroke-width="2"/><path d="M330 175l-55 25 30 5z" fill="' + d + '"/><circle cx="372" cy="158" r="3" fill="' + a + '"/>',
+    ring: '<ellipse cx="320" cy="170" rx="90" ry="70" fill="none" stroke="' + g + '" stroke-width="14"/><ellipse cx="320" cy="170" rx="90" ry="70" fill="none" stroke="#fff6" stroke-width="2"/><path d="M285 85l35-35 35 35-35 30z" fill="#2a49c9" stroke="' + g + '" stroke-width="4"/><path d="M320 50v65M285 85h70" stroke="#9fb2ff" stroke-width="1.5" opacity=".6"/>',
+    vervain: '<path d="M300 110h40v20q30 15 30 60v60q0 15-15 15h-70q-15 0-15-15v-60q0-45 30-60z" fill="#ffffff14" stroke="' + c + '" stroke-width="3"/><path d="M280 200h80v50q0 10-10 10h-60q-10 0-10-10z" fill="#7b5bd6" opacity=".7"/><rect x="295" y="92" width="50" height="20" rx="4" fill="#6b4a2a"/><g stroke="#6fbf73" stroke-width="3" fill="none"><path d="M430 260q-10-80 20-160"/><path d="M445 160l20-15M440 200l-22-12M450 125l18-18"/></g><g fill="#a98bff"><circle cx="452" cy="98" r="6"/><circle cx="468" cy="142" r="5"/><circle cx="416" cy="186" r="5"/><circle cx="470" cy="104" r="4"/></g>',
+    diary: '<g transform="rotate(-6 320 170)"><rect x="200" y="90" width="240" height="160" rx="10" fill="#4a2030" stroke="' + g + '" stroke-width="3"/><rect x="214" y="100" width="212" height="140" rx="4" fill="' + c + '"/><path d="M320 100v140" stroke="#c9b48a" stroke-width="3"/><g stroke="#8a7a60" stroke-width="2"><path d="M232 130h70M232 150h76M232 170h60M232 190h72M338 130h70M338 150h64M338 170h74"/></g></g><path d="M455 85l-80 120" stroke="' + d + '" stroke-width="6" stroke-linecap="round"/><path d="M455 85l-80 120" stroke="' + g + '" stroke-width="2"/>',
+    candles: '<g fill="' + c + '"><rect x="230" y="160" width="26" height="100" rx="3"/><rect x="300" y="130" width="30" height="130" rx="3"/><rect x="372" y="175" width="24" height="85" rx="3"/></g><g fill="#ffb347"><path d="M243 160q-12-20 0-38q12 18 0 38z"/><path d="M315 130q-14-24 0-44q14 20 0 44z"/><path d="M384 175q-11-18 0-34q11 16 0 34z"/></g><circle cx="315" cy="110" r="60" fill="#ffb34722"/><path d="M190 262h260" stroke="' + g + '" stroke-width="4"/>',
+    manor: '<path d="M170 260V150l150-70 150 70v110z" fill="#15121f" stroke="' + g + '" stroke-width="3"/><path d="M290 260v-60h60v60" fill="' + d + '" stroke="' + c + '" stroke-width="2"/><g fill="#ffcf6b"><rect x="205" y="170" width="30" height="36" opacity=".9"/><rect x="405" y="170" width="30" height="36" opacity=".35"/><rect x="305" y="130" width="30" height="34" opacity=".7"/></g><path d="M120 262h400" stroke="#4a4560" stroke-width="4"/><path d="M100 230q120-30 220 0t220 0" stroke="#ffffff22" stroke-width="18" fill="none"/>',
+    comet: '<path d="M140 240L430 90" stroke="url(#cmt)" stroke-width="18" stroke-linecap="round"/><defs><linearGradient id="cmt" x1="0" x2="1"><stop offset="0" stop-color="#9fd8ff" stop-opacity="0"/><stop offset="1" stop-color="#e8f6ff"/></linearGradient></defs><circle cx="440" cy="85" r="16" fill="#fff"/><path d="M100 262q110-50 220-20t220-10" fill="#0a0a12" stroke="#2c2840" stroke-width="3"/>'
   }[key];
   if (!art) return '';
   return '<svg class="illu-svg" viewBox="0 0 640 300" role="img" aria-label="' + esc(key) + '"><defs><radialGradient id="ig' + key + '" cx="50%" cy="35%" r="75%"><stop offset="0" stop-color="#2b2350"/><stop offset="1" stop-color="#0b0a14"/></radialGradient></defs><rect width="640" height="300" fill="url(#ig' + key + ')"/><g fill="#fff" opacity=".5"><circle cx="60" cy="40" r="1.6"/><circle cx="580" cy="60" r="1.4"/><circle cx="520" cy="30" r="1.2"/><circle cx="110" cy="120" r="1.2"/></g>' + art + '<text x="16" y="24" font-family="monospace" font-size="12" fill="#fff" opacity=".7">● SCENE</text></svg>';
@@ -691,20 +701,22 @@ function norm(s) { return String(s || '').toLowerCase().replace(/[’']/g, "'").
 function runPlayer(container, lesson, onFinish) {
   var tStart = {}, durs = {}, tasks = lessonTasks(lesson) || [], cur = 0, res = [], finalText = '', snaps = [], maxReached = 0;
   var FREE = isAdm() && ADMIN_MODE; if (FREE) maxReached = tasks.length - 1;
-  var scored = tasks.filter(function (x) { return x.type !== 'intro'; }).length;
+  var scored = tasks.filter(function (x) { return !isInfo(x.type); }).length;
+  function numOf(i) { var n = 0; for (var j = 0; j <= i; j++) if (!isInfo(tasks[j].type)) n++; return n; }
+  function tag(tk) { return lf(tk, 'label') || ttName(tk.type); }
   container.innerHTML = (FREE ? '<div class="admnav">🛠 ' + tx({uk:'Режим адміна: можна вільно переходити між завданнями справа, не відповідаючи.', pl:'Tryb admina: możesz swobodnie przechodzić między zadaniami po prawej, bez odpowiadania.', en:'Admin mode: jump freely between tasks on the right without answering.'}) + '</div>' : '') + '<div class="trial"><div class="tcard" id="tcard" aria-live="polite"></div><div class="tside" id="tside"></div></div>';
   var card = container.querySelector('#tcard'), side = container.querySelector('#tside');
-  function renderSide() { side.innerHTML = tasks.map(function (tk, i) { var c = i === cur ? 'on' : ''; if (res[i] === true) c += ' ok'; if (res[i] === false) c += ' bad'; return '<button type="button" class="tstep ' + c + (i <= maxReached && i !== cur ? ' nav' : '') + '" data-go="' + i + '"' + (i > maxReached ? ' disabled' : '') + '><i>' + (tk.type === 'intro' ? '▶' : i + (tasks[0] && tasks[0].type === 'intro' ? 0 : 1)) + '</i>' + esc(ttName(tk.type)) + (res[i] != null ? '' : '') + '</button>'; }).join('');
+  function renderSide() { side.innerHTML = tasks.map(function (tk, i) { var c = i === cur ? 'on' : ''; if (res[i] === true) c += ' ok'; if (res[i] === false) c += ' bad'; return '<button type="button" class="tstep ' + c + (i <= maxReached && i !== cur ? ' nav' : '') + '" data-go="' + i + '"' + (i > maxReached ? ' disabled' : '') + '><i>' + (tk.type === 'intro' ? '▶' : isInfo(tk.type) ? '📖' : numOf(i)) + '</i>' + esc(tag(tk)) + (res[i] != null ? '' : '') + '</button>'; }).join('');
     side.querySelectorAll('[data-go]').forEach(function (b) { b.onclick = function () { var i = +b.dataset.go; if (i <= maxReached && i !== cur) { cur = i; render(); } }; }); }
   function plainQ(s) { return String(s || '').replace(/<[^>]+>/g, '').replace(/_{2,}/g, '…'); }
   function qHtml(tk) { return esc(lf(tk, 'q')).replace(/&lt;(\/?)(b|i)&gt;/g, '<$1$2>').replace(/_{3,}/g, '<span class="gap">____</span>'); }
   function head(tk) {
-    var n = tasks[0] && tasks[0].type === 'intro' ? cur : cur + 1;
-    return '<div class="ttop"><span class="ttag">' + esc(ttName(tk.type)) + '</span>' + (tk.type === 'intro' ? '' : '<span class="tcount">' + n + ' / ' + scored + '</span>') + '</div>' +
+    var n = numOf(cur);
+    return '<div class="ttop"><span class="ttag">' + esc(tag(tk)) + '</span>' + (isInfo(tk.type) ? '' : '<span class="tcount">' + n + ' / ' + scored + '</span>') + '</div>' +
       (tk.img ? '<div class="illu">' + illu(tk.img) + '</div>' : '') +
-      (TASK_INS[tk.type] ? '<div class="tins">' + t(TASK_INS[tk.type]) + '</div>' : '') +
-      (tk.scene ? '<div class="tscene"><b>' + t('Сцена:') + '</b> ' + esc(lf(tk, 'scene')) + '</div>' : '') + '<div class="tq">' + (tk.type === 'intro' ? esc(lf(tk, 'q')) : qHtml(tk)) + (tk.type !== 'intro' && !tk['q_' + LANG] ? ' <button type="button" class="spk" data-say="' + esc(plainQ(tk.q)) + '" title="' + tx({uk:'Прослухати', pl:'Odsłuchaj', en:'Listen'}) + '">🔊</button>' : '') + '</div>' +
-      (tk.type !== 'intro' && !tk['q_' + LANG] && tk['qt_' + LANG] ? '<div class="qtrw"><button type="button" class="qtrb" id="qtrBtn">🌐 ' + tx({uk:'Перекласти питання', pl:'Przetłumacz pytanie', en:'Translate the question'}) + '</button><div class="qtrt" id="qtrText" hidden>' + esc(tk['qt_' + LANG]).replace(/&lt;(\/?)(b|i)&gt;/g, '<$1$2>').replace(/_{3,}/g, '<span class="gap">____</span>') + '</div></div>' : '') +
+      (tk.ins ? '<div class="tins">' + esc(lf(tk, 'ins')) + '</div>' : TASK_INS[tk.type] ? '<div class="tins">' + t(TASK_INS[tk.type]) + '</div>' : '') +
+      (tk.scene ? '<div class="tscene"><b>' + t('Сцена:') + '</b> ' + esc(lf(tk, 'scene')) + '</div>' : '') + '<div class="tq' + ((isInfo(tk.type) && tk.type !== 'intro') || tk.type === 'quest' ? ' tq-info' : '') + '">' + (isInfo(tk.type) ? esc(lf(tk, 'q') || '') : qHtml(tk)) + (!isInfo(tk.type) && tk.type !== 'quest' && !tk['q_' + LANG] ? ' <button type="button" class="spk" data-say="' + esc(plainQ(tk.q)) + '" title="' + tx({uk:'Прослухати', pl:'Odsłuchaj', en:'Listen'}) + '">🔊</button>' : '') + '</div>' +
+      (!isInfo(tk.type) && !tk['q_' + LANG] && tk['qt_' + LANG] ? '<div class="qtrw"><button type="button" class="qtrb" id="qtrBtn">🌐 ' + tx({uk:'Перекласти питання', pl:'Przetłumacz pytanie', en:'Translate the question'}) + '</button><div class="qtrt" id="qtrText" hidden>' + esc(tk['qt_' + LANG]).replace(/&lt;(\/?)(b|i)&gt;/g, '<$1$2>').replace(/_{3,}/g, '<span class="gap">____</span>') + '</div></div>' : '') +
       (tk.say ? '<div><button class="speak" type="button" id="tsay"><span class="play"></span>' + t('Прослухати') + '</button></div>' : '');
   }
   function foot() { return '<div class="tfb" id="tfb"></div><div class="tnav"><span class="hint">' + t('Завдання') + ': ' + FLAG[TARGET] + ' · ' + t('Підказки') + ': ' + FLAG[LANG] + '</span><button class="btn btn-red" type="button" id="tnext" hidden>' + t('Далі') + '</button></div>'; }
@@ -716,6 +728,30 @@ function runPlayer(container, lesson, onFinish) {
     if (type === 'intro') {
       h += '<ul class="goals">' + (lf(tk, 'options') || []).map(function (o) { return '<li>' + esc(o) + '</li>'; }).join('') + '</ul><div class="row"><button class="btn btn-red" type="button" id="tstart"><span class="play"></span>' + (tk.tip ? esc(lf(tk, 'tip')) : 'Start') + '</button><span class="hint">' + scored + ' ' + t('завдань') + ' · ~' + Math.max(5, Math.round(scored * 1.5)) + ' ' + t('хв') + '</span></div>';
       card.innerHTML = h; card.querySelector('#tstart').onclick = function () { res[cur] = null; next(); }; bindSay(tk); return;
+    }
+    if (type === 'cards' || type === 'glossary') {
+      if (type === 'cards') h += '<div class="pcards">' + (tk.cards || []).map(function (c) { return '<div class="pcard' + (c.upd ? ' upd' : '') + '"><div class="pc-n"><b>' + esc(c.uk) + '</b> <span class="muted small">' + esc(c.en) + '</span>' + (c.upd ? ' <span class="pc-u">' + t('оновлено') + '</span>' : '') + '</div><div class="pc-r">' + esc(c.role) + '</div></div>'; }).join('') + '</div>';
+      else h += '<div class="gloss">' + (tk.items || []).map(function (w) { return '<details class="gw"><summary><b>' + esc(w.w) + '</b> <span class="spk spk-in" role="button" data-say="' + esc(w.w) + '">🔊</span> <span class="gw-ipa">' + esc(w.ipa || '') + '</span><span class="gw-uk">' + esc(w.uk) + '</span></summary><div class="gw-b"><div class="gw-meta">' + esc(w.pos || '') + (w.lvl ? ' · <b>' + esc(w.lvl) + '</b>' : '') + '</div>' + (w.who ? '<p>🎬 ' + esc(w.who) + '</p>' : '') + (w.line ? '<p class="gw-line">«' + esc(w.line) + '» <span class="spk spk-in" role="button" data-say="' + esc(w.line) + '">🔊</span></p>' : '') + (w.ex ? '<p class="gw-ex">✎ ' + esc(w.ex) + ' <span class="spk spk-in" role="button" data-say="' + esc(w.ex) + '">🔊</span></p>' : '') + '</div></details>'; }).join('') + '</div>';
+      h += '<div class="row"><button class="btn btn-red" type="button" id="tstart">' + t('Далі') + '</button></div>';
+      card.innerHTML = h; card.querySelector('#tstart').onclick = function () { res[cur] = null; next(); }; bindSay(tk); return;
+    }
+    if (type === 'quest') {
+      h += '<div class="quest" id="quest"></div>' + foot(); card.innerHTML = h; bindSay(tk);
+      var qbox = card.querySelector('#quest'), steps = tk.steps || {}, path = [];
+      var qstep = function (id) {
+        var e = (tk.endings || {})[id];
+        if (e) { qbox.innerHTML = '<div class="qend ' + (e.good ? 'good' : 'bad') + '"><b>' + esc(e.title) + '</b><p>' + esc(e.text) + '</p></div>'; done(!!e.good, (e.good ? t('Правильно! ') : t('Майже. ')) + (lf(tk, 'tip') || '')); return; }
+        var st = steps[id]; if (!st) return; path.push(id);
+        qbox.innerHTML = '<div class="qstep"><div class="qnum">' + t('Крок') + ' ' + path.length + '</div>' + (st.scene ? '<div class="tscene">' + esc(st.scene) + '</div>' : '') + '<div class="tq">' + qHtml({q:st.q}) + ' <button type="button" class="spk" data-say="' + esc(plainQ(st.q)) + '">🔊</button></div><div class="topts">' + (st.choices || []).map(function (c, i) { return '<button class="qopt topt" type="button" data-qi="' + i + '">' + esc(c.t) + '</button>'; }).join('') + '</div><div class="qfb" id="qfb"></div></div>';
+        qbox.querySelectorAll('.spk').forEach(function (s) { s.onclick = function () { say(s.dataset.say); }; });
+        qbox.querySelectorAll('[data-qi]').forEach(function (b) { b.onclick = function () {
+          var c = st.choices[+b.dataset.qi]; qbox.querySelectorAll('[data-qi]').forEach(function (x) { x.disabled = true; }); b.classList.add(c.ok === false ? 'wrong' : 'right');
+          var fb = qbox.querySelector('#qfb'); fb.innerHTML = (c.fb ? '<p>' + esc(c.fb) + '</p>' : '') + '<button class="btn btn-ghost btn-sm" type="button" id="qgo">' + t('Далі') + ' →</button>';
+          fb.querySelector('#qgo').onclick = function () { qstep(c.next); };
+        }; });
+      };
+      if (FREE && cur < tasks.length - 1) { var nbq = card.querySelector('#tnext'); nbq.hidden = false; nbq.textContent = '⏭ ' + tx({uk:'Пропустити (адмін)', pl:'Pomiń (admin)', en:'Skip (admin)'}); nbq.onclick = function () { cur++; render(); }; }
+      qstep(tk.start || Object.keys(steps)[0]); return;
     }
     if (type === 'final') h += '<textarea class="inp-s" id="tfinal" rows="7" placeholder="' + t('Пиши мовою, яку вивчаєш…') + '"></textarea><div class="row"><button class="btn btn-red" type="button" id="tsubmit">' + t('Зберегти відповідь') + '</button><span class="hint" id="wc">0</span></div>';
     else if (type === 'speaking') h += '<div class="mic"><button class="btn btn-red" type="button" id="micBtn">🎤 ' + t('Натисни і говори') + '</button><div class="mic-out" id="micOut" aria-live="polite"></div></div><div class="row"><button class="btn btn-ghost btn-sm" type="button" id="micAccept" hidden>' + t('Зарахувати цю спробу') + '</button><button class="topt" type="button" data-s="0" style="flex:0 0 auto">' + t('Пропустити') + '</button></div>';
@@ -801,10 +837,11 @@ function runPlayer(container, lesson, onFinish) {
     var tk = tasks[cur], ok;
     if (b.dataset.s != null) ok = b.dataset.s === '1';
     else { ok = +b.dataset.i === +tk.answer; card.querySelectorAll('.topt').forEach(function (x) { if (+x.dataset.i === +tk.answer) x.classList.add('right'); }); if (!ok) b.classList.add('wrong'); var g = card.querySelector('.gap'); if (g) g.textContent = tk.options[tk.answer]; }
-    done(ok, (ok ? t('Правильно! ') : t('Майже. ')) + (lf(tk, 'tip') || ''));
+    var why = lf(tk, 'why'), w = why && b.dataset.i != null ? why[+b.dataset.i] : '';
+    done(ok, (ok ? t('Правильно! ') : t('Майже. ')) + (w ? w + ' ' : '') + (lf(tk, 'tip') || ''));
   }
-  function next() { if (cur < tasks.length - 1) { cur++; render(); } else if (res.filter(function (x, i) { return tasks[i].type !== 'intro' && x == null; }).length && firstOpen() > -1) { cur = firstOpen(); render(); toast(t('Є завдання без відповіді'), 'info'); } else finish(); }
-  function firstOpen() { for (var i = 0; i < tasks.length; i++) if (tasks[i].type !== 'intro' && res[i] == null) return i; return -1; }
+  function next() { if (cur < tasks.length - 1) { cur++; render(); } else if (res.filter(function (x, i) { return !isInfo(tasks[i].type) && x == null; }).length && firstOpen() > -1) { cur = firstOpen(); render(); toast(t('Є завдання без відповіді'), 'info'); } else finish(); }
+  function firstOpen() { for (var i = 0; i < tasks.length; i++) if (!isInfo(tasks[i].type) && res[i] == null) return i; return -1; }
   function finish() {
     var per = tasks.map(function (tk, i) { return {n:i, type:tk.type, sec:durs[i] || 0, ok:res[i] == null ? null : !!res[i]}; }); LAST_TIMES = {total:per.reduce(function (a, x) { return a + x.sec; }, 0), per:per};
     var sc = res.filter(function (x) { return x === true; }).length, pct = scored ? Math.round(sc / scored * 100) : 0; cur = tasks.length; renderSide();
@@ -820,12 +857,15 @@ function viewLesson(id) {
     if (!l) { $app.innerHTML = t('<div class="page"><div class="empty">Урок не знайдено.</div></div>'); return; }
     return Promise.all([API.getCourse(l.course_id), API.listLessons(l.course_id), API.myEnrollments()]).then(function (r) {
       var c = r[0], ls = r[1], enrolled = r[2].indexOf(l.course_id) > -1 || isAdm();
-      var isFirst = ls.length && ls[0].id === l.id, idx = ls.map(function (x) { return x.id; }).indexOf(l.id), nextL = ls[idx + 1];
+      var isFirst = ls.length && ls[0].id === l.id && !(c && c.free_first === false), idx = ls.map(function (x) { return x.id; }).indexOf(l.id), nextL = ls[idx + 1];
       if (!lessonTasks(l)) { $app.innerHTML = '<div class="page"><div class="empty">' + t('Цей урок ще недоступний обраною мовою. Скоро!') + ' <a href="#/course/' + esc(l.course_id) + '">' + t('До марафону') + '</a></div></div>'; return; }
       if (!enrolled && !isFirst) { $app.innerHTML = t('<div class="page"><div class="empty">Цей урок відкривається після активації ключа. <a href="#/course/') + esc(l.course_id) + t('">До марафону</a></div></div>'); return; }
       $app.innerHTML = '<div class="page"><div class="sec-head"><a href="#/course/' + esc(l.course_id) + '" class="muted small">← ' + esc(c ? tr(c, 'title') : t('Марафон')) + t('</a><div class="eyebrow">Урок ') + l.num + ' · ' + esc(lGram(l)) + '</div><h2>' + esc(tr(l, 'title')) + '</h2><p class="lead">' + esc(tr(l, 'scene')) + '</p></div><div id="player"></div></div>';
       runPlayer(document.getElementById('player'), l, function (pct, finalText, textEl, btns, again, extra) {
         if (!enrolled && extra) { var rest = ls.slice(idx + 1); extra.innerHTML = '<div class="upsell"><h3>' + (pct >= 70 ? t('Відмінно! Ти готовий до повного марафону.') : t('Гарний старт! Повний марафон допоможе закріпити.')) + '</h3><p class="muted">' + t('Ще') + ' ' + rest.length + ' ' + t('уроків чекають на тебе:') + '</p><ol class="uplist">' + rest.slice(0, 6).map(function (x) { return '<li><b>' + esc(tr(x, 'title')) + '</b> <span class="muted small">· ' + esc(x.grammar) + '</span></li>'; }).join('') + (rest.length > 6 ? '<li class="muted">+ ' + (rest.length - 6) + ' ' + t('уроків, фінальний проєкт і сертифікат') + '</li>' : '') + '</ol><div class="price-tag"><b>' + esc(c ? c.price : '') + '</b> <span class="muted">' + t('один раз · доступ на 12 місяців') + '</span></div></div>'; }
+        var vb = l.variants || {};
+        if (extra && vb.badge && pct >= 50) extra.insertAdjacentHTML('afterbegin', '<div class="badge-win"><span class="bw-i">' + esc(vb.badge.icon || '🏅') + '</span><div><div class="eyebrow">' + t('Нагорода уроку') + '</div><b>' + esc(vb.badge.name) + '</b><p class="muted small">' + esc(vb.badge.text || '') + '</p></div></div>');
+        if (extra && vb.cert && pct >= 70) extra.insertAdjacentHTML('beforeend', '<div class="cert" id="certBox"><div class="eyebrow">' + t('Сертифікат') + '</div><h3>' + esc(vb.cert) + '</h3><p>' + esc(USER && (USER.name || USER.email) || '') + '</p><p class="muted small">' + esc(c ? tr(c, 'title') : '') + ' · ' + new Date().toLocaleDateString() + ' · ' + pct + '%</p><button class="btn btn-ghost btn-sm" type="button" onclick="window.print()">' + t('Друкувати') + '</button></div>');
         if (USER && LAST_TIMES) API.saveTimes(l.id, pct, LAST_TIMES).catch(function () {});
         if (USER) { API.saveProgress(l.id, pct, finalText).then(function (r) { textEl.textContent = r && r.retry ? t('Повторна спроба: ') + pct + t('%. Перший результат зберігається, новий показано в дужках.') : t('Бал: ') + pct + t('%. Результат збережено в кабінеті.'); }); }
         else textEl.textContent = t('Бал: ') + pct + t('%. Створи кабінет, щоб зберігати прогрес.');
