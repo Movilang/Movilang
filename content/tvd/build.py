@@ -38,7 +38,45 @@ def strings(o):
     elif isinstance(o, list):
         for v in o: yield from strings(v)
 
+# ---- Переклади пояснень (PL / EN) з i18n/*.tsv
+SRC = {}
+for line in open(os.path.join(HERE, "i18n", "src.txt"), encoding="utf-8"):
+    i, t = line.rstrip("\n").split("\t", 1); SRC[t] = int(i)
+TR = {}
+for f in sorted(os.listdir(os.path.join(HERE, "i18n"))):
+    if not f.endswith(".tsv"): continue
+    for line in open(os.path.join(HERE, "i18n", f), encoding="utf-8"):
+        if not line.strip(): continue
+        i, pl, en = line.rstrip("\n").split("\t")
+        TR[int(i)] = (pl, en)
+CYR = re.compile("[а-яіїєґА-ЯІЇЄҐ]")
+missing = set()
+def tr2(s):
+    i = SRC.get(s)
+    if i is None or i not in TR: missing.add(s[:70]); return (s, s)
+    return TR[i]
+def loc(o):
+    if isinstance(o, list):
+        for v in o: loc(v)
+        return
+    if not isinstance(o, dict): return
+    for k in list(o.keys()):
+        v = o[k]
+        if k.endswith("_pl") or k.endswith("_en"): continue
+        if isinstance(v, str) and CYR.search(v):
+            if k == "uk" and "role" in o: continue
+            o[k + "_pl"], o[k + "_en"] = tr2(v)
+        elif isinstance(v, list) and v and all(isinstance(x, str) for x in v) and any(CYR.search(x) for x in v):
+            o[k + "_pl"] = [tr2(x)[0] if CYR.search(x) else x for x in v]
+            o[k + "_en"] = [tr2(x)[1] if CYR.search(x) else x for x in v]
+        else: loc(v)
+for l in L: loc(l)
+for l in L:
+    for k in ("pl", "en"):
+        if l.get("grammar_" + k): l["variants"]["grammar_" + k] = l.pop("grammar_" + k)
+
 errs, warns = [], []
+if missing: errs.append(f"без перекладу: {len(missing)} → " + " | ".join(list(missing)[:5]))
 for l in L:
     n, ts = l["num"], l["tasks"]
     boss = "Бос" in l["title"] or "іспит" in l["title"].lower()
@@ -76,7 +114,7 @@ for l in L:
     if "іспит" in l["title"].lower() and len(scored) != 30: errs.append(f"#{n}: в іспиті {len(scored)} завдань (треба 30)")
     if boss and "Бос" in l["title"] and not 40 <= gl <= 60: errs.append(f"#{n}: у босі повторюється {gl} слів (треба 40–60)")
     for s in list(strings(l)):
-        if s == "ГРИМУАР": continue
+        if s in ("ГРИМУАР", "GRIMOIRE", "GRIMUAR"): continue
         for pat, first in SPOIL.items():
             if n < first and re.search(pat, s, re.I): errs.append(f"#{n}: спойлер /{pat}/ (дозволено з #{first}) → {s[:60]}")
         for pat in NAMES_BAD:
