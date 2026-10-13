@@ -302,6 +302,11 @@ function DemoBackend() {
     saveLesson: function (l) { needAdmin(); var db = load(); if (!l.id) { l.id = uid(); db.lessons.push(l); } else { db.lessons = db.lessons.map(function (x) { return x.id === l.id ? l : x; }); } save(); return P(l); },
     deleteLesson: function (id) { needAdmin(); var db = load(); db.lessons = db.lessons.filter(function (x) { return x.id !== id; }); save(); return P(true); },
     myEnrollments: function () { var u = me(); if (!u) return P([]); return P(load().enrollments.filter(function (e) { return e.user_id === u.id; }).map(function (e) { return e.course_id; })); },
+    knownList: function (tg) { var u = me(); if (!u) return P([]); return P((load().known || []).filter(function (k) { return k.user_id === u.id && k.target === tg; })); },
+    setKnown: function (tg, word, val) { var u = me(); var db = load(); db.known = (db.known || []).filter(function (k) { return !(k.user_id === u.id && k.target === tg && k.word === word); }); if (val) db.known.push({user_id:u.id, target:tg, word:word, known:true}); save(); return P(true); },
+    saveWriting: function (w) { var u = me(); var db = load(); db.writings = db.writings || []; w.id = Date.now(); w.user_id = u.id; w.created_at = new Date().toISOString(); db.writings.push(w); save(); return P(w); },
+    updateWriting: function (id, patch) { var db = load(); (db.writings || []).forEach(function (w) { if (w.id === id) for (var k in patch) w[k] = patch[k]; }); save(); return P(true); },
+    myWritings: function () { var u = me(); if (!u) return P([]); return P((load().writings || []).filter(function (w) { return w.user_id === u.id; }).reverse()); },
     myLangs: function () { var u = me(); if (!u) return P([]); return P((load().elangs || []).filter(function (e) { return e.user_id === u.id; })); },
     addLang: function (cid, tg, hidden) { var u = me(); var db = load(); db.elangs = db.elangs || []; var e = db.elangs.filter(function (e) { return e.user_id === u.id && e.course_id === cid && e.target === tg; })[0]; if (e) e.hidden = !!hidden; else db.elangs.push({user_id:u.id, course_id:cid, target:tg, hidden:!!hidden}); save(); return P(true); },
     saveTimes: function (lessonId, score, tm) { var u = me(); if (!u) return P(false); var db = load(); db.times = db.times || []; db.times.push({user_id:u.id, lesson_id:lessonId, target:TARGET, score:score, total_sec:tm.total, per_task:tm.per, created_at:new Date().toISOString()}); save(); return P(true); },
@@ -384,6 +389,11 @@ function SupabaseBackend(url, key) {
     saveLesson: function (l) { var row = {course_id:l.course_id, num:l.num, title:l.title, title_pl:l.title_pl || null, scene_pl:l.scene_pl || null, grammar:l.grammar}; if (l.title_en !== undefined) { row.title_en = l.title_en; row.scene_en = l.scene_en; } row = Object.assign(row, {scene:l.scene, tasks:l.tasks}); if (l.variants !== undefined) row.variants = l.variants; if (l.id) row.id = l.id; return sb.from('lessons').upsert(row).select().single().then(ok); },
     deleteLesson: function (id) { return sb.from('lessons').delete().eq('id', id).then(ok); },
     myEnrollments: function () { if (!cachedUser) return Promise.resolve([]); return sb.from('enrollments').select('course_id').eq('user_id', cachedUser.id).then(ok).then(function (r) { return r.map(function (x) { return x.course_id; }); }); },
+    knownList: function (tg) { if (!cachedUser) return Promise.resolve([]); return sb.from('word_known').select('word,known').eq('user_id', cachedUser.id).eq('target', tg).then(ok); },
+    setKnown: function (tg, word, val) { if (!cachedUser) return Promise.resolve(false); var q = val ? sb.from('word_known').upsert({user_id:cachedUser.id, target:tg, word:word, known:true, updated_at:new Date().toISOString()}) : sb.from('word_known').delete().eq('user_id', cachedUser.id).eq('target', tg).eq('word', word); return q.then(ok); },
+    saveWriting: function (w) { w.user_id = cachedUser.id; return sb.from('writings').insert(w).select().single().then(ok); },
+    updateWriting: function (id, patch) { return sb.from('writings').update(patch).eq('id', id).then(ok); },
+    myWritings: function () { if (!cachedUser) return Promise.resolve([]); return sb.from('writings').select('*').eq('user_id', cachedUser.id).order('created_at', {ascending:false}).limit(50).then(ok); },
     myLangs: function () { if (!cachedUser) return Promise.resolve([]); return sb.from('enrollment_langs').select('*').eq('user_id', cachedUser.id).then(ok); },
     addLang: function (cid, tg, hidden) { return sb.from('enrollment_langs').upsert({user_id:cachedUser.id, course_id:cid, target:tg, hidden:!!hidden}).then(ok); },
     saveTimes: function (lessonId, score, tm) { if (!cachedUser) return Promise.resolve(false); return sb.from('task_times').insert({user_id:cachedUser.id, lesson_id:lessonId, target:TARGET, score:score, total_sec:tm.total, per_task:tm.per}).then(ok); },
@@ -620,6 +630,7 @@ function viewCabinet() {
         t('<div class="rows"><div class="box"><h4>Мої марафони</h4>') + (my || t('<div class="empty small">Марафонів ще немає. Активуй ключ або <a href="#/trial">пройди пробний урок</a>.</div>')) + t('<a class="btn btn-ghost btn-sm" href="#/catalog" style="justify-self:start">Каталог курсів</a></div>') +
         t('<div class="box"><h4>Досягнення</h4>') + '<a class="btn btn-red btn-sm ach-go" href="#/achievements">🏆 ' + tx({uk:'Мої нагороди і сертифікати', pl:'Moje nagrody i certyfikaty', en:'My rewards and certificates'}) + '</a>' + t('<div class="ach">') + medals.map(function (m) { return '<div class="medal' + (m[0] ? '' : ' off') + '"><span class="m" style="border-color:' + (m[0] ? 'var(--gold)' : 'var(--dim)') + ';color:' + (m[0] ? 'var(--gold)' : 'var(--dim)') + '">' + m[1] + '</span>' + m[2] + '</div>'; }).join('') + '</div>' +
         t('<h4>Останні уроки</h4><div class="done-list">') + (recent || t('<span class="muted">Ще немає пройдених уроків</span>')) + '</div></div></div></div></div></div>';
+      renderWritings(document.querySelector('.dmain')); processPendingWritings();
       document.querySelectorAll('[data-go-c]').forEach(function (b) { b.onclick = function () { setLangs(b.dataset.goL, LANG); location.hash = '#/course/' + b.dataset.goC; }; });
       document.querySelectorAll('[data-add-c]').forEach(function (b) { b.onclick = function () { var cid = b.dataset.addC; pickTargetModal(tx({uk:'Яку мову додати до марафону?', pl:'Jaki język dodać do maratonu?', en:'Which language do you want to add?'}), langsOf(cid), function (tg) { API.addLang(cid, tg).then(function () { setLangs(tg, LANG); toast(tx({uk:'Мову додано. Успіхів!', pl:'Język dodany. Powodzenia!', en:'Language added. Good luck!'})); location.hash = '#/course/' + cid; }); }); }; });
       document.querySelectorAll('[data-del-c]').forEach(function (b) { b.onclick = function () { var cid = b.dataset.delC, c = courses.filter(function (x) { return x.id === cid; })[0]; removeLangFlow(c, b.dataset.delL, langsOf(cid), lessonIdsOf[cid] || []); }; });
@@ -808,10 +819,20 @@ function wordsOf(lessons) {
 var WKEY = function () { return 'ml_known_' + TARGET; };
 function knownSet() { try { return JSON.parse(localStorage.getItem(WKEY()) || '{}'); } catch (e) { return {}; } }
 function saveKnown(k) { try { localStorage.setItem(WKEY(), JSON.stringify(k)); } catch (e) {} }
+function setKnownWord(word, val) { var k = knownSet(); if (val) k[word] = 1; else delete k[word]; saveKnown(k); if (USER) API.setKnown(TARGET, word, !!val).catch(function () {}); return k; }
+function syncKnown() {
+  if (!USER) return Promise.resolve();
+  return API.knownList(TARGET).then(function (rows) {
+    var local = knownSet(), server = {}; rows.forEach(function (r) { if (r.known !== false) server[r.word] = 1; });
+    var synced = false; try { synced = localStorage.getItem(WKEY() + '_synced') === '1'; } catch (e) {}
+    if (!synced) Object.keys(local).forEach(function (w) { if (!server[w]) { server[w] = 1; API.setKnown(TARGET, w, true).catch(function () {}); } });
+    saveKnown(server); try { localStorage.setItem(WKEY() + '_synced', '1'); } catch (e) {}
+  }).catch(function () {});
+}
 var WV = {mode:'list', q:'', only:'all'};
 function viewWords() {
   if (!requireUser()) return Promise.resolve();
-  return Promise.all([API.listCourses(false), API.myEnrollments(), API.myProgress(), loadDefs()]).then(function (r) {
+  return Promise.all([API.listCourses(false), API.myEnrollments(), API.myProgress(), loadDefs(), syncKnown()]).then(function (r) {
     var cs = r[0], enr = r[1], prog = r[2], done = {}; prog.forEach(function (p) { done[p.lesson_id] = 1; });
     var ids = isAdm() ? cs.map(function (c) { return c.id; }) : cs.filter(function (c) { return enr.indexOf(c.id) > -1; }).map(function (c) { return c.id; });
     return Promise.all(ids.map(function (id) { return API.listLessons(id); })).then(function (lists) {
@@ -827,7 +848,7 @@ function viewWords() {
         $app.innerHTML = head + tabs + '<input class="inp-s" id="wq" placeholder="🔍 ' + L('Пошук слова', 'Szukaj słowa', 'Search') + '" value="' + esc(WV.q) + '" style="max-width:360px;margin-bottom:14px">' +
           groups.map(function (g) { return '<div class="panel" style="margin-bottom:16px"><h3 style="margin-bottom:10px">' + esc(tr(g.c, 'title')) + '</h3><div class="wlist">' + g.words.map(function (w) { return '<div class="wrow' + (known[w.w] ? ' known' : '') + '" data-w="' + esc(w.w.toLowerCase() + ' ' + String(w.m).toLowerCase()) + '"><button type="button" class="spk" data-say="' + esc(w.w) + '">🔊</button><b>' + esc(w.w) + '</b><span class="muted small">' + esc(w.ipa) + '</span><span>' + esc(w.m) + '</span><button type="button" class="wk" data-k="' + esc(w.w) + '" title="' + L('Вивчено', 'Opanowane', 'Learned') + '">' + (known[w.w] ? '✓' : '○') + '</button></div>'; }).join('') + '</div></div>'; }).join('') + '</div>';
         var wq = document.getElementById('wq'), filt = function () { var q = wq.value.toLowerCase().trim(); WV.q = wq.value; document.querySelectorAll('.wrow').forEach(function (r) { r.hidden = q && r.dataset.w.indexOf(q) < 0; }); }; wq.oninput = filt; filt();
-        document.querySelectorAll('.wk').forEach(function (b) { b.onclick = function () { var k = knownSet(); if (k[b.dataset.k]) delete k[b.dataset.k]; else k[b.dataset.k] = 1; saveKnown(k); b.textContent = k[b.dataset.k] ? '✓' : '○'; b.parentNode.classList.toggle('known', !!k[b.dataset.k]); }; });
+        document.querySelectorAll('.wk').forEach(function (b) { b.onclick = function () { var k = setKnownWord(b.dataset.k, !knownSet()[b.dataset.k]); b.textContent = k[b.dataset.k] ? '✓' : '○'; b.parentNode.classList.toggle('known', !!k[b.dataset.k]); }; });
       } else {
         var deck = shuffle(all.filter(function (w) { return WV.only === 'all' || !known[w.w]; })), i = 0, flipped = false;
         $app.innerHTML = head + tabs + '<div class="row" style="gap:8px;margin-bottom:12px"><button class="vtab' + (WV.only === 'all' ? ' on' : '') + '" data-wo="all">' + L('Усі', 'Wszystkie', 'All') + '</button><button class="vtab' + (WV.only === 'new' ? ' on' : '') + '" data-wo="new">' + L('Ще не вивчені', 'Do nauki', 'To learn') + '</button><label class="muted small" style="align-self:center;margin-left:8px"><input type="checkbox" id="wrev"> ' + L('Спершу значення', 'Najpierw znaczenie', 'Meaning first') + '</label></div><div id="fcw"></div>';
@@ -840,8 +861,8 @@ function viewWords() {
             '<div class="row fc-btns"><button type="button" class="spk" id="fcSay" data-say="' + esc(w.w) + '">🔊</button><button class="btn btn-ghost" type="button" id="fcAgainW">↺ ' + L('Ще вчу', 'Jeszcze się uczę', 'Still learning') + '</button><button class="btn btn-red" type="button" id="fcKnow">✓ ' + L('Знаю', 'Znam', 'I know it') + '</button></div>';
           document.getElementById('fcard').onclick = function () { flipped = !flipped; this.classList.toggle('flip', flipped); };
           document.getElementById('fcSay').onclick = function () { say(w.w); };
-          document.getElementById('fcKnow').onclick = function () { var k = knownSet(); k[w.w] = 1; saveKnown(k); i++; flipped = false; draw(); };
-          document.getElementById('fcAgainW').onclick = function () { var k = knownSet(); delete k[w.w]; saveKnown(k); deck.push(w); i++; flipped = false; draw(); };
+          document.getElementById('fcKnow').onclick = function () { setKnownWord(w.w, true); i++; flipped = false; draw(); };
+          document.getElementById('fcAgainW').onclick = function () { if (knownSet()[w.w]) setKnownWord(w.w, false); deck.push(w); i++; flipped = false; draw(); };
         };
         document.getElementById('wrev').onchange = function (e) { rev = e.target.checked; flipped = false; draw(); };
         document.querySelectorAll('[data-wo]').forEach(function (b) { b.onclick = function () { WV.only = b.dataset.wo; viewWords(); }; });
@@ -851,6 +872,39 @@ function viewWords() {
       document.querySelectorAll('.wrow .spk').forEach(function (s) { s.onclick = function () { say(s.dataset.say); }; });
     });
   });
+}
+function ltSlim(m) { return {o:m.offset, l:m.length, msg:m.message, r:(m.replacements || []).slice(0, 3).map(function (x) { return x.value; })}; }
+function ltHtml(text, ms) {
+  ms = ms.map(function (m) { return m.msg ? m : ltSlim(m); });
+  if (!ms.length) return '<b>✓ ' + tx({uk:'Помилок не знайдено. Чудово!', pl:'Nie znaleziono błędów. Świetnie!', en:'No mistakes found. Great!'}) + '</b>';
+  return '<b>' + tx({uk:'Знайдено можливих помилок: ', pl:'Znalezione możliwe błędy: ', en:'Possible mistakes found: '}) + ms.length + '</b><ol>' + ms.slice(0, 20).map(function (m) { return '<li><span class="ltbad">' + esc(text.substr(m.o, m.l)) + '</span>' + (m.r && m.r.length ? ' → <span class="ltgood">' + esc(m.r.join(' / ')) + '</span>' : '') + '<br><span class="muted small">' + esc(m.msg) + '</span></li>'; }).join('') + '</ol>';
+}
+function renderWritings(host) {
+  if (!host || !USER) return;
+  API.myWritings().then(function (ws) {
+    if (!ws.length) return;
+    var L = function (uk, pl, en) { return tx({uk:uk, pl:pl, en:en}); };
+    var box = document.createElement('div'); box.className = 'box'; box.id = 'myTexts'; box.style.marginTop = '18px';
+    box.innerHTML = '<h4>✍ ' + L('Мої тексти', 'Moje teksty', 'My texts') + '</h4><div class="wtexts">' + ws.map(function (w) {
+      var n = (w.issues || []).length, st = w.status === 'pending' ? '<span class="pill warn">⏳ ' + L('чекає на перевірку', 'czeka na sprawdzenie', 'waiting for check') + '</span>' : '<span class="pill ' + (n ? 'warn' : 'ok') + '">' + (n ? n + ' ' + L('помилок', 'błędów', 'mistakes') : '✓ ' + L('без помилок', 'bez błędów', 'no mistakes')) + '</span>' + (w.seen ? '' : ' <span class="pill ok">' + L('нове', 'nowe', 'new') + '</span>');
+      return '<details class="wtxt" data-id="' + esc(w.id) + '"' + (w.seen ? '' : ' data-unseen="1"') + '><summary><span>' + FLAG[w.target || 'en'] + ' · ' + fmtDate(w.created_at) + '</span><span class="muted small wsnip">' + esc(String(w.text).slice(0, 60)) + '…</span>' + st + '</summary><div class="wbody"><p class="wfull">' + esc(w.text) + '</p>' + (w.status === 'pending' ? '<p class="muted small">' + L('Ми перевіримо текст автоматично, щойно сервіс буде доступний. Сайт повідомить, коли результат буде готовий.', 'Sprawdzimy tekst automatycznie, gdy usługa będzie dostępna. Strona da znać, gdy wynik będzie gotowy.', 'We will check it automatically when the service is available. The site will notify you.') + '</p>' : '<div class="ltbox">' + ltHtml(w.text, w.issues || []) + '</div>') + '</div></details>';
+    }).join('') + '</div>';
+    host.appendChild(box);
+    box.querySelectorAll('details[data-unseen]').forEach(function (d) { d.addEventListener('toggle', function () { if (d.open && d.dataset.unseen) { delete d.dataset.unseen; API.updateWriting(+d.dataset.id || d.dataset.id, {seen:true}).catch(function () {}); } }); });
+    if (location.hash.indexOf('texts') > -1) box.scrollIntoView({behavior:'smooth'});
+  }).catch(function () {});
+}
+var PW_BUSY = false;
+function processPendingWritings() {
+  if (!USER || PW_BUSY) return; PW_BUSY = true;
+  API.myWritings().then(function (ws) {
+    var pend = ws.filter(function (w) { return w.status === 'pending'; }).slice(0, 3), okN = 0;
+    return pend.reduce(function (pr, w) { return pr.then(function () {
+      var keep = TARGET; TARGET = w.target || TARGET;
+      var p = ltCheck(w.text); TARGET = keep;
+      return p.then(function (ms) { okN++; return API.updateWriting(w.id, {status:'checked', issues:ms.slice(0, 30).map(ltSlim), checked_at:new Date().toISOString(), seen:false}); }).catch(function () {});
+    }); }, Promise.resolve()).then(function () { if (okN) { if (API.clearCache) API.clearCache(); toast('✓ ' + tx({uk:'Твій текст перевірено! Результат — у Кабінет → Мої тексти.', pl:'Twój tekst został sprawdzony! Wynik w Konto → Moje teksty.', en:'Your text has been checked! See Account → My texts.'})); } });
+  }).catch(function () {}).then(function () { PW_BUSY = false; });
 }
 function runPlayer(container, lesson, onFinish, ctxLs) {
   var hints = {}, tStart = {}, durs = {}, tasks = withReading(lessonTasks(lesson) || []), cur = 0, res = [], finalText = '', snaps = [], maxReached = 0;
@@ -983,14 +1037,19 @@ function runPlayer(container, lesson, onFinish, ctxLs) {
     var ta = card.querySelector('#tfinal');
     if (ta) { var minW = +(tk.answer || 40) || 40; ta.oninput = function () { card.querySelector('#wc').textContent = ta.value.trim().split(/\s+/).filter(Boolean).length + ' / ' + minW + ' ' + t('слів'); };
       card.querySelector('#tsubmit').onclick = function () { var n = ta.value.trim().split(/\s+/).filter(Boolean).length; if (n < minW) { var fb = card.querySelector('#tfb'); fb.className = 'tfb err'; fb.textContent = t('Напиши щонайменше ') + minW + ' ' + t('слів') + ' (' + n + ').'; return; } finalText = ta.value.trim(); ta.disabled = true; var sb0 = card.querySelector('#tsubmit'); sb0.disabled = true; sb0.textContent = '⏳ ' + tx({uk:'Перевіряю текст…', pl:'Sprawdzam tekst…', en:'Checking your text…'});
+        var fin0 = function () { sb0.textContent = '✓ ' + tx({uk:'Збережено', pl:'Zapisano', en:'Saved'}); };
+        var showIssues = function (ms) { var box = document.createElement('div'); box.className = 'ltbox'; box.innerHTML = ltHtml(finalText, ms); ta.insertAdjacentElement('afterend', box); };
         ltCheck(finalText).then(function (ms) {
-          var box = document.createElement('div'); box.className = 'ltbox';
-          if (!ms.length) box.innerHTML = '<b>✓ ' + tx({uk:'Помилок не знайдено. Чудово!', pl:'Nie znaleziono błędów. Świetnie!', en:'No mistakes found. Great!'}) + '</b>';
-          else box.innerHTML = '<b>' + tx({uk:'Знайдено можливих помилок: ', pl:'Znalezione możliwe błędy: ', en:'Possible mistakes found: '}) + ms.length + '</b><ol>' + ms.slice(0, 15).map(function (m) { var frag = finalText.substr(m.offset, m.length); return '<li><span class="ltbad">' + esc(frag) + '</span>' + ((m.replacements || []).length ? ' → <span class="ltgood">' + esc(m.replacements.slice(0, 3).map(function (r) { return r.value; }).join(' / ')) + '</span>' : '') + '<br><span class="muted small">' + esc(m.message) + '</span></li>'; }).join('') + '</ol>';
-          ta.insertAdjacentElement('afterend', box);
-          var pct = Math.max(0, 100 - ms.length * 8);
+          fin0(); showIssues(ms);
+          if (USER) API.saveWriting({lesson_id:lesson.id || null, target:TARGET, text:finalText, status:'checked', issues:ms.slice(0, 30).map(ltSlim), checked_at:new Date().toISOString(), seen:true}).catch(function () {});
           done(ms.length <= 2, (ms.length ? tx({uk:'Текст збережено. Переглянь виправлення нижче. ', pl:'Tekst zapisany. Przejrzyj poprawki poniżej. ', en:'Text saved. Review the corrections below. '}) : t('Відповідь збережено! ')) + (lf(tk, 'tip') || ''));
-        }).catch(function () { done(true, t('Відповідь збережено! ') + tx({uk:'(Автоперевірка зараз недоступна.) ', pl:'(Automatyczna korekta jest teraz niedostępna.) ', en:'(Auto-check is unavailable right now.) '}) + (lf(tk, 'tip') || '')); }); }; }
+        }).catch(function () {
+          fin0(); var wait = document.createElement('div'); wait.className = 'ltbox ltwait';
+          wait.innerHTML = '<b>⏳ ' + tx({uk:'Перевірку тексту відкладено', pl:'Sprawdzenie tekstu odłożone', en:'Text check postponed'}) + '</b><p>' + (USER ? tx({uk:'Сервіс перевірки зараз перевантажений. Твій текст збережено — ми перевіримо його автоматично, щойно сервіс звільниться. Результат побачиш у <a href="#/cabinet">Кабінет → Мої тексти</a>, а коли він буде готовий, сайт тебе повідомить.', pl:'Usługa sprawdzania jest teraz przeciążona. Twój tekst jest zapisany — sprawdzimy go automatycznie, gdy usługa będzie dostępna. Wynik zobaczysz w <a href="#/cabinet">Konto → Moje teksty</a>, a strona da ci znać, gdy będzie gotowy.', en:'The checking service is busy right now. Your text is saved — we will check it automatically as soon as it is available. You will find the result in <a href="#/cabinet">Account → My texts</a>, and the site will let you know when it is ready.'}) : tx({uk:'Сервіс перевірки зараз перевантажений. Створи кабінет, щоб зберігати тексти й отримувати перевірку пізніше.', pl:'Usługa sprawdzania jest teraz przeciążona. Załóż konto, aby zapisywać teksty i otrzymać sprawdzenie później.', en:'The checking service is busy. Create an account to save texts and get them checked later.'})) + '</p>';
+          ta.insertAdjacentElement('afterend', wait);
+          if (USER) API.saveWriting({lesson_id:lesson.id || null, target:TARGET, text:finalText, status:'pending'}).then(function () { setTimeout(processPendingWritings, 60000); }).catch(function () {});
+          done(true, t('Відповідь збережено! ') + (lf(tk, 'tip') || ''));
+        }); }; }
   }
   function similarity(target, said) {
     var a = norm(target).split(' '), b = norm(said).split(' '), hit = 0, used = {};
@@ -1710,5 +1769,6 @@ Promise.all([API.getUser().catch(function () { return null; }), API.getSettings(
   renderNav(); route();
   if (!LANG_SET) langModal(true);
   setTimeout(function () { API.prefetch(); }, 300);
+  setTimeout(processPendingWritings, 4000); setInterval(processPendingWritings, 5 * 60 * 1000);
 });
 })();
