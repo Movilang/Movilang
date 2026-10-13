@@ -26,11 +26,19 @@ function ttsClean(t) { return String(t || '').replace(/<[^>]+>/g, '').replace(/_
 function ttsHash(str) { var h1 = 0xdeadbeef, h2 = 0x41c6ce57; for (var i = 0, ch; i < str.length; i++) { ch = str.charCodeAt(i); h1 = Math.imul(h1 ^ ch, 2654435761); h2 = Math.imul(h2 ^ ch, 1597334677); } h1 = Math.imul(h1 ^ (h1 >>> 16), 2246822507) ^ Math.imul(h2 ^ (h2 >>> 13), 3266489909); h2 = Math.imul(h2 ^ (h2 >>> 16), 2246822507) ^ Math.imul(h1 ^ (h1 >>> 13), 3266489909); return (h2 >>> 0).toString(16).padStart(8, '0') + (h1 >>> 0).toString(16).padStart(8, '0'); }
 function ttsPath(code, clean) { return 'g/' + code + '/' + ttsHash(code + '|' + clean) + '.wav'; }
 function loadTtsSet() { if (!API.ttsList) return; API.ttsList().then(function (ps) { TTS_SET = {}; ps.forEach(function (p) { TTS_SET[p] = 1; }); }).catch(function () {}); }
+var SAY_LAST = {k:'', t:0};
+function playClip(cl, lg) {
+  var cd = lg.slice(0, 2), C0 = window.MOVILANG_CONFIG || {}, pth = cl && ttsPath(cd, cl);
+  if (!(pth && TTS_SET && TTS_SET[pth] && C0.SUPABASE_URL)) return false;
+  try { speechSynthesis.cancel(); } catch (e) {} if (TTS_AUDIO) { try { TTS_AUDIO.pause(); } catch (e) {} }
+  TTS_AUDIO = new Audio(C0.SUPABASE_URL + '/storage/v1/object/public/tts/' + pth); TTS_AUDIO._clip = 1;
+  TTS_AUDIO.play().catch(function () {});
+  return true;
+}
 function say(txt, lang) {
-  (function () { var lg = lang || SPEECH[TARGET], cd = lg.slice(0, 2), cl = ttsClean(txt), C0 = window.MOVILANG_CONFIG || {}, pth = cl && ttsPath(cd, cl);
-    if (pth && TTS_SET && TTS_SET[pth] && C0.SUPABASE_URL) { try { speechSynthesis.cancel(); } catch (e) {} if (TTS_AUDIO) { try { TTS_AUDIO.pause(); } catch (e) {} }
-      TTS_AUDIO = new Audio(C0.SUPABASE_URL + '/storage/v1/object/public/tts/' + pth); TTS_AUDIO.play().catch(function () { sayLocal(cl, lg); }); txt = null; } })();
-  if (txt === null) return;
+  var lg = lang || SPEECH[TARGET], cl = ttsClean(txt), now = Date.now();
+  if (SAY_LAST.k === lg + cl && now - SAY_LAST.t < 700) return; SAY_LAST = {k:lg + cl, t:now};
+  if (playClip(cl, lg)) return;
   lang = lang || SPEECH[TARGET]; var code = lang.slice(0, 2), clean = String(txt || '').replace(/<[^>]+>/g, '').replace(/_{2,}/g, '…').trim();
   var C = window.MOVILANG_CONFIG || {};
   if (!clean) return;
@@ -45,7 +53,7 @@ function say(txt, lang) {
     .catch(function () { noLocal ? noVoice(code) : sayLocal(clean, lang); });
 }
 function noVoice(code) { toast(tx({uk:'На цьому пристрої немає голосу для мови «' + code + '». Відкрий урок у Chrome або додай голос у налаштуваннях системи.', pl:'To urządzenie nie ma głosu dla języka „' + code + '”. Otwórz lekcję w Chrome albo dodaj głos w ustawieniach systemu.', en:'This device has no voice for “' + code + '”. Open the lesson in Chrome or add a voice in system settings.'}), 'info'); }
-function sayLocal(txt, lang) { try { lang = lang || SPEECH[TARGET]; var u = new SpeechSynthesisUtterance(String(txt).replace(/_{2,}/g, '…')); u.lang = lang; var v = bestVoice(lang); if (v) u.voice = v; u.rate = v && /natural|neural|online|premium|enhanced/i.test(v.name) ? 1 : .92; u.pitch = 1; speechSynthesis.cancel(); speechSynthesis.speak(u); } catch (e) { toast(t('Озвучення недоступне в цьому браузері'), 'err'); } }
+function sayLocal(txt, lang) { try { lang = lang || SPEECH[TARGET]; if (playClip(ttsClean(txt), lang)) return; if (TTS_AUDIO && TTS_AUDIO._clip && !TTS_AUDIO.paused && !TTS_AUDIO.ended) return; var u = new SpeechSynthesisUtterance(String(txt).replace(/_{2,}/g, '…')); u.lang = lang; var v = bestVoice(lang); if (v) u.voice = v; u.rate = v && /natural|neural|online|premium|enhanced/i.test(v.name) ? 1 : .92; u.pitch = 1; speechSynthesis.cancel(); speechSynthesis.speak(u); } catch (e) { toast(t('Озвучення недоступне в цьому браузері'), 'err'); } }
 var TT_L = {
   uk:{intro:'СТАРТ', match:'ПАРИ', order:'ПОРЯДОК СЛІВ', type:'ВПИШИ', tf:'ПРАВДА / НІ', vocabulary:'СЛОВНИК', listening:'АУДІЮВАННЯ', subtitles:'СУБТИТРИ', grammar:'ГРАМАТИКА', speaking:'ГОВОРІННЯ', quiz:'МІНІ-КВІЗ', final:'ФІНАЛ', cards:'ПЕРСОНАЖІ', glossary:'СЛОВНИК СЦЕНИ', quest:'КВЕСТ', drill:'ТРЕНУВАННЯ'},
   pl:{intro:'START', match:'PARY', order:'SZYK ZDANIA', type:'WPISZ', tf:'PRAWDA / FAŁSZ', vocabulary:'SŁOWNICTWO', listening:'SŁUCHANIE', subtitles:'NAPISY', grammar:'GRAMATYKA', speaking:'MÓWIENIE', quiz:'MINI QUIZ', final:'FINAŁ', cards:'POSTACIE', glossary:'SŁOWNIK SCENY', quest:'QUEST', drill:'TRENING'}};
@@ -692,11 +700,15 @@ function viewCourse(id) {
 function ttsTextsOf(ls, tg) {
   var out = {}, saved = TARGET; TARGET = tg;
   function add(v) { var c = ttsClean(v); if (c && c.length <= 500 && /\p{L}/u.test(c)) out[c] = 1; }
-  function walk(o) { if (!o || typeof o !== 'object') return; if (Array.isArray(o)) return o.forEach(walk);
-    ['w', 'line', 'ex', 'say', 'q'].forEach(function (k) { if (typeof o[k] === 'string') add(o[k]); });
-    if (o.type === 'match') (o.options || []).forEach(function (x) { add(String(x).split('=')[0]); });
-    Object.keys(o).forEach(function (k) { if (o[k] && typeof o[k] === 'object') walk(o[k]); }); }
-  try { ls.forEach(function (l) { walk(lessonTasks(l) || []); }); } finally { TARGET = saved; }
+  try { ls.forEach(function (l) { (lessonTasks(l) || []).forEach(function (tk) {
+    if (tk.type === 'glossary') (tk.items || []).forEach(function (w) { add(w.w); add(w.line); add(w.ex); });
+    if (tk.say) add(tk.say);
+    if (!isInfo(tk.type) && tk.type !== 'quest' && tk.q && !tk['q_' + LANG]) add(tk.q);
+    (tk.items || []).forEach(function (it) { if (tk.type !== 'glossary' && it && it.q && !it['q_' + LANG]) add(it.q); });
+    var sts = tk.steps || {}; Object.keys(sts).forEach(function (k) { var st = sts[k]; if (st && st.q) add(st.q); });
+    if (tk.type === 'match') (lf(tk, 'options') || tk.options || []).forEach(function (x) { add(String(x).split('=')[0]); });
+    else if (tk.type !== 'tf' && Array.isArray(tk.options)) tk.options.forEach(function (o) { if (typeof o === 'string') add(o); });
+  }); }); } finally { TARGET = saved; }
   return Object.keys(out);
 }
 var VOX_RUN = false;
