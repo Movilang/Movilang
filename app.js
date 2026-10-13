@@ -24,7 +24,7 @@ try { speechSynthesis.onvoiceschanged = function () { VOICE_CACHE = {}; }; } cat
 var TTS_OK = false, TTS_URLS = {}, TTS_AUDIO = null, TTS_SET = null;
 function ttsClean(t) { return String(t || '').replace(/<[^>]+>/g, '').replace(/_{2,}/g, '…').replace(/\s+/g, ' ').trim(); }
 function ttsHash(str) { var h1 = 0xdeadbeef, h2 = 0x41c6ce57; for (var i = 0, ch; i < str.length; i++) { ch = str.charCodeAt(i); h1 = Math.imul(h1 ^ ch, 2654435761); h2 = Math.imul(h2 ^ ch, 1597334677); } h1 = Math.imul(h1 ^ (h1 >>> 16), 2246822507) ^ Math.imul(h2 ^ (h2 >>> 13), 3266489909); h2 = Math.imul(h2 ^ (h2 >>> 16), 2246822507) ^ Math.imul(h1 ^ (h1 >>> 13), 3266489909); return (h2 >>> 0).toString(16).padStart(8, '0') + (h1 >>> 0).toString(16).padStart(8, '0'); }
-function ttsPath(code, clean) { return 'g/' + code + '/' + ttsHash(code + '|v2|' + clean) + '.wav'; }
+function ttsPath(code, clean) { return 'g/' + code + '/' + ttsHash(code + '|v3|' + clean) + '.wav'; }
 function loadTtsSet() { if (!API.ttsList) return; API.ttsList().then(function (ps) { TTS_SET = {}; ps.forEach(function (p) { TTS_SET[p] = 1; }); }).catch(function () {}); }
 var SAY_LAST = {k:'', t:0};
 function playClip(cl, lg) {
@@ -701,13 +701,8 @@ function ttsTextsOf(ls, tg) {
   var out = {}, saved = TARGET; TARGET = tg;
   function add(v) { var c = ttsClean(v); if (c && c.length <= 500 && /\p{L}/u.test(c)) out[c] = 1; }
   try { ls.forEach(function (l) { (lessonTasks(l) || []).forEach(function (tk) {
-    if (tk.type === 'glossary') (tk.items || []).forEach(function (w) { add(w.w); add(w.line); add(w.ex); });
-    if (tk.say) add(tk.say);
-    if (!isInfo(tk.type) && tk.type !== 'quest' && tk.q && !tk['q_' + LANG]) add(tk.q);
-    (tk.items || []).forEach(function (it) { if (tk.type !== 'glossary' && it && it.q && !it['q_' + LANG]) add(it.q); });
-    var sts = tk.steps || {}; Object.keys(sts).forEach(function (k) { var st = sts[k]; if (st && st.q) add(st.q); });
+    if (tk.type === 'glossary') (tk.items || []).forEach(function (w) { add(w.w); });
     if (tk.type === 'match') (lf(tk, 'options') || tk.options || []).forEach(function (x) { add(String(x).split('=')[0]); });
-    else if (tk.type !== 'tf' && Array.isArray(tk.options)) tk.options.forEach(function (o) { if (typeof o === 'string') add(o); });
   }); }); } finally { TARGET = saved; }
   return Object.keys(out);
 }
