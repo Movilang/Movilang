@@ -826,3 +826,9 @@ body.has-amb #app,body.has-amb footer{position:relative;z-index:1}
 .aiscore small{font-size:12px;opacity:.7}
 .aiscore.ok{color:var(--ok)}.aiscore.warn{color:var(--gold,#e8b04a)}.aiscore.bad{color:var(--err,#e0705f)}
 .aicomment{margin:6px 0 8px;font-size:15px}
+
+.wtxt{min-width:0;overflow:hidden}
+.wtxt summary{min-width:0}
+.wtxt summary>span{min-width:0;max-width:100%}
+.wtxt .wbody{overflow-wrap:anywhere}
+@media (max-width:600px){.wtxt summary{display:grid;grid-template-columns:1fr auto;gap:6px}.wsnip{grid-column:1/-1;order:3;min-width:0}}

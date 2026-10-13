@@ -919,7 +919,7 @@ function processPendingWritings() {
   API.myWritings().then(function (ws) {
     var pend = ws.filter(function (w) { return w.status === 'pending'; }).slice(0, 3), okN = 0;
     return pend.reduce(function (pr, w) { return pr.then(function () {
-      return smartCheck(w.text, w.task, w.target || TARGET).then(function (r) { okN++; return API.updateWriting(w.id, {status:'checked', issues:r.issues, score:r.score, checked_at:new Date().toISOString(), seen:false}); }).catch(function () {});
+      return smartCheck(w.text, w.task, w.target || TARGET).then(function (r) { okN++; return API.updateWriting(w.id, {status:'checked', issues:r.issues, score:r.score, checked_at:new Date().toISOString(), seen:false}); }).catch(function (e) { if (isAdm()) toast('AI: ' + ((e && e.message) || e)); });
     }); }, Promise.resolve()).then(function () { if (okN) { if (API.clearCache) API.clearCache(); toast('✓ ' + tx({uk:'Твій текст перевірено! Результат — у Кабінет → Мої тексти.', pl:'Twój tekst został sprawdzony! Wynik w Konto → Moje teksty.', en:'Your text has been checked! See Account → My texts.'})); } });
   }).catch(function () {}).then(function () { PW_BUSY = false; });
 }
