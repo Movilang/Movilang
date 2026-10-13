@@ -795,9 +795,23 @@ function withReading(tasks) {
   return tasks.slice(0, at).concat([rt], tasks.slice(at));
 }
 var SKIPPABLE = {speaking:1, listening:1, type:1, final:1, subtitles:1};
+function ltCall(text, lang) {
+  var body = 'language=' + lang + (lang === 'auto' ? '&preferredVariants=en-GB,de-DE,pt-PT,ca-ES' : '') + '&text=' + encodeURIComponent(text);
+  return fetch('https://api.languagetool.org/v2/check', {method:'POST', headers:{'Content-Type':'application/x-www-form-urlencoded'}, body:body}).then(function (r) { if (!r.ok) throw new Error('lt'); return r.json(); });
+}
+var LT_CODE = {en:'en-GB', pl:'pl-PL', uk:'uk-UA'}, LT_NAME = {en:{uk:'англійською', pl:'po angielsku', en:'in English'}, pl:{uk:'польською', pl:'po polsku', en:'in Polish'}, uk:{uk:'українською', pl:'po ukraińsku', en:'in Ukrainian'}};
 function ltCheck(text) {
-  var code = {en:'en-GB', pl:'pl-PL', uk:'uk-UA'}[TARGET] || 'en-GB';
-  return fetch('https://api.languagetool.org/v2/check', {method:'POST', headers:{'Content-Type':'application/x-www-form-urlencoded'}, body:'language=' + code + '&text=' + encodeURIComponent(text)}).then(function (r) { if (!r.ok) throw new Error('lt'); return r.json(); }).then(function (j) { return j.matches || []; });
+  var tg = TARGET, letters = (text.match(/\p{L}/gu) || []).length, cyr = (text.match(/[Ѐ-ӿ]/g) || []).length, cyrShare = letters ? cyr / letters : 0;
+  var wrong = function (det) { var ms = [{o:0, l:0, msg:tx({uk:'Текст написано не тією мовою: потрібно ' + LT_NAME[tg].uk + '.', pl:'Tekst jest w innym języku: trzeba pisać ' + LT_NAME[tg].pl + '.', en:'Wrong language: please write ' + LT_NAME[tg].en + '.'}), r:[]}]; ms.wrongLang = det || '?'; return ms; };
+  // script check first: Ukrainian must be Cyrillic, Polish/English must be Latin
+  if (tg === 'uk' && cyrShare < 0.5) return Promise.resolve(wrong(cyrShare < 0.1 ? 'latin' : 'mixed'));
+  if (tg !== 'uk' && cyrShare > 0.3) return Promise.resolve(wrong('uk'));
+  return ltCall(text, 'auto').then(function (j) {
+    var det = ((j.language || {}).detectedLanguage || {}).code || '', base = det.slice(0, 2);
+    if (base === tg) return j.matches || [];
+    if ((base === 'en' || base === 'pl') && base !== tg && ((j.language.detectedLanguage.confidence || 1) > 0.7)) return wrong(base);
+    return ltCall(text, LT_CODE[tg]).then(function (j2) { return j2.matches || []; });
+  });
 }
 /* ---------- personal dictionary + flashcards ---------- */
 var WDEFS = {};
@@ -873,9 +887,10 @@ function viewWords() {
     });
   });
 }
-function ltSlim(m) { return {o:m.offset, l:m.length, msg:m.message, r:(m.replacements || []).slice(0, 3).map(function (x) { return x.value; })}; }
+function ltSlim(m) { if (m.msg) return m; return {o:m.offset, l:m.length, msg:m.message, r:(m.replacements || []).slice(0, 3).map(function (x) { return x.value; })}; }
 function ltHtml(text, ms) {
   ms = ms.map(function (m) { return m.msg ? m : ltSlim(m); });
+  if (ms.length === 1 && !ms[0].l) return '<b>⚠ ' + esc(ms[0].msg) + '</b>';
   if (!ms.length) return '<b>✓ ' + tx({uk:'Помилок не знайдено. Чудово!', pl:'Nie znaleziono błędów. Świetnie!', en:'No mistakes found. Great!'}) + '</b>';
   return '<b>' + tx({uk:'Знайдено можливих помилок: ', pl:'Znalezione możliwe błędy: ', en:'Possible mistakes found: '}) + ms.length + '</b><ol>' + ms.slice(0, 20).map(function (m) { return '<li><span class="ltbad">' + esc(text.substr(m.o, m.l)) + '</span>' + (m.r && m.r.length ? ' → <span class="ltgood">' + esc(m.r.join(' / ')) + '</span>' : '') + '<br><span class="muted small">' + esc(m.msg) + '</span></li>'; }).join('') + '</ol>';
 }
@@ -1040,7 +1055,7 @@ function runPlayer(container, lesson, onFinish, ctxLs) {
         var fin0 = function () { sb0.textContent = '✓ ' + tx({uk:'Збережено', pl:'Zapisano', en:'Saved'}); };
         var showIssues = function (ms) { var box = document.createElement('div'); box.className = 'ltbox'; box.innerHTML = ltHtml(finalText, ms); ta.insertAdjacentElement('afterend', box); };
         ltCheck(finalText).then(function (ms) {
-          fin0(); showIssues(ms);
+          fin0(); showIssues(ms); if (ms.wrongLang) { if (USER) API.saveWriting({lesson_id:lesson.id || null, target:TARGET, text:finalText, status:'checked', issues:ms.map(ltSlim), checked_at:new Date().toISOString(), seen:true}).catch(function () {}); done(false, ms[0].msg + ' ' + tx({uk:'Спробуй ще раз, пройшовши урок повторно.', pl:'Spróbuj ponownie, przechodząc lekcję jeszcze raz.', en:'Try again by retaking the lesson.'})); return; }
           if (USER) API.saveWriting({lesson_id:lesson.id || null, target:TARGET, text:finalText, status:'checked', issues:ms.slice(0, 30).map(ltSlim), checked_at:new Date().toISOString(), seen:true}).catch(function () {});
           done(ms.length <= 2, (ms.length ? tx({uk:'Текст збережено. Переглянь виправлення нижче. ', pl:'Tekst zapisany. Przejrzyj poprawki poniżej. ', en:'Text saved. Review the corrections below. '}) : t('Відповідь збережено! ')) + (lf(tk, 'tip') || ''));
         }).catch(function () {
