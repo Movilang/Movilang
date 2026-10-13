@@ -3479,3 +3479,123 @@
 3478	Перо випускника
 3479	Ти пройшов(ла) весь перший рік у Гоґвортсі.
 3480	Випускник першого курсу Гоґвортсу
+3481	Так! Would + дієслово — повторювана дія в минулому (як used to).
+3482	Will — майбутнє, а мова про дитинство.
+3483	Is used to — інша конструкція, не для звичок минулого.
+3484	Uses — теперішній час.
+3485	Would для минулих дій, що повторювалися: Every summer we would go to the sea.
+3486	“____ you use to have pets, Hagrid?” → питання з used to (одне слово).
+3487	Питання: Did you use to…? Після did — use без d!
+3488	Почни з «Dear Charlie, I used to dream about…». Перевір: didn't use to (без d).
+3489	Так! Після as soon as / when / before про майбутнє — Present Simple.
+3490	Will після as soon as не ставимо.
+3491	Arrived — минулий час, а мова про майбутнє.
+3492	Is arrive — неправильна форма.
+3493	Time clauses про майбутнє: when / before / after / until / as soon as + Present Simple.
+3494	Так! Until = доки не, аж до моменту.
+3495	During + іменник (during the night), а не речення.
+3496	While for — такого поєднання немає.
+3497	Since — «відтоді як», зміст інший.
+3498	Until = до того моменту, коли… I'll wait until you come.
+3499	After + Present Simple, навіть якщо мова про майбутнє.
+3500	When + Past Simple, Past Simple — дві послідовні події в минулому.
+3501	Почни з «When we came back from the tower, …».
+3502	Так! Because — причина.
+3503	So — наслідок: «тому».
+3504	Although — «хоча», протиставлення.
+3505	However — «однак», не з'єднує так речення.
+3506	Because — причина, so — наслідок, although — протиставлення.
+3507	Так! But — протиставлення: кінець іспитів, але не спокій.
+3508	So — наслідок, тут сенс протилежний.
+3509	Because — причина, не підходить.
+3510	If — умова.
+3511	But / although / however — для протиставлення.
+3512	____ Hagrid was drunk, he remembered the stranger's questions. → «хоча» (одне слово).
+3513	Although + речення = хоча… Although it was late, we went out.
+3514	So — наслідок: тому камінь у небезпеці.
+3515	Because — головне слово детектива: пояснює причину.
+3516	Почни з «Facts: …  So… Because…».
+3517	Повторення: passive, used to / would, time clauses, relative clauses, linking words
+3518	Use to без d у ствердженні — помилка.
+3519	As soon as + Present Simple — бездоганно.
+3520	Після as soon as без will. Невіл кивнув, але трохи розгубився.
+3521	Because — чітка причина. Браво!
+3522	Although — «хоча», а тут потрібна причина: because.
+3523	Так! Used to + дієслово.
+3524	Use to — без d у ствердженні неправильно.
+3525	Is used — пасив, інший зміст.
+3526	Was use to — помилка.
+3527	Так! Because пояснює причину — і логіка правильна.
+3528	Причина й наслідок переплутані: we went out, so it was late? Ні — логіка зламана.
+3529	Although і so разом не вживаються.
+3530	It's you that… = саме ти. Рон наголошує, хто має йти далі.
+3531	Так! Can + дієслово — уміння зараз.
+3532	Could to — після could без to.
+3533	Is able — потрібно is able to.
+3534	Cans — модальні не мають -s.
+3535	Can — уміння зараз, could — уміння в минулому, be able to — у будь-якому часі.
+3536	Так! Was able to — вдалося зробити один раз у минулому.
+3537	Can — теперішній час.
+3538	Could to — помилка: після could без to.
+3539	Is able — теперішній і без to.
+3540	Одна успішна дія в минулому → was able to / managed to.
+3541	Hermione: “I ____ (не могла) play chess when I was little.” → одне слово, минулий час.
+3542	Couldn't — не вміла / не могла в минулому.
+3543	Will be able to — уміння в майбутньому (will can — неможливо!).
+3544	Почни з «Dear Ron, you were able to…».
+3545	Does seem — підсилення: «справді здається». Так кажуть, коли хочуть наголосити.
+3546	Так! So + прикметник + that… = настільки…, що…
+3547	Such — перед іменником (such a nervous man).
+3548	Too — «занадто», без that-наслідку.
+3549	Enough стоїть після прикметника.
+3550	So + прикметник; such (a) + прикметник + іменник.
+3551	Так! Too + прикметник + to… = занадто…, щоб…
+3552	So young to — неправильна конструкція.
+3553	Such — тільки з іменником.
+3554	Young enough — «достатньо молодий», інший зміст і порядок.
+3555	It was ____ a strange night that Harry couldn't sleep. → одне слово.
+3556	Such a + прикметник + іменник: such a strange night.
+3557	Прикметник + enough + to: brave enough to…
+3558	Почни з «It wasn't Snape. Quirrell was so…».
+3559	Так! Just — щойно, щойно сталося.
+3560	Yet — у запереченнях і питаннях, у кінці речення.
+3561	Ever — «колись», у питаннях.
+3562	Still — «досі», не з цим значенням.
+3563	Just / already — між have і V3. Yet — у кінці заперечень і питань.
+3564	Так! Yet — у питанні, в кінці речення.
+3565	Already в такому питанні звучить як здивування.
+3566	Just не ставиться в кінець.
+3567	Still — «досі», тут не підходить.
+3568	Dumbledore: “The Stone has ____ been destroyed.” → «уже» (одне слово).
+3569	Already — вже. Стоїть між has і V3.
+3570	Have + already + V3 — уже зробили.
+3571	Почни з «Dear Hagrid, I've just woken up…».
+3572	Narrative tenses: Past Simple (події), Past Continuous (фон), Past Perfect (раніше).
+3573	Так! Раніше за іншу минулу подію → Past Perfect: had won.
+3574	Were winning — лише процес у конкретний момент.
+3575	Wins — теперішній час.
+3576	Past Perfect — для того, що сталося ДО іншої події в минулому.
+3577	Почни з «Harry was living under the stairs when…».
+3578	Повторення: advice & obligation, can / could / be able to, so / such / too / enough, Present Perfect, narrative tenses
+3579	So… that + was able to — бездоганно.
+3580	Such — з іменником, а could без to.
+3581	Так — brave enough to.
+3582	Past Simple + too — сильно і чітко.
+3583	Зміст правильний, але тут потрібне too.
+3584	Just + yet — Present Perfect бездоганно.
+3585	Yet — у запереченнях і питаннях: I haven't… yet.
+3586	Past Continuous + Past Simple. Майстерно!
+3587	Так! Was able to — вдалося в минулому.
+3588	Can без to.
+3589	Is able — потрібно to і минулий час.
+3590	Could без to.
+3591	Quirrell was ____ a good actor that nobody suspected him. → одне слово.
+3592	Dumbledore: “The Stone has ____ been destroyed.” (уже — 1 слово)
+3593	Так! Had won + took — ідеальне поєднання.
+3594	Так — Past Simple у часовому реченні.
+3595	Will після as soon as — ні.
+3596	Так — протиставлення.
+3597	Because — причина.
+3598	So that — мета.
+3599	Although стоїть на початку частини з «scared».
+3600	Quirrell was ____ clever for the teachers. (занадто — одне слово)
