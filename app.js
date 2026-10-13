@@ -21,9 +21,16 @@ function bestVoice(lang) {
   return (VOICE_CACHE[lang] = c[0]);
 }
 try { speechSynthesis.onvoiceschanged = function () { VOICE_CACHE = {}; }; } catch (e) {}
-var TTS_OK = false, // server voice (OpenAI) off: device voice only
-    TTS_URLS = {}, TTS_AUDIO = null;
+var TTS_OK = false, TTS_URLS = {}, TTS_AUDIO = null, TTS_SET = null;
+function ttsClean(t) { return String(t || '').replace(/<[^>]+>/g, '').replace(/_{2,}/g, '…').replace(/\s+/g, ' ').trim(); }
+function ttsHash(str) { var h1 = 0xdeadbeef, h2 = 0x41c6ce57; for (var i = 0, ch; i < str.length; i++) { ch = str.charCodeAt(i); h1 = Math.imul(h1 ^ ch, 2654435761); h2 = Math.imul(h2 ^ ch, 1597334677); } h1 = Math.imul(h1 ^ (h1 >>> 16), 2246822507) ^ Math.imul(h2 ^ (h2 >>> 13), 3266489909); h2 = Math.imul(h2 ^ (h2 >>> 16), 2246822507) ^ Math.imul(h1 ^ (h1 >>> 13), 3266489909); return (h2 >>> 0).toString(16).padStart(8, '0') + (h1 >>> 0).toString(16).padStart(8, '0'); }
+function ttsPath(code, clean) { return 'g/' + code + '/' + ttsHash(code + '|' + clean) + '.wav'; }
+function loadTtsSet() { if (!API.ttsList) return; API.ttsList().then(function (ps) { TTS_SET = {}; ps.forEach(function (p) { TTS_SET[p] = 1; }); }).catch(function () {}); }
 function say(txt, lang) {
+  (function () { var lg = lang || SPEECH[TARGET], cd = lg.slice(0, 2), cl = ttsClean(txt), C0 = window.MOVILANG_CONFIG || {}, pth = cl && ttsPath(cd, cl);
+    if (pth && TTS_SET && TTS_SET[pth] && C0.SUPABASE_URL) { try { speechSynthesis.cancel(); } catch (e) {} if (TTS_AUDIO) { try { TTS_AUDIO.pause(); } catch (e) {} }
+      TTS_AUDIO = new Audio(C0.SUPABASE_URL + '/storage/v1/object/public/tts/' + pth); TTS_AUDIO.play().catch(function () { sayLocal(cl, lg); }); txt = null; } })();
+  if (txt === null) return;
   lang = lang || SPEECH[TARGET]; var code = lang.slice(0, 2), clean = String(txt || '').replace(/<[^>]+>/g, '').replace(/_{2,}/g, '…').trim();
   var C = window.MOVILANG_CONFIG || {};
   if (!clean) return;
@@ -302,6 +309,7 @@ function DemoBackend() {
     saveLesson: function (l) { needAdmin(); var db = load(); if (!l.id) { l.id = uid(); db.lessons.push(l); } else { db.lessons = db.lessons.map(function (x) { return x.id === l.id ? l : x; }); } save(); return P(l); },
     deleteLesson: function (id) { needAdmin(); var db = load(); db.lessons = db.lessons.filter(function (x) { return x.id !== id; }); save(); return P(true); },
     myEnrollments: function () { var u = me(); if (!u) return P([]); return P(load().enrollments.filter(function (e) { return e.user_id === u.id; }).map(function (e) { return e.course_id; })); },
+    ttsList: function () { return P([]); }, token: function () { return P(null); },
     knownList: function (tg) { var u = me(); if (!u) return P([]); return P((load().known || []).filter(function (k) { return k.user_id === u.id && k.target === tg; })); },
     setKnown: function (tg, word, val) { var u = me(); var db = load(); db.known = (db.known || []).filter(function (k) { return !(k.user_id === u.id && k.target === tg && k.word === word); }); if (val) db.known.push({user_id:u.id, target:tg, word:word, known:true}); save(); return P(true); },
     saveWriting: function (w) { var u = me(); var db = load(); db.writings = db.writings || []; w.id = Date.now(); w.user_id = u.id; w.created_at = new Date().toISOString(); db.writings.push(w); save(); return P(w); },
@@ -389,6 +397,8 @@ function SupabaseBackend(url, key) {
     saveLesson: function (l) { var row = {course_id:l.course_id, num:l.num, title:l.title, title_pl:l.title_pl || null, scene_pl:l.scene_pl || null, grammar:l.grammar}; if (l.title_en !== undefined) { row.title_en = l.title_en; row.scene_en = l.scene_en; } row = Object.assign(row, {scene:l.scene, tasks:l.tasks}); if (l.variants !== undefined) row.variants = l.variants; if (l.id) row.id = l.id; return sb.from('lessons').upsert(row).select().single().then(ok); },
     deleteLesson: function (id) { return sb.from('lessons').delete().eq('id', id).then(ok); },
     myEnrollments: function () { if (!cachedUser) return Promise.resolve([]); return sb.from('enrollments').select('course_id').eq('user_id', cachedUser.id).then(ok).then(function (r) { return r.map(function (x) { return x.course_id; }); }); },
+    ttsList: function () { var out = []; function pg(o) { return sb.from('tts_clips').select('path').range(o, o + 999).then(function (r) { if (r.error) throw r.error; out = out.concat(r.data.map(function (x) { return x.path; })); return r.data.length === 1000 ? pg(o + 1000) : out; }); } return pg(0); },
+    token: function () { return sb.auth.getSession().then(function (r) { return r.data.session && r.data.session.access_token; }); },
     knownList: function (tg) { if (!cachedUser) return Promise.resolve([]); return sb.from('word_known').select('word,known').eq('user_id', cachedUser.id).eq('target', tg).then(ok); },
     setKnown: function (tg, word, val) { if (!cachedUser) return Promise.resolve(false); var q = val ? sb.from('word_known').upsert({user_id:cachedUser.id, target:tg, word:word, known:true, updated_at:new Date().toISOString()}) : sb.from('word_known').delete().eq('user_id', cachedUser.id).eq('target', tg).eq('word', word); return q.then(ok); },
     saveWriting: function (w) { w.user_id = cachedUser.id; return sb.from('writings').insert(w).select().single().then(ok); },
@@ -669,6 +679,7 @@ function viewCourse(id) {
         return arcH + (open ? '<a class="lesson-link" href="#/lesson/' + esc(l.id) + '">' + inner + '</a>' : inner);
       }).join('') + '</ul>' : t('<div class="empty" style="margin-top:20px">Уроки цього марафону скоро з\'являться.</div>')) +
       t('</div><div class="panel"><h3 style="margin-bottom:18px">Типи завдань у курсі</h3><div class="task-types">') + Object.keys(types).map(function (t) { return '<div class="ttype"><span class="k q">' + esc(t.slice(0, 2).toUpperCase()) + '</span><div><b>' + esc(ttName(t)) + '</b></div></div>'; }).join('') + '</div></div></div></div>';
+    if (isAdm() && ls.length) adminVoices(ls);
     var af = document.getElementById('admFill');
     if (af) { var avIds = ls.filter(function (x) { return !!lessonTasks(x); }).map(function (x) { return x.id; });
       var pick = function () { var s = document.getElementById('admLes').value; return s ? [s] : avIds; };
@@ -677,6 +688,49 @@ function viewCourse(id) {
   });
 }
 
+
+function ttsTextsOf(ls, tg) {
+  var out = {}, saved = TARGET; TARGET = tg;
+  function add(v) { var c = ttsClean(v); if (c && c.length <= 500 && /\p{L}/u.test(c)) out[c] = 1; }
+  function walk(o) { if (!o || typeof o !== 'object') return; if (Array.isArray(o)) return o.forEach(walk);
+    ['w', 'line', 'ex', 'say', 'q'].forEach(function (k) { if (typeof o[k] === 'string') add(o[k]); });
+    if (o.type === 'match') (o.options || []).forEach(function (x) { add(String(x).split('=')[0]); });
+    Object.keys(o).forEach(function (k) { if (o[k] && typeof o[k] === 'object') walk(o[k]); }); }
+  try { ls.forEach(function (l) { walk(lessonTasks(l) || []); }); } finally { TARGET = saved; }
+  return Object.keys(out);
+}
+var VOX_RUN = false;
+function adminVoices(ls) {
+  var host = document.querySelector('.admtools'); if (!host) return;
+  var box = document.createElement('div'); box.className = 'voxbox';
+  box.innerHTML = '<b>🔊 ' + tx({uk:'Голоси курсу (Gemini)', pl:'Głosy kursu (Gemini)', en:'Course voices (Gemini)'}) + '</b> <span class="hint" id="voxSt">…</span><div class="row" style="gap:6px;flex-wrap:wrap;margin-top:6px">' + ['en', 'pl', 'uk'].map(function (g) { return '<label class="small"><input type="checkbox" class="voxl" value="' + g + '" checked> ' + FLAG[g] + '</label>'; }).join(' ') + '<button type="button" class="btn btn-ghost btn-s" id="voxGo">▶ ' + tx({uk:'Згенерувати', pl:'Generuj', en:'Generate'}) + '</button></div>';
+  host.appendChild(box);
+  var st = box.querySelector('#voxSt');
+  function todo() { var L = [].slice.call(box.querySelectorAll('.voxl:checked')).map(function (x) { return x.value; }), all = [];
+    L.forEach(function (g) { ttsTextsOf(ls, g).forEach(function (t) { var p = ttsPath(g, t); if (!TTS_SET || !TTS_SET[p]) all.push({g:g, t:t, p:p}); }); }); return all; }
+  function count() { var n = 0; ['en', 'pl', 'uk'].forEach(function (g) { n += ttsTextsOf(ls, g).length; }); var left = todo().length; st.textContent = tx({uk:'готово ', pl:'gotowe ', en:'done '}) + (n - left) + ' / ' + n; }
+  API.ttsList().then(function (ps) { TTS_SET = {}; ps.forEach(function (p) { TTS_SET[p] = 1; }); count(); }).catch(function () { count(); });
+  box.querySelectorAll('.voxl').forEach(function (c) { c.onchange = count; });
+  box.querySelector('#voxGo').onclick = function () {
+    if (VOX_RUN) { VOX_RUN = false; return; }
+    var list = todo(), i = 0, btn = this, C = window.MOVILANG_CONFIG || {}; if (!list.length) return toast('✓');
+    VOX_RUN = true; btn.textContent = '■ Stop';
+    API.token().then(function (tok) {
+      function next() {
+        if (!VOX_RUN || i >= list.length || !document.body.contains(box)) { VOX_RUN = false; btn.textContent = '▶ ' + tx({uk:'Згенерувати', pl:'Generuj', en:'Generate'}); count(); return; }
+        var it = list[i++]; st.textContent = i + ' / ' + list.length + ' · ' + it.t.slice(0, 40);
+        fetch(C.SUPABASE_URL + '/functions/v1/tts', {method:'POST', headers:{'Content-Type':'application/json', apikey:C.SUPABASE_ANON_KEY, Authorization:'Bearer ' + tok}, body:JSON.stringify({text:it.t, lang:it.g, path:it.p})})
+          .then(function (r) { return r.json().then(function (j) { return {s:r.status, j:j}; }); })
+          .then(function (x) {
+            if (x.j && x.j.path) { TTS_SET[x.j.path] = 1; return setTimeout(next, 1200); }
+            if (x.s === 429) { VOX_RUN = false; toast(tx({uk:'Денний ліміт Gemini вичерпано. Продовж завтра — готові голоси збережено.', pl:'Dzienny limit Gemini wyczerpany. Kontynuuj jutro — gotowe głosy są zapisane.', en:'Gemini daily limit reached. Continue tomorrow — finished clips are saved.'}), 'info'); return next(); }
+            toast('TTS: ' + ((x.j && (x.j.error + ' ' + (x.j.detail || ''))) || x.s).slice(0, 160), 'err'); VOX_RUN = false; next();
+          }).catch(function (e) { toast('TTS: ' + e.message, 'err'); VOX_RUN = false; next(); });
+      }
+      next();
+    });
+  };
+}
 /* ---------- illustrations (original SVG, no film stills) ---------- */
 var ILLU_KEYS = ['castle','stairs','snake','letter','cake','alley','wand','train','hat','potion','broom','troll','pitch','mirror','forest','chess','stone','owl','tomb','crow','ring','vervain','diary','candles','manor','comet'];
 function illu(key) {
@@ -1789,6 +1843,6 @@ Promise.all([API.getUser().catch(function () { return null; }), API.getSettings(
   renderNav(); route();
   if (!LANG_SET) langModal(true);
   setTimeout(function () { API.prefetch(); }, 300);
-  setTimeout(processPendingWritings, 4000); setInterval(processPendingWritings, 5 * 60 * 1000);
+  setTimeout(processPendingWritings, 4000); setTimeout(loadTtsSet, 1500); setInterval(processPendingWritings, 5 * 60 * 1000);
 });
 })();
