@@ -24,7 +24,7 @@ try { speechSynthesis.onvoiceschanged = function () { VOICE_CACHE = {}; }; } cat
 var TTS_OK = false, TTS_URLS = {}, TTS_AUDIO = null, TTS_SET = null;
 function ttsClean(t) { return String(t || '').replace(/<[^>]+>/g, '').replace(/_{2,}/g, '…').replace(/\s+/g, ' ').trim(); }
 function ttsHash(str) { var h1 = 0xdeadbeef, h2 = 0x41c6ce57; for (var i = 0, ch; i < str.length; i++) { ch = str.charCodeAt(i); h1 = Math.imul(h1 ^ ch, 2654435761); h2 = Math.imul(h2 ^ ch, 1597334677); } h1 = Math.imul(h1 ^ (h1 >>> 16), 2246822507) ^ Math.imul(h2 ^ (h2 >>> 13), 3266489909); h2 = Math.imul(h2 ^ (h2 >>> 16), 2246822507) ^ Math.imul(h1 ^ (h1 >>> 13), 3266489909); return (h2 >>> 0).toString(16).padStart(8, '0') + (h1 >>> 0).toString(16).padStart(8, '0'); }
-function ttsPath(code, clean) { return 'g/' + code + '/' + ttsHash(code + '|' + clean) + '.wav'; }
+function ttsPath(code, clean) { return 'g/' + code + '/' + ttsHash(code + '|v2|' + clean) + '.wav'; }
 function loadTtsSet() { if (!API.ttsList) return; API.ttsList().then(function (ps) { TTS_SET = {}; ps.forEach(function (p) { TTS_SET[p] = 1; }); }).catch(function () {}); }
 var SAY_LAST = {k:'', t:0};
 function playClip(cl, lg) {
