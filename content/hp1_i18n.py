@@ -128,9 +128,9 @@ TIPS = {
 }
 
 INTROS = {
- "1": (("Вітаємо на першому уроці MovieLang! За 10 хвилин ти опинишся в перших сценах історії.",
+ "1": (("Вітаємо на першому уроці MoviLang! За 10 хвилин ти опинишся в перших сценах історії.",
         ["Вивчиш 8 слів про родину й почуття", "Почуєш англійську в реальному темпі", "Опануєш Present Simple і Present Continuous у контексті", "Скажеш перші репліки вголос, як герої"], "Почати безкоштовний урок"),
-       ("Witaj na pierwszej lekcji MovieLang! W 10 minut przeniesiesz się do pierwszych scen historii.",
+       ("Witaj na pierwszej lekcji MoviLang! W 10 minut przeniesiesz się do pierwszych scen historii.",
         ["Poznasz 8 słów o rodzinie i uczuciach", "Usłyszysz angielski w prawdziwym tempie", "Opanujesz Present Simple i Present Continuous w kontekście", "Powiesz pierwsze kwestie na głos jak bohaterowie"], "Zacznij darmową lekcję")),
  "4": (("Опівночі у двері стукає велетень. Сьогодні вчимося переказувати чужі слова.",
         ["Твердження: he said that…", "Питання: she asked if…", "Правильно зсувати часи"], "Поїхали"),
@@ -149,9 +149,9 @@ INTROS = {
        ("Noc w Zakazanym Lesie. Dziś wyobrażamy sobie, jak mogła wyglądać przeszłość.",
         ["Trzeci tryb warunkowy: If + had done, would have done", "Mówimy o żalu i szczęśliwych ucieczkach", "Słownictwo o nocy i lesie"], "Do lasu")),
  "16": (("Фінальний урок! Збери все, що вивчив, і розкажи історію своїми словами.",
-        ["Повторення часів для розповіді", "Використай 10+ слів із марафону", "Напиши й запиши свій переказ", "Отримай сертифікат MovieLang"], "Почати фінал"),
+        ["Повторення часів для розповіді", "Використай 10+ слів із марафону", "Напиши й запиши свій переказ", "Отримай сертифікат MoviLang"], "Почати фінал"),
        ("Ostatnia lekcja! Połącz wszystko, czego się nauczyłeś, i opowiedz historię własnymi słowami.",
-        ["Powtórka czasów narracyjnych", "Użyj 10+ słów z maratonu", "Napisz i nagraj swoją opowieść", "Odbierz certyfikat MovieLang"], "Rozpocznij finał")),
+        ["Powtórka czasów narracyjnych", "Użyj 10+ słów z maratonu", "Napisz i nagraj swoją opowieść", "Odbierz certyfikat MoviLang"], "Rozpocznij finał")),
 }
 
 # English word -> (uk, pl) translation used as the right side in MATCH tasks

@@ -1,4 +1,4 @@
--- MovieLang — схема бази даних для Supabase.
+-- MoviLang — схема бази даних для Supabase.
 -- Запустіть увесь файл один раз: Supabase → SQL Editor → New query → вставити → Run.
 
 -- ========== Таблиці ==========

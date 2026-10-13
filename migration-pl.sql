@@ -1,4 +1,4 @@
--- MovieLang: польська мова + ціни в злотих. Запустити один раз у Supabase → SQL Editor.
+-- MoviLang: польська мова + ціни в злотих. Запустити один раз у Supabase → SQL Editor.
 alter table public.courses add column if not exists title_pl text;
 alter table public.courses add column if not exists description_pl text;
 alter table public.lessons add column if not exists title_pl text;

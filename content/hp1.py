@@ -1,4 +1,4 @@
-# MovieLang — "Harry Potter and the Philosopher's Stone": 16-lesson B1–B2 marathon.
+# MoviLang — "Harry Potter and the Philosopher's Stone": 16-lesson B1–B2 marathon.
 # All sentences are original teaching material; scenes are described, not quoted.
 import json
 
@@ -39,7 +39,7 @@ lesson(1, "Хлопчик під сходами", "Chłopiec pod schodami", "Pre
  "Звичайний будинок у передмісті. Хлопчик живе в комірчині під сходами, а родина святкує день народження кузена.",
  "Zwyczajny dom na przedmieściach. Chłopiec mieszka w komórce pod schodami, a rodzina świętuje urodziny kuzyna.",
  [
-  intro("Welcome to your first MovieLang lesson! In 10 minutes you will step into the opening scenes of the story.",
+  intro("Welcome to your first MoviLang lesson! In 10 minutes you will step into the opening scenes of the story.",
         ["Learn 8 words for family life and feelings", "Hear real-speed English and catch key phrases",
          "Master Present Simple vs Present Continuous in context", "Say your first lines out loud like the characters"],
         "stairs", "Start the free lesson"),
@@ -370,7 +370,7 @@ lesson(16, "Фінал: камінь і твоя історія", "Finał: kamie
  "Ostatnie spotkanie przy lustrze, czerwony kamień w kieszeni i pożegnalna uczta. Opowiadasz historię sam.",
  [
   intro("The final lesson! Put together everything you learned and tell the story in your own words.",
-        ["Review narrative tenses", "Use 10+ words from the marathon", "Write and record your own retelling", "Get your MovieLang certificate"], "stone", "Begin the finale"),
+        ["Review narrative tenses", "Use 10+ words from the marathon", "Write and record your own retelling", "Get your MoviLang certificate"], "stone", "Begin the finale"),
   mc("grammar", "Harry looked in the mirror and suddenly felt that the stone ____ into his pocket.",
      ["dropped", "had dropped", "has dropped", "was drop"], 1, "Earlier past event → had dropped.", img="stone"),
   mc("grammar", "While the teacher ____, Harry was thinking about his mother.", ["talked", "was talking", "has talked", "talks"], 1, "Background action → Past Continuous."),

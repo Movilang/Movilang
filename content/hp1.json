@@ -9,7 +9,7 @@
   "tasks": [
    {
     "type": "intro",
-    "q": "Welcome to your first MovieLang lesson! In 10 minutes you will step into the opening scenes of the story.",
+    "q": "Welcome to your first MoviLang lesson! In 10 minutes you will step into the opening scenes of the story.",
     "options": [
      "Learn 8 words for family life and feelings",
      "Hear real-speed English and catch key phrases",
@@ -18,8 +18,8 @@
     ],
     "img": "stairs",
     "tip": "Start the free lesson",
-    "q_uk": "Вітаємо на першому уроці MovieLang! За 10 хвилин ти опинишся в перших сценах історії.",
-    "q_pl": "Witaj na pierwszej lekcji MovieLang! W 10 minut przeniesiesz się do pierwszych scen historii.",
+    "q_uk": "Вітаємо на першому уроці MoviLang! За 10 хвилин ти опинишся в перших сценах історії.",
+    "q_pl": "Witaj na pierwszej lekcji MoviLang! W 10 minut przeniesiesz się do pierwszych scen historii.",
     "options_uk": [
      "Вивчиш 8 слів про родину й почуття",
      "Почуєш англійську в реальному темпі",
@@ -7967,7 +7967,7 @@
      "Review narrative tenses",
      "Use 10+ words from the marathon",
      "Write and record your own retelling",
-     "Get your MovieLang certificate"
+     "Get your MoviLang certificate"
     ],
     "img": "stone",
     "tip": "Begin the finale",
@@ -7977,13 +7977,13 @@
      "Повторення часів для розповіді",
      "Використай 10+ слів із марафону",
      "Напиши й запиши свій переказ",
-     "Отримай сертифікат MovieLang"
+     "Отримай сертифікат MoviLang"
     ],
     "options_pl": [
      "Powtórka czasów narracyjnych",
      "Użyj 10+ słów z maratonu",
      "Napisz i nagraj swoją opowieść",
-     "Odbierz certyfikat MovieLang"
+     "Odbierz certyfikat MoviLang"
     ],
     "tip_uk": "Почати фінал",
     "tip_pl": "Rozpocznij finał"
