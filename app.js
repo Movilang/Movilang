@@ -795,24 +795,6 @@ function withReading(tasks) {
   return tasks.slice(0, at).concat([rt], tasks.slice(at));
 }
 var SKIPPABLE = {speaking:1, listening:1, type:1, final:1, subtitles:1};
-function ltCall(text, lang) {
-  var body = 'language=' + lang + (lang === 'auto' ? '&preferredVariants=en-GB,de-DE,pt-PT,ca-ES' : '') + '&text=' + encodeURIComponent(text);
-  return fetch('https://api.languagetool.org/v2/check', {method:'POST', headers:{'Content-Type':'application/x-www-form-urlencoded'}, body:body}).then(function (r) { if (!r.ok) throw new Error('lt'); return r.json(); });
-}
-var LT_CODE = {en:'en-GB', pl:'pl-PL', uk:'uk-UA'}, LT_NAME = {en:{uk:'англійською', pl:'po angielsku', en:'in English'}, pl:{uk:'польською', pl:'po polsku', en:'in Polish'}, uk:{uk:'українською', pl:'po ukraińsku', en:'in Ukrainian'}};
-function ltCheck(text) {
-  var tg = TARGET, letters = (text.match(/\p{L}/gu) || []).length, cyr = (text.match(/[Ѐ-ӿ]/g) || []).length, cyrShare = letters ? cyr / letters : 0;
-  var wrong = function (det) { var ms = [{o:0, l:0, msg:tx({uk:'Текст написано не тією мовою: потрібно ' + LT_NAME[tg].uk + '.', pl:'Tekst jest w innym języku: trzeba pisać ' + LT_NAME[tg].pl + '.', en:'Wrong language: please write ' + LT_NAME[tg].en + '.'}), r:[]}]; ms.wrongLang = det || '?'; return ms; };
-  // script check first: Ukrainian must be Cyrillic, Polish/English must be Latin
-  if (tg === 'uk' && cyrShare < 0.5) return Promise.resolve(wrong(cyrShare < 0.1 ? 'latin' : 'mixed'));
-  if (tg !== 'uk' && cyrShare > 0.3) return Promise.resolve(wrong('uk'));
-  return ltCall(text, 'auto').then(function (j) {
-    var det = ((j.language || {}).detectedLanguage || {}).code || '', base = det.slice(0, 2);
-    if (base === tg) return j.matches || [];
-    if ((base === 'en' || base === 'pl') && base !== tg && ((j.language.detectedLanguage.confidence || 1) > 0.7)) return wrong(base);
-    return ltCall(text, LT_CODE[tg]).then(function (j2) { return j2.matches || []; });
-  });
-}
 /* ---------- personal dictionary + flashcards ---------- */
 var WDEFS = {};
 function loadDefs() { if (WDEFS[TARGET] !== undefined || TARGET === 'en') return Promise.resolve(); WDEFS[TARGET] = {}; return fetch('content/defs_' + TARGET + '.json').then(function (r) { return r.ok ? r.json() : {}; }).then(function (j) { WDEFS[TARGET] = j || {}; }).catch(function () {}); }
@@ -920,9 +902,6 @@ function smartCheck(text, task, tg) {
   return aiCheck(text, task, tg).then(function (o) {
     var iss = {ai:1, score:o.score, lang_ok:o.lang_ok, task_done:o.task_done, comment:o.comment, errors:o.errors || []};
     return {issues:iss, score:o.score, wrongLang:!o.lang_ok, pass:!!(o.lang_ok && o.task_done && o.score >= 60)};
-  }).catch(function () {
-    var keep = TARGET; TARGET = tg; var p = ltCheck(text); TARGET = keep;
-    return p.then(function (ms) { return {issues:ms.slice(0, 30).map(ltSlim), score:null, wrongLang:!!ms.wrongLang, pass:!ms.wrongLang && ms.length <= 2}; });
   });
 }
 function aiHtml(o) {
