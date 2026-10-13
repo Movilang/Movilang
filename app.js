@@ -31,7 +31,7 @@ function playClip(cl, lg) {
   var cd = lg.slice(0, 2), C0 = window.MOVILANG_CONFIG || {}, pth = cl && ttsPath(cd, cl);
   if (!(pth && TTS_SET && TTS_SET[pth] && C0.SUPABASE_URL)) return false;
   try { speechSynthesis.cancel(); } catch (e) {} if (TTS_AUDIO) { try { TTS_AUDIO.pause(); } catch (e) {} }
-  TTS_AUDIO = new Audio(C0.SUPABASE_URL + '/storage/v1/object/public/tts/' + pth); TTS_AUDIO._clip = 1;
+  TTS_AUDIO = new Audio('/a/' + pth); TTS_AUDIO._clip = 1;
   TTS_AUDIO.play().catch(function () {});
   return true;
 }
@@ -406,6 +406,7 @@ function SupabaseBackend(url, key) {
     deleteLesson: function (id) { return sb.from('lessons').delete().eq('id', id).then(ok); },
     myEnrollments: function () { if (!cachedUser) return Promise.resolve([]); return sb.from('enrollments').select('course_id').eq('user_id', cachedUser.id).then(ok).then(function (r) { return r.map(function (x) { return x.course_id; }); }); },
     ttsList: function () { var out = []; function pg(o) { return sb.from('tts_clips').select('path').range(o, o + 999).then(function (r) { if (r.error) throw r.error; out = out.concat(r.data.map(function (x) { return x.path; })); return r.data.length === 1000 ? pg(o + 1000) : out; }); } return pg(0); },
+    ttsAdd: function (row) { return sb.from('tts_clips').upsert(row).then(function (r) { if (r.error) throw r.error; }); },
     token: function () { return sb.auth.getSession().then(function (r) { return r.data.session && r.data.session.access_token; }); },
     knownList: function (tg) { if (!cachedUser) return Promise.resolve([]); return sb.from('word_known').select('word,known').eq('user_id', cachedUser.id).eq('target', tg).then(ok); },
     setKnown: function (tg, word, val) { if (!cachedUser) return Promise.resolve(false); var q = val ? sb.from('word_known').upsert({user_id:cachedUser.id, target:tg, word:word, known:true, updated_at:new Date().toISOString()}) : sb.from('word_known').delete().eq('user_id', cachedUser.id).eq('target', tg).eq('word', word); return q.then(ok); },
@@ -717,6 +718,9 @@ function adminVoices(ls) {
     L.forEach(function (g) { ttsTextsOf(ls, g).forEach(function (t) { var p = ttsPath(g, t); if (!TTS_SET || !TTS_SET[p]) all.push({g:g, t:t, p:p}); }); }); return all; }
   function count() { var n = 0; ['en', 'pl', 'uk'].forEach(function (g) { n += ttsTextsOf(ls, g).length; }); var left = todo().length; st.textContent = tx({uk:'готово ', pl:'gotowe ', en:'done '}) + (n - left) + ' / ' + n; }
   API.ttsList().then(function (ps) { TTS_SET = {}; ps.forEach(function (p) { TTS_SET[p] = 1; }); count(); }).catch(function () { count(); });
+  var purged = ''; try { purged = localStorage.getItem('ml_tts_purged'); } catch (e) {}
+  if (!purged && API.token) API.token().then(function (tok) { var C = window.MOVILANG_CONFIG || {}; if (!tok || !C.SUPABASE_URL) return;
+    return fetch(C.SUPABASE_URL + '/functions/v1/tts', {method:'POST', headers:{'Content-Type':'application/json', apikey:C.SUPABASE_ANON_KEY, Authorization:'Bearer ' + tok}, body:JSON.stringify({purge:true})}).then(function (r) { return r.json(); }).then(function (j) { if (j && j.removed != null) { try { localStorage.setItem('ml_tts_purged', '1'); } catch (e) {} if (j.removed) toast('Supabase: ' + j.removed + ' old clips removed'); } }); }).catch(function () {});
   box.querySelectorAll('.voxl').forEach(function (c) { c.onchange = count; });
   box.querySelector('#voxGo').onclick = function () {
     if (VOX_RUN) { VOX_RUN = false; return; }
@@ -726,13 +730,18 @@ function adminVoices(ls) {
       function next() {
         if (!VOX_RUN || i >= list.length || !document.body.contains(box)) { VOX_RUN = false; btn.textContent = '▶ ' + tx({uk:'Згенерувати', pl:'Generuj', en:'Generate'}); count(); return; }
         var it = list[i++]; st.textContent = i + ' / ' + list.length + ' · ' + it.t.slice(0, 40);
-        fetch(C.SUPABASE_URL + '/functions/v1/tts', {method:'POST', headers:{'Content-Type':'application/json', apikey:C.SUPABASE_ANON_KEY, Authorization:'Bearer ' + tok}, body:JSON.stringify({text:it.t, lang:it.g, path:it.p})})
+        var H = {'Content-Type':'application/json', apikey:C.SUPABASE_ANON_KEY, Authorization:'Bearer ' + tok}, model = '';
+        fetch(C.SUPABASE_URL + '/functions/v1/tts', {method:'POST', headers:H, body:JSON.stringify({text:it.t, lang:it.g})})
           .then(function (r) { return r.json().then(function (j) { return {s:r.status, j:j}; }); })
           .then(function (x) {
-            if (x.j && x.j.path) { TTS_SET[x.j.path] = 1; return setTimeout(next, 1200); }
-            if (x.s === 429) { VOX_RUN = false; toast(tx({uk:'Денний ліміт Gemini вичерпано. Продовж завтра — готові голоси збережено.', pl:'Dzienny limit Gemini wyczerpany. Kontynuuj jutro — gotowe głosy są zapisane.', en:'Gemini daily limit reached. Continue tomorrow — finished clips are saved.'}), 'info'); return next(); }
-            toast('TTS: ' + ((x.j && (x.j.error + ' ' + (x.j.detail || ''))) || x.s).slice(0, 160), 'err'); VOX_RUN = false; next();
-          }).catch(function (e) { toast('TTS: ' + e.message, 'err'); VOX_RUN = false; next(); });
+            if (x.s === 429) { var e = new Error(tx({uk:'Денний ліміт Gemini вичерпано. Продовж завтра — готові голоси збережено.', pl:'Dzienny limit Gemini wyczerpany. Kontynuuj jutro — gotowe głosy są zapisane.', en:'Gemini daily limit reached. Continue tomorrow — finished clips are saved.'})); e.info = 1; throw e; }
+            if (!x.j || !x.j.audio) throw new Error((x.j && (x.j.error + ' ' + (x.j.detail || ''))) || x.s);
+            model = x.j.model || ''; var bin = atob(x.j.audio), u8 = new Uint8Array(bin.length); for (var q = 0; q < bin.length; q++) u8[q] = bin.charCodeAt(q);
+            return fetch('/a/' + it.p, {method:'PUT', headers:{'Content-Type':'audio/wav', Authorization:'Bearer ' + tok}, body:u8});
+          })
+          .then(function (r) { if (!r.ok) return r.text().then(function (t) { throw new Error('R2 ' + r.status + ': ' + t); }); return API.ttsAdd({path:it.p, lang:it.g, text:it.t, model:'r2:' + model}); })
+          .then(function () { TTS_SET[it.p] = 1; setTimeout(next, 1200); })
+          .catch(function (e) { toast((e.info ? '' : 'TTS: ') + String(e.message || e).slice(0, 180), e.info ? 'info' : 'err'); VOX_RUN = false; next(); });
       }
       next();
     });
