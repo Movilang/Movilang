@@ -831,4 +831,7 @@ body.has-amb #app,body.has-amb footer{position:relative;z-index:1}
 .wtxt summary{min-width:0}
 .wtxt summary>span{min-width:0;max-width:100%}
 .wtxt .wbody{overflow-wrap:anywhere}
-@media (max-width:600px){.wtxt summary{display:grid;grid-template-columns:1fr auto;gap:6px}.wsnip{grid-column:1/-1;order:3;min-width:0}}
+.wtxt summary{position:relative;padding-right:24px}
+.wtxt summary::after{position:absolute;right:0;top:0}
+.wtxt summary>span:first-child{white-space:nowrap}
+@media (max-width:600px){.wtxt summary{gap:6px 8px}.wtxt summary>span:not(.wsnip):not(:first-child){font-size:12px;padding:2px 8px}.wsnip{flex-basis:100%;order:3;font-weight:400}}
