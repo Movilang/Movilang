@@ -895,7 +895,7 @@ function aiCheck(text, task, tg) {
   var C = window.MOVILANG_CONFIG || {};
   if (!C.SUPABASE_URL || !C.SUPABASE_ANON_KEY) return Promise.reject(new Error('demo'));
   return fetch(C.SUPABASE_URL + '/functions/v1/ai-check', {method:'POST', headers:{'Content-Type':'application/json', apikey:C.SUPABASE_ANON_KEY, Authorization:'Bearer ' + C.SUPABASE_ANON_KEY}, body:JSON.stringify({text:text, task:task || '', target:tg, support:LANG, level:'B1'})})
-    .then(function (r) { return r.json().then(function (j) { if (!r.ok || j.error) throw new Error(j.error || 'ai'); return j; }); });
+    .then(function (r) { return r.json().then(function (j) { if (!r.ok || j.error) { var em = (j.error || 'ai') + (j.detail ? ': ' + j.detail : ''); if (isAdm()) toast('AI: ' + em.slice(0, 220), 'err'); try { console.warn('ai-check', em); } catch (e) {} throw new Error(em); } return j; }); });
 }
 function smartCheck(text, task, tg) {
   tg = tg || TARGET;
