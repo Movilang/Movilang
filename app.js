@@ -949,14 +949,14 @@ function runPlayer(container, lesson, onFinish, ctxLs) {
 var GUIDE_P = {};
 function loadGuide(tg) {
   if (window.GUIDE && window.GUIDE[tg]) return Promise.resolve(window.GUIDE[tg]);
-  if (!GUIDE_P[tg]) GUIDE_P[tg] = new Promise(function (res, rej) { var s = document.createElement('script'); s.src = 'guide-' + tg + '.js?v=36'; s.onload = function () { res(window.GUIDE[tg]); }; s.onerror = function () { delete GUIDE_P[tg]; rej(new Error('guide')); }; document.head.appendChild(s); });
+  if (!GUIDE_P[tg]) GUIDE_P[tg] = new Promise(function (res, rej) { var s = document.createElement('script'); s.src = 'guide-' + tg + '.js?v=37'; s.onload = function () { res(window.GUIDE[tg]); }; s.onerror = function () { delete GUIDE_P[tg]; rej(new Error('guide')); }; document.head.appendChild(s); });
   return GUIDE_P[tg];
 }
 function gTxt(o) { return o == null ? '' : typeof o === 'string' ? o : (o[LANG] || o.uk || ''); }
 function gTopic(tg, id) { return ((window.GUIDE || {})[tg] || []).filter(function (x) { return x.id === id; })[0]; }
 function gMatch(tg, text) { if (!text) return null; var o = (window.GUIDE || {})[tg + '_order'] || []; for (var i = 0; i < o.length; i++) { var tp = gTopic(tg, o[i]); if (tp && tp.k.test(text)) return tp; } return null; }
 function gLessonTitle(l, tg) { if (!l) return ''; if (tg === 'en') return l.grammar || ''; var v = l.variants || {}; return v[tg + '_grammar'] || ''; }
-function gRuleTask(tk, l) { if (isInfo(tk.type) || /^(final|speaking|vocabulary|match)$/.test(tk.type)) return false; if (/СЛОВНИК|VOCAB|SŁOWN/i.test(tk.label || '')) return false; return gIsReview(l) || /^(grammar|type|order|drill|quest|tf)$/.test(tk.type); }
+function gRuleTask(tk, l) { if (isInfo(tk.type) || /^(final|speaking|vocabulary|match)$/.test(tk.type)) return false; if (/СЛОВНИК|VOCAB|SŁOWN/i.test(tk.label || '')) return false; if (gIsReview(l)) return false; return /^(grammar|type|order|drill|quest|tf)$/.test(tk.type); }
 function gIsReview(l) { return /^(Повторення|Усе|Уся)/.test(l.grammar || '') || !!(l.variants && l.variants.cert); }
 function gTable(tb) {
   if (!tb) return '';
@@ -986,14 +986,8 @@ function gTaskTopics(tk, lesson, ls, tg) {
   return cands.length ? {list:cands, pick:pick || cands[0]} : null;
 }
 function gRulePanel(box, info, tg) {
-  function draw(tp) {
-    var many = info.list.length > 6;
-    box.innerHTML = (info.list.length > 1 ? (many ? '<label class="g-selw"><span class="muted small">' + tx({uk:'Інше правило:', pl:'Inna zasada:', en:'Another rule:'}) + '</span><select class="inp-s g-sel">' + info.list.map(function (x) { return '<option value="' + x.id + '"' + (x === tp ? ' selected' : '') + '>' + esc(gTxt(x.t)) + '</option>'; }).join('') + '</select></label>' : '<div class="g-chips">' + info.list.map(function (x) { return '<button type="button" class="g-chip' + (x === tp ? ' on' : '') + '" data-gt="' + x.id + '">' + esc(gTxt(x.t)) + '</button>'; }).join('') + '</div>') : '') + gRuleCompact(tp, tg);
-    box.querySelectorAll('[data-gt]').forEach(function (b) { b.onclick = function () { draw(gTopic(tg, b.dataset.gt)); }; });
-    var sel = box.querySelector('.g-sel'); if (sel) sel.onchange = function () { draw(gTopic(tg, sel.value)); };
-    gBindSay(box);
-  }
-  draw(info.pick);
+  var tp = info.pick;
+  box.innerHTML = '<div class="g-mini"><b class="g-mt">' + esc(gTxt(tp.t)) + '</b><p>' + esc(gTxt(tp.s)) + '</p><a class="g-more" href="#/guide/' + tg + '/' + tp.id + '" target="_blank" rel="noopener">📖 ' + tx({uk:'Детальніше в посібнику', pl:'Więcej w poradniku', en:'More in the guide'}) + ' ↗</a></div>';
 }
 /* full guide page */
 function viewGuide(tg, id) {
