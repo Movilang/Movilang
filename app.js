@@ -901,23 +901,46 @@ function renderWritings(host) {
     var L = function (uk, pl, en) { return tx({uk:uk, pl:pl, en:en}); };
     var box = document.createElement('div'); box.className = 'box'; box.id = 'myTexts'; box.style.marginTop = '18px';
     box.innerHTML = '<h4>✍ ' + L('Мої тексти', 'Moje teksty', 'My texts') + '</h4><div class="wtexts">' + ws.map(function (w) {
-      var n = (w.issues || []).length, st = w.status === 'pending' ? '<span class="pill warn">⏳ ' + L('чекає на перевірку', 'czeka na sprawdzenie', 'waiting for check') + '</span>' : '<span class="pill ' + (n ? 'warn' : 'ok') + '">' + (n ? n + ' ' + L('помилок', 'błędów', 'mistakes') : '✓ ' + L('без помилок', 'bez błędów', 'no mistakes')) + '</span>' + (w.seen ? '' : ' <span class="pill ok">' + L('нове', 'nowe', 'new') + '</span>');
-      return '<details class="wtxt" data-id="' + esc(w.id) + '"' + (w.seen ? '' : ' data-unseen="1"') + '><summary><span>' + FLAG[w.target || 'en'] + ' · ' + fmtDate(w.created_at) + '</span><span class="muted small wsnip">' + esc(String(w.text).slice(0, 60)) + '…</span>' + st + '</summary><div class="wbody"><p class="wfull">' + esc(w.text) + '</p>' + (w.status === 'pending' ? '<p class="muted small">' + L('Ми перевіримо текст автоматично, щойно сервіс буде доступний. Сайт повідомить, коли результат буде готовий.', 'Sprawdzimy tekst automatycznie, gdy usługa będzie dostępna. Strona da znać, gdy wynik będzie gotowy.', 'We will check it automatically when the service is available. The site will notify you.') + '</p>' : '<div class="ltbox">' + ltHtml(w.text, w.issues || []) + '</div>') + '</div></details>';
+      var n = w.issues && w.issues.ai ? (w.issues.errors || []).length : (w.issues || []).length, st = w.status === 'pending' ? '<span class="pill warn">⏳ ' + L('чекає на перевірку', 'czeka na sprawdzenie', 'waiting for check') + '</span>' : '<span class="pill ' + (n ? 'warn' : 'ok') + '">' + (n ? n + ' ' + L('помилок', 'błędów', 'mistakes') : '✓ ' + L('без помилок', 'bez błędów', 'no mistakes')) + '</span>' + (w.seen ? '' : ' <span class="pill ok">' + L('нове', 'nowe', 'new') + '</span>');
+      return '<details class="wtxt" data-id="' + esc(w.id) + '"' + (w.seen ? '' : ' data-unseen="1"') + '><summary><span>' + FLAG[w.target || 'en'] + ' · ' + fmtDate(w.created_at) + '</span><span class="muted small wsnip">' + esc(String(w.text).slice(0, 60)) + '…</span>' + st + '</summary><div class="wbody"><p class="wfull">' + esc(w.text) + '</p>' + (w.status === 'pending' ? '<p class="muted small">' + L('Ми перевіримо текст автоматично, щойно сервіс буде доступний. Сайт повідомить, коли результат буде готовий.', 'Sprawdzimy tekst automatycznie, gdy usługa będzie dostępna. Strona da znać, gdy wynik będzie gotowy.', 'We will check it automatically when the service is available. The site will notify you.') + '</p>' : '<div class="ltbox">' + issuesHtml(w.text, w.issues) + '</div>') + '</div></details>';
     }).join('') + '</div>';
     host.appendChild(box);
     box.querySelectorAll('details[data-unseen]').forEach(function (d) { d.addEventListener('toggle', function () { if (d.open && d.dataset.unseen) { delete d.dataset.unseen; API.updateWriting(+d.dataset.id || d.dataset.id, {seen:true}).catch(function () {}); } }); });
     if (location.hash.indexOf('texts') > -1) box.scrollIntoView({behavior:'smooth'});
   }).catch(function () {});
 }
+function aiCheck(text, task, tg) {
+  var C = window.MOVILANG_CONFIG || {};
+  if (!C.SUPABASE_URL || !C.SUPABASE_ANON_KEY) return Promise.reject(new Error('demo'));
+  return fetch(C.SUPABASE_URL + '/functions/v1/ai-check', {method:'POST', headers:{'Content-Type':'application/json', apikey:C.SUPABASE_ANON_KEY, Authorization:'Bearer ' + C.SUPABASE_ANON_KEY}, body:JSON.stringify({text:text, task:task || '', target:tg, support:LANG, level:'B1'})})
+    .then(function (r) { return r.json().then(function (j) { if (!r.ok || j.error) throw new Error(j.error || 'ai'); return j; }); });
+}
+function smartCheck(text, task, tg) {
+  tg = tg || TARGET;
+  return aiCheck(text, task, tg).then(function (o) {
+    var iss = {ai:1, score:o.score, lang_ok:o.lang_ok, task_done:o.task_done, comment:o.comment, errors:o.errors || []};
+    return {issues:iss, score:o.score, wrongLang:!o.lang_ok, pass:!!(o.lang_ok && o.task_done && o.score >= 60)};
+  }).catch(function () {
+    var keep = TARGET; TARGET = tg; var p = ltCheck(text); TARGET = keep;
+    return p.then(function (ms) { return {issues:ms.slice(0, 30).map(ltSlim), score:null, wrongLang:!!ms.wrongLang, pass:!ms.wrongLang && ms.length <= 2}; });
+  });
+}
+function aiHtml(o) {
+  var L = function (uk, pl, en) { return tx({uk:uk, pl:pl, en:en}); };
+  var sc = +o.score || 0, col = sc >= 80 ? 'ok' : sc >= 60 ? 'warn' : 'bad';
+  return '<div class="aihead"><span class="aiscore ' + col + '">' + sc + '<small>/100</small></span><div><b>🤖 ' + L('Оцінка ШІ-вчителя', 'Ocena nauczyciela AI', 'AI teacher feedback') + '</b><div class="muted small">' + (o.lang_ok ? '✓ ' + L('правильна мова', 'właściwy język', 'right language') : '⚠ ' + L('не та мова', 'zły język', 'wrong language')) + ' · ' + (o.task_done ? '✓ ' + L('завдання виконано', 'zadanie wykonane', 'task done') : '⚠ ' + L('завдання виконано не повністю', 'zadanie wykonane częściowo', 'task not fully done')) + '</div></div></div>' +
+    (o.comment ? '<p class="aicomment">' + esc(o.comment) + '</p>' : '') +
+    ((o.errors || []).length ? '<ol>' + o.errors.map(function (e) { return '<li><span class="ltbad">' + esc(e.wrong) + '</span> → <span class="ltgood">' + esc(e.fix) + '</span><br><span class="muted small">' + esc(e.why) + '</span></li>'; }).join('') + '</ol>' : '<b>✓ ' + L('Помилок не знайдено.', 'Nie znaleziono błędów.', 'No mistakes found.') + '</b>') +
+    '<p class="muted small" style="margin-top:8px">' + L('Оцінку зробив ШІ — він може помилятися.', 'Ocenę wystawiło AI — może się mylić.', 'Graded by AI — it can make mistakes.') + '</p>';
+}
+function issuesHtml(text, iss) { return iss && iss.ai ? aiHtml(iss) : ltHtml(text, iss || []); }
 var PW_BUSY = false;
 function processPendingWritings() {
   if (!USER || PW_BUSY) return; PW_BUSY = true;
   API.myWritings().then(function (ws) {
     var pend = ws.filter(function (w) { return w.status === 'pending'; }).slice(0, 3), okN = 0;
     return pend.reduce(function (pr, w) { return pr.then(function () {
-      var keep = TARGET; TARGET = w.target || TARGET;
-      var p = ltCheck(w.text); TARGET = keep;
-      return p.then(function (ms) { okN++; return API.updateWriting(w.id, {status:'checked', issues:ms.slice(0, 30).map(ltSlim), checked_at:new Date().toISOString(), seen:false}); }).catch(function () {});
+      return smartCheck(w.text, w.task, w.target || TARGET).then(function (r) { okN++; return API.updateWriting(w.id, {status:'checked', issues:r.issues, score:r.score, checked_at:new Date().toISOString(), seen:false}); }).catch(function () {});
     }); }, Promise.resolve()).then(function () { if (okN) { if (API.clearCache) API.clearCache(); toast('✓ ' + tx({uk:'Твій текст перевірено! Результат — у Кабінет → Мої тексти.', pl:'Twój tekst został sprawdzony! Wynik w Konto → Moje teksty.', en:'Your text has been checked! See Account → My texts.'})); } });
   }).catch(function () {}).then(function () { PW_BUSY = false; });
 }
@@ -1053,16 +1076,19 @@ function runPlayer(container, lesson, onFinish, ctxLs) {
     if (ta) { var minW = +(tk.answer || 40) || 40; ta.oninput = function () { card.querySelector('#wc').textContent = ta.value.trim().split(/\s+/).filter(Boolean).length + ' / ' + minW + ' ' + t('слів'); };
       card.querySelector('#tsubmit').onclick = function () { var n = ta.value.trim().split(/\s+/).filter(Boolean).length; if (n < minW) { var fb = card.querySelector('#tfb'); fb.className = 'tfb err'; fb.textContent = t('Напиши щонайменше ') + minW + ' ' + t('слів') + ' (' + n + ').'; return; } finalText = ta.value.trim(); ta.disabled = true; var sb0 = card.querySelector('#tsubmit'); sb0.disabled = true; sb0.textContent = '⏳ ' + tx({uk:'Перевіряю текст…', pl:'Sprawdzam tekst…', en:'Checking your text…'});
         var fin0 = function () { sb0.textContent = '✓ ' + tx({uk:'Збережено', pl:'Zapisano', en:'Saved'}); };
-        var showIssues = function (ms) { var box = document.createElement('div'); box.className = 'ltbox'; box.innerHTML = ltHtml(finalText, ms); ta.insertAdjacentElement('afterend', box); };
-        ltCheck(finalText).then(function (ms) {
-          fin0(); showIssues(ms); if (ms.wrongLang) { if (USER) API.saveWriting({lesson_id:lesson.id || null, target:TARGET, text:finalText, status:'checked', issues:ms.map(ltSlim), checked_at:new Date().toISOString(), seen:true}).catch(function () {}); done(false, ms[0].msg + ' ' + tx({uk:'Спробуй ще раз, пройшовши урок повторно.', pl:'Spróbuj ponownie, przechodząc lekcję jeszcze raz.', en:'Try again by retaking the lesson.'})); return; }
-          if (USER) API.saveWriting({lesson_id:lesson.id || null, target:TARGET, text:finalText, status:'checked', issues:ms.slice(0, 30).map(ltSlim), checked_at:new Date().toISOString(), seen:true}).catch(function () {});
-          done(ms.length <= 2, (ms.length ? tx({uk:'Текст збережено. Переглянь виправлення нижче. ', pl:'Tekst zapisany. Przejrzyj poprawki poniżej. ', en:'Text saved. Review the corrections below. '}) : t('Відповідь збережено! ')) + (lf(tk, 'tip') || ''));
+        var taskQ = String(lf(tk, 'q') || tk.q || '').replace(/<[^>]+>/g, '');
+        var base = {lesson_id:lesson.id || null, target:TARGET, support:LANG, task:taskQ, text:finalText};
+        sb0.textContent = '⏳ ' + tx({uk:'Вчитель-ШІ перевіряє…', pl:'Nauczyciel AI sprawdza…', en:'AI teacher is checking…'});
+        smartCheck(finalText, taskQ, TARGET).then(function (r) {
+          fin0(); var box = document.createElement('div'); box.className = 'ltbox'; box.innerHTML = issuesHtml(finalText, r.issues); ta.insertAdjacentElement('afterend', box);
+          if (USER) API.saveWriting(Object.assign({}, base, {status:'checked', issues:r.issues, score:r.score, checked_at:new Date().toISOString(), seen:true})).catch(function () {});
+          var msg = r.wrongLang ? tx({uk:'Текст написано не тією мовою. ', pl:'Tekst jest w innym języku. ', en:'Wrong language. '}) : r.pass ? t('Відповідь збережено! ') : tx({uk:'Текст збережено. Переглянь виправлення вище. ', pl:'Tekst zapisany. Przejrzyj poprawki powyżej. ', en:'Text saved. Review the corrections above. '});
+          done(!!r.pass, msg + (lf(tk, 'tip') || ''));
         }).catch(function () {
           fin0(); var wait = document.createElement('div'); wait.className = 'ltbox ltwait';
           wait.innerHTML = '<b>⏳ ' + tx({uk:'Перевірку тексту відкладено', pl:'Sprawdzenie tekstu odłożone', en:'Text check postponed'}) + '</b><p>' + (USER ? tx({uk:'Сервіс перевірки зараз перевантажений. Твій текст збережено — ми перевіримо його автоматично, щойно сервіс звільниться. Результат побачиш у <a href="#/cabinet">Кабінет → Мої тексти</a>, а коли він буде готовий, сайт тебе повідомить.', pl:'Usługa sprawdzania jest teraz przeciążona. Twój tekst jest zapisany — sprawdzimy go automatycznie, gdy usługa będzie dostępna. Wynik zobaczysz w <a href="#/cabinet">Konto → Moje teksty</a>, a strona da ci znać, gdy będzie gotowy.', en:'The checking service is busy right now. Your text is saved — we will check it automatically as soon as it is available. You will find the result in <a href="#/cabinet">Account → My texts</a>, and the site will let you know when it is ready.'}) : tx({uk:'Сервіс перевірки зараз перевантажений. Створи кабінет, щоб зберігати тексти й отримувати перевірку пізніше.', pl:'Usługa sprawdzania jest teraz przeciążona. Załóż konto, aby zapisywać teksty i otrzymać sprawdzenie później.', en:'The checking service is busy. Create an account to save texts and get them checked later.'})) + '</p>';
           ta.insertAdjacentElement('afterend', wait);
-          if (USER) API.saveWriting({lesson_id:lesson.id || null, target:TARGET, text:finalText, status:'pending'}).then(function () { setTimeout(processPendingWritings, 60000); }).catch(function () {});
+          if (USER) API.saveWriting(Object.assign({}, base, {status:'pending'})).then(function () { setTimeout(processPendingWritings, 60000); }).catch(function () {});
           done(true, t('Відповідь збережено! ') + (lf(tk, 'tip') || ''));
         }); }; }
   }

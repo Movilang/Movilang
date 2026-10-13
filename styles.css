@@ -821,3 +821,8 @@ body.has-amb #app,body.has-amb footer{position:relative;z-index:1}
 .wsnip{flex:1;min-width:120px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
 .wfull{white-space:pre-wrap;margin:10px 0;font-size:14px}
 .ltwait a{color:var(--neon,var(--red))}
+.aihead{display:flex;gap:14px;align-items:center;margin-bottom:8px}
+.aiscore{font:700 28px var(--f-display,inherit);min-width:72px;text-align:center;padding:6px 10px;border-radius:12px;border:2px solid currentColor}
+.aiscore small{font-size:12px;opacity:.7}
+.aiscore.ok{color:var(--ok)}.aiscore.warn{color:var(--gold,#e8b04a)}.aiscore.bad{color:var(--err,#e0705f)}
+.aicomment{margin:6px 0 8px;font-size:15px}
