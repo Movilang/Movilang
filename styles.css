@@ -714,3 +714,51 @@ body.has-amb #app,body.has-amb footer{position:relative;z-index:1}
 @keyframes flap{from{transform:scaleY(1)}to{transform:scaleY(.45)}}
 @media (prefers-reduced-motion:reduce){.amb *,.illu-svg *{animation:none!important}}
 @media (max-width:760px){.cdl:nth-child(n+8){display:none}}
+/* ===== grammar guide & rule helper ===== */
+.rulew{margin-top:4px}
+.rulebtn.on{border-style:solid;border-color:var(--gold)}
+.rulebox{margin-top:10px;border:1px solid var(--line);border-left:3px solid var(--gold);border-radius:12px;padding:14px 16px;background:var(--panel);font-size:14px;line-height:1.55;animation:gIn .2s ease}
+@keyframes gIn{from{opacity:0;transform:translateY(-4px)}to{opacity:1;transform:none}}
+.g-chips{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:10px}
+.g-chip{font:600 12px var(--f-body);color:var(--muted);background:transparent;border:1px solid var(--line);border-radius:999px;padding:5px 11px;cursor:pointer}
+.g-chip.on,.g-chip:hover{color:var(--fg);border-color:var(--gold)}
+.g-mini .g-mt{display:block;font-size:15px;margin-bottom:4px;color:var(--gold)}
+.g-mini p{margin:0 0 10px;color:var(--fg)}
+.g-more{display:inline-block;margin-top:8px;font-size:13px;color:var(--neon);text-decoration:none}
+.g-more:hover{text-decoration:underline}
+.g-tw{overflow-x:auto;margin:8px 0 12px;border:1px solid var(--line);border-radius:10px}
+.g-tb{border-collapse:collapse;width:100%;font-size:14px;min-width:280px}
+.g-tb th,.g-tb td{padding:8px 12px;text-align:left;border-bottom:1px solid var(--line);vertical-align:top}
+.g-tb thead th{background:color-mix(in srgb,var(--gold) 12%,transparent);font-size:12px;text-transform:uppercase;letter-spacing:.04em;color:var(--muted)}
+.g-tb tbody th{font-weight:600;color:var(--muted);white-space:nowrap}
+.g-tb tr:last-child th,.g-tb tr:last-child td{border-bottom:0}
+.g-ex{list-style:none;padding:0;margin:6px 0;display:grid;gap:6px}
+.g-ex li{display:flex;gap:8px;align-items:center;padding:8px 12px;border-radius:10px;background:color-mix(in srgb,var(--neon) 6%,transparent);font-style:italic}
+.g-ex li span{flex:1}
+.g-ex .spk{flex:0 0 auto}
+.g-top{display:flex;flex-wrap:wrap;gap:12px;align-items:center;justify-content:space-between}
+.g-tabs{display:flex;gap:6px;flex-wrap:wrap}
+.g-tab{padding:8px 14px;border:1px solid var(--line);border-radius:999px;font-size:14px;color:var(--muted);text-decoration:none}
+.g-tab.on{background:var(--red);border-color:var(--red);color:var(--btnfg,#fff)}
+.g-q{max-width:280px;width:100%}
+.g-wrap{display:grid;grid-template-columns:260px minmax(0,1fr);gap:28px;align-items:start}
+.g-toc{position:sticky;top:84px;max-height:calc(100vh - 110px);overflow:auto;border:1px solid var(--line);border-radius:14px;padding:12px;background:var(--bg2)}
+.g-grp{font-size:11px;text-transform:uppercase;letter-spacing:.08em;color:var(--dim);margin:12px 8px 4px}
+.g-grp:first-child{margin-top:2px}
+.g-li{display:block;padding:7px 10px;border-radius:8px;font-size:14px;color:var(--fg);text-decoration:none;line-height:1.35}
+.g-li:hover{background:var(--panel)}
+.g-li.on{background:color-mix(in srgb,var(--red) 18%,transparent);color:var(--fg);font-weight:600}
+.g-art{border:1px solid var(--line);border-radius:18px;padding:clamp(18px,3vw,32px);background:var(--bg2);min-width:0}
+.g-h{font-family:var(--f-display);font-size:clamp(22px,3vw,30px);line-height:1.2;margin:6px 0 10px}
+.g-sum{font-size:17px;line-height:1.6;padding:12px 16px;border-left:3px solid var(--gold);background:var(--panel);border-radius:0 10px 10px 0;margin:0 0 14px}
+.g-art h4{margin:20px 0 6px;font-size:13px;text-transform:uppercase;letter-spacing:.06em;color:var(--muted)}
+.g-pts{margin:0 0 6px;padding-left:20px;display:grid;gap:6px}
+.g-mis{list-style:none;padding:0;margin:0;display:grid;gap:8px}
+.g-mis li{display:grid;gap:2px;padding:8px 12px;border-radius:10px;background:var(--panel)}
+.g-mis s{color:var(--red);text-decoration-thickness:1px}
+.g-mis b{color:var(--ok);font-weight:600}
+.g-nav{display:flex;justify-content:space-between;gap:10px;margin-top:24px;flex-wrap:wrap}
+@media (max-width:860px){.g-wrap{grid-template-columns:1fr}.g-toc{position:static;max-height:260px}.g-q{max-width:none}}
+@media print{.g-toc,.g-top,.g-nav,nav.top,.mnav{display:none!important}.g-wrap{display:block}}
+.g-selw{display:flex;align-items:center;gap:8px;flex-wrap:wrap;margin-bottom:10px}
+.g-sel{flex:1;min-width:0;max-width:100%;padding:6px 10px;font-size:13px}
