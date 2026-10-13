@@ -305,6 +305,7 @@ function DemoBackend() {
     addLang: function (cid, tg, hidden) { var u = me(); var db = load(); db.elangs = db.elangs || []; var e = db.elangs.filter(function (e) { return e.user_id === u.id && e.course_id === cid && e.target === tg; })[0]; if (e) e.hidden = !!hidden; else db.elangs.push({user_id:u.id, course_id:cid, target:tg, hidden:!!hidden}); save(); return P(true); },
     saveTimes: function (lessonId, score, tm) { var u = me(); if (!u) return P(false); var db = load(); db.times = db.times || []; db.times.push({user_id:u.id, lesson_id:lessonId, target:TARGET, score:score, total_sec:tm.total, per_task:tm.per, created_at:new Date().toISOString()}); save(); return P(true); },
     adminAnalytics: function () { needAdmin(); var db = load(); return P({courses:db.courses, lessons:db.lessons, progress:db.progress.filter(function (x) { return (x.target || 'en') === 'en'; }), progress_lang:db.progress.filter(function (x) { return (x.target || 'en') !== 'en'; }), times:db.times || [], elangs:db.elangs || []}); },
+    adminUser: function (uid) { needAdmin(); var db = load(); var u = db.users.filter(function (x) { return x.id === uid; })[0] || {}; var pr = db.progress.filter(function (p) { return p.user_id === uid; }); return P({user:{id:u.id, email:u.email, name:u.name, role:u.role, created_at:u.created_at}, times:(db.times || []).filter(function (x) { return x.user_id === uid; }), progress:pr.filter(function (p) { return (p.target || 'en') === 'en'; }), progress_lang:pr.filter(function (p) { return (p.target || 'en') !== 'en'; }), lessons:db.lessons, courses:db.courses}); },
     adminTimes: function () { needAdmin(); var db = load(); return P({times:(db.times || []).slice().reverse(), users:db.users, lessons:db.lessons}); },
     adminSetProgress: function (lessonIds, tg, score) { var u = me(); var db = load(); lessonIds.forEach(function (lid) { var ex = db.progress.filter(function (p) { return p.user_id === u.id && p.lesson_id === lid && (p.target || 'en') === tg; })[0]; if (ex) { ex.score = score; ex.retry_score = null; } else db.progress.push({user_id:u.id, lesson_id:lid, target:tg, score:score, completed_at:new Date().toISOString()}); }); save(); return P(true); },
     adminResetOwn: function (lessonIds, tg) { var u = me(); var db = load(); db.progress = db.progress.filter(function (p) { return !(p.user_id === u.id && (p.target || 'en') === tg && lessonIds.indexOf(p.lesson_id) > -1); }); save(); return P(true); },
@@ -386,6 +387,7 @@ function SupabaseBackend(url, key) {
     addLang: function (cid, tg, hidden) { return sb.from('enrollment_langs').upsert({user_id:cachedUser.id, course_id:cid, target:tg, hidden:!!hidden}).then(ok); },
     saveTimes: function (lessonId, score, tm) { if (!cachedUser) return Promise.resolve(false); return sb.from('task_times').insert({user_id:cachedUser.id, lesson_id:lessonId, target:TARGET, score:score, total_sec:tm.total, per_task:tm.per}).then(ok); },
     adminAnalytics: function () { return Promise.all([sb.from('courses').select('*'), sb.from('lessons').select('*').order('num'), sb.from('progress').select('*'), sb.from('progress_lang').select('*'), sb.from('task_times').select('*').limit(5000), sb.from('enrollment_langs').select('*')]).then(function (r) { r.forEach(ok); return {courses:r[0].data, lessons:r[1].data, progress:r[2].data, progress_lang:r[3].data, times:r[4].data, elangs:r[5].data}; }); },
+    adminUser: function (uid) { return Promise.all([sb.from('profiles').select('*').eq('id', uid).maybeSingle(), sb.from('task_times').select('*').eq('user_id', uid).order('created_at', {ascending:false}).limit(2000), sb.from('progress').select('*').eq('user_id', uid), sb.from('progress_lang').select('*').eq('user_id', uid), sb.from('lessons').select('id,num,title,title_pl,title_en,course_id'), sb.from('courses').select('id,title,title_pl,title_en')]).then(function (r) { r.forEach(ok); return {user:r[0].data, times:r[1].data || [], progress:r[2].data || [], progress_lang:r[3].data || [], lessons:r[4].data || [], courses:r[5].data || []}; }); },
     adminTimes: function () { return Promise.all([sb.from('task_times').select('*').order('created_at', {ascending:false}).limit(300), sb.from('profiles').select('id,name,email'), sb.from('lessons').select('id,num,title,title_pl,title_en,course_id')]).then(function (r) { r.forEach(ok); return {times:r[0].data, users:r[1].data, lessons:r[2].data}; }); },
     adminSetProgress: function (lessonIds, tg, score) { var uid = cachedUser.id, now = new Date().toISOString(); var rows = lessonIds.map(function (lid) { var x = {user_id:uid, lesson_id:lid, score:score, retry_score:null, completed_at:now}; if (tg !== 'en') x.target = tg; return x; }); return sb.from(tg === 'en' ? 'progress' : 'progress_lang').upsert(rows).then(ok); },
     adminResetOwn: function (lessonIds, tg) { var uid = cachedUser.id; return (tg === 'en' ? sb.from('progress').delete().eq('user_id', uid).in('lesson_id', lessonIds) : sb.from('progress_lang').delete().eq('user_id', uid).eq('target', tg).in('lesson_id', lessonIds)).then(ok); },
@@ -766,7 +768,7 @@ var TASK_INS = {vocabulary:'Обери правильне слово', grammar:'
 function shuffle(a) { a = a.slice(); for (var i = a.length - 1; i > 0; i--) { var j = Math.floor(Math.random() * (i + 1)); var x = a[i]; a[i] = a[j]; a[j] = x; } return a; }
 function norm(s) { return String(s || '').toLowerCase().replace(/[’']/g, "'").replace(/[^\p{L}\p{N}' ]+/gu, ' ').replace(/\s+/g, ' ').trim(); }
 function runPlayer(container, lesson, onFinish, ctxLs) {
-  var tStart = {}, durs = {}, tasks = lessonTasks(lesson) || [], cur = 0, res = [], finalText = '', snaps = [], maxReached = 0;
+  var hints = {}, tStart = {}, durs = {}, tasks = lessonTasks(lesson) || [], cur = 0, res = [], finalText = '', snaps = [], maxReached = 0;
   var FREE = isAdm() && ADMIN_MODE; if (FREE) maxReached = tasks.length - 1;
   var scored = tasks.filter(function (x) { return !isInfo(x.type); }).length;
   function numOf(i) { var n = 0; for (var j = 0; j <= i; j++) if (!isInfo(tasks[j].type)) n++; return n; }
@@ -910,9 +912,10 @@ function runPlayer(container, lesson, onFinish, ctxLs) {
     } else { btn.disabled = true; out.innerHTML = '<span class="hint">' + t('Твій браузер не підтримує мікрофон. Повтори вголос і натисни «Пропустити».') + '</span>'; }
   }
   function bindSay(tk) { var sb = card.querySelector('#tsay'); if (sb) sb.onclick = function () { say(tk.say); };
-    var rb = card.querySelector('#ruleBtn'); if (rb) { rb.disabled = false; rb.onclick = function () { var bx = card.querySelector('#ruleBox'); if (!bx.hidden) { bx.hidden = true; rb.classList.remove('on'); return; } bx.hidden = false; rb.classList.add('on'); bx.innerHTML = '<span class="muted small">…</span>'; loadGuide(TARGET).then(function () { var info = gTaskTopics(tk, lesson, ctxLs || [], TARGET); if (!info) { bx.innerHTML = '<span class="muted small">' + tx({uk:'Для цього завдання окремого правила немає — орієнтуйся на сцену і слова.', pl:'Do tego zadania nie ma osobnej zasady — kieruj się sceną i słowami.', en:'There is no separate rule for this task: use the scene and the words.'}) + '</span>'; return; } gRulePanel(bx, info, TARGET); }).catch(function () { bx.textContent = tx({uk:'Не вдалося завантажити правило.', pl:'Nie udało się wczytać zasady.', en:'Could not load the rule.'}); }); }; }
-    var qb = card.querySelector('#qtrBtn'); if (qb) qb.onclick = function () { var tt = card.querySelector('#qtrText'); tt.hidden = !tt.hidden; qb.classList.toggle('on', !tt.hidden); };
-    card.querySelectorAll('.spk').forEach(function (s) { s.addEventListener('click', function (e) { e.stopPropagation(); e.preventDefault(); say(s.dataset.say); }, true); }); }
+    var rb = card.querySelector('#ruleBtn'); if (rb) { rb.disabled = false; rb.onclick = function () { var bx = card.querySelector('#ruleBox'); if (!bx.hidden) { bx.hidden = true; rb.classList.remove('on'); return; } bx.hidden = false; rb.classList.add('on'); hintMark('rule'); bx.innerHTML = '<span class="muted small">…</span>'; loadGuide(TARGET).then(function () { var info = gTaskTopics(tk, lesson, ctxLs || [], TARGET); if (!info) { bx.innerHTML = '<span class="muted small">' + tx({uk:'Для цього завдання окремого правила немає — орієнтуйся на сцену і слова.', pl:'Do tego zadania nie ma osobnej zasady — kieruj się sceną i słowami.', en:'There is no separate rule for this task: use the scene and the words.'}) + '</span>'; return; } gRulePanel(bx, info, TARGET); }).catch(function () { bx.textContent = tx({uk:'Не вдалося завантажити правило.', pl:'Nie udało się wczytać zasady.', en:'Could not load the rule.'}); }); }; }
+    var qb = card.querySelector('#qtrBtn'); if (qb) qb.onclick = function () { var tt = card.querySelector('#qtrText'); tt.hidden = !tt.hidden; if (!tt.hidden) hintMark('tr'); qb.classList.toggle('on', !tt.hidden); };
+    card.querySelectorAll('.spk').forEach(function (s) { s.addEventListener('click', function (e) { e.stopPropagation(); e.preventDefault(); hintMark('say'); say(s.dataset.say); }, true); }); }
+  function hintMark(k) { if (snaps[cur]) return; var h = hints[cur] = hints[cur] || {}; h[k] = (h[k] || 0) + 1; }
   function done(ok, text) {
     durs[cur] = Math.max(1, Math.round((Date.now() - (tStart[cur] || Date.now())) / 1000));
     res[cur] = ok; var fb = card.querySelector('#tfb'); fb.className = 'tfb ' + (ok ? 'ok' : 'err'); fb.textContent = text;
@@ -932,12 +935,12 @@ function runPlayer(container, lesson, onFinish, ctxLs) {
   function next() { if (cur < tasks.length - 1) { cur++; render(); } else if (res.filter(function (x, i) { return !isInfo(tasks[i].type) && x == null; }).length && firstOpen() > -1) { cur = firstOpen(); render(); toast(t('Є завдання без відповіді'), 'info'); } else finish(); }
   function firstOpen() { for (var i = 0; i < tasks.length; i++) if (!isInfo(tasks[i].type) && res[i] == null) return i; return -1; }
   function finish() {
-    var per = tasks.map(function (tk, i) { return {n:i, type:tk.type, sec:durs[i] || 0, ok:res[i] == null ? null : !!res[i]}; }); LAST_TIMES = {total:per.reduce(function (a, x) { return a + x.sec; }, 0), per:per};
+    var per = tasks.map(function (tk, i) { var o = {n:i, type:tk.type, sec:durs[i] || 0, ok:res[i] == null ? null : !!res[i]}; if (hints[i]) o.h = hints[i]; return o; }); LAST_TIMES = {total:per.reduce(function (a, x) { return a + x.sec; }, 0), per:per};
     var sc = res.filter(function (x) { return x === true; }).length, pct = scored ? Math.round(sc / scored * 100) : 0; cur = tasks.length; renderSide();
     card.innerHTML = '<div class="tres"><span class="ttag">' + t('РЕЗУЛЬТАТ') + '</span><div class="big">' + sc + ' / ' + scored + '</div><p class="lead" style="text-align:center" id="tresText">' + pct + '%</p><div id="tresExtra" style="width:100%"></div><div class="row" style="justify-content:center" id="tresBtns"></div></div>';
-    onFinish(pct, finalText, card.querySelector('#tresText'), card.querySelector('#tresBtns'), function () { cur = 0; res = []; snaps = []; maxReached = FREE ? tasks.length - 1 : 0; tStart = {}; durs = {}; render(); }, card.querySelector('#tresExtra'));
+    onFinish(pct, finalText, card.querySelector('#tresText'), card.querySelector('#tresBtns'), function () { cur = 0; res = []; snaps = []; hints = {}; maxReached = FREE ? tasks.length - 1 : 0; tStart = {}; durs = {}; render(); }, card.querySelector('#tresExtra'));
   }
-  if (tasks.some(function (x) { return x.type === 'drill'; }) || gIsReview(lesson)) loadGuide(TARGET).catch(function () {});
+  loadGuide(TARGET).catch(function () {});
   if (!tasks.length) { card.innerHTML = t('<div class="empty">У цьому уроці ще немає завдань.</div>'); return; }
   render();
 }
@@ -946,14 +949,14 @@ function runPlayer(container, lesson, onFinish, ctxLs) {
 var GUIDE_P = {};
 function loadGuide(tg) {
   if (window.GUIDE && window.GUIDE[tg]) return Promise.resolve(window.GUIDE[tg]);
-  if (!GUIDE_P[tg]) GUIDE_P[tg] = new Promise(function (res, rej) { var s = document.createElement('script'); s.src = 'guide-' + tg + '.js?v=35'; s.onload = function () { res(window.GUIDE[tg]); }; s.onerror = function () { delete GUIDE_P[tg]; rej(new Error('guide')); }; document.head.appendChild(s); });
+  if (!GUIDE_P[tg]) GUIDE_P[tg] = new Promise(function (res, rej) { var s = document.createElement('script'); s.src = 'guide-' + tg + '.js?v=36'; s.onload = function () { res(window.GUIDE[tg]); }; s.onerror = function () { delete GUIDE_P[tg]; rej(new Error('guide')); }; document.head.appendChild(s); });
   return GUIDE_P[tg];
 }
 function gTxt(o) { return o == null ? '' : typeof o === 'string' ? o : (o[LANG] || o.uk || ''); }
 function gTopic(tg, id) { return ((window.GUIDE || {})[tg] || []).filter(function (x) { return x.id === id; })[0]; }
 function gMatch(tg, text) { if (!text) return null; var o = (window.GUIDE || {})[tg + '_order'] || []; for (var i = 0; i < o.length; i++) { var tp = gTopic(tg, o[i]); if (tp && tp.k.test(text)) return tp; } return null; }
 function gLessonTitle(l, tg) { if (!l) return ''; if (tg === 'en') return l.grammar || ''; var v = l.variants || {}; return v[tg + '_grammar'] || ''; }
-function gRuleTask(tk, l) { if (isInfo(tk.type) || /^(final|speaking|vocabulary|match)$/.test(tk.type)) return false; if (/СЛОВНИК|VOCAB|SŁOWN/i.test(tk.label || '')) return false; return tk.type === 'drill' || gIsReview(l); }
+function gRuleTask(tk, l) { if (isInfo(tk.type) || /^(final|speaking|vocabulary|match)$/.test(tk.type)) return false; if (/СЛОВНИК|VOCAB|SŁOWN/i.test(tk.label || '')) return false; return gIsReview(l) || /^(grammar|type|order|drill|quest|tf)$/.test(tk.type); }
 function gIsReview(l) { return /^(Повторення|Усе|Уся)/.test(l.grammar || '') || !!(l.variants && l.variants.cert); }
 function gTable(tb) {
   if (!tb) return '';
@@ -970,7 +973,7 @@ function gTaskTopics(tk, lesson, ls, tg) {
   var cands = [], seen = {};
   function add(tp) { if (tp && !seen[tp.id]) { seen[tp.id] = 1; cands.push(tp); } }
   var review = gIsReview(lesson), pick = null;
-  if (!review) { if (tk.type !== 'drill') return null; add(gMatch(tg, gLessonTitle(lesson, tg))); return cands.length ? {list:cands, pick:cands[0]} : null; }
+  if (!review) { add(gMatch(tg, gLessonTitle(lesson, tg))); return cands.length ? {list:cands, pick:cands[0]} : null; }
   var idx = ls.map(function (x) { return x.id; }).indexOf(lesson.id), from = 0;
   if (!(lesson.variants && lesson.variants.cert)) for (var i = idx - 1; i >= 0; i--) if (gIsReview(ls[i])) { from = i + 1; break; }
   var byNum = {}; ls.forEach(function (x) { byNum[x.num] = x; });
@@ -1106,7 +1109,8 @@ function adminTimes(body) {
     var U = {}, L = {}; d.users.forEach(function (u) { U[u.id] = u; }); d.lessons.forEach(function (l) { L[l.id] = l; });
     if (!d.times.length) { body.innerHTML = '<div class="empty">' + tx({uk:'Ще немає даних. Час записується після кожного проходження уроку.', pl:'Brak danych. Czas zapisuje się po każdym przejściu lekcji.', en:'No data yet. Time is saved after each lesson attempt.'}) + '</div>'; return; }
     body.innerHTML = '<p class="hint" style="margin-bottom:12px">🔒 ' + tx({uk:'Бачить лише адміністратор.', pl:'Widzi tylko administrator.', en:'Visible to the admin only.'}) + '</p><div class="ttimes">' + d.times.map(function (x, i) { var u = U[x.user_id] || {}, l = L[x.lesson_id] || {};
-      return '<details class="tt"><summary><span><b>' + esc(u.name || u.email || '?') + '</b> <span class="muted small">' + esc(u.email || '') + '</span></span><span>' + (l.num ? l.num + '. ' : '') + esc(tr(l, 'title') || '') + '</span><span class="badge">' + FLAG[x.target || 'en'] + '</span><span>' + (x.score != null ? x.score + '%' : '') + '</span><b>' + fmtSec(x.total_sec) + '</b><span class="muted small">' + fmtDate(x.created_at) + '</span></summary><div class="ttper">' + (x.per_task || []).filter(function (p) { return p.type !== 'intro'; }).map(function (p, k) { return '<div><span>' + (k + 1) + '. ' + esc(ttName(p.type)) + '</span><span>' + (p.ok === true ? '✓' : p.ok === false ? '✗' : '–') + '</span><b>' + fmtSec(p.sec) + '</b></div>'; }).join('') + '</div></details>'; }).join('') + '</div>';
+      return '<details class="tt"><summary><span><b class="au-link" role="button" data-uid="' + esc(x.user_id) + '">' + esc(u.name || u.email || '?') + ' 📊</b> <span class="muted small">' + esc(u.email || '') + '</span></span><span>' + (l.num ? l.num + '. ' : '') + esc(tr(l, 'title') || '') + '</span><span class="badge">' + FLAG[x.target || 'en'] + '</span><span>' + (x.score != null ? x.score + '%' : '') + '</span><b>' + fmtSec(x.total_sec) + '</b><span class="muted small">' + fmtDate(x.created_at) + '</span></summary><div class="ttper">' + (x.per_task || []).filter(function (p) { return p.type !== 'intro'; }).map(function (p, k) { return '<div><span>' + (k + 1) + '. ' + esc(ttName(p.type)) + '</span><span>' + (p.ok === true ? '✓' : p.ok === false ? '✗' : '–') + '</span><b>' + fmtSec(p.sec) + '</b></div>'; }).join('') + '</div></details>'; }).join('') + '</div>';
+    body.querySelectorAll('[data-uid]').forEach(function (b) { b.onclick = function (e) { e.preventDefault(); ADM_UID = b.dataset.uid; adminUser(body, ADM_UID); window.scrollTo(0, 0); }; });
   });
 }
 function viewAdmin() {
@@ -1116,7 +1120,7 @@ function viewAdmin() {
   $app.innerHTML = t('<div class="page"><div class="sec-head"><div class="eyebrow">Адмін-панель</div><h2>Керування MoviLang</h2></div><div class="tabs" role="tablist">') +
     [['stats',t('Статистика')],['users',t('Користувачі')],['courses',t('Курси й уроки')],['keys',t('Ключі доступу')],['site',t('Тексти сайту')],['look',t('Вигляд і кольори')],['analytics','📊 ' + tx({uk:'Аналітика', pl:'Analityka', en:'Analytics'})],['times','⏱ ' + tx({uk:'Час', pl:'Czas', en:'Time'})]].map(function (t) { return '<button class="tab' + (adminTab === t[0] ? ' on' : '') + '" type="button" role="tab" data-t="' + t[0] + '">' + t[1] + '</button>'; }).join('') +
     t('</div><div id="adminBody"><p class="muted">Завантаження…</p></div></div>');
-  $app.querySelectorAll('.tab').forEach(function (b) { b.onclick = function () { adminTab = b.dataset.t; viewAdmin(); }; });
+  $app.querySelectorAll('.tab').forEach(function (b) { b.onclick = function () { adminTab = b.dataset.t; ADM_UID = null; viewAdmin(); }; });
   var body = document.getElementById('adminBody');
   var f = {stats:adminStats, users:adminUsers, courses:adminCourses, keys:adminKeys, site:adminSite, look:adminLook, times:adminTimes, analytics:adminAnalytics}[adminTab];
   return f(body).catch(function (e) { body.innerHTML = t('<div class="empty">Помилка: ') + esc(e.message) + '</div>'; });
@@ -1147,16 +1151,65 @@ function adminStats(body) {
   });
 }
 
+var ADM_UID = null;
+function adminUser(body, uid) {
+  var L3 = function (uk, pl, en) { return tx({uk:uk, pl:pl, en:en}); };
+  body.innerHTML = '<p class="muted">' + L3('Завантаження…', 'Ładowanie…', 'Loading…') + '</p>';
+  return API.adminUser(uid).then(function (d) {
+    var u = d.user || {}, LS = {}, CS = {}; d.lessons.forEach(function (l) { LS[l.id] = l; }); d.courses.forEach(function (c) { CS[c.id] = c; });
+    var prog = d.progress.map(function (p) { return Object.assign({target:'en'}, p); }).concat(d.progress_lang), times = d.times.slice().sort(function (a, b) { return a.created_at < b.created_at ? 1 : -1; });
+    var totalSec = times.reduce(function (a, x) { return a + (+x.total_sec || 0); }, 0);
+    var avgScore = prog.length ? Math.round(prog.reduce(function (a, p) { return a + (+p.score || 0); }, 0) / prog.length) : null;
+    var tasks = [], byType = {}, hintTasks = 0, answered = 0, okN = 0;
+    times.forEach(function (x) { (x.per_task || []).forEach(function (p) { if (isInfo(p.type) || p.type === 'intro') return; tasks.push(p); var b = byType[p.type] = byType[p.type] || {n:0, ok:0, ans:0, sec:0, h:0};
+      b.n++; b.sec += +p.sec || 0; if (p.ok != null) { b.ans++; answered++; if (p.ok) { b.ok++; okN++; } } var hh = p.h && (p.h.rule || p.h.tr || p.h.say); if (hh) { b.h++; hintTasks++; } }); });
+    var types = Object.keys(byType).map(function (k) { var b = byType[k]; return {k:k, n:b.n, acc:b.ans ? Math.round(b.ok / b.ans * 100) : null, avg:Math.round(b.sec / b.n), hp:Math.round(b.h / b.n * 100)}; }).sort(function (a, b) { return b.avg - a.avg; });
+    var withAcc = types.filter(function (x) { return x.acc != null && x.n >= 2; });
+    var best = withAcc.slice().sort(function (a, b) { return b.acc - a.acc; })[0], worst = withAcc.slice().sort(function (a, b) { return a.acc - b.acc; })[0], slow = types[0], hintMost = types.slice().sort(function (a, b) { return b.hp - a.hp; })[0];
+    var days = [], now = Date.now(); for (var i = 29; i >= 0; i--) { var dd = new Date(now - i * 86400000).toISOString().slice(0, 10); days.push({d:dd, s:times.filter(function (x) { return (x.created_at || '').slice(0, 10) === dd; }).reduce(function (a, x) { return a + (+x.total_sec || 0); }, 0)}); }
+    var maxD = Math.max.apply(null, days.map(function (x) { return x.s; }).concat([60]));
+    var hours = [0, 0, 0, 0]; times.forEach(function (x) { var h = new Date(x.created_at).getHours(); hours[h < 6 ? 3 : h < 12 ? 0 : h < 18 ? 1 : 2]++; });
+    var hourNames = [L3('ранок', 'rano', 'morning'), L3('день', 'dzień', 'afternoon'), L3('вечір', 'wieczór', 'evening'), L3('ніч', 'noc', 'night')], favH = times.length ? hourNames[hours.indexOf(Math.max.apply(null, hours))] : '—';
+    var last = [times[0] && times[0].created_at].concat(prog.map(function (p) { return p.retry_at || p.completed_at; })).filter(Boolean).sort().pop();
+    var langs = {}; prog.forEach(function (p) { langs[p.target] = 1; }); times.forEach(function (x) { langs[x.target || 'en'] = 1; });
+    var courseRows = {}; prog.forEach(function (p) { var l = LS[p.lesson_id]; if (!l) return; var key = l.course_id + '|' + p.target, r = courseRows[key] = courseRows[key] || {c:CS[l.course_id], tg:p.target, n:0, sum:0, total:d.lessons.filter(function (x) { return x.course_id === l.course_id; }).length}; r.n++; r.sum += +p.score || 0; });
+    function hIc(h) { return h ? (h.rule ? ' 📘' + (h.rule > 1 ? '×' + h.rule : '') : '') + (h.tr ? ' 🌐' : '') + (h.say ? ' 🔊' + (h.say > 1 ? '×' + h.say : '') : '') : ''; }
+    function lname(id) { var l = LS[id]; if (!l) return '?'; var c = CS[l.course_id]; return (c ? tr(c, 'title') + ' · ' : '') + l.num + '. ' + tr(l, 'title'); }
+    var ins = [];
+    if (slow) ins.push(L3('Найдовше думає над', 'Najdłużej myśli nad', 'Spends longest on') + ' <b>' + esc(ttName(slow.k)) + '</b> (' + fmtSec(slow.avg) + ')');
+    if (best) ins.push(L3('Найкраще виходить', 'Najlepiej idzie', 'Strongest at') + ' <b>' + esc(ttName(best.k)) + '</b> (' + best.acc + '%)');
+    if (worst && worst !== best) ins.push(L3('Найважче дається', 'Najtrudniej idzie', 'Weakest at') + ' <b>' + esc(ttName(worst.k)) + '</b> (' + worst.acc + '%)');
+    if (hintMost && hintMost.hp) ins.push(L3('Найчастіше бере підказки в', 'Najczęściej sięga po podpowiedzi w', 'Uses hints most in') + ' <b>' + esc(ttName(hintMost.k)) + '</b> (' + hintMost.hp + '%)');
+    ins.push(L3('Найчастіше вчиться', 'Najczęściej uczy się', 'Usually studies in the') + ': <b>' + favH + '</b>');
+    body.innerHTML = '<div class="au">' +
+      '<button class="btn btn-ghost btn-sm" type="button" id="auBack">← ' + L3('Усі користувачі', 'Wszyscy użytkownicy', 'All users') + '</button>' +
+      '<div class="au-head"><span class="ava au-ava">' + esc((u.name || u.email || '?')[0].toUpperCase()) + '</span><div><h3>' + esc(u.name || '—') + '</h3><div class="muted small">' + esc(u.email || '') + ' · ' + esc(u.role || '') + ' · ' + L3('з', 'od', 'since') + ' ' + fmtDate(u.created_at) + ' · ' + L3('остання активність', 'ostatnia aktywność', 'last active') + ': ' + fmtDate(last) + ' · ' + Object.keys(langs).map(function (l) { return FLAG[l]; }).join(' ') + '</div></div></div>' +
+      '<div class="stats"><div class="stat"><b>' + prog.length + '</b><span>' + L3('уроків пройдено', 'lekcji ukończonych', 'lessons done') + '</span></div><div class="stat"><b>' + (avgScore == null ? '—' : avgScore + '%') + '</b><span>' + L3('середній бал', 'średni wynik', 'average score') + '</span></div><div class="stat"><b>' + fmtSec(totalSec) + '</b><span>' + L3('усього часу', 'łączny czas', 'total time') + '</span></div><div class="stat"><b>' + times.length + '</b><span>' + L3('спроб уроків', 'podejść do lekcji', 'lesson attempts') + '</span></div></div>' +
+      '<div class="stats"><div class="stat"><b>' + (times.length ? fmtSec(Math.round(totalSec / times.length)) : '—') + '</b><span>' + L3('в середньому на урок', 'średnio na lekcję', 'average per lesson') + '</span></div><div class="stat"><b>' + (answered ? Math.round(okN / answered * 100) + '%' : '—') + '</b><span>' + L3('правильних відповідей', 'poprawnych odpowiedzi', 'correct answers') + '</span></div><div class="stat"><b>' + (tasks.length ? Math.round(hintTasks / tasks.length * 100) + '%' : '—') + '</b><span>' + L3('завдань з підказкою', 'zadań z podpowiedzią', 'tasks with a hint') + '</span></div><div class="stat"><b>' + tasks.length + '</b><span>' + L3('завдань розв\'язано', 'zadań rozwiązanych', 'tasks done') + '</span></div></div>' +
+      (times.length ? '<div class="box au-ins"><h4>💡 ' + L3('Коротко', 'W skrócie', 'In short') + '</h4><ul>' + ins.map(function (x) { return '<li>' + x + '</li>'; }).join('') + '</ul></div>' : '') +
+      '<div class="box"><h4>' + L3('Час навчання за 30 днів', 'Czas nauki w ostatnich 30 dniach', 'Study time, last 30 days') + '</h4><div class="week au-days">' + days.map(function (x, i) { return '<div title="' + x.d + ': ' + fmtSec(x.s) + '"><i style="height:' + Math.max(2, Math.round(x.s / maxD * 90)) + 'px"' + (i === 29 ? ' class="today"' : '') + '></i>' + (i % 5 === 4 ? x.d.slice(8) : '') + '</div>'; }).join('') + '</div></div>' +
+      (types.length ? '<div class="box"><h4>' + L3('Типи завдань', 'Typy zadań', 'Task types') + '</h4><div class="tbl-wrap"><table class="tbl"><thead><tr><th>' + L3('Тип', 'Typ', 'Type') + '</th><th>' + L3('Скільки', 'Ile', 'Count') + '</th><th>' + L3('Правильно', 'Poprawnie', 'Correct') + '</th><th>' + L3('Сер. час', 'Śr. czas', 'Avg time') + '</th><th>' + L3('З підказкою', 'Z podpowiedzią', 'With hint') + '</th></tr></thead><tbody>' + types.map(function (x) { return '<tr><td>' + esc(ttName(x.k)) + '</td><td class="num">' + x.n + '</td><td class="num">' + (x.acc == null ? '—' : '<span class="au-acc" style="--p:' + x.acc + '%">' + x.acc + '%</span>') + '</td><td class="num">' + fmtSec(x.avg) + '</td><td class="num">' + x.hp + '%</td></tr>'; }).join('') + '</tbody></table></div></div>' : '') +
+      (Object.keys(courseRows).length ? '<div class="box"><h4>' + L3('Курси', 'Kursy', 'Courses') + '</h4><div class="bars">' + Object.keys(courseRows).map(function (k) { var r = courseRows[k]; return '<div class="b"><span>' + esc(r.c ? tr(r.c, 'title') : '?') + ' ' + FLAG[r.tg] + '</span><div class="t"><i style="width:' + Math.round(r.n / Math.max(1, r.total) * 100) + '%"></i></div><b>' + r.n + '/' + r.total + ' · ' + Math.round(r.sum / r.n) + '%</b></div>'; }).join('') + '</div></div>' : '') +
+      '<div class="box"><h4>' + L3('Історія спроб', 'Historia podejść', 'Attempt history') + '</h4>' + (times.length ? '<p class="hint">📘 ' + L3('правило', 'zasada', 'rule') + ' · 🌐 ' + L3('переклад питання', 'tłumaczenie pytania', 'question translation') + ' · 🔊 ' + L3('прослуховування', 'odsłuch', 'listening') + '</p><div class="ttimes">' + times.map(function (x) { var per = (x.per_task || []).filter(function (p) { return !isInfo(p.type) && p.type !== 'intro'; }), hn = per.filter(function (p) { return p.h; }).length, dt = new Date(x.created_at);
+        return '<details class="tt"><summary><span class="muted small">' + fmtDate(x.created_at) + ' ' + String(dt.getHours()).padStart(2, '0') + ':' + String(dt.getMinutes()).padStart(2, '0') + '</span><span>' + esc(lname(x.lesson_id)) + '</span><span class="badge">' + FLAG[x.target || 'en'] + '</span><span>' + (x.score != null ? x.score + '%' : '') + '</span><b>' + fmtSec(x.total_sec) + '</b><span class="muted small">' + (hn ? hn + ' ' + L3('з підказкою', 'z podpowiedzią', 'with hint') : '') + '</span></summary><div class="ttper">' + per.map(function (p, k) { return '<div><span>' + (k + 1) + '. ' + esc(ttName(p.type)) + hIc(p.h) + '</span><span>' + (p.ok === true ? '✓' : p.ok === false ? '✗' : '–') + '</span><b>' + fmtSec(p.sec) + '</b></div>'; }).join('') + '</div></details>'; }).join('') + '</div>' : '<p class="muted">' + L3('Ще немає записаних спроб.', 'Brak zapisanych podejść.', 'No attempts recorded yet.') + '</p>') + '</div>' +
+      (prog.filter(function (p) { return p.answer; }).length ? '<div class="box"><h4>✍ ' + L3('Письмові відповіді', 'Odpowiedzi pisemne', 'Written answers') + '</h4><div class="ttimes">' + prog.filter(function (p) { return p.answer; }).map(function (p) { return '<details class="tt"><summary><span>' + esc(lname(p.lesson_id)) + '</span><span class="badge">' + FLAG[p.target] + '</span><span class="muted small">' + fmtDate(p.completed_at) + '</span></summary><p class="au-ans">' + esc(p.answer) + '</p></details>'; }).join('') + '</div></div>' : '') +
+      '</div>';
+    document.getElementById('auBack').onclick = function () { ADM_UID = null; adminTab = 'users'; viewAdmin(); };
+  });
+}
+
 function adminUsers(body) {
+  if (ADM_UID) return adminUser(body, ADM_UID);
   return API.adminData().then(function (d) {
     var rows = d.users.map(function (u) {
       var pr = d.progress.filter(function (p) { return p.user_id === u.id; }), enr = d.enrollments.filter(function (e) { return e.user_id === u.id; }).length;
       var avg = pr.length ? Math.round(pr.reduce(function (a, p) { return a + (+p.score || 0); }, 0) / pr.length) : 0;
       var last = pr.map(function (p) { return p.completed_at; }).sort().pop();
-      return '<tr><td><b>' + esc(u.name || '—') + '</b><br><span class="muted small">' + esc(u.email) + '</span></td><td><span class="pill' + (u.role === 'admin' ? ' admin' : '') + '">' + esc(u.role) + '</span></td><td>' + fmtDate(u.created_at) + '</td><td class="num">' + enr + '</td><td class="num">' + pr.length + '</td><td class="num">' + (pr.length ? avg + '%' : '—') + '</td><td>' + fmtDate(last) + '</td><td>' +
+      return '<tr><td><button type="button" class="au-link" data-uid="' + esc(u.id) + '"><b>' + esc(u.name || '—') + '</b> <span class="au-more">📊</span><br><span class="muted small">' + esc(u.email) + '</span></button></td><td><span class="pill' + (u.role === 'admin' ? ' admin' : '') + '">' + esc(u.role) + '</span></td><td>' + fmtDate(u.created_at) + '</td><td class="num">' + enr + '</td><td class="num">' + pr.length + '</td><td class="num">' + (pr.length ? avg + '%' : '—') + '</td><td>' + fmtDate(last) + '</td><td>' +
         (u.id === USER.id ? t('<span class="muted small">це ви</span>') : '<button class="btn btn-ghost btn-sm" type="button" data-role="' + esc(u.id) + '" data-to="' + (u.role === 'admin' ? 'student' : 'admin') + '">' + (u.role === 'admin' ? t('Зробити учнем') : t('Зробити адміном')) + '</button>') + '</td></tr>';
     }).join('');
     body.innerHTML = t('<p class="muted" style="margin-bottom:14px">Усього: ') + d.users.length + t('</p><div class="tbl-wrap"><table class="tbl"><thead><tr><th>Користувач</th><th>Роль</th><th>Реєстрація</th><th>Курсів</th><th>Уроків</th><th>Сер. бал</th><th>Активність</th><th></th></tr></thead><tbody>') + rows + '</tbody></table></div>';
+    body.querySelectorAll('[data-uid]').forEach(function (b) { b.onclick = function () { ADM_UID = b.dataset.uid; adminUser(body, ADM_UID); window.scrollTo(0, 0); }; });
     body.querySelectorAll('[data-role]').forEach(function (b) { b.onclick = function () { API.setRole(b.dataset.role, b.dataset.to).then(function () { toast(t('Роль змінено')); viewAdmin(); }).catch(function (e) { toast(e.message, 'err'); }); }; });
   });
 }

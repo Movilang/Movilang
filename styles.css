@@ -762,3 +762,15 @@ body.has-amb #app,body.has-amb footer{position:relative;z-index:1}
 @media print{.g-toc,.g-top,.g-nav,nav.top,.mnav{display:none!important}.g-wrap{display:block}}
 .g-selw{display:flex;align-items:center;gap:8px;flex-wrap:wrap;margin-bottom:10px}
 .g-sel{flex:1;min-width:0;max-width:100%;padding:6px 10px;font-size:13px}
+/* ===== admin: user detail ===== */
+.au{display:grid;gap:18px}
+.au-link{all:unset;cursor:pointer;display:inline-block}
+.au-link:hover b,.au-link:hover{color:var(--neon)}
+.au-more{font-size:12px;opacity:.7}
+.au-head{display:flex;gap:14px;align-items:center}
+.au-head h3{margin:0;font-size:22px}
+.au-ava{width:52px;height:52px;font-size:22px;display:grid;place-items:center;flex:0 0 auto}
+.au-ins ul{margin:0;padding-left:20px;display:grid;gap:4px}
+.au-days{grid-template-columns:repeat(30,1fr);height:120px;font-size:10px}
+.au-acc{background:linear-gradient(90deg,color-mix(in srgb,var(--ok) 35%,transparent) var(--p),transparent var(--p));padding:2px 6px;border-radius:6px}
+.au-ans{white-space:pre-wrap;padding:10px 14px;margin:0;font-size:14px}
