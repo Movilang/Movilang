@@ -163,20 +163,20 @@ D[24] = [
  x("The Stone will ____ soon.", ["be destroyed", "destroyed", "destroy be"], ("Will be + V3.", "Will be + V3.", "Will be + V3.")),
 ]
 D[25] = [
- x("Hagrid ____ want a dragon as a boy.", ["used to", "is used to", "use to"], ("Минула звичка.", "Nawyk z przeszłości.", "Past habit.")),
- x("Hagrid ____ dangerous animals.", ["is used to", "used to", "uses to"], ("Звик до.", "Przyzwyczajony.", "Accustomed to.")),
- x("You'll get used to ____ with a dragon.", ["living", "live", "lived"], ("To + -ing.", "To + -ing.", "To + -ing.")),
- x("Did you ____ have pets?", ["use to", "used to", "using to"], ("Did + use to.", "Did + use to.", "Did + use to.")),
- x("Norbert will soon ____ to Romania.", ["get used", "used", "use"], ("Get used to.", "Get used to.", "Get used to.")),
- x("Hagrid ____ tell everyone about dragons.", ["would", "was used", "is use"], ("Would для звичок.", "Would — nawyki.", "Would for past habits.")),
+ x('Hagrid ____ want a dragon as a boy.', ['used to', 'uses to', 'use to'], ('Минула звичка.', 'Nawyk z przeszłości.', 'Past habit.')),
+ x('Harry ____ live with the Dursleys.', ['used to', 'use to', 'using to'], ('Used to + V.', 'Used to + V.', 'Used to + V.')),
+ x("Hagrid didn't ____ have a dragon.", ['use to', 'used to', 'using to'], ("Didn't + use to.", "Didn't + use to.", "Didn't + use to.")),
+ x('Did you ____ have pets?', ['use to', 'used to', 'using to'], ('Did + use to.', 'Did + use to.', 'Did + use to.')),
+ x('Every night Hagrid ____ read about dragons.', ['would', 'will', 'is'], ('Would для звичок.', 'Would — nawyki.', 'Would for past habits.')),
+ x('Hagrid ____ tell everyone about dragons.', ['would', 'was used', 'is use'], ('Would для звичок.', 'Would — nawyki.', 'Would for past habits.')),
 ]
 D[26] = [
- x("If Malfoy hadn't seen us, we ____ caught.", ["wouldn't have been", "won't be", "wouldn't be"], ("Third Conditional.", "Third Conditional.", "Third Conditional.")),
- x("If we ____ in bed, we'd have kept our points.", ["had stayed", "stayed", "would stay"], ("If + had + V3.", "If + had + V3.", "If + had + V3.")),
- x("If Neville hadn't gone out, he ____ detention.", ["wouldn't have got", "won't get", "didn't get"], ("Would have + V3.", "Would have + V3.", "Would have + V3.")),
- x("We would have been fine if we ____ more careful.", ["had been", "were", "have been"], ("Past Perfect.", "Past Perfect.", "Past Perfect.")),
- x("If Harry had known, he ____ have gone.", ["wouldn't", "won't", "didn't"], ("Wouldn't have.", "Wouldn't have.", "Wouldn't have.")),
- x("If Hagrid ____ the egg, there'd have been no dragon.", ["hadn't won", "didn't win", "won't win"], ("Had + V3.", "Had + V3.", "Had + V3.")),
+ x('When Malfoy ____ the dragon, he told McGonagall.', ['saw', 'sees', 'has seen'], ('Past Simple.', 'Past Simple.', 'Past Simple.')),
+ x("As soon as Hagrid ____, we'll ask him.", ['arrives', 'will arrive', 'arrived'], ('Після as soon as — без will.', 'Bez will.', 'No will after as soon as.')),
+ x('Wait here ____ I come back.', ['until', 'while', 'since'], ('Until — доки не.', 'Until — aż.', 'Until.')),
+ x("We'll go to bed after we ____.", ['finish', 'will finish', 'finished'], ('Після after — без will.', 'Bez will.', "No will after 'after'.")),
+ x('Neville waited ____ midnight.', ['until', 'when', 'as soon as'], ('Until.', 'Until.', 'Until.')),
+ x('____ they left the tower, Filch caught them.', ['When', 'Until', 'Yet'], ('When.', 'When.', 'When.')),
 ]
 D[27] = [
  x("Fang, ____ is Hagrid's dog, is a coward.", ["who", "that", "whose"], ("Між комами — не that.", "Bez that.", "No that between commas.")),
@@ -187,12 +187,12 @@ D[27] = [
  x("Draco, ____ was terrified, ran away.", ["who", "that", "which"], ("Who.", "Who.", "Who.")),
 ]
 D[28] = [
- x("The figure ____ Voldemort.", ["must have been", "must be", "can't have been"], ("Висновок про минуле.", "Wniosek o przeszłości.", "Past deduction.")),
- x("The stranger ____ a normal person.", ["can't have been", "must have been", "should be"], ("Точно ні.", "Na pewno nie.", "Certainly not.")),
- x("Hagrid ____ told him — he was drunk.", ["might have", "must", "can't"], ("Можливо.", "Możliwe.", "Possibly.")),
- x("Snape ____ wanted the Stone, Harry thought.", ["must have", "can't have", "mustn't"], ("Так думає Гаррі.", "Tak myśli Harry.", "Harry's deduction.")),
- x("The stranger ____ planned it all.", ["must have", "can't", "should"], ("Must have + V3.", "Must have + V3.", "Must have + V3.")),
- x("Harry's scar ____ hurt for a reason.", ["must have", "can't have", "won't"], ("Висновок.", "Wniosek.", "Deduction.")),
+ x('Harry was scared ____ the forest was dark.', ['because', 'so', 'however'], ('Причина.', 'Przyczyna.', 'Reason.')),
+ x('The forest was dark, ____ Harry held the lantern.', ['so', 'because', 'although'], ('Наслідок.', 'Skutek.', 'Result.')),
+ x('____ he was afraid, Harry went on.', ['Although', 'However', 'So'], ('Хоча.', 'Chociaż.', 'Although.')),
+ x('Draco ran away. ____, Harry stayed.', ['However', 'Although', 'Because'], ('Однак.', 'Jednak.', 'However.')),
+ x('The stranger drank unicorn blood ____ he was weak.', ['because', 'although', 'so'], ('Причина.', 'Przyczyna.', 'Reason.')),
+ x('Firenze saved Harry, ____ Bane was angry.', ['but', 'because', 'until'], ('Протиставлення.', 'Kontrast.', 'Contrast.')),
 ]
 D[30] = [
  x("You ____ relax, or it'll kill you!", ["have to", "mustn't", "don't have to"], ("Необхідність.", "Konieczność.", "Necessity.")),
@@ -203,34 +203,34 @@ D[30] = [
  x("You'd better not ____.", ["panic", "to panic", "panicking"], ("Had better not + V.", "Had better not + V.", "Had better not + V.")),
 ]
 D[31] = [
- x("If Ron weren't good at chess, they ____ across.", ["wouldn't have got", "won't get", "didn't get"], ("Mixed.", "Mixed.", "Mixed.")),
- x("If Harry hadn't caught the key, he ____ in that room now.", ["would still be", "will still be", "is still"], ("Минуле → зараз.", "Przeszłość → teraz.", "Past → present.")),
- x("If Ron hadn't sacrificed himself, Harry ____ here now.", ["wouldn't be", "won't be", "isn't"], ("Mixed.", "Mixed.", "Mixed.")),
- x("If I ____ a better flyer, I'd have caught it faster.", ["were", "am", "will be"], ("Теперішня риса.", "Cecha teraz.", "Present quality.")),
- x("If Hermione hadn't helped, they ____ trapped now.", ["would be", "will be", "are"], ("Mixed.", "Mixed.", "Mixed.")),
- x("If Ron weren't brave, he ____ that move.", ["wouldn't have made", "won't make", "doesn't make"], ("Mixed.", "Mixed.", "Mixed.")),
+ x('Ron ____ play chess very well.', ['can', 'cans', 'can to'], ('Can + V.', 'Can + V.', 'Can + V.')),
+ x('Harry ____ fly when he was eleven.', ['could', 'can', 'could to'], ('Минуле вміння.', 'Umiejętność w przeszłości.', 'Past ability.')),
+ x('Harry was able ____ the key.', ['to catch', 'catch', 'catching'], ('Be able to + V.', 'Be able to + V.', 'Be able to + V.')),
+ x("Without Ron, we won't ____ cross the board.", ['be able to', 'can', 'could'], ('Will be able to.', 'Will be able to.', 'Will be able to.')),
+ x('Hermione ____ play chess as a child.', ["couldn't", "can't to", "wasn't able"], ("Couldn't.", "Couldn't.", "Couldn't.")),
+ x('After a long chase, Harry ____ catch the key.', ['was able to', 'can', 'is able'], ('Одна вдала дія.', 'Udało się.', 'Managed once.')),
 ]
 D[32] = [
- x("It ____ Quirrell who let the troll in.", ["was", "were", "is been"], ("It was… who.", "It was… who.", "It was… who.")),
- x("It was Snape ____ saved Harry.", ["who", "which", "what"], ("Who для людей.", "Who.", "Who for people.")),
- x("____ Voldemort wanted was the Stone.", ["What", "That", "Which"], ("Wh-cleft.", "Wh-cleft.", "Wh-cleft.")),
- x("It wasn't Snape ____ wanted the Stone.", ["who", "whom which", "what"], ("Who.", "Who.", "Who.")),
- x("What Harry saw ____ himself with the Stone.", ["was", "were", "is been"], ("Was.", "Was.", "Was.")),
- x("Severus ____ seem the type, doesn't he?", ["does", "do", "is"], ("Емфатичне do.", "Emfatyczne do.", "Emphatic do.")),
+ x('Quirrell was ____ nervous that nobody suspected him.', ['so', 'such', 'too'], ('So + adj.', 'So + adj.', 'So + adj.')),
+ x('It was ____ a strange night.', ['such', 'so', 'too'], ('Such a + noun.', 'Such a + noun.', 'Such a + noun.')),
+ x('Harry was ____ young to fight Voldemort.', ['too', 'so', 'enough'], ('Too + adj + to.', 'Too + adj + to.', 'Too + adj + to.')),
+ x('Harry was brave ____ to face Quirrell.', ['enough', 'too', 'so'], ('Adj + enough.', 'Adj + enough.', 'Adj + enough.')),
+ x('The Mirror was ____ beautiful that Harry stared.', ['so', 'such', 'enough'], ('So… that.', 'So… that.', 'So… that.')),
+ x('Quirrell was ____ a good actor!', ['such', 'so', 'too'], ('Such a.', 'Such a.', 'Such a.')),
 ]
 D[33] = [
- x("I ____ told someone!", ["should have", "should", "must have"], ("Жаль.", "Żal.", "Regret.")),
- x("You ____ been killed!", ["could have", "should have", "must"], ("Можливість у минулому.", "Możliwość.", "Past possibility.")),
- x("Hagrid ____ have told the stranger.", ["shouldn't", "couldn't", "mustn't"], ("Не треба було.", "Nie powinien był.", "Shouldn't have.")),
- x("You ____ have worried — the Stone is safe.", ["needn't", "mustn't", "can't"], ("Даремно.", "Niepotrzebnie.", "Needn't have.")),
- x("We ____ have gone without a teacher.", ["shouldn't", "needn't", "couldn't to"], ("Жаль.", "Żal.", "Regret.")),
- x("Harry ____ have died, but his mother's love saved him.", ["could", "should", "must"], ("Could have.", "Could have.", "Could have.")),
+ x('Harry has ____ woken up.', ['just', 'yet', 'ever'], ('Щойно.', 'Właśnie.', 'Just.')),
+ x('Have you eaten your sweets ____?', ['yet', 'already', 'just'], ('Yet у питаннях.', 'Yet w pytaniach.', 'Yet in questions.')),
+ x('The Stone has ____ been destroyed.', ['already', 'yet', 'still'], ('Вже.', 'Już.', 'Already.')),
+ x("Ron hasn't visited ____.", ['yet', 'already', 'just'], ('Not… yet.', 'Not… yet.', 'Not… yet.')),
+ x("Harry ____ doesn't understand everything.", ['still', 'yet', 'already'], ('Досі.', 'Wciąż.', 'Still.')),
+ x('Dumbledore ____ just come in.', ['has', 'have', 'is'], ('Has + V3.', 'Has + V3.', 'Has + V3.')),
 ]
 D[34] = [
  x("By the time Dumbledore ____, Gryffindor had won.", ["finished", "had finished", "was finish"], ("Past Simple.", "Past Simple.", "Past Simple.")),
- x("Slytherin ____ the cup for years.", ["had been winning", "has won", "were win"], ("Past Perfect Continuous.", "PPC.", "Past Perfect Continuous.")),
+ x("Slytherin ____ the cup many times before.", ["had won", "has won", "were win"], ("Past Perfect.", "Past Perfect.", "Past Perfect.")),
  x("Students ____ when the banners changed.", ["were cheering", "cheered had", "cheers"], ("Тло.", "Tło.", "Background.")),
  x("Harry ____ never felt so happy.", ["had", "has", "was"], ("Past Perfect.", "Past Perfect.", "Past Perfect.")),
  x("Neville ____ ten points.", ["got", "had getting", "gets"], ("Подія.", "Zdarzenie.", "Event.")),
- x("Harry ____ under the stairs for ten years when Hagrid came.", ["had been living", "lived has", "is living"], ("PPC.", "PPC.", "Past Perfect Continuous.")),
+ x("Harry ____ under the stairs when Hagrid came.", ["was living", "lived has", "is living"], ("Тло.", "Tło.", "Background.")),
 ]
