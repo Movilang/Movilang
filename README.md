@@ -4,18 +4,18 @@
 Без налаштувань він працює в **демо-режимі** (дані лише в браузері). Для справжніх акаунтів підключіть безкоштовну базу **Supabase**.
 
 ## 1. Публікація (автоматична)
-Сайт підключено до Cloudflare Pages через GitHub: кожна зміна в гілці `main` автоматично публікується на https://movielang.pages.dev за ~1 хвилину.
+Сайт підключено до Cloudflare Pages через GitHub: кожна зміна в гілці `main` автоматично публікується на https://movilang.pages.dev за ~1 хвилину.
 
 ## 1a. Ручна публікація (запасний варіант)
 1. Зайдіть на dash.cloudflare.com → **Workers & Pages** → **Create** → вкладка **Pages** → **Upload assets**.
 2. Назва проєкту: `movielang` → завантажте папку з файлами (або zip) → **Deploy**.
-3. Сайт буде доступний за адресою `https://movielang.pages.dev`. Власний домен: **Custom domains** у налаштуваннях проєкту.
+3. Сайт буде доступний за адресою `https://movilang.pages.dev`. Власний домен: **Custom domains** у налаштуваннях проєкту.
 
 ## 2. Підключити базу даних (справжні акаунти)
 1. Зареєструйтесь на supabase.com → **New project** (регіон: Central EU / Frankfurt).
 2. **SQL Editor** → New query → вставте весь вміст `schema.sql` → **Run**.
 3. **Project Settings → API**: скопіюйте `Project URL` і `anon public` key у `config.js`.
-4. **Authentication → URL Configuration**: Site URL = адреса вашого сайту (напр. `https://movielang.pages.dev`).
+4. **Authentication → URL Configuration**: Site URL = адреса вашого сайту (напр. `https://movilang.pages.dev`).
 5. (Необов'язково) **Authentication → Providers → Email**: вимкніть «Confirm email», щоб учні входили одразу після реєстрації.
 6. Завантажте оновлені файли на Cloudflare Pages ще раз (**Create new deployment**).
 

@@ -3,8 +3,8 @@
 // Як заповнити — див. README.md, крок 2.
 // Адреса сайту. Щоб змінити домен: python3 tools/set-domain.py нова-адреса.pl
 window.MOVILANG_SITE = {
-  URL: "https://movielang.pages.dev",   // головна адреса сайту
-  REDIRECT_FROM: []                     // старі адреси, з яких автоматично перекидати на URL
+  URL: "https://movilang.pages.dev",   // головна адреса сайту
+  REDIRECT_FROM: ["movielang.pages.dev"]                     // старі адреси, з яких автоматично перекидати на URL
 };
 window.MOVILANG_CONFIG = {
   SUPABASE_URL: "https://pybzpbkmdupvtsmxlqvr.supabase.co",       // напр. "https://abcdefgh.supabase.co"
