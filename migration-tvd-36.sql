@@ -24,10 +24,11 @@ begin
   for l in select * from jsonb_array_elements(j) loop
     select id into lid from public.lessons where course_id = cid and num = (l->>'num')::int;
     if lid is null then
-      insert into public.lessons (course_id, num, title, grammar, scene, tasks, variants)
-      values (cid, (l->>'num')::int, l->>'title', l->>'grammar', l->>'scene', l->'tasks', l->'variants');
+      insert into public.lessons (course_id, num, title, title_pl, title_en, grammar, scene, scene_pl, scene_en, tasks, variants)
+      values (cid, (l->>'num')::int, l->>'title', l->>'title_pl', l->>'title_en', l->>'grammar', l->>'scene', l->>'scene_pl', l->>'scene_en', l->'tasks', l->'variants');
     else
-      update public.lessons set title = l->>'title', grammar = l->>'grammar', scene = l->>'scene', tasks = l->'tasks', variants = l->'variants'
+      update public.lessons set title = l->>'title', title_pl = l->>'title_pl', title_en = l->>'title_en', grammar = l->>'grammar',
+        scene = l->>'scene', scene_pl = l->>'scene_pl', scene_en = l->>'scene_en', tasks = l->'tasks', variants = l->'variants'
       where id = lid;
     end if;
   end loop;
