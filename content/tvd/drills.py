@@ -65,7 +65,7 @@ def tgt_vocab_drill(target, words, seed):
         items.append(d)
     return _base("vocab", target, items)
 
-BOSS = {5: (1, 2, 3, 4), 11: (6, 7, 8, 9, 10), 16: (12, 13, 14, 15), 22: (17, 18, 19, 20, 21), 27: (23, 24, 25, 26)}
+BOSS = {6: (1, 2, 3, 4, 5), 14: (7, 8, 9, 10, 11, 12, 13), 21: (15, 16, 17, 18, 19, 20), 28: (22, 23, 24, 25, 26, 27), 35: (29, 30, 31, 32, 33, 34)}
 def boss_rows(D, b):
     rows = []
     for n in BOSS[b]: rows += D[n][2:4]
@@ -85,7 +85,7 @@ def apply_en(L):
         if n in drills_en.D: new.append(gram_drill("en", drills_en.D[n], 900 + n))
         elif n in BOSS: new.append(gram_drill("en", boss_rows(drills_en.D, n), 900 + n))
         gl = [it for t in l["tasks"] if t["type"] == "glossary" for it in t["items"]]
-        if gl and n != 28: new.append(en_vocab_drill(gl, gl, 950 + n))
+        if gl and n != 36: new.append(en_vocab_drill(gl, gl, 950 + n))
         insert_before_final(l["tasks"], new)
 
 def apply_target(L, target, words_of):
@@ -95,5 +95,5 @@ def apply_target(L, target, words_of):
         if n in D: new.append(gram_drill(target, D[n], 1900 + n))
         elif n in BOSS: new.append(gram_drill(target, boss_rows(D, n), 1900 + n))
         ws = words_of(l, target)
-        if len(ws) >= 6 and n != 28: new.append(tgt_vocab_drill(target, ws, 1950 + n))
+        if len(ws) >= 6 and n != 36: new.append(tgt_vocab_drill(target, ws, 1950 + n))
         insert_before_final(vt, new)

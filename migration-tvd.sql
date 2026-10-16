@@ -1,4 +1,4 @@
--- MoviLang: курс «Щоденники вампіра: Сезон 1» (28 уроків).
+-- MoviLang: курс «Щоденники вампіра: Сезон 1» (36 уроків). Для оновлення наявного курсу — migration-tvd-36.sql.
 -- Можна запускати повторно: курс оновлюється, прогрес учнів зберігається.
 -- Supabase → SQL Editor → New query → вставити → Run.
 
@@ -10,7 +10,7 @@ create extension if not exists http with schema extensions;
 
 do $$
 declare
-  src text := 'https://raw.githubusercontent.com/movielang/movielang/main/content/tvd/tvd1.json';
+  src text := 'https://raw.githubusercontent.com/Movilang/movilang/main/content/tvd/tvd1.json';
   j jsonb; cid uuid; l jsonb; lid uuid;
 begin
   select content::jsonb into j from extensions.http_get(src);

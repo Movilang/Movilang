@@ -163,14 +163,14 @@ def build(L, R, D_def):
                 return d
             single = len(sentences) and len(words) >= 8
             scenes = [w for w in words]
-            boss = n in (5, 11, 16, 22, 27)
-            final = n == 28
+            boss = n in (6, 14, 21, 28, 35)
+            final = n == 36
             if final:
                 pool = [w for w in GLALL[T]]
                 picks = rnd.sample(pool, 10)
                 tasks += [mk_match(picks[:5]), mk_match(picks[5:10])]
                 for w in rnd.sample(pool, 10): tasks.append(mk_vocab(w, pool))
-                tasks += [mk_gram(g) for g in gm.G[28]]
+                tasks += [mk_gram(g) for g in gm.G[36]]
                 ss = rnd.sample(SENTALL[T], 5)
                 tasks += [mk_order(ss[0]), mk_order(ss[1]), mk_audio(ss[2]), mk_audio(ss[3]), mk_speak(ss[4])]
             elif boss:

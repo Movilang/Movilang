@@ -2,7 +2,7 @@
 import json, os, re, sys, importlib
 HERE = os.path.dirname(os.path.abspath(__file__)); sys.path.insert(0, HERE)
 import common
-ARCS = [a for a in ("arc1", "arc2", "arc3", "arc4", "arc5") if os.path.exists(os.path.join(HERE, a + ".py"))]
+ARCS = [a for a in ("arc1", "arc2", "arc3", "arc4", "arc5", "extra") if os.path.exists(os.path.join(HERE, a + ".py"))]
 for a in ARCS: importlib.import_module(a)
 import repeat
 L = sorted(common.L, key=lambda l: l["num"])
@@ -23,10 +23,10 @@ for l in L:
 
 INFO = {"intro", "cards", "glossary"}
 # Спойлери: слово/ім'я не може з'являтися раніше вказаного уроку (наскрізна нумерація 1–28)
-SPOIL = {r"\bLexi\b|Лексі": 9, r"Alaric|Аларік|Saltzman": 10, r"Isobel|Ізобел": 10, r"\bEmily\b|Емілі": 9,
-         r"\bAnna\b|Анн[аиу]\b": 13, r"\bPearl\b|Перл": 15, r"adopted|удочер": 13, r"birth mother|біологічна мат|біологічну мат|біологічної мат": 18,
-         r"\bJohn Gilbert\b|Джон Гілберт|дядько Джон|Uncle John": 21, r"grimoire|гримуар": 10,
-         r"\bdevice\b|пристрій": 21, r"werewolf|перевертн": 99, r"\bsire\b": 24}
+SPOIL = {r"\bLexi\b|Лексі": 12, r"Alaric|Аларік|Saltzman": 13, r"Isobel|Ізобел": 13, r"\bEmily\b|Емілі": 12,
+         r"\bAnna\b|Анн[аиу]\b": 17, r"\bPearl\b|Перл": 20, r"adopted|удочер": 17, r"birth mother|біологічна мат|біологічну мат|біологічної мат": 23,
+         r"\bJohn Gilbert\b|Джон Гілберт|дядько Джон|Uncle John": 26, r"grimoire|гримуар": 13,
+         r"\bdevice\b|пристрій": 26, r"werewolf|перевертн": 99, r"\bsire\b": 30}
 NAMES_BAD = [r"Містік", r"Фолс\b", r"Ґріль\b", r"Гриль\b", r"Деймен", r"Кароліна", r"\bМет\b", r"Віккі", r"Кетрин\b",
              r"Ізабел[ья]", r"Бонi", r"Сальватор\b", r"Елена\b", r"Стєфан"]
 

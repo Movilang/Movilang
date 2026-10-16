@@ -549,3 +549,144 @@
 548	cliffhanger	кліфгенгер	cliffhanger	What a cliffhanger!	The book ends on a cliffhanger.
 549	season finale	фінал сезону	finał sezonu	The season finale.	Did you watch the season finale?
 550	to be continued	далі буде	ciąg dalszy nastąpi	To be continued…	— (фінальний титр)
+551	crush	закоханість, «симпатія»	zauroczenie	You still have a crush on her.	I had a crush on my teacher.
+552	to be jealous of	ревнувати до когось	być zazdrosnym o	You're jealous of Tyler.	She's jealous of her sister.
+553	waitress	офіціантка	kelnerka	Can I get you anything?	The waitress brought our coffee.
+554	to break up	розійтися (про пару)	rozstać się	We broke up.	They broke up after two years.
+555	loser	невдаха	przegrany, frajer	Get lost, loser.	Don't call him a loser.
+556	worse	гірший (порівняння від bad)	gorszy	He's worse than me.	The weather is worse today.
+557	the best	найкращий	najlepszy	He's the best I've got.	She is the best player on the team.
+558	to stay away from	триматися подалі від	trzymać się z daleka od	Stay away from my sister.	Stay away from that dog.
+559	to pick a fight	затівати бійку	szukać zaczepki	Are you picking a fight?	He always picks fights at school.
+560	to push	штовхати	popychać	Don't push me.	Stop pushing your brother!
+561	tough	крутий, жорсткий	twardy	You think you're tough?	He acts tough, but he's kind.
+562	stronger	сильніший	silniejszy	I'm stronger than you.	You're stronger than you think.
+563	older	старший	starszy	She's older than you.	My brother is two years older.
+564	to care about	піклуватися, переживати за	troszczyć się o	I care about you.	He really cares about his friends.
+565	mess	безлад, халепа	bałagan	This is a mess.	Sorry about the mess in my room.
+566	to talk to	поговорити з	porozmawiać z	Talk to me, Jer.	Can I talk to you for a minute?
+567	to be worried about	хвилюватися за	martwić się o	I'm worried about you.	My mum is worried about my grades.
+568	the worst	найгірший	najgorszy	This is the worst year ever.	It was the worst day of my life.
+569	more difficult	складніший	trudniejszy	Everything is more difficult now.	Maths is more difficult than art.
+570	happier	щасливіший	szczęśliwszy	I want you to be happier.	She looks happier this week.
+571	as … as	такий самий … як	tak … jak	I'm as stubborn as you.	He's as tall as his father.
+572	scarf	шарф	szalik	Nice scarf.	She wore a red scarf.
+573	bruise	синець	siniak	What's that on your neck?	I have a bruise on my arm.
+574	to cover	прикривати, ховати	zakrywać	Why are you covering it?	She covered her face with her hands.
+575	weird	дивний	dziwny	You're acting weird.	That's a weird idea.
+576	fine	у порядку, нормальний	w porządku	I'm fine, okay?	Don't worry, I'm fine.
+577	to notice	помічати	zauważyć	Did you notice?	I noticed a mistake in the letter.
+578	boyfriend	хлопець (у стосунках)	chłopak	My boyfriend is perfect.	Her boyfriend is a doctor.
+579	to defend	захищати	bronić	Why are you defending him?	He defended his friend.
+580	friendship	дружба	przyjaźń	Our friendship matters.	Their friendship lasted forty years.
+581	to lie to	брехати комусь	okłamywać	Don't lie to me.	He lied to his parents.
+582	honest	чесний	szczery	Be honest with me.	Thank you for being honest.
+583	sheriff	шериф	szeryf	My mom's the sheriff.	The sheriff arrested the man.
+584	busy	зайнятий	zajęty	She's always busy.	I'm too busy to talk.
+585	to be alone	бути самому	być samemu	I'm alone again.	I don't like being alone at night.
+586	to look after	піклуватися, доглядати	opiekować się	Who looks after you?	She looks after her little brother.
+587	to stand up for	заступитися за	stanąć w obronie	I'll stand up for you.	Stand up for what you believe in.
+588	safe	у безпеці	bezpieczny	You're safe now.	Keep your passport in a safe place.
+589	grandmother	бабуся	babcia	Talk to your grandmother.	My grandmother is ninety.
+590	to believe	вірити	wierzyć	I don't believe it.	Do you believe in ghosts?
+591	crazy	божевільний	szalony	This is so crazy.	That's a crazy idea.
+592	feather	пір'їна	piórko	Look at the feather.	A feather fell from the bird.
+593	to float	плавати, ширяти	unosić się	Make it float.	The boat floated on the lake.
+594	to focus	зосередитися	skupić się	Focus, Bonnie.	I can't focus on my work.
+595	patient	терплячий	cierpliwy	Be patient.	Teachers must be patient.
+596	enough	достатньо	wystarczająco	You're not calm enough.	Is the room big enough?
+597	too	занадто	zbyt	You're trying too hard.	This coffee is too hot.
+598	to tell	розповісти	powiedzieć	I have to tell you something.	Tell me the truth.
+599	to frighten	лякати	straszyć	It frightens me.	The noise frightened the baby.
+600	such	такий (з іменником)	taki	It's such a strange day.	She's such a good friend.
+601	so	такий, настільки	tak	I'm so tired.	The film was so long.
+602	gift	дар, подарунок	dar	It's a gift, not a curse.	She has a gift for music.
+603	curse	прокляття	klątwa	It feels like a curse.	The old house had a curse on it.
+604	to be afraid of	боятися (чогось)	bać się	I'm afraid of it.	She's afraid of the dark.
+605	to share	ділитися	dzielić się	I want to share something.	We share a flat.
+606	to call	дзвонити	dzwonić	He's been calling all week.	Call me tomorrow.
+607	to ignore	ігнорувати	ignorować	I've been ignoring him.	Don't ignore my messages.
+608	message	повідомлення	wiadomość	He left ten messages.	I sent you a message.
+609	to cheat on	зраджувати (партнеру)	zdradzić	He cheated on me.	He cheated on his girlfriend.
+610	reporter	репортер	reporter	He's a TV reporter.	The reporter asked many questions.
+611	nervous	знервований	zdenerwowany	You look nervous.	I'm nervous about the exam.
+612	doorstep	поріг, ґанок	próg	He's on the doorstep.	The parcel was on the doorstep.
+613	pale	блідий	blady	You look pale.	She went pale with fear.
+614	to wait	чекати	czekać	I've been waiting for an hour.	Wait for me!
+615	to knock	стукати	pukać	Who's knocking?	Please knock before you come in.
+616	smile	усмішка	uśmiech	What a smile.	She has a lovely smile.
+617	to follow	стежити, іти за	śledzić	I've been following him.	Follow me.
+618	to turn	перетворити (на вампіра)	przemienić	Who turned him?	— (вампірське значення з серіалу)
+619	lately	останнім часом	ostatnio	What have you been doing lately?	I haven't slept well lately.
+620	since	з (якогось моменту)	od	Since that night.	I've lived here since 2010.
+621	research	дослідження	badania	I'm doing some research.	Her research is about bees.
+622	although	хоча	chociaż	Although I'm new here, I know a lot.	Although it was cold, we went out.
+623	to be interested in	цікавитися	interesować się	I'm interested in history.	He's interested in cars.
+624	smart	розумний	mądry	You're smart.	She's a smart student.
+625	however	однак, проте	jednak	However, she won't talk about her family.	It was expensive. However, it was worth it.
+626	despite	незважаючи на	mimo	Despite the warnings, he trusts her.	Despite the rain, we played.
+627	because of	через (причина)	z powodu	Because of you, I'm happy.	The game was cancelled because of the rain.
+628	mother	мама	mama	I'm looking for my mother.	My mother is a nurse.
+629	to search for	шукати	szukać	I've been searching for years.	They searched for the lost dog.
+630	to flirt	фліртувати	flirtować	Are you flirting with me?	He flirts with everyone.
+631	to impress	вражати	zaimponować	I'm trying to impress you.	She impressed everyone with her speech.
+632	valuable	цінний	cenny	It's very valuable.	This ring is valuable.
+633	suspicious	підозрілий	podejrzany	Isn't that suspicious?	The police found a suspicious bag.
+634	history	історія (наука, минуле)	historia	I love history.	History is my favourite subject.
+635	to hand in	здати (роботу)	oddać (pracę)	Hand it in on Friday.	Hand in your homework tomorrow.
+636	antique	антикваріат, старовинний	antyk	This is a real antique.	My grandmother collects antiques.
+637	shop	крамниця	sklep	Welcome to my shop.	The shop opens at nine.
+638	to repair	ремонтувати	naprawiać	I repair old clocks.	Can you repair my bike?
+639	to have something done	доручити комусь щось зробити	zlecić coś	I had the windows cleaned.	I had my hair cut yesterday.
+640	to paint	фарбувати	malować	We got the walls painted.	They painted the house white.
+641	customer	покупець	klient	My first customer!	The customer asked for a discount.
+642	window	вікно	okno	I had the windows cleaned.	Open the window, please.
+643	to open	відкривати	otwierać	We open on Saturday.	The bank opens at nine.
+644	to deliver	доставляти	dostarczyć	I'm having it delivered.	They deliver pizza until midnight.
+645	clock	годинник (настінний)	zegar	This clock is from 1864.	The clock on the wall is slow.
+646	to fix	лагодити	naprawić	Can you get it fixed?	He fixed my computer.
+647	peace	спокій, мир	spokój	I just want peace.	We need peace and quiet.
+648	to bargain	торгуватися	targować się	Don't bargain with me.	We bargained at the market.
+649	daughter	донька	córka	My daughter is everything.	They have two daughters.
+650	to miss	сумувати	tęsknić	I missed you so much.	I miss my friends.
+651	to move in	в'їхати, оселитися	wprowadzić się	We're moving in.	We moved in last week.
+652	furniture	меблі	meble	We had the furniture delivered.	This furniture is very old.
+653	to settle	облаштуватися	osiedlić się	We want to settle here.	They settled in a small town.
+654	to be careful	бути обережним	uważać	Be careful, Anna.	Be careful on the stairs.
+655	neighbour	сусід	sąsiad	Our new neighbours.	My neighbour has a big dog.
+656	to unpack	розпаковувати	rozpakować	Help me unpack.	I unpacked my suitcase.
+657	to plan	планувати	planować	I planned everything.	We're planning a trip.
+658	to be going to	збиратися	zamierzać	I was going to tell you.	I'm going to call her.
+659	drawing	креслення, малюнок	rysunek	Look at these drawings.	She made a drawing of the house.
+660	to work	працювати, діяти	działać	Will it work?	My phone doesn't work.
+661	secretly	таємно	potajemnie	He did it secretly.	They met secretly.
+662	to destroy	знищити	zniszczyć	It will destroy them.	The fire destroyed the house.
+663	to stay	зупинитися, жити (тимчасово)	zatrzymać się	I'm staying for a while.	We stayed at a hotel.
+664	polite	ввічливий	uprzejmy	You're very polite.	Be polite to your teachers.
+665	to annoy	дратувати	denerwować	He really annoys me.	The noise annoys my neighbours.
+666	to change one's mind	передумати	zmienić zdanie	I thought he would change his mind.	She changed her mind about the trip.
+667	to argue	сперечатися	kłócić się	Stop arguing.	They argue about money.
+668	guest	гість	gość	He's our guest.	We have guests tonight.
+669	target	мішень, ціль	cel	Who's the target?	The target was a small bank.
+670	founders' day	День засновників	Dzień Założycieli	On Founders' Day.	— (свято з серіалу)
+671	warning	попередження	ostrzeżenie	This is a warning.	There's a warning on the box.
+672	to be sure	бути певним	być pewnym	Are you sure?	I'm not sure about that.
+673	council	рада	rada	The Council trusts him.	The city council met yesterday.
+674	to decorate	прикрашати	dekorować	Let's decorate it.	We decorated the tree.
+675	both	обидва	oba, obie	Both floats need flowers.	Both my parents are doctors.
+676	all	усі	wszyscy	All of us are tired.	All the shops were closed.
+677	volunteer	волонтер	wolontariusz	We need more volunteers.	She works as a volunteer.
+678	excited	у захваті, схвильований	podekscytowany	I'm so excited!	The kids were excited about the trip.
+679	flowers	квіти	kwiaty	We need more flowers.	He gave her flowers.
+680	dress	сукня	sukienka	What a beautiful dress.	She wore a blue dress.
+681	to try on	приміряти	przymierzyć	Try it on.	Can I try on these shoes?
+682	either	будь-який (з двох)	którykolwiek (z dwóch)	Either dress is fine.	You can sit on either side.
+683	neither	жоден (з двох)	żaden (z dwóch)	Neither of them is happy.	Neither answer is correct.
+684	to fit	пасувати за розміром	pasować	It fits perfectly.	These jeans don't fit me.
+685	elegant	елегантний	elegancki	You look elegant.	An elegant restaurant.
+686	mirror	дзеркало	lustro	Look in the mirror.	The mirror is on the wall.
+687	none	жоден, нічого	nic, żaden	None of this feels right.	None of my friends came.
+688	feeling	відчуття	przeczucie	I have a bad feeling.	I have a feeling he's lying.
+689	to worry	хвилюватися	martwić się	Don't worry.	My parents worry about me.
+690	tonight	сьогодні ввечері	dziś wieczorem	Not tonight.	What are you doing tonight?
+691	tomorrow	завтра	jutro	Tomorrow is the big day.	See you tomorrow.
