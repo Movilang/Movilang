@@ -1,0 +1,8 @@
+# Cloudflare Pages config (Git builds). Binds the R2 bucket used for voice clips.
+name = "movilang"
+pages_build_output_dir = "."
+compatibility_date = "2024-09-23"
+
+[[r2_buckets]]
+binding = "AUDIO"
+bucket_name = "movilang-audio"
