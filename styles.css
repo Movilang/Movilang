@@ -836,3 +836,9 @@ body.has-amb #app,body.has-amb footer{position:relative;z-index:1}
 .wtxt summary>span:first-child{white-space:nowrap}
 @media (max-width:600px){.wtxt summary{gap:6px 8px}.wtxt summary>span:not(.wsnip):not(:first-child){font-size:12px;padding:2px 8px}.wsnip{flex-basis:100%;order:3;font-weight:400}}
 .voxbox{margin-top:10px;padding-top:10px;border-top:1px dashed var(--line)}
+
+.pronpop{position:fixed;z-index:9999;max-width:min(92vw,420px);background:var(--panel,#1c1c22);color:var(--ink,#fff);border:1px solid var(--neon,#e8a33d);border-radius:12px;padding:8px 12px;box-shadow:0 8px 30px rgba(0,0,0,.45);display:grid;gap:2px;animation:pp .15s ease-out}
+.pronpop small{opacity:.65;font-size:11px;text-transform:uppercase;letter-spacing:.06em}
+.pronpop b{font-size:18px;font-weight:600;letter-spacing:.02em}
+.spk-pr{font:600 12px/1 var(--f-mono,monospace)!important;letter-spacing:.02em}
+@keyframes pp{from{opacity:0;transform:translateY(4px)}to{opacity:1}}
