@@ -83,3 +83,83 @@ G[5] = [
 ]
 D[5] = ("Napisz zasady rodzinnej podróży (35+ słów). Użyj trybu rozkazującego: spakuj…, nie zapomnij…, sprawdź…, policz dzieci!", 35,
  ("Ty: sprawdź! Wy: sprawdźcie!", "Ty: sprawdź! Wy: sprawdźcie!", "Ty: sprawdź! Wy: sprawdźcie!"))
+
+T[7] = ("Czas przeszły: szukałem, szukałam", "Czas przeszły: szukałem, szukałam", "Past tense: szukałem, szukałam")
+G[7] = [
+ ("Kevin ____ rodziny w całym domu.", ["szukał", "szukała", "szukali"], 0,
+  [("Так! Він → szukał.", "Tak! On → szukał.", "Yes! He → szukał."),
+   ("Szukała — вона.", "„Szukała” — ona.", "Szukała is “she”."),
+   ("Szukali — вони.", "„Szukali” — oni.", "Szukali is “they”.")],
+  ("Минулий: -ł (він), -ła (вона), -li/-ły (вони).", "Przeszły: -ł (on), -ła (ona), -li/-ły (oni/one).", "Past: -ł (he), -ła (she), -li/-ły (they).")),
+ ("Kevin: — Ja ____ do mamy, ale nikt nie odpowiedział.", ["wołałem", "wołał", "wołałam"], 0,
+  [("Так! Я (чоловік) → wołałem.", "Tak! Ja (mężczyzna) → wołałem.", "Yes! I (male) → wołałem."),
+   ("Wołał — він.", "„Wołał” — on.", "Wołał is “he”."),
+   ("Wołałam — я (жінка).", "„Wołałam” — ja (kobieta).", "Wołałam is “I” (female).")],
+  ("Я: -łem (чол.), -łam (жін.).", "Ja: -łem (m.), -łam (ż.).", "I: -łem (male), -łam (female).")),
+]
+D[7] = ("Opisz pierwszy poranek Kevina samego w domu (35+ słów). Użyj czasu przeszłego: obudziłem się, szukałem, wołałem, czekałem.", 35,
+ ("Від імені Кевіна: -łem.", "Jako Kevin: -łem.", "As Kevin: -łem."))
+
+T[8] = ("Móc / umieć / wolno", "Móc / umieć / wolno", "Móc / umieć / wolno (can, know how, be allowed)")
+G[8] = [
+ ("Dziś Kevin ____ jeść lody na śniadanie.", ["może", "umie", "musi"], 0,
+  [("Так! Може = є можливість / дозвіл.", "Tak! Może = ma możliwość / pozwolenie.", "Yes! Może = he is able/allowed."),
+   ("Umie — вміє (навичка).", "„Umie” — umiejętność.", "Umie = knows how (a skill)."),
+   ("Musi — мусить.", "„Musi” — obowiązek.", "Musi = must.")],
+  ("Móc — можливість, umieć — навичка.", "Móc — możliwość, umieć — umiejętność.", "Móc = possibility, umieć = skill.")),
+ ("Wcześniej Kevinowi nie ____ oglądać tego filmu.", ["wolno było", "mógł było", "umiał"], 0,
+  [("Так! Wolno = дозволено; минуле: wolno było.", "Tak! Wolno = dozwolone; przeszłość: wolno było.", "Yes! Wolno = allowed; past: wolno było."),
+   ("Неграматичне поєднання.", "Niegramatyczne połączenie.", "Ungrammatical."),
+   ("Umiał — вмів, інший зміст.", "„Umiał” — inny sens.", "Umiał means knew how.")],
+  ("Komuś wolno / nie wolno + інфінітив.", "Komuś wolno / nie wolno + bezokolicznik.", "Komuś wolno / nie wolno + infinitive.")),
+]
+D[8] = ("Napisz, co możesz, a czego nie możesz robić, kiedy jesteś sam w domu (35+ słów). Użyj: mogę, nie mogę, umiem, wolno mi.", 35,
+ ("Mogę…, nie wolno mi…", "Mogę…, nie wolno mi…", "Mogę…, nie wolno mi…"))
+
+T[9] = ("Zaimki dzierżawcze: mój, twój, jego", "Zaimki dzierżawcze: mój, twój, jego", "Possessives: mój, twój, jego")
+G[9] = [
+ ("To jest pokój Buzza. To ____ pokój.", ["jego", "jej", "mój"], 0,
+  [("Так! Buzz — він → jego.", "Tak! Buzz → jego.", "Yes! Buzz → jego (his)."),
+   ("Jej — її.", "„Jej” — ona.", "Jej means her."),
+   ("Mój — мій.", "„Mój” — ja.", "Mój means my.")],
+  ("Jego / jej / ich не змінюються.", "Jego / jej / ich się nie odmieniają.", "Jego / jej / ich never change.")),
+ ("Kevin: — Teraz ten pokój jest ____!", ["mój", "moja", "moje"], 0,
+  [("Так! Pokój — чоловічий рід → mój.", "Tak! Pokój (r. męski) → mój.", "Yes! Pokój is masculine → mój."),
+   ("Moja — жіночий рід.", "„Moja” — r. żeński.", "Moja is feminine."),
+   ("Moje — середній рід.", "„Moje” — r. nijaki.", "Moje is neuter.")],
+  ("Mój (ч.), moja (ж.), moje (с.).", "Mój, moja, moje.", "Mój, moja, moje — by gender.")),
+]
+D[9] = ("Opisz pokój swojego brata, siostry albo przyjaciela (35+ słów). Użyj: jego, jej, mój, twój.", 35,
+ ("Jego plakaty, jej łóżko, mój pokój.", "Jego plakaty, jej łóżko, mój pokój.", "Jego plakaty, jej łóżko, mój pokój."))
+
+T[10] = ("Czas przeszły nieregularny: jadłem, poszedłem, widziałem", "Czas przeszły nieregularny: jadłem, poszedłem, widziałem", "Irregular past: jadłem, poszedłem, widziałem")
+G[10] = [
+ ("Dostawca ____ pod drzwi.", ["przyszedł", "przyszłem", "przychodził raz"], 0,
+  [("Так! Przyjść → przyszedł.", "Tak! Przyjść → przyszedł.", "Yes! Przyjść → przyszedł."),
+   ("Такої форми немає.", "Takiej formy nie ma.", "No such form."),
+   ("Неприродно.", "Nienaturalnie.", "Unnatural.")],
+  ("Iść → szedł, przyjść → przyszedł, jeść → jadł.", "Iść → szedł, przyjść → przyszedł, jeść → jadł.", "Iść → szedł, przyjść → przyszedł, jeść → jadł.")),
+ ("Kevin ____ pizzę przed telewizorem.", ["zjadł", "zjedł", "zjadał raz"], 0,
+  [("Так! Zjeść → zjadł.", "Tak! Zjeść → zjadł.", "Yes! Zjeść → zjadł."),
+   ("Такої форми немає.", "Takiej formy nie ma.", "No such form."),
+   ("Неприродно.", "Nienaturalnie.", "Unnatural.")],
+  ("Jeść: jadł, jadła, jedli.", "Jeść: jadł, jadła, jedli.", "Jeść: jadł, jadła, jedli.")),
+]
+D[10] = ("Opisz swój wieczór jak Kevin (35+ słów). Użyj: zjadłem, widziałem, przyszedł, uciekł, pomyślał.", 35,
+ ("Неправильні форми треба запам'ятати.", "Formy nieregularne trzeba zapamiętać.", "Irregular forms must be learnt."))
+
+T[11] = ("Pytania: kto, co, gdzie, kiedy, dlaczego, jak", "Pytania: kto, co, gdzie, kiedy, dlaczego, jak", "Questions: kto, co, gdzie, kiedy, dlaczego, jak")
+G[11] = [
+ ("____ Marley mieszka sam?", ["Dlaczego", "Kto", "Gdzie"], 0,
+  [("Так! Dlaczego = чому.", "Tak! Dlaczego = przyczyna.", "Yes! Dlaczego = why."),
+   ("Kto — хто.", "„Kto” — osoba.", "Kto = who."),
+   ("Gdzie — де.", "„Gdzie” — miejsce.", "Gdzie = where.")],
+  ("Kto, co, gdzie, kiedy, dlaczego, jak.", "Kto, co, gdzie, kiedy, dlaczego, jak.", "Kto, co, gdzie, kiedy, dlaczego, jak.")),
+ ("____ jest ten człowiek z łopatą?", ["Kim", "Kto", "Co"], 0,
+  [("Так! Kim jest…? — про особу з «бути».", "Tak! Kim jest…? — z „być”.", "Yes! Kim jest…? — with “to be”."),
+   ("Kto jest… — можливо, але «Kim jest» природніше.", "„Kto jest” — możliwe, ale „Kim jest” brzmi naturalniej.", "Kto jest is possible, but Kim jest is more natural."),
+   ("Co — про речі.", "„Co” — o rzeczach.", "Co is for things.")],
+  ("Kim jesteś? Kim on jest?", "Kim jesteś? Kim on jest?", "Kim jesteś? Kim on jest?")),
+]
+D[11] = ("Napisz sześć pytań do Marleya (35+ słów). Użyj: kto, co, gdzie, kiedy, dlaczego, jak.", 35,
+ ("Dlaczego…? Gdzie…? Kiedy…?", "Dlaczego…? Gdzie…? Kiedy…?", "Dlaczego…? Gdzie…? Kiedy…?"))

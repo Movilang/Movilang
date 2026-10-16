@@ -40,3 +40,43 @@ D[5] = [
  ("Nie ____ na lotnisku!", ["krzycz", "krzyczeć", "krzyczy"], 0, ("Nie + наказ.", "Nie + rozkaz.", "Nie + imperative.")),
  ("____ dzieci przed wyjazdem!", ["Policz", "Liczyć", "Liczy"], 0, ("Ти → policz.", "Ty → policz.", "You → policz.")),
 ]
+D[7] = [
+ ("Kevin ____ rodziny.", ["szukał", "szukała", "szukali"], 0, ("Він → -ł.", "On → -ł.", "He → -ł.")),
+ ("Ja ____ mamę.", ["wołałem", "wołał", "wołali"], 0, ("Я (ч.) → -łem.", "Ja (m.) → -łem.", "I (m.) → -łem.")),
+ ("Kevin ____ na łóżku.", ["skakał", "skakała", "skakali"], 0, ("Він → -ł.", "On → -ł.", "He → -ł.")),
+ ("Czekał ____ godzinę.", ["przez", "od", "na"], 0, ("Przez godzinę.", "Przez godzinę.", "Przez godzinę.")),
+ ("Nikt nie ____.", ["odpowiedział", "odpowiedzieli", "odpowiedziała"], 0, ("Nikt → він.", "Nikt → on.", "Nikt takes the he form.")),
+ ("Kevin nikogo nie ____.", ["zobaczył", "zobaczyła", "zobaczyli"], 0, ("Він → -ł.", "On → -ł.", "He → -ł.")),
+]
+D[8] = [
+ ("Kevin ____ jeść lody.", ["może", "mogę", "mogą"], 0, ("Він → może.", "On → może.", "He → może.")),
+ ("Nie ____ znaleźć pilota!", ["mogę", "może", "mogą"], 0, ("Я → mogę.", "Ja → mogę.", "I → mogę.")),
+ ("Czy ____ obejrzeć ten film?", ["mogę", "umiem", "muszę"], 0, ("Дозвіл → mogę.", "Pozwolenie → mogę.", "Permission → mogę.")),
+ ("Kevinowi nie ____ skakać po łóżku.", ["wolno", "może", "umie"], 0, ("Wolno.", "Wolno.", "Wolno.")),
+ ("Kevin ____ jeździć na sankach.", ["umie", "wolno", "może być"], 0, ("Навичка → umie.", "Umiejętność → umie.", "Skill → umie.")),
+ ("Nie ____ mnie zatrzymać!", ["możecie", "może", "mogę"], 0, ("Ви → możecie.", "Wy → możecie.", "You (pl.) → możecie.")),
+]
+D[9] = [
+ ("To pokój ____.", ["Buzza", "Buzz", "Buzzowi"], 0, ("Родовий: Buzza.", "Dopełniacz: Buzza.", "Genitive: Buzza.")),
+ ("Czyj to ____?", ["pająk", "pająka", "pająkiem"], 0, ("Називний.", "Mianownik.", "Nominative.")),
+ ("To są ____ pieniądze.", ["jego", "go", "on"], 0, ("Jego — його.", "Jego.", "Jego = his.")),
+ ("Kevin się ____ nie boi.", ["go", "jego", "on"], 0, ("Об'єкт: go.", "Dopełnienie: go.", "Object: go.")),
+ ("Ten pokój jest teraz ____!", ["mój", "moja", "moje"], 0, ("Pokój → mój.", "Pokój → mój.", "Pokój → mój.")),
+ ("Nie potrzebuję ____!", ["ich", "oni", "im"], 0, ("Родовий: ich.", "Dopełniacz: ich.", "Genitive: ich.")),
+]
+D[10] = [
+ ("Kevin ____ film gangsterski.", ["obejrzał", "obejrzała", "obejrzeli"], 0, ("Він → -ł.", "On → -ł.", "He → -ł.")),
+ ("Dostawca ____ pod drzwi.", ["przyszedł", "przyszła", "przyszli"], 0, ("Przyjść → przyszedł.", "Przyjść → przyszedł.", "Przyjść → przyszedł.")),
+ ("On ____.", ["uciekł", "uciekła", "uciekli"], 0, ("Uciec → uciekł.", "Uciec → uciekł.", "Uciec → uciekł.")),
+ ("Kevin ____ całą pizzę.", ["zjadł", "zjadła", "zjedli"], 0, ("Zjeść → zjadł.", "Zjeść → zjadł.", "Zjeść → zjadł.")),
+ ("Dostawca ____, że ktoś strzela.", ["pomyślał", "pomyślała", "pomyśleli"], 0, ("Він → -ł.", "On → -ł.", "He → -ł.")),
+ ("Kevin ____ pieniędzmi Buzza.", ["zapłacił", "zapłaciła", "zapłacili"], 0, ("Він → -ł.", "On → -ł.", "He → -ł.")),
+]
+D[11] = [
+ ("____ jest ten człowiek?", ["Kim", "Co", "Gdzie"], 0, ("Kim jest…?", "Kim jest…?", "Kim jest…?")),
+ ("____ on mieszka?", ["Gdzie", "Kto", "Co"], 0, ("Місце → gdzie.", "Miejsce → gdzie.", "Place → gdzie.")),
+ ("____ mieszka sam?", ["Dlaczego", "Kto", "Który"], 0, ("Причина → dlaczego.", "Przyczyna → dlaczego.", "Reason → dlaczego.")),
+ ("____ wychodzi z domu?", ["Kiedy", "Kto", "Co"], 0, ("Час → kiedy.", "Czas → kiedy.", "Time → kiedy.")),
+ ("Czego on ____?", ["chce", "chcę", "chcą"], 0, ("Він → chce.", "On → chce.", "He → chce.")),
+ ("____ się masz?", ["Jak", "Kto", "Dlaczego"], 0, ("Jak się masz?", "Jak się masz?", "Jak się masz?")),
+]
