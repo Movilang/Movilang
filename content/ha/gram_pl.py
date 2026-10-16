@@ -163,3 +163,63 @@ G[11] = [
 ]
 D[11] = ("Napisz sześć pytań do Marleya (35+ słów). Użyj: kto, co, gdzie, kiedy, dlaczego, jak.", 35,
  ("Dlaczego…? Gdzie…? Kiedy…?", "Dlaczego…? Gdzie…? Kiedy…?", "Dlaczego…? Gdzie…? Kiedy…?"))
+
+T[13] = ("Czas teraźniejszy: teraz robię", "Czas teraźniejszy: teraz robię", "Present tense: what I'm doing now")
+G[13] = [
+ ("Patrz! Kevin ____ zęby.", ["myje", "myję", "myją"], 0,
+  [("Так! Він → myje.", "Tak! On → myje.", "Yes! He → myje."), ("Myję — я.", "„Myję” — ja.", "Myję is “I”."), ("Myją — вони.", "„Myją” — oni.", "Myją is “they”.")],
+  ("У польській один теперішній час: myje = миє / is washing.", "Po polsku jeden czas teraźniejszy: myje = is washing / washes.", "Polish has one present tense: myje = washes / is washing.")),
+ ("— Co robisz? — ____ włosy.", ["Myję", "Myje", "Myjemy"], 0,
+  [("Так! Я → myję.", "Tak! Ja → myję.", "Yes! I → myję."), ("Myje — він.", "„Myje” — on.", "Myje is “he”."), ("Myjemy — ми.", "„Myjemy” — my.", "Myjemy is “we”.")],
+  ("Ja myję, ty myjesz, on myje.", "Ja myję, ty myjesz, on myje.", "Ja myję, ty myjesz, on myje.")),
+]
+D[13] = ("Opisz, co Kevin robi teraz w łazience (35+ słów). Użyj: bierze prysznic, śpiewa, myje, czesze się, krzyczy.", 35,
+ ("Теперішній час: -e / -ę.", "Czas teraźniejszy.", "Present tense."))
+
+T[14] = ("Ile? Trochę / żaden", "Ile? Trochę / żaden", "Ile? Some / no")
+G[14] = [
+ ("____ pieniędzy ma Kevin?", ["Ile", "Ilu", "Jak"], 0,
+  [("Так! Ile + родовий відмінок.", "Tak! Ile + dopełniacz.", "Yes! Ile + genitive."), ("Ilu — про людей-чоловіків.", "„Ilu” — o osobach (m.).", "Ilu is for male persons."), ("Jak — як.", "„Jak” — sposób.", "Jak means how.")],
+  ("Ile + родовий: ile mleka, ile jajek.", "Ile + dopełniacz: ile mleka, ile jajek.", "Ile + genitive: ile mleka, ile jajek.")),
+ ("W lodówce nie ma ____.", ["mleka", "mleko", "mlekiem"], 0,
+  [("Так! Nie ma + родовий.", "Tak! Nie ma + dopełniacz.", "Yes! Nie ma + genitive."), ("Називний — помилка після nie ma.", "Mianownik po „nie ma” — błąd.", "Nominative after nie ma is wrong."), ("Орудний — помилка.", "Narzędnik — błąd.", "Instrumental is wrong.")],
+  ("Nie ma + родовий: nie ma chleba, mleka.", "Nie ma + dopełniacz: nie ma chleba, mleka.", "Nie ma + genitive.")),
+]
+D[14] = ("Napisz listę zakupów Kevina i krótko opisz zakupy (35+ słów). Użyj: ile, trochę, kilka, nie ma.", 35,
+ ("Trochę mleka, kilka jajek, nie ma chleba.", "Trochę mleka, kilka jajek, nie ma chleba.", "Trochę mleka, kilka jajek, nie ma chleba."))
+
+T[15] = ("Pytania w czasie przeszłym: Czy zapłaciłeś?", "Pytania w czasie przeszłym: Czy zapłaciłeś?", "Past questions: Czy zapłaciłeś?")
+G[15] = [
+ ("____ Kevin zapłacił za szczoteczkę?", ["Czy", "Co", "Kto"], 0,
+  [("Так! Так/ні питання → czy.", "Tak! Pytanie tak/nie → czy.", "Yes! Yes/no question → czy."), ("Co — що.", "„Co” — rzecz.", "Co means what."), ("Kto — хто.", "„Kto” — osoba.", "Kto means who.")],
+  ("Czy + речення = питання так/ні.", "Czy + zdanie = pytanie tak/nie.", "Czy + sentence = yes/no question.")),
+ ("Co ____ w aptece? (ty, chłopiec)", ["kupiłeś", "kupił", "kupiłam"], 0,
+  [("Так! Ти (хлопчик) → -łeś.", "Tak! Ty (chłopiec) → -łeś.", "Yes! You (boy) → -łeś."), ("Kupił — він.", "„Kupił” — on.", "Kupił is “he”."), ("Kupiłam — я (жін.).", "„Kupiłam” — ja (ż.).", "Kupiłam is “I” (female).")],
+  ("Ти: -łeś (ч.), -łaś (ж.).", "Ty: -łeś, -łaś.", "You: -łeś (m.), -łaś (f.).")),
+]
+D[15] = ("Jesteś policjantem. Napisz sześć pytań do Kevina o wczoraj (35+ słów). Użyj: czy…?, gdzie byłeś?, co kupiłeś?, dlaczego uciekłeś?", 35,
+ ("Czy + минулий час.", "Czy + czas przeszły.", "Czy + past tense."))
+
+T[16] = ("Stopień wyższy: większy, ładniejszy, lepszy", "Stopień wyższy: większy, ładniejszy, lepszy", "Comparatives: większy, ładniejszy, lepszy")
+G[16] = [
+ ("Ta choinka jest ____ od Kevina.", ["wyższa", "wysoka", "najwyższa"], 0,
+  [("Так! Wysoki → wyższy (ж. wyższa).", "Tak! Wysoki → wyższy (wyższa).", "Yes! Wysoki → wyższy (fem. wyższa)."), ("Звичайний ступінь.", "Stopień równy.", "Base form."), ("Найвищий ступінь.", "Stopień najwyższy.", "Superlative.")],
+  ("Порівняння: od + родовий або niż.", "Porównanie: od + dopełniacz albo niż.", "Compare: od + genitive or niż.")),
+ ("Z lampkami choinka jest ____.", ["ładniejsza", "bardziej ładna", "najładniej"], 0,
+  [("Так! Ładny → ładniejszy.", "Tak! Ładny → ładniejszy.", "Yes! Ładny → ładniejszy."), ("Можливо, але природніше -iejsza.", "Możliwe, ale naturalniej -iejsza.", "Possible, but -iejsza is more natural."), ("Прислівник.", "Przysłówek.", "An adverb.")],
+  ("Dobry → lepszy, zły → gorszy.", "Dobry → lepszy, zły → gorszy.", "Dobry → lepszy, zły → gorszy.")),
+]
+D[16] = ("Porównaj dwie choinki (35+ słów). Użyj: wyższa, mniejsza, ładniejsza, lepsza, niż.", 35,
+ ("-szy / -ejszy + niż.", "-szy / -ejszy + niż.", "-szy / -ejszy + niż."))
+
+T[17] = ("Stopień najwyższy: najlepszy, największy", "Stopień najwyższy: najlepszy, największy", "Superlatives: najlepszy, największy")
+G[17] = [
+ ("To ____ kolacja w moim życiu!", ["najlepsza", "najdobrsza", "lepsza"], 0,
+  [("Так! Dobry → najlepszy.", "Tak! Dobry → najlepszy.", "Yes! Dobry → najlepszy."), ("Такого слова немає.", "Nie ma takiego słowa.", "Not a word."), ("Lepsza — вищий ступінь.", "„Lepsza” — stopień wyższy.", "Lepsza is the comparative.")],
+  ("Naj- + вищий ступінь.", "Naj- + stopień wyższy.", "Naj- + comparative.")),
+ ("To ____ szklanka w domu.", ["największa", "najbardziej duża", "większa"], 0,
+  [("Так! Duży → największy.", "Tak! Duży → największy.", "Yes! Duży → największy."), ("Неприродно.", "Nienaturalnie.", "Unnatural."), ("Вищий ступінь.", "Stopień wyższy.", "Comparative.")],
+  ("Duży → większy → największy.", "Duży → większy → największy.", "Duży → większy → największy.")),
+]
+D[17] = ("Opisz najlepszą albo najgorszą kolację w swoim życiu (35+ słów). Użyj: najlepszy, największy, najsmaczniejszy, najważniejszy.", 35,
+ ("Naj- + -szy.", "Naj- + -szy.", "Naj- + -szy."))

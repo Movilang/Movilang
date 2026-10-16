@@ -80,3 +80,43 @@ D[11] = [
  ("Czego on ____?", ["chce", "chcę", "chcą"], 0, ("Він → chce.", "On → chce.", "He → chce.")),
  ("____ się masz?", ["Jak", "Kto", "Dlaczego"], 0, ("Jak się masz?", "Jak się masz?", "Jak się masz?")),
 ]
+D[13] = [
+ ("Patrz! Kevin ____ pod prysznicem.", ["śpiewa", "śpiewam", "śpiewają"], 0, ("Він → śpiewa.", "On → śpiewa.", "He → śpiewa.")),
+ ("Teraz ____ zęby.", ["myję", "myje", "myją"], 0, ("Я → myję.", "Ja → myję.", "I → myję.")),
+ ("On ____ włosy.", ["czesze", "czeszę", "czeszą"], 0, ("Він → czesze.", "On → czesze.", "He → czesze.")),
+ ("Kevin ____ przed lustrem.", ["tańczy", "tańczę", "tańczą"], 0, ("Він → tańczy.", "On → tańczy.", "He → tańczy.")),
+ ("Co ____?", ["robisz", "robię", "robi ty"], 0, ("Ти → robisz.", "Ty → robisz.", "You → robisz.")),
+ ("On nie ____ płaszcza.", ["ma", "mam", "mają"], 0, ("Він → ma.", "On → ma.", "He → ma.")),
+]
+D[14] = [
+ ("Ile ____ mam?", ["pieniędzy", "pieniądze", "pieniądzom"], 0, ("Ile + родовий.", "Ile + dopełniacz.", "Ile + genitive.")),
+ ("Ile ____ potrzebujemy?", ["jajek", "jajka", "jajkami"], 0, ("Ile + родовий.", "Ile + dopełniacz.", "Ile + genitive.")),
+ ("Potrzebuję trochę ____.", ["chleba", "chleb", "chlebem"], 0, ("Trochę + родовий.", "Trochę + dopełniacz.", "Trochę + genitive.")),
+ ("Nie ma ____.", ["mleka", "mleko", "mlekiem"], 0, ("Nie ma + родовий.", "Nie ma + dopełniacz.", "Nie ma + genitive.")),
+ ("Czy jest ____ sok?", ["jakiś", "jakaś", "jakieś"], 0, ("Sok — ч.р.", "Sok — r. męski.", "Sok is masculine.")),
+ ("Ile to ____?", ["kosztuje", "kosztuję", "kosztują"], 0, ("To → kosztuje.", "To → kosztuje.", "It → kosztuje.")),
+]
+D[15] = [
+ ("____ zapłaciłeś?", ["Czy", "Co", "Kto"], 0, ("Так/ні → czy.", "Tak/nie → czy.", "Yes/no → czy.")),
+ ("Gdzie on ____?", ["poszedł", "poszła", "poszli"], 0, ("Він → poszedł.", "On → poszedł.", "He → poszedł.")),
+ ("Co ____? (ty, m.)", ["kupiłeś", "kupiłem", "kupił"], 0, ("Ти → -łeś.", "Ty → -łeś.", "You → -łeś.")),
+ ("Czy ktoś mnie ____?", ["widział", "widziałem", "widzieli"], 0, ("Ktoś → він.", "Ktoś → on.", "Ktoś takes he.")),
+ ("Dlaczego ____? (ty, m.)", ["uciekłeś", "uciekłem", "uciekł"], 0, ("Ти → -łeś.", "Ty → -łeś.", "You → -łeś.")),
+ ("Nie, nie ____. (ja, m.)", ["zapłaciłem", "zapłaciłeś", "zapłacił"], 0, ("Я → -łem.", "Ja → -łem.", "I → -łem.")),
+]
+D[16] = [
+ ("Choinka jest ____ od Kevina.", ["wyższa", "wysoka", "najwyższa"], 0, ("Вищий ступінь.", "Stopień wyższy.", "Comparative.")),
+ ("Ta jest ____ niż tamta.", ["tańsza", "tania", "najtańsza"], 0, ("Tani → tańszy.", "Tani → tańszy.", "Tani → tańszy.")),
+ ("Choinka jest ____ niż torby.", ["cięższa", "ciężka", "najcięższa"], 0, ("Ciężki → cięższy.", "Ciężki → cięższy.", "Ciężki → cięższy.")),
+ ("Teraz jest ____.", ["piękniejsza", "piękna", "najpiękniej"], 0, ("Вищий ступінь.", "Stopień wyższy.", "Comparative.")),
+ ("Ta choinka jest ____.", ["lepsza", "dobrsza", "dobra niż"], 0, ("Dobry → lepszy.", "Dobry → lepszy.", "Dobry → lepszy.")),
+ ("Większa ____ mnie!", ["ode", "niż od", "z"], 0, ("Od(e) + родовий.", "Od(e) + dopełniacz.", "Od(e) + genitive.")),
+]
+D[17] = [
+ ("To ____ kolacja!", ["najlepsza", "lepsza", "dobra"], 0, ("Najlepszy.", "Najlepszy.", "Najlepszy.")),
+ ("To ____ szklanka.", ["największa", "większa", "duża"], 0, ("Największy.", "Największy.", "Największy.")),
+ ("Rodzina jest ____.", ["najważniejsza", "ważniejsza", "ważna niż"], 0, ("Naj-.", "Naj-.", "Naj-.")),
+ ("To ____ pokój.", ["najprzytulniejszy", "przytulniejszy", "przytulny niż"], 0, ("Naj-.", "Naj-.", "Naj-.")),
+ ("____ jest cisza.", ["Najgorsza", "Gorsza", "Zła"], 0, ("Zły → najgorszy.", "Zły → najgorszy.", "Zły → najgorszy.")),
+ ("Najlepsza na ____.", ["świecie", "świat", "świata"], 0, ("Na + місцевий.", "Na + miejscownik.", "Na + locative.")),
+]

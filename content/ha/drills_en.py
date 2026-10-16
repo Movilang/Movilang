@@ -80,3 +80,43 @@ D[11] = [
  ("What ____ he want?", ["does", "do", "is"], 0, ("He → does.", "He → does.", "He → does.")),
  ("____ are you? — Fine, thanks.", ["How", "Who", "Why"], 0, ("How are you?", "How are you?", "How are you?")),
 ]
+D[13] = [
+ ("Look! Kevin ____ in the shower.", ["is singing", "sings", "sing"], 0, ("Look! → is + -ing.", "Look! → is + -ing.", "Look! → is + -ing.")),
+ ("I ____ my teeth right now.", ["'m brushing", "brush", "'s brushing"], 0, ("I am + -ing.", "I am + -ing.", "I am + -ing.")),
+ ("He ____ his hair.", ["is combing", "are combing", "combing"], 0, ("He is + -ing.", "He is + -ing.", "He is + -ing.")),
+ ("Kevin is ____ in front of the mirror.", ["dancing", "danceing", "dances"], 0, ("Dance → dancing.", "Dance → dancing.", "Dance → dancing.")),
+ ("What ____ you doing?", ["are", "do", "is"], 0, ("What are you doing?", "What are you doing?", "What are you doing?")),
+ ("He isn't ____ a coat.", ["wearing", "wear", "wears"], 0, ("Isn't + -ing.", "Isn't + -ing.", "Isn't + -ing.")),
+]
+D[14] = [
+ ("How ____ money do I have?", ["much", "many", "lot"], 0, ("Money → much.", "Money → much.", "Money → much.")),
+ ("How ____ eggs do we need?", ["many", "much", "any"], 0, ("Eggs → many.", "Eggs → many.", "Eggs → many.")),
+ ("I need ____ bread.", ["some", "any", "many"], 0, ("(+) → some.", "(+) → some.", "(+) → some.")),
+ ("There isn't ____ milk.", ["any", "some", "many"], 0, ("(−) → any.", "(−) → any.", "(−) → any.")),
+ ("Is there ____ juice?", ["any", "some", "much"], 0, ("(?) → any.", "(?) → any.", "(?) → any.")),
+ ("How much ____ it cost?", ["does", "do", "is"], 0, ("It → does.", "It → does.", "It → does.")),
+]
+D[15] = [
+ ("____ you pay for it?", ["Did", "Do", "Were"], 0, ("Минуле → did.", "Przeszłość → did.", "Past → did.")),
+ ("Where did he ____?", ["go", "went", "goes"], 0, ("Did + go.", "Did + go.", "Did + go.")),
+ ("What did you ____?", ["buy", "bought", "buys"], 0, ("Did + buy.", "Did + buy.", "Did + buy.")),
+ ("Did anybody ____ me?", ["see", "saw", "seen"], 0, ("Did + see.", "Did + see.", "Did + see.")),
+ ("Why ____ you run?", ["did", "do", "was"], 0, ("Why did…?", "Why did…?", "Why did…?")),
+ ("No, I ____.", ["didn't", "don't", "wasn't"], 0, ("Коротка відповідь.", "Krótka odpowiedź.", "Short answer.")),
+]
+D[16] = [
+ ("The tree is ____ than Kevin.", ["taller", "more tall", "tallest"], 0, ("Tall → taller.", "Tall → taller.", "Tall → taller.")),
+ ("This one is ____ than that one.", ["cheaper", "more cheap", "cheapest"], 0, ("Cheap → cheaper.", "Cheap → cheaper.", "Cheap → cheaper.")),
+ ("The tree is ____ than the bags.", ["heavier", "heavyer", "more heavy"], 0, ("Heavy → heavier.", "Heavy → heavier.", "Heavy → heavier.")),
+ ("It's ____ beautiful now.", ["more", "most", "much more than"], 0, ("More beautiful.", "More beautiful.", "More beautiful.")),
+ ("This tree is ____ than last year's.", ["better", "gooder", "more good"], 0, ("Good → better.", "Good → better.", "Good → better.")),
+ ("Taller ____ me!", ["than", "that", "then"], 0, ("Than.", "Than.", "Than.")),
+]
+D[17] = [
+ ("It's ____ dinner ever!", ["the best", "the goodest", "better"], 0, ("The best.", "The best.", "The best.")),
+ ("This is ____ glass.", ["the biggest", "the bigest", "the most big"], 0, ("Big → biggest.", "Big → biggest.", "Big → biggest.")),
+ ("Family is ____ important thing.", ["the most", "the more", "most"], 0, ("The most.", "The most.", "The most.")),
+ ("It's the ____ room.", ["coziest", "cozyest", "most coziest"], 0, ("Y → iest.", "Y → iest.", "Y → iest.")),
+ ("The ____ part is the silence.", ["worst", "baddest", "worse"], 0, ("Bad → worst.", "Bad → worst.", "Bad → worst.")),
+ ("The best in the ____.", ["world", "word", "worlds"], 0, ("In the world.", "In the world.", "In the world.")),
+]
