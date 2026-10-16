@@ -703,6 +703,7 @@ function ttsTextsOf(ls, tg) {
   function add(v) { var c = ttsClean(v); if (c && c.length <= 500 && /\p{L}/u.test(c)) out[c] = 1; }
   try { ls.forEach(function (l) { (lessonTasks(l) || []).forEach(function (tk) {
     if (tk.type === 'glossary') (tk.items || []).forEach(function (w) { add(w.w); });
+    if (tk.say) add(tk.say);
     if (tk.type === 'match') (lf(tk, 'options') || tk.options || []).forEach(function (x) { add(String(x).split('=')[0]); });
   }); }); } finally { TARGET = saved; }
   return Object.keys(out);
