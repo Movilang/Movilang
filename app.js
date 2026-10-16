@@ -717,7 +717,7 @@ function adminVoices(ls) {
   var st = box.querySelector('#voxSt');
   function todo() { var L = [].slice.call(box.querySelectorAll('.voxl:checked')).map(function (x) { return x.value; }), all = [];
     L.forEach(function (g) { ttsTextsOf(ls, g).forEach(function (t) { var p = ttsPath(g, t); if (!TTS_SET || !TTS_SET[p]) all.push({g:g, t:t, p:p}); }); }); return all; }
-  function count() { var n = 0; ['en', 'pl', 'uk'].forEach(function (g) { n += ttsTextsOf(ls, g).length; }); var left = todo().length; st.textContent = tx({uk:'готово ', pl:'gotowe ', en:'done '}) + (n - left) + ' / ' + n; }
+  function count() { var n = 0; [].slice.call(box.querySelectorAll('.voxl:checked')).forEach(function (c) { n += ttsTextsOf(ls, c.value).length; }); var left = todo().length; st.textContent = tx({uk:'готово ', pl:'gotowe ', en:'done '}) + (n - left) + ' / ' + n; }
   API.ttsList().then(function (ps) { TTS_SET = {}; ps.forEach(function (p) { TTS_SET[p] = 1; }); count(); }).catch(function () { count(); });
   var purged = ''; try { purged = localStorage.getItem('ml_tts_purged'); } catch (e) {}
   if (!purged && API.token) API.token().then(function (tok) { var C = window.MOVILANG_CONFIG || {}; if (!tok || !C.SUPABASE_URL) return;
