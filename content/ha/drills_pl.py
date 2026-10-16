@@ -120,3 +120,43 @@ D[17] = [
  ("____ jest cisza.", ["Najgorsza", "Gorsza", "Zła"], 0, ("Zły → najgorszy.", "Zły → najgorszy.", "Zły → najgorszy.")),
  ("Najlepsza na ____.", ["świecie", "świat", "świata"], 0, ("Na + місцевий.", "Na + miejscownik.", "Na + locative.")),
 ]
+D[19] = [
+ ("Jutro ____ padać śnieg.", ["będzie", "będę", "będą"], 0, ("Śnieg → będzie.", "Śnieg → będzie.", "Śnieg → będzie.")),
+ ("Bandyci ____ obserwować dom.", ["będą", "będzie", "będziemy"], 0, ("Oni → będą.", "Oni → będą.", "Oni → będą.")),
+ ("Ja ____ czekać.", ["będę", "będzie", "będziesz"], 0, ("Ja → będę.", "Ja → będę.", "Ja → będę.")),
+ ("Co ____ robić wieczorem, Kevin?", ["będziesz", "będę", "będzie"], 0, ("Ty → będziesz.", "Ty → będziesz.", "Ty → będziesz.")),
+ ("My ____ oglądać film.", ["będziemy", "będą", "będę"], 0, ("My → będziemy.", "My → będziemy.", "My → będziemy.")),
+ ("Kevin będzie ____ domu.", ["pilnować", "pilnuje", "pilnowali"], 0, ("Będzie + інфінітив.", "Będzie + bezokolicznik.", "Będzie + infinitive.")),
+]
+D[20] = [
+ ("Kevin ____ to zrobić sam.", ["musi", "muszę", "musisz"], 0, ("On → musi.", "On → musi.", "On → musi.")),
+ ("Ja ____ włączyć światło.", ["muszę", "musi", "musimy"], 0, ("Ja → muszę.", "Ja → muszę.", "Ja → muszę.")),
+ ("Tu ____ wyłączać muzyki!", ["nie wolno", "nie wolna", "nie wolni"], 0, ("Nie wolno + інфінітив.", "Nie wolno + bezokolicznik.", "Nie wolno + infinitive.")),
+ ("My ____ udawać.", ["musimy", "muszą", "muszę"], 0, ("My → musimy.", "My → musimy.", "My → musimy.")),
+ ("Bandyci ____ uwierzyć.", ["muszą", "musi", "musimy"], 0, ("Oni → muszą.", "Oni → muszą.", "Oni → muszą.")),
+ ("Trzeba ____ manekiny.", ["przesunąć", "przesuwa", "przesunął"], 0, ("Trzeba + інфінітив.", "Trzeba + bezokolicznik.", "Trzeba + infinitive.")),
+]
+D[21] = [
+ ("Kiedy Harry ____ biżuterii, Marv odkręcał kran.", ["szukał", "znalazł", "szuka"], 0, ("Фон → недоконаний.", "Tło → niedokonany.", "Background → imperfective.")),
+ ("Nagle Kevin ____ światło.", ["zobaczył", "widywał", "widzi"], 0, ("Nagle → доконаний.", "Nagle → dokonany.", "Nagle → perfective.")),
+ ("Woda ____ przez całą noc.", ["leciała", "poleciała", "poleci"], 0, ("Całą noc → процес.", "Całą noc → proces.", "All night → a process.")),
+ ("Marv ____ kran i wyszedł.", ["odkręcił", "odkręcał", "odkręca"], 0, ("Дві послідовні події.", "Dwa wydarzenia po kolei.", "Two events in a row.")),
+ ("Kiedy oni kradli, Kevin ____.", ["patrzył", "popatrzy", "patrzy"], 0, ("Дві тривалі дії.", "Dwie czynności trwające.", "Two ongoing actions.")),
+ ("Bandyci ____ przez płot i uciekli.", ["przeszli", "przechodzili", "przechodzą"], 0, ("Події по черзі.", "Wydarzenia po kolei.", "Events in order.")),
+]
+D[22] = [
+ ("Marley nigdy ____ nie widział.", ["jej", "ją", "ona"], 0, ("Після заперечення — родовий: jej.", "Po przeczeniu — dopełniacz: jej.", "After a negative — genitive: jej.")),
+ ("Czy ____ byłeś w kościele w nocy?", ["kiedyś", "nigdy", "nic"], 0, ("Питання → kiedyś.", "Pytanie → kiedyś.", "Question → kiedyś.")),
+ ("Ja nigdy nie ____ w Paryżu.", ["byłem", "był", "byli"], 0, ("Ja → byłem.", "Ja → byłem.", "Ja → byłem.")),
+ ("Marley nigdy nie ____ z synem.", ["rozmawia", "rozmawiam", "rozmawiasz"], 0, ("On → rozmawia.", "On → rozmawia.", "On → rozmawia.")),
+ ("Kevin nigdy ____ nie spotkał.", ["go", "on", "jego"], 0, ("Nigdy go nie…", "Nigdy go nie…", "Nigdy go nie…")),
+ ("Czy kiedyś ____ kolędy?", ["śpiewałeś", "śpiewany", "śpiewać"], 0, ("Ty → śpiewałeś.", "Ty → śpiewałeś.", "Ty → śpiewałeś.")),
+]
+D[23] = [
+ ("Nie ____! To mój dom!", ["ucieknę", "uciekam", "uciekłem"], 0, ("Майбутнє: ucieknę.", "Przyszłość: ucieknę.", "Future: ucieknę.")),
+ ("Obronię ____ dom.", ["swój", "swoja", "swoje"], 0, ("Dom — чол. рід: swój.", "Dom — r. męski: swój.", "Dom is masculine: swój.")),
+ ("Obiecuję, że ____ odważny.", ["będę", "byłem", "jestem"], 0, ("Обіцянка → майбутнє.", "Obietnica → przyszłość.", "Promise → future.")),
+ ("Bandyci ____ o dziewiątej.", ["przyjdą", "przyszli", "przyszedł"], 0, ("Майбутнє: przyjdą.", "Przyszłość: przyjdą.", "Future: przyjdą.")),
+ ("Jutro ____ do mamy.", ["zadzwonię", "dzwoniłem", "zadzwonił"], 0, ("Я + майбутнє.", "Ja + przyszłość.", "I + future.")),
+ ("Kevin nie ____ się.", ["podda", "poddałem", "poddadzą"], 0, ("Він → podda.", "On → podda.", "He → podda.")),
+]

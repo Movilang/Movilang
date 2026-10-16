@@ -120,3 +120,43 @@ D[17] = [
  ("The ____ part is the silence.", ["worst", "baddest", "worse"], 0, ("Bad → worst.", "Bad → worst.", "Bad → worst.")),
  ("The best in the ____.", ["world", "word", "worlds"], 0, ("In the world.", "In the world.", "In the world.")),
 ]
+D[19] = [
+ ("We ____ going to rob the house.", ["are", "is", "am"], 0, ("We → are.", "We → are.", "We → are.")),
+ ("Harry ____ going to drive.", ["is", "are", "be"], 0, ("He → is.", "He → is.", "He → is.")),
+ ("I'm going ____ protect my house.", ["to", "for", "at"], 0, ("Going to + дієслово.", "Going to + czasownik.", "Going to + verb.")),
+ ("Are they going to come? — Yes, they ____.", ["are", "do", "will"], 0, ("Коротка відповідь: they are.", "Krótka odpowiedź: they are.", "Short answer: they are.")),
+ ("Marv ____ going to sleep tonight.", ["isn't", "aren't", "not"], 0, ("He + isn't.", "He + isn't.", "He + isn't.")),
+ ("What ____ you going to do?", ["are", "is", "do"], 0, ("What + are + you…?", "What + are + you…?", "What + are + you…?")),
+]
+D[20] = [
+ ("You ____ stop pulling the strings!", ["mustn't", "don't must", "not must"], 0, ("Mustn't = заборона.", "Mustn't = zakaz.", "Mustn't = forbidden.")),
+ ("Kevin ____ to do it alone.", ["has", "have", "must"], 0, ("He has to.", "He has to.", "He has to.")),
+ ("The music ____ be loud.", ["must", "musts", "must to"], 0, ("Must + дієслово.", "Must + czasownik.", "Must + verb.")),
+ ("I ____ to switch on the lights.", ["have", "has", "must"], 0, ("I have to.", "I have to.", "I have to.")),
+ ("The bandits ____ see Kevin.", ["mustn't", "must", "has to"], 0, ("Вони не повинні бачити.", "Nie mogą zobaczyć.", "They mustn't see him.")),
+ ("Does he ____ to pretend?", ["have", "has", "must"], 0, ("Does + have to.", "Does + have to.", "Does + have to.")),
+]
+D[21] = [
+ ("Marv ____ turning on the taps.", ["was", "were", "is"], 0, ("He → was.", "He → was.", "He → was.")),
+ ("They ____ robbing the house.", ["were", "was", "are"], 0, ("They → were.", "They → were.", "They → were.")),
+ ("I was ____ through the binoculars.", ["looking", "look", "looked"], 0, ("Was + -ing.", "Was + -ing.", "Was + -ing.")),
+ ("What ____ you doing at ten?", ["were", "was", "did"], 0, ("What were you doing?", "What were you doing?", "What were you doing?")),
+ ("The water was running ____ they left.", ["when", "what", "who"], 0, ("When + коротка подія.", "When + krótkie wydarzenie.", "When + a short event.")),
+ ("____ Harry was stealing, Marv was laughing.", ["While", "What", "Who"], 0, ("While + тривала дія.", "While + czynność trwająca.", "While + an ongoing action.")),
+]
+D[22] = [
+ ("Have you ____ been to church at night?", ["ever", "never", "yet"], 0, ("Have you ever…?", "Have you ever…?", "Have you ever…?")),
+ ("I have never ____ her.", ["met", "meet", "meeting"], 0, ("Meet → met → met.", "Meet → met → met.", "Meet → met → met.")),
+ ("Marley ____ never talked to her.", ["has", "have", "is"], 0, ("He → has.", "He → has.", "He → has.")),
+ ("____ you ever argued with your brother?", ["Have", "Did", "Are"], 0, ("Have + ever + V3.", "Have + ever + V3.", "Have + ever + V3.")),
+ ("I've never ____ so scared.", ["been", "be", "was"], 0, ("Be → was → been.", "Be → was → been.", "Be → was → been.")),
+ ("Has he ever ____ a carol?", ["sung", "sang", "sing"], 0, ("Sing → sang → sung.", "Sing → sang → sung.", "Sing → sang → sung.")),
+]
+D[23] = [
+ ("I ____ run away.", ["won't", "willn't", "don't will"], 0, ("Will not = won't.", "Will not = won't.", "Will not = won't.")),
+ ("They will ____ at nine.", ["come", "comes", "to come"], 0, ("Will + базова форма.", "Will + forma podstawowa.", "Will + base form.")),
+ ("I promise I ____ be brave.", ["will", "am", "do"], 0, ("Обіцянка → will.", "Obietnica → will.", "Promise → will.")),
+ ("____ you help me? — Yes, I will.", ["Will", "Do", "Are"], 0, ("Will you…?", "Will you…?", "Will you…?")),
+ ("It's cold. I ____ close the window.", ["'ll", "'s", "'re"], 0, ("I'll = I will.", "I'll = I will.", "I'll = I will.")),
+ ("Kevin ____ give up.", ["won't", "not will", "don't will"], 0, ("Won't + дієслово.", "Won't + czasownik.", "Won't + verb.")),
+]

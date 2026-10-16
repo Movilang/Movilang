@@ -223,3 +223,83 @@ G[17] = [
 ]
 D[17] = ("Opisz najlepszą albo najgorszą kolację w swoim życiu (35+ słów). Użyj: najlepszy, największy, najsmaczniejszy, najważniejszy.", 35,
  ("Naj- + -szy.", "Naj- + -szy.", "Naj- + -szy."))
+
+T[19] = ("Czas przyszły: będę + bezokolicznik", "Czas przyszły: będę + bezokolicznik", "Future tense: będę + infinitive")
+G[19] = [
+ ("Dziś wieczorem bandyci ____ obserwować dom.", ["będą", "będzie", "są"], 0,
+  [("Так! Вони → będą + інфінітив.", "Tak! Oni → będą + bezokolicznik.", "Yes! They → będą + infinitive."),
+   ("Będzie — він/вона.", "„Będzie” — on/ona.", "Będzie is he/she."),
+   ("Są — теперішній час.", "„Są” — czas teraźniejszy.", "Są is present tense.")],
+  ("Być у майбутньому: będę, będziesz, będzie, będziemy, będziecie, będą.", "Być w przyszłości: będę, będziesz, będzie, będziemy, będziecie, będą.", "Być in the future: będę, będziesz, będzie, będziemy, będziecie, będą.")),
+ ("Ja ____ czekać w furgonetce — mówi Marv.", ["będę", "będziesz", "jestem"], 0,
+  [("Так! Я → będę.", "Tak! Ja → będę.", "Yes! Ja → będę."),
+   ("Będziesz — ти.", "„Będziesz” — ty.", "Będziesz is “you”."),
+   ("Jestem czekać — помилка.", "„Jestem czekać” — błąd.", "Jestem czekać is wrong.")],
+  ("Będę + інфінітив = тривала дія в майбутньому.", "Będę + bezokolicznik = czynność trwająca w przyszłości.", "Będę + infinitive = an ongoing action in the future.")),
+]
+D[19] = ("Napisz, co będziesz robić w święta (35+ słów). Użyj: będę, będziemy, będzie + bezokolicznik.", 35,
+ ("Будь-яка особа: będę czytać, będziemy jeść…", "Np.: będę czytać, będziemy jeść…", "E.g. będę czytać, będziemy jeść…"))
+
+T[20] = ("Musieć / trzeba / nie wolno", "Musieć / trzeba / nie wolno", "Musieć / trzeba / nie wolno (must, it's necessary, it's forbidden)")
+G[20] = [
+ ("Kevin jest sam, więc ____ wszystko zrobić sam.", ["musi", "muszę", "musisz"], 0,
+  [("Так! Він → musi.", "Tak! On → musi.", "Yes! On → musi."),
+   ("Muszę — я.", "„Muszę” — ja.", "Muszę is “I”."),
+   ("Musisz — ти.", "„Musisz” — ty.", "Musisz is “you”.")],
+  ("Musieć: muszę, musisz, musi, musimy, musicie, muszą.", "Musieć: muszę, musisz, musi, musimy, musicie, muszą.", "Musieć: muszę, musisz, musi, musimy, musicie, muszą.")),
+ ("W domu ____ zjeżdżać na sankach po schodach!", ["nie wolno", "nie wolny", "nie wolna"], 0,
+  [("Так! Nie wolno = заборонено (безособово).", "Tak! „Nie wolno” = zakaz (bezosobowo).", "Yes! Nie wolno = it's forbidden (impersonal)."),
+   ("Wolny — прикметник «вільний».", "„Wolny” to przymiotnik.", "Wolny is an adjective (free)."),
+   ("Wolna — теж прикметник.", "„Wolna” to też przymiotnik.", "Wolna is also an adjective.")],
+  ("Nie wolno + інфінітив = не можна.", "Nie wolno + bezokolicznik.", "Nie wolno + infinitive = you mustn't.")),
+]
+D[20] = ("Napisz zasady udawanej imprezy Kevina (35+ słów). Użyj: musi, muszę, trzeba, nie wolno.", 35,
+ ("Trzeba / nie wolno + інфінітив.", "Trzeba / nie wolno + bezokolicznik.", "Trzeba / nie wolno + infinitive."))
+
+T[21] = ("Aspekt w przeszłości: szukał / znalazł", "Aspekt w przeszłości: szukał / znalazł", "Aspect in the past: szukał / znalazł")
+G[21] = [
+ ("Kiedy Harry ____ biżuterii, Marv odkręcał krany.", ["szukał", "znalazł", "szuka"], 0,
+  [("Так! Тривала дія (фон) → недоконаний вид.", "Tak! Czynność trwająca (tło) → aspekt niedokonany.", "Yes! An ongoing action (background) → imperfective."),
+   ("Znalazł — одна завершена подія.", "„Znalazł” — jedno zakończone wydarzenie.", "Znalazł is one finished event."),
+   ("Szuka — теперішній час.", "„Szuka” — czas teraźniejszy.", "Szuka is present tense.")],
+  ("Niedokonany = процес (англ. Past Continuous).", "Niedokonany = proces (ang. Past Continuous).", "Imperfective = a process (like Past Continuous).")),
+ ("Nagle Kevin ____ latarkę w oknie.", ["zobaczył", "widywał", "widzi"], 0,
+  [("Так! Nagle + доконаний вид.", "Tak! Nagle + aspekt dokonany.", "Yes! Nagle + perfective."),
+   ("Widywał — «бачив часто».", "„Widywał” — często.", "Widywał means “used to see often”."),
+   ("Widzi — теперішній час.", "„Widzi” — teraźniejszy.", "Widzi is present.")],
+  ("Dokonany = результат, одна подія.", "Dokonany = rezultat, jedno wydarzenie.", "Perfective = a result, one event.")),
+]
+D[21] = ("Napisz krótki artykuł o Mokrych Bandytach (35+ słów). Co robili? Co się nagle stało? Użyj: kradli, odkręcił, leciała, zobaczył.", 35,
+ ("Фон — недоконаний, подія — доконаний.", "Tło — niedokonany, wydarzenie — dokonany.", "Background — imperfective, event — perfective."))
+
+T[22] = ("Czy kiedyś…? Nigdy nie…", "Czy kiedyś…? Nigdy nie…", "Czy kiedyś…? Nigdy nie… (ever / never)")
+G[22] = [
+ ("Marley ____ nie widział wnuczki z bliska.", ["nigdy", "kiedyś", "zawsze"], 0,
+  [("Так! Nigdy + nie — подвійне заперечення.", "Tak! „Nigdy” + „nie” — podwójne przeczenie.", "Yes! Nigdy + nie — Polish uses double negation."),
+   ("Kiedyś + nie — неприродно.", "„Kiedyś” + „nie” — nienaturalnie.", "Kiedyś + nie sounds wrong."),
+   ("Zawsze nie — помилка.", "„Zawsze nie” — błąd.", "Zawsze nie is wrong.")],
+  ("По-польськи: nigdy NIE widziałem (обидва заперечення).", "Po polsku: nigdy NIE widziałem.", "In Polish: nigdy NIE widziałem (both negatives).")),
+ ("Czy ____ się bałeś?", ["kiedyś", "nigdy", "nic"], 0,
+  [("Так! Kiedyś = колись (у житті).", "Tak! „Kiedyś” = w jakimś momencie życia.", "Yes! Kiedyś = ever."),
+   ("Nigdy — для відповіді, не для питання.", "„Nigdy” — do odpowiedzi, nie do pytania.", "Nigdy is for answers, not questions."),
+   ("Nic — «нічого».", "„Nic” = żadna rzecz.", "Nic means “nothing”.")],
+  ("Польська не має Present Perfect: минулий час + kiedyś/nigdy.", "Polski nie ma Present Perfect: czas przeszły + kiedyś/nigdy.", "Polish has no Present Perfect: past tense + kiedyś/nigdy.")),
+]
+D[22] = ("Napisz pytania Kevina i odpowiedzi Marleya (35+ słów). Użyj: Czy kiedyś…? Nigdy nie…", 35,
+ ("Nigdy + nie + дієслово.", "Nigdy + nie + czasownik.", "Nigdy + nie + verb."))
+
+T[23] = ("Czas przyszły dokonany: obronię, nie ucieknę", "Czas przyszły dokonany: obronię, nie ucieknę", "Perfective future: obronię, nie ucieknę")
+G[23] = [
+ ("Nie ____! To mój dom!", ["ucieknę", "uciekam", "uciekłem"], 0,
+  [("Так! Рішення на майбутнє → доконаний: ucieknę.", "Tak! Decyzja na przyszłość → dokonany: ucieknę.", "Yes! A decision about the future → perfective: ucieknę."),
+   ("Uciekam — зараз.", "„Uciekam” — teraz.", "Uciekam is now."),
+   ("Uciekłem — у минулому.", "„Uciekłem” — w przeszłości.", "Uciekłem is past.")],
+  ("Доконане дієслово в теперішній формі = майбутнє.", "Czasownik dokonany w formie teraźniejszej = przyszłość.", "A perfective verb in present form = future.")),
+ ("Obiecuję, że ____ odważny.", ["będę", "byłem", "jestem"], 0,
+  [("Так! Обіцянка → będę.", "Tak! Obietnica → będę.", "Yes! A promise → będę."),
+   ("Byłem — минуле.", "„Byłem” — przeszłość.", "Byłem is past."),
+   ("Jestem — зараз.", "„Jestem” — teraz.", "Jestem is now.")],
+  ("Obiecuję, że + майбутній час.", "Obiecuję, że + czas przyszły.", "Obiecuję, że + future tense.")),
+]
+D[23] = ("Napisz obietnice Kevina na ten wieczór (35+ słów). Użyj: obronię, nie ucieknę, zrobię, obiecuję, że…", 35,
+ ("Доконані дієслова: zrobię, obronię, przygotuję.", "Dokonane: zrobię, obronię, przygotuję.", "Perfective: zrobię, obronię, przygotuję."))
