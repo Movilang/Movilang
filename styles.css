@@ -836,3 +836,7 @@ body.has-amb #app,body.has-amb footer{position:relative;z-index:1}
 .wtxt summary>span:first-child{white-space:nowrap}
 @media (max-width:600px){.wtxt summary{gap:6px 8px}.wtxt summary>span:not(.wsnip):not(:first-child){font-size:12px;padding:2px 8px}.wsnip{flex-basis:100%;order:3;font-weight:400}}
 .voxbox{margin-top:10px;padding-top:10px;border-top:1px dashed var(--line)}
+
+/* audio removed */
+.spk,.spk-in,#tsay{display:none!important}
+.sayline{font-size:clamp(18px,2.4vw,22px);font-weight:600;margin:8px 0;padding:10px 14px;border:1px dashed var(--line);border-radius:12px}
