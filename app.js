@@ -52,130 +52,89 @@ function say(txt, lang) {
     .then(function (x) { if (x.ok && x.j.url) { TTS_OK = true; TTS_URLS[k] = x.j.url; play(x.j.url); } else { if (x.j && x.j.error === 'no_key') TTS_OK = false; noLocal ? noVoice(code) : sayLocal(clean, lang); } })
     .catch(function () { noLocal ? noVoice(code) : sayLocal(clean, lang); });
 }
-/* ---------- pronunciation transcription (instead of audio) ---------- */
+/* ---------- IPA transcription (instead of audio) ---------- */
 var PRON = (function () {
-  var ACC = '\u0301';
-  function rep(s, pairs) { for (var i = 0; i < pairs.length; i++) s = s.split(pairs[i][0]).join(pairs[i][1]); return s; }
-  // English IPA -> Polish / Ukrainian spelling
-  var IPA_V = [['iː','I'],['uː','U'],['ɑː','A'],['ɔː','O'],['ɜː','E'],['eɪ','ej'],['aɪ','aj'],['ɔɪ','oj'],['aʊ','aw'],['əʊ','ow'],['oʊ','ow'],['ɪə','ija'],['eə','ea'],['ʊə','ua']];
-  function ipaNorm(ipa) { return String(ipa).replace(/[\/\[\]\(\)]/g, '').replace(/ː/g, 'ː').replace(/ɹ/g, 'r').replace(/ɡ/g, 'g').replace(/ɚ/g, 'ə').replace(/ɝ/g, 'ɜː').replace(/ɫ/g, 'l').replace(/[̩̃]/g, '').replace(/ˌ/g, '').trim(); }
-  function ipaTo(ipa, to) {
-    var s = ipaNorm(ipa);
-    s = rep(s, IPA_V);
-    s = rep(s, [['tʃ','C'],['dʒ','J'],['ʃ','S'],['ʒ','Z'],['θ','T'],['ð','D'],['ŋ','N']]);
-    var M = to === 'pl'
-      ? {I:'i',U:'u',A:'a',O:'o',E:'e','ɪ':'y','e':'e','æ':'e','ʌ':'a','ɒ':'o','ʊ':'u','ə':'e','i':'i','u':'u','a':'a','o':'o',
-         C:'cz',J:'dż',S:'sz',Z:'ż',T:'t',D:'d',N:'ng',p:'p',b:'b',t:'t',d:'d',k:'k',g:'g',f:'f',v:'w',s:'s',z:'z',h:'h',m:'m',n:'n',l:'l',r:'r',w:'ł',j:'j',x:'ch',ʔ:''}
-      : {I:'і',U:'у',A:'а',O:'о',E:'е','ɪ':'и','e':'е','æ':'е','ʌ':'а','ɒ':'о','ʊ':'у','ə':'е','i':'і','u':'у','a':'а','o':'о',
-         C:'ч',J:'дж',S:'ш',Z:'ж',T:'с',D:'з',N:'нг',p:'п',b:'б',t:'т',d:'д',k:'к',g:'ґ',f:'ф',v:'в',s:'с',z:'з',h:'г',m:'м',n:'н',l:'л',r:'р',w:'в',j:'й',x:'х',ʔ:''};
-    var out = '', stress = false;
-    for (var i = 0; i < s.length; i++) { var c = s[i];
-      if (c === 'ˈ') { stress = true; continue; }
-      if (c === 'ː') continue;
-      var m = M[c]; if (m == null) m = /[\s'’-]/.test(c) ? c : '';
-      if (stress && /[aeiouyаеиіоуєюяї]/i.test(m)) { m = m[0] + ACC + m.slice(1); stress = false; }
-      out += m; }
-    if (to === 'uk') out = out.replace(/й([аеуі])/g, function (_, v) { return {а:'я',е:'є',у:'ю',і:'ї'}[v]; }).replace(/([бвгґджзклмнпрстфхцчшщ])і/g, '$1і');
-    return out.replace(/\s+/g, ' ').trim();
-  }
-  // Polish -> Ukrainian Cyrillic
-  var VOW_PL = 'aąeęioóuy';
-  function plToUk(w) {
-    var s = w.toLowerCase(), o = '', i = 0;
-    var SOFT = {'ć':'ц','ś':'с','ź':'з','ń':'н','dź':'дз'}, SOFTI = {'c':'ц','s':'с','z':'з','n':'н','dz':'дз'};
-    var BASE = [['szcz','щ'],['dż','дж'],['rz','ж'],['sz','ш'],['cz','ч'],['ch','х'],['dz','дз'],['a','а'],['ą','он'],['b','б'],['c','ц'],['d','д'],['e','е'],['ę','ен'],['f','ф'],['g','ґ'],['h','х'],['i','і'],['j','й'],['k','к'],['l','л'],['ł','в'],['m','м'],['n','н'],['o','о'],['ó','у'],['p','п'],['r','р'],['s','с'],['t','т'],['u','у'],['w','в'],['y','и'],['z','з'],['ż','ж']];
-    var SV = {a:'я', e:'є', o:'ьо', u:'ю', 'ó':'ю', 'ą':'ьон', 'ę':'єн', i:'і', y:'і'};
-    function softVowel(v) { return SV[v] || ''; }
-    while (i < s.length) {
-      var c = s[i], c2 = s.substr(i, 2), c3 = s.substr(i, 3), done = false;
-      // dzi+V, ci+V, si+V, zi+V, ni+V
-      [['dz', 3], ['c', 2], ['s', 2], ['z', 2], ['n', 2]].some(function (p) {
-        if (s.substr(i, p[0].length) === p[0] && s[i + p[0].length] === 'i' && p[0] + 'i' !== 'szi') {
-          var nx = s[i + p[0].length + 1];
-          if (nx && VOW_PL.indexOf(nx) > -1 && nx !== 'i') { o += SOFTI[p[0]] + softVowel(nx); i += p[0].length + 2; done = true; return true; }
-          if (!(p[0] === 's' && s[i - 1] === 'z') && !(p[0] === 'z' && (s[i - 1] === 'r' || s[i - 1] === 'd'))) { o += SOFTI[p[0]] + 'і'; i += p[0].length + 1; done = true; return true; }
-        }
-        return false; });
-      if (done) continue;
-      if (c2 === 'dź' || SOFT[c]) { var k = c2 === 'dź' ? 2 : 1, base = SOFT[c2 === 'dź' ? 'dź' : c], nx2 = s[i + k];
-        if (nx2 && VOW_PL.indexOf(nx2) > -1) { o += base + softVowel(nx2); i += k + 1; } else { o += base + 'ь'; i += k; } continue; }
-      // consonant + i + vowel (pie, bia, kie, mio...)
-      if (VOW_PL.indexOf(c) < 0 && /[a-ząćęłńóśźż]/.test(c) && s[i + 1] === 'i' && s[i + 2] && VOW_PL.indexOf(s[i + 2]) > -1 && s[i + 2] !== 'i') {
-        var b0 = BASE.filter(function (p) { return p[0] === c; })[0]; o += (b0 ? b0[1] : c) + softVowel(s[i + 2]); i += 3; continue; }
-      // l + vowel → soft
-      if (c === 'ł') { o += (s[i + 1] && VOW_PL.indexOf(s[i + 1]) > -1) ? 'в' : 'ў'; i++; continue; }
-      // j + vowel
-      if (c === 'j' && s[i + 1] && VOW_PL.indexOf(s[i + 1]) > -1) { o += ({a:'я', e:'є', o:'йо', u:'ю', 'ó':'ю', i:'ї', 'ę':'єн', 'ą':'йон', y:'и'}[s[i + 1]]); i += 2; continue; }
-      if (c === 'i' && (i === 0 || VOW_PL.indexOf(s[i - 1]) > -1) && s[i + 1] && VOW_PL.indexOf(s[i + 1]) > -1) { o += 'ї'; i++; continue; }
-      var hit = null; for (var q = 0; q < BASE.length; q++) if (s.substr(i, BASE[q][0].length) === BASE[q][0]) { hit = BASE[q]; break; }
-      if (hit) { o += hit[1]; i += hit[0].length; } else { o += c; i++; }
-    }
-    return o.replace(/он([бп])/g, 'ом$1').replace(/ен([бп])/g, 'ем$1').replace(/єн(?=[\s,.!?]|$)/g, 'є').replace(/ен(?=[\s,.!?]|$)/g, 'е');
-  }
-  // Polish -> English-friendly respelling
-  function plToEn(w) {
-    var s = w.toLowerCase(), o = '', i = 0, V = VOW_PL;
-    var SOFTI = [['dz','j'],['c','ch'],['s','sh'],['z','zh'],['n','ny']];
-    var B = [['szcz','shch'],['dż','j'],['dź','j'],['rz','zh'],['sz','sh'],['cz','ch'],['ch','kh'],['dz','dz'],['ż','zh'],['ć','ch'],['ś','sh'],['ź','zh'],['ń','ny'],['ł','w'],['w','v'],['j','y'],['c','ts'],['ą','on'],['ę','en'],['ó','oo'],['u','oo'],['i','ee'],['y','ih'],['a','a'],['e','e'],['o','o']];
-    var SV = {a:'a', e:'e', o:'o', u:'oo', 'ó':'oo', 'ą':'on', 'ę':'en'};
+  var IPA_EN = {}, SENT_EN = {}, WORDS = {en:{}, pl:{}, uk:{}};
+  function norm(t) { return String(t || '').replace(/<[^>]+>/g, '').replace(/[“”„"«»]/g, '').replace(/\s+/g, ' ').trim(); }
+  function key(t) { return norm(t).toLowerCase(); }
+  // ---- Polish -> IPA ----
+  var PL_V = 'aąeęioóuy';
+  function plWord(w) {
+    var s = w.toLowerCase(), out = [], i = 0;
+    var SOFT = {'dzi':'d͡ʑ','ci':'t͡ɕ','si':'ɕ','zi':'ʑ','ni':'ɲ'};
+    var B = [['szcz','ʂt͡ʂ'],['dż','d͡ʐ'],['dź','d͡ʑ'],['dz','d͡z'],['rz','ʐ'],['sz','ʂ'],['cz','t͡ʂ'],['ch','x'],['ć','t͡ɕ'],['ś','ɕ'],['ź','ʑ'],['ż','ʐ'],['ń','ɲ'],['ł','w'],['w','v'],['c','t͡s'],['h','x'],['g','ɡ'],['j','j'],['y','ɨ'],['ó','u'],['u','u'],['o','ɔ'],['e','ɛ'],['a','a'],['i','i'],['ą','ɔ̃'],['ę','ɛ̃'],['b','b'],['d','d'],['f','f'],['k','k'],['l','l'],['m','m'],['n','n'],['p','p'],['r','r'],['s','s'],['t','t'],['z','z']];
     while (i < s.length) {
       var hit = null;
-      for (var k = 0; k < SOFTI.length; k++) { var p = SOFTI[k][0]; if (s.substr(i, p.length) === p && s[i + p.length] === 'i' && !(p === 'z' && /[rd]/.test(s[i - 1] || '')) && !(p === 's' && s[i - 1] === 'z') && !(p === 'c' && s[i - 1] === 's')) { var nx = s[i + p.length + 1]; if (nx && SV[nx]) { o += SOFTI[k][1] + SV[nx]; i += p.length + 2; } else { o += SOFTI[k][1] + 'ee'; i += p.length + 1; } hit = 1; break; } }
+      for (var k in SOFT) if (s.substr(i, k.length) === k && !(k === 'zi' && /[rd]/.test(s[i - 1] || '')) && !(k === 'si' && s[i - 1] === 'z') && !(k === 'ci' && s[i - 1] === 's' && false)) {
+        var nx = s[i + k.length]; if (nx && PL_V.indexOf(nx) > -1) { out.push({c:SOFT[k]}); i += k.length; } else { out.push({c:SOFT[k]}); out.push({v:'i'}); i += k.length; } hit = 1; break; }
       if (hit) continue;
-      if (V.indexOf(s[i]) < 0 && /[a-ząćęłńóśźż]/.test(s[i]) && s[i + 1] === 'i' && SV[s[i + 2]]) { var bb = B.filter(function (q) { return q[0] === s[i]; })[0]; o += (bb ? bb[1] : s[i]) + 'y' + SV[s[i + 2]]; i += 3; continue; }
+      var c = s[i];
+      if (PL_V.indexOf(c) < 0 && /[bdfgkmpvwlrt]/.test(c) && s[i + 1] === 'i' && s[i + 2] && PL_V.indexOf(s[i + 2]) > -1) { var b = B.filter(function (q) { return q[0] === c; })[0]; out.push({c:b[1] + 'ʲ'}); i += 2; continue; }
       for (var q = 0; q < B.length; q++) if (s.substr(i, B[q][0].length) === B[q][0]) { hit = B[q]; break; }
-      if (hit) { o += hit[1]; i += hit[0].length; } else { o += s[i]; i++; }
+      if (!hit) { i++; continue; }
+      var isV = PL_V.indexOf(hit[0][0]) > -1 && hit[0] !== 'j';
+      out.push(isV ? {v:hit[1]} : {c:hit[1]}); i += hit[0].length;
     }
-    return o.replace(/en(?=[\s,.!?]|$)/g, function (m, k, str) { return w.toLowerCase().replace(/ę(?=[\s,.!?]|$)/g, '#').indexOf('#') > -1 ? 'e' : m; });
+    // nasal vowels before consonants
+    for (var j = 0; j < out.length; j++) if (out[j].v === 'ɔ̃' || out[j].v === 'ɛ̃') {
+      var base = out[j].v[0], n = out[j + 1] && out[j + 1].c;
+      if (!n) { if (base === 'ɛ') out[j].v = 'ɛ'; continue; }
+      if (/^[pb]/.test(n)) out[j].v = base + 'm'; else if (/^(t͡ɕ|d͡ʑ)/.test(n)) out[j].v = base + 'ɲ'; else if (/^(t|d|t͡s|d͡z|t͡ʂ|d͡ʐ)/.test(n)) out[j].v = base + 'n'; else if (/^[kɡ]/.test(n)) out[j].v = base + 'ŋ'; else if (/^[lw]/.test(n)) out[j].v = base; }
+    // devoicing: voiceless + w/rz ; final devoicing
+    var DV = {'b':'p','d':'t','ɡ':'k','v':'f','z':'s','ʐ':'ʂ','ʑ':'ɕ','d͡z':'t͡s','d͡ʑ':'t͡ɕ','d͡ʐ':'t͡ʂ','bʲ':'pʲ','vʲ':'fʲ'};
+    var VL = /^(p|t|k|f|s|ʂ|ɕ|x|t͡s|t͡ʂ|t͡ɕ)/;
+    for (var m = 1; m < out.length; m++) if (out[m].c && (out[m].c === 'v' || out[m].c === 'ʐ') && out[m - 1].c && VL.test(out[m - 1].c)) out[m].c = DV[out[m].c];
+    for (var e = out.length - 1; e >= 0 && out[e].c; e--) if (DV[out[e].c]) out[e].c = DV[out[e].c];
+    // regressive voicing assimilation (voiced obstruent before voiceless)
+    for (var r = out.length - 2; r >= 0; r--) if (out[r].c && DV[out[r].c] && out[r + 1].c && VL.test(out[r + 1].c)) out[r].c = DV[out[r].c];
+    // stress: penultimate syllable
+    var vi = []; out.forEach(function (x, k) { if (x.v) vi.push(k); });
+    if (vi.length >= 2) { var sv = vi[vi.length - 2], st = sv; while (st > 0 && out[st - 1].c) st--; if (vi.length > 2 || st > 0) { /* maximal onset */ } out.splice(st, 0, {c:'ˈ'}); }
+    return out.map(function (x) { return x.c || x.v; }).join('');
   }
-  // Ukrainian -> Polish Latin
-  function ukToPl(w) {
-    var s = w.toLowerCase().replace(/[ʼ'’]/g, 'J'), o = '';
-    var M = {а:'a',б:'b',в:'w',г:'h',ґ:'g',д:'d',е:'e',ж:'ż',з:'z',и:'y',і:'i',ї:'ji',й:'j',к:'k',л:'l',м:'m',н:'n',о:'o',п:'p',р:'r',с:'s',т:'t',у:'u',ф:'f',х:'ch',ц:'c',ч:'cz',ш:'sz',щ:'szcz'};
-    var SOFTC = {н:'ń',с:'ś',з:'ź',ц:'ć',л:'l',т:'ć',д:'dź'};
-    for (var i = 0; i < s.length; i++) { var c = s[i], p = s[i - 1], n = s[i + 1], afterCons = p && /[бвгґджзклмнпрстфхцчшщ]/.test(p);
-      if (c === 'J') { o += ''; continue; }
-      if (c === 'ь') continue;
-      if (/[бвгґджзклмнпрстфхцчшщ]/.test(c) && n === 'ь') { o += SOFTC[c] || M[c]; continue; }
-      if (c === 'я') { o += afterCons && p !== 'J' ? (p === 'л' ? 'a' : 'ia') : 'ja'; continue; }
-      if (c === 'ю') { o += afterCons && p !== 'J' ? (p === 'л' ? 'u' : 'iu') : 'ju'; continue; }
-      if (c === 'є') { o += afterCons && p !== 'J' ? (p === 'л' ? 'e' : 'ie') : 'je'; continue; }
-      o += M[c] != null ? M[c] : c; }
+  function plIPA(t) { return '/' + norm(t).replace(/[.,!?;:…—–]/g, ' ').split(/\s+/).filter(Boolean).map(plWord).join(' ') + '/'; }
+  // ---- Ukrainian -> IPA (no stress: not predictable) ----
+  function ukWord(w) {
+    var s = w.toLowerCase().replace(/[ʼ’`]/g, "'"), o = '', CONS = 'бвгґджзклмнпрстфхцчшщ';
+    var M = {а:'ɑ',б:'b',в:'ʋ',г:'ɦ',ґ:'ɡ',д:'d',е:'ɛ',ж:'ʒ',з:'z',и:'ɪ',і:'i',й:'j',к:'k',л:'l',м:'m',н:'n',о:'ɔ',п:'p',р:'r',с:'s',т:'t',у:'u',ф:'f',х:'x',ц:'t͡s',ч:'t͡ʃ',ш:'ʃ',щ:'ʃt͡ʃ'};
+    var IO = {я:'ɑ',ю:'u',є:'ɛ'};
+    for (var i = 0; i < s.length; i++) { var c = s[i], p = s[i - 1], n = s[i + 1];
+      if (c === "'") continue;
+      if (c === 'д' && n === 'ж') { o += 'd͡ʒ'; i++; continue; }
+      if (c === 'д' && n === 'з') { o += 'd͡z'; i++; continue; }
+      if (c === 'ь') { o += 'ʲ'; continue; }
+      if (IO[c]) { o += (p && CONS.indexOf(p) > -1) ? 'ʲ' + IO[c] : 'j' + IO[c]; continue; }
+      if (c === 'ї') { o += 'ji'; continue; }
+      if (c === 'в' && (!n || CONS.indexOf(n) > -1 || !/[а-яіїєґ]/.test(n)) && p && !(CONS.indexOf(p) > -1)) { o += 'w'; continue; }
+      if (c === 'й' && (!n || CONS.indexOf(n) > -1)) { o += 'j'; continue; }
+      if (CONS.indexOf(c) > -1 && n === 'і') { o += M[c] + 'ʲ'; continue; }
+      o += M[c] != null ? M[c] : ''; }
     return o;
   }
-  // Ukrainian -> English romanization
-  function ukToEn(w) {
-    var s = w.toLowerCase().replace(/[ʼ'’]/g, ''), o = '';
-    var M = {а:'a',б:'b',в:'v',г:'h',ґ:'g',д:'d',е:'e',є:'ye',ж:'zh',з:'z',и:'y',і:'ee',ї:'yee',й:'y',к:'k',л:'l',м:'m',н:'n',о:'o',п:'p',р:'r',с:'s',т:'t',у:'oo',ф:'f',х:'kh',ц:'ts',ч:'ch',ш:'sh',щ:'shch',ь:"'",ю:'yoo',я:'ya'};
-    for (var i = 0; i < s.length; i++) o += M[s[i]] != null ? M[s[i]] : s[i];
-    return o;
+  function ukIPA(t) { return '/' + norm(t).replace(/[.,!?;:…—–]/g, ' ').split(/\s+/).filter(Boolean).map(ukWord).join(' ') + '/'; }
+  function enIPA(t) {
+    var k = key(t); if (IPA_EN[k]) return IPA_EN[k]; if (SENT_EN[norm(t)]) return SENT_EN[norm(t)];
+    var parts = k.replace(/[.,!?;:…]/g, '').split(/\s+/), all = parts.map(function (p) { return (IPA_EN[p] || '').replace(/\//g, ''); });
+    return all.every(Boolean) ? '/' + all.join(' ') + '/' : '';
   }
-  // Polish stress: penultimate syllable
-  function plStress(src, out, cyr) {
-    return out.split(/(\s+|-)/).map(function (word) {
-      var re = cyr ? /[аеєиіїоуюя]/g : /[aeiou]+/g, idx = [], m; while ((m = re.exec(word))) idx.push(m.index);
-      if (idx.length < 2) return word; var k2 = idx[idx.length - 2] + 1; return word.slice(0, k2) + ACC + word.slice(k2); }).join('').replace(/ў/g, 'у');
-  }
-  var IPA = {};
-  function learnIpa(lessons) { (lessons || []).forEach(function (l) { (l.tasks || []).forEach(function (tk) { if (tk.type === 'glossary') (tk.items || []).forEach(function (w) { if (w.w && w.ipa) IPA[String(w.w).toLowerCase().trim()] = w.ipa; }); }); }); }
-  function of(text, tg, sup) {
-    var t = String(text || '').replace(/<[^>]+>/g, '').trim(); if (!t || tg === sup) return '';
-    if (tg === 'en') { var ipa = IPA[t.toLowerCase()];
-      if (!ipa) { var parts = t.toLowerCase().replace(/[.,!?;:"“”]/g, '').split(/\s+/), all = parts.map(function (p) { return IPA[p]; }); if (all.every(Boolean)) ipa = all.join(' '); }
-      if (!ipa) return ''; return sup === 'pl' || sup === 'uk' ? ipaTo(ipa, sup) : ipa; }
-    if (tg === 'pl') { if (sup === 'uk') return plStress(t, plToUk(t), true); return plStress(t, plToEn(t), false); }
-    if (tg === 'uk') { return sup === 'pl' ? ukToPl(t) : ukToEn(t); }
-    return '';
-  }
-  return {of:of, learnIpa:learnIpa, ipaTo:ipaTo, plToUk:plToUk, plToEn:plToEn, ukToPl:ukToPl, ukToEn:ukToEn};
+  function of(text, tg) { var t = norm(text); if (!t) return ''; return tg === 'en' ? enIPA(t) : tg === 'pl' ? plIPA(t) : tg === 'uk' ? ukIPA(t) : ''; }
+  function isWord(text, tg) { return !!(WORDS[tg] || {})[key(text)]; }
+  function addTasks(tasks, tg) { (tasks || []).forEach(function (tk) {
+    if (tk.type === 'glossary') (tk.items || []).forEach(function (w) { if (!w.w) return; WORDS[tg][key(w.w)] = 1; if (tg === 'en' && w.ipa) IPA_EN[key(w.w)] = /^\//.test(w.ipa) ? w.ipa : '/' + w.ipa + '/'; });
+    if (tk.type === 'match') (tk.options || []).forEach(function (x) { var k = key(String(x).split('=')[0]); if (k) WORDS[tg][k] = 1; });
+    ['pl', 'uk', 'en'].forEach(function (L) { var o = tk['options_' + L]; if (tk.type === 'match' && Array.isArray(o)) o.forEach(function (x) { var k = key(String(x).split('=')[0]); if (k) WORDS[tg][k] = 1; }); });
+  }); }
+  function learn(lessons) { (lessons || []).forEach(function (l) { if (!l) return; addTasks(l.tasks, 'en'); var v = l.variants || {}; if (Array.isArray(v.pl)) addTasks(v.pl, 'pl'); if (Array.isArray(v.uk)) addTasks(v.uk, 'uk'); }); }
+  function loadSentences() { return fetch('content/ipa_en.json').then(function (r) { return r.ok ? r.json() : {}; }).then(function (j) { SENT_EN = j || {}; }).catch(function () {}); }
+  return {of:of, isWord:isWord, learn:learn, learnIpa:learn, loadSentences:loadSentences, plIPA:plIPA, ukIPA:ukIPA};
 })();
 
-var PRON_TITLE = function () { return tx({uk:'Як читати', pl:'Jak czytać', en:'How to read it'}); };
-function pronFor(el) { var txt = el.getAttribute('data-say') || el.getAttribute('data-gsay'); if (!txt) return ''; var tg = el.getAttribute('data-glang') || TARGET; return PRON.of(txt, tg, LANG); }
+PRON.loadSentences();
+function pronFor(el) { var txt = el.getAttribute('data-say') || el.getAttribute('data-gsay'); if (!txt) return ''; var tg = el.getAttribute('data-glang') || TARGET; return PRON.isWord(txt, tg) ? PRON.of(txt, tg) : ''; }
 function pronPop(el, p) {
   var old = document.querySelector('.pronpop'); if (old) { var same = old._el === el; old.remove(); if (same) return; }
   var d = document.createElement('div'); d.className = 'pronpop'; d._el = el; d.setAttribute('role', 'status');
-  d.innerHTML = '<small>' + esc(PRON_TITLE()) + '</small><b></b>'; d.lastChild.textContent = p; document.body.appendChild(d);
+  d.innerHTML = '<small>IPA</small><b></b>'; d.lastChild.textContent = p; document.body.appendChild(d);
   var r = el.getBoundingClientRect(), w = d.offsetWidth, x = Math.max(8, Math.min(window.innerWidth - w - 8, r.left + r.width / 2 - w / 2)), y = r.top - d.offsetHeight - 8; if (y < 8) y = r.bottom + 8;
   d.style.left = x + 'px'; d.style.top = y + 'px';
   setTimeout(function () { if (d.parentNode) d.remove(); }, 6000);
@@ -183,10 +142,10 @@ function pronPop(el, p) {
 document.addEventListener('click', function (e) {
   var el = e.target.closest && e.target.closest('[data-say],[data-gsay]');
   if (!el) { var o = document.querySelector('.pronpop'); if (o) o.remove(); return; }
-  var p = pronFor(el); if (!p) return;
-  e.preventDefault(); e.stopPropagation(); e.stopImmediatePropagation(); pronPop(el, p);
+  e.preventDefault(); e.stopPropagation(); e.stopImmediatePropagation();
+  var p = pronFor(el); if (p) pronPop(el, p);
 }, true);
-(function () { var busy = false; function mark() { busy = false; document.querySelectorAll('[data-say]:not([data-pr]),[data-gsay]:not([data-pr])').forEach(function (el) { el.setAttribute('data-pr', '1'); if (pronFor(el)) { el.textContent = 'Aa'; el.classList.add('spk-pr'); el.title = PRON_TITLE(); } }); }
+(function () { var busy = false; function mark() { busy = false; document.querySelectorAll('[data-say]:not([data-pr]),[data-gsay]:not([data-pr])').forEach(function (el) { el.setAttribute('data-pr', '1'); if (pronFor(el)) { el.textContent = '/ə/'; el.classList.add('spk-pr'); el.title = 'IPA'; } else el.style.display = 'none'; }); }
   try { new MutationObserver(function () { if (!busy) { busy = true; requestAnimationFrame(mark); } }).observe(document.documentElement, {childList:true, subtree:true}); } catch (e) {} })();
 function noVoice(code) { toast(tx({uk:'На цьому пристрої немає голосу для мови «' + code + '». Відкрий урок у Chrome або додай голос у налаштуваннях системи.', pl:'To urządzenie nie ma głosu dla języka „' + code + '”. Otwórz lekcję w Chrome albo dodaj głos w ustawieniach systemu.', en:'This device has no voice for “' + code + '”. Open the lesson in Chrome or add a voice in system settings.'}), 'info'); }
 function sayLocal(txt, lang) { try { lang = lang || SPEECH[TARGET]; if (playClip(ttsClean(txt), lang)) return; if (TTS_AUDIO && TTS_AUDIO._clip && !TTS_AUDIO.paused && !TTS_AUDIO.ended) return; var u = new SpeechSynthesisUtterance(String(txt).replace(/_{2,}/g, '…')); u.lang = lang; var v = bestVoice(lang); if (v) u.voice = v; u.rate = v && /natural|neural|online|premium|enhanced/i.test(v.name) ? 1 : .92; u.pitch = 1; speechSynthesis.cancel(); speechSynthesis.speak(u); } catch (e) { toast(t('Озвучення недоступне в цьому браузері'), 'err'); } }
@@ -600,8 +559,8 @@ var API = (cfg.SUPABASE_URL && cfg.SUPABASE_ANON_KEY && window.supabase) ? Supab
   API.getLesson = function (id) { for (var k in C) if (k.indexOf('listLessons|') === 0 && C[k].done) { var l = C[k].done.filter(function (x) { return x.id === id; })[0]; if (l) return Promise.resolve(l); } return gl(id); };
   API.getCourse = function (id) { for (var k in C) if (k.indexOf('listCourses|') === 0 && C[k].done) { var c = C[k].done.filter(function (x) { return x.id === id; })[0]; if (c) return Promise.resolve(c); } return gc(id); };
   var ll = API.listLessons, lc = API.listCourses, gl0 = API.getLesson;
-  if (gl0) API.getLesson = function () { var p = gl0.apply(API, arguments); p.then(function (l) { try { if (l) PRON.learnIpa([l]); } catch (e) {} }); return p; };
-  API.listLessons = function (cid) { var p = ll(cid); p.then(function (r) { try { PRON.learnIpa(r); } catch (e) {} }); var k = 'listLessons|' + JSON.stringify([cid]); p.then(function (r) { if (C[k]) C[k].done = r; }); return p; };
+  if (gl0) API.getLesson = function () { var p = gl0.apply(API, arguments); p.then(function (l) { try { if (l) PRON.learn([l]); } catch (e) {} }); return p; };
+  API.listLessons = function (cid) { var p = ll(cid); p.then(function (r) { try { PRON.learn(r); } catch (e) {} }); var k = 'listLessons|' + JSON.stringify([cid]); p.then(function (r) { if (C[k]) C[k].done = r; }); return p; };
   API.listCourses = function (all) { var p = lc(all); var k = 'listCourses|' + JSON.stringify(all === undefined ? [] : [all]); p.then(function (r) { if (C[k]) C[k].done = r; }); return p; };
   API.clearCache = function () { C = {}; };
   API.prefetch = function () { API.listCourses(false).then(function (cs) { cs.forEach(function (c) { if (c.lessons_count) API.listLessons(c.id); }); }).catch(function () {}); };
@@ -1146,11 +1105,13 @@ function runPlayer(container, lesson, onFinish, ctxLs) {
     var n = numOf(cur);
     return '<div class="ttop"><span class="ttag">' + esc(tag(tk)) + '</span>' + (isInfo(tk.type) ? '' : '<span class="tcount">' + n + ' / ' + scored + '</span>') + '</div>' +
       (tk.img ? '<div class="illu">' + illu(tk.img) + '</div>' : '') +
-      (tk.ins ? '<div class="tins">' + esc(lf(tk, 'ins')) + '</div>' : TASK_INS[tk.type] ? '<div class="tins">' + t(TASK_INS[tk.type]) + '</div>' : '') +
-      (tk.scene ? '<div class="tscene"><b>' + t('Сцена:') + '</b> ' + esc(lf(tk, 'scene')) + '</div>' : '') + '<div class="tq' + ((isInfo(tk.type) && tk.type !== 'intro') || tk.type === 'quest' ? ' tq-info' : '') + '">' + (isInfo(tk.type) ? esc(lf(tk, 'q') || '') : qHtml(tk)) + (!isInfo(tk.type) && tk.type !== 'quest' && tk.q && !tk['q_' + LANG] ? ' <button type="button" class="spk" data-say="' + esc(plainQ(tk.q)) + '" title="' + tx({uk:'Прослухати', pl:'Odsłuchaj', en:'Listen'}) + '">🔊</button>' : '') + '</div>' +
+      (tk.say && tk.type !== 'speaking' && PRON.of(tk.say, TARGET) ? '' : tk.ins ? '<div class="tins">' + esc(lf(tk, 'ins')) + '</div>' : TASK_INS[tk.type] ? '<div class="tins">' + t(TASK_INS[tk.type]) + '</div>' : '') +
+      (tk.scene ? '<div class="tscene"><b>' + t('Сцена:') + '</b> ' + esc(lf(tk, 'scene')) + '</div>' : '') + '<div class="tq' + ((isInfo(tk.type) && tk.type !== 'intro') || tk.type === 'quest' ? ' tq-info' : '') + '">' + (isInfo(tk.type) ? esc(lf(tk, 'q') || '') : (tk.say && tk.type !== 'speaking' && PRON.of(tk.say, TARGET)) ? '' : qHtml(tk)) + (!isInfo(tk.type) && tk.type !== 'quest' && tk.q && !tk['q_' + LANG] ? ' <button type="button" class="spk" data-say="' + esc(plainQ(tk.q)) + '" title="' + tx({uk:'Прослухати', pl:'Odsłuchaj', en:'Listen'}) + '">🔊</button>' : '') + '</div>' +
       (!isInfo(tk.type) && !tk['q_' + LANG] && tk['qt_' + LANG] ? '<div class="qtrw"><button type="button" class="qtrb" id="qtrBtn">🌐 ' + tx({uk:'Перекласти питання', pl:'Przetłumacz pytanie', en:'Translate the question'}) + '</button><div class="qtrt" id="qtrText" hidden>' + esc(tk['qt_' + LANG]).replace(/&lt;(\/?)(b|i)&gt;/g, '<$1$2>').replace(/_{3,}/g, '<span class="gap">____</span>') + '</div></div>' : '') +
       (gRuleTask(tk, lesson) ? '<div class="rulew"><button type="button" class="qtrb rulebtn" id="ruleBtn">📘 ' + tx({uk:'Нагадати правило', pl:'Przypomnij zasadę', en:'Show the rule'}) + '</button><div class="rulebox" id="ruleBox" hidden></div></div>' : '') +
-      (tk.say ? '<div><button class="speak" type="button" id="tsay"><span class="play"></span>' + t('Прослухати') + '</button></div>' : '');
+      (tk.say ? (function () { var ip = PRON.of(tk.say, TARGET);
+        if (!ip) return '<div><button class="speak" type="button" id="tsay"><span class="play"></span>' + t('Прослухати') + '</button></div>';
+        return (tk.type === 'speaking' ? '<div class="sayline">' + esc(tk.say) + '</div>' : '<div class="tins">' + tx({uk:'Прочитай транскрипцію і запиши це звичайним письмом.', pl:'Przeczytaj transkrypcję i zapisz to zwykłą pisownią.', en:'Read the transcription and write it in normal spelling.'}) + '</div>') + '<div class="ipabox" lang="' + TARGET + '">' + esc(ip) + '</div>'; })() : '');
   }
   function foot() { var tk0 = tasks[cur] || {}; return '<div class="tfb" id="tfb"></div><div class="tnav"><span class="hint">' + (SKIPPABLE[tk0.type] && tk0.type !== 'speaking' ? '<button type="button" class="skipb" id="skipErr">' + tx({uk:'Не можу зараз (пропустити)', pl:'Nie mogę teraz (pomiń)', en:'Can\'t do it now (skip)'}) + '</button> ' : '') + '<span class="hint">' + t('Завдання') + ': ' + FLAG[TARGET] + ' · ' + t('Підказки') + ': ' + FLAG[LANG] + '</span></span><button class="btn btn-red" type="button" id="tnext" hidden>' + t('Далі') + '</button></div>'; }
   function skipMsg() { return '⚠ ' + tx({uk:'Завдання пропущено — зараховано як помилку. Можна повернутися до нього, пройшовши урок ще раз.', pl:'Zadanie pominięte — liczy się jako błąd. Możesz do niego wrócić, przechodząc lekcję jeszcze raz.', en:'Task skipped — it counts as a mistake. You can come back to it by retaking the lesson.'}); }
@@ -1172,7 +1133,7 @@ function runPlayer(container, lesson, onFinish, ctxLs) {
     }
     if (type === 'cards' || type === 'glossary') {
       if (type === 'cards') h += '<div class="pcards">' + (tk.cards || []).map(function (c) { return '<div class="pcard' + (c.upd ? ' upd' : '') + '"><div class="pc-n"><b>' + esc(LANG === 'uk' ? c.uk : c.en) + '</b>' + (LANG === 'uk' ? ' <span class="muted small">' + esc(c.en) + '</span>' : '') + (c.upd ? ' <span class="pc-u">' + tx({uk:'оновлено', pl:'nowość', en:'updated'}) + '</span>' : '') + '</div><div class="pc-r">' + esc(lf(c, 'role')) + '</div></div>'; }).join('') + '</div>';
-      else h += '<div class="gloss">' + (tk.items || []).map(function (w) { return '<details class="gw"><summary><b>' + esc(w.w) + '</b> <span class="spk spk-in" role="button" data-say="' + esc(w.w) + '">🔊</span> <span class="gw-ipa">' + esc((LANG !== 'en' && PRON.of(w.w, TARGET, LANG)) || w.ipa || '') + '</span><span class="gw-uk">' + esc(wordMeaning(w)) + '</span></summary><div class="gw-b"><div class="gw-meta">' + esc(w.pos || '') + (w.lvl ? ' · <b>' + esc(w.lvl) + '</b>' : '') + '</div>' + (w.who ? '<p>🎬 ' + esc(lf(w, 'who')) + '</p>' : '') + (w.line ? '<p class="gw-line">«' + esc(w.line) + '» <span class="spk spk-in" role="button" data-say="' + esc(w.line) + '">🔊</span></p>' : '') + (w.ex ? '<p class="gw-ex">✎ ' + esc(w.ex) + ' <span class="spk spk-in" role="button" data-say="' + esc(w.ex) + '">🔊</span></p>' : '') + '</div></details>'; }).join('') + '</div>';
+      else h += '<div class="gloss">' + (tk.items || []).map(function (w) { return '<details class="gw"><summary><b>' + esc(w.w) + '</b> <span class="spk spk-in" role="button" data-say="' + esc(w.w) + '">🔊</span> <span class="gw-ipa">' + esc(PRON.of(w.w, TARGET) || w.ipa || '') + '</span><span class="gw-uk">' + esc(wordMeaning(w)) + '</span></summary><div class="gw-b"><div class="gw-meta">' + esc(w.pos || '') + (w.lvl ? ' · <b>' + esc(w.lvl) + '</b>' : '') + '</div>' + (w.who ? '<p>🎬 ' + esc(lf(w, 'who')) + '</p>' : '') + (w.line ? '<p class="gw-line">«' + esc(w.line) + '» <span class="spk spk-in" role="button" data-say="' + esc(w.line) + '">🔊</span></p>' : '') + (w.ex ? '<p class="gw-ex">✎ ' + esc(w.ex) + ' <span class="spk spk-in" role="button" data-say="' + esc(w.ex) + '">🔊</span></p>' : '') + '</div></details>'; }).join('') + '</div>';
       h += '<div class="row"><button class="btn btn-red" type="button" id="tstart">' + tx({uk:'Далі', pl:'Dalej', en:'Next'}) + '</button></div>';
       card.innerHTML = h; card.querySelector('#tstart').onclick = function () { res[cur] = null; next(); }; bindSay(tk); return;
     }
