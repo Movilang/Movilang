@@ -735,7 +735,7 @@ function adminVoices(ls) {
         fetch(C.SUPABASE_URL + '/functions/v1/tts', {method:'POST', headers:H, body:JSON.stringify({text:it.t, lang:it.g})})
           .then(function (r) { return r.json().then(function (j) { return {s:r.status, j:j}; }); })
           .then(function (x) {
-            if (x.s === 429) { var e = new Error(tx({uk:'Денний ліміт Gemini вичерпано. Продовж завтра — готові голоси збережено.', pl:'Dzienny limit Gemini wyczerpany. Kontynuuj jutro — gotowe głosy są zapisane.', en:'Gemini daily limit reached. Continue tomorrow — finished clips are saved.'})); e.info = 1; throw e; }
+            if (x.s === 429) { var e = new Error(tx({uk:'Денний ліміт Gemini вичерпано. Продовж завтра — готові голоси збережено.', pl:'Dzienny limit Gemini wyczerpany. Kontynuuj jutro — gotowe głosy są zapisane.', en:'Gemini daily limit reached. Continue tomorrow — finished clips are saved.'})); e.info = 1; if (x.j && x.j.detail && /\[cloud-tts/.test(x.j.detail)) e.message += ' — ' + x.j.detail.slice(0, 160); throw e; }
             if (!x.j || !x.j.audio) throw new Error((x.j && (x.j.error + ' ' + (x.j.detail || ''))) || x.s);
             model = x.j.model || ''; var bin = atob(x.j.audio), u8 = new Uint8Array(bin.length); for (var q = 0; q < bin.length; q++) u8[q] = bin.charCodeAt(q);
             return fetch('/a/' + it.p, {method:'PUT', headers:{'Content-Type':'audio/wav', Authorization:'Bearer ' + tok}, body:u8});
