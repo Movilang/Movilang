@@ -87,6 +87,9 @@ LB = {
  "speak": ("ГОВОРІННЯ", "MÓWIENIE", "SPEAKING"),
  "final": ("ЛИСТ КЕВІНА", "LIST KEVINA", "KEVIN'S LETTER"),
  "quest": ("КВЕСТ", "QUEST", "QUEST"),
+ "announce": ("ОГОЛОШЕННЯ В АЕРОПОРТУ", "KOMUNIKAT NA LOTNISKU", "AIRPORT ANNOUNCEMENT"),
+ "phone": ("ТЕЛЕФОННА РОЗМОВА", "ROZMOWA TELEFONICZNA", "PHONE CALL"),
+ "map": ("КАРТА ПАСТОК", "MAPA PUŁAPEK", "TRAP MAP"),
 }
 INS = {
  "who": ("Хто вимовляє цю фразу?", "Kto wypowiada to zdanie?", "Who says this line?"),
@@ -106,6 +109,9 @@ INS = {
  "profile": ("З'єднай персонажа з описом", "Połącz postać z opisem", "Match each character with a description"),
  "final": ("Напиши текст англійською", "Napisz tekst po angielsku", "Write a text in English"),
  "quest": ("Кожен вибір веде далі. Обирай уважно — англійською", "Każdy wybór prowadzi dalej. Wybieraj uważnie — po angielsku", "Every choice leads on. Choose carefully — in English"),
+ "announce": ("Прочитай оголошення і дай відповідь", "Przeczytaj komunikat i odpowiedz", "Read the announcement and answer"),
+ "phone": ("Обери найкращу репліку для розмови", "Wybierz najlepszą kwestię do rozmowy", "Choose the best line for the conversation"),
+ "map": ("Подивись на карту Кевіна і подумай, що станеться", "Spójrz na mapę Kevina i pomyśl, co się stanie", "Look at Kevin's map and work out what will happen"),
 }
 
 def who(q, opts, ans, why, tip="", scene=None, img=None):
@@ -122,6 +128,12 @@ def police(q, opts, ans, why, tip="", scene=None, img=None):
     return _mc("quiz", LB["police"], q, opts, ans, why, tip, scene, img, INS["police"])
 def trap(q, opts, ans, why, tip="", scene=None, img=None):
     return _mc("quiz", LB["trap"], q, opts, ans, why, tip, scene, img, INS["trap"])
+def announce(q, opts, ans, why, tip="", scene=None, img=None):
+    return _mc("quiz", LB["announce"], q, opts, ans, why, tip, scene, img, INS["announce"])
+def phone(q, opts, ans, why, tip="", scene=None, img=None):
+    return _mc("quiz", LB["phone"], q, opts, ans, why, tip, scene, img, INS["phone"])
+def trapmap(q, opts, ans, why, tip="", scene=None, img=None):
+    return _mc("quiz", LB["map"], q, opts, ans, why, tip, scene, img, INS["map"])
 def gram(q, opts, ans, why, tip="", scene=None, img=None, label=None):
     return _mc("grammar", label or LB["gram"], q, opts, ans, why, tip, scene, img, INS["gram"])
 def word(q, opts, ans, why, tip="", scene=None, img=None):

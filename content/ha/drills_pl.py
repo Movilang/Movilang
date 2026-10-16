@@ -160,3 +160,43 @@ D[23] = [
  ("Jutro ____ do mamy.", ["zadzwonię", "dzwoniłem", "zadzwonił"], 0, ("Я + майбутнє.", "Ja + przyszłość.", "I + future.")),
  ("Kevin nie ____ się.", ["podda", "poddałem", "poddadzą"], 0, ("Він → podda.", "On → podda.", "He → podda.")),
 ]
+D[25] = [
+ ("____ bilet do Chicago.", ["Poproszę", "Proszę się", "Prosiłam"], 0, ("Poproszę + іменник.", "Poproszę + rzeczownik.", "Poproszę + noun.")),
+ ("Czy ____ mi pani pomóc?", ["mogłaby", "mogłabym", "mogę"], 0, ("Pani → mogłaby.", "Pani → mogłaby.", "Pani → mogłaby.")),
+ ("Kate: — ____ wrócić do domu.", ["Chciałabym", "Chciałbym", "Chcę by"], 0, ("Жінка → chciałabym.", "Kobieta → chciałabym.", "Woman → chciałabym.")),
+ ("Czy ____ zadzwonić? (ja)", ["mogę", "może", "możesz"], 0, ("Ja → mogę.", "Ja → mogę.", "Ja → mogę.")),
+ ("Peter: — ____ kawę.", ["Poproszę", "Poprosiła", "Proszony"], 0, ("Poproszę kawę.", "Poproszę kawę.", "Poproszę kawę.")),
+ ("Czy ____ pan otworzyć okno?", ["mógłby", "mogłaby", "mogę"], 0, ("Pan → mógłby.", "Pan → mógłby.", "Pan → mógłby.")),
+]
+D[26] = [
+ ("Jest ____ późno.", ["za", "wystarczająco", "zbyt dużo"], 0, ("Za późno.", "Za późno.", "Za późno.")),
+ ("Nie ma ____ miejsc.", ["wystarczająco", "za", "zbyt"], 0, ("Wystarczająco + родовий.", "Wystarczająco + dopełniacz.", "Wystarczająco + genitive.")),
+ ("Kawa jest ____ gorąca.", ["za", "dość dużo", "wystarczająca"], 0, ("Za gorąca.", "Za gorąca.", "Za gorąca.")),
+ ("Mamy ____ czasu?", ["dość", "za", "zbyt"], 0, ("Dość + родовий.", "Dość + dopełniacz.", "Dość + genitive.")),
+ ("Jestem ____ zmęczona.", ["zbyt", "za dużo", "dość dużo"], 0, ("Zbyt = za.", "Zbyt = za.", "Zbyt = too.")),
+ ("Jest ____ mało miejsc.", ["za", "dość", "wystarczająco"], 0, ("Za mało.", "Za mało.", "Za mało.")),
+]
+D[27] = [
+ ("Zespół gra ____.", ["głośno", "głośny", "głośna"], 0, ("Głośny → głośno.", "Głośny → głośno.", "Głośny → głośno.")),
+ ("On śpiewa ____.", ["źle", "zły", "zła"], 0, ("Zły → źle.", "Zły → źle.", "Zły → źle.")),
+ ("Jedź ____!", ["ostrożnie", "ostrożny", "ostrożna"], 0, ("Ostrożny → ostrożnie.", "Ostrożny → ostrożnie.", "Ostrożny → ostrożnie.")),
+ ("Gus gra ____.", ["dobrze", "dobry", "dobra"], 0, ("Dobry → dobrze.", "Dobry → dobrze.", "Dobry → dobrze.")),
+ ("Mów ____.", ["cicho", "cichy", "cicha"], 0, ("Cichy → cicho.", "Cichy → cicho.", "Cichy → cicho.")),
+ ("Furgonetka jedzie ____.", ["powoli", "powolny", "powolna"], 0, ("Powolny → powoli.", "Powolny → powoli.", "Powolny → powoli.")),
+]
+D[28] = [
+ ("Jeśli ____ teraz, zdążymy.", ["wyjedziemy", "wyjechaliśmy", "wyjechalibyśmy"], 0, ("Jeśli + майбутній.", "Jeśli + przyszły.", "Jeśli + future.")),
+ ("Jeśli będzie padać, ____ w domu.", ["zostaniemy", "zostaliśmy", "zostalibyśmy"], 0, ("Наслідок — майбутній.", "Skutek — przyszły.", "Result — future.")),
+ ("Jeśli Kate ____, policja przyjedzie.", ["zadzwoni", "zadzwoniła", "dzwoniłaby"], 0, ("Майбутній: zadzwoni.", "Przyszły: zadzwoni.", "Future: zadzwoni.")),
+ ("Jeśli nikt nie ____, policjant odjedzie.", ["otworzy", "otworzył", "otwierał"], 0, ("Майбутній: otworzy.", "Przyszły: otworzy.", "Future: otworzy.")),
+ ("Będziesz w domu, ____ pojedziemy całą noc.", ["jeśli", "co", "kto"], 0, ("Умова → jeśli.", "Warunek → jeśli.", "Condition → jeśli.")),
+ ("Jeśli jesteś zmęczona, ja ____.", ["poprowadzę", "prowadziłem", "poprowadziłem"], 0, ("Я + майбутній.", "Ja + przyszły.", "I + future.")),
+]
+D[29] = [
+ ("Lot jest ____ niedzielę.", ["w", "o", "na"], 0, ("W + день.", "W + dzień.", "W + day.")),
+ ("Samolot startuje ____ siódmej.", ["o", "w", "na"], 0, ("O + година.", "O + godzina.", "O + time.")),
+ ("W ____ jest zimno.", ["grudniu", "grudzień", "grudnia"], 0, ("W + місцевий: w grudniu.", "W + miejscownik: w grudniu.", "W + locative: w grudniu.")),
+ ("Zjemy kolację ____.", ["wieczorem", "wieczór", "wieczoru"], 0, ("Wieczorem = увечері.", "Wieczorem.", "Wieczorem = in the evening.")),
+ ("Kevin śpi ____.", ["w nocy", "na noc", "o nocy"], 0, ("W nocy.", "W nocy.", "W nocy = at night.")),
+ ("Prezenty są ____ Boże Narodzenie.", ["na", "o", "w"], 0, ("Na święta = на свята.", "Na święta.", "Na = for (an occasion).")),
+]

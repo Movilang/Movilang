@@ -303,3 +303,83 @@ G[23] = [
 ]
 D[23] = ("Napisz obietnice Kevina na ten wieczór (35+ słów). Użyj: obronię, nie ucieknę, zrobię, obiecuję, że…", 35,
  ("Доконані дієслова: zrobię, obronię, przygotuję.", "Dokonane: zrobię, obronię, przygotuję.", "Perfective: zrobię, obronię, przygotuję."))
+
+T[25] = ("Grzeczne prośby: Poproszę… Chciałabym… Czy mógłby pan…?", "Grzeczne prośby: Poproszę… Chciałabym… Czy mógłby pan…?", "Polite requests: Poproszę… Chciałabym… Czy mógłby pan…?")
+G[25] = [
+ ("Kate przy okienku: — ____ bilet do Chicago.", ["Poproszę", "Proszę się", "Prosiłam"], 0,
+  [("Так! Poproszę + іменник = «дайте, будь ласка».", "Tak! Poproszę + rzeczownik — grzeczna prośba.", "Yes! Poproszę + noun = “I'd like…, please”."),
+   ("Proszę się — зворотне, тут не підходить.", "„Proszę się” — forma zwrotna, nie pasuje.", "Proszę się is reflexive and doesn't fit."),
+   ("Prosiłam — минуле.", "„Prosiłam” — przeszłość.", "Prosiłam is past.")],
+  ("У магазині й на касі: Poproszę kawę / bilet.", "W sklepie i przy kasie: Poproszę kawę / bilet.", "In shops and at desks: Poproszę kawę / bilet.")),
+ ("Kate: — ____ wrócić do domu na święta.", ["Chciałabym", "Chciałbym", "Chcę by"], 0,
+  [("Так! Кейт — жінка → chciałabym.", "Tak! Kate to kobieta → chciałabym.", "Yes! Kate is a woman → chciałabym."),
+   ("Chciałbym — каже чоловік.", "„Chciałbym” mówi mężczyzna.", "Chciałbym is what a man says."),
+   ("Chcę by — помилка.", "„Chcę by” — błąd.", "Chcę by is wrong.")],
+  ("Умовний спосіб: chciałbym (чол.), chciałabym (жін.).", "Tryb przypuszczający: chciałbym / chciałabym.", "Conditional: chciałbym (male), chciałabym (female).")),
+]
+D[25] = ("Napisz grzeczną wiadomość do linii lotniczych (35+ słów). Użyj: Poproszę…, Chciałabym/Chciałbym…, Czy mógłby pan / mogłaby pani…?", 35,
+ ("Proszę, dziękuję — ввічливі слова.", "Proszę, dziękuję — słowa grzecznościowe.", "Proszę, dziękuję — polite words."))
+
+T[26] = ("Za / zbyt / wystarczająco", "Za / zbyt / wystarczająco", "Za / zbyt / wystarczająco (too / enough)")
+G[26] = [
+ ("Przykro mi, jest już ____ późno na lot.", ["za", "zbyt dużo", "wystarczająco"], 0,
+  [("Так! Za + прикметник/прислівник = надто.", "Tak! Za + przymiotnik/przysłówek.", "Yes! Za + adjective/adverb = too."),
+   ("Zbyt dużo — з іменником.", "„Zbyt dużo” — z rzeczownikiem.", "Zbyt dużo goes with nouns."),
+   ("Wystarczająco późno — інший зміст.", "„Wystarczająco późno” — inny sens.", "Wystarczająco późno means “late enough”.")],
+  ("Za późno, za drogo, za zimno.", "Za późno, za drogo, za zimno.", "Za późno, za drogo, za zimno.")),
+ ("Nie ma ____ miejsc w samolocie.", ["wystarczająco", "za", "zbyt"], 0,
+  [("Так! Wystarczająco + родовий: miejsc.", "Tak! Wystarczająco + dopełniacz: miejsc.", "Yes! Wystarczająco + genitive: miejsc."),
+   ("Za + іменник — помилка.", "„Za” + rzeczownik — błąd.", "Za + noun is wrong."),
+   ("Zbyt + іменник — помилка.", "„Zbyt” + rzeczownik — błąd.", "Zbyt + noun is wrong.")],
+  ("Також: za mało miejsc = замало місць.", "Także: za mało miejsc.", "Also: za mało miejsc = not enough seats.")),
+]
+D[26] = ("Napisz wiadomość Kate do Petera ze Scranton (35+ słów). Użyj: za późno, za zimno, za mało miejsc, wystarczająco.", 35,
+ ("Za + прикметник; za mało + родовий.", "Za + przymiotnik; za mało + dopełniacz.", "Za + adjective; za mało + genitive."))
+
+T[27] = ("Przysłówki: głośno, cicho, dobrze, źle", "Przysłówki: głośno, cicho, dobrze, źle", "Adverbs: głośno, cicho, dobrze, źle")
+G[27] = [
+ ("Zespół gra bardzo ____.", ["głośno", "głośny", "głośna"], 0,
+  [("Так! Як грає? → прислівник на -o.", "Tak! Jak gra? → przysłówek na -o.", "Yes! How does it play? → adverb in -o."),
+   ("Głośny — прикметник: głośny zespół.", "„Głośny” — przymiotnik.", "Głośny is an adjective."),
+   ("Głośna — прикметник жін. роду.", "„Głośna” — przymiotnik.", "Głośna is an adjective.")],
+  ("Прислівники: -o (głośno, cicho) або -e (dobrze, ładnie).", "Przysłówki: -o (głośno) lub -e (dobrze, ładnie).", "Adverbs end in -o (głośno) or -e (dobrze, ładnie).")),
+ ("Gus gra ____ na akordeonie, ale śpiewa źle.", ["dobrze", "dobry", "dobra"], 0,
+  [("Так! Dobry → dobrze.", "Tak! Dobry → dobrze.", "Yes! Dobry → dobrze."),
+   ("Прикметник.", "Przymiotnik.", "Adjective."),
+   ("Прикметник жін. роду.", "Przymiotnik r. żeńskiego.", "Feminine adjective.")],
+  ("Dobry → dobrze, zły → źle.", "Dobry → dobrze, zły → źle.", "Dobry → dobrze, zły → źle.")),
+]
+D[27] = ("Opisz noc w furgonetce zespołu (35+ słów). Użyj: głośno, cicho, dobrze, źle, powoli, ostrożnie.", 35,
+ ("Дієслово + прислівник.", "Czasownik + przysłówek.", "Verb + adverb."))
+
+T[28] = ("Jeśli + czas przyszły", "Jeśli + czas przyszły", "Jeśli + future tense (First Conditional)")
+G[28] = [
+ ("Jeśli ____ całą noc, będziesz w domu rano.", ["pojedziemy", "pojechaliśmy", "pojechalibyśmy"], 0,
+  [("Так! Jeśli + майбутній час, як і в другій частині.", "Tak! Jeśli + czas przyszły, jak w drugiej części.", "Yes! Jeśli + future, like the second half."),
+   ("Минуле — інший зміст.", "Przeszłość — inny sens.", "The past changes the meaning."),
+   ("Умовний спосіб — для нереальних ситуацій.", "Tryb przypuszczający — dla sytuacji nierealnych.", "The conditional mood is for unreal situations.")],
+  ("На відміну від англійської: по-польськи після jeśli — майбутній час.", "Inaczej niż po angielsku: po jeśli jest czas przyszły.", "Unlike English, Polish uses the future after jeśli.")),
+ ("Jeśli nikt nie otworzy, policjant ____.", ["odjedzie", "odjechał", "odjeżdżał"], 0,
+  [("Так! Наслідок — майбутній час.", "Tak! Skutek — czas przyszły.", "Yes! The result — future tense."),
+   ("Минуле.", "Przeszłość.", "Past."),
+   ("Минуле, недоконаний вид.", "Przeszłość, niedokonany.", "Past imperfective.")],
+  ("Jeśli + przyszły, przyszły.", "Jeśli + przyszły, przyszły.", "Jeśli + future, future.")),
+]
+D[28] = ("Napisz plan Kate na tę noc (35+ słów). Użyj trzech zdań z jeśli: Jeśli drogi będą…, Jeśli policja…, Jeśli dojadę…", 35,
+ ("Jeśli + майбутній, майбутній.", "Jeśli + przyszły, przyszły.", "Jeśli + future, future."))
+
+T[29] = ("Kiedy? w niedzielę, w grudniu, o siódmej", "Kiedy? w niedzielę, w grudniu, o siódmej", "When? w niedzielę, w grudniu, o siódmej")
+G[29] = [
+ ("Nasz lot jest ____ niedzielę.", ["w", "o", "na"], 0,
+  [("Так! W + день тижня (знахідний): w niedzielę.", "Tak! W + dzień tygodnia (biernik).", "Yes! W + day of the week (accusative)."),
+   ("O — для годин.", "„O” — dla godzin.", "O is for clock times."),
+   ("Na niedzielę — «на неділю» (до неділі), інший зміст.", "„Na niedzielę” — inny sens.", "Na niedzielę means “for Sunday”.")],
+  ("W poniedziałek, w niedzielę, w Wigilię.", "W poniedziałek, w niedzielę, w Wigilię.", "W poniedziałek, w niedzielę, w Wigilię.")),
+ ("Samolot startuje ____ siódmej rano.", ["o", "w", "na"], 0,
+  [("Так! O + година (місцевий): o siódmej.", "Tak! O + godzina (miejscownik).", "Yes! O + clock time (locative)."),
+   ("W — для днів і місяців.", "„W” — dla dni i miesięcy.", "W is for days and months."),
+   ("Na — не з годинами.", "„Na” — nie z godzinami.", "Na isn't used with clock times.")],
+  ("O siódmej, o północy; w grudniu (місцевий).", "O siódmej, o północy; w grudniu.", "O siódmej, o północy; w grudniu (locative).")),
+]
+D[29] = ("Napisz pocztówkę z Paryża od Buzza do Kevina (35+ słów). Użyj: w niedzielę, o siódmej, w grudniu, rano, wieczorem.", 35,
+ ("W + день/місяць, o + година.", "W + dzień/miesiąc, o + godzina.", "W + day/month, o + time."))

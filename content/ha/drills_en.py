@@ -160,3 +160,43 @@ D[23] = [
  ("It's cold. I ____ close the window.", ["'ll", "'s", "'re"], 0, ("I'll = I will.", "I'll = I will.", "I'll = I will.")),
  ("Kevin ____ give up.", ["won't", "not will", "don't will"], 0, ("Won't + дієслово.", "Won't + czasownik.", "Won't + verb.")),
 ]
+D[25] = [
+ ("____ you help me, please?", ["Could", "Would like", "Must"], 0, ("Could you…?", "Could you…?", "Could you…?")),
+ ("I'd ____ a ticket, please.", ["like", "liking", "likes"], 0, ("I'd like + іменник.", "I'd like + rzeczownik.", "I'd like + noun.")),
+ ("Would you ____ a coffee?", ["like", "liking", "likes"], 0, ("Would you like…?", "Would you like…?", "Would you like…?")),
+ ("____ I sit here, please?", ["Can", "Would", "Am"], 0, ("Can I…? — дозвіл.", "Can I…? — pozwolenie.", "Can I…? — permission.")),
+ ("Could you ____ the door?", ["open", "to open", "opening"], 0, ("Could + базова форма.", "Could + forma podstawowa.", "Could + base form.")),
+ ("I'd like ____ go home.", ["to", "for", "at"], 0, ("I'd like to + дієслово.", "I'd like to + czasownik.", "I'd like to + verb.")),
+]
+D[26] = [
+ ("It's ____ late.", ["too", "enough", "very enough"], 0, ("Too + прикметник.", "Too + przymiotnik.", "Too + adjective.")),
+ ("There aren't ____ seats.", ["enough", "too", "too much"], 0, ("Enough + іменник.", "Enough + rzeczownik.", "Enough + noun.")),
+ ("She isn't old ____.", ["enough", "too", "much"], 0, ("Прикметник + enough.", "Przymiotnik + enough.", "Adjective + enough.")),
+ ("This bag is ____ heavy.", ["too", "enough", "too much"], 0, ("Too heavy.", "Too heavy.", "Too heavy.")),
+ ("Do we have ____ time?", ["enough", "too", "much enough"], 0, ("Enough time.", "Enough time.", "Enough time.")),
+ ("It's ____ cold to wait outside.", ["too", "enough", "so much"], 0, ("Too + прикм. + to.", "Too + przym. + to.", "Too + adj. + to.")),
+]
+D[27] = [
+ ("He sings ____.", ["badly", "bad", "worse"], 0, ("Bad → badly.", "Bad → badly.", "Bad → badly.")),
+ ("Drive ____!", ["carefully", "careful", "care"], 0, ("Careful → carefully.", "Careful → carefully.", "Careful → carefully.")),
+ ("Gus plays ____.", ["well", "good", "goodly"], 0, ("Good → well.", "Good → well.", "Good → well.")),
+ ("Speak ____, please.", ["quietly", "quiet", "quietness"], 0, ("Quiet → quietly.", "Quiet → quietly.", "Quiet → quietly.")),
+ ("The van moves ____.", ["slowly", "slowness", "slowed"], 0, ("Slow → slowly.", "Slow → slowly.", "Slow → slowly.")),
+ ("They sing ____.", ["happily", "happy", "happiness"], 0, ("Happy → happily.", "Happy → happily.", "Happy → happily.")),
+]
+D[28] = [
+ ("If we ____ now, we'll be on time.", ["leave", "will leave", "left"], 0, ("If + Present.", "If + Present.", "If + Present.")),
+ ("If it snows, we ____ stay home.", ["will", "are", "would"], 0, ("Наслідок → will.", "Skutek → will.", "Result → will.")),
+ ("If Kate ____ the police, they'll come.", ["calls", "call", "will call"], 0, ("She → calls.", "She → calls.", "She → calls.")),
+ ("If nobody ____, he'll go away.", ["answers", "answer", "will answer"], 0, ("Nobody → -s.", "Nobody → -s.", "Nobody → -s.")),
+ ("You'll be home ____ we drive all night.", ["if", "what", "who"], 0, ("Умова → if.", "Warunek → if.", "Condition → if.")),
+ ("If you're tired, I ____ drive.", ["'ll", "'m", "'s"], 0, ("I'll = I will.", "I'll = I will.", "I'll = I will.")),
+]
+D[29] = [
+ ("The flight is ____ Sunday.", ["on", "in", "at"], 0, ("On + день.", "On + dzień.", "On + day.")),
+ ("It leaves ____ seven.", ["at", "on", "in"], 0, ("At + година.", "At + godzina.", "At + time.")),
+ ("It's cold ____ December.", ["in", "on", "at"], 0, ("In + місяць.", "In + miesiąc.", "In + month.")),
+ ("We'll eat ____ the evening.", ["in", "on", "at"], 0, ("In the evening.", "In the evening.", "In the evening.")),
+ ("Kevin sleeps ____ night.", ["at", "in", "on"], 0, ("At night.", "At night.", "At night.")),
+ ("Presents ____ Christmas Day!", ["on", "in", "at"], 0, ("On Christmas Day.", "On Christmas Day.", "On Christmas Day.")),
+]
