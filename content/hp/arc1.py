@@ -129,7 +129,7 @@ asleep|/əˈsliːp/|adjective|A2|сплячий|Змія лежить нерух
 boring|/ˈbɔːrɪŋ/|adjective|A2|нудний|Дадлі розчарований: змія нічого не робить.|It's boring.|The film was long and boring.
 to understand|/ˌʌndəˈstænd/|verb|A2|розуміти|Гаррі каже змії, що розуміє, як це — жити за склом.|I know how you feel.|I don't understand this word.
 to wink|/wɪŋk/|verb|B2|підморгувати|Змія раптом підморгує Гаррі.|It winked at me!|He winked at me across the room.
-to be bred in captivity|/bred ɪn kæpˈtɪvəti/|phrase|C1|бути вирощеним у неволі|Табличка пояснює, що удав народився в зоопарку.|Bred in captivity.|These parrots were bred in captivity.
+to be born in a zoo|/bɔːn ɪn ə zuː/|phrase|A2|народитися в зоопарку|Табличка пояснює, що удав народився в зоопарку.|Born in a zoo.|These pandas were born in a zoo.
 Brazil|/brəˈzɪl/|noun|A2|Бразилія|Змія ніколи не бачила країни, звідки походить її вид.|Do you miss Brazil?|My friend is travelling around Brazil.
 to miss|/mɪs/|verb|B1|сумувати за (кимось/чимось)|Гаррі питає змію, чи сумує вона за домом.|Do you miss your family?|I miss my grandmother's cooking.
 """),
@@ -306,11 +306,11 @@ to light a fire|/laɪt ə ˈfaɪə/|phrase|B1|розпалити вогонь|Г
 wizard|/ˈwɪzəd/|noun|B1|чарівник|Геґрід вимовляє слова, які змінюють життя Гаррі.|You're a wizard, Harry.|In the story, a wizard helps the young king.
 I'm a what?|/aɪm ə ˈwɒt/|phrase, informal|B1|Я — хто? (здивоване перепитування)|Гаррі не вірить почутому.|I'm a what?|“You're a genius.” — “I'm a what?”
 to accept|/əkˈsept/|verb|B1|прийняти (заявку, пропозицію)|У листі сказано, що Гаррі прийнято до школи.|You have been accepted.|She accepted the job offer.
-school of witchcraft and wizardry|/ˈwɪtʃkrɑːft ənd ˈwɪzədri/|noun|C1|школа чарів і чаклунства|Повна назва Гоґвортсу звучить урочисто.|Hogwarts School of Witchcraft and Wizardry.|He studied witchcraft and wizardry for seven years.
+school of witchcraft and wizardry|/ˈwɪtʃkrɑːft ənd ˈwɪzədri/|noun|HP|школа чарів і чаклунства|Повна назва Гоґвортсу звучить урочисто.|Hogwarts School of Witchcraft and Wizardry.|He studied witchcraft and wizardry for seven years.
 to know about|/nəʊ əˈbaʊt/|phrase|A2|знати про|Геґрід шокований, що Гаррі нічого не знає про свій світ.|Didn't you ever wonder?|Do you know about the new rules?
 to wonder|/ˈwʌndə/|verb|B1|цікавитися, запитувати себе|Геґрід питає, чи Гаррі ніколи не дивувався своїм здібностям.|Didn't you ever wonder?|I wonder what time it is.
 to keep from|/kiːp frɒm/|phrasal verb|B2|приховувати від|Геґрід розуміє, що Дурслі все приховували.|You kept it from him?|They kept the news from their children.
-to stamp out|/stæmp ˈaʊt/|phrasal verb|C1|викорінити|Вернон зізнається: вони хотіли «вибити» це з Гаррі.|We swore we'd stamp it out of him.|The government wants to stamp out corruption.
+to get rid of|/ɡet ˈrɪd əv/|phrasal verb|B1|позбутися|Вернон зізнається: вони хотіли «вибити» це з Гаррі.|We swore we'd get rid of it.|I want to get rid of my old sofa.
 freak|/friːk/|noun, informal|B2|дивак, виродок (образливо)|Петунія з ненавистю згадує свою сестру.|My perfect sister was a freak.|Don't call him a freak — it's rude.
 """),
   gloss("Сцена 3 · Правда про батьків", """
@@ -457,7 +457,7 @@ curse|/kɜːs/|noun|B2|прокляття|Шрам.|That's no ordinary scar.|The
            "Шість іменників арки — швидка перевірка."),
   cauldron([("to get away", "to escape from a place"), ("to keep from", "to hide information from someone"),
             ("to grow up", "to become an adult"), ("to calm down", "to stop being upset"),
-            ("to stamp out", "to stop something completely"), ("to break down", "to knock to the floor (a door)")],
+            ("to get rid of", "to make something go away for good"), ("to break down", "to knock to the floor (a door)")],
            "Фразові дієслова арки 1."),
   gram("Look! Hundreds of owls ____ on the roof.", ["are sitting", "sit", "sat", "have sat"], 0,
        ["Так! Look! → дія просто зараз: are sitting.", "Sit — звичка, а тут ми бачимо картину зараз.",

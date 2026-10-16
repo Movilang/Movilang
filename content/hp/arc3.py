@@ -19,7 +19,7 @@ to earn points|/ɜːn pɔɪnts/|phrase|B1|заробляти бали|За ус�
 to lose points|/luːz pɔɪnts/|phrase|B1|втрачати бали|За порушення правил бали знімають.|Any rule-breaking, and you will lose points.|Our team lost points for being late.
 house cup|/haʊs kʌp/|noun|B1|кубок гуртожитків|Наприкінці року гуртожиток з найбільшою кількістю балів отримує кубок.|At the end of the year…|They won the cup three years in a row.
 to wait|/weɪt/|verb|A1|чекати|Макґонеґел просить почекати, поки зала буде готова.|Wait along here, please.|Please wait here for a moment.
-pure-blood|/ˌpjʊə ˈblʌd/|adjective, noun|C1|чистокровний (чарівник)|Мелфой пишається тим, що в родині лише чарівники.|Some families are better than others.|In the story, only pure-blood families can join the club.
+pure-blood|/ˌpjʊə ˈblʌd/|adjective, noun|HP|чистокровний (чарівник)|Мелфой пишається тим, що в родині лише чарівники.|Some families are better than others.|In the story, only pure-blood families can join the club.
 """),
   gloss("Сцена 2 · Драко Мелфой", """
 to find out|/faɪnd ˈaʊt/|phrasal verb|B1|дізнатися|Мелфой обіцяє, що Гаррі скоро зрозуміє, хто є хто.|You'll soon find out.|I found out the truth yesterday.
@@ -39,7 +39,7 @@ difficult|/ˈdɪfɪkəlt/|adjective|A2|складний|Капелюх довг�
 courage|/ˈkʌrɪdʒ/|noun|B2|сміливість|Капелюх бачить у Гаррі сміливість.|Plenty of courage, I see.|It takes courage to say no.
 mind|/maɪnd/|noun|B1|розум|Капелюх бачить, що Гаррі розумний.|Not a bad mind, either.|She has a brilliant mind.
 talent|/ˈtælənt/|noun|B1|талант|Капелюх помічає в Гаррі таланти.|There's talent.|He has a real talent for music.
-to help (someone) on the way|/ɒn ðə weɪ/|phrase|C1|допомогти на шляху до величі|Капелюх каже, що Слизерин допоміг би Гаррі стати великим.|Slytherin will help you on the way to greatness.|A good teacher can help you on the way.
+to become great|/bɪˈkʌm ɡreɪt/|phrase|B1|стати великим|Капелюх каже, що Слизерин допоміг би Гаррі стати великим.|Slytherin will help you become great.|Hard work can help you become great.
 feast|/fiːst/|noun|B2|бенкет|Після розподілу столи вкриваються їжею.|Let the feast begin.|They had a feast to celebrate the wedding.
 ghost|/ɡəʊst/|noun|A2|привид|Крізь стіни зали пролітають привиди.|Welcome to Gryffindor!|Do you believe in ghosts?
 """),
@@ -106,7 +106,7 @@ lesson(13, "Правила Гоґвортсу", "Obligation: must / have to / mu
   gloss("Сцена 1 · Оголошення Дамблдора", """
 announcement|/əˈnaʊnsmənt/|noun|B1|оголошення|Перед сном директор робить кілька оголошень.|A few start-of-term notices.|The pilot made an announcement.
 forbidden|/fəˈbɪdn/|adjective|B2|заборонений|Учням не можна ходити в Заборонений ліс.|The dark forest is forbidden.|Smoking is forbidden in the building.
-out of bounds|/aʊt əv baʊndz/|phrase|C1|заборонена зона|Коридор на третьому поверсі закритий для всіх.|The third-floor corridor is out of bounds.|The roof is out of bounds to students.
+closed to students|/kləʊzd tə ˈstjuːdnts/|phrase|A2|закритий для учнів|Коридор на третьому поверсі закритий для всіх.|The third-floor corridor is closed to students.|The roof is closed to students.
 painful|/ˈpeɪnfl/|adjective|B1|болісний|Дамблдор попереджає про дуже болісні наслідки.|A most painful death.|The injection wasn't painful at all.
 to wish|/wɪʃ/|verb|B1|бажати|Хто не бажає страшної смерті — не йде туди.|Everyone who does not wish to die.|I wish you a happy new year.
 caretaker|/ˈkeəteɪkə/|noun|B2|доглядач, завгосп|Містер Філч доглядає замок і стежить за порядком.|Mr Filch, the caretaker.|The school caretaker fixed the window.
@@ -122,11 +122,11 @@ password|/ˈpɑːswɜːd/|noun|A2|пароль|Щоб увійти до віта
 common room|/ˈkɒmən ruːm/|noun|B1|вітальня гуртожитку|Тепле приміщення з каміном і кріслами.|The Gryffindor common room.|Students relax in the common room after classes.
 dormitory|/ˈdɔːmətri/|noun|B2|спальня (в гуртожитку)|Хлопці й дівчата сплять у різних спальнях.|Boys' dormitory upstairs.|There are ten beds in each dormitory.
 trunk|/trʌŋk/|noun|B2|скриня, валіза|Речі учнів уже в спальнях.|Your belongings have already been brought up.|He packed his clothes in an old trunk.
-prefect|/ˈpriːfekt/|noun|C1|староста|Персі — староста і дуже цим пишається.|I'm a prefect.|The prefect told us to be quiet.
+prefect|/ˈpriːfekt/|noun|HP|староста|Персі — староста і дуже цим пишається.|I'm a prefect.|The prefect told us to be quiet.
 to get lost|/ɡet ˈlɒst/|phrase|A2|заблукати|У замку дуже легко заблукати.|Don't get lost!|I always get lost in big airports.
 """),
   gloss("Сцена 3 · Урок трансфігурації", """
-transfiguration|/ˌtrænsfɪɡəˈreɪʃn/|noun|C1|трансфігурація (перетворення)|Макґонеґел вчить перетворювати предмети.|Transfiguration is complex.|Transfiguration was Hermione's favourite subject.
+transfiguration|/ˌtrænsfɪɡəˈreɪʃn/|noun|HP|трансфігурація (перетворення)|Макґонеґел вчить перетворювати предмети.|Transfiguration is complex.|Transfiguration was Hermione's favourite subject.
 to be late|/biː leɪt/|phrase|A2|запізнюватися|Гаррі й Рон вбігають після початку уроку.|Made it!|Sorry I'm late — the bus didn't come.
 cat|/kæt/|noun|A1|кішка|На столі сидить кішка — а потім стає професоркою.|That was bloody brilliant.|Our cat sleeps all day.
 brilliant|/ˈbrɪliənt/|adjective|B1|блискучий, чудовий|Рон у захваті від перетворення кішки.|That was brilliant!|What a brilliant idea!
@@ -193,7 +193,7 @@ lesson(14, "Урок зілля", "Questions & Question Tags",
   gloss("Сцена 1 · Підземелля", """
 potion|/ˈpəʊʃn/|noun|B2|зілля|Снейп викладає мистецтво варіння зілля.|The subtle science of potion-making.|The witch drank a strange green potion.
 foolish|/ˈfuːlɪʃ/|adjective|B2|безглуздий, дурний|Снейп обіцяє, що на його уроках не буде махання паличками.|No foolish wand-waving.|It was a foolish mistake.
-to bewitch|/bɪˈwɪtʃ/|verb|C1|зачарувати|Снейп обіцяє навчити, як зачарувати розум.|I can teach you how to bewitch the mind.|Her voice bewitched everyone.
+to bewitch|/bɪˈwɪtʃ/|verb|HP|зачарувати|Снейп обіцяє навчити, як зачарувати розум.|I can teach you how to bewitch the mind.|Her voice bewitched everyone.
 fame|/feɪm/|noun|B1|слава|Снейп кепкує зі слави Гаррі.|Our new celebrity.|Fame isn't everything.
 celebrity|/səˈlebrəti/|noun|B1|знаменитість|Снейп з глузуванням називає Гаррі «знаменитістю».|Our new… celebrity.|The restaurant is full of celebrities.
 to pay attention|/peɪ əˈtenʃn/|phrase|B1|бути уважним|Снейп помічає, що Гаррі записує щось замість слухати.|Mr Potter.|Please pay attention to the instructions.
@@ -285,7 +285,7 @@ to step up|/step ˈʌp/|phrasal verb|B2|підійти, стати|Мадам Г
 to stick out|/stɪk ˈaʊt/|phrasal verb|B1|витягнути, виставити|Треба витягнути руку над мітлою.|Stick out your right hand.|Stick out your tongue, please.
 Up!|/ʌp/|interjection|A1|Вгору!|Учні командують мітлам: Вгору!|Up!|Up! Come on, up!
 to obey|/əˈbeɪ/|verb|B2|слухатися|Мітла Гаррі слухається одразу, а Рона — б'є його по носі.|Up!|Dogs obey their owners.
-to mount|/maʊnt/|verb|C1|осідлати, сісти верхи|Мадам Гуч пояснює, як правильно сісти на мітлу.|Mount your brooms.|He mounted his horse and rode away.
+to get on|/ɡet ˈɒn/|phrasal verb|B1|сісти (на мітлу, коня)|Мадам Гуч пояснює, як правильно сісти на мітлу.|Get on your brooms.|He got on his horse and rode away.
 to grip|/ɡrɪp/|verb|B2|міцно тримати|Тримай мітлу міцно, щоб не зісковзнути.|Grip it tight.|Grip the handle with both hands.
 to kick off|/kɪk ˈɒf/|phrasal verb|B2|відштовхнутися|За свистком треба відштовхнутися від землі.|Kick off hard.|Kick off from the side of the pool.
 whistle|/ˈwɪsl/|noun|B1|свисток|Мадам Гуч дає сигнал свистком.|On my whistle.|The referee blew the whistle.
@@ -297,7 +297,7 @@ wrist|/rɪst/|noun|B1|зап'ястя|Невіл зламав зап'ястя.|I
 hospital wing|/ˈhɒspɪtl wɪŋ/|noun|B2|лікарняне крило|Мадам Гуч веде Невіла до лікарні замку.|To the hospital wing.|The hospital wing is on the first floor.
 to stay on the ground|/steɪ ɒn ðə ɡraʊnd/|phrase|B1|залишатися на землі|Мадам Гуч наказує всім лишатися на землі.|Nobody is to move.|Stay on the ground until I come back.
 to be expelled|/ɪkˈspeld/|phrase|B2|бути виключеним (зі школи)|Хто злетить без дозволу — вилетить зі школи.|Out of Hogwarts before you can say Quidditch.|He was expelled for cheating.
-Remembrall|/rɪˈmembrɔːl/|noun|C2|нагадувач (скляна кулька)|Кулька червоніє, коли ти щось забув.|It's a Remembrall.|Neville's Remembrall turned red.
+Remembrall|/rɪˈmembrɔːl/|noun|HP|нагадувач (скляна кулька)|Кулька червоніє, коли ти щось забув.|It's a Remembrall.|Neville's Remembrall turned red.
 to forget|/fəˈɡet/|verb|A2|забувати|Невіл постійно щось забуває.|I've forgotten something.|Don't forget your keys.
 give it here|/ɡɪv ɪt hɪə/|phrase, informal|B1|дай сюди|Гаррі вимагає в Мелфоя повернути кульку.|Give it here, Malfoy.|Give it here — that's mine!
 """),
@@ -309,7 +309,7 @@ to catch|/kætʃ/|verb|A2|ловити|Гаррі ловить кульку пе
 to dive|/daɪv/|verb|B1|пірнати, пікірувати|Гаррі пікірує вниз на шаленій швидкості.|Look at him!|The bird dived into the water.
 to cheer|/tʃɪə/|verb|B1|вітати оплесками, радісно кричати|Ґрифіндорці вітають Гаррі після вдалого ловлення.|Well done, Harry!|The fans cheered when the team scored.
 to follow (me)|/ˈfɒləʊ/|verb|A2|іти за (кимось)|Макґонеґел кличе Гаррі за собою.|Follow me.|Follow me, I'll show you the way.
-Seeker|/ˈsiːkə/|noun|C1|ловець (у квідичі)|Макґонеґел знайшла новому гравцеві його позицію.|Potter, this is Oliver Wood.|He was the youngest Seeker in a century.
+Seeker|/ˈsiːkə/|noun|HP|ловець (у квідичі)|Макґонеґел знайшла новому гравцеві його позицію.|Potter, this is Oliver Wood.|He was the youngest Seeker in a century.
 century|/ˈsentʃəri/|noun|B1|століття|Гаррі — наймолодший гравець за сто років.|In a century.|The castle was built in the 14th century.
 """),
   who("“Give it here, Malfoy!” Who shouts this?",
@@ -368,7 +368,7 @@ lesson(16, "Таємниця третього поверху", "Reported Speech 
   gloss("Сцена 1 · Мітла за сніданком", """
 parcel|/ˈpɑːsl/|noun|B1|посилка|Шість сов приносять Гаррі довгу посилку.|What's that?|I'm waiting for a parcel from my mum.
 broom|/bruːm/|noun|B1|мітла|У посилці — справжня гоночна мітла.|It's a broomstick.|She swept the floor with a broom.
-Nimbus 2000|/ˈnɪmbəs/|noun|C2|«Німбус-2000» (модель мітли)|Рон не вірить очам: найкраща мітла.|A Nimbus 2000!|He dreamed of owning a Nimbus 2000.
+Nimbus 2000|/ˈnɪmbəs/|noun|HP|«Німбус-2000» (модель мітли)|Рон не вірить очам: найкраща мітла.|A Nimbus 2000!|He dreamed of owning a Nimbus 2000.
 to deserve|/dɪˈzɜːv/|verb|B2|заслуговувати|Герміона вважає, що порушення правил винагородили.|You'd think he'd been punished.|You deserve a holiday after all that work.
 to reward|/rɪˈwɔːd/|verb|B2|винагороджувати|Замість покарання Гаррі отримав нагороду.|Rewarded for breaking rules.|The dog was rewarded with a biscuit.
 to break the rules|/breɪk ðə ruːlz/|phrase|B1|порушувати правила|Герміона обурена, що Гаррі порушив правила.|You broke the rules.|If you break the rules, you'll be punished.
@@ -383,15 +383,15 @@ to sneak|/sniːk/|verb|B2|прокрадатися|Друзі тихо проб�
 to be caught|/kɔːt/|phrase|B1|бути спійманим|Треба втекти, поки Філч їх не спіймав.|Run!|We were caught by the teacher.
 locked|/lɒkt/|adjective|A2|замкнений|Двері в кінці коридору замкнені.|It's locked.|The door was locked, so we waited outside.
 to unlock|/ʌnˈlɒk/|verb|B1|відімкнути|Герміона відмикає двері заклинанням.|Alohomora!|Can you unlock the door for me?
-Alohomora|/əˌləʊhəˈmɔːrə/|spell|C2|«Алогомора» (заклинання, що відмикає)|Герміона шепоче заклинання — замок клацає.|Alohomora!|In the book, “Alohomora” opens any lock.
+Alohomora|/əˌləʊhəˈmɔːrə/|spell|HP|«Алогомора» (заклинання, що відмикає)|Герміона шепоче заклинання — замок клацає.|Alohomora!|In the book, “Alohomora” opens any lock.
 honestly|/ˈɒnɪstli/|adverb|B1|чесне слово (роздратовано)|Герміона обурена, що хлопці не читали підручник.|Honestly! Don't you two read?|Honestly, you never listen!
 to get (someone) killed|/ɡet kɪld/|phrase|B2|довести до загибелі|Герміона докоряє хлопцям за небезпечні ідеї.|We could all have been killed.|That stupid plan almost got us killed.
 """),
   gloss("Сцена 3 · Пес із трьома головами", """
 dog|/dɒɡ/|noun|A1|пес, собака|За дверима — велетенський пес.|Get out!|Our dog loves long walks.
-three-headed|/ˌθriː ˈhedɪd/|adjective|C1|триголовий|У пса три голови, і всі гарчать.|Why keep a thing like that locked up?|The museum had a statue of a three-headed monster.
+three-headed|/ˌθriː ˈhedɪd/|adjective|HP|триголовий|У пса три голови, і всі гарчать.|Why keep a thing like that locked up?|The museum had a statue of a three-headed monster.
 to guard|/ɡɑːd/|verb|B1|охороняти|Герміона помітила, що пес щось охороняє.|It's guarding something.|Two soldiers guarded the gate.
-trapdoor|/ˈtræpdɔː/|noun|C1|люк (у підлозі)|Пес стоїть на люку в підлозі.|It was standing on a trapdoor.|There was a trapdoor under the carpet.
+trapdoor|/ˈtræpdɔː/|noun|HP|люк (у підлозі)|Пес стоїть на люку в підлозі.|It was standing on a trapdoor.|There was a trapdoor under the carpet.
 to notice|/ˈnəʊtɪs/|verb|B1|помічати|Тільки Герміона помітила, на чому стоїть пес.|Didn't you see what it was standing on?|Did you notice anything strange?
 expelled|/ɪkˈspeld/|adjective|B2|виключений|Герміона вважає, що вилетіти зі школи — гірше за смерть.|Or worse, expelled.|He was expelled from school last year.
 priorities|/praɪˈɒrətiz/|noun|B2|пріоритети|Рон іронізує, що в Герміони дивні пріоритети.|She needs to sort out her priorities.|Family is my first priority.
@@ -459,14 +459,14 @@ courage|/ˈkʌrɪdʒ/|noun|B2|сміливість|Капелюх.|Plenty of cou
 feast|/fiːst/|noun|B2|бенкет|Велика зала.|Let the feast begin.|What a feast!
 ghost|/ɡəʊst/|noun|A2|привид|Велика зала.|Welcome to Gryffindor!|The castle has a ghost.
 forbidden|/fəˈbɪdn/|adjective|B2|заборонений|Дамблдор.|The dark forest is forbidden.|Photos are forbidden here.
-out of bounds|/aʊt əv baʊndz/|phrase|C1|заборонена зона|Дамблдор.|The third-floor corridor is out of bounds.|That area is out of bounds.
+closed to students|/kləʊzd tə ˈstjuːdnts/|phrase|A2|закритий для учнів|Дамблдор.|The third-floor corridor is closed to students.|The roof is closed to students.
 painful|/ˈpeɪnfl/|adjective|B1|болісний|Дамблдор.|A most painful death.|It was a painful lesson.
 caretaker|/ˈkeəteɪkə/|noun|B2|доглядач|Філч.|Mr Filch, the caretaker.|Ask the caretaker for a key.
 staircase|/ˈsteəkeɪs/|noun|B1|сходи|Замок.|The staircases like to change.|Take the staircase on the left.
 password|/ˈpɑːswɜːd/|noun|A2|пароль|Вітальня.|Password?|Change your password often.
-prefect|/ˈpriːfekt/|noun|C1|староста|Персі.|I'm a prefect.|The prefects patrol at night.
+prefect|/ˈpriːfekt/|noun|HP|староста|Персі.|I'm a prefect.|The prefects patrol at night.
 dormitory|/ˈdɔːmətri/|noun|B2|спальня|Гуртожиток.|Boys' dormitory upstairs.|The dormitory was quiet.
-transfiguration|/ˌtrænsfɪɡəˈreɪʃn/|noun|C1|трансфігурація|Макґонеґел.|Transfiguration is complex.|Transfiguration is very hard.
+transfiguration|/ˌtrænsfɪɡəˈreɪʃn/|noun|HP|трансфігурація|Макґонеґел.|Transfiguration is complex.|Transfiguration is very hard.
 brilliant|/ˈbrɪliənt/|adjective|B1|чудовий|Рон.|That was brilliant!|You're brilliant!
 potion|/ˈpəʊʃn/|noun|B2|зілля|Снейп.|The subtle science of potion-making.|This potion smells bad.
 celebrity|/səˈlebrəti/|noun|B1|знаменитість|Снейп.|Our new… celebrity.|He's a TV celebrity.
@@ -488,7 +488,7 @@ to deserve|/dɪˈzɜːv/|verb|B2|заслуговувати|Герміона.|Yo
 to sneak|/sniːk/|verb|B2|прокрадатися|Третій поверх.|Let's go.|The cat sneaked past the dog.
 to unlock|/ʌnˈlɒk/|verb|B1|відімкнути|Герміона.|Alohomora!|Unlock your phone.
 to guard|/ɡɑːd/|verb|B1|охороняти|Пушок.|It's guarding something.|Dogs guard the farm.
-trapdoor|/ˈtræpdɔː/|noun|C1|люк|Пушок.|It was standing on a trapdoor.|They escaped through a trapdoor.
+trapdoor|/ˈtræpdɔː/|noun|HP|люк|Пушок.|It was standing on a trapdoor.|They escaped through a trapdoor.
 priorities|/praɪˈɒrətiz/|noun|B2|пріоритети|Рон.|She needs to sort out her priorities.|What are your priorities this year?
 """),
   quest("Your first week at Hogwarts. Survive it — in correct English.", "s1",

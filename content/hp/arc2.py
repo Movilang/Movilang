@@ -18,7 +18,7 @@ Muggle|/ˈmʌɡl/|noun|B1|маґл (людина без магії)|Геґрід
 to recognize|/ˈrekəɡnaɪz/|verb|B1|упізнати|Відвідувачі пабу впізнають Гаррі і тиснуть йому руку.|Welcome back, Mr Potter.|I didn't recognize you with short hair!
 to shake hands|/ʃeɪk ˈhændz/|phrase|A2|тиснути руку|Усі хочуть потиснути Гаррі руку.|Welcome back.|They shook hands and started the meeting.
 nervous|/ˈnɜːvəs/|adjective|A2|нервовий, схвильований|Професор Квірел заїкається і не дивиться в очі.|P-P-Potter.|I always get nervous before exams.
-Defence Against the Dark Arts|/dɪˈfens əˈɡenst ðə dɑːk ɑːts/|noun|C1|захист від темних мистецтв|Квірел викладає цей предмет у Гоґвортсі.|Defence Against the Dark Arts.|Defence Against the Dark Arts is a difficult subject.
+Defence Against the Dark Arts|/dɪˈfens əˈɡenst ðə dɑːk ɑːts/|noun|HP|захист від темних мистецтв|Квірел викладає цей предмет у Гоґвортсі.|Defence Against the Dark Arts.|Defence Against the Dark Arts is a difficult subject.
 brick wall|/brɪk wɔːl/|noun|B1|цегляна стіна|Геґрід торкається цеглин парасолькою — і стіна відкривається.|Three up, two across.|They painted a picture on the brick wall.
 """),
   gloss("Сцена 2 · Банк ґоблінів", """
@@ -30,7 +30,7 @@ clever|/ˈklevə/|adjective|A2|розумний, кмітливий|Геґрід
 friendly|/ˈfrendli/|adjective|A2|дружній, привітний|Ґобліни не вважаються привітними.|Not the most friendly of beasts.|The people here are really friendly.
 key|/kiː/|noun|A1|ключ|Геґрід шукає у кишенях маленький золотий ключик.|Mr Harry Potter's key.|I can't find my car keys.
 to withdraw|/wɪðˈdrɔː/|verb|B2|зняти (гроші з рахунку)|Гаррі приходить зняти гроші зі свого сейфа.|Mr Potter wishes to make a withdrawal.|I need to withdraw some cash.
-vault|/vɔːlt/|noun|C1|сейф, сховище (в банку)|Глибоко під банком — підземні сейфи з номерами.|Vault 687.|The gold is kept in an underground vault.
+vault|/vɔːlt/|noun|HP|сейф, сховище (в банку)|Глибоко під банком — підземні сейфи з номерами.|Vault 687.|The gold is kept in an underground vault.
 """),
   gloss("Сцена 3 · Два сейфи", """
 gold|/ɡəʊld/|noun|A2|золото|Сейф Гаррі повний золотих монет — спадок батьків.|All yours.|The coins were made of gold.
@@ -101,7 +101,7 @@ lesson(7, "Косий провулок", "Quantifiers: much / many / a lot of / 
   gloss("Сцена 1 · Список покупок", """
 shopping list|/ˈʃɒpɪŋ lɪst/|noun|A2|список покупок|У листі з Гоґвортсу є довгий список речей для першокласника.|What's on the list?|I forgot my shopping list at home.
 robe|/rəʊb/|noun|B2|мантія|Першокласникам потрібні три прості робочі мантії.|Three sets of plain work robes.|The judge wore a long black robe.
-cauldron|/ˈkɔːldrən/|noun|C1|казан|Олов'яний казан стандартного розміру для зілля.|One cauldron, pewter.|The witch stirred the soup in a big cauldron.
+cauldron|/ˈkɔːldrən/|noun|HP|казан|Олов'яний казан стандартного розміру для зілля.|One cauldron, pewter.|The witch stirred the soup in a big cauldron.
 spell book|/ˈspel bʊk/|noun|B1|книга заклинань|Гаррі потрібно купити кілька підручників із заклинаннями.|The Standard Book of Spells.|She carried a heavy spell book.
 equipment|/ɪˈkwɪpmənt/|noun|B1|спорядження, приладдя|У списку — все приладдя для навчання.|Other equipment.|We need new sports equipment.
 wand|/wɒnd/|noun|B1|чарівна паличка|Найважливіша покупка дня — паличка.|You'll need a wand.|The fairy waved her wand.
@@ -200,7 +200,7 @@ definitely not|/ˈdefɪnətli nɒt/|phrase|B1|точно ні|Після виб�
 to choose|/tʃuːz/|verb|A2|обирати|Олівандер пояснює головне правило паличок.|The wand chooses the wizard.|It's hard to choose between these two.
 curious|/ˈkjʊəriəs/|adjective|B1|дивний; допитливий|Майстер бурмоче, що це дуже дивний збіг.|Curious… very curious.|It's curious that nobody saw him leave.
 feather|/ˈfeðə/|noun|B1|перо|Усередині палички Гаррі — перо фенікса.|A phoenix feather.|The pillow is filled with feathers.
-phoenix|/ˈfiːnɪks/|noun|C1|фенікс|Фенікс віддав лише два пера — для двох паличок.|The phoenix gave only one other feather.|The phoenix rose from the ashes.
+phoenix|/ˈfiːnɪks/|noun|HP|фенікс|Фенікс віддав лише два пера — для двох паличок.|The phoenix gave only one other feather.|The phoenix rose from the ashes.
 brother (wand)|/ˈbrʌðə/|noun|B1|«брат» (палички-близнюки)|Паличка Гаррі має «брата» з пером того самого фенікса.|Its brother gave you that scar.|These two wands are like brothers.
 to expect|/ɪkˈspekt/|verb|B1|очікувати|Олівандер каже, що від Гаррі можна чекати великих справ.|We can expect great things from you.|I didn't expect so many people.
 great things|/ɡreɪt θɪŋz/|phrase|B1|великі справи|Олівандер робить моторошний комплімент.|He did great things. Terrible, but great.|She will do great things one day.
@@ -208,7 +208,7 @@ terrible|/ˈterəbl/|adjective|A2|жахливий|Олівандер згаду
 to belong to|/bɪˈlɒŋ tə/|phrasal verb|B1|належати (комусь)|Майстер пам'ятає, кому належала паличка-«брат».|I remember every wand.|This pen belongs to my teacher.
 """),
   gloss("Сцена 3 · Розповідь Геґріда", """
-He-Who-Must-Not-Be-Named|/hiː huː mʌst nɒt biː neɪmd/|phrase|C1|Той-Кого-Не-Можна-Називати|Ніхто не вимовляє ім'я темного чарівника — навіть Геґрід.|Nobody likes to say it.|In the story, nobody dares to say the villain's name.
+He-Who-Must-Not-Be-Named|/hiː huː mʌst nɒt biː neɪmd/|phrase|HP|Той-Кого-Не-Можна-Називати|Ніхто не вимовляє ім'я темного чарівника — навіть Геґрід.|Nobody likes to say it.|In the story, nobody dares to say the villain's name.
 followers|/ˈfɒləʊəz/|noun|B1|прибічники, послідовники|У темного чарівника були послідовники.|He gathered some followers.|The singer has millions of followers online.
 to stand up to|/stænd ˈʌp tə/|phrasal verb|B2|протистояти|Батьки Гаррі не корилися темному чарівникові.|Your mum and dad stood up to him.|You should stand up to bullies.
 to vanish|/ˈvænɪʃ/|verb|B2|зникнути безслідно|Після тієї ночі темний чарівник зник.|He vanished.|The magician made the coin vanish.
@@ -454,12 +454,12 @@ brick wall|/brɪk wɔːl/|noun|B1|цегляна стіна|Вхід у пров
 safe|/seɪf/|adjective|A2|безпечний|Ґрінґотс.|Safest place in the world.|Is it safe to swim here?
 except|/ɪkˈsept/|preposition|B1|окрім|Геґрід.|Except perhaps Hogwarts.|I like all vegetables except carrots.
 goblin|/ˈɡɒblɪn/|noun|B2|ґоблін|Банк.|Clever as they come, goblins.|The goblin counted the coins.
-vault|/vɔːlt/|noun|C1|сейф|Сейф 713.|Vault 687.|The vault was empty.
+vault|/vɔːlt/|noun|HP|сейф|Сейф 713.|Vault 687.|The vault was empty.
 to withdraw|/wɪðˈdrɔː/|verb|B2|зняти гроші|Банк.|Mr Potter wishes to make a withdrawal.|I withdrew fifty pounds.
 package|/ˈpækɪdʒ/|noun|B1|пакунок|Сейф 713.|What's in there?|The package was wrapped in brown paper.
 to mention|/ˈmenʃn/|verb|B1|згадувати|Геґрід.|Best not to mention it.|Don't mention it to anyone.
 robe|/rəʊb/|noun|B2|мантія|Список.|Three sets of plain work robes.|He put on his robe.
-cauldron|/ˈkɔːldrən/|noun|C1|казан|Список.|One cauldron, pewter.|The cauldron was bubbling.
+cauldron|/ˈkɔːldrən/|noun|HP|казан|Список.|One cauldron, pewter.|The cauldron was bubbling.
 wand|/wɒnd/|noun|B1|паличка|Список.|You'll need a wand.|He broke his wand.
 allowed|/əˈlaʊd/|adjective|B1|дозволений|Правила.|First years are not allowed brooms.|Is smoking allowed here?
 enough|/ɪˈnʌf/|determiner|A2|достатньо|Геґрід.|You've got enough.|I don't have enough time.

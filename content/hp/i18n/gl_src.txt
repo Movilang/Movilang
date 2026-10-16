@@ -40,7 +40,7 @@
 39	boring	нудний	It's boring.	The film was long and boring.
 40	to understand	розуміти	I know how you feel.	I don't understand this word.
 41	to wink	підморгувати	It winked at me!	He winked at me across the room.
-42	to be bred in captivity	бути вирощеним у неволі	Bred in captivity.	These parrots were bred in captivity.
+42	to be born in a zoo	народитися в зоопарку	Born in a zoo.	These pandas were born in a zoo.
 43	Brazil	Бразилія	Do you miss Brazil?	My friend is travelling around Brazil.
 44	to miss	сумувати за (кимось/чимось)	Do you miss your family?	I miss my grandmother's cooking.
 45	glass	скло	The glass! It's gone!	Be careful, there's broken glass on the floor.
@@ -95,7 +95,7 @@
 94	to know about	знати про	Didn't you ever wonder?	Do you know about the new rules?
 95	to wonder	цікавитися, запитувати себе	Didn't you ever wonder?	I wonder what time it is.
 96	to keep from	приховувати від	You kept it from him?	They kept the news from their children.
-97	to stamp out	викорінити	We swore we'd stamp it out of him.	The government wants to stamp out corruption.
+97	to get rid of	позбутися	We swore we'd get rid of it.	I want to get rid of my old sofa.
 98	freak	дивак, виродок (образливо)	My perfect sister was a freak.	Don't call him a freak — it's rude.
 99	car crash	автокатастрофа	A car crash killed Lily and James?	Two people were hurt in a car crash.
 100	to murder	убити (навмисно)	They were murdered.	The detective found out who murdered him.
@@ -263,12 +263,12 @@
 262	courage	сміливість	Plenty of courage, I see.	It takes courage to say no.
 263	mind	розум	Not a bad mind, either.	She has a brilliant mind.
 264	talent	талант	There's talent.	He has a real talent for music.
-265	to help (someone) on the way	допомогти на шляху до величі	Slytherin will help you on the way to greatness.	A good teacher can help you on the way.
+265	to become great	стати великим	Slytherin will help you become great.	Hard work can help you become great.
 266	feast	бенкет	Let the feast begin.	They had a feast to celebrate the wedding.
 267	ghost	привид	Welcome to Gryffindor!	Do you believe in ghosts?
 268	announcement	оголошення	A few start-of-term notices.	The pilot made an announcement.
 269	forbidden	заборонений	The dark forest is forbidden.	Smoking is forbidden in the building.
-270	out of bounds	заборонена зона	The third-floor corridor is out of bounds.	The roof is out of bounds to students.
+270	closed to students	закритий для учнів	The third-floor corridor is closed to students.	The roof is closed to students.
 271	painful	болісний	A most painful death.	The injection wasn't painful at all.
 272	to wish	бажати	Everyone who does not wish to die.	I wish you a happy new year.
 273	caretaker	доглядач, завгосп	Mr Filch, the caretaker.	The school caretaker fixed the window.
@@ -323,7 +323,7 @@
 322	to stick out	витягнути, виставити	Stick out your right hand.	Stick out your tongue, please.
 323	Up!	Вгору!	Up!	Up! Come on, up!
 324	to obey	слухатися	Up!	Dogs obey their owners.
-325	to mount	осідлати, сісти верхи	Mount your brooms.	He mounted his horse and rode away.
+325	to get on	сісти (на мітлу, коня)	Get on your brooms.	He got on his horse and rode away.
 326	to grip	міцно тримати	Grip it tight.	Grip the handle with both hands.
 327	to kick off	відштовхнутися	Kick off hard.	Kick off from the side of the pool.
 328	whistle	свисток	On my whistle.	The referee blew the whistle.
@@ -406,8 +406,8 @@
 405	to distract	відволікати	Hey, pea-brain!	Don't distract me while I'm driving.
 406	to grab	хапати	Help!	He grabbed my arm.
 407	upside down	догори дриґом	Do something!	The picture is upside down.
-408	nostril	ніздря	Ew!	He has a ring in his nostril.
-409	bogey	соплі (розмовне)	Troll bogey.	Gross — there's a bogey on your sleeve!
+408	nose	ніс	Ew!	He has a ring in his nose.
+409	gross	гидкий, бридкий	Troll bogey — gross!	Gross — there's mud on your sleeve!
 410	to knock out	вирубити, нокаутувати	Is it dead?	The boxer knocked out his opponent.
 411	just	просто, лише	I think it's just been knocked out.	It's just a game, relax.
 412	to hold on	триматися	Hold on!	Hold on tight!
@@ -418,7 +418,7 @@
 417	to read about	прочитати про	I've read all about them.	I read about it in a magazine.
 418	to come looking for	прийти шукати	They came looking for me.	My mum came looking for me in the park.
 419	to take points	знімати бали	Five points will be taken from Gryffindor.	The teacher took points from our team.
-420	sheer	чистий, суцільний (sheer luck)	For sheer dumb luck.	It was sheer luck that we found it.
+420	pure luck	чисте везіння	For pure dumb luck.	It was pure luck that we found it.
 421	to limp	кульгати	Did you see Snape's leg?	He was limping after the match.
 422	friendship	дружба	Thank you.	Their friendship lasted a lifetime.
 423	Quidditch	квідич	Quidditch is easy enough to understand.	Quidditch is played on broomsticks.
@@ -431,7 +431,7 @@
 430	to catch (the Snitch)	спіймати	You catch this, and we win.	Our dog can catch a ball in the air.
 431	match	матч	Gryffindor versus Slytherin.	We watched the match on TV.
 432	crowd	натовп, глядачі	The crowd goes wild.	The crowd cheered loudly.
-433	to commentate	коментувати (матч)	And Gryffindor scores!	He commentates on football for the radio.
+433	to describe	описувати	And Gryffindor scores!	He describes the football match on the radio.
 434	fairly	чесно	I want a nice clean game.	Everyone must be treated fairly.
 435	easily	легко	Ouch!	She won the race easily.
 436	badly	погано, сильно	Foul!	He was badly hurt in the accident.
@@ -450,10 +450,10 @@
 449	Christmas	Різдво	Happy Christmas, Harry!	We spend Christmas with my grandparents.
 450	jumper	светр (BrE)	Mum's knitted you a jumper.	It's cold, so take a warm jumper.
 451	to knit	в'язати	Every year she knits me one.	My grandma knits socks for everyone.
-452	maroon	бордовий	Always maroon.	He wore a maroon scarf.
+452	dark red	темно-червоний, бордовий	Always dark red.	He wore a dark red scarf.
 453	no name	без імені	There's no name.	The letter had no name on it.
 454	note	записка	There's a note.	She left me a note on the table.
-455	to possess	мати у володінні	Your father left this in my possession.	He possesses great talent.
+455	to own	мати, володіти	This was your father's.	He owns a small shop.
 456	use it well	використовуй з розумом	Use it well.	Here's some money — use it well.
 457	cloak	плащ, мантія	What is it?	She wrapped her cloak around her.
 458	invisible	невидимий	My body's gone!	Air is invisible.
@@ -466,7 +466,7 @@
 465	restricted section	заборонена секція (бібліотеки)	The Restricted Section.	Only teachers can enter the restricted section.
 466	lamp	лампа, ліхтар	Who's there?	Turn on the lamp, it's dark.
 467	to drop	упускати	Who's there?	Don't drop the glass!
-468	to shriek	пронизливо кричати	Aaaah!	The children shrieked with laughter.
+468	to yell	кричати	Aaaah!	The children yelled with laughter.
 469	to run off	утікати	Run!	The thief ran off with my bag.
 470	enemy	ворог	You don't want me as your enemy.	Don't make him your enemy.
 471	to threaten	погрожувати	You don't want me as your enemy.	He threatened to call the police.
@@ -477,7 +477,7 @@
 476	to wave at	махати (комусь)	They're waving.	The children waved at the bus driver.
 477	eyes	очі	You have her eyes.	She has beautiful green eyes.
 478	empty	порожній	There's nobody there.	The streets were empty at night.
-479	inscription	напис	I show not your face but your heart's desire.	There was an inscription on the old ring.
+479	writing	напис	I show not your face but your heart's desire.	There was some writing on the old ring.
 480	Head Boy	головний староста школи	I'm Head Boy!	He was Head Boy in his last year.
 481	captain	капітан	I'm Quidditch captain too!	She's the captain of our team.
 482	to hold (a cup)	тримати	I'm holding the cup!	He held the trophy above his head.
@@ -491,18 +491,18 @@
 490	deep	глибокий	The deepest, most desperate desire.	The lake is very deep.
 491	happy	щасливий	The happiest man on earth.	I'm so happy for you!
 492	to waste	марнувати	Men have wasted away before it.	Don't waste your time on it.
-493	to dwell on	зациклюватися на	It does not do to dwell on dreams.	Don't dwell on your mistakes.
+493	to think too much about	забагато думати про	Don't think too much about dreams.	Don't think too much about your mistakes.
 494	to forget to live	забути жити	And forget to live.	Don't work so hard that you forget to live.
 495	to move (something)	переносити	It will be moved to a new home.	Can you help me move this table?
 496	socks	шкарпетки	A pair of thick, woollen socks.	I need new socks.
 497	to let slip	проговоритися	I shouldn't have said that.	She let slip that she was moving to Paris.
-498	to meddle	втручатися (не у свою справу)	Don't go meddling.	Stop meddling in my business!
+498	to get involved	втручатися	Don't get involved.	Stop getting involved in my business!
 499	dangerous	небезпечний	It's dangerous.	It's dangerous to swim here.
 500	between	між	That's between Professor Dumbledore and Nicolas Flamel.	This is between you and me.
 501	to forget about	забути про	Forget about that dog.	Forget about work for the weekend.
 502	to sell off	продати	I bought him off an Irish feller.	They sold off the old furniture.
 503	to lend	позичати (комусь)	I lent him to Dumbledore.	Can you lend me your pen?
-504	to be on to (something)	натрапити на слід	Who's Nicolas Flamel?	I think the police are on to him.
+504	clue	підказка, ключ (до загадки)	Who's Nicolas Flamel?	The police found a clue.
 505	whoever	будь-хто, хто б не	Whoever he is.	Whoever wins will get a prize.
 506	to search	шукати, обшукувати	We've searched everywhere.	The police searched the house.
 507	to look up	шукати (в довіднику)	Let's look him up.	Look up this word in the dictionary.
@@ -514,17 +514,17 @@
 513	to be known	бути відомим	The only known maker.	The town is known for its cheese.
 514	to be hidden	бути схованим	It's been hidden here.	The key was hidden under a stone.
 515	Philosopher's Stone	філософський камінь	The Philosopher's Stone!	In old stories, the Philosopher's Stone turns metal into gold.
-516	legendary	легендарний	A legendary substance.	He's a legendary football player.
+516	legend	легенда	It's from an old legend.	There is a legend about this castle.
 517	to turn into	перетворювати на	Turns any metal into pure gold.	The caterpillar turned into a butterfly.
 518	pure	чистий	Pure gold.	It's made of pure silk.
 519	Elixir of Life	еліксир життя	The Elixir of Life.	The old king searched for the Elixir of Life.
-520	immortal	безсмертний	Which will make the drinker immortal.	In the myth, the gods were immortal.
+520	to live forever	жити вічно	It will make the drinker live forever.	In the myth, the gods live forever.
 521	to protect	захищати	It's been protected.	Wear a hat to protect your face from the sun.
 522	birthday (665th)	день народження	He celebrated his 665th birthday last year.	She celebrated her 100th birthday.
 523	to steal	красти	Snape's trying to steal it.	Someone stole my bike!
 524	egg	яйце	What is that?	I had two eggs for breakfast.
 525	dragon	дракон	It's a dragon!	In the story, a dragon guards the gold.
-526	to hatch	вилупитися	It's hatching!	The chicks hatched this morning.
+526	baby dragon	дракончик	It's a baby dragon!	The baby dragon breathed fire.
 527	to win (something) off	виграти (у когось)	I won it off a stranger.	He won fifty pounds off his friend.
 528	stranger	незнайомець	Didn't see his face.	Don't talk to strangers.
 529	illegal	незаконний	It's illegal!	It's illegal to park here.
@@ -549,7 +549,7 @@
 548	to be out of bed	бути не в ліжку (вночі)	Out of bed at night?	What are you doing out of bed?
 549	excuse	виправдання	Nothing gives you the right.	That's a terrible excuse.
 550	the right (to)	право (на щось)	Nothing gives a student the right…	You have the right to stay silent.
-551	to deduct	знімати, вираховувати	Fifty points will be taken.	The fee will be deducted from your salary.
+551	to take away	забирати, знімати	Fifty points will be taken away.	The teacher took away my phone.
 552	each	кожен	Fifty points each.	Each student gets a book.
 553	disgusted	обурений, сповнений відрази	I'm disgusted.	I was disgusted by his behaviour.
 554	to tell on	донести, наябедничати	Malfoy told on us.	My sister always told on me.
@@ -562,8 +562,8 @@
 561	to regret	шкодувати	I wish we hadn't gone.	I regret saying that.
 562	mistake	помилка	Big mistake.	Everyone makes mistakes.
 563	detention	покарання (залишення після уроків)	You'll serve detention.	He got detention for being rude.
-564	to serve (detention)	відбувати (покарання)	You'll be serving detention.	He served two years in prison.
-565	to chain up	закувати в ланцюги	I'd chain you up.	They chained up the dog at night.
+564	to get detention	отримати покарання (після уроків)	You'll get detention.	He got detention for being late.
+565	to tie up	зв'язати	I'd tie you up.	They tied up the dog at night.
 566	punishment	покарання	Pity they let the old punishments die.	The punishment was too hard.
 567	forest	ліс	The Forbidden Forest.	We went for a walk in the forest.
 568	werewolf	перевертень	There are werewolves in there.	In the film, a werewolf howled at the moon.
@@ -579,16 +579,16 @@
 578	to be scared	боятися	I'm not scared.	Are you scared of the dark?
 579	coward	боягуз	He's a bloody coward.	Don't be such a coward.
 580	servant	слуга	This is servant stuff.	The servants cleaned the castle.
-581	hooded	у каптурі	What is that?	A hooded man ran past us.
+581	in a hood	у каптурі	What is that?	A man in a hood ran past us.
 582	figure	постать, фігура	A figure in the dark.	I saw a dark figure in the window.
 583	to creep	повзти, підкрадатися	It's coming!	The cat crept towards the bird.
 584	to drink	пити	It's drinking its blood.	Drink plenty of water.
 585	to run away	утекти	Run!	The dog ran away from home.
 586	to hurt	боліти	It hurts.	My head hurts.
 587	to freeze	завмерти	Don't move.	I froze when I saw the snake.
-588	hoof	копито	Hooves!	The horse hurt its hoof.
+588	footsteps	кроки, тупіт	Footsteps!	I heard footsteps in the dark.
 589	centaur	кентавр	Harry Potter, you must leave.	In the myth, a centaur is half man, half horse.
-590	to slay	убити (книжне)	To slay a unicorn.	In the legend, the knight slew the dragon.
+590	to kill	убити	To kill a unicorn.	In the legend, the knight killed the dragon.
 591	innocent	безневинний	Pure and defenceless.	The man said he was innocent.
 592	cursed	проклятий	A cursed life.	The old house was said to be cursed.
 593	half-life	напівжиття	A half-life.	He lived a half-life after the accident.
@@ -598,7 +598,7 @@
 597	chance	шанс	He's waiting for a chance.	This is your last chance.
 598	to come back	повернутися	He's trying to come back.	When are you coming back?
 599	strength	сила	To regain his strength.	You need strength to lift that.
-600	to regain	відновити, повернути	Regain his strength.	She slowly regained her confidence.
+600	to get back	повернути, відновити	Get back his strength.	She slowly got back her confidence.
 601	weak	слабкий	He's weak.	I felt weak after the flu.
 602	alive	живий	He's alive?	Is the fish still alive?
 603	exam	екзамен	Exams are over!	I have a maths exam tomorrow.
@@ -607,7 +607,7 @@
 606	to keep hurting	постійно боліти	It keeps hurting.	My knee keeps hurting.
 607	a sign	знак, ознака	It's a warning.	Dark clouds are a sign of rain.
 608	warning	попередження	It means danger.	The sign is a warning about the ice.
-609	to occur to	спасти на думку	Why didn't I see it before?	It never occurred to me to ask.
+609	to notice	помітити	Why didn't I see it before?	I didn't notice the mistake.
 610	to happen to	випадково (мати / бути)	Just happened to have a dragon egg.	Do you happen to know her number?
 611	to work out	зрозуміти, розгадати	I've worked it out.	I can't work out how this works.
 612	to give away	видати (таємницю)	I gave it away.	Don't give away the ending of the film!
@@ -640,13 +640,13 @@
 639	light	світло	It hates sunlight!	Turn on the light, please.
 640	sunlight	сонячне світло	Lumos Solem!	Plants need sunlight.
 641	wing	крило	They're not birds, they're keys!	The bird hurt its wing.
-642	to flutter	пурхати	Strange.	The butterfly fluttered over the flowers.
+642	to fly around	літати навколо	Strange.	Butterflies flew around the flowers.
 643	to bet	закладатися, бути впевненим	I bet the broom's for catching the key.	I bet you can't do it!
 644	old-fashioned	старомодний	An old-fashioned one.	My grandfather has old-fashioned ideas.
 645	broken	зламаний	With a broken wing.	My phone screen is broken.
 646	to chase	гнатися	They're chasing him!	The cat chased the mouse.
 647	chessboard	шахівниця	It's a chessboard.	Put the chessboard on the table.
-648	to play (our) way across	пройти, граючи	We have to play our way across the room.	We had to play our way into the final.
+648	to cross	перетнути	We have to cross the room.	We crossed the road carefully.
 649	knight	кінь (шахи); лицар	You take the empty knight.	The knight moves in an L-shape.
 650	bishop	слон (шахи); єпископ	Harry, you take the empty bishop's square.	The bishop can move diagonally.
 651	castle	тура (шахи); замок	Hermione, you take the castle.	In chess, the castle is also called a rook.
@@ -654,9 +654,9 @@
 653	move	хід	Knight to H-3.	It's your move.
 654	to smash	розбивати вщент	Smash!	He smashed the window with a stone.
 655	to lose (a piece)	втратити	We're losing pieces.	We lost two players in the first half.
-656	to sacrifice	жертвувати	I have to be taken.	She sacrificed her free time to help us.
+656	to put yourself in danger	наражати себе на небезпеку	I have to be taken.	She put herself in danger to help us.
 657	to check	поставити шах	You'll be free to check the king.	In chess, you must protect your king when it's in check.
-658	to stay put	не рухатися з місця	Stay where you are.	Stay put — I'll be right back.
+658	to stay where you are	залишатися на місці	Stay where you are.	Stay where you are — I'll be right back.
 659	That's chess!	Такі шахи! (так влаштована гра)	That's chess!	You lost your queen? That's chess!
 660	to go on	іти далі	It's you that has to go on.	You go on, I'll catch up.
 661	to check on	перевірити (чи все гаразд)	Look after Ron.	Can you check on the baby?
@@ -666,7 +666,7 @@
 665	the type	відповідний тип, «саме такий»	He does seem the type.	He's not the type to give up.
 666	next to	поруч з	Next to him, who would suspect…?	Sit next to me.
 667	to suspect	підозрювати	Who would suspect p-p-poor stuttering Professor Quirrell?	The police suspect her husband.
-668	to stutter	заїкатися	P-p-poor Quirrell.	He stutters when he's nervous.
+668	nervous	знервований	P-p-poor Quirrell.	He gets nervous before exams.
 669	to let in	впустити	I let the troll in.	Don't let the cat in.
 670	to save	рятувати	He was trying to save you.	The doctor saved her life.
 671	counter-curse	контрпрокляття	Muttering the counter-curse.	The witch knew the counter-curse.
@@ -686,7 +686,7 @@
 685	host	господар (тіло, у якому живе)	I have form only when I can share another's body.	The virus needs a host to survive.
 686	never	ніколи	Never!	I'll never forget you.
 687	to wake	прокинутися	Good afternoon, Harry.	I woke at six.
-688	admirer	шанувальник	Friends and admirers.	She has many admirers.
+688	fan	шанувальник, фанат	Friends and fans.	She has many fans.
 689	to happen	ставатися	What happened down there?	What happened to your arm?
 690	to destroy	знищувати	The Stone has been destroyed.	The fire destroyed the building.
 691	to die	помирати	They will die, won't they?	My old dog died last year.
@@ -698,23 +698,23 @@
 697	to be able to	могти, мати змогу	He couldn't.	Will you be able to come?
 698	youth	молодість	In my youth.	In his youth, he was a great runner.
 699	unfortunate	невдалий, нещасливий	Unfortunate enough.	It was an unfortunate mistake.
-700	vomit	блювота (смак цукерки)	Vomit-flavoured.	The dog was sick — there was vomit on the floor.
-701	to lose (one's) liking	втратити смак до	I lost my liking for them.	I've lost my liking for coffee.
+700	flavour	смак	Every flavour!	What's your favourite ice cream flavour?
+701	to stop liking	розлюбити	I stopped liking them.	I've stopped liking coffee.
 702	to risk	ризикнути	Let's risk it.	Don't risk your life.
 703	toffee	іриска	A nice toffee.	I love chocolate toffee.
-704	earwax	вушна сірка	Alas! Earwax.	The doctor cleaned the earwax from my ear.
-705	alas	на жаль (книжне)	Alas! Earwax.	Alas, the summer was over.
+704	to taste of	мати смак (чогось)	It tastes of earwax!	This tea tastes of mint.
+705	sadly	на жаль	Sadly! Earwax.	Sadly, the summer was over.
 706	end-of-year feast	прощальний бенкет	Another year gone.	The end-of-year feast was amazing.
 707	to award	нагороджувати	The points stand thus.	She was awarded a prize.
 708	in fourth place	на четвертому місці	In fourth place, Gryffindor.	Our team finished in fourth place.
-709	to stand (thus)	бути (про рахунок)	The points stand thus.	The score stands at two all.
+709	score	рахунок	The score is…	The score is two all.
 710	recent events	нещодавні події	Recent events must be taken into account.	After recent events, we need to be careful.
 711	to take into account	брати до уваги	Must be taken into account.	Please take my age into account.
 712	last-minute	в останню хвилину	A few last-minute points.	We made some last-minute changes.
 713	banner	прапор, банер	Gryffindor wins!	They hung a banner over the door.
-714	cool-headed	холоднокровний	For the cool use of intellect.	She stayed cool-headed in the crisis.
-715	intellect	інтелект	The cool use of intellect.	He is a man of great intellect.
-716	best-played	найкраще зіграний	The best-played game of chess.	It was the best-played match of the season.
+714	calm	спокійний	For the calm use of logic.	She stayed calm in the crisis.
+715	brain	мозок, розум	The calm use of your brain.	Use your brain!
+716	the best game	найкраща гра	The best game of chess.	It was the best game of the season.
 717	nerve	витримка, мужність	Pure nerve and outstanding courage.	It takes nerve to speak in public.
 718	outstanding	видатний	Outstanding courage.	She did an outstanding job.
 719	bravery	хоробрість	It takes a great deal of bravery.	He got a medal for bravery.

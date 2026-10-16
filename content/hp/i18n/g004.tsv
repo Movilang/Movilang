@@ -2,7 +2,7 @@
 501	zapomnieć o	забути про	Zapomnijcie o tym psie.	Zapomnij o pracy na weekend.	Забудьте про того пса.	Забудь про роботу на вихідні.
 502	sprzedać	продати	Kupiłem go od pewnego Irlandczyka.	Sprzedali stare meble.	Я купив його в одного ірландця.	Вони розпродали старі меблі.
 503	pożyczyć	позичити	Pożyczyłem go Dumbledore'owi.	Pożyczysz mi długopis?	Я позичив його Дамблдорові.	Позичиш мені ручку?
-504	być na tropie	натрапити на слід	Kim jest Mikołaj Flamel?	Chyba policja jest na jego tropie.	Хто такий Ніколас Фламель?	Здається, поліція вже на його сліді.
+504	trop, wskazówka	підказка, ключ	Kim jest Mikołaj Flamel?	Policja znalazła trop.	Хто такий Ніколас Фламель?	Поліція знайшла підказку.
 505	ktokolwiek	хто б не	Kimkolwiek jest.	Kto wygra, dostanie nagrodę.	Хто б він не був.	Хто переможе, отримає приз.
 506	szukać	обшукувати	Szukaliśmy wszędzie.	Policja przeszukała dom.	Ми шукали всюди.	Поліція обшукала будинок.
 507	sprawdzić	шукати в довіднику	Sprawdźmy go.	Sprawdź to słowo w słowniku.	Пошукаймо його.	Знайди це слово в словнику.
@@ -14,17 +14,17 @@
 513	być znanym	бути відомим	Jedyny znany twórca.	Miasto słynie z sera.	Єдиний відомий творець.	Місто відоме своїм сиром.
 514	być ukrytym	бути схованим	Ukryto go tutaj.	Klucz był ukryty pod kamieniem.	Його сховали тут.	Ключ був схований під каменем.
 515	Kamień Filozoficzny	філософський камінь	Kamień Filozoficzny!	W starych opowieściach Kamień Filozoficzny zamienia metal w złoto.	Філософський камінь!	У старих легендах філософський камінь перетворює метал на золото.
-516	legendarny	легендарний	Legendarna substancja.	To legendarny piłkarz.	Легендарна речовина.	Він легендарний футболіст.
+516	legenda	легенда	To ze starej legendy.	Jest legenda o tym zamku.	Це зі старої легенди.	Про цей замок є легенда.
 517	zamieniać w	перетворювати на	Zamienia każdy metal w czyste złoto.	Gąsienica zmieniła się w motyla.	Перетворює будь-який метал на чисте золото.	Гусінь перетворилася на метелика.
 518	czysty	чистий	Czyste złoto.	Jest z czystego jedwabiu.	Чисте золото.	Це з чистого шовку.
 519	eliksir życia	еліксир життя	Eliksir życia.	Stary król szukał eliksiru życia.	Еліксир життя.	Старий король шукав еліксир життя.
-520	nieśmiertelny	безсмертний	Który czyni pijącego nieśmiertelnym.	W mitach bogowie byli nieśmiertelni.	Який робить того, хто його п'є, безсмертним.	У міфах боги були безсмертні.
+520	żyć wiecznie	жити вічно	Dzięki niemu pijący będzie żył wiecznie.	W mitach bogowie żyją wiecznie.	Завдяки йому той, хто п'є, житиме вічно.	У міфах боги живуть вічно.
 521	chronić	захищати	Jest chroniony.	Załóż kapelusz, żeby chronić twarz przed słońcem.	Його захищають.	Одягни капелюх, щоб захистити обличчя від сонця.
 522	urodziny	день народження	W zeszłym roku obchodził 665. urodziny.	Obchodziła setne urodziny.	Торік він відсвяткував 665-й день народження.	Вона відсвяткувала соте день народження.
 523	kraść	красти	Snape próbuje go ukraść.	Ktoś ukradł mi rower!	Снейп намагається його вкрасти.	Хтось украв мій велосипед!
 524	jajo	яйце	Co to jest?	Zjadłem na śniadanie dwa jajka.	Що це?	Я з'їв на сніданок два яйця.
 525	smok	дракон	To smok!	W tej opowieści smok strzeże złota.	Це дракон!	У цій історії дракон охороняє золото.
-526	wykluwać się	вилуплюватися	Wykluwa się!	Kurczęta wykluły się dziś rano.	Він вилуплюється!	Курчата вилупилися сьогодні вранці.
+526	smoczątko	дракончик	To smoczątko!	Smoczątko zionęło ogniem.	Це дракончик!	Дракончик дихнув вогнем.
 527	wygrać od	виграти в	Wygrałem je od nieznajomego.	Wygrał od kolegi pięćdziesiąt funtów.	Я виграв його в незнайомця.	Він виграв у друга п'ятдесят фунтів.
 528	nieznajomy	незнайомець	Nie widziałem jego twarzy.	Nie rozmawiaj z nieznajomymi.	Я не бачив його обличчя.	Не розмовляй з незнайомцями.
 529	nielegalny	незаконний	To nielegalne!	Tu nie wolno parkować.	Це незаконно!	Тут заборонено паркуватися.
@@ -49,7 +49,7 @@
 548	być poza łóżkiem	бути не в ліжку	Poza łóżkiem w nocy?	Co robisz poza łóżkiem?	Не в ліжку вночі?	Що ти робиш не в ліжку?
 549	wymówka	виправдання	Nic nie daje wam prawa.	To okropna wymówka.	Ніщо не дає вам права.	Це жахливе виправдання.
 550	prawo	право	Nic nie daje uczniowi prawa…	Masz prawo zachować milczenie.	Ніщо не дає учневі права…	Ви маєте право мовчати.
-551	odejmować	знімати	Odejmuję pięćdziesiąt punktów.	Opłata zostanie potrącona z pensji.	Буде знято п'ятдесят балів.	Плату вирахують із зарплати.
+551	odebrać, odjąć	забрати, зняти	Zostanie odebranych pięćdziesiąt punktów.	Nauczyciel zabrał mi telefon.	Буде знято п'ятдесят балів.	Учитель забрав у мене телефон.
 552	każdy	кожен	Po pięćdziesiąt punktów.	Każdy uczeń dostaje książkę.	По п'ятдесят балів з кожного.	Кожен учень отримує книжку.
 553	zniesmaczony	обурений	Jestem zniesmaczona.	Byłem oburzony jego zachowaniem.	Я обурена.	Мене обурила його поведінка.
 554	donieść	донести	Malfoy na nas doniósł.	Siostra zawsze na mnie skarżyła.	Мелфой на нас доніс.	Сестра завжди на мене ябедничала.
@@ -62,8 +62,8 @@
 561	żałować	шкодувати	Szkoda, że poszliśmy.	Żałuję, że to powiedziałem.	Шкода, що ми пішли.	Я шкодую, що це сказав.
 562	błąd	помилка	Wielki błąd.	Każdy popełnia błędy.	Велика помилка.	Усі помиляються.
 563	szlaban	покарання	Odbędziecie szlaban.	Dostał szlaban za niegrzeczność.	Ви відбуватимете покарання.	Його покарали за грубість.
-564	odbywać	відбувати	Będziecie odbywać szlaban.	Odsiedział dwa lata w więzieniu.	Ви відбуватимете покарання.	Він відсидів два роки у в'язниці.
-565	zakuć w łańcuchy	закувати	Zakułbym was w łańcuchy.	Na noc przypinali psa łańcuchem.	Я б закував вас у ланцюги.	На ніч вони сажали пса на ланцюг.
+564	dostać szlaban	отримати покарання	Dostaniecie szlaban.	Dostał szlaban za spóźnienie.	Ви отримаєте покарання.	Він отримав покарання за запізнення.
+565	związać	зв'язати	Związałbym was.	Na noc wiązali psa.	Я б вас зв'язав.	На ніч вони прив'язували пса.
 566	kara	покарання	Szkoda, że zrezygnowano z dawnych kar.	Kara była zbyt surowa.	Шкода, що старі покарання скасували.	Покарання було надто суворим.
 567	las	ліс	Zakazany Las.	Poszliśmy na spacer do lasu.	Заборонений ліс.	Ми пішли на прогулянку в ліс.
 568	wilkołak	перевертень	Tam są wilkołaki.	W filmie wilkołak wył do księżyca.	Там є перевертні.	У фільмі перевертень вив на місяць.
@@ -79,14 +79,14 @@
 578	bać się	боятися	Nie boję się.	Boisz się ciemności?	Я не боюся.	Ти боїшся темряви?
 579	tchórz	боягуз	To straszny tchórz.	Nie bądź takim tchórzem.	Він страшенний боягуз.	Не будь таким боягузом.
 580	sługa	слуга	To robota dla służby.	Służba sprzątała zamek.	Це робота для слуг.	Слуги прибирали замок.
-581	zakapturzony	у каптурі	Co to jest?	Obok nas przebiegł mężczyzna w kapturze.	Що це?	Повз нас пробіг чоловік у каптурі.
+581	w kapturze	у каптурі	Co to jest?	Obok nas przebiegł mężczyzna w kapturze.	Що це?	Повз нас пробіг чоловік у каптурі.
 582	postać	постать	Postać w ciemności.	Zobaczyłem ciemną postać w oknie.	Постать у темряві.	Я побачив темну постать у вікні.
 583	skradać się	підкрадатися	Zbliża się!	Kot skradał się do ptaka.	Воно наближається!	Кіт підкрадався до птаха.
 584	pić	пити	Pije jego krew.	Pij dużo wody.	Воно п'є його кров.	Пий багато води.
 585	uciec	утекти	Uciekaj!	Pies uciekł z domu.	Тікай!	Пес утік з дому.
 586	boleć	боліти	Boli.	Boli mnie głowa.	Болить.	У мене болить голова.
 587	zamarznąć	завмерти	Nie ruszaj się.	Zamarłem, kiedy zobaczyłem węża.	Не рухайся.	Я завмер, коли побачив змію.
-588	kopyto	копито	Kopyta!	Koń zranił sobie kopyto.	Копита!	Кінь поранив копито.
+588	kroki, tętent	кроки, тупіт	Kroki!	Usłyszałem kroki w ciemności.	Кроки!	Я почув кроки в темряві.
 589	centaur	кентавр	Harry Potterze, musisz odejść.	W mitach centaur jest pół człowiekiem, pół koniem.	Гаррі Поттере, тобі треба піти.	У міфах кентавр — наполовину людина, наполовину кінь.
 590	zabić	убити	Zabić jednorożca.	W legendzie rycerz zabił smoka.	Убити єдинорога.	У легенді лицар убив дракона.
 591	niewinny	безневинний	Czysty i bezbronny.	Mężczyzna twierdził, że jest niewinny.	Чистий і беззахисний.	Чоловік сказав, що він невинний.
@@ -98,7 +98,7 @@
 597	szansa	шанс	Czeka na szansę.	To twoja ostatnia szansa.	Він чекає на шанс.	Це твій останній шанс.
 598	wrócić	повернутися	Próbuje wrócić.	Kiedy wracasz?	Він намагається повернутися.	Коли ти повертаєшся?
 599	siła	сила	Żeby odzyskać siły.	Potrzeba siły, żeby to podnieść.	Щоб відновити сили.	Щоб це підняти, потрібна сила.
-600	odzyskać	відновити	Odzyskać siły.	Powoli odzyskała pewność siebie.	Відновити сили.	Вона поволі повернула впевненість.
+600	odzyskać	повернути	Odzyskać siły.	Powoli odzyskała pewność siebie.	Повернути сили.	Вона поволі повернула впевненість.
 601	słaby	слабкий	Jest słaby.	Po grypie czułem się słaby.	Він слабкий.	Після грипу я був слабкий.
 602	żywy	живий	On żyje?	Ryba jeszcze żyje?	Він живий?	Риба ще жива?
 603	egzamin	екзамен	Egzaminy się skończyły!	Jutro mam egzamin z matematyki.	Екзамени закінчилися!	Завтра в мене іспит з математики.
@@ -107,7 +107,7 @@
 606	ciągle boleć	постійно боліти	Ciągle boli.	Ciągle boli mnie kolano.	Постійно болить.	У мене постійно болить коліно.
 607	znak	знак	To ostrzeżenie.	Ciemne chmury to znak deszczu.	Це попередження.	Темні хмари — знак дощу.
 608	ostrzeżenie	попередження	To oznacza niebezpieczeństwo.	Znak ostrzega przed lodem.	Це означає небезпеку.	Знак попереджає про лід.
-609	przyjść do głowy	спасти на думку	Dlaczego wcześniej tego nie widziałem?	Nigdy nie przyszło mi do głowy zapytać.	Чому я не бачив цього раніше?	Мені ніколи не спадало на думку запитати.
+609	zauważyć	помітити	Dlaczego wcześniej tego nie widziałem?	Nie zauważyłem błędu.	Чому я не бачив цього раніше?	Я не помітив помилки.
 610	przypadkiem	випадково	Przypadkiem miał smocze jajo.	Znasz może jej numer?	Випадково мав драконове яйце.	Ти випадково не знаєш її номер?
 611	rozgryźć	розгадати	Rozgryzłem to.	Nie rozumiem, jak to działa.	Я все зрозумів.	Не можу зрозуміти, як це працює.
 612	zdradzić	видати	Wygadałem się.	Nie zdradzaj zakończenia filmu!	Я це видав.	Не розповідай кінцівку фільму!

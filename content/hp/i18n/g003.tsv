@@ -31,8 +31,8 @@
 405	odwracać uwagę	відволікати	Hej, móżdżku!	Nie rozpraszaj mnie, kiedy prowadzę.	Гей, мізку горохов!	Не відволікай мене, коли я за кермом.
 406	chwytać	хапати	Pomocy!	Chwycił mnie za ramię.	Рятуйте!	Він схопив мене за руку.
 407	do góry nogami	догори дриґом	Zróbcie coś!	Obraz wisi do góry nogami.	Зробіть щось!	Картина висить догори дриґом.
-408	nozdrze	ніздря	Fuj!	Ma kolczyk w nosie.	Фе!	У нього кільце в ніздрі.
-409	glut	шмаркля	Glut trolla.	Fuj — masz gluta na rękawie!	Тролячі шмарклі.	Фе — у тебе шмаркля на рукаві!
+408	nos	ніс	Fuj!	Ma kolczyk w nosie.	Фе!	У нього кільце в носі.
+409	obrzydliwy	гидкий	Glut trolla — obrzydliwe!	Fuj — masz błoto na rękawie!	Тролячі шмарклі — гидота!	Фе — у тебе бруд на рукаві!
 410	znokautować	вирубити	Nie żyje?	Bokser znokautował przeciwnika.	Він мертвий?	Боксер нокаутував суперника.
 411	tylko	лише	Chyba jest tylko ogłuszony.	To tylko gra, wyluzuj.	Здається, його просто вирубило.	Це лише гра, розслабся.
 412	trzymać się	триматися	Trzymaj się!	Trzymaj się mocno!	Тримайся!	Тримайся міцно!
@@ -43,7 +43,7 @@
 417	przeczytać o	прочитати про	Przeczytałam o nich wszystko.	Czytałem o tym w magazynie.	Я прочитала про них усе.	Я читав про це в журналі.
 418	przyjść szukać	прийти шукати	Przyszli mnie szukać.	Mama przyszła szukać mnie w parku.	Вони прийшли мене шукати.	Мама прийшла шукати мене в парку.
 419	odejmować punkty	знімати бали	Gryffindor straci pięć punktów.	Nauczyciel odjął punkty naszej drużynie.	З Ґрифіндору знімається п'ять балів.	Учитель зняв бали з нашої команди.
-420	czysty (o szczęściu)	чистий	Za czyste, głupie szczęście.	Znaleźliśmy to przez czysty przypadek.	За чисте дурне везіння.	Ми знайшли це чистим випадком.
+420	czyste szczęście	чисте везіння	Za czyste, głupie szczęście.	To było czyste szczęście, że to znaleźliśmy.	За чисте дурне везіння.	Це було чисте везіння, що ми це знайшли.
 421	utykać	кульгати	Widzieliście nogę Snape'a?	Po meczu utykał.	Бачили ногу Снейпа?	Після матчу він кульгав.
 422	przyjaźń	дружба	Dziękuję.	Ich przyjaźń przetrwała całe życie.	Дякую.	Їхня дружба тривала все життя.
 423	quidditch	квідич	Quidditch łatwo zrozumieć.	W quidditcha gra się na miotłach.	Квідич легко зрозуміти.	У квідич грають на мітлах.
@@ -56,7 +56,7 @@
 430	złapać	спіймати	Złapiesz go — i wygrywamy.	Nasz pies łapie piłkę w powietrzu.	Спіймаєш його — і ми виграємо.	Наш пес ловить м'яч у повітрі.
 431	mecz	матч	Gryffindor kontra Slytherin.	Oglądaliśmy mecz w telewizji.	Ґрифіндор проти Слизерину.	Ми дивилися матч по телевізору.
 432	tłum	натовп	Tłum szaleje.	Tłum głośno wiwatował.	Натовп шаленіє.	Натовп гучно вітав.
-433	komentować	коментувати	I Gryffindor zdobywa punkty!	Komentuje mecze piłkarskie w radiu.	І Ґрифіндор забиває!	Він коментує футбол на радіо.
+433	opisywać	описувати	I Gryffindor zdobywa punkty!	Opisuje mecz piłkarski w radiu.	І Ґрифіндор забиває!	Він описує футбольний матч на радіо.
 434	uczciwie	чесно	Chcę czystej gry.	Każdy musi być traktowany uczciwie.	Я хочу чесної гри.	До всіх треба ставитися чесно.
 435	łatwo	легко	Au!	Wygrała wyścig z łatwością.	Ой!	Вона легко виграла забіг.
 436	źle	погано	Faul!	Został poważnie ranny w wypadku.	Порушення!	Він тяжко постраждав в аварії.
@@ -75,10 +75,10 @@
 449	Boże Narodzenie	Різдво	Wesołych Świąt, Harry!	Święta spędzamy u dziadków.	Веселого Різдва, Гаррі!	Різдво ми проводимо з дідусем і бабусею.
 450	sweter	светр	Mama zrobiła ci sweter na drutach.	Jest zimno, weź ciepły sweter.	Мама сплела тобі светр.	Холодно, візьми теплий светр.
 451	robić na drutach	в'язати	Co roku robi mi jeden.	Babcia robi wszystkim skarpetki na drutach.	Щороку вона в'яже мені светр.	Бабуся в'яже всім шкарпетки.
-452	bordowy	бордовий	Zawsze bordowy.	Miał bordowy szalik.	Завжди бордовий.	На ньому був бордовий шарф.
+452	ciemnoczerwony	темно-червоний	Zawsze ciemnoczerwony.	Miał ciemnoczerwony szalik.	Завжди темно-червоний.	На ньому був темно-червоний шарф.
 453	bez nadawcy	без імені	Nie ma nazwiska.	List był bez podpisu.	Тут немає імені.	На листі не було імені.
 454	liścik	записка	Jest liścik.	Zostawiła mi liścik na stole.	Тут записка.	Вона залишила мені записку на столі.
-455	posiadać	мати	Twój ojciec zostawił to u mnie.	Ma wielki talent.	Твій батько залишив це мені на зберігання.	Він має великий талант.
+455	mieć, posiadać	мати, володіти	To należało do twojego ojca.	Ma mały sklep.	Це належало твоєму батькові.	Він має маленьку крамницю.
 456	wykorzystaj to mądrze	використовуй з розумом	Wykorzystaj to mądrze.	Masz trochę pieniędzy — wydaj je mądrze.	Використовуй її з розумом.	Ось трохи грошей — використай їх з розумом.
 457	peleryna	мантія	Co to jest?	Owinęła się peleryną.	Що це?	Вона загорнулася в плащ.
 458	niewidzialny	невидимий	Moje ciało zniknęło!	Powietrze jest niewidzialne.	Мого тіла немає!	Повітря невидиме.
@@ -91,7 +91,7 @@
 465	Dział Ksiąg Zakazanych	заборонена секція	Dział Ksiąg Zakazanych.	Do działu ksiąg zakazanych mogą wchodzić tylko nauczyciele.	Заборонена секція.	До забороненої секції можуть заходити лише вчителі.
 466	lampa	ліхтар	Kto tam?	Zapal lampę, jest ciemno.	Хто там?	Увімкни лампу, темно.
 467	upuścić	впустити	Kto tam?	Nie upuść szklanki!	Хто там?	Не впусти склянку!
-468	piszczeć	верещати	Aaaa!	Dzieci piszczały ze śmiechu.	Аааа!	Діти верещали від сміху.
+468	krzyczeć	кричати	Aaaa!	Dzieci krzyczały ze śmiechu.	Аааа!	Діти кричали від сміху.
 469	uciekać	утікати	Uciekaj!	Złodziej uciekł z moją torbą.	Тікай!	Злодій утік з моєю сумкою.
 470	wróg	ворог	Nie chcesz mieć we mnie wroga.	Nie rób sobie z niego wroga.	Ти не хочеш мати мене за ворога.	Не роби його своїм ворогом.
 471	grozić	погрожувати	Nie chcesz mieć we mnie wroga.	Groził, że zadzwoni na policję.	Ти не хочеш мати мене за ворога.	Він погрожував викликати поліцію.
@@ -116,10 +116,10 @@
 490	głęboki	глибокий	Najgłębsze, najbardziej rozpaczliwe pragnienie.	Jezioro jest bardzo głębokie.	Найглибше, найвідчайдушніше бажання.	Озеро дуже глибоке.
 491	szczęśliwy	щасливий	Najszczęśliwszy człowiek na ziemi.	Tak się cieszę twoim szczęściem!	Найщасливіша людина на землі.	Я так за тебе рада!
 492	marnować	марнувати	Ludzie marnieli przed nim.	Nie marnuj na to czasu.	Люди марніли перед ним.	Не марнуй на це час.
-493	rozpamiętywać	зациклюватися	Nie należy żyć marzeniami.	Nie rozpamiętuj swoich błędów.	Не варто жити мріями.	Не зациклюйся на своїх помилках.
+493	za dużo myśleć o	забагато думати про	Nie myśl za dużo o marzeniach.	Nie myśl za dużo o swoich błędach.	Не думай забагато про мрії.	Не думай забагато про свої помилки.
 494	zapomnieć o życiu	забути жити	I zapominać o życiu.	Nie pracuj tak dużo, żeby zapomnieć o życiu.	І забувати жити.	Не працюй так, щоб забути жити.
 495	przenieść	перенести	Zostanie przeniesione w nowe miejsce.	Pomożesz mi przesunąć ten stół?	Його перенесуть у нове місце.	Допоможеш мені пересунути цей стіл?
 496	skarpetki	шкарпетки	Para grubych wełnianych skarpet.	Potrzebuję nowych skarpetek.	Пара товстих вовняних шкарпеток.	Мені потрібні нові шкарпетки.
 497	wygadać się	проговоритися	Nie powinienem był tego mówić.	Wygadała się, że przeprowadza się do Paryża.	Не треба було мені цього казати.	Вона проговорилася, що переїжджає до Парижа.
-498	wtrącać się	втручатися	Nie wtrącajcie się.	Przestań się wtrącać w moje sprawy!	Не пхайтеся в це.	Перестань втручатися в мої справи!
+498	wtrącać się	втручатися	Nie wtrącajcie się.	Przestań się wtrącać w moje sprawy!	Не втручайтеся.	Перестань втручатися в мої справи!
 499	niebezpieczny	небезпечний	To niebezpieczne.	Pływanie tutaj jest niebezpieczne.	Це небезпечно.	Тут небезпечно плавати.

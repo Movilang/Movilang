@@ -12,8 +12,8 @@ lesson(18, "Вінґардіум Левіоса", "Gerund vs Infinitive",
     ("Професор Квірел", "Professor Quirrell", "Вривається на святковий бенкет з поганою новиною.", "upd")]),
   gloss("Сцена 1 · Урок замовлянь", """
 charm|/tʃɑːm/|noun|B2|замовляння, чари|Професор Флитвік вчить першокласників замовлянням.|Wingardium Leviosa.|The witch put a charm on the door.
-to levitate|/ˈlevɪteɪt/|verb|C1|піднімати в повітря (чарами)|Сьогоднішнє завдання — змусити пір'їну злетіти.|One of the most basic skills of a wizard.|The magician seemed to levitate above the stage.
-swish and flick|/swɪʃ ənd flɪk/|phrase|C1|змах і клацання (рух паличкою)|Флитвік показує правильний рух паличкою.|Swish and flick.|Swish and flick — just like the teacher showed us.
+to levitate|/ˈlevɪteɪt/|verb|HP|піднімати в повітря (чарами)|Сьогоднішнє завдання — змусити пір'їну злетіти.|One of the most basic skills of a wizard.|The magician seemed to levitate above the stage.
+swish and flick|/swɪʃ ənd flɪk/|phrase|HP|змах і клацання (рух паличкою)|Флитвік показує правильний рух паличкою.|Swish and flick.|Swish and flick — just like the teacher showed us.
 to pronounce|/prəˈnaʊns/|verb|B1|вимовляти|Головне — правильно вимовити заклинання.|It's Levi-O-sa, not Levio-SA.|How do you pronounce your name?
 to stop (doing)|/stɒp/|verb|A2|припинити (робити)|Герміона просить Рона перестати махати паличкою.|Stop, stop, stop!|Please stop talking during the film.
 to keep (doing)|/kiːp/|verb|B1|продовжувати (робити)|Рон уперто махає паличкою знову і знову.|Wingardium Leviosaaa!|He kept calling me all night.
@@ -36,7 +36,7 @@ to apologise|/əˈpɒlədʒaɪz/|verb|B1|вибачатися|Рон ще не �
 Halloween|/ˌhæləʊˈiːn/|noun|A2|Гелловін|У залі — гарбузи, свічки, кажани.|Happy Halloween!|We carved pumpkins for Halloween.
 pumpkin|/ˈpʌmpkɪn/|noun|A2|гарбуз|Над столами літають гарбузи-ліхтарі.|Pumpkin pasties.|She made pumpkin soup.
 troll|/trəʊl/|noun|B2|троль|Квірел вбігає з криком про троля.|Troll! In the dungeon!|The troll lived under a bridge.
-dungeon|/ˈdʌndʒən/|noun|C1|підземелля|Квірел каже, що троль у підземеллі.|In the dungeon!|The prisoners were kept in a dungeon.
+dungeon|/ˈdʌndʒən/|noun|HP|підземелля|Квірел каже, що троль у підземеллі.|In the dungeon!|The prisoners were kept in a dungeon.
 to faint|/feɪnt/|verb|B2|знепритомніти|Квірел падає без тями посеред зали.|Thought you ought to know.|She fainted from the heat.
 to panic|/ˈpænɪk/|verb|B1|панікувати|Учні в паніці кричать і бігають.|Silence!|Don't panic — stay calm.
 silence|/ˈsaɪləns/|noun|B1|тиша|Дамблдор вимагає тиші.|Silence!|There was a long silence.
@@ -115,8 +115,8 @@ brave|/breɪv/|adjective|A2|сміливий|Хлопці поводяться �
 to distract|/dɪˈstrækt/|verb|B2|відволікати|Гаррі кидає уламки, щоб відволікти троля.|Hey, pea-brain!|Don't distract me while I'm driving.
 to grab|/ɡræb/|verb|B1|хапати|Троль хапає Гаррі за ногу.|Help!|He grabbed my arm.
 upside down|/ˌʌpsaɪd ˈdaʊn/|adverb|B1|догори дриґом|Гаррі висить у повітрі догори ногами.|Do something!|The picture is upside down.
-nostril|/ˈnɒstrəl/|noun|C1|ніздря|Паличка Гаррі застрягає тролеві в носі.|Ew!|He has a ring in his nostril.
-bogey|/ˈbəʊɡi/|noun, informal|C1|соплі (розмовне)|Паличка вкрита тролячими шмарклями.|Troll bogey.|Gross — there's a bogey on your sleeve!
+nose|/nəʊz/|noun|A1|ніс|Паличка Гаррі застрягає тролеві в носі.|Ew!|He has a ring in his nose.
+gross|/ɡrəʊs/|adjective, informal|B1|гидкий, бридкий|Паличка вкрита тролячими шмарклями.|Troll bogey — gross!|Gross — there's mud on your sleeve!
 to knock out|/nɒk ˈaʊt/|phrasal verb|B2|вирубити, нокаутувати|Дубина падає тролеві на голову.|Is it dead?|The boxer knocked out his opponent.
 just|/dʒʌst/|adverb|A2|просто, лише|Рон каже, що троль лише непритомний.|I think it's just been knocked out.|It's just a game, relax.
 to hold on|/həʊld ˈɒn/|phrasal verb|B1|триматися|Гаррі тримається за шию троля.|Hold on!|Hold on tight!
@@ -129,7 +129,7 @@ to handle|/ˈhændl/|verb|B2|впоратися|Герміона вигадує,
 to read about|/riːd əˈbaʊt/|phrasal verb|A2|прочитати про|Герміона «читала про тролів».|I've read all about them.|I read about it in a magazine.
 to come looking for|/kʌm ˈlʊkɪŋ fɔː/|phrase|B1|прийти шукати|Герміона каже, що хлопці прийшли її шукати.|They came looking for me.|My mum came looking for me in the park.
 to take points|/teɪk pɔɪnts/|phrase|B1|знімати бали|Макґонеґел знімає бали з Герміони.|Five points will be taken from Gryffindor.|The teacher took points from our team.
-sheer|/ʃɪə/|adjective|C1|чистий, суцільний (sheer luck)|Макґонеґел називає успіх хлопців чистим везінням.|For sheer dumb luck.|It was sheer luck that we found it.
+pure luck|/pjʊə ˈlʌk/|phrase|B1|чисте везіння|Макґонеґел називає успіх хлопців чистим везінням.|For pure dumb luck.|It was pure luck that we found it.
 to limp|/lɪmp/|verb|B2|кульгати|Гаррі помічає, що Снейп накульгує.|Did you see Snape's leg?|He was limping after the match.
 friendship|/ˈfrendʃɪp/|noun|B1|дружба|Після троля тріо стає справжніми друзями.|Thank you.|Their friendship lasted a lifetime.
 """),
@@ -142,7 +142,7 @@ friendship|/ˈfrendʃɪp/|noun|B1|дружба|Після троля тріо с
       "Іноді люди кажуть неправду, щоб захистити друзів. Саме з цієї миті Герміона — частина тріо.", img="troll"),
   cauldron([("troll", "a huge, stupid, dangerous creature"), ("to rescue", "to save from danger"),
             ("to distract", "to take someone's attention away"), ("to limp", "to walk with difficulty because of a bad leg"),
-            ("sheer", "complete, pure (sheer luck)")],
+            ("pure luck", "luck and nothing else")],
            "Слова бою з тролем."),
   gram("If I ____ a troll, I would run away.", ["met", "meet", "will meet", "would meet"], 0,
        ["Так! Second Conditional: If + Past Simple, would + verb. Уявна ситуація.",
@@ -175,9 +175,9 @@ friendship|/ˈfrendʃɪp/|noun|B1|дружба|Після троля тріо с
         "Філча поруч не було."],
        "Тримай у голові цю гіпотезу. Чи правильна вона — дізнаємося пізніше."),
   word("McGonagall says the boys survived thanks to ____ dumb luck.",
-       ["sheer", "huge", "brave", "lucky"], 0,
-       ["Так! Sheer luck = чисте везіння.", "Huge luck — неприродне поєднання.", "Brave luck — не поєднується.", "Lucky luck — тавтологія."],
-       "Sheer + іменник: sheer luck, sheer madness, sheer joy."),
+       ["pure", "huge", "brave", "lucky"], 0,
+       ["Так! Pure luck = чисте везіння.", "Huge luck — неприродне поєднання.", "Brave luck — не поєднується.", "Lucky luck — тавтологія."],
+       "Pure + іменник: pure luck, pure joy. У фільмі Макґонеґел каже ще сильніше слово — sheer."),
   speak("If I were you, I'd say sorry.", "I'd = I would. Звук [aɪd]. Спокійно, як порада."),
   letter("You are Ron. Write a note to Hermione (45+ words). Apologise and imagine: If I were braver, I would…; If I hadn't…, If you were…. Use at least three Second Conditional sentences.",
          45, "Почни з «Hermione, I'm sorry about what I said. If I were…»."),
@@ -194,11 +194,11 @@ lesson(20, "Перший матч", "Adverbs: manner, frequency, comparative adv
     ("Лі Джордан", "Lee Jordan", "Коментатор матчу. Не завжди нейтральний."),
     ("Северус Снейп", "Severus Snape", "На трибуні. Не зводить очей із Гаррі й щось шепоче.", "upd")]),
   gloss("Сцена 1 · Правила квідичу", """
-Quidditch|/ˈkwɪdɪtʃ/|noun|C2|квідич|Вуд пояснює Гаррі гру чарівників.|Quidditch is easy enough to understand.|Quidditch is played on broomsticks.
+Quidditch|/ˈkwɪdɪtʃ/|noun|HP|квідич|Вуд пояснює Гаррі гру чарівників.|Quidditch is easy enough to understand.|Quidditch is played on broomsticks.
 rule|/ruːl/|noun|A2|правило|Вуд показує скриню з м'ячами і пояснює правила.|The rules are simple.|Do you know the rules of chess?
 ball|/bɔːl/|noun|A1|м'яч|У квідичі одразу кілька м'ячів.|There are four balls.|Kick the ball!
 to score|/skɔː/|verb|B1|забивати (гол)|Гравці забивають м'яч у кільця.|Ten points.|He scored two goals.
-hoop|/huːp/|noun|C1|кільце|Кільця на високих стовпах замість воріт.|Through one of the hoops.|The basketball went through the hoop.
+hoop|/huːp/|noun|HP|кільце|Кільця на високих стовпах замість воріт.|Through one of the hoops.|The basketball went through the hoop.
 to knock (someone) off|/nɒk ˈɒf/|phrasal verb|B2|збити з (чогось)|Важкі м'ячі намагаються збити гравців з мітел.|They try to knock you off your broom.|The wind knocked him off his bike.
 nasty|/ˈnɑːsti/|adjective|B1|неприємний, злий|Вуд попереджає, що ці м'ячі — дуже неприємні.|Nasty little things.|That's a nasty cut.
 tiny|/ˈtaɪni/|adjective|A2|крихітний|Золотий снич — крихітний і дуже швидкий.|It's very fast and difficult to see.|She lives in a tiny flat.
@@ -207,7 +207,7 @@ to catch (the Snitch)|/kætʃ/|verb|A2|спіймати|Якщо ловець л
   gloss("Сцена 2 · Матч", """
 match|/mætʃ/|noun|A2|матч|Перший матч сезону: Ґрифіндор проти Слизерину.|Gryffindor versus Slytherin.|We watched the match on TV.
 crowd|/kraʊd/|noun|B1|натовп, глядачі|Трибуни повні, натовп кричить.|The crowd goes wild.|The crowd cheered loudly.
-to commentate|/ˈkɒmənteɪt/|verb|C1|коментувати (матч)|Лі Джордан коментує гру.|And Gryffindor scores!|He commentates on football for the radio.
+to describe|/dɪˈskraɪb/|verb|B1|описувати|Лі Джордан коментує гру.|And Gryffindor scores!|He describes the football match on the radio.
 fairly|/ˈfeəli/|adverb|B1|чесно|Мадам Гуч вимагає грати чесно.|I want a nice clean game.|Everyone must be treated fairly.
 easily|/ˈiːzɪli/|adverb|A2|легко|Слизеринці легко збивають гравців.|Ouch!|She won the race easily.
 badly|/ˈbædli/|adverb|A2|погано, сильно|Гравці Слизерину грають брудно і погано.|Foul!|He was badly hurt in the accident.
@@ -216,7 +216,7 @@ to take the lead|/teɪk ðə liːd/|phrase|B2|вийти вперед (у рах
 fast|/fɑːst/|adverb, adjective|A1|швидко; швидкий|Гаррі летить швидше за всіх.|Faster!|Don't drive so fast.
 """),
   gloss("Сцена 3 · Мітла збожеволіла", """
-to jinx|/dʒɪŋks/|verb|C1|наврочити, зачаклувати (на погане)|Герміона бачить, що мітлу Гаррі хтось зачаклував.|It's a jinx.|I think this computer is jinxed!
+to jinx|/dʒɪŋks/|verb|HP|наврочити, зачаклувати (на погане)|Герміона бачить, що мітлу Гаррі хтось зачаклував.|It's a jinx.|I think this computer is jinxed!
 to mutter|/ˈmʌtə/|verb|B2|бурмотіти|Снейп безперервно щось бурмоче, не моргаючи.|He's muttering.|He muttered something and left.
 to blink|/blɪŋk/|verb|B1|кліпати|Герміона каже: треба тримати зоровий контакт, не кліпаючи.|You have to keep eye contact.|Try not to blink.
 to set fire to|/set ˈfaɪə tə/|phrase|B2|підпалити|Герміона підпалює мантію на трибуні.|Fire!|Someone set fire to the old barn.
@@ -287,10 +287,10 @@ Christmas|/ˈkrɪsməs/|noun|A1|Різдво|Гаррі вперше проки�
 to wake up|/weɪk ˈʌp/|phrasal verb|A2|прокидатися|Рон кричить Гаррі, щоб той прокидався.|Wake up, Harry!|What time did you wake up?
 jumper|/ˈdʒʌmpə/|noun|B1|светр (BrE)|Місіс Уізлі в'яже светри всім синам — і Гаррі теж.|Mum's knitted you a jumper.|It's cold, so take a warm jumper.
 to knit|/nɪt/|verb|B2|в'язати|Рон нарікає, що мама в'яже йому светр щороку.|Every year she knits me one.|My grandma knits socks for everyone.
-maroon|/məˈruːn/|adjective|C1|бордовий|Рон зітхає: йому знову бордовий.|Always maroon.|He wore a maroon scarf.
+dark red|/dɑːk ˈred/|adjective|A2|темно-червоний, бордовий|Рон зітхає: йому знову бордовий.|Always dark red.|He wore a dark red scarf.
 no name|/nəʊ neɪm/|phrase|A2|без імені|На одному подарунку немає підпису.|There's no name.|The letter had no name on it.
 note|/nəʊt/|noun|A2|записка|У пакунку — записка незнайомим почерком.|There's a note.|She left me a note on the table.
-to possess|/pəˈzes/|verb|C1|мати у володінні|Записка каже, що річ була в дарувальника.|Your father left this in my possession.|He possesses great talent.
+to own|/əʊn/|verb|B1|мати, володіти|Записка каже, що річ була в дарувальника.|This was your father's.|He owns a small shop.
 use it well|/juːz ɪt wel/|phrase|B1|використовуй з розумом|Записка закінчується порадою.|Use it well.|Here's some money — use it well.
 """),
   gloss("Сцена 2 · Мантія", """
@@ -306,10 +306,10 @@ precious|/ˈpreʃəs/|adjective|B2|дорогоцінний|Для Гаррі ц
 """),
   gloss("Сцена 3 · Заборонена секція", """
 library|/ˈlaɪbrəri/|noun|A2|бібліотека|Уночі Гаррі йде до бібліотеки в мантії.|In the library.|I borrow books from the library.
-restricted section|/rɪˈstrɪktɪd ˈsekʃn/|noun|C1|заборонена секція (бібліотеки)|Учням можна читати ці книжки лише з дозволу вчителя.|The Restricted Section.|Only teachers can enter the restricted section.
+restricted section|/rɪˈstrɪktɪd ˈsekʃn/|noun|HP|заборонена секція (бібліотеки)|Учням можна читати ці книжки лише з дозволу вчителя.|The Restricted Section.|Only teachers can enter the restricted section.
 lamp|/læmp/|noun|A2|лампа, ліхтар|Гаррі світить ліхтарем між полицями.|Who's there?|Turn on the lamp, it's dark.
 to drop|/drɒp/|verb|A2|упускати|Гаррі впускає ліхтар — і його чують.|Who's there?|Don't drop the glass!
-to shriek|/ʃriːk/|verb|C1|пронизливо кричати|Стара книжка кричить, коли її відкривають.|Aaaah!|The children shrieked with laughter.
+to yell|/jel/|verb|B1|кричати|Стара книжка кричить, коли її відкривають.|Aaaah!|The children yelled with laughter.
 to run off|/rʌn ˈɒf/|phrasal verb|B1|утікати|Гаррі тікає, поки Філч його не побачив.|Run!|The thief ran off with my bag.
 to hide|/haɪd/|verb|B1|ховатися|Гаррі ховається в мантії біля стіни.|Shh.|The kids hid behind the door.
 enemy|/ˈenəmi/|noun|B1|ворог|У коридорі Гаррі чує, як Снейп комусь погрожує.|You don't want me as your enemy.|Don't make him your enemy.
@@ -380,10 +380,10 @@ to wave at|/weɪv æt/|phrase|A2|махати (комусь)|Батьки мах
 eyes|/aɪz/|noun|A1|очі|Гаррі має мамині очі.|You have her eyes.|She has beautiful green eyes.
 to touch|/tʌtʃ/|verb|A2|торкатися|Гаррі торкається скла, але там нікого немає.|Mum…|Don't touch the screen.
 empty|/ˈempti/|adjective|A2|порожній|Позаду Гаррі — порожня кімната.|There's nobody there.|The streets were empty at night.
-inscription|/ɪnˈskrɪpʃn/|noun|C1|напис|На рамі дзеркала дивний напис.|I show not your face but your heart's desire.|There was an inscription on the old ring.
+writing|/ˈraɪtɪŋ/|noun|B1|напис|На рамі дзеркала дивний напис.|I show not your face but your heart's desire.|There was some writing on the old ring.
 """),
   gloss("Сцена 2 · Рон біля дзеркала", """
-Head Boy|/hed ˈbɔɪ/|noun|C1|головний староста школи|Рон бачить себе головним старостою.|I'm Head Boy!|He was Head Boy in his last year.
+Head Boy|/hed ˈbɔɪ/|noun|HP|головний староста школи|Рон бачить себе головним старостою.|I'm Head Boy!|He was Head Boy in his last year.
 captain|/ˈkæptɪn/|noun|A2|капітан|Рон бачить себе капітаном команди.|I'm Quidditch captain too!|She's the captain of our team.
 to hold (a cup)|/həʊld/|verb|A2|тримати|Рон у дзеркалі тримає кубок.|I'm holding the cup!|He held the trophy above his head.
 to show|/ʃəʊ/|verb|A2|показувати|Рон питає, чи дзеркало показує майбутнє.|Does it show the future?|Can you show me the way?
@@ -398,7 +398,7 @@ desire|/dɪˈzaɪə/|noun|B2|бажання, прагнення|Дамблдор
 deep|/diːp/|adjective|A2|глибокий|Бажання, яке дзеркало показує, — найглибше.|The deepest, most desperate desire.|The lake is very deep.
 happy|/ˈhæpi/|adjective|A1|щасливий|Найщасливіша людина бачила б лише себе.|The happiest man on earth.|I'm so happy for you!
 to waste|/weɪst/|verb|B1|марнувати|Люди марнували життя перед дзеркалом.|Men have wasted away before it.|Don't waste your time on it.
-to dwell on|/dwel ɒn/|phrasal verb|C1|зациклюватися на|Дамблдор радить не жити мріями.|It does not do to dwell on dreams.|Don't dwell on your mistakes.
+to think too much about|/θɪŋk tuː mʌtʃ əˈbaʊt/|phrase|B1|забагато думати про|Дамблдор радить не жити мріями.|Don't think too much about dreams.|Don't think too much about your mistakes.
 to forget to live|/fəˈɡet tə lɪv/|phrase|B2|забути жити|Дамблдор попереджає: не забудь жити.|And forget to live.|Don't work so hard that you forget to live.
 to move (something)|/muːv/|verb|A2|переносити|Дзеркало перенесуть в інше місце.|It will be moved to a new home.|Can you help me move this table?
 socks|/sɒks/|noun|A1|шкарпетки|Дамблдор жартує, що бачить у дзеркалі шкарпетки.|A pair of thick, woollen socks.|I need new socks.
@@ -412,8 +412,8 @@ to go mad|/ɡəʊ ˈmæd/|phrase|B1|збожеволіти|Деякі люди �
        "Герміона на канікулах удома."],
       "It does not do to… — старомодне «не годиться, не варто…».", img="mirror"),
   cauldron([("reflection", "the image you see in a mirror"), ("desire", "a strong wish"),
-            ("to dwell on", "to think too much about something"), ("to waste", "to use badly, to lose time"),
-            ("inscription", "words written on something old")],
+            ("to think too much about", "to keep thinking about something"), ("to waste", "to use badly, to lose time"),
+            ("writing", "words written on something")],
            "Слова дзеркала бажань."),
   gram("Harry: “I wish my parents ____ here.”", ["were", "are", "will be", "would"], 0,
        ["Так! I wish + Past Simple (were) — бажання про теперішнє, яке нереальне.",
@@ -444,8 +444,8 @@ to go mad|/ɡəʊ ˈmæd/|phrase|B1|збожеволіти|Деякі люди �
            "Шкарпетки — це жарт.", "Він не сердиться.", "Він розуміє дзеркало краще за всіх."],
           "Жарт — популярний спосіб уникнути відвертої відповіді."),
   word("The Mirror shows us our deepest ____.",
-       ["desire", "reflection", "inscription", "future"], 0,
-       ["Так! Desire — бажання.", "Reflection — звичайне відображення.", "Inscription — напис.", "Future — майбутнє, якого дзеркало не показує."],
+       ["desire", "reflection", "writing", "future"], 0,
+       ["Так! Desire — бажання.", "Reflection — звичайне відображення.", "Writing — напис.", "Future — майбутнє, якого дзеркало не показує."],
        "Desire (B2) — сильніше і серйозніше за wish."),
   speak("I wish they were here.", "Тихо і повільно. Наголос: WISH, HERE."),
   letter("You are Harry. Write what you see in the Mirror and what you wish (45+ words). Use I wish… / If only… at least four times.",
@@ -466,21 +466,21 @@ nightmare|/ˈnaɪtmeə/|noun|B1|кошмар|Рон.|She's a nightmare, honestly
 can't stand|/kɑːnt stænd/|phrase|B1|не терпіти|Рон.|No one can stand her.|I can't stand waiting.
 to overhear|/ˌəʊvəˈhɪə/|verb|B2|випадково почути|Герміона.|I think she heard you.|I overheard their conversation.
 troll|/trəʊl/|noun|B2|троль|Квірел.|Troll! In the dungeon!|A troll lives in the cave.
-dungeon|/ˈdʌndʒən/|noun|C1|підземелля|Квірел.|In the dungeon!|The dungeon was cold.
+dungeon|/ˈdʌndʒən/|noun|HP|підземелля|Квірел.|In the dungeon!|The dungeon was cold.
 to faint|/feɪnt/|verb|B2|знепритомніти|Квірел.|Thought you ought to know.|He fainted at the sight of blood.
 to rescue|/ˈreskjuː/|verb|B1|рятувати|Гаррі й Рон.|We have to help her.|They rescued the cat from the tree.
 to distract|/dɪˈstrækt/|verb|B2|відволікати|Гаррі.|Hey, pea-brain!|The noise distracted me.
 upside down|/ˌʌpsaɪd ˈdaʊn/|adverb|B1|догори дриґом|Гаррі.|Do something!|Turn the box upside down.
 to knock out|/nɒk ˈaʊt/|phrasal verb|B2|вирубити|Дубина.|I think it's just been knocked out.|The medicine knocked me out.
 to handle|/ˈhændl/|verb|B2|впоратися|Герміона.|I thought I could handle it.|Can you handle the pressure?
-sheer|/ʃɪə/|adjective|C1|чистий (sheer luck)|Макґонеґел.|For sheer dumb luck.|It was sheer madness.
+pure luck|/pjʊə ˈlʌk/|phrase|B1|чисте везіння|Макґонеґел.|For pure dumb luck.|It was pure luck that we found it.
 to limp|/lɪmp/|verb|B2|кульгати|Снейп.|Did you see Snape's leg?|The dog was limping.
-hoop|/huːp/|noun|C1|кільце|Квідич.|Through one of the hoops.|Throw the ball through the hoop.
+hoop|/huːp/|noun|HP|кільце|Квідич.|Through one of the hoops.|Throw the ball through the hoop.
 to score|/skɔː/|verb|B1|забивати|Квідич.|Ten points.|She scored the winning goal.
 nasty|/ˈnɑːsti/|adjective|B1|неприємний|Вуд.|Nasty little things.|What a nasty smell!
 crowd|/kraʊd/|noun|B1|натовп|Матч.|The crowd goes wild.|A crowd gathered outside.
 foul|/faʊl/|noun|B2|порушення|Матч.|Foul!|That was a clear foul.
-to jinx|/dʒɪŋks/|verb|C1|наврочити|Герміона.|It's a jinx.|Don't jinx it!
+to jinx|/dʒɪŋks/|verb|HP|наврочити|Герміона.|It's a jinx.|Don't jinx it!
 to mutter|/ˈmʌtə/|verb|B2|бурмотіти|Снейп.|He's muttering.|He muttered an apology.
 to set fire to|/set ˈfaɪə tə/|phrase|B2|підпалити|Герміона.|Fire!|Don't set fire to the kitchen!
 to swallow|/ˈswɒləʊ/|verb|B2|ковтати|Гаррі і снич.|I think he's going to be sick.|Swallow the medicine with water.
@@ -490,15 +490,15 @@ cloak|/kləʊk/|noun|B2|мантія, плащ|Подарунок.|What is it?|H
 invisible|/ɪnˈvɪzəbl/|adjective|B1|невидимий|Мантія.|My body's gone!|The thread is almost invisible.
 rare|/reə/|adjective|B1|рідкісний|Рон.|They're really rare.|It's a rare opportunity.
 precious|/ˈpreʃəs/|adjective|B2|дорогоцінний|Мантія.|My father's.|Time is precious.
-restricted section|/rɪˈstrɪktɪd ˈsekʃn/|noun|C1|заборонена секція|Бібліотека.|The Restricted Section.|That book is in the restricted section.
-to shriek|/ʃriːk/|verb|C1|пронизливо кричати|Книжка.|Aaaah!|The bird shrieked.
+restricted section|/rɪˈstrɪktɪd ˈsekʃn/|noun|HP|заборонена секція|Бібліотека.|The Restricted Section.|That book is in the restricted section.
+to yell|/jel/|verb|B1|кричати|Книжка.|Aaaah!|The children yelled with laughter.
 enemy|/ˈenəmi/|noun|B1|ворог|Снейп.|You don't want me as your enemy.|He has many enemies.
 to threaten|/ˈθretn/|verb|B2|погрожувати|Снейп.|You don't want me as your enemy.|Don't threaten me!
 reflection|/rɪˈflekʃn/|noun|B2|відображення|Дзеркало.|Mum? Dad?|Look at your reflection.
 desire|/dɪˈzaɪə/|noun|B2|бажання|Дамблдор.|Our deepest desire.|She had no desire to go.
-to dwell on|/dwel ɒn/|phrasal verb|C1|зациклюватися|Дамблдор.|It does not do to dwell on dreams.|Stop dwelling on the past.
+to think too much about|/θɪŋk tuː mʌtʃ əˈbaʊt/|phrase|B1|забагато думати про|Дамблдор.|Don't think too much about dreams.|Don't think too much about your mistakes.
 to waste|/weɪst/|verb|B1|марнувати|Дамблдор.|Men have wasted away before it.|Don't waste water.
-inscription|/ɪnˈskrɪpʃn/|noun|C1|напис|Рама дзеркала.|I show not your face but your heart's desire.|Read the inscription.
+writing|/ˈraɪtɪŋ/|noun|B1|напис|Рама дзеркала.|I show not your face but your heart's desire.|There was some writing on the old ring.
 """),
   quest("A winter night at Hogwarts. You're under the Invisibility Cloak. Get back to bed — and choose your words carefully.", "s1",
    {"s1": ("You meet Ron in the corridor. He asks what you're doing. You whisper:",
@@ -523,7 +523,7 @@ inscription|/ɪnˈskrɪpʃn/|noun|C1|напис|Рама дзеркала.|I sho
            [("He asked me if I knew what the mirror showed, and he told me not to look for it again.", "s5", True, "Непряме питання + непряма команда. Бездоганно."),
             ("He asked me do I know what it shows.", "end_mid", True, "У непрямому питанні без do, і треба зсунути час.")]),
     "s5": ("Before you sleep, you think about the mirror. What do you say?", "Спальня. Рон уже хропе.",
-           [("I wish my parents were here, but I won't dwell on dreams.", "end_good", True, "Wish + Past — і мудре рішення."),
+           [("I wish my parents were here, but I won't think too much about dreams.", "end_good", True, "Wish + Past — і мудре рішення."),
             ("I wish my parents are here.", "end_mid", True, "Після wish — were. Але почуття зрозуміле.")])},
    {"end_good": ("Кінцівка: Ти пішов(ла) від дзеркала", "Ти обрав(ла) жити, а не мріяти. Дамблдор задоволено усміхається в темряві.", True),
     "end_mid": ("Кінцівка: Майже непомітно", "Ти дістався(лася) до ліжка, але кілька помилок мало тебе не видали.", True),
@@ -534,7 +534,7 @@ inscription|/ɪnˈskrɪpʃn/|noun|C1|напис|Рама дзеркала.|I sho
             ("jumper", "a warm knitted top"), ("enemy", "a person who hates you")],
            "Іменники арки 4."),
   cauldron([("to show off", "to try to look impressive"), ("to knock out", "to make unconscious"),
-            ("to dwell on", "to think about something too much"), ("to try on", "to put on clothes to see if they fit"),
+            ("to think too much about", "to keep thinking about something"), ("to try on", "to put on clothes to see if they fit"),
             ("to run off", "to leave quickly"), ("to set fire to", "to make something burn")],
            "Фразові дієслова арки 4."),
   gram("Hermione enjoys ____ in the library.", ["studying", "to study", "study", "studied"], 0,

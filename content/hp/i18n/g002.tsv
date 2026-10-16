@@ -13,12 +13,12 @@
 262	odwaga	сміливість	Widzę mnóstwo odwagi.	Trzeba odwagi, żeby powiedzieć nie.	Бачу багато сміливості.	Щоб сказати «ні», потрібна сміливість.
 263	umysł	розум	Umysł też niezły.	Ma błyskotliwy umysł.	І розум непоганий.	У неї блискучий розум.
 264	talent	талант	Jest talent.	Ma prawdziwy talent muzyczny.	Є талант.	У нього справжній музичний талант.
-265	pomóc w drodze	допомогти на шляху	Slytherin pomoże ci w drodze do wielkości.	Dobry nauczyciel pomoże ci w drodze.	Слизерин допоможе тобі на шляху до величі.	Добрий учитель допоможе тобі на шляху.
+265	stać się wielkim	стати великим	Slytherin pomoże ci stać się wielkim.	Ciężka praca pomoże ci stać się wielkim.	Слизерин допоможе тобі стати великим.	Наполеглива праця допоможе тобі стати великим.
 266	uczta	бенкет	Niech uczta się zacznie.	Wyprawili ucztę z okazji ślubu.	Нехай почнеться бенкет.	Вони влаштували бенкет на честь весілля.
 267	duch	привид	Witaj w Gryffindorze!	Wierzysz w duchy?	Ласкаво просимо до Ґрифіндору!	Ти віриш у привидів?
 268	ogłoszenie	оголошення	Kilka ogłoszeń na początek roku.	Pilot wygłosił komunikat.	Кілька оголошень на початок року.	Пілот зробив оголошення.
 269	zakazany	заборонений	Ciemny las jest zakazany.	W budynku nie wolno palić.	Темний ліс заборонений.	У будівлі курити заборонено.
-270	strefa zakazana	заборонена зона	Korytarz na trzecim piętrze jest zakazany.	Dach jest zakazany dla uczniów.	Коридор на третьому поверсі — заборонена зона.	Дах заборонений для учнів.
+270	zamknięty dla uczniów	закритий для учнів	Korytarz na trzecim piętrze jest zamknięty dla uczniów.	Dach jest zamknięty dla uczniów.	Коридор на третьому поверсі закритий для учнів.	Дах закритий для учнів.
 271	bolesny	болісний	Najboleśniejsza śmierć.	Zastrzyk wcale nie bolał.	Найболісніша смерть.	Укол зовсім не болів.
 272	życzyć sobie	бажати	Każdy, kto nie chce zginąć.	Życzę ci szczęśliwego nowego roku.	Усі, хто не бажає смерті.	Бажаю тобі щасливого Нового року.
 273	woźny	доглядач	Pan Filch, nasz woźny.	Woźny naprawił okno.	Містер Філч, доглядач.	Шкільний доглядач полагодив вікно.
@@ -73,7 +73,7 @@
 322	wyciągnąć	витягнути	Wyciągnijcie prawą rękę.	Wystaw język, proszę.	Витягніть праву руку.	Покажи язик, будь ласка.
 323	W górę!	Вгору!	W górę!	W górę! No dalej, w górę!	Вгору!	Вгору! Ну ж бо, вгору!
 324	słuchać się	слухатися	W górę!	Psy słuchają swoich właścicieli.	Вгору!	Собаки слухаються своїх господарів.
-325	dosiąść	осідлати	Dosiądźcie mioteł.	Dosiadł konia i odjechał.	Сідайте на мітли.	Він сів на коня й поїхав.
+325	wsiąść (na miotłę, konia)	сісти (на мітлу, коня)	Wsiądźcie na miotły.	Wsiadł na konia i odjechał.	Сідайте на мітли.	Він сів на коня й поїхав.
 326	mocno trzymać	міцно тримати	Trzymajcie mocno.	Trzymaj uchwyt obiema rękami.	Тримайте міцно.	Тримай ручку обома руками.
 327	odbić się	відштовхнутися	Odbijcie się mocno.	Odbij się od brzegu basenu.	Сильно відштовхніться.	Відштовхнися від бортика басейну.
 328	gwizdek	свисток	Na mój gwizdek.	Sędzia zagwizdał.	За моїм свистком.	Суддя свиснув у свисток.

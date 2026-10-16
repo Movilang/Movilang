@@ -12,7 +12,7 @@ lesson(30, "Крізь люк", "Advice & instructions: imperatives, should, oug
     ("Диявольські сильця", "Devil's Snare", "Рослина-пастка під люком. Боїться світла.")]),
   gloss("Сцена 1 · Ніхто не вірить", """
 to leave (for)|/liːv/|verb|A2|поїхати (до)|Макґонеґел каже, що Дамблдор поїхав до Лондона.|He left for London.|She left for Paris this morning.
-Ministry of Magic|/ˈmɪnɪstri əv ˈmædʒɪk/|noun|C1|Міністерство магії|Дамблдора викликали до Міністерства.|An urgent owl from the Ministry.|He works at the Ministry of Magic.
+Ministry of Magic|/ˈmɪnɪstri əv ˈmædʒɪk/|noun|HP|Міністерство магії|Дамблдора викликали до Міністерства.|An urgent owl from the Ministry.|He works at the Ministry of Magic.
 to be back|/biː ˈbæk/|phrase|A2|повернутися|Директор повернеться лише завтра.|He'll be back tomorrow.|I'll be back in five minutes.
 safe|/seɪf/|adjective|A2|у безпеці|Макґонеґел упевнена, що камінь захищений.|The Stone is safe.|The children are safe now.
 to go off|/ɡəʊ ˈɒf/|phrasal verb|B1|піти (кудись)|Учителька наказує дітям іти гуляти.|Go outside and enjoy the sunshine.|He went off without saying goodbye.
@@ -104,7 +104,7 @@ lesson(31, "Ключі й шахи", "Ability: can / could / be able to",
     ("Герміона Ґрейнджер", "Hermione Granger", "Не любить хаосу. Шахи для неї — страшна гра.", "upd")]),
   gloss("Сцена 1 · Крилаті ключі", """
 wing|/wɪŋ/|noun|A2|крило|У повітрі пурхають ключі з крильцями.|They're not birds, they're keys!|The bird hurt its wing.
-to flutter|/ˈflʌtə/|verb|C1|пурхати|Сотні ключів пурхають під стелею.|Strange.|The butterfly fluttered over the flowers.
+to fly around|/flaɪ əˈraʊnd/|phrasal verb|B1|літати навколо|Сотні ключів пурхають під стелею.|Strange.|Butterflies flew around the flowers.
 curious|/ˈkjʊəriəs/|adjective|B1|дивний|Герміона вважає їх дивними пташками.|I've never seen birds like these.|Isn't that curious?
 to bet|/bet/|verb|B1|закладатися, бути впевненим|Гаррі б'ється об заклад, що мітла тут не просто так.|I bet the broom's for catching the key.|I bet you can't do it!
 old-fashioned|/ˌəʊld ˈfæʃnd/|adjective|B1|старомодний|Потрібний ключ — великий і старомодний.|An old-fashioned one.|My grandfather has old-fashioned ideas.
@@ -115,7 +115,7 @@ to catch|/kætʃ/|verb|A2|ловити|Гаррі ловить ключ, як с
 """),
   gloss("Сцена 2 · Шахівниця", """
 chessboard|/ˈtʃesbɔːd/|noun|B1|шахівниця|Велетенська шахівниця перекриває шлях.|It's a chessboard.|Put the chessboard on the table.
-to play (our) way across|/pleɪ weɪ əˈkrɒs/|phrase|C1|пройти, граючи|Рон розуміє, що треба зіграти партію.|We have to play our way across the room.|We had to play our way into the final.
+to cross|/krɒs/|verb|A2|перетнути|Рон розуміє, що треба зіграти партію.|We have to cross the room.|We crossed the road carefully.
 knight|/naɪt/|noun|B1|кінь (шахи); лицар|Рон стає на місце коня.|You take the empty knight.|The knight moves in an L-shape.
 bishop|/ˈbɪʃəp/|noun|B2|слон (шахи); єпископ|Гаррі стає на місце слона.|Harry, you take the empty bishop's square.|The bishop can move diagonally.
 castle|/ˈkɑːsl/|noun|A2|тура (шахи); замок|Герміона стає на місце тури.|Hermione, you take the castle.|In chess, the castle is also called a rook.
@@ -125,9 +125,9 @@ to smash|/smæʃ/|verb|B2|розбивати вщент|Фігури розби�
 to lose (a piece)|/luːz/|verb|A2|втратити|Друзі втрачають фігури одну за одною.|We're losing pieces.|We lost two players in the first half.
 """),
   gloss("Сцена 3 · Жертва Рона", """
-to sacrifice|/ˈsækrɪfaɪs/|verb|C1|жертвувати|Рон вирішує пожертвувати собою.|I have to be taken.|She sacrificed her free time to help us.
+to put yourself in danger|/pʊt jɔːˈself ɪn ˈdeɪndʒə/|phrase|B1|наражати себе на небезпеку|Рон вирішує пожертвувати собою.|I have to be taken.|She put herself in danger to help us.
 to check|/tʃek/|verb|B1|поставити шах|Після жертви Рона Гаррі зможе поставити шах.|You'll be free to check the king.|In chess, you must protect your king when it's in check.
-to stay put|/steɪ ˈpʊt/|phrase|C1|не рухатися з місця|Рон наказує друзям не рухатися.|Stay where you are.|Stay put — I'll be right back.
+to stay where you are|/steɪ weər juː ɑː/|phrase|A2|залишатися на місці|Рон наказує друзям не рухатися.|Stay where you are.|Stay where you are — I'll be right back.
 That's chess!|/ðæts tʃes/|phrase|B1|Такі шахи! (так влаштована гра)|Рон пояснює, що жертви — частина гри.|That's chess!|You lost your queen? That's chess!
 to go on|/ɡəʊ ˈɒn/|phrasal verb|B1|іти далі|Рон каже, що саме Гаррі має йти далі.|It's you that has to go on.|You go on, I'll catch up.
 to knock out|/nɒk ˈaʊt/|phrasal verb|B2|збити з ніг, вирубити|Королева збиває Рона з коня.|Ron!|The fall knocked him out.
@@ -142,7 +142,7 @@ great|/ɡreɪt/|adjective|A1|великий, видатний|Герміона �
        "Дамблдора тут немає.",
        "Невіл знерухомлений у вітальні."],
       "It's you that… = саме ти. Рон наголошує, хто має йти далі.", img="chess"),
-  cauldron([("to sacrifice", "to give up something important for a bigger goal"), ("checkmate", "the end of a chess game"),
+  cauldron([("to put yourself in danger", "to risk getting hurt to help others"), ("checkmate", "the end of a chess game"),
             ("wing", "a bird uses it to fly"), ("knight", "a chess piece that moves in an L-shape"),
             ("to smash", "to break into many pieces")],
            "Слова з кімнати ключів і шахів."),
@@ -173,10 +173,10 @@ great|/ɡreɪt/|adjective|A1|великий, видатний|Герміона �
              ("Hermione", "takes the castle's place on the board"), ("the white queen", "knocks Ron off his horse"),
              ("the flying keys", "chase anyone who takes the broom")],
             "Картки підземних випробувань."),
-  word("In chess, giving up a piece to win the game is called a ____.",
-       ["sacrifice", "checkmate", "move", "knight"], 0,
-       ["Так! Sacrifice — жертва.", "Checkmate — мат, кінець гри.", "Move — будь-який хід.", "Knight — кінь."],
-       "Sacrifice — і дієслово, і іменник."),
+  word("Ron lets the queen take him. He puts himself in ____ so that Harry can win.",
+       ["danger", "checkmate", "move", "knight"], 0,
+       ["Так! Put yourself in danger — наразити себе на небезпеку.", "Checkmate — мат, кінець гри.", "Move — будь-який хід.", "Knight — кінь."],
+       "Put yourself in danger = свідомо ризикувати собою заради інших."),
   speak("That's chess!", "Твердо, як Рон перед жертвою. Наголос: CHESS."),
   letter("Write Hermione's letter to Ron in the hospital wing (45+ words). Use can, could, couldn't, was able to and will be able to.",
          45, "Почни з «Dear Ron, you were able to…»."),
@@ -198,10 +198,10 @@ to seem|/siːm/|verb|B1|здаватися|Квірел каже, що Сней�
 the type|/ðə taɪp/|phrase|B1|відповідний тип, «саме такий»|Снейп, за словами Квірела, «виглядає як лиходій».|He does seem the type.|He's not the type to give up.
 next to|/nekst tə/|phrase|A2|поруч з|Хто запідозрить заїкуватого викладача поруч зі Снейпом?|Next to him, who would suspect…?|Sit next to me.
 to suspect|/səˈspekt/|verb|B2|підозрювати|Ніхто не підозрював Квірела.|Who would suspect p-p-poor stuttering Professor Quirrell?|The police suspect her husband.
-to stutter|/ˈstʌtə/|verb|C1|заїкатися|Заїкання Квірела було маскою.|P-p-poor Quirrell.|He stutters when he's nervous.
+nervous|/ˈnɜːvəs/|adjective|A2|знервований|Заїкання Квірела було маскою.|P-p-poor Quirrell.|He gets nervous before exams.
 to let in|/let ˈɪn/|phrasal verb|B1|впустити|Квірел зізнається, що впустив троля.|I let the troll in.|Don't let the cat in.
 to save|/seɪv/|verb|A2|рятувати|Снейп насправді рятував Гаррі на матчі.|He was trying to save you.|The doctor saved her life.
-counter-curse|/ˈkaʊntə kɜːs/|noun|C2|контрпрокляття|Снейп бурмотів контрпрокляття, а не прокляття.|Muttering the counter-curse.|The witch knew the counter-curse.
+counter-curse|/ˈkaʊntə kɜːs/|noun|HP|контрпрокляття|Снейп бурмотів контрпрокляття, а не прокляття.|Muttering the counter-curse.|The witch knew the counter-curse.
 """),
   gloss("Сцена 2 · Дзеркало", """
 to present|/prɪˈzent/|verb|B2|вручати, піднести|Квірел бачить у дзеркалі, як підносить камінь господареві.|I see myself presenting the Stone to my master.|She presented the prize to the winner.
@@ -215,7 +215,7 @@ weight|/weɪt/|noun|B1|вага|Гаррі відчуває вагу камен�
 to wink|/wɪŋk/|verb|B2|підморгувати|Відображення Гаррі підморгує і ховає камінь.|He winked.|He winked at me and smiled.
 """),
   gloss("Сцена 3 · Обличчя на потилиці", """
-turban|/ˈtɜːbən/|noun|C1|тюрбан|Квірел розмотує тюрбан.|Let me speak to him.|He wore a white turban.
+turban|/ˈtɜːbən/|noun|HP|тюрбан|Квірел розмотує тюрбан.|Let me speak to him.|He wore a white turban.
 the back of the head|/bæk əv ðə hed/|phrase|B1|потилиця|На потилиці Квірела — обличчя.|Look at me.|He hit me on the back of the head.
 face|/feɪs/|noun|A1|обличчя|Обличчя Волдеморта виростає з потилиці.|See what I have become?|Wash your face.
 to become|/bɪˈkʌm/|verb|A2|ставати|Волдеморт показує, на що він перетворився.|See what I have become?|She became a doctor.
@@ -233,7 +233,7 @@ never|/ˈnevə/|adverb|A1|ніколи|Гаррі відмовляється.|Ne
        "Геґріда теж."],
       "Does seem — підсилення: «справді здається». Так кажуть, коли хочуть наголосити.", img="mirror"),
   cauldron([("to suspect", "to think someone is guilty"), ("counter-curse", "a spell that stops a curse"),
-            ("host", "a body another creature lives in"), ("to stutter", "to repeat sounds when you speak"),
+            ("host", "a body another creature lives in"), ("nervous", "worried and a little afraid"),
             ("turban", "a long cloth wrapped around the head")],
            "Слова розв'язки."),
   gram("Quirrell seemed ____ nervous that nobody suspected him.", ["so", "such", "too", "enough"], 0,
@@ -266,10 +266,10 @@ never|/ˈnevə/|adverb|A1|ніколи|Гаррі відмовляється.|Ne
           ["Так! За «пропозицією» — маніпуляція і погроза.",
            "Дружби тут немає.", "Навчання — ні.", "Каяття — ні."],
           "Маніпуляція часто звучить як щедра пропозиція."),
-  word("Quirrell's ____ was just an act — he wasn't really nervous.",
-       ["stutter", "turban", "host", "pocket"], 0,
-       ["Так! Заїкання (stutter) було маскою.", "Тюрбан ховав обличчя, але «акт» — це заїкання.", "Host — тіло-господар.", "Pocket — кишеня."],
-       "Stutter — і дієслово, і іменник."),
+  word("Quirrell acted ____ — but he wasn't really afraid of anyone.",
+       ["nervous", "happy", "proud", "lazy"], 0,
+       ["Так! Знервованість і заїкання Квірела були маскою.", "Happy — він ніколи не здавався щасливим.", "Proud — гордим він теж не здавався.", "Lazy — не про Квірела."],
+       "Act + прикметник: act nervous = поводитися знервовано."),
   speak("It was you!", "Наголос на YOU — шок і впізнавання."),
   letter("Write Harry's explanation to Ron and Hermione (45+ words). Use so, such, too and enough: Quirrell was so…, It was such a…, I was too…, I was brave enough….",
          45, "Почни з «It wasn't Snape. Quirrell was so…»."),
@@ -288,7 +288,7 @@ lesson(33, "Лікарняне крило", "Present Perfect: just / already / y
   gloss("Сцена 1 · Прокидання", """
 to wake|/weɪk/|verb|A2|прокинутися|Гаррі розплющує очі й бачить Дамблдора.|Good afternoon, Harry.|I woke at six.
 gift|/ɡɪft/|noun|A2|подарунок|Біля ліжка — купа подарунків від друзів.|From your friends and admirers.|Thank you for the gift.
-admirer|/ədˈmaɪərə/|noun|C1|шанувальник|Подарунки — від друзів і шанувальників.|Friends and admirers.|She has many admirers.
+fan|/fæn/|noun|A2|шанувальник, фанат|Подарунки — від друзів і шанувальників.|Friends and fans.|She has many fans.
 to happen|/ˈhæpən/|verb|A2|ставатися|Гаррі хоче знати, що сталося внизу.|What happened down there?|What happened to your arm?
 to destroy|/dɪˈstrɔɪ/|verb|B1|знищувати|Камінь знищено.|The Stone has been destroyed.|The fire destroyed the building.
 to die|/daɪ/|verb|A2|помирати|Фламель і його дружина помруть, але встигнуть усе залагодити.|They will die, won't they?|My old dog died last year.
@@ -311,12 +311,12 @@ to be able to|/ˈeɪbl tə/|phrase|B1|могти, мати змогу|Квіре
 to remember|/rɪˈmembə/|verb|A2|пам'ятати|Дамблдор згадує, як у молодості скуштував невдалу цукерку.|I was unfortunate enough in my youth.|I remember my first day at school.
 youth|/juːθ/|noun|B2|молодість|Дамблдор розповідає про свою молодість.|In my youth.|In his youth, he was a great runner.
 unfortunate|/ʌnˈfɔːtʃənət/|adjective|B2|невдалий, нещасливий|Йому «пощастило» натрапити на огидний смак.|Unfortunate enough.|It was an unfortunate mistake.
-vomit|/ˈvɒmɪt/|noun|C1|блювота (смак цукерки)|Одна з цукерок мала смак блювоти.|Vomit-flavoured.|The dog was sick — there was vomit on the floor.
-to lose (one's) liking|/ˈlaɪkɪŋ/|phrase|C1|втратити смак до|Після того Дамблдор розлюбив ці цукерки.|I lost my liking for them.|I've lost my liking for coffee.
+flavour|/ˈfleɪvə/|noun|B1|смак|Одна з цукерок мала смак блювоти.|Every flavour!|What's your favourite ice cream flavour?
+to stop liking|/stɒp ˈlaɪkɪŋ/|phrase|A2|розлюбити|Після того Дамблдор розлюбив ці цукерки.|I stopped liking them.|I've stopped liking coffee.
 to risk|/rɪsk/|verb|B2|ризикнути|Дамблдор ризикує спробувати ще одну.|Let's risk it.|Don't risk your life.
 toffee|/ˈtɒfi/|noun|B2|іриска|Дамблдор сподівається, що це іриска.|A nice toffee.|I love chocolate toffee.
-earwax|/ˈɪəwæks/|noun|C2|вушна сірка|А виявляється — смак вушної сірки.|Alas! Earwax.|The doctor cleaned the earwax from my ear.
-alas|/əˈlæs/|interjection|C1|на жаль (книжне)|Дамблдор комічно зітхає.|Alas! Earwax.|Alas, the summer was over.
+to taste of|/teɪst əv/|phrase|B1|мати смак (чогось)|А виявляється — смак вушної сірки.|It tastes of earwax!|This tea tastes of mint.
+sadly|/ˈsædli/|adverb|B1|на жаль|Дамблдор комічно зітхає.|Sadly! Earwax.|Sadly, the summer was over.
 """),
   who("“Alas! Earwax.” Who says this?",
       ["Dumbledore", "Ron", "Harry", "Madam Pomfrey"], 0,
@@ -325,8 +325,8 @@ alas|/əˈlæs/|interjection|C1|на жаль (книжне)|Дамблдор к
        "Гаррі сміється.",
        "Медсестра тут не їсть цукерок."],
       "Alas — старомодне «на жаль». Дамблдор використовує його з гумором.", img="stone"),
-  cauldron([("to destroy", "to break completely so it can't be used"), ("admirer", "a person who likes and respects you"),
-            ("alas", "an old word that means 'unfortunately'"), ("youth", "the time when you are young"),
+  cauldron([("to destroy", "to break completely so it can't be used"), ("fan", "a person who likes and respects you"),
+            ("sadly", "unfortunately"), ("youth", "the time when you are young"),
             ("affairs", "personal business and matters")],
            "Слова розмови з Дамблдором."),
   gram("Harry has ____ woken up — Dumbledore is smiling at him.", ["just", "yet", "ever", "still"], 0,
@@ -353,7 +353,7 @@ alas|/əˈlæs/|interjection|C1|на жаль (книжне)|Дамблдор к
          "Камінь уже не в кишені Гаррі.",
          "Квірела більше немає."],
         "Пасив у Present Perfect: has been destroyed."),
-  subtext("Dumbledore: “In my youth I found a vomit-flavoured one.” Why does he tell this story now?",
+  subtext("Dumbledore: “In my youth I found a disgusting one.” Why does he tell this story now?",
           ["To make Harry laugh after a terrible experience", "Because he's hungry", "To warn Harry about sweets", "Because he forgot what they were talking about"], 0,
           ["Так! Після важкої розмови Дамблдор м'яко повертає Гаррі усмішку.",
            "Не про голод.", "Не застереження.", "Він нічого не забув."],
@@ -381,7 +381,7 @@ lesson(34, "Кубок гуртожитків", "Narrative tenses (review)",
 end-of-year feast|/end əv jɪə fiːst/|noun|B1|прощальний бенкет|Уся школа в залі на останньому бенкеті.|Another year gone.|The end-of-year feast was amazing.
 to award|/əˈwɔːd/|verb|B2|нагороджувати|Дамблдор нараховує бали гуртожиткам.|The points stand thus.|She was awarded a prize.
 in fourth place|/ɪn fɔːθ pleɪs/|phrase|A2|на четвертому місці|Ґрифіндор на останньому, четвертому місці.|In fourth place, Gryffindor.|Our team finished in fourth place.
-to stand (thus)|/stænd/|verb|C1|бути (про рахунок)|Дамблдор оголошує поточний рахунок.|The points stand thus.|The score stands at two all.
+score|/skɔː/|noun|A2|рахунок|Дамблдор оголошує поточний рахунок.|The score is…|The score is two all.
 recent events|/ˈriːsnt ɪˈvents/|phrase|B2|нещодавні події|Дамблдор нагадує про нещодавні події.|Recent events must be taken into account.|After recent events, we need to be careful.
 to take into account|/teɪk ˈɪntuː əˈkaʊnt/|phrase|B2|брати до уваги|Директор каже, що треба врахувати останні події.|Must be taken into account.|Please take my age into account.
 last-minute|/ˌlɑːst ˈmɪnɪt/|adjective|B1|в останню хвилину|Дамблдор додає бали в останню хвилину.|A few last-minute points.|We made some last-minute changes.
@@ -389,9 +389,9 @@ to cheer|/tʃɪə/|verb|B1|кричати «ура»|Ґрифіндорці ра
 banner|/ˈbænə/|noun|B2|прапор, банер|Зелені прапори змінюються на червоні.|Gryffindor wins!|They hung a banner over the door.
 """),
   gloss("Сцена 2 · Останні бали", """
-cool-headed|/ˌkuːl ˈhedɪd/|adjective|C1|холоднокровний|Герміона отримує бали за холодну логіку.|For the cool use of intellect.|She stayed cool-headed in the crisis.
-intellect|/ˈɪntəlekt/|noun|C1|інтелект|Герміона перемогла силою розуму.|The cool use of intellect.|He is a man of great intellect.
-best-played|/ˌbest ˈpleɪd/|adjective|C1|найкраще зіграний|Рон отримує бали за найкращу партію в шахи.|The best-played game of chess.|It was the best-played match of the season.
+calm|/kɑːm/|adjective|A2|спокійний|Герміона отримує бали за холодну логіку.|For the calm use of logic.|She stayed calm in the crisis.
+brain|/breɪn/|noun|A2|мозок, розум|Герміона перемогла силою розуму.|The calm use of your brain.|Use your brain!
+the best game|/ðə best ˈɡeɪm/|phrase|A2|найкраща гра|Рон отримує бали за найкращу партію в шахи.|The best game of chess.|It was the best game of the season.
 nerve|/nɜːv/|noun|B2|витримка, мужність|Гаррі отримує бали за мужність.|Pure nerve and outstanding courage.|It takes nerve to speak in public.
 outstanding|/aʊtˈstændɪŋ/|adjective|B2|видатний|Мужність Гаррі — видатна.|Outstanding courage.|She did an outstanding job.
 bravery|/ˈbreɪvəri/|noun|B2|хоробрість|Дамблдор говорить про хоробрість.|It takes a great deal of bravery.|He got a medal for bravery.
@@ -417,7 +417,7 @@ adventure|/ədˈventʃə/|noun|B1|пригода|Перший рік був сп
        "Герміона отримала 50 за інтелект.",
        "Рон отримав 50 за шахи."],
       "It takes + якість + to… — щоб…, потрібна…", img="castle"),
-  cauldron([("bravery", "courage"), ("intellect", "the power of the mind"),
+  cauldron([("bravery", "courage"), ("brain", "the part of you that thinks"),
             ("nerve", "courage to do something difficult"), ("outstanding", "extremely good"),
             ("banner", "a long flag with a design on it")],
            "Слова фінального бенкету."),
@@ -452,8 +452,8 @@ adventure|/ədˈventʃə/|noun|B1|пригода|Перший рік був сп
             "Правильно: «False». Тисова вулиця для нього — не дім."],
            "Дім — там, де тебе люблять."),
   word("Neville got ten points for his ____: he stood up to his friends.",
-       ["bravery", "intellect", "banner", "album"], 0,
-       ["Так! Bravery — хоробрість.", "Intellect — розум.", "Banner — прапор.", "Album — альбом."],
+       ["bravery", "brain", "banner", "album"], 0,
+       ["Так! Bravery — хоробрість.", "Brain — розум, мозок.", "Banner — прапор.", "Album — альбом."],
        "Bravery = courage. Ще синонім: nerve."),
   speak("I'm not going home. Not really.", "Тихо, з усмішкою. Пауза перед «Not really»."),
   letter("Tell the story of Harry's first year in 60+ words. Use the narrative tenses: Past Simple, Past Continuous and Past Perfect.",
@@ -466,7 +466,7 @@ lesson(35, "Бос арки 6: Під люком", "Повторення: advice
  A6, ("🛡️", "Щит Ґрифіндору", "Ти пройшов(ла) шосту арку. Попереду — фінальний іспит."),
  [
   gloss("Повторення арки 6 · ключові слова", """
-Ministry of Magic|/ˈmɪnɪstri əv ˈmædʒɪk/|noun|C1|Міністерство магії|Дамблдор.|An urgent owl from the Ministry.|The Ministry made a new law.
+Ministry of Magic|/ˈmɪnɪstri əv ˈmædʒɪk/|noun|HP|Міністерство магії|Дамблдор.|An urgent owl from the Ministry.|The Ministry made a new law.
 to stand up to|/stænd ˈʌp tə/|phrasal verb|B2|протистояти|Невіл.|I won't let you.|Stand up to your fears.
 harp|/hɑːp/|noun|B2|арфа|Пушок.|Someone's been here.|The harp played softly.
 to snore|/snɔː/|verb|B1|хропіти|Пушок.|He's snoring!|Stop snoring!
@@ -476,31 +476,31 @@ to relax|/rɪˈlæks/|verb|A2|розслабитися|Герміона.|You hav
 sunlight|/ˈsʌnlaɪt/|noun|B1|сонячне світло|Сильця.|Lumos Solem!|The room was full of sunlight.
 to panic|/ˈpænɪk/|verb|B1|панікувати|Рон.|Lucky we didn't panic.|Don't panic!
 wing|/wɪŋ/|noun|A2|крило|Ключ.|With a broken wing.|The plane's wing was damaged.
-to flutter|/ˈflʌtə/|verb|C1|пурхати|Ключі.|Strange.|Flags fluttered in the wind.
+to fly around|/flaɪ əˈraʊnd/|phrasal verb|B1|літати навколо|Ключі.|Strange.|Butterflies flew around the flowers.
 to chase|/tʃeɪs/|verb|B1|гнатися|Ключі.|They're chasing him!|The police chased the car.
 chessboard|/ˈtʃesbɔːd/|noun|B1|шахівниця|Шахи.|It's a chessboard.|The chessboard was black and white.
 knight|/naɪt/|noun|B1|кінь (шахи)|Рон.|Knight to H-3.|Move your knight.
 to smash|/smæʃ/|verb|B2|розбити|Шахи.|Smash!|The glass smashed on the floor.
-to sacrifice|/ˈsækrɪfaɪs/|verb|C1|жертвувати|Рон.|I have to be taken.|He sacrificed everything for his family.
+to put yourself in danger|/pʊt jɔːˈself ɪn ˈdeɪndʒə/|phrase|B1|наражати себе на небезпеку|Рон.|I have to be taken.|She put herself in danger to help us.
 checkmate|/ˈtʃekmeɪt/|noun|B2|мат|Гаррі.|Checkmate.|It's checkmate!
 to go on|/ɡəʊ ˈɒn/|phrasal verb|B1|іти далі|Рон.|It's you that has to go on.|Please go on.
 to suspect|/səˈspekt/|verb|B2|підозрювати|Квірел.|Who would suspect p-p-poor Quirrell?|I suspect he's lying.
-to stutter|/ˈstʌtə/|verb|C1|заїкатися|Квірел.|P-p-poor Quirrell.|She stutters a little.
-counter-curse|/ˈkaʊntə kɜːs/|noun|C2|контрпрокляття|Снейп.|Muttering the counter-curse.|There's a counter-curse for every curse.
+nervous|/ˈnɜːvəs/|adjective|A2|знервований|Квірел.|P-p-poor Quirrell.|He gets nervous before exams.
+counter-curse|/ˈkaʊntə kɜːs/|noun|HP|контрпрокляття|Снейп.|Muttering the counter-curse.|There's a counter-curse for every curse.
 master|/ˈmɑːstə/|noun|B1|господар|Квірел.|My master.|The master of the house.
 to serve|/sɜːv/|verb|B1|служити|Квірел.|I serve him.|She serves in the army.
-turban|/ˈtɜːbən/|noun|C1|тюрбан|Квірел.|Let me speak to him.|A red turban.
+turban|/ˈtɜːbən/|noun|HP|тюрбан|Квірел.|Let me speak to him.|A red turban.
 shadow|/ˈʃædəʊ/|noun|B1|тінь|Волдеморт.|Mere shadow and vapour.|I saw a shadow on the wall.
 host|/həʊst/|noun|B2|тіло-господар|Волдеморт.|Share another's body.|The parasite lives in a host.
 to destroy|/dɪˈstrɔɪ/|verb|B1|знищувати|Дамблдор.|The Stone has been destroyed.|Don't destroy the evidence.
-admirer|/ədˈmaɪərə/|noun|C1|шанувальник|Подарунки.|Friends and admirers.|A secret admirer sent flowers.
+fan|/fæn/|noun|A2|шанувальник, фанат|Подарунки.|Friends and fans.|She has many fans.
 love|/lʌv/|noun|A1|любов|Дамблдор.|Your mother died to save you.|Love is stronger than fear.
 mark|/mɑːk/|noun|B1|слід|Дамблдор.|Love leaves its own mark.|There's a mark on your shirt.
 youth|/juːθ/|noun|B2|молодість|Дамблдор.|In my youth.|Enjoy your youth!
-alas|/əˈlæs/|interjection|C1|на жаль|Дамблдор.|Alas! Earwax.|Alas, it was too late.
+sadly|/ˈsædli/|adverb|B1|на жаль|Дамблдор.|Sadly! Earwax.|Sadly, the summer was over.
 to award|/əˈwɔːd/|verb|B2|нагороджувати|Дамблдор.|The points stand thus.|He was awarded a medal.
 to take into account|/teɪk ˈɪntuː əˈkaʊnt/|phrase|B2|брати до уваги|Дамблдор.|Must be taken into account.|Take the weather into account.
-intellect|/ˈɪntəlekt/|noun|C1|інтелект|Герміона.|The cool use of intellect.|Use your intellect!
+brain|/breɪn/|noun|A2|мозок, розум|Герміона.|The calm use of your brain.|Use your brain!
 nerve|/nɜːv/|noun|B2|мужність|Гаррі.|Pure nerve and outstanding courage.|She lost her nerve.
 outstanding|/aʊtˈstændɪŋ/|adjective|B2|видатний|Гаррі.|Outstanding courage.|An outstanding student.
 bravery|/ˈbreɪvəri/|noun|B2|хоробрість|Невіл.|It takes a great deal of bravery.|An act of bravery.
@@ -518,8 +518,8 @@ adventure|/ədˈventʃə/|noun|B1|пригода|Тріо.|What an adventure!|Ev
            [("Ron was so brave that we were able to get across.", "s3", True, "So… that + was able to — бездоганно."),
             ("Ron was such brave that we could to get across.", "s2b", False, "Such — з іменником, а could без to.")]),
     "s2b": ("Hermione wipes her eyes. Try again:", "Друга спроба.",
-            [("He was brave enough to sacrifice himself.", "s3", True, "Так — brave enough to."),
-             ("He was enough brave for sacrifice.", "end_bad", False, "Граматика розвалилася, як шахова фігура.")]),
+            [("He was brave enough to put himself in danger.", "s3", True, "Так — brave enough to."),
+             ("He was enough brave for danger.", "end_bad", False, "Граматика розвалилася, як шахова фігура.")]),
     "s3": ("In the last room, Quirrell laughs. You realise the truth and say:", "Дзеркало. Вогонь за спиною.",
            [("You let the troll in! You were too clever for us.", "s4", True, "Past Simple + too — сильно і чітко."),
             ("You let in the troll! You were so clever for us.", "end_mid", True, "Зміст правильний, але тут потрібне too.")]),
@@ -535,7 +535,7 @@ adventure|/ədˈventʃə/|noun|B1|пригода|Тріо.|What an adventure!|Ev
    "Квест перевіряє всі п'ять тем арки 6.", img="stone"),
   cauldron([("harp", "a musical instrument with many strings"), ("knight", "a chess piece shaped like a horse"),
             ("turban", "cloth wrapped around the head"), ("banner", "a long flag"),
-            ("admirer", "someone who likes you a lot"), ("host", "a body that another being lives in")],
+            ("fan", "someone who likes you a lot"), ("host", "a body that another being lives in")],
            "Іменники арки 6."),
   cauldron([("to stand up to", "to refuse to obey someone"), ("to go on", "to continue"),
             ("to let in", "to allow to enter"), ("to take into account", "to consider"),

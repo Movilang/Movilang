@@ -155,6 +155,13 @@ for l in L:
         for pat in NAMES_BAD:
             if re.search(pat, s): errs.append(f"#{n}: глосарій — «{pat}» → {s[:60]}")
 
+# Курс B1: слова B2 позначаємо як «B1+» (верхній B1), терміни світу ГП — «HP»
+for l in L:
+    for ts in [l["tasks"], l["variants"].get("pl") or [], l["variants"].get("uk") or []]:
+        for t in ts:
+            if t.get("type") == "glossary":
+                for it in t["items"]:
+                    if it.get("lvl") == "B2": it["lvl"] = "B1+"
 json.dump(L, open(os.path.join(HERE, "hp.json"), "w", encoding="utf-8"), ensure_ascii=False, separators=(",", ":"))
 print("уроків:", len(L), "| арки:", ARCS)
 for l in L:

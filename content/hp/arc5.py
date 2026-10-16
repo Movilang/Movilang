@@ -12,13 +12,13 @@ lesson(24, "Ніколас Фламель", "Passive: Present Perfect, modals, f
     ("Пушок", "Fluffy", "Пес із трьома головами. Належить Геґрідові.", "upd")]),
   gloss("Сцена 1 · Геґрід проговорюється", """
 to let slip|/let ˈslɪp/|phrase|B2|проговоритися|Геґрід випадково каже більше, ніж мав би.|I shouldn't have said that.|She let slip that she was moving to Paris.
-to meddle|/ˈmedl/|verb|C1|втручатися (не у свою справу)|Геґрід просить дітей не пхатися в небезпечні справи.|Don't go meddling.|Stop meddling in my business!
+to get involved|/ɡet ɪnˈvɒlvd/|phrase|B1|втручатися|Геґрід просить дітей не пхатися в небезпечні справи.|Don't get involved.|Stop getting involved in my business!
 dangerous|/ˈdeɪndʒərəs/|adjective|A2|небезпечний|Геґрід попереджає: це небезпечно.|It's dangerous.|It's dangerous to swim here.
 between|/bɪˈtwiːn/|preposition|A2|між|Геґрід каже, що справа — між Дамблдором і ще кимось.|That's between Professor Dumbledore and Nicolas Flamel.|This is between you and me.
 to forget about|/fəˈɡet əˈbaʊt/|phrasal verb|A2|забути про|Геґрід радить забути про пса.|Forget about that dog.|Forget about work for the weekend.
 to sell off|/sel ˈɒf/|phrasal verb|B2|продати|Геґрід розповідає, звідки в нього Пушок.|I bought him off an Irish feller.|They sold off the old furniture.
 to lend|/lend/|verb|B1|позичати (комусь)|Геґрід позичив пса Дамблдорові.|I lent him to Dumbledore.|Can you lend me your pen?
-to be on to (something)|/bi ɒn tuː/|phrase|C1|натрапити на слід|Друзі відчувають, що натрапили на щось важливе.|Who's Nicolas Flamel?|I think the police are on to him.
+clue|/kluː/|noun|B1|підказка, ключ (до загадки)|Друзі відчувають, що натрапили на щось важливе.|Who's Nicolas Flamel?|The police found a clue.
 whoever|/huːˈevə/|pronoun|B2|будь-хто, хто б не|Друзі мусять знайти, хто такий Фламель.|Whoever he is.|Whoever wins will get a prize.
 """),
   gloss("Сцена 2 · Бібліотека", """
@@ -33,12 +33,12 @@ to be known|/nəʊn/|phrase|B1|бути відомим|Фламель відом
 to be hidden|/ˈhɪdn/|phrase|B1|бути схованим|Друзі розуміють, що щось сховано в замку.|It's been hidden here.|The key was hidden under a stone.
 """),
   gloss("Сцена 3 · Філософський камінь", """
-Philosopher's Stone|/fɪˈlɒsəfəz stəʊn/|noun|C1|філософський камінь|Нарешті друзі дізнаються, що охороняє пес.|The Philosopher's Stone!|In old stories, the Philosopher's Stone turns metal into gold.
-legendary|/ˈledʒəndri/|adjective|C1|легендарний|Камінь — легендарна речовина з дивовижною силою.|A legendary substance.|He's a legendary football player.
+Philosopher's Stone|/fɪˈlɒsəfəz stəʊn/|noun|HP|філософський камінь|Нарешті друзі дізнаються, що охороняє пес.|The Philosopher's Stone!|In old stories, the Philosopher's Stone turns metal into gold.
+legend|/ˈledʒənd/|noun|B1|легенда|Камінь — легендарна речовина з дивовижною силою.|It's from an old legend.|There is a legend about this castle.
 to turn into|/tɜːn ˈɪntuː/|phrasal verb|B1|перетворювати на|Камінь перетворює метал на золото.|Turns any metal into pure gold.|The caterpillar turned into a butterfly.
 pure|/pjʊə/|adjective|B1|чистий|Метал стає чистим золотом.|Pure gold.|It's made of pure silk.
-Elixir of Life|/ɪˈlɪksə əv laɪf/|noun|C2|еліксир життя|Камінь дає еліксир, що робить безсмертним.|The Elixir of Life.|The old king searched for the Elixir of Life.
-immortal|/ɪˈmɔːtl/|adjective|C1|безсмертний|Той, хто п'є еліксир, не помирає.|Which will make the drinker immortal.|In the myth, the gods were immortal.
+Elixir of Life|/ɪˈlɪksə əv laɪf/|noun|HP|еліксир життя|Камінь дає еліксир, що робить безсмертним.|The Elixir of Life.|The old king searched for the Elixir of Life.
+to live forever|/lɪv fəˈrevə/|phrase|A2|жити вічно|Той, хто п'є еліксир, не помирає.|It will make the drinker live forever.|In the myth, the gods live forever.
 to protect|/prəˈtekt/|verb|B1|захищати|Друзі розуміють, кого захищає пес.|It's been protected.|Wear a hat to protect your face from the sun.
 birthday (665th)|/ˈbɜːθdeɪ/|noun|A1|день народження|Фламель нещодавно відсвяткував дуже поважний день народження.|He celebrated his 665th birthday last year.|She celebrated her 100th birthday.
 to steal|/stiːl/|verb|B1|красти|Друзі думають, хто хоче вкрасти камінь.|Snape's trying to steal it.|Someone stole my bike!
@@ -50,9 +50,9 @@ to steal|/stiːl/|verb|B1|красти|Друзі думають, хто хоч�
        "Дамблдора поруч немає.",
        "Герміона нічого не вибовкала."],
       "Shouldn't have + V3 — шкодувати про минуле. Ця конструкція чекатиме на нас в уроці 33.", img="stone"),
-  cauldron([("immortal", "never dying"), ("to let slip", "to say something secret by accident"),
-            ("to meddle", "to get involved in other people's business"), ("pointless", "having no use or meaning"),
-            ("legendary", "very famous, from old stories")],
+  cauldron([("to live forever", "never to die"), ("to let slip", "to say something secret by accident"),
+            ("to get involved", "to take part in other people's business"), ("pointless", "having no use or meaning"),
+            ("legend", "a very old story")],
            "Слова таємниці Фламеля."),
   gram("The Stone ____ hidden somewhere in the castle.", ["has been", "has", "is been", "have been"], 0,
        ["Так! Present Perfect Passive: has + been + V3.",
@@ -108,7 +108,7 @@ lesson(25, "Норберт", "used to / would (past habits)",
   gloss("Сцена 1 · Яйце", """
 egg|/eɡ/|noun|A1|яйце|У казані на вогні лежить велике чорне яйце.|What is that?|I had two eggs for breakfast.
 dragon|/ˈdræɡən/|noun|A2|дракон|Геґрід вирощує дракона в дерев'яній хатині.|It's a dragon!|In the story, a dragon guards the gold.
-to hatch|/hætʃ/|verb|C1|вилупитися|Яйце тріскається — дракончик вилуплюється.|It's hatching!|The chicks hatched this morning.
+baby dragon|/ˈbeɪbi ˈdræɡən/|noun|A2|дракончик|Яйце тріскається — дракончик вилуплюється.|It's a baby dragon!|The baby dragon breathed fire.
 to win (something) off|/wɪn ɒf/|phrase|B2|виграти (у когось)|Геґрід виграв яйце в незнайомця в картах.|I won it off a stranger.|He won fifty pounds off his friend.
 stranger|/ˈstreɪndʒə/|noun|A2|незнайомець|Незнайомець у таверні не показав обличчя.|Didn't see his face.|Don't talk to strangers.
 illegal|/ɪˈliːɡl/|adjective|B1|незаконний|Тримати драконів заборонено законом.|It's illegal!|It's illegal to park here.
@@ -145,7 +145,7 @@ drunk|/drʌŋk/|adjective|B1|п'яний|Геґрід визнає, що тро�
        "Мелфой підглядає у вікно.",
        "Брат Рона, Чарлі, тут не з'являється."],
       "Win something off someone — розмовне «виграти щось у когось».", img="castle"),
-  cauldron([("to hatch", "to come out of an egg"), ("stranger", "a person you don't know"),
+  cauldron([("baby dragon", "a very young dragon"), ("stranger", "a person you don't know"),
             ("illegal", "against the law"), ("to sneeze", "to suddenly push air out of your nose"),
             ("piece of cake", "very easy (idiom)")],
            "Слова з хатини Геґріда."),
@@ -202,7 +202,7 @@ lesson(26, "Спіймані", "Time clauses: when / before / after / until / as
 to be out of bed|/aʊt əv bed/|phrase|B1|бути не в ліжку (вночі)|Макґонеґел ловить учнів, які не сплять уночі.|Out of bed at night?|What are you doing out of bed?
 excuse|/ɪkˈskjuːs/|noun|B1|виправдання|Макґонеґел не приймає жодних виправдань.|Nothing gives you the right.|That's a terrible excuse.
 the right (to)|/raɪt/|noun|B1|право (на щось)|Ніщо не дає учням права гуляти вночі.|Nothing gives a student the right…|You have the right to stay silent.
-to deduct|/dɪˈdʌkt/|verb|C1|знімати, вираховувати|Макґонеґел знімає бали з Ґрифіндору.|Fifty points will be taken.|The fee will be deducted from your salary.
+to take away|/teɪk əˈweɪ/|phrasal verb|B1|забирати, знімати|Макґонеґел знімає бали з Ґрифіндору.|Fifty points will be taken away.|The teacher took away my phone.
 each|/iːtʃ/|determiner|A2|кожен|По п'ятдесят балів з кожного.|Fifty points each.|Each student gets a book.
 disgusted|/dɪsˈɡʌstɪd/|adjective|B2|обурений, сповнений відрази|Макґонеґел обурена поведінкою учнів.|I'm disgusted.|I was disgusted by his behaviour.
 to tell on|/tel ɒn/|phrasal verb|B2|донести, наябедничати|Мелфой доносить на друзів.|Malfoy told on us.|My sister always told on me.
@@ -222,11 +222,11 @@ mistake|/mɪˈsteɪk/|noun|A2|помилка|Нічна прогулянка б�
 """),
   gloss("Сцена 3 · Покарання", """
 detention|/dɪˈtenʃn/|noun|B2|покарання (залишення після уроків)|Усі четверо отримують нічне покарання.|You'll serve detention.|He got detention for being rude.
-to serve (detention)|/sɜːv/|verb|C1|відбувати (покарання)|Покарання відбуватимуть уночі.|You'll be serving detention.|He served two years in prison.
-to chain up|/tʃeɪn ˈʌp/|phrasal verb|C1|закувати в ланцюги|Філч сумує за старими покараннями.|I'd chain you up.|They chained up the dog at night.
+to get detention|/ɡet dɪˈtenʃn/|phrase|B1|отримати покарання (після уроків)|Покарання відбуватимуть уночі.|You'll get detention.|He got detention for being late.
+to tie up|/taɪ ˈʌp/|phrasal verb|B1|зв'язати|Філч сумує за старими покараннями.|I'd tie you up.|They tied up the dog at night.
 punishment|/ˈpʌnɪʃmənt/|noun|B1|покарання|Філч мріє про давні жорстокі покарання.|Pity they let the old punishments die.|The punishment was too hard.
 forest|/ˈfɒrɪst/|noun|A2|ліс|Покарання — у Забороненому лісі.|The Forbidden Forest.|We went for a walk in the forest.
-werewolf|/ˈweəwʊlf/|noun|C1|перевертень|Філч лякає дітей перевертнями.|There are werewolves in there.|In the film, a werewolf howled at the moon.
+werewolf|/ˈweəwʊlf/|noun|HP|перевертень|Філч лякає дітей перевертнями.|There are werewolves in there.|In the film, a werewolf howled at the moon.
 to scare|/skeə/|verb|B1|лякати|Філч навмисно лякає учнів.|Scared?|The noise scared the birds.
 lantern|/ˈlæntən/|noun|B2|ліхтар|Геґрід веде дітей із ліхтарем.|Come on.|He carried a lantern through the dark garden.
 a waste of time|/weɪst əv taɪm/|phrase|B1|марна трата часу|Мелфой вважає покарання тратою часу.|This is servant stuff.|That meeting was a waste of time.
@@ -239,7 +239,7 @@ a waste of time|/weɪst əv taɪm/|phrase|B1|марна трата часу|Ме
        "Дамблдора теж."],
       "I repeat — повтор для наголосу. Nothing gives you the right to… = ніщо не дає тобі права…", img="castle"),
   cauldron([("detention", "a punishment at school"), ("to tell on", "to report someone's bad behaviour"),
-            ("fault", "responsibility for a mistake"), ("to deduct", "to take away (points, money)"),
+            ("fault", "responsibility for a mistake"), ("to take away", "to remove (points, money)"),
             ("lantern", "a lamp you can carry")],
            "Слова тієї ночі."),
   gram("We'll go to the forest as soon as Hagrid ____.", ["arrives", "will arrive", "arrived", "is arrive"], 0,
@@ -301,7 +301,7 @@ coward|/ˈkaʊəd/|noun|B2|боягуз|Ікло — великий пес, ал
 servant|/ˈsɜːvənt/|noun|B2|слуга|Мелфой каже, що така робота — для слуг.|This is servant stuff.|The servants cleaned the castle.
 """),
   gloss("Сцена 2 · Постать у плащі", """
-hooded|/ˈhʊdɪd/|adjective|C1|у каптурі|На галявині — постать у капюшоні.|What is that?|A hooded man ran past us.
+in a hood|/ɪn ə ˈhʊd/|phrase|B1|у каптурі|На галявині — постать у капюшоні.|What is that?|A man in a hood ran past us.
 figure|/ˈfɪɡə/|noun|B1|постать, фігура|Темна постать схиляється над єдинорогом.|A figure in the dark.|I saw a dark figure in the window.
 to creep|/kriːp/|verb|B2|повзти, підкрадатися|Постать повільно підповзає до Гаррі.|It's coming!|The cat crept towards the bird.
 to drink|/drɪŋk/|verb|A1|пити|Постать п'є кров єдинорога.|It's drinking its blood.|Drink plenty of water.
@@ -309,15 +309,15 @@ to run away|/rʌn əˈweɪ/|phrasal verb|A2|утекти|Мелфой і Ікл�
 scar|/skɑː/|noun|B1|шрам|Шрам Гаррі раптом пече.|My scar!|He has a scar on his arm.
 to hurt|/hɜːt/|verb|A2|боліти|Гаррі хапається за чоло — шрам болить.|It hurts.|My head hurts.
 to freeze|/friːz/|verb|B1|завмерти|Гаррі завмирає від болю і страху.|Don't move.|I froze when I saw the snake.
-hoof|/huːf/|noun|C1|копито|Стукіт копит — до Гаррі мчить кентавр.|Hooves!|The horse hurt its hoof.
+footsteps|/ˈfʊtsteps/|noun|B1|кроки, тупіт|Стукіт копит — до Гаррі мчить кентавр.|Footsteps!|I heard footsteps in the dark.
 """),
   gloss("Сцена 3 · Кентавр", """
-centaur|/ˈsentɔː/|noun|C1|кентавр|Кентавр рятує Гаррі.|Harry Potter, you must leave.|In the myth, a centaur is half man, half horse.
+centaur|/ˈsentɔː/|noun|HP|кентавр|Кентавр рятує Гаррі.|Harry Potter, you must leave.|In the myth, a centaur is half man, half horse.
 to leave|/liːv/|verb|A2|піти, залишити|Кентавр каже Гаррі негайно піти.|You must leave.|We left early.
-to slay|/sleɪ/|verb|C1|убити (книжне)|Кентавр пояснює: убити єдинорога — жахливий злочин.|To slay a unicorn.|In the legend, the knight slew the dragon.
+to kill|/kɪl/|verb|A2|убити|Кентавр пояснює: убити єдинорога — жахливий злочин.|To kill a unicorn.|In the legend, the knight killed the dragon.
 innocent|/ˈɪnəsnt/|adjective|B1|безневинний|Єдиноріг — невинне і чисте створіння.|Pure and defenceless.|The man said he was innocent.
 cursed|/kɜːst/|adjective|B2|проклятий|Той, хто п'є кров єдинорога, житиме проклятим.|A cursed life.|The old house was said to be cursed.
-half-life|/ˈhɑːf laɪf/|noun|C1|напівжиття|Кров дарує лише напівжиття.|A half-life.|He lived a half-life after the accident.
+half-life|/ˈhɑːf laɪf/|noun|HP|напівжиття|Кров дарує лише напівжиття.|A half-life.|He lived a half-life after the accident.
 to keep alive|/kiːp əˈlaɪv/|phrase|B1|утримувати живим|Кров єдинорога утримує живим навіть на межі смерті.|It will keep you alive.|The doctors kept him alive.
 known|/nəʊn/|adjective|B1|відомий|Кентавр знає, хто такий Гаррі.|The Potter boy.|He's known all over the world.
 to protect|/prəˈtekt/|verb|B1|захищати|Кентавр захищає Гаррі від постаті.|You're safe now.|The trees protect the house from the wind.
@@ -330,7 +330,7 @@ to protect|/prəˈtekt/|verb|B1|захищати|Кентавр захищає �
        "Герміона не скаржиться."],
       "Stuff — розмовне «штука, справа». Servant stuff = робота для слуг.", img="forest"),
   cauldron([("unicorn", "a white horse with one horn"), ("centaur", "half human, half horse"),
-            ("coward", "a person who is easily scared"), ("hooded", "wearing a hood"),
+            ("coward", "a person who is easily scared"), ("in a hood", "with a hood over the head"),
             ("innocent", "not guilty; pure")],
            "Слова Забороненого лісу."),
   gram("Fang, ____ is Hagrid's dog, is a big coward.", ["who", "that", "which", "whose"], 0,
@@ -364,8 +364,8 @@ to protect|/prəˈtekt/|verb|B1|захищати|Кентавр захищає �
             "Правильно: «False». Геґрід сам каже, що його пес — боягуз."],
            "Зовнішність ≠ характер."),
   word("To kill a unicorn is a terrible crime, because a unicorn is pure and ____.",
-       ["innocent", "cursed", "hooded", "wounded"], 0,
-       ["Так! Innocent — безневинний.", "Cursed — проклятий, це про того, хто п'є кров.", "Hooded — у каптурі.", "Wounded — поранений, а не характеристика."],
+       ["innocent", "cursed", "frightened", "wounded"], 0,
+       ["Так! Innocent — безневинний.", "Cursed — проклятий, це про того, хто п'є кров.", "Frightened — наляканий.", "Wounded — поранений, а не характеристика."],
        "Innocent — також «невинуватий» у суді."),
   speak("My scar! It hurts!", "Hurts [hɜːts] — довге [ɜː]. Голос — уривчастий від болю."),
   letter("Describe the night in the forest (45+ words). Use non-defining relative clauses: Hagrid, who…; the forest, where…; unicorn blood, which….",
@@ -388,7 +388,7 @@ to wait for|/weɪt fɔː/|phrase|A2|чекати на|Волдеморт чек�
 chance|/tʃɑːns/|noun|B1|шанс|Темний чарівник шукає шанс повернутися.|He's waiting for a chance.|This is your last chance.
 to come back|/kʌm ˈbæk/|phrasal verb|A2|повернутися|Гаррі розуміє: Волдеморт хоче повернутися.|He's trying to come back.|When are you coming back?
 strength|/streŋθ/|noun|B1|сила|Йому потрібна сила, щоб відродитися.|To regain his strength.|You need strength to lift that.
-to regain|/rɪˈɡeɪn/|verb|C1|відновити, повернути|Кров дає змогу відновити сили.|Regain his strength.|She slowly regained her confidence.
+to get back|/ɡet ˈbæk/|phrasal verb|B1|повернути, відновити|Кров дає змогу відновити сили.|Get back his strength.|She slowly got back her confidence.
 weak|/wiːk/|adjective|A2|слабкий|Волдеморт зараз дуже слабкий.|He's weak.|I felt weak after the flu.
 to hide|/haɪd/|verb|B1|ховатися|Волдеморт ховається, але живий.|In hiding.|The children hid in the garden.
 alive|/əˈlaɪv/|adjective|A2|живий|Гаррі приголомшений: ворог живий.|He's alive?|Is the fish still alive?
@@ -400,7 +400,7 @@ to relax|/rɪˈlæks/|verb|A2|розслабитися|Рон хоче наре�
 to keep hurting|/kiːp ˈhɜːtɪŋ/|phrase|B1|постійно боліти|Шрам Гаррі не перестає боліти.|It keeps hurting.|My knee keeps hurting.
 a sign|/saɪn/|noun|B1|знак, ознака|Герміона вважає біль у шрамі поганим знаком.|It's a warning.|Dark clouds are a sign of rain.
 warning|/ˈwɔːnɪŋ/|noun|B1|попередження|Гаррі сприймає біль як попередження.|It means danger.|The sign is a warning about the ice.
-to occur to|/əˈkɜː tə/|phrasal verb|C1|спасти на думку|Гаррі раптом спадає на думку дивна річ.|Why didn't I see it before?|It never occurred to me to ask.
+to notice|/ˈnəʊtɪs/|verb|B1|помітити|Гаррі раптом спадає на думку дивна річ.|Why didn't I see it before?|I didn't notice the mistake.
 odd|/ɒd/|adjective|B1|дивний|Гаррі вважає дивним, що в незнайомця було яйце.|Don't you think it's odd?|That's an odd thing to say.
 to happen to|/ˈhæpən tə/|phrase|B1|випадково (мати / бути)|У незнайомця «випадково» було драконове яйце.|Just happened to have a dragon egg.|Do you happen to know her number?
 """),
@@ -422,7 +422,7 @@ urgent|/ˈɜːdʒənt/|adjective|B1|терміновий|Справа дуже �
        "Герміона здогадується одразу після Гаррі.",
        "Геґрід зовсім не бачить проблеми."],
       "Why didn't I…? — питання-докір собі.", img="forest"),
-  cauldron([("to regain", "to get back something you lost"), ("warning", "a sign of danger"),
+  cauldron([("to get back", "to have again something you lost"), ("warning", "a sign of danger"),
             ("to give away", "to tell a secret by accident"), ("urgent", "very important and needing action now"),
             ("to work out", "to understand after thinking")],
            "Слова здогадки."),
@@ -472,16 +472,16 @@ lesson(29, "Бос арки 5: Нічний ліс", "Повторення: pass
  [
   gloss("Повторення арки 5 · ключові слова", """
 to let slip|/let ˈslɪp/|phrase|B2|проговоритися|Геґрід.|I shouldn't have said that.|He let slip the secret.
-to meddle|/ˈmedl/|verb|C1|втручатися|Геґрід.|Don't go meddling.|Don't meddle in my life.
+to get involved|/ɡet ɪnˈvɒlvd/|phrase|B1|втручатися|Геґрід.|Don't get involved.|Stop getting involved in my business!
 to lend|/lend/|verb|B1|позичати|Геґрід.|I lent him to Dumbledore.|Lend me your book, please.
 to search|/sɜːtʃ/|verb|B1|шукати|Бібліотека.|We've searched everywhere.|I searched for my keys.
 to look up|/lʊk ˈʌp/|phrasal verb|B1|шукати в довіднику|Бібліотека.|Let's look him up.|Look it up online.
 pointless|/ˈpɔɪntləs/|adjective|B2|марний|Рон.|It's pointless.|This meeting is pointless.
-legendary|/ˈledʒəndri/|adjective|C1|легендарний|Камінь.|A legendary substance.|A legendary hero.
+legend|/ˈledʒənd/|noun|B1|легенда|Камінь.|It's from an old legend.|There is a legend about this castle.
 pure|/pjʊə/|adjective|B1|чистий|Камінь.|Pure gold.|Pure water.
-immortal|/ɪˈmɔːtl/|adjective|C1|безсмертний|Еліксир.|Which will make the drinker immortal.|Nobody is immortal.
+to live forever|/lɪv fəˈrevə/|phrase|A2|жити вічно|Еліксир.|It will make the drinker live forever.|In the myth, the gods live forever.
 to steal|/stiːl/|verb|B1|красти|Друзі.|Snape's trying to steal it.|Who stole my pen?
-to hatch|/hætʃ/|verb|C1|вилупитися|Норберт.|It's hatching!|The eggs will hatch soon.
+baby dragon|/ˈbeɪbi ˈdræɡən/|noun|A2|дракончик|Норберт.|It's a baby dragon!|The baby dragon breathed fire.
 stranger|/ˈstreɪndʒə/|noun|A2|незнайомець|Таверна.|Didn't see his face.|A stranger asked me for directions.
 illegal|/ɪˈliːɡl/|adjective|B1|незаконний|Рон.|It's illegal!|Is that illegal?
 wooden|/ˈwʊdn/|adjective|A2|дерев'яний|Хатина.|You live in a wooden house!|A wooden spoon.
@@ -491,7 +491,7 @@ to spot|/spɒt/|verb|B2|помітити|Мелфой.|Who's that?|Can you spot 
 piece of cake|/piːs əv keɪk/|idiom|B2|раз плюнути|Геґрід.|Fluffy's a piece of cake.|It's a piece of cake.
 to fall asleep|/fɔːl əˈsliːp/|phrase|A2|заснути|Пушок.|He'll fall straight to sleep.|The baby fell asleep.
 excuse|/ɪkˈskjuːs/|noun|B1|виправдання|Макґонеґел.|Nothing gives you the right.|No excuses!
-to deduct|/dɪˈdʌkt/|verb|C1|знімати|Бали.|Fifty points will be taken.|They deducted tax.
+to take away|/teɪk əˈweɪ/|phrasal verb|B1|забирати, знімати|Бали.|Fifty points will be taken away.|The teacher took away my phone.
 disgusted|/dɪsˈɡʌstɪd/|adjective|B2|обурений|Макґонеґел.|I'm disgusted.|She looked disgusted.
 to tell on|/tel ɒn/|phrasal verb|B2|донести|Мелфой.|Malfoy told on us.|Don't tell on me!
 fault|/fɔːlt/|noun|B1|провина|Гаррі.|It's my fault.|It's nobody's fault.
@@ -503,12 +503,12 @@ lantern|/ˈlæntən/|noun|B2|ліхтар|Геґрід.|Come on.|Hold the lanter
 unicorn|/ˈjuːnɪkɔːn/|noun|B2|єдиноріг|Ліс.|Unicorn blood.|The unicorn was white.
 wounded|/ˈwuːndɪd/|adjective|B2|поранений|Ліс.|Wounded badly.|A wounded bird.
 coward|/ˈkaʊəd/|noun|B2|боягуз|Ікло.|He's a bloody coward.|He's no coward.
-hooded|/ˈhʊdɪd/|adjective|C1|у каптурі|Постать.|What is that?|A hooded figure appeared.
+in a hood|/ɪn ə ˈhʊd/|phrase|B1|у каптурі|Постать.|What is that?|A man in a hood ran past us.
 to creep|/kriːp/|verb|B2|підкрадатися|Постать.|It's coming!|He crept upstairs.
-centaur|/ˈsentɔː/|noun|C1|кентавр|Фіренце.|Harry Potter, you must leave.|A centaur stood in the trees.
+centaur|/ˈsentɔː/|noun|HP|кентавр|Фіренце.|Harry Potter, you must leave.|A centaur stood in the trees.
 innocent|/ˈɪnəsnt/|adjective|B1|безневинний|Єдиноріг.|Pure and defenceless.|He's innocent!
 cursed|/kɜːst/|adjective|B2|проклятий|Фіренце.|A cursed life.|A cursed ring.
-to regain|/rɪˈɡeɪn/|verb|C1|відновити|Волдеморт.|Regain his strength.|He regained consciousness.
+to get back|/ɡet ˈbæk/|phrasal verb|B1|повернути, відновити|Волдеморт.|Get back his strength.|She slowly got back her confidence.
 warning|/ˈwɔːnɪŋ/|noun|B1|попередження|Шрам.|It means danger.|Final warning!
 to give away|/ɡɪv əˈweɪ/|phrasal verb|B1|видати|Геґрід.|I gave it away.|Her smile gave her away.
 urgent|/ˈɜːdʒənt/|adjective|B1|терміновий|Тріо.|It's urgent.|This is urgent!

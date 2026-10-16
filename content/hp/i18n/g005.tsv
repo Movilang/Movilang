@@ -15,13 +15,13 @@
 639	światło	світло	Nienawidzi światła słonecznego!	Zapal światło, proszę.	Вона ненавидить сонячне світло!	Увімкни світло, будь ласка.
 640	światło słoneczne	сонячне світло	Lumos Solem!	Rośliny potrzebują słońca.	Люмос Солем!	Рослинам потрібне сонячне світло.
 641	skrzydło	крило	To nie ptaki, to klucze!	Ptak zranił sobie skrzydło.	Це не птахи, це ключі!	Птах поранив крило.
-642	trzepotać	пурхати	Dziwne.	Motyl fruwał nad kwiatami.	Дивно.	Метелик пурхав над квітами.
+642	latać wokół	літати навколо	Dziwne.	Motyle latały wokół kwiatów.	Дивно.	Метелики літали навколо квітів.
 643	założyć się	битися об заклад	Założę się, że miotła jest do łapania klucza.	Założę się, że tego nie zrobisz!	Б'юся об заклад, мітла — щоб ловити ключ.	Б'юся об заклад, ти цього не зробиш!
 644	staromodny	старомодний	Taki staromodny.	Mój dziadek ma staromodne poglądy.	Старомодний.	У мого дідуся старомодні погляди.
 645	złamany	зламаний	Ze złamanym skrzydłem.	Mam pęknięty ekran telefonu.	Зі зламаним крилом.	У мене розбитий екран телефона.
 646	gonić	гнатися	Gonią go!	Kot gonił mysz.	Вони женуться за ним!	Кіт гнався за мишею.
 647	szachownica	шахівниця	To szachownica.	Połóż szachownicę na stole.	Це шахівниця.	Поклади шахівницю на стіл.
-648	przejść, grając	пройти, граючи	Musimy przejść przez salę, grając.	Musieliśmy wywalczyć awans do finału.	Нам треба пройти кімнату, зігравши партію.	Нам довелося пробитися у фінал.
+648	przejść (przez)	перетнути	Musimy przejść przez salę.	Ostrożnie przeszliśmy przez ulicę.	Нам треба перетнути кімнату.	Ми обережно перейшли дорогу.
 649	skoczek	кінь	Ty zajmij miejsce skoczka.	Skoczek porusza się po literze L.	Ти стань на місце коня.	Кінь ходить буквою «Г».
 650	goniec	слон	Harry, zajmij miejsce gońca.	Goniec porusza się po skosie.	Гаррі, стань на місце слона.	Слон ходить по діагоналі.
 651	wieża	тура	Hermiono, zajmij miejsce wieży.	W szachach wieżę nazywa się też zamkiem.	Герміоно, стань на місце тури.	У шахах туру ще називають замком.
@@ -29,9 +29,9 @@
 653	ruch	хід	Skoczek na H3.	Twój ruch.	Кінь на клітинку аш-три.	Твій хід.
 654	rozbić	розбити	Trach!	Wybił szybę kamieniem.	Бах!	Він розбив вікно каменем.
 655	stracić	втратити	Tracimy figury.	W pierwszej połowie straciliśmy dwóch graczy.	Ми втрачаємо фігури.	У першому таймі ми втратили двох гравців.
-656	poświęcić	пожертвувати	Muszę dać się zbić.	Poświęciła wolny czas, żeby nam pomóc.	Мене мають збити.	Вона пожертвувала вільним часом, щоб нам допомогти.
+656	narazić się na niebezpieczeństwo	наразити себе на небезпеку	Muszę dać się zbić.	Naraziła się na niebezpieczeństwo, żeby nam pomóc.	Мене мають збити.	Вона наразила себе на небезпеку, щоб нам допомогти.
 657	dać szacha	поставити шах	Będziesz mógł dać szacha królowi.	W szachach musisz bronić króla, gdy jest szach.	Ти зможеш поставити шах королю.	У шахах треба захищати короля, коли йому шах.
-658	nie ruszać się	не рухатися	Zostańcie, gdzie jesteście.	Zostań tu — zaraz wracam.	Залишайтеся на місцях.	Стій тут — я зараз повернуся.
+658	zostać, gdzie się jest	залишатися на місці	Zostańcie, gdzie jesteście.	Zostań, gdzie jesteś — zaraz wracam.	Залишайтеся на місцях.	Залишайся на місці — я зараз повернуся.
 659	Takie są szachy!	Такі шахи!	Takie są szachy!	Straciłeś hetmana? Takie są szachy!	Такі шахи!	Втратив ферзя? Такі шахи!
 660	iść dalej	іти далі	To ty musisz iść dalej.	Idź dalej, dogonię cię.	Далі маєш іти саме ти.	Іди далі, я наздожену.
 661	zajrzeć do	перевірити	Zaopiekuj się Ronem.	Zajrzysz do dziecka?	Подбай про Рона.	Глянеш, як там дитина?
@@ -41,7 +41,7 @@
 665	ten typ	такий тип	Rzeczywiście wygląda na takiego.	On nie jest typem, który się poddaje.	Він справді схожий на такого.	Він не з тих, хто здається.
 666	obok	поруч з	Kto obok niego podejrzewałby…?	Usiądź obok mnie.	Хто поруч із ним запідозрив би…?	Сядь поруч зі мною.
 667	podejrzewać	підозрювати	Kto podejrzewałby biednego, jąkającego się profesora Quirrella?	Policja podejrzewa jej męża.	Хто б запідозрив бідолашного заїкуватого професора Квірела?	Поліція підозрює її чоловіка.
-668	jąkać się	заїкатися	B-b-biedny Quirrell.	Jąka się, kiedy jest zdenerwowany.	Б-б-бідолашний Квірел.	Він заїкається, коли нервує.
+668	zdenerwowany	знервований	B-b-biedny Quirrell.	Denerwuje się przed egzaminami.	Б-б-бідолашний Квірел.	Він нервує перед іспитами.
 669	wpuścić	впустити	Wpuściłem trolla.	Nie wpuszczaj kota.	Я впустив троля.	Не впускай кота.
 670	ratować	рятувати	Próbował cię ratować.	Lekarz uratował jej życie.	Він намагався тебе врятувати.	Лікар урятував їй життя.
 671	przeciwzaklęcie	контрпрокляття	Mamrotał przeciwzaklęcie.	Czarownica znała przeciwzaklęcie.	Бурмотів контрпрокляття.	Відьма знала контрпрокляття.
@@ -61,7 +61,7 @@
 685	żywiciel	тіло-господар	Mam postać tylko w cudzym ciele.	Wirus potrzebuje żywiciela, żeby przetrwać.	Я маю тіло, лише коли ділю чуже.	Вірусу потрібен господар, щоб вижити.
 686	nigdy	ніколи	Nigdy!	Nigdy cię nie zapomnę.	Ніколи!	Я ніколи тебе не забуду.
 687	obudzić się	прокинутися	Dzień dobry, Harry.	Obudziłem się o szóstej.	Добрий день, Гаррі.	Я прокинувся о шостій.
-688	wielbiciel	шанувальник	Przyjaciele i wielbiciele.	Ma wielu wielbicieli.	Друзі й шанувальники.	У неї багато шанувальників.
+688	fan, wielbiciel	шанувальник, фанат	Przyjaciele i fani.	Ma wielu fanów.	Друзі й шанувальники.	У неї багато шанувальників.
 689	dziać się	ставатися	Co się tam stało?	Co ci się stało w rękę?	Що там сталося?	Що з твоєю рукою?
 690	zniszczyć	знищити	Kamień został zniszczony.	Pożar zniszczył budynek.	Камінь знищено.	Пожежа знищила будівлю.
 691	umrzeć	померти	Umrą, prawda?	Mój stary pies zmarł w zeszłym roku.	Вони помруть, так?	Мій старий пес помер торік.
@@ -73,23 +73,23 @@
 697	być w stanie	могти	Nie mógł.	Będziesz mógł przyjść?	Він не зміг.	Ти зможеш прийти?
 698	młodość	молодість	W młodości.	W młodości był świetnym biegaczem.	У молодості.	У молодості він був чудовим бігуном.
 699	pechowy	невдалий	Miałem pecha.	To był niefortunny błąd.	Мені не пощастило.	Це була прикра помилка.
-700	wymiociny	блювота	O smaku wymiocin.	Psu zrobiło się niedobrze — na podłodze były wymiociny.	Зі смаком блювоти.	Собаку знудило — на підлозі була блювота.
-701	stracić upodobanie	втратити смак до	Straciłem do nich upodobanie.	Przestałem lubić kawę.	Я розлюбив їх.	Я розлюбив каву.
+700	smak	смак	Każdy smak!	Jaki jest twój ulubiony smak lodów?	Будь-який смак!	Який твій улюблений смак морозива?
+701	przestać lubić	розлюбити	Przestałem je lubić.	Przestałem lubić kawę.	Я їх розлюбив.	Я розлюбив каву.
 702	zaryzykować	ризикнути	Zaryzykujmy.	Nie ryzykuj życia.	Ризикнімо.	Не ризикуй життям.
 703	toffi	іриска	Pyszne toffi.	Uwielbiam czekoladowe toffi.	Смачна іриска.	Я обожнюю шоколадні іриски.
-704	woskowina	вушна сірка	Niestety! Woskowina.	Lekarz wyczyścił mi woskowinę z ucha.	На жаль! Вушна сірка.	Лікар почистив мені вухо від сірки.
+704	smakować jak	мати смак	To smakuje jak woskowina!	Ta herbata smakuje miętą.	Це має смак вушної сірки!	Цей чай має смак м'яти.
 705	niestety	на жаль	Niestety! Woskowina.	Niestety lato się skończyło.	На жаль! Вушна сірка.	На жаль, літо скінчилося.
 706	uczta pożegnalna	прощальний бенкет	Kolejny rok minął.	Uczta pożegnalna była niesamowita.	Ще один рік минув.	Прощальний бенкет був чудовий.
 707	przyznawać	нагороджувати	Punktacja wygląda następująco.	Otrzymała nagrodę.	Рахунок такий.	Її нагородили призом.
 708	na czwartym miejscu	на четвертому місці	Na czwartym miejscu Gryffindor.	Nasza drużyna zajęła czwarte miejsce.	На четвертому місці — Ґрифіндор.	Наша команда посіла четверте місце.
-709	wynosić	становити	Punktacja wygląda następująco.	Wynik wynosi dwa do dwóch.	Рахунок такий.	Рахунок два — два.
+709	wynik	рахунок	Wynik jest taki…	Wynik wynosi dwa do dwóch.	Рахунок такий…	Рахунок два — два.
 710	ostatnie wydarzenia	нещодавні події	Ostatnie wydarzenia trzeba wziąć pod uwagę.	Po ostatnich wydarzeniach musimy uważać.	Нещодавні події треба врахувати.	Після нещодавніх подій треба бути обережними.
 711	brać pod uwagę	брати до уваги	Trzeba je wziąć pod uwagę.	Proszę wziąć pod uwagę mój wiek.	Їх треба взяти до уваги.	Будь ласка, врахуйте мій вік.
 712	w ostatniej chwili	в останню хвилину	Kilka punktów w ostatniej chwili.	Zrobiliśmy kilka zmian w ostatniej chwili.	Кілька балів в останню хвилину.	Ми внесли кілька змін в останню хвилину.
 713	sztandar	прапор	Gryffindor wygrywa!	Nad drzwiami powiesili transparent.	Ґрифіндор перемагає!	Над дверима повісили банер.
-714	opanowany	холоднокровний	Za chłodne użycie intelektu.	W kryzysie zachowała zimną krew.	За холодний розум.	У кризі вона зберегла холоднокровність.
-715	intelekt	інтелект	Chłodne użycie intelektu.	To człowiek wielkiego intelektu.	Холодне застосування інтелекту.	Він людина великого розуму.
-716	najlepiej rozegrany	найкраще зіграний	Najlepiej rozegrana partia szachów.	To był najlepiej rozegrany mecz sezonu.	Найкраще зіграна шахова партія.	Це був найкраще зіграний матч сезону.
+714	spokojny	спокійний	Za spokojne użycie logiki.	W kryzysie zachowała spokój.	За спокійну логіку.	У кризі вона залишалася спокійною.
+715	rozum, mózg	мозок, розум	Spokojne użycie rozumu.	Użyj mózgu!	Спокійне застосування розуму.	Використай свій мозок!
+716	najlepsza gra	найкраща гра	Najlepsza partia szachów.	To była najlepsza gra sezonu.	Найкраща шахова партія.	Це була найкраща гра сезону.
 717	odwaga	мужність	Czysta odwaga i wybitne męstwo.	Trzeba odwagi, żeby przemawiać publicznie.	Чиста витримка і видатна мужність.	Щоб виступати публічно, потрібна сміливість.
 718	wybitny	видатний	Wybitne męstwo.	Wykonała wybitną pracę.	Видатна мужність.	Вона зробила видатну роботу.
 719	męstwo	хоробрість	Trzeba wielkiego męstwa.	Dostał medal za odwagę.	Потрібно багато хоробрості.	Він отримав медаль за хоробрість.
