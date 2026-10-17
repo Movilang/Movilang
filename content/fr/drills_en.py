@@ -82,3 +82,45 @@ D[11] = [
  ("Joey should ____ his agent.", ["call", "calls", "to call"], 0, ("Should + базова форма.", "Should + forma podstawowa.", "Should + base form.")),
  ("We ____ leave the oven on.", ["shouldn't", "should", "ought to"], 0, ("Не варто.", "Nie powinniśmy.", "We shouldn't.")),
 ]
+
+# ---- Арка 3
+D[13] = [
+ ("Ross ____ to feed Marcel.", ["has", "have", "must"], 0, ("Ross → has to.", "Ross → has to.", "Ross → has to.")),
+ ("You ____ have to come.", ["don't", "doesn't", "mustn't"], 0, ("You → don't.", "You → don't.", "You → don't.")),
+ ("I ____ go. It's late.", ["must", "must to", "has to"], 0, ("Must + дієслово.", "Must + czasownik.", "Must + verb.")),
+ ("Does Joey ____ to work today?", ["have", "has", "must"], 0, ("Does + have to.", "Does + have to.", "Does + have to.")),
+ ("We ____ to clean the apartment.", ["have", "has", "must"], 0, ("We → have to.", "We → have to.", "We → have to.")),
+ ("Marcel ____ have to go for walks.", ["doesn't", "don't", "mustn't"], 0, ("Він → doesn't.", "On → doesn't.", "He → doesn't.")),
+]
+D[14] = [
+ ("“I'm tired.” → She said she ____ tired.", ["was", "is", "were"], 0, ("Am → was.", "Am → was.", "Am → was.")),
+ ("“I love you.” → He said he ____ her.", ["loved", "loves", "love"], 0, ("Love → loved.", "Love → loved.", "Love → loved.")),
+ ("Ross ____ me that he saw it.", ["told", "said", "spoke"], 0, ("Told + кому.", "Told + komu.", "Told + person.")),
+ ("Joey ____ that he was sorry.", ["said", "told", "talked"], 0, ("Said that.", "Said that.", "Said that.")),
+ ("“I can't come.” → She said she ____ come.", ["couldn't", "can't", "can"], 0, ("Can → could.", "Can → could.", "Can → could.")),
+ ("“We live here.” → They said they ____ there.", ["lived", "live", "living"], 0, ("Live → lived.", "Live → lived.", "Live → lived.")),
+]
+D[15] = [
+ ("The lasagna ____ by Monica.", ["was made", "made", "is make"], 0, ("Was + V3.", "Was + V3.", "Was + past participle.")),
+ ("Coffee ____ in big mugs.", ["is served", "serves", "is serve"], 0, ("Is + V3.", "Is + V3.", "Is + past participle.")),
+ ("The table was ____ yesterday.", ["delivered", "deliver", "delivering"], 0, ("V3.", "V3.", "Past participle.")),
+ ("These cakes ____ every morning.", ["are baked", "bake", "is baked"], 0, ("Множина → are.", "L. mnoga → are.", "Plural → are.")),
+ ("The letter was written ____ Nora.", ["by", "from", "of"], 0, ("By — хто зробив.", "By — kto zrobił.", "By = who did it.")),
+ ("The ring ____ in the lasagna.", ["was found", "found", "is find"], 0, ("Was + V3.", "Was + V3.", "Was + past participle.")),
+]
+D[16] = [
+ ("If I ____ rich, I'd buy a boat.", ["were", "am", "will be"], 0, ("If + were.", "If + were.", "If + were.")),
+ ("If she had time, she ____ help.", ["would", "will", "is"], 0, ("Would + дієслово.", "Would + czasownik.", "Would + verb.")),
+ ("If I were you, I ____ call him.", ["would", "will", "did"], 0, ("Would.", "Would.", "Would.")),
+ ("What ____ you do if you won?", ["would", "will", "did"], 0, ("What would you do?", "What would you do?", "What would you do?")),
+ ("If Joey ____ a car, he'd drive to work.", ["had", "has", "would have"], 0, ("If + Past Simple.", "If + Past Simple.", "If + Past Simple.")),
+ ("I ____ go if I were you.", ["wouldn't", "won't", "don't"], 0, ("Wouldn't.", "Wouldn't.", "Wouldn't.")),
+]
+D[17] = [
+ ("He's eating everything. He ____ be hungry.", ["must", "can't", "mustn't"], 0, ("Упевнено так.", "Na pewno tak.", "Surely yes.")),
+ ("She's in Paris. She ____ be at home.", ["can't", "must", "might"], 0, ("Упевнено ні.", "Na pewno nie.", "Surely not.")),
+ ("I'm not sure. He ____ be late.", ["might", "must", "can't"], 0, ("Не впевнений.", "Nie jestem pewny.", "Not sure.")),
+ ("You ____ be tired after work.", ["must", "can't", "should"], 0, ("Логічний висновок.", "Logiczny wniosek.", "A logical guess.")),
+ ("That ____ be true! It's crazy!", ["can't", "must", "might"], 0, ("Неможливо.", "Niemożliwe.", "Impossible.")),
+ ("It ____ rain later. Take an umbrella.", ["might", "must", "can't"], 0, ("Можливо.", "Możliwe.", "Possibly.")),
+]

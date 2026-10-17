@@ -165,3 +165,84 @@ G[11] = [
 ]
 D[11] = ("Napisz rady dla jednego z przyjaciół (35+ słów): dla Joeya z plakatem, dla Rachel, która spóźniła się na samolot, albo dla Moniki ze spalonym indykiem. Użyj: powinieneś / powinnaś, nie powinieneś.", 35,
  ("Powinieneś… Nie powinnaś… W przyszłym roku powinnaś…", "Powinieneś… Nie powinnaś… W przyszłym roku powinnaś…", "Powinieneś… Nie powinnaś… W przyszłym roku powinnaś…"))
+
+# ---- Арка 3
+T[13] = ("Обов'язок: muszę / nie muszę / nie wolno", "Obowiązek: muszę / nie muszę / nie wolno", "Obligation: muszę / nie muszę / nie wolno")
+G[13] = [
+ ("Ross ____ karmić Marcela trzy razy dziennie.", ["musi", "muszę", "musimy"], 0,
+  [("Так! Він → musi.", "Tak! On → musi.", "Yes! He → musi."),
+   ("Muszę — я.", "„Muszę” — ja.", "Muszę is I."),
+   ("Musimy — ми.", "„Musimy” — my.", "Musimy is we.")],
+  ("Muszę, musisz, musi, musimy, musicie, muszą.", "Muszę, musisz, musi, musimy, musicie, muszą.", "Muszę, musisz, musi, musimy, musicie, muszą.")),
+ ("Marcela ____ wyprowadzać na spacer — to nie pies.", ["nie trzeba", "nie wolno", "trzeba"], 0,
+  [("Так! Nie trzeba = не обов'язково.", "Tak! Nie trzeba = don't have to.", "Yes! Nie trzeba = don't have to."),
+   ("Nie wolno — заборона, інший зміст.", "„Nie wolno” — zakaz, inny sens.", "Nie wolno is a ban — different meaning."),
+   ("Trzeba — обов'язково, протилежне.", "„Trzeba” — odwrotnie.", "Trzeba means you have to — the opposite.")],
+  ("Nie musisz / nie trzeba ≠ nie wolno.", "Nie musisz / nie trzeba ≠ nie wolno.", "Nie musisz / nie trzeba (not necessary) ≠ nie wolno (not allowed).")),
+]
+D[13] = ("Jesteś Rossem. Napisz zasady dla opiekunki Marcela (35+ słów): co musi robić, czego nie musi robić i czego nie wolno jej robić.", 35,
+ ("Musisz… Nie musisz… Nie wolno…", "Musisz… Nie musisz… Nie wolno…", "Musisz… Nie musisz… Nie wolno…"))
+
+T[14] = ("Непряма мова: powiedział, że jest… (час не змінюється)", "Mowa zależna: powiedział, że jest…", "Reported speech: powiedział, że jest… (no tense shift)")
+G[14] = [
+ ("Joey: „Przepraszam”. → Joey powiedział, że ____.", ["przeprasza", "przepraszał", "przeprosi"], 0,
+  [("Так! У польській час у непрямій мові не змінюється.", "Tak! W mowie zależnej czas się nie zmienia.", "Yes! In Polish the tense doesn't change in reported speech."),
+   ("Przepraszał — інший зміст.", "„Przepraszał” — inny sens.", "Przepraszał changes the meaning."),
+   ("Przeprosi — майбутнє.", "„Przeprosi” — przyszłość.", "Przeprosi is future.")],
+  ("Англійська: am → was. Польська: jestem → że jest.", "Angielski: am → was. Polski: jestem → że jest.", "English: am → was. Polish: jestem → że jest.")),
+ ("Ross ____ Chandlerowi, że widział pocałunek.", ["powiedział", "mówił do", "rozmawiał"], 0,
+  [("Так! Powiedzieć komuś (давальний), że…", "Tak! Powiedzieć komuś, że…", "Yes! Powiedzieć komuś (dative), że…"),
+   ("Mówił do — без że так не кажуть.", "„Mówił do” — z że tak się nie mówi.", "Mówił do doesn't go with że."),
+   ("Rozmawiał — «розмовляв», без że.", "„Rozmawiał” — bez że.", "Rozmawiał doesn't take że.")],
+  ("Powiedzieć komu? co? → Chandlerowi, że…", "Powiedzieć komu? co?", "Powiedzieć + dative + że…")),
+]
+D[14] = ("Jesteś Rossem. Opowiedz Monice, co się stało w restauracji (35+ słów): co powiedziała Nora, co powiedział Joey i co powiedział ci Chandler.", 35,
+ ("Nora powiedziała, że… Joey powiedział mi, że…", "Nora powiedziała, że… Joey powiedział mi, że…", "Nora powiedziała, że… Joey powiedział mi, że…"))
+
+T[15] = ("Пасив: zostały zrobione (przez)", "Strona bierna: zostały zrobione (przez)", "Passive: zostały zrobione (przez)")
+G[15] = [
+ ("Wszystkie lasagne zostały ____ przez Monicę.", ["zrobione", "zrobiła", "robią"], 0,
+  [("Так! Zostać + дієприкметник: zostały zrobione.", "Tak! Zostać + imiesłów: zostały zrobione.", "Yes! Zostać + participle: zostały zrobione."),
+   ("Zrobiła — активна форма.", "„Zrobiła” — strona czynna.", "Zrobiła is active."),
+   ("Robią — теперішній, активний.", "„Robią” — teraźniejszy, czynny.", "Robią is active present.")],
+  ("Został / została / zostało / zostały + imiesłów (+ przez kogo).", "Został / została / zostały + imiesłów.", "Został / została / zostały + participle (+ przez).")),
+ ("Stół został dostarczony ____ kuriera.", ["przez", "od", "z"], 0,
+  [("Так! У пасиві — przez + знахідний.", "Tak! W stronie biernej — przez + biernik.", "Yes! In the passive — przez + accusative."),
+   ("Od — «від», інший зміст.", "„Od” — inny sens.", "Od changes the meaning."),
+   ("Z — «з», не для виконавця.", "„Z” — nie dla wykonawcy.", "Z doesn't show who did it.")],
+  ("Zrobione przez Monicę = made by Monica.", "Zrobione przez Monicę.", "Zrobione przez Monicę = made by Monica.")),
+]
+D[15] = ("Opisz kawiarnię, którą lubisz (35+ słów), używając strony biernej: co jest podawane, kiedy jest otwierana, co zostało tam zrobione.", 35,
+ ("Kawa jest podawana… Ciasta są pieczone… Kawiarnia została otwarta…", "Kawa jest podawana… Ciasta są pieczone… Kawiarnia została otwarta…", "Kawa jest podawana… Ciasta są pieczone… Kawiarnia została otwarta…"))
+
+T[16] = ("Умовний спосіб: gdybym był…, zrobiłbym…", "Tryb przypuszczający: gdybym był…, zrobiłbym…", "Conditional mood: gdybym był…, zrobiłbym…")
+G[16] = [
+ ("Gdyby Ross był odważniejszy, ____ Rachel prawdę.", ["powiedziałby", "powie", "powiedział"], 0,
+  [("Так! Уявна ситуація → форма з -by.", "Tak! Sytuacja wyobrażona → forma z -by.", "Yes! Imaginary situation → the -by form."),
+   ("Powie — реальне майбутнє.", "„Powie” — realna przyszłość.", "Powie is real future."),
+   ("Powiedział — минуле.", "„Powiedział” — przeszłość.", "Powiedział is past.")],
+  ("Gdyby + -by: gdybym miał…, kupiłbym…", "Gdyby + -by.", "Gdyby + -by: gdybym miał…, kupiłbym…")),
+ ("Phoebe: „Na twoim miejscu ____ wszystko!”", ["spaliłabym", "spalę", "spaliłam"], 0,
+  [("Так! Фібі (жінка, я) → spaliłabym.", "Tak! Phoebe (kobieta, ja) → spaliłabym.", "Yes! Phoebe (a woman, I) → spaliłabym."),
+   ("Spalę — реальний план.", "„Spalę” — realny plan.", "Spalę is a real plan."),
+   ("Spaliłam — минуле.", "„Spaliłam” — przeszłość.", "Spaliłam is past.")],
+  ("Na twoim miejscu = If I were you.", "Na twoim miejscu = If I were you.", "Na twoim miejscu = If I were you.")),
+]
+D[16] = ("Co byś zrobił(a) w walentynki, gdybyś był(a) jednym z przyjaciół? (35+ słów). Użyj: gdybym…, -bym, na twoim miejscu.", 35,
+ ("Gdybym był Rossem, … Na miejscu Moniki…", "Gdybym był Rossem, … Na miejscu Moniki…", "Gdybym był Rossem, … Na miejscu Moniki…"))
+
+T[17] = ("Припущення: na pewno / chyba / może / nie może być", "Przypuszczenia: na pewno / chyba / może / nie może być", "Deduction: na pewno / chyba / może / nie może być")
+G[17] = [
+ ("Zjadł dwanaście taco. ____ jest bardzo głodny!", ["Na pewno", "Na pewno nie", "Wcale"], 0,
+  [("Так! Упевнений висновок → na pewno.", "Tak! Pewny wniosek → na pewno.", "Yes! A confident conclusion → na pewno."),
+   ("Na pewno nie — протилежне.", "„Na pewno nie” — odwrotnie.", "Na pewno nie is the opposite."),
+   ("Wcale — лише із запереченням.", "„Wcale” — tylko z przeczeniem.", "Wcale only works with a negative.")],
+  ("Na pewno ≈ must; może ≈ might; to nie może być ≈ can't be.", "Na pewno ≈ must; może ≈ might.", "Na pewno ≈ must; może ≈ might; nie może być ≈ can't be.")),
+ ("Śmieje się z zupy. To ____ być poważny gość.", ["nie może", "musi", "powinien"], 0,
+  [("Так! «Точно ні» → nie może być.", "Tak! „Na pewno nie” → nie może być.", "Yes! “Surely not” → nie może być."),
+   ("Musi — упевнене «так».", "„Musi” — pewne „tak”.", "Musi is a confident yes."),
+   ("Powinien — порада.", "„Powinien” — rada.", "Powinien is advice.")],
+  ("To nie może być prawda! = That can't be true!", "To nie może być prawda!", "To nie może być prawda! = That can't be true!")),
+]
+D[17] = ("Jesteś Rachel. Napisz do Phoebe o dziwnym gościu (35+ słów): co na pewno jest prawdą, co może być powodem, a co nie może być prawdą.", 35,
+ ("Na pewno… Może… To nie może być…", "Na pewno… Może… To nie może być…", "Na pewno… Może… To nie może być…"))

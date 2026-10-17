@@ -82,3 +82,45 @@ D[11] = [
  ("Joey powinien ____ agentkę.", ["zapytać", "pyta", "zapytał"], 0, ("Інфінітив.", "Bezokolicznik.", "Infinitive.")),
  ("Nie ____ zostawiać włączonego piekarnika.", ["powinniśmy", "powinienem", "powinna"], 0, ("Ми → powinniśmy.", "My → powinniśmy.", "We → powinniśmy.")),
 ]
+
+# ---- Арка 3
+D[13] = [
+ ("Ross ____ karmić Marcela.", ["musi", "musisz", "muszą"], 0, ("Він → musi.", "On → musi.", "He → musi.")),
+ ("Nie ____ przychodzić.", ["musisz", "musi", "muszę"], 0, ("Ти → musisz.", "Ty → musisz.", "You → musisz.")),
+ ("____ już iść. Jest późno.", ["Muszę", "Musi", "Musimy się"], 0, ("Я → muszę.", "Ja → muszę.", "I → muszę.")),
+ ("Czy Joey ____ dziś pracować?", ["musi", "muszą", "musisz"], 0, ("Він → musi.", "On → musi.", "He → musi.")),
+ ("____ posprzątać mieszkanie.", ["Musimy", "Musi", "Muszę się"], 0, ("Ми → musimy.", "My → musimy.", "We → musimy.")),
+ ("W mieszkaniu nie ____ palić.", ["wolno", "trzeba", "musi"], 0, ("Заборона → nie wolno.", "Zakaz → nie wolno.", "A ban → nie wolno.")),
+]
+D[14] = [
+ ("„Jestem zmęczona”. → Powiedziała, że ____ zmęczona.", ["jest", "była", "będzie"], 0, ("Час не змінюється.", "Czas się nie zmienia.", "No tense change.")),
+ ("„Kocham cię”. → Powiedział, że ją ____.", ["kocha", "kochał", "pokocha"], 0, ("Без змін.", "Bez zmian.", "No change.")),
+ ("Ross powiedział ____, że to widział.", ["mi", "mnie", "ja"], 0, ("Давальний: mi.", "Celownik: mi.", "Dative: mi.")),
+ ("Joey powiedział, ____ przeprasza.", ["że", "co", "aby się"], 0, ("Powiedział, że…", "Powiedział, że…", "Powiedział, że…")),
+ ("„Nie mogę przyjść”. → Powiedziała, że nie ____ przyjść.", ["może", "mogła", "mogę"], 0, ("Вона → może.", "Ona → może.", "She → może.")),
+ ("Zapytał, gdzie ____.", ["mieszkam", "mieszkałem kiedyś", "zamieszkam"], 0, ("Час не змінюється.", "Czas się nie zmienia.", "No tense change.")),
+]
+D[15] = [
+ ("Lasagne zostały ____ przez Monicę.", ["zrobione", "zrobiła", "robi"], 0, ("Дієприкметник.", "Imiesłów.", "Participle.")),
+ ("Kawa jest ____ w dużych kubkach.", ["podawana", "podaje", "podać"], 0, ("Jest + дієприкметник.", "Jest + imiesłów.", "Jest + participle.")),
+ ("Stół został ____ wczoraj.", ["dostarczony", "dostarczył", "dostarcza"], 0, ("Чол. рід → -ony.", "R. męski → -ony.", "Masculine → -ony.")),
+ ("Ciasta są ____ codziennie.", ["pieczone", "piecze", "upiekła"], 0, ("Мн. → -one.", "L. mn. → -one.", "Plural → -one.")),
+ ("Książka została napisana ____ Norę.", ["przez", "od", "z"], 0, ("Przez + знахідний.", "Przez + biernik.", "Przez + accusative.")),
+ ("Pierścionek został ____ w lasagne.", ["znaleziony", "znalazł", "znajduje"], 0, ("Дієприкметник.", "Imiesłów.", "Participle.")),
+]
+D[16] = [
+ ("Gdybym ____ bogaty, kupiłbym łódź.", ["był", "jestem", "będę"], 0, ("Gdybym + минулий.", "Gdybym + przeszły.", "Gdybym + past.")),
+ ("Gdyby miała czas, ____.", ["pomogłaby", "pomoże", "pomogła"], 0, ("-by.", "-by.", "-by form.")),
+ ("Na twoim miejscu ____ do niego.", ["zadzwoniłbym", "zadzwonię", "dzwonię"], 0, ("-bym.", "-bym.", "-bym form.")),
+ ("Co ____ zrobił, gdybyś wygrał?", ["byś", "będziesz", "zrobiłeś"], 0, ("Co byś zrobił?", "Co byś zrobił?", "Co byś zrobił?")),
+ ("Gdyby Joey ____ samochód, jeździłby do pracy.", ["miał", "ma", "będzie miał"], 0, ("Gdyby + минулий.", "Gdyby + przeszły.", "Gdyby + past.")),
+ ("Na twoim miejscu nie ____.", ["poszłabym", "pójdę", "idę"], 0, ("-bym.", "-bym.", "-bym form.")),
+]
+D[17] = [
+ ("Wszystko je. ____ jest głodny.", ["Na pewno", "Na pewno nie", "Wcale"], 0, ("Упевнено.", "Pewnie.", "Surely.")),
+ ("Jest w Paryżu. To ____ być w domu.", ["nie może", "musi", "chyba"], 0, ("Неможливо.", "Niemożliwe.", "Impossible.")),
+ ("Nie wiem. ____ się spóźni.", ["Może", "Na pewno nie", "Wcale"], 0, ("Можливо.", "Możliwe.", "Possibly.")),
+ ("Po pracy ____ jesteś zmęczony.", ["na pewno", "wcale", "nigdy"], 0, ("Логічно.", "Logicznie.", "Logically.")),
+ ("To nie ____ być prawda!", ["może", "musi", "powinno"], 0, ("Nie może być.", "Nie może być.", "Can't be.")),
+ ("____ później padać. Weź parasol.", ["Może", "Musi", "Nie może"], 0, ("Можливо.", "Możliwe.", "Possibly.")),
+]
