@@ -246,3 +246,84 @@ G[17] = [
 ]
 D[17] = ("Jesteś Rachel. Napisz do Phoebe o dziwnym gościu (35+ słów): co na pewno jest prawdą, co może być powodem, a co nie może być prawdą.", 35,
  ("Na pewno… Może… To nie może być…", "Na pewno… Może… To nie może być…", "Na pewno… Może… To nie może być…"))
+
+# ---- Арка 4
+T[19] = ("Питання-підтвердження: …, prawda? / …, nie?", "Pytania potwierdzające: …, prawda? / …, nie?", "Tag questions: …, prawda? / …, nie?")
+G[19] = [
+ ("Phoebe: „Spotykasz się z moją siostrą, ____?”", ["prawda", "czy", "co"], 0,
+  [("Так! «…, prawda?» — польський хвостик, який ніколи не змінюється.", "Tak! „…, prawda?” — dopisek, który się nie zmienia.", "Yes! “…, prawda?” — the Polish tag never changes."),
+   ("Czy ставиться на початку питання.", "„Czy” stoi na początku pytania.", "Czy goes at the start of a question."),
+   ("Co — «що», не підтвердження.", "„Co” to pytanie o rzecz.", "Co means “what”.")],
+  ("Англійська змінює хвостик (aren't you / do you), польська — ні.", "Angielski zmienia dopisek, polski — nie.", "English tags change (aren't you / do you); Polish ones don't.")),
+ ("Ursula: „Nie lubisz mnie, ____?”", ["co", "czy", "jak"], 0,
+  [("Так! «…, co?» — розмовний хвостик.", "Tak! „…, co?” — potoczny dopisek.", "Yes! “…, co?” is an informal tag."),
+   ("Czy — на початку питання.", "„Czy” — na początku pytania.", "Czy goes at the start."),
+   ("Jak — «як», інше питання.", "„Jak” — inne pytanie.", "Jak means “how”.")],
+  ("…, prawda? (нейтрально), …, nie? / …, co? (розмовно).", "…, prawda? (neutralnie), …, nie? / …, co? (potocznie).", "…, prawda? (neutral), …, nie? / …, co? (informal).")),
+]
+D[19] = ("Napisz krótką rozmowę Phoebe i Joeya o Ursuli (35+ słów). Użyj co najmniej pięciu pytań z „prawda?”, „nie?” albo „co?”.", 35,
+ ("Lubisz ją, prawda? Nie gniewasz się, co?", "Lubisz ją, prawda? Nie gniewasz się, co?", "Lubisz ją, prawda? Nie gniewasz się, co?"))
+
+T[20] = ("Так / такий: tak bolesne, taki zły pomysł", "Tak / taki: tak bolesne, taki zły pomysł", "So / such: tak bolesne, taki zły pomysł")
+G[20] = [
+ ("Rachel tak ____ boli, że nie może chodzić.", ["bardzo", "taki", "taka"], 0,
+  [("Так! Tak bardzo + дієслово.", "Tak! Tak bardzo + czasownik.", "Yes! Tak bardzo + verb."),
+   ("Taki — з іменником (чол. рід).", "„Taki” — z rzeczownikiem (r. męski).", "Taki goes with a masculine noun."),
+   ("Taka — з іменником (жін. рід).", "„Taka” — z rzeczownikiem (r. żeński).", "Taka goes with a feminine noun.")],
+  ("Tak + прикметник/прислівник; taki/taka/takie + іменник.", "Tak + przymiotnik/przysłówek; taki/taka/takie + rzeczownik.", "Tak + adjective/adverb; taki/taka/takie + noun.")),
+ ("Monica: „To ____ zły pomysł!”", ["taki", "tak", "taka"], 0,
+  [("Так! Pomysł — чол. рід → taki.", "Tak! Pomysł (r. męski) → taki.", "Yes! Pomysł is masculine → taki."),
+   ("Tak — перед прикметником без іменника.", "„Tak” — przed przymiotnikiem bez rzeczownika.", "Tak goes before an adjective with no noun."),
+   ("Taka — жіночий рід.", "„Taka” — rodzaj żeński.", "Taka is feminine.")],
+  ("Taki zły pomysł, taka trudna sytuacja, takie drogie.", "Taki zły pomysł, taka trudna sytuacja.", "Taki zły pomysł, taka trudna sytuacja, takie drogie.")),
+]
+D[20] = ("Jesteś Monicą. Opisz w pamiętniku podwójną randkę (35+ słów). Użyj: tak, taki/taka, tak… że.", 35,
+ ("Lekarze byli tak… To był taki… Byłam tak zła, że…", "Lekarze byli tak… To był taki… Byłam tak zła, że…", "Lekarze byli tak… To był taki… Byłam tak zła, że…"))
+
+T[21] = ("Ступені порівняння: lepszy, mądrzejszy, najlepszy, tak … jak", "Stopniowanie: lepszy, mądrzejszy, najlepszy, tak … jak", "Comparison: lepszy, mądrzejszy, najlepszy, tak … jak")
+G[21] = [
+ ("Na początku chłopaki grają ____ niż dziewczyny.", ["lepiej", "dobrzej", "najlepiej"], 0,
+  [("Так! Dobrze → lepiej (прислівник).", "Tak! Dobrze → lepiej.", "Yes! Dobrze → lepiej (adverb)."),
+   ("Dobrzej — такої форми немає.", "„Dobrzej” nie istnieje.", "Dobrzej doesn't exist."),
+   ("Najlepiej — найвищий ступінь.", "„Najlepiej” — stopień najwyższy.", "Najlepiej is the superlative.")],
+  ("Dobry → lepszy → najlepszy; dobrze → lepiej → najlepiej.", "Dobry → lepszy → najlepszy.", "Dobry → lepszy → najlepszy; dobrze → lepiej → najlepiej.")),
+ ("Po lekcji Monica jest ____ graczką przy stole.", ["najlepszą", "lepszą", "dobrą"], 0,
+  [("Так! Найвищий ступінь + орудний: najlepszą.", "Tak! Stopień najwyższy + narzędnik.", "Yes! Superlative + instrumental: najlepszą."),
+   ("Lepszą — порівняння двох.", "„Lepszą” — porównanie dwóch.", "Lepszą compares two."),
+   ("Dobrą — без порівняння.", "„Dobrą” — bez porównania.", "Dobrą doesn't compare.")],
+  ("Jest najlepszą graczką = She's the best player.", "Jest najlepszą graczką.", "Jest najlepszą graczką = She's the best player.")),
+]
+D[21] = ("Porównaj szóstkę przyjaciół (35+ słów): kto jest najzabawniejszy, kto mądrzejszy od Joeya, kto lubi rywalizację tak jak Monica.", 35,
+ ("Chandler jest najzabawniejszy… Ross jest mądrzejszy niż… Nikt nie jest tak … jak…", "Chandler jest najzabawniejszy… Ross jest mądrzejszy niż… Nikt nie jest tak … jak…", "Chandler jest najzabawniejszy… Ross jest mądrzejszy niż… Nikt nie jest tak … jak…"))
+
+T[22] = ("Що сталося раніше: już + доконаний, zanim", "Co stało się wcześniej: już + dokonany, zanim", "What happened earlier: już + perfective, zanim")
+G[22] = [
+ ("Kiedy Rachel wróciła, Marcel ____ uciekł.", ["już", "jeszcze", "zaraz"], 0,
+  [("Так! Już + доконаний = дія завершилася раніше.", "Tak! Już + dokonany = czynność skończyła się wcześniej.", "Yes! Już + perfective = it was already finished."),
+   ("Jeszcze — «ще», інший зміст.", "„Jeszcze” — inny sens.", "Jeszcze means “still/yet”."),
+   ("Zaraz — «зараз, скоро».", "„Zaraz” — „za chwilę”.", "Zaraz means “in a moment”.")],
+  ("Польська не має Past Perfect: już uciekł = had already escaped.", "Polski nie ma Past Perfect: już uciekł.", "Polish has no Past Perfect: już uciekł = had already escaped.")),
+ ("____ Ross przyjechał, przyjaciele przeszukali cały budynek.", ["Zanim", "Kiedy już", "Po tym"], 0,
+  [("Так! Zanim = by the time / before.", "Tak! Zanim = by the time.", "Yes! Zanim = by the time / before."),
+   ("Kiedy już — неприродно тут.", "„Kiedy już” — tu nienaturalnie.", "Kiedy już sounds unnatural here."),
+   ("Po tym — потрібне «jak».", "„Po tym” wymaga „jak”.", "Po tym needs “jak”.")],
+  ("Zanim + доконаний вид.", "Zanim + aspekt dokonany.", "Zanim + perfective.")),
+]
+D[22] = ("Jesteś Rachel. Napisz do Rossa o tamtym popołudniu (35+ słów): co już się stało, zanim wróciłaś, i co zrobiliście, zanim przyjechał.", 35,
+ ("Kiedy wróciłam, Marcel już… Zanim przyjechałeś, przeszukaliśmy…", "Kiedy wróciłam, Marcel już… Zanim przyjechałeś, przeszukaliśmy…", "Kiedy wróciłam, Marcel już… Zanim przyjechałeś, przeszukaliśmy…"))
+
+T[23] = ("Тривалі дії: spotyka się od dwóch tygodni", "Czynności trwające: spotyka się od dwóch tygodni", "Ongoing actions: spotyka się od dwóch tygodni")
+G[23] = [
+ ("Rachel ____ się z Barrym od dwóch tygodni.", ["spotyka", "spotkała", "spotka"], 0,
+  [("Так! Дія триває досі → теперішній час + od.", "Tak! Czynność trwa → czas teraźniejszy + od.", "Yes! Still going on → present tense + od."),
+   ("Spotkała — один раз у минулому.", "„Spotkała” — raz w przeszłości.", "Spotkała is once in the past."),
+   ("Spotka — майбутнє.", "„Spotka” — przyszłość.", "Spotka is future.")],
+  ("Present Perfect Continuous → польський теперішній + od.", "Present Perfect Continuous → czas teraźniejszy + od.", "Present Perfect Continuous → Polish present + od.")),
+ ("Chandler czeka przy telefonie ____ dziesiątej rano.", ["od", "przez", "za"], 0,
+  [("Так! Od + родовий = з якогось моменту.", "Tak! Od + dopełniacz.", "Yes! Od + genitive = since."),
+   ("Przez — «протягом», інша конструкція.", "„Przez” — inna konstrukcja.", "Przez is a different structure."),
+   ("Za — у майбутньому.", "„Za” — w przyszłości.", "Za means “in” (future).")],
+  ("Od dziesiątej, od wtorku, od dwóch tygodni.", "Od dziesiątej, od wtorku.", "Od dziesiątej, od wtorku, od dwóch tygodni.")),
+]
+D[23] = ("Jesteś Monicą. Napisz wiadomość do Rachel (35+ słów). Zapytaj, od jak dawna spotyka się z Barrym, i napisz, co ostatnio zauważasz.", 35,
+ ("Od jak dawna się z nim spotykasz? Ostatnio ciągle… Martwię się od…", "Od jak dawna się z nim spotykasz? Ostatnio ciągle… Martwię się od…", "Od jak dawna się z nim spotykasz? Ostatnio ciągle… Martwię się od…"))

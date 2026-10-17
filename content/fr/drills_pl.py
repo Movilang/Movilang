@@ -124,3 +124,45 @@ D[17] = [
  ("To nie ____ być prawda!", ["może", "musi", "powinno"], 0, ("Nie może być.", "Nie może być.", "Can't be.")),
  ("____ później padać. Weź parasol.", ["Może", "Musi", "Nie może"], 0, ("Можливо.", "Możliwe.", "Possibly.")),
 ]
+
+# ---- Арка 4
+D[19] = [
+ ("Jesteś siostrą Phoebe, ____?", ["prawda", "czy", "kto"], 0, ("…, prawda?", "…, prawda?", "…, prawda?")),
+ ("Joey ją lubi, ____?", ["nie", "czy", "tak czy"], 0, ("…, nie?", "…, nie?", "…, nie?")),
+ ("____ ona jest miła?", ["Czy", "Prawda", "Nie"], 0, ("Czy на початку.", "Czy na początku.", "Czy at the start.")),
+ ("Możemy iść, ____?", ["prawda", "czy", "jak"], 0, ("…, prawda?", "…, prawda?", "…, prawda?")),
+ ("Nie dzwoniłeś, ____?", ["co", "czy", "kto"], 0, ("…, co? — розмовне.", "…, co? — potocznie.", "…, co? — informal.")),
+ ("Jestem ojcem, ____?", ["prawda", "czy", "kto"], 0, ("…, prawda?", "…, prawda?", "…, prawda?")),
+]
+D[20] = [
+ ("Tak bardzo ____!", ["boli", "bolesny", "ból"], 0, ("Tak bardzo + дієслово.", "Tak bardzo + czasownik.", "Tak bardzo + verb.")),
+ ("To ____ zły pomysł.", ["taki", "tak", "taka"], 0, ("Pomysł → taki.", "Pomysł → taki.", "Pomysł → taki.")),
+ ("Lekarze są ____ przystojni.", ["tacy", "tak bardzo jak", "taki"], 0, ("Чоловіки, мн. → tacy.", "Mężczyźni → tacy.", "Men, plural → tacy.")),
+ ("To ____ mili ludzie.", ["tacy", "taki", "tak"], 0, ("Ludzie → tacy.", "Ludzie → tacy.", "Ludzie → tacy.")),
+ ("Byłam tak zmęczona, ____ spałam cały dzień.", ["że", "żeby", "bo"], 0, ("Tak … że.", "Tak … że.", "Tak … że.")),
+ ("To była ____ długa noc.", ["taka", "taki", "tak"], 0, ("Noc → taka.", "Noc → taka.", "Noc → taka.")),
+]
+D[21] = [
+ ("Chłopaki grają ____ niż dziewczyny.", ["lepiej", "dobrzej", "najlepiej"], 0, ("Dobrze → lepiej.", "Dobrze → lepiej.", "Dobrze → lepiej.")),
+ ("Monica jest ____ graczką.", ["najlepszą", "lepszą", "dobrzejszą"], 0, ("Najlepszą.", "Najlepszą.", "Najlepszą.")),
+ ("Rachel jest ____ niż myśli Joey.", ["mądrzejsza", "mądra", "najmądrzejsza"], 0, ("Вищий ступінь.", "Stopień wyższy.", "Comparative.")),
+ ("Jestem tak dobra ____ ty.", ["jak", "niż", "od"], 0, ("Tak … jak.", "Tak … jak.", "Tak … jak.")),
+ ("To ____ gra w moim życiu!", ["najgorsza", "gorsza", "zła"], 0, ("Zły → najgorszy.", "Zły → najgorszy.", "Zły → najgorszy.")),
+ ("Poker jest ____ niż warcaby.", ["trudniejszy", "trudny", "najtrudniejszy"], 0, ("Вищий ступінь.", "Stopień wyższy.", "Comparative.")),
+]
+D[22] = [
+ ("Kiedy wróciłam, już go nie ____.", ["było", "jest", "będzie"], 0, ("Минулий.", "Przeszły.", "Past.")),
+ ("Zorientowała się, że ____ otwarte drzwi.", ["zostawiła", "zostawia", "zostawi"], 0, ("Доконаний.", "Dokonany.", "Perfective.")),
+ ("Zanim Ross przyjechał, wszystko ____.", ["przeszukaliśmy", "przeszukujemy", "przeszukamy"], 0, ("Доконаний.", "Dokonany.", "Perfective.")),
+ ("Film ____ się zaczął.", ["już", "jeszcze nie", "zaraz"], 0, ("Już.", "Już.", "Już.")),
+ ("Nigdy wcześniej nie ____ małpy.", ["widziałam", "widzę", "zobaczę"], 0, ("Минулий.", "Przeszły.", "Past.")),
+ ("Marcel uciekł, ____ Ross wrócił.", ["zanim", "kiedy już", "potem"], 0, ("Zanim.", "Zanim.", "Zanim.")),
+]
+D[23] = [
+ ("Rachel spotyka się z nim ____ tygodnia.", ["od", "przez", "za"], 0, ("Od + родовий.", "Od + dopełniacz.", "Od + genitive.")),
+ ("Czekam ____ godziny.", ["od", "na", "za"], 0, ("Od godziny.", "Od godziny.", "Od godziny.")),
+ ("Dzwoni ____ poniedziałku.", ["od", "w", "na"], 0, ("Od poniedziałku.", "Od poniedziałku.", "Od poniedziałku.")),
+ ("Od jak dawna tu ____?", ["pracujesz", "pracowałeś raz", "popracujesz"], 0, ("Теперішній.", "Teraźniejszy.", "Present.")),
+ ("Pada ____ dzień.", ["cały", "całego", "całym"], 0, ("Cały dzień.", "Cały dzień.", "Cały dzień.")),
+ ("Chandler ____ od rana.", ["czeka", "zaczekał", "poczeka"], 0, ("Теперішній.", "Teraźniejszy.", "Present.")),
+]

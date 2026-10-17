@@ -124,3 +124,45 @@ D[17] = [
  ("That ____ be true! It's crazy!", ["can't", "must", "might"], 0, ("Неможливо.", "Niemożliwe.", "Impossible.")),
  ("It ____ rain later. Take an umbrella.", ["might", "must", "can't"], 0, ("Можливо.", "Możliwe.", "Possibly.")),
 ]
+
+# ---- Арка 4
+D[19] = [
+ ("You're Phoebe's sister, ____?", ["aren't you", "are you", "don't you"], 0, ("Are → aren't you.", "Are → aren't you.", "Are → aren't you.")),
+ ("Joey likes her, ____?", ["doesn't he", "does he", "isn't he"], 0, ("Likes → doesn't he.", "Likes → doesn't he.", "Likes → doesn't he.")),
+ ("She isn't nice, ____?", ["is she", "isn't she", "does she"], 0, ("Isn't → is she.", "Isn't → is she.", "Isn't → is she.")),
+ ("We can go, ____?", ["can't we", "can we", "don't we"], 0, ("Can → can't we.", "Can → can't we.", "Can → can't we.")),
+ ("You didn't call, ____?", ["did you", "didn't you", "do you"], 0, ("Didn't → did you.", "Didn't → did you.", "Didn't → did you.")),
+ ("I'm the father, ____?", ["aren't I", "am not I", "isn't I"], 0, ("I am → aren't I.", "I am → aren't I.", "I am → aren't I.")),
+]
+D[20] = [
+ ("It hurts ____ much!", ["so", "such", "such a"], 0, ("So + much.", "So + much.", "So + much.")),
+ ("It's ____ bad idea.", ["such a", "so", "so a"], 0, ("Such a + іменник.", "Such a + rzeczownik.", "Such a + noun.")),
+ ("The doctors are ____ handsome.", ["so", "such", "such a"], 0, ("So + прикметник.", "So + przymiotnik.", "So + adjective.")),
+ ("They're ____ nice people.", ["such", "so", "such a"], 0, ("Such + множина.", "Such + l. mnoga.", "Such + plural.")),
+ ("I was ____ tired that I slept all day.", ["so", "such", "such a"], 0, ("So … that.", "So … that.", "So … that.")),
+ ("It was ____ a long night.", ["such", "so", "very"], 0, ("Such a.", "Such a.", "Such a.")),
+]
+D[21] = [
+ ("The guys are ____ than the girls.", ["better", "gooder", "best"], 0, ("Good → better.", "Good → better.", "Good → better.")),
+ ("Monica is ____ player.", ["the best", "the better", "best"], 0, ("The best.", "The best.", "The best.")),
+ ("Rachel is ____ than Joey thinks.", ["smarter", "more smart", "smartest"], 0, ("Smart → smarter.", "Smart → smarter.", "Smart → smarter.")),
+ ("I'm as good ____ you.", ["as", "than", "like"], 0, ("As … as.", "As … as.", "As … as.")),
+ ("This is ____ game of my life!", ["the worst", "the baddest", "worse"], 0, ("Bad → the worst.", "Bad → the worst.", "Bad → the worst.")),
+ ("Poker is ____ than cards for kids.", ["more difficult", "difficulter", "most difficult"], 0, ("Довгий → more.", "Długi → more.", "Long → more.")),
+]
+D[22] = [
+ ("When I came back, he ____.", ["had gone", "has gone", "goes"], 0, ("Had + V3.", "Had + V3.", "Had + past participle.")),
+ ("She realized she ____ the door open.", ["had left", "has left", "leaves"], 0, ("Had left.", "Had left.", "Had left.")),
+ ("By the time Ross arrived, we ____ everywhere.", ["had looked", "have looked", "look"], 0, ("By the time → had.", "By the time → had.", "By the time → had.")),
+ ("The film ____ already started.", ["had", "has had", "was"], 0, ("Had + V3.", "Had + V3.", "Had + past participle.")),
+ ("I ____ never seen a monkey before that day.", ["had", "have", "was"], 0, ("Had never.", "Had never.", "Had never.")),
+ ("Marcel had ____ before Ross came.", ["escaped", "escape", "escaping"], 0, ("V3.", "V3.", "Past participle.")),
+]
+D[23] = [
+ ("Rachel has ____ seeing Barry.", ["been", "be", "being"], 0, ("Has been + -ing.", "Has been + -ing.", "Has been + -ing.")),
+ ("I've been waiting ____ an hour.", ["for", "since", "ago"], 0, ("For + період.", "For + okres.", "For + a period.")),
+ ("He's been calling ____ Monday.", ["since", "for", "from"], 0, ("Since + момент.", "Since + moment.", "Since + a point.")),
+ ("How long ____ you been working here?", ["have", "are", "did"], 0, ("How long have you…", "How long have you…", "How long have you…")),
+ ("It's been ____ all day.", ["raining", "rain", "rained"], 0, ("Been + -ing.", "Been + -ing.", "Been + -ing.")),
+ ("Chandler ____ been waiting all day.", ["has", "have", "is"], 0, ("He → has.", "He → has.", "He → has.")),
+]
