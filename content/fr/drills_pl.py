@@ -166,3 +166,43 @@ D[23] = [
  ("Pada ____ dzień.", ["cały", "całego", "całym"], 0, ("Cały dzień.", "Cały dzień.", "Cały dzień.")),
  ("Chandler ____ od rana.", ["czeka", "zaczekał", "poczeka"], 0, ("Теперішній.", "Teraźniejszy.", "Present.")),
 ]
+D[25] = [
+ ("____ używa mojej karty!", ["Ktoś", "Nikt", "Każdy nic"], 0, ("Ktoś.", "Ktoś.", "Ktoś.")),
+ ("Czy jest ____ w kuchni?", ["ktoś", "nikt", "nic"], 0, ("Pytanie → ktoś.", "Pytanie → ktoś.", "Question → ktoś.")),
+ ("Nic ____ widziałem.", ["nie", "tak", "już"], 0, ("Nic nie.", "Nic nie.", "Nic nie.")),
+ ("____ nie zna prawdy.", ["Nikt", "Ktoś", "Każdy"], 0, ("Nikt nie.", "Nikt nie.", "Nikt nie.")),
+ ("Chcę pojechać ____ daleko.", ["gdzieś", "nigdzie", "gdzie"], 0, ("Gdzieś.", "Gdzieś.", "Gdzieś.")),
+ ("____ jest gotowe!", ["Wszystko", "Nic", "Coś nie"], 0, ("Wszystko.", "Wszystko.", "Wszystko.")),
+]
+D[26] = [
+ ("Kiedy był mały, ____ szybko się wspinać.", ["mógł", "może", "będzie mógł"], 0, ("Przeszłość.", "Przeszłość.", "Past.")),
+ ("Teraz ____ otworzyć lodówkę.", ["umie", "umiał", "umieć"], 0, ("Teraz.", "Teraz.", "Now.")),
+ ("W zoo ____ się bawić.", ["będzie mógł", "mógł", "może był"], 0, ("Przyszłość.", "Przyszłość.", "Future.")),
+ ("Nie ____ pływać, kiedy miałam pięć lat.", ["umiałam", "umiem", "będę umiała"], 0, ("Przeszłość.", "Przeszłość.", "Past.")),
+ ("____ mi pomóc?", ["Możesz", "Jesteś", "Masz"], 0, ("Prośba.", "Prośba.", "Request.")),
+ ("On umie ____ na gitarze.", ["grać", "gra", "grał"], 0, ("Bezokolicznik.", "Bezokolicznik.", "Infinitive.")),
+]
+D[27] = [
+ ("Jeśli pager ____, pobiegnę.", ["zapiszczy", "zapiszczał", "piszczał"], 0, ("Czas przyszły.", "Czas przyszły.", "Future.")),
+ ("Jeśli się spóźnisz, ____ zły.", ["będę", "byłem", "jestem był"], 0, ("Będę.", "Będę.", "Będę.")),
+ ("Nie pójdę, ____ Carol zadzwoni.", ["chyba że", "jeśli nie", "bo"], 0, ("Chyba że = unless.", "Chyba że.", "Chyba że = unless.")),
+ ("Jeśli będzie padać, ____ w domu.", ["zostaniemy", "zostaliśmy", "zostać"], 0, ("Przyszły.", "Przyszły.", "Future.")),
+ ("Jeśli się nie ____, spóźnisz się.", ["pospieszysz", "pospieszyłeś", "spieszyć"], 0, ("Przyszły.", "Przyszły.", "Future.")),
+ ("Co zrobisz, jeśli on ____?", ["zadzwoni", "zadzwonił", "dzwonić"], 0, ("Przyszły.", "Przyszły.", "Future.")),
+]
+D[28] = [
+ ("Zadzwonię, jak tylko dziecko się ____.", ["urodzi", "urodziło", "rodzić"], 0, ("Przyszły.", "Przyszły.", "Future.")),
+ ("Czekaj, ____ lekarz przyjdzie.", ["aż", "czy", "bo"], 0, ("Aż.", "Aż.", "Aż.")),
+ ("____ wejdziesz, umyj ręce.", ["Zanim", "Po", "Aż"], 0, ("Zanim.", "Zanim.", "Zanim.")),
+ ("Kiedy ____ do domu, pójdzie spać.", ["wróci", "wrócił", "wracać"], 0, ("Przyszły.", "Przyszły.", "Future.")),
+ ("Zjemy, ____ impreza się skończy.", ["kiedy", "czy", "aby"], 0, ("Kiedy.", "Kiedy.", "Kiedy.")),
+ ("Zostanę, aż ____ się lepiej.", ["poczujesz", "poczułeś", "czuć"], 0, ("Przyszły.", "Przyszły.", "Future.")),
+]
+D[29] = [
+ ("____ to dziecko?", ["Czyje", "Czyj", "Kto"], 0, ("Dziecko → czyje.", "Czyje.", "Neuter → czyje.")),
+ ("Ten kocyk jest ____.", ["mój", "moja", "moje"], 0, ("Kocyk (m.) → mój.", "Mój.", "Masculine → mój.")),
+ ("Czy ten płaszcz jest ____?", ["twój", "twoja", "twoje"], 0, ("Twój.", "Twój.", "Twój.")),
+ ("On jest ____.", ["nasz", "nasza", "nasze"], 0, ("Nasz.", "Nasz.", "Nasz.")),
+ ("To nie moja kawa, tylko ____.", ["jej", "ją", "ona"], 0, ("Jej.", "Jej.", "Jej.")),
+ ("Mieszkanie jest ____.", ["ich", "im", "oni"], 0, ("Ich.", "Ich.", "Ich.")),
+]

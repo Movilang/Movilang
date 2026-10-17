@@ -166,3 +166,43 @@ D[23] = [
  ("It's been ____ all day.", ["raining", "rain", "rained"], 0, ("Been + -ing.", "Been + -ing.", "Been + -ing.")),
  ("Chandler ____ been waiting all day.", ["has", "have", "is"], 0, ("He → has.", "He → has.", "He → has.")),
 ]
+D[25] = [
+ ("____ is using my credit card!", ["Someone", "Anyone", "No one"], 0, ("Ствердження → someone.", "Twierdzenie → someone.", "Positive → someone.")),
+ ("Is there ____ in the kitchen?", ["anyone", "someone nothing", "no one"], 0, ("Питання → anyone.", "Pytanie → anyone.", "Question → anyone.")),
+ ("I didn't see ____.", ["anything", "nothing", "something"], 0, ("Didn't + anything.", "Didn't + anything.", "Didn't + anything.")),
+ ("____ knows the truth. It's a secret.", ["No one", "Anyone", "Someone not"], 0, ("No one + ствердне дієслово.", "No one + twierdzące.", "No one + positive verb.")),
+ ("I want to go ____ new.", ["somewhere", "anywhere", "nowhere"], 0, ("Somewhere.", "Somewhere.", "Somewhere.")),
+ ("____ is ready for the party!", ["Everything", "Anything", "Nothing not"], 0, ("Everything + is.", "Everything + is.", "Everything + is.")),
+]
+D[26] = [
+ ("When he was young, Marcel ____ climb fast.", ["could", "can", "will be able to"], 0, ("Минуле → could.", "Przeszłość → could.", "Past → could.")),
+ ("Now he ____ open the fridge.", ["can", "could to", "cans"], 0, ("Зараз → can.", "Teraz → can.", "Now → can.")),
+ ("In the zoo, he ____ be able to play with friends.", ["will", "can", "could"], 0, ("Will be able to.", "Will be able to.", "Will be able to.")),
+ ("I ____ swim when I was five.", ["couldn't", "can't", "won't be able"], 0, ("Минуле → couldn't.", "Przeszłość → couldn't.", "Past → couldn't.")),
+ ("____ you help me with this box?", ["Can", "Are", "Do"], 0, ("Прохання → Can.", "Prośba → Can.", "Request → Can.")),
+ ("He can ____ the guitar.", ["play", "to play", "plays"], 0, ("Can + V.", "Can + V.", "Can + base verb.")),
+]
+D[27] = [
+ ("If the pager ____, I'll run.", ["beeps", "will beep", "beeped"], 0, ("If + Present.", "If + Present.", "If + Present.")),
+ ("If you're late, I ____ angry.", ["'ll be", "am being", "was"], 0, ("… will.", "… will.", "… will.")),
+ ("I won't go ____ Carol calls.", ["unless", "if", "so"], 0, ("Unless = if not.", "Unless = if not.", "Unless = if not.")),
+ ("If it rains, we ____ stay home.", ["will", "would", "did"], 0, ("Will.", "Will.", "Will.")),
+ ("____ you hurry, you'll miss it.", ["Unless", "If", "When not"], 0, ("Unless.", "Unless.", "Unless.")),
+ ("What will you do if he ____?", ["calls", "will call", "called"], 0, ("If + Present.", "If + Present.", "If + Present.")),
+]
+D[28] = [
+ ("I'll call you as soon as the baby ____.", ["is born", "will be born", "was born"], 0, ("Без will.", "Bez will.", "No will.")),
+ ("Wait here until the doctor ____.", ["comes", "will come", "came"], 0, ("Until + Present.", "Until + Present.", "Until + Present.")),
+ ("____ you go in, wash your hands.", ["Before", "After", "Until"], 0, ("Before.", "Before.", "Before.")),
+ ("When he ____ home, he'll sleep.", ["gets", "will get", "got"], 0, ("When + Present.", "When + Present.", "When + Present.")),
+ ("We'll eat ____ the party ends.", ["after", "until before", "as"], 0, ("After.", "After.", "After.")),
+ ("I'll stay ____ you feel better.", ["until", "before", "as soon"], 0, ("Until.", "Until.", "Until.")),
+]
+D[29] = [
+ ("____ baby is this?", ["Whose", "Who's", "Who"], 0, ("Whose = чий.", "Whose = czyj.", "Whose = possession.")),
+ ("This blanket is ____.", ["mine", "my", "me"], 0, ("Без іменника → mine.", "Bez rzeczownika → mine.", "No noun → mine.")),
+ ("Is this coat ____?", ["yours", "your", "you"], 0, ("Yours.", "Yours.", "Yours.")),
+ ("He's not only mine. He's ____.", ["ours", "our", "us"], 0, ("Ours.", "Ours.", "Ours.")),
+ ("That's not my coffee, it's ____.", ["hers", "her", "she"], 0, ("Hers.", "Hers.", "Hers.")),
+ ("The apartment is ____.", ["theirs", "their", "them"], 0, ("Theirs.", "Theirs.", "Theirs.")),
+]

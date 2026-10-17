@@ -327,3 +327,84 @@ G[23] = [
 ]
 D[23] = ("Jesteś Monicą. Napisz wiadomość do Rachel (35+ słów). Zapytaj, od jak dawna spotyka się z Barrym, i napisz, co ostatnio zauważasz.", 35,
  ("Od jak dawna się z nim spotykasz? Ostatnio ciągle… Martwię się od…", "Od jak dawna się z nim spotykasz? Ostatnio ciągle… Martwię się od…", "Od jak dawna się z nim spotykasz? Ostatnio ciągle… Martwię się od…"))
+
+# ---- Арка 5
+T[25] = ("Ktoś / nikt / coś / nic / wszystko (+ подвійне заперечення)", "Ktoś / nikt / coś / nic / wszystko (+ podwójne przeczenie)", "Ktoś / nikt / coś / nic / wszystko (+ double negatives)")
+G[25] = [
+ ("Monica: „____ używa mojej karty!”", ["Ktoś", "Nikt", "Każdy"], 0,
+  [("Так! Одна невідома людина → ktoś.", "Tak! Jedna nieznana osoba → ktoś.", "Yes! One unknown person → ktoś."),
+   ("Nikt — «ніхто», а картку таки використовують.", "„Nikt” — a karta jest używana.", "Nikt means nobody — but the card is being used."),
+   ("Każdy — «кожен».", "„Każdy” — każda osoba.", "Każdy means everyone.")],
+  ("Ktoś, coś, gdzieś — у ствердженнях.", "Ktoś, coś, gdzieś — w twierdzeniach.", "Ktoś, coś, gdzieś — in positive sentences.")),
+ ("Na lekcji tańca ____ nie zna prawdy.", ["nikt", "ktoś", "każdy"], 0,
+  [("Так! Nikt + nie — польське подвійне заперечення.", "Tak! Nikt + nie — podwójne przeczenie.", "Yes! Nikt + nie — the Polish double negative."),
+   ("Ktoś nie zna — інший зміст.", "„Ktoś nie zna” — inny sens.", "Ktoś nie zna changes the meaning."),
+   ("Każdy nie zna — неприродно.", "„Każdy nie zna” — nienaturalnie.", "Każdy nie zna sounds unnatural.")],
+  ("Англійська: no one knows (одне заперечення). Польська: nikt nie wie (два).", "Angielski: jedno przeczenie. Polski: nikt nie wie.", "English: no one knows (one negative). Polish: nikt nie wie (two).")),
+]
+D[25] = ("Jesteś Monicą. Napisz w pamiętniku o fałszywej Monice (35+ słów). Użyj: ktoś, nikt nie, coś, nic nie, wszystko, gdzieś.", 35,
+ ("Ktoś… Nikt nie… Nigdy nie robię nic… Chcę gdzieś…", "Ktoś… Nikt nie… Nigdy nie robię nic… Chcę gdzieś…", "Ktoś… Nikt nie… Nigdy nie robię nic… Chcę gdzieś…"))
+
+T[26] = ("Уміння: umie / mógł / będzie mógł", "Umiejętności: umie / mógł / będzie mógł", "Ability: umie / mógł / będzie mógł")
+G[26] = [
+ ("Kiedy Marcel był mały, ____ spać na ramieniu Rossa.", ["mógł", "może", "będzie mógł"], 0,
+  [("Так! Минуле → mógł.", "Tak! Przeszłość → mógł.", "Yes! Past → mógł."),
+   ("Może — теперішній.", "„Może” — teraźniejszy.", "Może is present."),
+   ("Będzie mógł — майбутнє.", "„Będzie mógł” — przyszłość.", "Będzie mógł is future.")],
+  ("Móc: mogę / mógł / będę mógł.", "Móc: mogę / mógł / będę mógł.", "Móc: mogę / mógł / będę mógł.")),
+ ("Teraz Marcel ____ sam otworzyć lodówkę.", ["umie", "umiał", "umieć"], 0,
+  [("Так! Уміння зараз → umie.", "Tak! Umiejętność teraz → umie.", "Yes! Ability now → umie."),
+   ("Umiał — минуле.", "„Umiał” — przeszłość.", "Umiał is past."),
+   ("Umieć — інфінітив.", "„Umieć” — bezokolicznik.", "Umieć is the infinitive.")],
+  ("Umieć — навичка (umiem pływać); móc — можливість.", "Umieć — umiejętność; móc — możliwość.", "Umieć = a skill; móc = a possibility.")),
+]
+D[26] = ("Jesteś Rossem. Napisz list do Marcela w zoo (35+ słów): co mógł robić, kiedy był mały, co umie teraz i co będzie mógł robić w zoo.", 35,
+ ("Kiedy byłeś mały, mogłeś… Teraz umiesz… W zoo będziesz mógł…", "Kiedy byłeś mały, mogłeś… Teraz umiesz… W zoo będziesz mógł…", "Kiedy byłeś mały, mogłeś… Teraz umiesz… W zoo będziesz mógł…"))
+
+T[27] = ("Jeśli + майбутній час: Jeśli zapiszczy, pobiegnie", "Jeśli + czas przyszły: Jeśli zapiszczy, pobiegnie", "Jeśli + future: Jeśli zapiszczy, pobiegnie")
+G[27] = [
+ ("Jeśli pager ____, Ross pobiegnie do szpitala.", ["zapiszczy", "zapiszczał", "piszczy zawsze"], 0,
+  [("Так! У польській після jeśli — майбутній час (на відміну від англійської).", "Tak! Po polsku po jeśli — czas przyszły.", "Yes! In Polish, jeśli takes the future (unlike English)."),
+   ("Zapiszczał — минуле.", "„Zapiszczał” — przeszłość.", "Zapiszczał is past."),
+   ("Zawsze — звичка.", "„Zawsze” — nawyk.", "Zawsze is a habit.")],
+  ("Англійська: If it beeps (теперішній). Польська: Jeśli zapiszczy (майбутній).", "Angielski: If it beeps. Polski: Jeśli zapiszczy.", "English: If it beeps (present). Polish: Jeśli zapiszczy (future).")),
+ ("Ross nie wyjdzie, ____ Carol go nie wezwie.", ["dopóki", "jeśli", "kiedy"], 0,
+  [("Так! Dopóki … nie = unless / until.", "Tak! Dopóki … nie.", "Yes! Dopóki … nie = until/unless."),
+   ("Jeśli … nie — можливо, але сенс інший.", "„Jeśli … nie” — możliwe, ale inny sens.", "Jeśli … nie is possible but slightly different."),
+   ("Kiedy … nie — неприродно.", "„Kiedy … nie” — nienaturalnie.", "Kiedy … nie sounds unnatural.")],
+  ("Chyba że = unless: Wyjdzie, chyba że zadzwoni.", "Chyba że = unless.", "Chyba że = unless.")),
+]
+D[27] = ("Jesteś Chandlerem. Napisz nowe zasady dla zespołu (35+ słów): co się stanie, jeśli ktoś się spóźni, a co, jeśli wszyscy będą pracować dobrze.", 35,
+ ("Jeśli się spóźnisz, … Jeśli skończycie…, … Chyba że…", "Jeśli się spóźnisz, … Jeśli skończycie…, … Chyba że…", "Jeśli się spóźnisz, … Jeśli skończycie…, … Chyba że…"))
+
+T[28] = ("Kiedy / jak tylko / zanim / aż + майбутній час", "Kiedy / jak tylko / zanim / aż + czas przyszły", "Kiedy / jak tylko / zanim / aż + future")
+G[28] = [
+ ("Jak tylko dziecko się ____, pielęgniarka zadzwoni do rodziny.", ["urodzi", "rodzi", "urodziło"], 0,
+  [("Так! Після jak tylko — майбутній доконаний.", "Tak! Po jak tylko — czas przyszły dokonany.", "Yes! After jak tylko — perfective future."),
+   ("Rodzi — теперішній.", "„Rodzi” — teraźniejszy.", "Rodzi is present."),
+   ("Urodziło — минуле.", "„Urodziło” — przeszłość.", "Urodziło is past.")],
+  ("Англійська: as soon as it is born. Польська: jak tylko się urodzi.", "Angielski: as soon as it is born. Polski: jak tylko się urodzi.", "English: as soon as it is born. Polish: jak tylko się urodzi (future).")),
+ ("Przyjaciele poczekają, ____ dziecko się urodzi.", ["aż", "jeśli", "czy"], 0,
+  [("Так! Aż = until.", "Tak! Aż = until.", "Yes! Aż = until."),
+   ("Jeśli — умова.", "„Jeśli” — warunek.", "Jeśli is a condition."),
+   ("Czy — питання.", "„Czy” — pytanie.", "Czy is a question word.")],
+  ("Poczekam, aż… / Zanim wejdziesz…", "Poczekam, aż… / Zanim wejdziesz…", "Poczekam, aż… / Zanim wejdziesz…")),
+]
+D[28] = ("Jesteś Rossem. Napisz list do syna (35+ słów): co zrobisz, kiedy się urodzi, jak tylko zacznie chodzić, zanim pójdzie do szkoły.", 35,
+ ("Kiedy się urodzisz, … Jak tylko zaczniesz chodzić, … Zanim pójdziesz do szkoły…", "Kiedy się urodzisz, … Jak tylko zaczniesz chodzić, … Zanim pójdziesz do szkoły…", "Kiedy się urodzisz, … Jak tylko zaczniesz chodzić, … Zanim pójdziesz do szkoły…"))
+
+T[29] = ("Присвійні: mój / twój / nasz / ich / czyj", "Zaimki dzierżawcze: mój / twój / nasz / ich / czyj", "Possessives: mój / twój / nasz / ich / czyj")
+G[29] = [
+ ("Pielęgniarka: „____ to dziecko?”", ["Czyje", "Czyj", "Czyja"], 0,
+  [("Так! Dziecko — середній рід → czyje.", "Tak! Dziecko (r. nijaki) → czyje.", "Yes! Dziecko is neuter → czyje."),
+   ("Czyj — чоловічий рід.", "„Czyj” — r. męski.", "Czyj is masculine."),
+   ("Czyja — жіночий рід.", "„Czyja” — r. żeński.", "Czyja is feminine.")],
+  ("Czyj (m.), czyja (ż.), czyje (n.) — узгоджується з іменником.", "Czyj, czyja, czyje — zgodnie z rodzajem.", "Czyj, czyja, czyje — agrees with the noun.")),
+ ("Carol: „On nie jest tylko mój. Jest ____.”", ["nasz", "nasza", "nasze"], 0,
+  [("Так! Він (син) → nasz.", "Tak! On (syn) → nasz.", "Yes! He (the son) → nasz."),
+   ("Nasza — жіночий рід.", "„Nasza” — r. żeński.", "Nasza is feminine."),
+   ("Nasze — середній рід.", "„Nasze” — r. nijaki.", "Nasze is neuter.")],
+  ("Польська не має окремої форми mine/ours: mój, nasz — і з іменником, і без.", "Polski nie ma osobnej formy: mój, nasz.", "Polish uses the same form with or without a noun: mój, nasz.")),
+]
+D[29] = ("Jesteś Rossem. Napisz kartkę do pierwszego zdjęcia Bena (35+ słów): czyje ma oczy, czyj nos, czyj kocyk. Użyj: mój, twój, jego, jej, nasz, ich, czyj.", 35,
+ ("Ma moje oczy… Jego nos jest… Kocyk jest jej… Jest nasz…", "Ma moje oczy… Jego nos jest… Kocyk jest jej… Jest nasz…", "Ma moje oczy… Jego nos jest… Kocyk jest jej… Jest nasz…"))
