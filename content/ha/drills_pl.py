@@ -200,3 +200,37 @@ D[29] = [
  ("Kevin śpi ____.", ["w nocy", "na noc", "o nocy"], 0, ("W nocy.", "W nocy.", "W nocy = at night.")),
  ("Prezenty są ____ Boże Narodzenie.", ["na", "o", "w"], 0, ("Na święta = на свята.", "Na święta.", "Na = for (an occasion).")),
 ]
+
+# ---- Арка 6
+D[31] = [
+ ("____ Kevin polewa schody.", ["Najpierw", "Na koniec", "Po tym"], 0, ("Перший крок.", "Pierwszy krok.", "The first step.")),
+ ("Najpierw schody, ____ drzwi.", ["potem", "najpierw", "wcześniej"], 0, ("Potem = потім.", "Potem.", "Potem = then.")),
+ ("____ wiesza puszki.", ["Następnie", "Najpierw", "Wczoraj"], 0, ("Następnie = далі.", "Następnie.", "Następnie = next.")),
+ ("Po ____ rozkłada zabawki.", ["tym", "to", "ten"], 0, ("Po tym = після цього.", "Po tym.", "Po tym = after that.")),
+ ("____ czeka na dziewiątą.", ["Na koniec", "Najpierw", "Na początku"], 0, ("Останній крок.", "Ostatni krok.", "The last step.")),
+ ("Kevin zastawia pułapki ____ przyjściem bandytów.", ["przed", "po", "za"], 0, ("Przed + орудний.", "Przed + narzędnik.", "Przed + instrumental.")),
+]
+D[32] = [
+ ("Kevin jest bardzo ____.", ["podekscytowany", "ekscytujący", "ekscytować"], 0, ("Людина відчуває → -any.", "Osoba czuje → -any.", "A person feels → -any.")),
+ ("Ten plan jest ____!", ["ekscytujący", "podekscytowany", "ekscytować"], 0, ("Річ → -ący.", "Rzecz → -ący.", "A thing → -ący.")),
+ ("Harry jest ____ — klamka parzy!", ["zirytowany", "irytujący", "irytować"], 0, ("Почуття → -owany.", "Uczucie → -owany.", "Feeling → -owany.")),
+ ("Śliskie schody są ____.", ["irytujące", "zirytowane", "irytować"], 0, ("Річ → -ące.", "Rzecz → -ące.", "Thing → -ące.")),
+ ("Marv jest ____ w ciemnej piwnicy.", ["przerażony", "przerażający", "przerażać"], 0, ("Людина → -ony.", "Osoba → -ony.", "Person → -ony.")),
+ ("To była ____ noc.", ["męcząca", "zmęczona", "męczyć"], 0, ("Ніч → -ąca.", "Noc → -ąca.", "Night → -ąca.")),
+]
+D[33] = [
+ ("____ zadzwoniłem na policję.", ["Właśnie", "Jeszcze nie", "Nigdy"], 0, ("Właśnie = щойно.", "Właśnie.", "Właśnie = just.")),
+ ("Czy ____ znaleźli Kevina?", ["już", "jeszcze nie", "właśnie nie"], 0, ("Питання → już.", "Pytanie → już.", "Question → już.")),
+ ("Marv ____ dwa razy upadł.", ["już", "jeszcze", "nigdy"], 0, ("Już = уже.", "Już.", "Już = already.")),
+ ("Policja jeszcze ____ przyjechała.", ["nie", "już", "tak"], 0, ("Jeszcze nie.", "Jeszcze nie.", "Jeszcze nie.")),
+ ("Harry ____ sobie rękę.", ["oparzył", "parzyć", "parzy się"], 0, ("Минулий доконаний.", "Przeszły dokonany.", "Past perfective.")),
+ ("Kevin właśnie ____.", ["uciekł", "ucieka zawsze", "uciekać"], 0, ("Właśnie + минулий.", "Właśnie + przeszły.", "Właśnie + past.")),
+]
+D[34] = [
+ ("Marley to człowiek, ____ uratował Kevina.", ["który", "która", "gdzie"], 0, ("Чол. рід → który.", "R. męski → który.", "Masculine → który.")),
+ ("To łopata, ____ użył.", ["której", "który", "gdzie"], 0, ("Użyć + родовий: której.", "Użyć + dopełniacz: której.", "Użyć + genitive: której.")),
+ ("To dom, ____ to się stało.", ["gdzie", "który", "kto"], 0, ("Місце → gdzie.", "Miejsce → gdzie.", "Place → gdzie.")),
+ ("Bandyci, ____ zalewali domy, są w więzieniu.", ["którzy", "który", "które"], 0, ("Чоловіки, множина → którzy.", "Mężczyźni → którzy.", "Men, plural → którzy.")),
+ ("Furgonetka, ____ przywiozła Kate, była pełna muzyki.", ["która", "który", "gdzie"], 0, ("Жін. рід → która.", "R. żeński → która.", "Feminine → która.")),
+ ("Chicago to miasto, ____ mieszka Kevin.", ["gdzie", "które", "kto"], 0, ("Місце → gdzie.", "Miejsce → gdzie.", "Place → gdzie.")),
+]

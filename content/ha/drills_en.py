@@ -200,3 +200,37 @@ D[29] = [
  ("Kevin sleeps ____ night.", ["at", "in", "on"], 0, ("At night.", "At night.", "At night.")),
  ("Presents ____ Christmas Day!", ["on", "in", "at"], 0, ("On Christmas Day.", "On Christmas Day.", "On Christmas Day.")),
 ]
+
+# ---- Арка 6
+D[31] = [
+ ("____, Kevin pours water on the steps.", ["First", "Finally", "After that"], 0, ("Перший крок.", "Pierwszy krok.", "The first step.")),
+ ("First the steps, ____ the door.", ["then", "first", "finally that"], 0, ("Then — далі.", "Then — potem.", "Then — next.")),
+ ("____ that, he hangs the cans.", ["After", "Then", "First"], 0, ("After that.", "After that.", "After that.")),
+ ("____, he puts toys on the floor.", ["Next", "First of", "Afterly"], 0, ("Next.", "Next.", "Next.")),
+ ("And ____, he waits for nine.", ["finally", "first", "then that"], 0, ("Останній крок.", "Ostatni krok.", "The last step.")),
+ ("Kevin sets the traps ____ the bandits come.", ["before", "after", "then"], 0, ("Before = до.", "Before = przed.", "Before.")),
+]
+D[32] = [
+ ("Kevin is very ____ about the battle.", ["excited", "exciting", "excite"], 0, ("Людина → -ed.", "Osoba → -ed.", "Person → -ed.")),
+ ("This plan is really ____!", ["exciting", "excited", "excites"], 0, ("Річ → -ing.", "Rzecz → -ing.", "Thing → -ing.")),
+ ("Harry is ____ — the door is hot!", ["annoyed", "annoying", "annoy"], 0, ("Почуття → -ed.", "Uczucie → -ed.", "Feeling → -ed.")),
+ ("The icy steps are very ____.", ["annoying", "annoyed", "annoy"], 0, ("Річ → -ing.", "Rzecz → -ing.", "Thing → -ing.")),
+ ("Marv is ____ in the dark basement.", ["frightened", "frightening", "fright"], 0, ("Людина → -ed.", "Osoba → -ed.", "Person → -ed.")),
+ ("It was a ____ night for the bandits.", ["tiring", "tired", "tire"], 0, ("Ніч → -ing.", "Noc → -ing.", "The night → -ing.")),
+]
+D[33] = [
+ ("I've ____ called the police.", ["just", "yet", "ever"], 0, ("Just = щойно.", "Just = właśnie.", "Just = a moment ago.")),
+ ("Have they found Kevin ____?", ["yet", "just", "already"], 0, ("Питання → yet.", "Pytanie → yet.", "Question → yet.")),
+ ("Marv has ____ fallen twice.", ["already", "yet", "ever"], 0, ("Already = уже.", "Already = już.", "Already.")),
+ ("The police haven't arrived ____.", ["yet", "already", "just"], 0, ("Заперечення → yet.", "Przeczenie → yet.", "Negative → yet.")),
+ ("Harry has ____ his hand.", ["burnt", "burn", "burning"], 0, ("Have + V3.", "Have + V3.", "Have + V3.")),
+ ("Kevin ____ just escaped.", ["has", "have", "is"], 0, ("Kevin → has.", "Kevin → has.", "Kevin → has.")),
+]
+D[34] = [
+ ("Marley is the man ____ saved Kevin.", ["who", "which", "where"], 0, ("Людина → who.", "Osoba → who.", "Person → who.")),
+ ("This is the shovel ____ he used.", ["which", "who", "where"], 0, ("Річ → which.", "Rzecz → which.", "Thing → which.")),
+ ("That's the house ____ it happened.", ["where", "who", "which"], 0, ("Місце → where.", "Miejsce → where.", "Place → where.")),
+ ("The bandits ____ flooded houses are in jail.", ["who", "which", "where"], 0, ("Люди → who.", "Ludzie → who.", "People → who.")),
+ ("The van ____ brought Kate was full of music.", ["which", "who", "where"], 0, ("Річ → which.", "Rzecz → which.", "Thing → which.")),
+ ("Chicago is the city ____ Kevin lives.", ["where", "which", "who"], 0, ("Місце → where.", "Miejsce → where.", "Place → where.")),
+]

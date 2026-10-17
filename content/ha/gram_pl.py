@@ -383,3 +383,68 @@ G[29] = [
 ]
 D[29] = ("Napisz pocztówkę z Paryża od Buzza do Kevina (35+ słów). Użyj: w niedzielę, o siódmej, w grudniu, rano, wieczorem.", 35,
  ("W + день/місяць, o + година.", "W + dzień/miesiąc, o + godzina.", "W + day/month, o + time."))
+
+# ---- Арка 6
+T[31] = ("Порядок дій: najpierw, potem, następnie, na koniec", "Kolejność: najpierw, potem, następnie, na koniec", "Sequencing: najpierw, potem, następnie, na koniec")
+G[31] = [
+ ("____ Kevin polewa schody wodą, potem idzie do drzwi.", ["Najpierw", "Na koniec", "Wreszcie"], 0,
+  [("Так! Najpierw = спочатку, перший крок.", "Tak! Najpierw — pierwszy krok.", "Yes! Najpierw = first."),
+   ("Na koniec — останній крок.", "„Na koniec” to ostatni krok.", "Na koniec is the last step."),
+   ("Wreszcie — «нарешті», після чекання.", "„Wreszcie” — po długim czekaniu.", "Wreszcie = at last, after waiting.")],
+  ("Najpierw → potem → następnie → na koniec.", "Najpierw → potem → następnie → na koniec.", "Najpierw → potem → następnie → na koniec.")),
+ ("Kevin wiesza puszki. ____ rozkłada zabawki na podłodze.", ["Następnie", "Najpierw", "Wcześniej"], 0,
+  [("Так! Następnie = далі, наступним кроком.", "Tak! Następnie — kolejny krok.", "Yes! Następnie = next."),
+   ("Najpierw — перший крок, а тут уже другий.", "„Najpierw” — pierwszy krok, a to już drugi.", "Najpierw is the first step."),
+   ("Wcześniej — «раніше», назад у часі.", "„Wcześniej” cofa nas w czasie.", "Wcześniej means earlier.")],
+  ("Następnie — книжне, potem — розмовне.", "„Następnie” — bardziej książkowe, „potem” — potoczne.", "Następnie is more formal than potem.")),
+]
+D[31] = ("Napisz plan Kevina jako instrukcję (35+ słów). Użyj: najpierw, potem, następnie, po tym, na koniec.", 35,
+ ("Najpierw polej schody… Potem…", "Najpierw polej schody… Potem…", "Najpierw polej schody… Potem…"))
+
+T[32] = ("Почуття і враження: zaskoczony / zaskakujący", "Uczucia i wrażenia: zaskoczony / zaskakujący", "Feelings and impressions: zaskoczony / zaskakujący")
+G[32] = [
+ ("Bandyci są ____: dom nie jest pusty!", ["zaskoczeni", "zaskakujący", "zaskoczony"], 0,
+  [("Так! Що відчувають люди → -ony/-eni: zaskoczeni.", "Tak! Uczucie ludzi → zaskoczeni.", "Yes! How people feel → zaskoczeni."),
+   ("Zaskakujący — про річ або ситуацію.", "„Zaskakujący” — o rzeczy lub sytuacji.", "Zaskakujący describes a thing or situation."),
+   ("Zaskoczony — однина, а бандитів двоє.", "„Zaskoczony” — liczba pojedyncza.", "Zaskoczony is singular.")],
+  ("Ktoś jest zaskoczony; coś jest zaskakujące.", "Ktoś jest zaskoczony; coś jest zaskakujące.", "Ktoś jest zaskoczony; coś jest zaskakujące.")),
+ ("Ta noc jest naprawdę ____.", ["przerażająca", "przerażona", "przerażony"], 0,
+  [("Так! Noc (річ) → -ąca: przerażająca.", "Tak! Noc (rzecz) → przerażająca.", "Yes! The night (a thing) → przerażająca."),
+   ("Przerażona — про людину, яка боїться.", "„Przerażona” — o osobie, która się boi.", "Przerażona describes a frightened person."),
+   ("Przerażony — чоловічий рід і про людину.", "„Przerażony” — o mężczyźnie, który się boi.", "Przerażony is about a frightened man.")],
+  ("-ący/-ąca — викликає почуття; -ony/-ona — відчуває.", "-ący/-ąca wywołuje uczucie; -ony/-ona je odczuwa.", "-ący causes the feeling; -ony feels it.")),
+]
+D[32] = ("Opisz dziewiątą wieczorem z dwóch stron: bandytów i Kevina (35+ słów). Użyj par: zaskoczony / zaskakujący, przerażony / przerażający, zmęczony / męczący.", 35,
+ ("Człowiek jest -ony, sytuacja jest -ąca.", "Człowiek jest -ony, sytuacja jest -ąca.", "A person is -ony, a situation is -ąca."))
+
+T[33] = ("Щойно, уже, ще не: właśnie, już, jeszcze nie", "Właśnie, już, jeszcze nie", "Just, already, not yet: właśnie, już, jeszcze nie")
+G[33] = [
+ ("Kevin ____ zadzwonił na policję.", ["właśnie", "jeszcze nie", "nigdy"], 0,
+  [("Так! Właśnie + доконаний вид = щойно.", "Tak! Właśnie + aspekt dokonany = przed chwilą.", "Yes! Właśnie + perfective = just."),
+   ("Jeszcze nie потребує заперечення: nie zadzwonił.", "„Jeszcze nie” wymaga przeczenia.", "Jeszcze nie needs a negative verb."),
+   ("Nigdy — «ніколи», протилежне.", "„Nigdy” to przeciwieństwo.", "Nigdy means never.")],
+  ("Польська не має Present Perfect: właśnie / już / jeszcze nie + минулий час.", "Polski nie ma Present Perfect: właśnie / już / jeszcze nie + czas przeszły.", "Polish has no Present Perfect: właśnie / już / jeszcze nie + past tense.")),
+ ("Bandyci ____ nie złapali Kevina.", ["jeszcze", "już", "właśnie"], 0,
+  [("Так! Jeszcze nie = ще не.", "Tak! Jeszcze nie.", "Yes! Jeszcze nie = not yet."),
+   ("Już nie — «уже не» (більше не), інший зміст.", "„Już nie” znaczy „więcej nie”.", "Już nie means no longer."),
+   ("Właśnie nie — неприродно.", "„Właśnie nie” brzmi nienaturalnie.", "Właśnie nie sounds unnatural.")],
+  ("Już = уже; jeszcze nie = ще не.", "Już; jeszcze nie.", "Już = already; jeszcze nie = not yet.")),
+]
+D[33] = ("Jesteś Kevinem. Napisz krótkie zgłoszenie na policję (35+ słów): co się właśnie stało, co bandyci już zrobili, a czego jeszcze nie.", 35,
+ ("Właśnie…, już…, jeszcze nie…", "Właśnie…, już…, jeszcze nie…", "Właśnie…, już…, jeszcze nie…"))
+
+T[34] = ("Підрядні речення: który / która / które, gdzie", "Zdania względne: który / która / które, gdzie", "Relative clauses: który / która / które, gdzie")
+G[34] = [
+ ("Marley to sąsiad, ____ uratował Kevina.", ["który", "która", "gdzie"], 0,
+  [("Так! Sąsiad — чоловічий рід → który.", "Tak! Sąsiad (r. męski) → który.", "Yes! Sąsiad is masculine → który."),
+   ("Która — жіночий рід.", "„Która” — rodzaj żeński.", "Która is feminine."),
+   ("Gdzie — про місце.", "„Gdzie” — o miejscu.", "Gdzie is for places.")],
+  ("Który/która/które узгоджується з іменником за родом.", "Który/która/które zgadza się z rodzajem rzeczownika.", "Który/która/które agrees in gender with the noun.")),
+ ("To jest dom, ____ bandyci złapali Kevina.", ["gdzie", "który", "kto"], 0,
+  [("Так! Місце → gdzie.", "Tak! Miejsce → gdzie.", "Yes! A place → gdzie."),
+   ("Który потребує прийменника: w którym.", "„Który” wymagałby przyimka: w którym.", "Który would need a preposition: w którym."),
+   ("Kto — питання, не підрядне.", "„Kto” to pytanie.", "Kto is a question word.")],
+  ("Gdzie = w którym.", "Gdzie = w którym.", "Gdzie = w którym.")),
+]
+D[34] = ("Napisz kartkę z podziękowaniem od Kevina dla Marleya (35+ słów). Użyj: który, która, które, gdzie.", 35,
+ ("Jesteś człowiekiem, który… Dom, gdzie…", "Jesteś człowiekiem, który… Dom, gdzie…", "Jesteś człowiekiem, który… Dom, gdzie…"))
