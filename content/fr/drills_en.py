@@ -206,3 +206,35 @@ D[29] = [
  ("That's not my coffee, it's ____.", ["hers", "her", "she"], 0, ("Hers.", "Hers.", "Hers.")),
  ("The apartment is ____.", ["theirs", "their", "them"], 0, ("Theirs.", "Theirs.", "Theirs.")),
 ]
+D[31] = [
+ ("I wish I ____ more time.", ["had", "have", "will have"], 0, ("Wish + had.", "Wish + had.", "Wish + had.")),
+ ("She wishes she ____ rich.", ["were", "is", "be"], 0, ("Wish + were.", "Wish + were.", "Wish + were.")),
+ ("I wish I ____ stay.", ["could", "can", "will"], 0, ("Wish + could.", "Wish + could.", "Wish + could.")),
+ ("He wishes he ____ have to go.", ["didn't", "doesn't", "won't"], 0, ("Wish + didn't.", "Wish + didn't.", "Wish + didn't.")),
+ ("I wish it ____ raining.", ["weren't", "isn't", "won't be"], 0, ("Wish + weren't.", "Wish + weren't.", "Wish + weren't.")),
+ ("Ross ____ he were braver.", ["wishes", "wish", "wishing"], 0, ("He → wishes.", "He → wishes.", "He → wishes.")),
+]
+D[32] = [
+ ("Do you know where ____?", ["he is", "is he", "he does"], 0, ("Прямий порядок.", "Szyk twierdzący.", "Normal order.")),
+ ("Can you tell me what time ____?", ["it is", "is it", "does it"], 0, ("It is.", "It is.", "It is.")),
+ ("I wonder ____ he knows.", ["if", "what if", "does"], 0, ("If.", "If.", "If.")),
+ ("Do you know when the plane ____?", ["lands", "does land", "land"], 0, ("Lands.", "Lands.", "Lands.")),
+ ("Could you tell me why ____ left?", ["he", "did he", "does he"], 0, ("Без did.", "Bez did.", "No did.")),
+ ("I don't know ____ she lives.", ["where", "where does", "does where"], 0, ("Where.", "Where.", "Where.")),
+]
+D[33] = [
+ ("____ it rained, we went out.", ["Although", "Despite", "However"], 0, ("Although + речення.", "Although + zdanie.", "Although + clause.")),
+ ("____ the rain, we went out.", ["Despite", "Although", "Even though"], 0, ("Despite + іменник.", "Despite + rzeczownik.", "Despite + noun.")),
+ ("It was late. ____, we stayed.", ["However", "Although", "Despite"], 0, ("However,", "However,", "However,")),
+ ("Even ____ he was tired, he helped.", ["though", "if so", "despite"], 0, ("Even though.", "Even though.", "Even though.")),
+ ("In spite ____ the cold, they swam.", ["of", "the", "that"], 0, ("In spite of.", "In spite of.", "In spite of.")),
+ ("Despite ____ tired, she smiled.", ["being", "be", "was"], 0, ("Despite + -ing.", "Despite + -ing.", "Despite + -ing.")),
+]
+D[34] = [
+ ("It ____ rain tomorrow.", ["might", "might to", "mights"], 0, ("Might + V.", "Might + V.", "Might + verb.")),
+ ("He ____ not come.", ["may", "doesn't may", "may to"], 0, ("May not.", "May not.", "May not.")),
+ ("She'll ____ be late.", ["probably", "probable", "maybe"], 0, ("Will probably.", "Will probably.", "Will probably.")),
+ ("The flight ____ be delayed.", ["could", "coulds", "could to"], 0, ("Could + V.", "Could + V.", "Could + verb.")),
+ ("____ he's forgotten me.", ["Maybe", "May be", "Might"], 0, ("Maybe = можливо.", "Maybe = może.", "Maybe = perhaps.")),
+ ("We ____ go to the beach.", ["might", "are might", "might going"], 0, ("Might + V.", "Might + V.", "Might + verb.")),
+]

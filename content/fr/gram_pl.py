@@ -408,3 +408,68 @@ G[29] = [
 ]
 D[29] = ("Jesteś Rossem. Napisz kartkę do pierwszego zdjęcia Bena (35+ słów): czyje ma oczy, czyj nos, czyj kocyk. Użyj: mój, twój, jego, jej, nasz, ich, czyj.", 35,
  ("Ma moje oczy… Jego nos jest… Kocyk jest jej… Jest nasz…", "Ma moje oczy… Jego nos jest… Kocyk jest jej… Jest nasz…", "Ma moje oczy… Jego nos jest… Kocyk jest jej… Jest nasz…"))
+
+# ---- Арка 6
+T[31] = ("Żałuję, że… / Chciałbym, żeby… (wish)", "Szkoda, że… / Chciałbym, żeby… (wish)", "Szkoda, że… / Chciałbym, żeby… (wish)")
+G[31] = [
+ ("Ross: „Chciałbym, ____ móc zostać.”", ["żeby", "że", "jeśli"], 0,
+  [("Так! Chciałbym, żeby…", "Tak! Chciałbym, żeby…", "Yes! Chciałbym, żeby…"),
+   ("Że — не для бажань.", "„Że” — nie dla życzeń.", "Że isn't for wishes."),
+   ("Jeśli — умова.", "„Jeśli” — warunek.", "Jeśli is a condition.")],
+  ("I wish I could → Chciałbym móc / Szkoda, że nie mogę.", "I wish I could → Chciałbym móc / Szkoda, że nie mogę.", "I wish I could → Chciałbym móc / Szkoda, że nie mogę.")),
+ ("Rachel: „Szkoda, że nie ____ lepszej pracy.”", ["mam", "miałam", "będę mieć"], 0,
+  [("Так! Szkoda, że + теперішній час.", "Tak! Szkoda, że + teraźniejszy.", "Yes! Szkoda, że + present."),
+   ("Miałam — минуле.", "„Miałam” — przeszłość.", "Miałam is past."),
+   ("Майбутнє тут не підходить.", "Przyszły nie pasuje.", "Future doesn't fit.")],
+  ("Англійська: I wish I had (минулий). Польська: szkoda, że nie mam (теперішній).", "Angielski: I wish I had. Polski: szkoda, że nie mam.", "English: I wish I had (past). Polish: szkoda, że nie mam (present).")),
+]
+D[31] = ("Jesteś Rachel. Napisz swoją urodzinową listę życzeń (35+ słów). Użyj: chciałabym, żeby…, szkoda, że nie…, gdybym…", 35,
+ ("Chciałabym, żeby… Szkoda, że nie mam… Gdybym mogła…", "Chciałabym, żeby… Szkoda, że nie mam… Gdybym mogła…", "Chciałabym, żeby… Szkoda, że nie mam… Gdybym mogła…"))
+
+T[32] = ("Pytania pośrednie: Wiesz, gdzie…? / Możesz mi powiedzieć, co…?", "Pytania pośrednie: Wiesz, gdzie…?", "Indirect questions: Wiesz, gdzie…?")
+G[32] = [
+ ("Rachel: „Możesz mi powiedzieć, co on ____ na myśli?”", ["miał", "czy miał", "ma czy"], 0,
+  [("Так! Після co — звичайний порядок.", "Tak! Po co — zwykły szyk.", "Yes! After co — normal order."),
+   ("Czy тут зайве.", "„Czy” jest tu zbędne.", "Czy is extra."),
+   ("Неправильно.", "Błąd.", "Wrong.")],
+  ("Польська, як і англійська, у непрямих питаннях — без інверсії.", "Bez inwersji w pytaniach pośrednich.", "No inversion in indirect questions.")),
+ ("Rachel: „Nie wiem, ____ on mnie kocha.”", ["czy", "co", "że"], 0,
+  [("Так! Так/ні → czy.", "Tak! Tak/nie → czy.", "Yes! Yes/no → czy."),
+   ("Co — «що».", "„Co” — o rzecz.", "Co means what."),
+   ("Że — твердження.", "„Że” — stwierdzenie.", "Że is a statement.")],
+  ("If / whether = czy.", "If / whether = czy.", "If / whether = czy.")),
+]
+D[32] = ("Jesteś Rachel. Napisz wiadomość do Moniki (35+ słów) z grzecznymi pytaniami pośrednimi o Rossa: Wiesz, kiedy…? Możesz mi powiedzieć, dlaczego…? Zastanawiam się, czy…", 35,
+ ("Wiesz, kiedy… Możesz mi powiedzieć, dlaczego… Zastanawiam się, czy…", "Wiesz, kiedy… Możesz mi powiedzieć, dlaczego… Zastanawiam się, czy…", "Wiesz, kiedy… Możesz mi powiedzieć, dlaczego… Zastanawiam się, czy…"))
+
+T[33] = ("Chociaż / mimo że / jednak / mimo + dopełniacz", "Chociaż / mimo że / jednak / mimo + dopełniacz", "Chociaż / mimo że / jednak / mimo + genitive")
+G[33] = [
+ ("____ Ross nie lubi zakupów, kupił broszkę.", ["Chociaż", "Mimo", "Jednak"], 0,
+  [("Так! Chociaż + речення.", "Tak! Chociaż + zdanie.", "Yes! Chociaż + clause."),
+   ("Mimo + іменник у родовому.", "„Mimo” + rzeczownik w dopełniaczu.", "Mimo + noun in genitive."),
+   ("Jednak — у другій частині.", "„Jednak” — w drugiej części.", "Jednak goes in the second part.")],
+  ("Although = chociaż; however = jednak.", "Although = chociaż; however = jednak.", "Although = chociaż; however = jednak.")),
+ ("Mimo ____ Ross ją kupił.", ["ceny", "cena", "cenę"], 0,
+  [("Так! Mimo + родовий.", "Tak! Mimo + dopełniacz.", "Yes! Mimo + genitive."),
+   ("Cena — називний.", "„Cena” — mianownik.", "Cena is nominative."),
+   ("Cenę — знахідний.", "„Cenę” — biernik.", "Cenę is accusative.")],
+  ("Despite the price = mimo ceny.", "Despite the price = mimo ceny.", "Despite the price = mimo ceny.")),
+]
+D[33] = ("Jesteś Rachel. Napisz w pamiętniku o kamei (35+ słów). Użyj: chociaż, mimo że, jednak, mimo + dopełniacz.", 35,
+ ("Chociaż… Mimo że… Jednak… Mimo wszystko…", "Chociaż… Mimo że… Jednak… Mimo wszystko…", "Chociaż… Mimo że… Jednak… Mimo wszystko…"))
+
+T[34] = ("Możliwa przyszłość: może / być może / pewnie", "Możliwa przyszłość: może / być może / pewnie", "Possible future: może / być może / pewnie")
+G[34] = [
+ ("Lot ____ się opóźnić.", ["może", "musi", "chce"], 0,
+  [("Так! Може — можливість.", "Tak! Może — możliwość.", "Yes! Może — possibility."),
+   ("Musi — упевненість.", "„Musi” — pewność.", "Musi is certainty."),
+   ("Chce — бажання.", "„Chce” — chęć.", "Chce is wanting.")],
+  ("Might / may = może / być może.", "Might / may = może / być może.", "Might / may = może / być może.")),
+ ("Ross ____ będzie zmęczony po locie.", ["pewnie", "musi", "czy"], 0,
+  [("Так! Will probably = pewnie / prawdopodobnie.", "Tak! Pewnie.", "Yes! Will probably = pewnie."),
+   ("Musi będzie — неправильно.", "Błąd.", "Wrong."),
+   ("Czy — питання.", "„Czy” — pytanie.", "Czy is a question word.")],
+  ("Pewnie / prawdopodobnie + майбутній.", "Pewnie / prawdopodobnie + czas przyszły.", "Pewnie / prawdopodobnie + future.")),
+]
+D[34] = ("Jesteś Rachel na lotnisku. Napisz notatkę do siebie (35+ słów) o tym, co może się stać, kiedy Ross wyjdzie. Użyj: może, być może, pewnie, możliwe, że…", 35,
+ ("Może… Być może… Pewnie… Możliwe, że…", "Może… Być może… Pewnie… Możliwe, że…", "Może… Być może… Pewnie… Możliwe, że…"))

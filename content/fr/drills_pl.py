@@ -206,3 +206,35 @@ D[29] = [
  ("To nie moja kawa, tylko ____.", ["jej", "ją", "ona"], 0, ("Jej.", "Jej.", "Jej.")),
  ("Mieszkanie jest ____.", ["ich", "im", "oni"], 0, ("Ich.", "Ich.", "Ich.")),
 ]
+D[31] = [
+ ("Szkoda, że nie ____ więcej czasu.", ["mam", "miałem", "będę mieć"], 0, ("Teraźniejszy.", "Teraźniejszy.", "Present.")),
+ ("Chciałabym, ____ był tutaj.", ["żeby", "że", "czy"], 0, ("Żeby.", "Żeby.", "Żeby.")),
+ ("Chciałbym ____ zostać.", ["móc", "mogę", "mógł"], 0, ("Móc.", "Móc.", "Móc.")),
+ ("Szkoda, że ____ muszę jechać.", ["muszę", "musiałem", "będę"], 0, ("Teraźniejszy.", "Teraźniejszy.", "Present.")),
+ ("Szkoda, że ____ pada.", ["pada", "padało", "popada"], 0, ("Teraźniejszy.", "Teraźniejszy.", "Present.")),
+ ("Gdybym ____ odważny…", ["był", "jestem", "będę"], 0, ("Gdybym był.", "Gdybym był.", "Gdybym był.")),
+]
+D[32] = [
+ ("Wiesz, gdzie on ____?", ["jest", "czy jest", "jestem"], 0, ("Jest.", "Jest.", "Jest.")),
+ ("Możesz mi powiedzieć, która ____ godzina?", ["jest", "czy", "będzie czy"], 0, ("Jest.", "Jest.", "Jest.")),
+ ("Zastanawiam się, ____ on wie.", ["czy", "co", "gdzie"], 0, ("Czy.", "Czy.", "Czy.")),
+ ("Wiesz, kiedy samolot ____?", ["ląduje", "czy ląduje", "lądować"], 0, ("Ląduje.", "Ląduje.", "Ląduje.")),
+ ("Powiesz mi, ____ wyjechał?", ["dlaczego", "czy dlaczego", "co czy"], 0, ("Dlaczego.", "Dlaczego.", "Dlaczego.")),
+ ("Nie wiem, ____ ona mieszka.", ["gdzie", "czy gdzie", "kto"], 0, ("Gdzie.", "Gdzie.", "Gdzie.")),
+]
+D[33] = [
+ ("____ padało, wyszliśmy.", ["Chociaż", "Mimo", "Jednak"], 0, ("Chociaż.", "Chociaż.", "Chociaż.")),
+ ("Mimo ____ wyszliśmy.", ["deszczu", "deszcz", "deszczem"], 0, ("Dopełniacz.", "Dopełniacz.", "Genitive.")),
+ ("Było późno. ____ zostaliśmy.", ["Jednak", "Chociaż", "Mimo"], 0, ("Jednak.", "Jednak.", "Jednak.")),
+ ("Mimo ____ był zmęczony, pomógł.", ["że", "czy", "co"], 0, ("Mimo że.", "Mimo że.", "Mimo że.")),
+ ("Pomimo ____ pływali.", ["zimna", "zimno", "zimnem"], 0, ("Dopełniacz.", "Dopełniacz.", "Genitive.")),
+ ("Mimo ____ się uśmiechała.", ["zmęczenia", "zmęczenie", "zmęczona"], 0, ("Dopełniacz.", "Dopełniacz.", "Genitive.")),
+]
+D[34] = [
+ ("Jutro ____ padać.", ["może", "musi", "chce"], 0, ("Może.", "Może.", "Może.")),
+ ("On ____ nie przyjść.", ["może", "musi", "chce"], 0, ("Może.", "Może.", "Może.")),
+ ("Ona ____ się spóźni.", ["pewnie", "musi", "czy"], 0, ("Pewnie.", "Pewnie.", "Pewnie.")),
+ ("Lot ____ być opóźniony.", ["może", "musi", "chce"], 0, ("Może.", "Może.", "Może.")),
+ ("____ o mnie zapomniał.", ["Może", "Musi", "Czy"], 0, ("Może.", "Może.", "Może.")),
+ ("Być ____ pojedziemy nad morze.", ["może", "musi", "chce"], 0, ("Być może.", "Być może.", "Być może.")),
+]
