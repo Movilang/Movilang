@@ -84,3 +84,84 @@ G[5] = [
 ]
 D[5] = ("Opowiedz o tamtym wieczorze (35+ słów): co robili chłopaki, kiedy krążek trafił Rossa? Co robiły dziewczyny, kiedy przyszła pizza?", 35,
  ("Chłopaki oglądali…, kiedy… Dziewczyny…, kiedy…", "Chłopaki oglądali…, kiedy… Dziewczyny…, kiedy…", "Chłopaki oglądali…, kiedy… Dziewczyny…, kiedy…"))
+
+# ---- Арка 2
+T[7] = ("Як часто? zawsze, zwykle, czasami, nigdy (nie)", "Jak często? zawsze, zwykle, czasami, nigdy (nie)", "How often? zawsze, zwykle, czasami, nigdy (nie)")
+G[7] = [
+ ("Rachel ____ nie robiła prania sama.", ["nigdy", "zawsze", "często"], 0,
+  [("Так! Nigdy + nie — у польській подвійне заперечення.", "Tak! Nigdy + nie — podwójne przeczenie.", "Yes! Nigdy + nie — Polish uses a double negative."),
+   ("Zawsze nie — так не кажуть.", "„Zawsze nie” — tak się nie mówi.", "We don't say zawsze nie."),
+   ("Często nie — можливо, але сенс інший.", "„Często nie” — możliwe, ale inny sens.", "Często nie is possible, but means something else.")],
+  ("Nigdy nie, nikt nie, nic nie — заперечення подвійне.", "Nigdy nie, nikt nie, nic nie.", "Nigdy nie, nikt nie, nic nie — double negatives.")),
+ ("Ross ____ oddziela białe rzeczy od kolorowych.", ["zawsze", "nigdy", "wcale"], 0,
+  [("Так! Росс завжди розділяє речі.", "Tak! Ross zawsze to robi.", "Yes! Ross always does it."),
+   ("Nigdy — тоді потрібне nie.", "„Nigdy” wymagałoby nie.", "Nigdy would need nie."),
+   ("Wcale — тільки з запереченням.", "„Wcale” — tylko z przeczeniem.", "Wcale only works with a negative.")],
+  ("Прислівник частоти зазвичай перед дієсловом.", "Przysłówek częstotliwości zwykle stoi przed czasownikiem.", "The frequency adverb usually goes before the verb.")),
+]
+D[7] = ("Jesteś Rachel. Opisz swój nowy rytm dnia (35+ słów): co robisz zawsze, zwykle, czasami, rzadko i czego nigdy nie robisz.", 35,
+ ("Zawsze… Zwykle… Czasami… Nigdy nie…", "Zawsze… Zwykle… Czasami… Nigdy nie…", "Zawsze… Zwykle… Czasami… Nigdy nie…"))
+
+T[8] = ("Досвід: Byłeś kiedyś…? Nigdy nie grałem…", "Doświadczenie: Byłeś kiedyś…? Nigdy nie grałem…", "Experience: Byłeś kiedyś…? Nigdy nie grałem…")
+G[8] = [
+ ("Joey, ____ kiedyś na prawdziwym planie filmowym?", ["byłeś", "jesteś", "będziesz"], 0,
+  [("Так! Досвід — минулий час + kiedyś.", "Tak! Doświadczenie — czas przeszły + kiedyś.", "Yes! Experience — past tense + kiedyś."),
+   ("Jesteś — зараз.", "„Jesteś” — teraz.", "Jesteś is now."),
+   ("Będziesz — майбутнє.", "„Będziesz” — przyszłość.", "Będziesz is future.")],
+  ("Польська не має Present Perfect: Byłeś kiedyś…? = Have you ever been…?", "Polski nie ma Present Perfect: Byłeś kiedyś…?", "Polish has no Present Perfect: Byłeś kiedyś…? = Have you ever been…?")),
+ ("Wczoraj Joey ____ swoją pierwszą scenę.", ["zagrał", "grał kiedyś", "zagra"], 0,
+  [("Так! Одна завершена дія вчора → доконаний вид.", "Tak! Jedna zakończona czynność → aspekt dokonany.", "Yes! One finished action yesterday → perfective."),
+   ("Kiedyś не поєднується з wczoraj.", "„Kiedyś” nie pasuje do wczoraj.", "Kiedyś doesn't go with wczoraj."),
+   ("Zagra — майбутнє.", "„Zagra” — przyszłość.", "Zagra is future.")],
+  ("Wczoraj / w zeszłym tygodniu + dokonany: zagrał, zrobił.", "Wczoraj + dokonany.", "Wczoraj + perfective: zagrał, zrobił.")),
+]
+D[8] = ("Jesteś Joeyem. Napisz krótki profil dla agentki (35+ słów): co już robiłeś w życiu, czego nigdy nie robiłeś i co zrobiłeś w zeszłym tygodniu.", 35,
+ ("Grałem w… Nigdy nie… W zeszłym tygodniu zagrałem…", "Grałem w… Nigdy nie… W zeszłym tygodniu zagrałem…", "Grałem w… Nigdy nie… W zeszłym tygodniu zagrałem…"))
+
+T[9] = ("Майбутнє: zamierzam powiedzieć (план) / zaraz przyniosę (рішення)", "Przyszłość: zamierzam powiedzieć / zaraz przyniosę", "Future: zamierzam powiedzieć (plan) / zaraz przyniosę (decision)")
+G[9] = [
+ ("Ross postanowił: dziś wieczorem ____ powiedzieć Rachel o uczuciach.", ["zamierza", "przyniesie", "powiedział"], 0,
+  [("Так! Zamierzać + інфінітив = план.", "Tak! Zamierzać + bezokolicznik = plan.", "Yes! Zamierzać + infinitive = a plan."),
+   ("Przyniesie — інше дієслово.", "„Przyniesie” — inny czasownik.", "Przyniesie is a different verb."),
+   ("Powiedział — минуле.", "„Powiedział” — przeszłość.", "Powiedział is past.")],
+  ("Zamierzam / mam zamiar + bezokolicznik = be going to.", "Zamierzam / mam zamiar + bezokolicznik.", "Zamierzam / mam zamiar + infinitive = be going to.")),
+ ("Zgasło światło! Monica: — Spokojnie, zaraz ____ świece.", ["przyniosę", "przynoszę codziennie", "przyniosłam"], 0,
+  [("Так! Доконаний вид у теперішній формі = майбутня дія.", "Tak! Aspekt dokonany w formie teraźniejszej = przyszłość.", "Yes! A perfective verb in present form = future."),
+   ("Codziennie — звичка.", "„Codziennie” — nawyk.", "Codziennie is a habit."),
+   ("Przyniosłam — минуле.", "„Przyniosłam” — przeszłość.", "Przyniosłam is past.")],
+  ("Przyniosę, zrobię, zadzwonię = I'll bring / do / call.", "Przyniosę, zrobię, zadzwonię.", "Przyniosę, zrobię, zadzwonię = I'll bring / do / call.")),
+]
+D[9] = ("Jesteś Rossem. Napisz w pamiętniku po awarii prądu (35+ słów): co zamierzałeś zrobić, co zamierzasz zrobić następnym razem i co sobie obiecujesz.", 35,
+ ("Zamierzałem… Następnym razem zamierzam… Obiecuję, że…", "Zamierzałem… Następnym razem zamierzam… Obiecuję, że…", "Zamierzałem… Następnym razem zamierzam… Obiecuję, że…"))
+
+T[10] = ("Kiedyś + минулий недоконаний: babcia kiedyś mieszkała", "Kiedyś + przeszły niedokonany: babcia kiedyś mieszkała", "Kiedyś + past imperfective: babcia kiedyś mieszkała")
+G[10] = [
+ ("Babcia kiedyś ____ w tym mieszkaniu.", ["mieszkała", "zamieszkała", "mieszka"], 0,
+  [("Так! Тривалий стан у минулому → недоконаний вид.", "Tak! Trwały stan w przeszłości → niedokonany.", "Yes! A long-lasting past state → imperfective."),
+   ("Zamieszkała — момент переїзду.", "„Zamieszkała” — moment przeprowadzki.", "Zamieszkała is the moment of moving in."),
+   ("Mieszka — теперішній.", "„Mieszka” — teraźniejszy.", "Mieszka is present.")],
+  ("Kiedyś + niedokonany ≈ used to.", "Kiedyś + niedokonany ≈ used to.", "Kiedyś + imperfective ≈ used to.")),
+ ("Jako dziecko Monica co niedzielę ____ babcię.", ["odwiedzała", "odwiedziła", "odwiedzi"], 0,
+  [("Так! Повторювана дія в минулому → недоконаний.", "Tak! Powtarzana czynność → niedokonany.", "Yes! A repeated past action → imperfective."),
+   ("Odwiedziła — один раз.", "„Odwiedziła” — raz.", "Odwiedziła is once."),
+   ("Odwiedzi — майбутнє.", "„Odwiedzi” — przyszłość.", "Odwiedzi is future.")],
+  ("Co niedzielę / zawsze + niedokonany.", "Co niedzielę + niedokonany.", "Co niedzielę + imperfective.")),
+]
+D[10] = ("Napisz o starszej osobie z twojej rodziny (35+ słów): co kiedyś robiła, co robiliście razem, czego nie lubiła.", 35,
+ ("Babcia kiedyś… Razem często… Nie lubiła…", "Babcia kiedyś… Razem często… Nie lubiła…", "Babcia kiedyś… Razem często… Nie lubiła…"))
+
+T[11] = ("Поради: powinieneś / powinnaś + інфінітив", "Rady: powinieneś / powinnaś + bezokolicznik", "Advice: powinieneś / powinnaś + infinitive")
+G[11] = [
+ ("Rachel spóźniła się na samolot. Monica: — ____ zostać z nami!", ["Powinnaś", "Powinieneś", "Powinna"], 0,
+  [("Так! До жінки (ty) → powinnaś.", "Tak! Do kobiety (ty) → powinnaś.", "Yes! To a woman (you) → powinnaś."),
+   ("Powinieneś — до чоловіка.", "„Powinieneś” — do mężczyzny.", "Powinieneś is for a man."),
+   ("Powinna — про неї (вона).", "„Powinna” — o niej (ona).", "Powinna is she, not you.")],
+  ("Powinienem/powinnam, powinieneś/powinnaś, powinien/powinna.", "Powinienem/powinnam, powinieneś/powinnaś, powinien/powinna.", "Powinienem/powinnam, powinieneś/powinnaś, powinien/powinna.")),
+ ("Joey ____ jeździć metrem w tym tygodniu.", ["nie powinien", "powinien", "nie powinna"], 0,
+  [("Так! Він → nie powinien.", "Tak! On → nie powinien.", "Yes! He → nie powinien."),
+   ("Powinien — тоді всі витріщатимуться ще більше.", "„Powinien” — wtedy wszyscy będą się gapić.", "Powinien — then everyone will stare more."),
+   ("Nie powinna — жіночий рід.", "„Nie powinna” — rodzaj żeński.", "Nie powinna is feminine.")],
+  ("Nie powinieneś + bezokolicznik = shouldn't.", "Nie powinieneś + bezokolicznik.", "Nie powinieneś + infinitive = shouldn't.")),
+]
+D[11] = ("Napisz rady dla jednego z przyjaciół (35+ słów): dla Joeya z plakatem, dla Rachel, która spóźniła się na samolot, albo dla Moniki ze spalonym indykiem. Użyj: powinieneś / powinnaś, nie powinieneś.", 35,
+ ("Powinieneś… Nie powinnaś… W przyszłym roku powinnaś…", "Powinieneś… Nie powinnaś… W przyszłym roku powinnaś…", "Powinieneś… Nie powinnaś… W przyszłym roku powinnaś…"))

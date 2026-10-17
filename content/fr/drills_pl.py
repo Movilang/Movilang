@@ -40,3 +40,45 @@ D[5] = [
  ("Co ____ o ósmej?", ["robiłeś", "zrobiłeś", "robisz"], 0, ("Тривала дія.", "Czynność trwająca.", "Ongoing action.")),
  ("Rachel wczoraj nie ____.", ["pracowała", "popracowała", "pracuje"], 0, ("Недоконаний.", "Niedokonany.", "Imperfective.")),
 ]
+
+# ---- Арка 2
+D[7] = [
+ ("Ross ____ pomaga Rachel.", ["zawsze", "nigdy", "wcale"], 0, ("Zawsze.", "Zawsze.", "Zawsze.")),
+ ("Chandler nigdy ____ spóźnia się.", ["nie", "tak", "już"], 0, ("Nigdy nie.", "Nigdy nie.", "Nigdy nie.")),
+ ("____ często robisz pranie?", ["Jak", "Ile", "Gdzie"], 0, ("Jak często.", "Jak często.", "Jak często.")),
+ ("Czasami ____ w Central Perk.", ["jem", "jeść", "jedzenie"], 0, ("Особова форма.", "Forma osobowa.", "A personal form.")),
+ ("Joey prawie nigdy się nie ____.", ["poddaje", "poddać", "poddał się zawsze"], 0, ("Теперішній.", "Teraźniejszy.", "Present.")),
+ ("Monica ____ sprząta w nocy.", ["często", "nigdy", "wcale"], 0, ("Без заперечення.", "Bez przeczenia.", "No negative.")),
+]
+D[8] = [
+ ("Joey grał w wielu ____.", ["sztukach", "sztuki", "sztukami"], 0, ("W + місцевий.", "W + miejscownik.", "W + locative.")),
+ ("Spotkałeś ____ gwiazdę filmową?", ["kiedyś", "wczoraj zawsze", "jutro"], 0, ("Kiedyś = ever.", "Kiedyś.", "Kiedyś = ever.")),
+ ("Wczoraj go ____.", ["zwolnili", "zwalniali kiedyś", "zwolnią"], 0, ("Вчора → доконаний.", "Wczoraj → dokonany.", "Wczoraj → perfective.")),
+ ("Nigdy nie ____ w Hollywood.", ["byłem", "jestem", "będę kiedyś"], 0, ("Досвід → минулий.", "Doświadczenie → przeszły.", "Experience → past.")),
+ ("Kiedy ____ tę sztukę?", ["widziałeś", "widzisz", "zobaczysz"], 0, ("Минулий.", "Przeszły.", "Past.")),
+ ("Grała w trzech ____.", ["filmach", "filmy", "filmów"], 0, ("W + місцевий.", "W + miejscownik.", "W + locative.")),
+]
+D[9] = [
+ ("Postanowiłem. Zamierzam jej ____.", ["powiedzieć", "powiem", "mówię"], 0, ("Zamierzać + інфінітив.", "Zamierzać + bezokolicznik.", "Zamierzać + infinitive.")),
+ ("Dzwoni telefon! Zaraz ____!", ["odbiorę", "odbieram codziennie", "odebrałem"], 0, ("Доконаний → майбутнє.", "Dokonany → przyszłość.", "Perfective → future.")),
+ ("Dziś ____ obejrzeć film.", ["zamierzamy", "obejrzeliśmy", "oglądaliśmy"], 0, ("План.", "Plan.", "A plan.")),
+ ("Obiecuję, że nikomu nie ____.", ["powiem", "mówię", "powiedziałem"], 0, ("Обіцянка → майбутнє.", "Obietnica → przyszłość.", "Promise → future.")),
+ ("Jest ciemno. ____ mi pomóc?", ["Pomożesz", "Pomogłeś", "Pomagasz zawsze"], 0, ("Прохання → майбутнє.", "Prośba → przyszłość.", "Request → future.")),
+ ("Rachel zamierza ____ do Paola.", ["zadzwonić", "zadzwoniła", "dzwoni"], 0, ("Інфінітив.", "Bezokolicznik.", "Infinitive.")),
+]
+D[10] = [
+ ("Babcia kiedyś tu ____.", ["mieszkała", "zamieszkała", "mieszka"], 0, ("Недоконаний.", "Niedokonany.", "Imperfective.")),
+ ("Kiedyś nie ____ warzyw.", ["lubiłem", "polubiłem", "lubię"], 0, ("Недоконаний.", "Niedokonany.", "Imperfective.")),
+ ("Grałeś kiedyś na ____?", ["pianinie", "pianino", "pianina"], 0, ("Grać na + місцевий.", "Grać na + miejscownik.", "Grać na + locative.")),
+ ("Ross jako chłopiec ____ dinozaury.", ["rysował", "narysował", "rysuje"], 0, ("Звичка → недоконаний.", "Nawyk → niedokonany.", "Habit → imperfective.")),
+ ("Monica kiedyś ____ nieśmiała.", ["była", "jest", "będzie"], 0, ("Минулий.", "Przeszły.", "Past.")),
+ ("Co niedzielę ____ babcię.", ["odwiedzaliśmy", "odwiedziliśmy", "odwiedzimy"], 0, ("Повторення → недоконаний.", "Powtarzanie → niedokonany.", "Repetition → imperfective.")),
+]
+D[11] = [
+ ("Powinieneś ____ do mamy.", ["zadzwonić", "dzwonisz", "zadzwonił"], 0, ("Powinien + інфінітив.", "Powinien + bezokolicznik.", "Powinien + infinitive.")),
+ ("Nie ____ jeść spalonego jedzenia.", ["powinieneś", "powinien jest", "powinny"], 0, ("Ти → powinieneś.", "Ty → powinieneś.", "You → powinieneś.")),
+ ("Monica, powinnaś ____.", ["odpocząć", "odpoczywa", "odpoczęła"], 0, ("Інфінітив.", "Bezokolicznik.", "Infinitive.")),
+ ("Czy ____ zostać, czy iść?", ["powinnam", "powinien", "powinni"], 0, ("Я (жінка) → powinnam.", "Ja (kobieta) → powinnam.", "I (woman) → powinnam.")),
+ ("Joey powinien ____ agentkę.", ["zapytać", "pyta", "zapytał"], 0, ("Інфінітив.", "Bezokolicznik.", "Infinitive.")),
+ ("Nie ____ zostawiać włączonego piekarnika.", ["powinniśmy", "powinienem", "powinna"], 0, ("Ми → powinniśmy.", "My → powinniśmy.", "We → powinniśmy.")),
+]

@@ -40,3 +40,45 @@ D[5] = [
  ("What ____ you doing at eight?", ["were", "was", "did"], 0, ("You → were.", "You → were.", "You → were.")),
  ("Rachel ____ working yesterday.", ["wasn't", "weren't", "didn't"], 0, ("Rachel → wasn't.", "Rachel → wasn't.", "Rachel → wasn't.")),
 ]
+
+# ---- Арка 2
+D[7] = [
+ ("Ross ____ helps Rachel.", ["always", "always is", "is always help"], 0, ("Перед дієсловом.", "Przed czasownikiem.", "Before the verb.")),
+ ("Chandler is ____ late.", ["never", "never is", "is never"], 0, ("Після be.", "Po be.", "After be.")),
+ ("How ____ do you do laundry?", ["often", "much", "many"], 0, ("How often.", "How often.", "How often.")),
+ ("I ____ eat at Central Perk.", ["sometimes", "sometime", "some times"], 0, ("Sometimes.", "Sometimes.", "Sometimes.")),
+ ("Joey hardly ____ gives up.", ["ever", "never", "always"], 0, ("Hardly ever.", "Hardly ever.", "Hardly ever.")),
+ ("Monica ____ cleans at night.", ["often", "is often", "often is"], 0, ("Перед дієсловом.", "Przed czasownikiem.", "Before the verb.")),
+]
+D[8] = [
+ ("Joey ____ been in many plays.", ["has", "have", "is"], 0, ("Joey → has.", "Joey → has.", "Joey → has.")),
+ ("Have you ever ____ a film star?", ["met", "meet", "meeting"], 0, ("V3: met.", "V3: met.", "Past participle: met.")),
+ ("Yesterday he ____ fired.", ["got", "has got", "gets"], 0, ("Yesterday → Past Simple.", "Yesterday → Past Simple.", "Yesterday → Past Simple.")),
+ ("I've ____ been to Hollywood.", ["never", "ever", "yesterday"], 0, ("Never.", "Never.", "Never.")),
+ ("When ____ you see the play?", ["did", "have", "has"], 0, ("When → Past Simple.", "When → Past Simple.", "When → Past Simple.")),
+ ("She has ____ in three films.", ["acted", "act", "acting"], 0, ("V3: acted.", "V3: acted.", "Past participle: acted.")),
+]
+D[9] = [
+ ("I've decided. I'm ____ to tell her.", ["going", "will", "go"], 0, ("План.", "Plan.", "A plan.")),
+ ("The phone's ringing! I ____ get it.", ["'ll", "'m going to", "get"], 0, ("Раптове рішення.", "Nagła decyzja.", "Sudden decision.")),
+ ("We ____ watch a film tonight. We bought tickets.", ["are going to", "will", "going"], 0, ("План.", "Plan.", "A plan.")),
+ ("I promise I ____ tell anyone.", ["won't", "am not going", "don't"], 0, ("Обіцянка.", "Obietnica.", "A promise.")),
+ ("It's dark. ____ you help me?", ["Will", "Are", "Going"], 0, ("Прохання → will.", "Prośba → will.", "Request → will.")),
+ ("Rachel is ____ to call Paolo.", ["going", "will", "go"], 0, ("План.", "Plan.", "A plan.")),
+]
+D[10] = [
+ ("Nana ____ live here.", ["used to", "use to", "uses to"], 0, ("Used to.", "Used to.", "Used to.")),
+ ("I didn't ____ like vegetables.", ["use to", "used to", "uses to"], 0, ("Didn't + use to.", "Didn't + use to.", "Didn't + use to.")),
+ ("Did you ____ play the piano?", ["use to", "used to", "using to"], 0, ("Did + use to.", "Did + use to.", "Did + use to.")),
+ ("Ross used to ____ dinosaurs as a boy.", ["draw", "drawing", "drew"], 0, ("Used to + дієслово.", "Used to + czasownik.", "Used to + verb.")),
+ ("Monica ____ to be shy.", ["used", "use", "uses"], 0, ("Used.", "Used.", "Used.")),
+ ("We used to ____ every Sunday.", ["visit", "visited", "visiting"], 0, ("Used to + дієслово.", "Used to + czasownik.", "Used to + verb.")),
+]
+D[11] = [
+ ("You ____ call your mom.", ["should", "should to", "ought"], 0, ("Should + дієслово.", "Should + czasownik.", "Should + verb.")),
+ ("You ____ eat burnt food.", ["shouldn't", "should", "ought"], 0, ("Shouldn't.", "Shouldn't.", "Shouldn't.")),
+ ("You ought ____ rest.", ["to", "-", "for"], 0, ("Ought to.", "Ought to.", "Ought to.")),
+ ("____ I stay or go?", ["Should", "Ought", "Do should"], 0, ("Питання: Should I…?", "Pytanie: Should I…?", "Question: Should I…?")),
+ ("Joey should ____ his agent.", ["call", "calls", "to call"], 0, ("Should + базова форма.", "Should + forma podstawowa.", "Should + base form.")),
+ ("We ____ leave the oven on.", ["shouldn't", "should", "ought to"], 0, ("Не варто.", "Nie powinniśmy.", "We shouldn't.")),
+]
