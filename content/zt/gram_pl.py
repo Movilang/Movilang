@@ -326,3 +326,84 @@ G[23] = [
 ]
 D[23] = ("Napisz o kimś, kto się zmienił (30+ słów). Jak zachowywał się kiedyś? A jak teraz? Użyj: źle, miło, cicho, grzecznie, dobrze…", 30,
  ("Kiedyś mój brat mówił głośno i grał źle. Teraz mówi cicho i…", "Kiedyś mój brat mówił głośno i grał źle. Teraz mówi cicho i…", "Kiedyś mój brat mówił głośno i grał źle. Teraz mówi cicho i…"))
+
+# ---- Арка 5
+T[25] = ("Doświadczenie: już / jeszcze nie / nigdy / kiedyś", "Doświadczenie: już / jeszcze nie / nigdy", "Experience: już / jeszcze nie / nigdy / kiedyś")
+G[25] = [
+ ("Judy: „____ wszystko zrozumiałam!”", ["Właśnie", "Jeszcze", "Nigdy"], 0,
+  [("Так! Just = właśnie.", "Tak! Just = właśnie.", "Yes! Just = właśnie."),
+   ("Jeszcze — «ще».", "„Jeszcze” — inny sens.", "Jeszcze means still/yet."),
+   ("Nigdy — «ніколи».", "„Nigdy” — inny sens.", "Nigdy means never.")],
+  ("У польській Present Perfect = минулий час + właśnie / już / kiedyś / nigdy.", "Present Perfect = przeszły + właśnie / już / kiedyś.", "Polish uses the past tense + właśnie / już / kiedyś / nigdy.")),
+ ("Tato, czy ____ jadłeś nocnego wyjca?", ["kiedyś", "wczoraj o piątej", "jutro"], 0,
+  [("Так! Ever = kiedyś.", "Tak! Ever = kiedyś.", "Yes! Ever = kiedyś."),
+   ("Конкретний час — не досвід.", "Konkretny czas — to nie doświadczenie.", "A specific time isn't experience."),
+   ("Jutro — майбутнє.", "„Jutro” — przyszłość.", "Jutro is future.")],
+  ("Have you ever…? = Czy kiedyś…?", "Have you ever…? = Czy kiedyś…?", "Have you ever…? = Czy kiedyś…?")),
+]
+D[25] = ("Napisz o swoich doświadczeniach (30+ słów). Co już robiłeś/robiłaś? Czego nigdy nie robiłeś/robiłaś? Czy kiedyś…?", 30,
+ ("Byłam już w… Nigdy nie jadłam… Czy kiedyś…? Właśnie…", "Byłam już w… Nigdy nie jadłam… Czy kiedyś…? Właśnie…", "Byłam już w… Nigdy nie jadłam… Czy kiedyś…? Właśnie…"))
+
+T[26] = ("Przyszłość: pomogę / nie powiem / będzie", "Przyszłość: pomogę / nie powiem", "Future: pomogę / nie powiem / będzie")
+G[26] = [
+ ("Judy: „Już nigdy tak nie ____. Obiecuję.”", ["powiem", "mówię", "powiedziałam"], 0,
+  [("Так! Обіцянка → майбутній: powiem.", "Tak! Obietnica → przyszły: powiem.", "Yes! A promise → future: powiem."),
+   ("Mówię — теперішній.", "„Mówię” — teraźniejszy.", "Mówię is present."),
+   ("Powiedziałam — минуле.", "„Powiedziałam” — przeszłość.", "Powiedziałam is past.")],
+  ("Доконаний вид у теперішній формі = майбутнє: powiem, pomogę, zrobię.", "Dokonany w formie teraźniejszej = przyszłość.", "Perfective in present form = future: powiem, pomogę.")),
+ ("Judy: „____ mi, Nick?”", ["Pomożesz", "Pomagasz zawsze", "Pomogłeś"], 0,
+  [("Так! Прохання → майбутній: Pomożesz?", "Tak! Prośba → Pomożesz?", "Yes! A request → Pomożesz?"),
+   ("Інший зміст.", "Inny sens.", "Different meaning."),
+   ("Pomogłeś — минуле.", "„Pomogłeś” — przeszłość.", "Pomogłeś is past.")],
+  ("Will you help me? = Pomożesz mi?", "Will you help me? = Pomożesz mi?", "Will you help me? = Pomożesz mi?")),
+]
+D[26] = ("Napisz obietnicę dla przyjaciela (30+ słów). Co zrobisz? Czego nie zrobisz? Co będzie w przyszłym roku?", 30,
+ ("Obiecuję, że… Nie… W przyszłym roku… Myślę, że będzie…", "Obiecuję, że… Nie… W przyszłym roku… Myślę, że będzie…", "Obiecuję, że… Nie… W przyszłym roku… Myślę, że będzie…"))
+
+T[27] = ("Za / zbyt / wystarczająco / dość", "Za / zbyt / wystarczająco", "Too = za / zbyt, enough = wystarczająco")
+G[27] = [
+ ("Duke jest ____ uparty, żeby mówić.", ["zbyt", "dość mało", "wystarczająco nie"], 0,
+  [("Так! Too = zbyt / za.", "Tak! Too = zbyt / za.", "Yes! Too = zbyt / za."),
+   ("Неправильно.", "Błąd.", "Wrong."),
+   ("Неправильно.", "Błąd.", "Wrong.")],
+  ("Za / zbyt + przymiotnik, żeby + bezokolicznik.", "Za / zbyt + przymiotnik, żeby…", "Za / zbyt + adjective, żeby + infinitive.")),
+ ("Duke: „Nie jestem ____ odważny, żeby kłamać!”", ["wystarczająco", "zbyt", "bardzo za"], 0,
+  [("Так! Enough = wystarczająco / dość.", "Tak! Enough = wystarczająco.", "Yes! Enough = wystarczająco."),
+   ("Zbyt — «надто».", "„Zbyt” — za bardzo.", "Zbyt means too."),
+   ("Неправильно.", "Błąd.", "Wrong.")],
+  ("Brave enough = wystarczająco odważny / dość odważny.", "Brave enough = wystarczająco odważny.", "Brave enough = wystarczająco odważny.")),
+]
+D[27] = ("Napisz o rzeczach, które są dla ciebie za… albo nie dość… (30+ słów). Np.: Mój pokój jest za mały. Nie jestem wystarczająco wysoki, żeby…", 30,
+ ("Moja torba jest za ciężka. Nie jestem wystarczająco… Film był zbyt… Nie jest dość ciepło…", "Moja torba jest za ciężka. Nie jestem wystarczająco… Film był zbyt… Nie jest dość ciepło…", "Moja torba jest za ciężka. Nie jestem wystarczająco… Film był zbyt… Nie jest dość ciepło…"))
+
+T[28] = ("Jeśli + przyszły: Jeśli nas zobaczy, będzie kłopot", "Jeśli + czas przyszły", "If + future: Jeśli nas zobaczy…")
+G[28] = [
+ ("Nick: „Jeśli Doug nas ____, będziemy mieli kłopoty.”", ["zobaczy", "widzi", "zobaczył"], 0,
+  [("Так! У польській після jeśli — майбутній час.", "Tak! Po jeśli — czas przyszły.", "Yes! In Polish, jeśli takes the future."),
+   ("Widzi — теперішній.", "„Widzi” — teraźniejszy.", "Widzi is present."),
+   ("Zobaczył — минуле.", "„Zobaczył” — przeszłość.", "Zobaczył is past.")],
+  ("Англійська: If he sees (теп.). Польська: Jeśli zobaczy (майб.).", "Angielski: If he sees. Polski: Jeśli zobaczy.", "English: If he sees (present). Polish: Jeśli zobaczy (future).")),
+ ("Uda się, ____ Doug się obudzi.", ["chyba że", "bo", "i"], 0,
+  [("Так! Unless = chyba że.", "Tak! Unless = chyba że.", "Yes! Unless = chyba że."),
+   ("Bo — причина.", "„Bo” — przyczyna.", "Bo is a reason."),
+   ("I — «і».", "„I” — łączy.", "I means and.")],
+  ("Unless = chyba że / jeśli nie.", "Unless = chyba że.", "Unless = chyba że / jeśli nie.")),
+]
+D[28] = ("Napisz pięć zdań z „jeśli” o swoim tygodniu (30+ słów). Jeśli będzie słońce, pójdę… Jeśli skończę lekcje, …", 30,
+ ("Jeśli będzie słońce, pójdę… Jeśli będę mieć czas… Jeśli przyjaciel zadzwoni… Nie…, chyba że…", "Jeśli będzie słońce, pójdę… Jeśli będę mieć czas… Jeśli przyjaciel zadzwoni… Nie…, chyba że…", "Jeśli będzie słońce, pójdę… Jeśli będę mieć czas… Jeśli przyjaciel zadzwoni… Nie…, chyba że…"))
+
+T[29] = ("Bo / więc / ale / i / albo", "Bo / więc / ale / i / albo", "Linking: bo / więc / ale / i / albo")
+G[29] = [
+ ("Biegną przez muzeum, ____ to najkrótsza droga.", ["bo", "więc", "ale"], 0,
+  [("Так! Причина → bo / ponieważ.", "Tak! Przyczyna → bo.", "Yes! A reason → bo."),
+   ("Więc — наслідок.", "„Więc” — skutek.", "Więc is a result."),
+   ("Ale — протиставлення.", "„Ale” — przeciwieństwo.", "Ale is a contrast.")],
+  ("Because = bo / ponieważ · so = więc · but = ale.", "Because = bo · so = więc · but = ale.", "Because = bo · so = więc · but = ale.")),
+ ("Judy zraniła nogę, ____ kuleje.", ["więc", "bo", "albo"], 0,
+  [("Так! Наслідок → więc.", "Tak! Skutek → więc.", "Yes! A result → więc."),
+   ("Bo — причина.", "„Bo” — przyczyna.", "Bo is a reason."),
+   ("Albo — вибір.", "„Albo” — wybór.", "Albo is a choice.")],
+  ("Więc = тому.", "Więc = so.", "Więc = so.")),
+]
+D[29] = ("Opisz trudny dzień (30+ słów). Co się stało? Dlaczego? Co zrobiłeś/zrobiłaś? Użyj: i, ale, więc, bo, albo.", 30,
+ ("Byłam zmęczona, bo… Było trudno, ale… więc… i potem…", "Byłam zmęczona, bo… Było trudno, ale… więc… i potem…", "Byłam zmęczona, bo… Było trudno, ale… więc… i potem…"))

@@ -160,3 +160,43 @@ D[23] = [
  ("Speak ____, please.", ["quietly", "quiet", "quietness"], 0, ("-ly.", "-ly.", "-ly.")),
  ("She works ____.", ["hard", "hardly", "hardy"], 0, ("Hard → hard.", "Hard → hard.", "Hard → hard.")),
 ]
+D[25] = [
+ ("I've ____ seen it.", ["never", "ever not", "yet"], 0, ("Never.", "Never.", "Never.")),
+ ("Have you ____ been to Paris?", ["ever", "never", "yet"], 0, ("Ever.", "Ever.", "Ever.")),
+ ("She ____ just arrived.", ["has", "have", "is"], 0, ("She → has.", "She → has.", "She → has.")),
+ ("I've ____ my homework.", ["done", "did", "do"], 0, ("Do → done.", "Do → done.", "Do → done.")),
+ ("We haven't eaten ____.", ["yet", "just", "ever"], 0, ("Yet у кінці.", "Yet na końcu.", "Yet at the end.")),
+ ("They've ____ home.", ["gone", "went", "go"], 0, ("Go → gone.", "Go → gone.", "Go → gone.")),
+]
+D[26] = [
+ ("I ____ help you.", ["will", "will to", "wills"], 0, ("Will + V.", "Will + V.", "Will + verb.")),
+ ("I ____ tell anyone.", ["won't", "don't will", "willn't"], 0, ("Won't.", "Won't.", "Won't.")),
+ ("____ you call me?", ["Will", "Do will", "Are"], 0, ("Will you…?", "Will you…?", "Will you…?")),
+ ("It will ____ sunny.", ["be", "is", "being"], 0, ("Will be.", "Will be.", "Will be.")),
+ ("She'll ____ tomorrow.", ["come", "comes", "coming"], 0, ("Will + V.", "Will + V.", "Will + verb.")),
+ ("I think it ____ rain.", ["won't", "doesn't will", "not will"], 0, ("Won't.", "Won't.", "Won't.")),
+]
+D[27] = [
+ ("It's ____ cold.", ["too", "enough", "to"], 0, ("Too + прикм.", "Too + przym.", "Too + adj.")),
+ ("I'm not tall ____.", ["enough", "too", "very"], 0, ("Прикм. + enough.", "Przym. + enough.", "Adj. + enough.")),
+ ("He's too scared ____ talk.", ["to", "for", "that"], 0, ("Too … to.", "Too … to.", "Too … to.")),
+ ("Are you brave ____?", ["enough", "too", "so"], 0, ("Enough.", "Enough.", "Enough.")),
+ ("The tea is ____ hot to drink.", ["too", "enough", "very enough"], 0, ("Too.", "Too.", "Too.")),
+ ("She isn't old ____ to drive.", ["enough", "too", "so"], 0, ("Enough.", "Enough.", "Enough.")),
+]
+D[28] = [
+ ("If he ____ us, we'll run.", ["sees", "will see", "saw"], 0, ("If + теп.", "If + teraź.", "If + present.")),
+ ("If it rains, I ____ stay home.", ["will", "would", "am"], 0, ("Will.", "Will.", "Will.")),
+ ("I'll go ____ it rains.", ["unless", "if not if", "so"], 0, ("Unless.", "Unless.", "Unless.")),
+ ("If we're quiet, he ____ hear us.", ["won't", "doesn't", "isn't"], 0, ("Won't.", "Won't.", "Won't.")),
+ ("What will you do if he ____?", ["calls", "will call", "called"], 0, ("If + теп.", "If + teraź.", "If + present.")),
+ ("If you hurry, you ____ catch it.", ["'ll", "would", "did"], 0, ("'ll.", "'ll.", "'ll.")),
+]
+D[29] = [
+ ("I'm happy ____ it's Friday.", ["because", "so", "but"], 0, ("Причина.", "Przyczyna.", "Reason.")),
+ ("It was late, ____ I went home.", ["so", "because", "or"], 0, ("Наслідок.", "Skutek.", "Result.")),
+ ("It hurts, ____ I'm OK.", ["but", "so", "because"], 0, ("Контраст.", "Kontrast.", "Contrast.")),
+ ("Tea ____ coffee?", ["or", "and", "but"], 0, ("Вибір.", "Wybór.", "Choice.")),
+ ("I've got a cat ____ a dog.", ["and", "or", "so"], 0, ("І.", "I.", "And.")),
+ ("She ran ____ she was late.", ["because", "so", "but"], 0, ("Причина.", "Przyczyna.", "Reason.")),
+]

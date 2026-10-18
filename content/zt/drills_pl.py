@@ -160,3 +160,43 @@ D[23] = [
  ("Mów ____, proszę.", ["cicho", "cichy", "cisza"], 0, ("Cicho.", "Cicho.", "Cicho.")),
  ("Ona pracuje ____.", ["ciężko", "ciężki", "ciężar"], 0, ("Ciężko.", "Ciężko.", "Ciężko.")),
 ]
+D[25] = [
+ ("____ tego nie widziałam.", ["Nigdy", "Kiedyś", "Już"], 0, ("Nigdy.", "Nigdy.", "Nigdy.")),
+ ("Czy ____ byłeś w Paryżu?", ["kiedyś", "nigdy", "jutro"], 0, ("Kiedyś.", "Kiedyś.", "Kiedyś.")),
+ ("Ona ____ przyjechała.", ["właśnie", "jutro", "nigdy nie"], 0, ("Właśnie.", "Właśnie.", "Właśnie.")),
+ ("Już ____ lekcje. (ja, ż.)", ["odrobiłam", "odrobię", "odrabiam"], 0, ("Przeszłość.", "Przeszłość.", "Past.")),
+ ("Jeszcze nie ____. (my)", ["jedliśmy", "jemy jutro", "zjemy"], 0, ("Przeszłość.", "Przeszłość.", "Past.")),
+ ("Oni już ____ do domu.", ["poszli", "pójdą", "idą"], 0, ("Przeszłość.", "Przeszłość.", "Past.")),
+]
+D[26] = [
+ ("____ ci.", ["Pomogę", "Pomagam zawsze", "Pomogłam"], 0, ("Przyszłość.", "Przyszłość.", "Future.")),
+ ("Nikomu nie ____.", ["powiem", "mówię", "powiedziałam"], 0, ("Przyszłość.", "Przyszłość.", "Future.")),
+ ("____ do mnie?", ["Zadzwonisz", "Dzwonisz zawsze", "Dzwoniłeś"], 0, ("Przyszłość.", "Przyszłość.", "Future.")),
+ ("Będzie ____.", ["słonecznie", "słońce jest", "słoneczny"], 0, ("Przysłówek.", "Przysłówek.", "Adverb.")),
+ ("Ona jutro ____.", ["przyjdzie", "przychodzi zawsze", "przyszła"], 0, ("Przyszłość.", "Przyszłość.", "Future.")),
+ ("Myślę, że nie ____ padać.", ["będzie", "jest", "było"], 0, ("Będzie.", "Będzie.", "Będzie.")),
+]
+D[27] = [
+ ("Jest ____ zimno.", ["za", "dość mało", "wystarczająco nie"], 0, ("Za.", "Za.", "Za.")),
+ ("Nie jestem ____ wysoki.", ["wystarczająco", "za", "zbyt bardzo"], 0, ("Wystarczająco.", "Wystarczająco.", "Wystarczająco.")),
+ ("Za bardzo się boi, ____ mówić.", ["żeby", "bo", "i"], 0, ("Żeby.", "Żeby.", "Żeby.")),
+ ("Jesteś ____ odważny?", ["dość", "za", "zbyt"], 0, ("Dość.", "Dość.", "Dość.")),
+ ("Herbata jest ____ gorąca.", ["za", "dość", "wystarczająco"], 0, ("Za.", "Za.", "Za.")),
+ ("Nie jest ____ dorosła, żeby prowadzić.", ["wystarczająco", "za", "zbyt"], 0, ("Wystarczająco.", "Wystarczająco.", "Wystarczająco.")),
+]
+D[28] = [
+ ("Jeśli nas ____, uciekniemy.", ["zobaczy", "widzi", "zobaczył"], 0, ("Przyszłość.", "Przyszłość.", "Future.")),
+ ("Jeśli będzie padać, ____ w domu.", ["zostanę", "zostaję", "zostałam"], 0, ("Przyszłość.", "Przyszłość.", "Future.")),
+ ("Pójdę, ____ będzie padać.", ["chyba że", "bo", "więc"], 0, ("Chyba że.", "Chyba że.", "Chyba że.")),
+ ("Jeśli będziemy cicho, nas nie ____.", ["usłyszy", "słyszy", "usłyszał"], 0, ("Przyszłość.", "Przyszłość.", "Future.")),
+ ("Co zrobisz, jeśli on ____?", ["zadzwoni", "dzwoni", "zadzwonił"], 0, ("Przyszłość.", "Przyszłość.", "Future.")),
+ ("Jeśli się pospieszysz, ____.", ["zdążysz", "zdążasz", "zdążyłeś"], 0, ("Przyszłość.", "Przyszłość.", "Future.")),
+]
+D[29] = [
+ ("Cieszę się, ____ jest piątek.", ["bo", "więc", "ale"], 0, ("Bo.", "Bo.", "Bo.")),
+ ("Było późno, ____ poszłam do domu.", ["więc", "bo", "albo"], 0, ("Więc.", "Więc.", "Więc.")),
+ ("Boli, ____ jest OK.", ["ale", "więc", "bo"], 0, ("Ale.", "Ale.", "Ale.")),
+ ("Herbata ____ kawa?", ["czy", "i", "ale"], 0, ("Czy.", "Czy.", "Czy.")),
+ ("Mam kota ____ psa.", ["i", "albo nie", "więc"], 0, ("I.", "I.", "I.")),
+ ("Biegła, ____ była spóźniona.", ["bo", "więc", "ale"], 0, ("Bo.", "Bo.", "Bo.")),
+]
