@@ -532,16 +532,18 @@ function renderNav() {
 function heroSvg() {
   return '<svg class="scene" viewBox="0 0 800 500" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><defs><radialGradient id="glow" cx="62%" cy="40%" r="45%"><stop offset="0" stop-color="#ffd27a" stop-opacity=".75"/><stop offset=".5" stop-color="#8b5cf6" stop-opacity=".25"/><stop offset="1" stop-color="#000" stop-opacity="0"/></radialGradient><linearGradient id="floor" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#1a1230"/><stop offset="1" stop-color="#050409"/></linearGradient></defs><rect width="800" height="500" fill="url(#floor)"/><rect width="800" height="500" fill="url(#glow)"/><rect x="90" y="70" width="150" height="190" rx="75" fill="#0c0a1a" stroke="#3a2f63" stroke-width="4"/><g transform="translate(470 150) rotate(-12)"><rect width="140" height="92" rx="6" fill="#efe2c4"/><path d="M0 6 L70 54 L140 6" fill="none" stroke="#c9b48a" stroke-width="3"/><circle cx="70" cy="56" r="15" fill="#b3202f"/></g><g fill="#ffe7a8"><circle cx="440" cy="120" r="2.5"/><circle cx="640" cy="110" r="2"/><circle cx="610" cy="280" r="2.5"/></g><g fill="#05040a"><circle cx="300" cy="250" r="44"/><path d="M210 500 C210 380 240 310 300 300 C360 310 392 380 392 500 Z"/></g></svg>';
 }
+function isFreeCourse(c) { return !!c && /^\s*(0|free|darmo|za darmo|безкошт)/i.test(String(c.price || '')); }
+function priceTxt(c) { return isFreeCourse(c) ? tx({uk:'Безкоштовно', pl:'Za darmo', en:'Free'}) : (c.price || ''); }
 function posterHtml(c, small) {
   var cls = POSTER_CLASSES.indexOf(c.poster) > -1 ? c.poster : 'p1';
   return '<div class="poster ' + cls + '"' + (small ? ' style="width:120px;flex:0 0 120px;padding:10px"' : '') + '><span class="perf l"></span><span class="perf r"></span>' +
-    (small ? '' : '<span class="tag">' + (c.kind === 'series' ? t('СЕРІАЛ') : t('ФІЛЬМ')) + ' · ' + esc(c.level) + '</span>' + (c.lessons_count ? '' : t('<span class="tag new">СКОРО</span>'))) +
+    (small ? '' : '<span class="tag">' + (c.kind === 'series' ? t('СЕРІАЛ') : t('ФІЛЬМ')) + ' · ' + esc(c.level) + '</span>' + (c.lessons_count ? (isFreeCourse(c) ? '<span class="tag new">' + tx({uk:'БЕЗКОШТОВНО', pl:'ZA DARMO', en:'FREE'}) + '</span>' : '') : t('<span class="tag new">СКОРО</span>'))) +
     '<div class="ptitle"' + (small ? ' style="font-size:14px"' : '') + '>' + esc(tr(c, 'title')) + '</div></div>';
 }
 function catalogGrid(courses) {
   if (!courses.length) return t('<div class="empty">Курсів поки немає. Адміністратор може додати їх в адмін-панелі.</div>');
   return '<div class="grid-films">' + courses.map(function (c) {
-    return '<a class="film" href="#/course/' + esc(c.id) + '">' + posterHtml(c) + '<div class="film-meta"><span>' + (c.lessons_count || 0) + t(' уроків</span><b>') + esc(c.price) + '</b></div></a>';
+    return '<a class="film" href="#/course/' + esc(c.id) + '">' + posterHtml(c) + '<div class="film-meta"><span>' + (c.lessons_count || 0) + t(' уроків</span><b>') + esc(priceTxt(c)) + '</b></div></a>';
   }).join('') + '</div>';
 }
 function pricingHtml() {
@@ -672,7 +674,7 @@ function viewCabinet() {
 
 function viewCourse(id) {
   return Promise.all([API.getCourse(id), API.listLessons(id), API.myEnrollments(), API.myProgress()]).then(function (r) {
-    var c = r[0], ls = r[1], enrolled = r[2].indexOf(id) > -1 || isAdm(), done = {};
+    var c = r[0], ls = r[1], enrolled = r[2].indexOf(id) > -1 || isAdm() || isFreeCourse(c), done = {};
     setAmbient(ambTheme(c));
     if (!c) { $app.innerHTML = t('<div class="page"><div class="empty">Курс не знайдено. <a href="#/catalog">До каталогу</a></div></div>'); return; }
     r[3].forEach(function (p) { done[p.lesson_id] = p; });
@@ -1289,7 +1291,7 @@ function viewLesson(id) {
   return loadDefs().then(function () { return API.getLesson(id); }).then(function (l) {
     if (!l) { $app.innerHTML = t('<div class="page"><div class="empty">Урок не знайдено.</div></div>'); return; }
     return Promise.all([API.getCourse(l.course_id), API.listLessons(l.course_id), API.myEnrollments()]).then(function (r) {
-      var c = r[0], ls = r[1], enrolled = r[2].indexOf(l.course_id) > -1 || isAdm();
+      var c = r[0], ls = r[1], enrolled = r[2].indexOf(l.course_id) > -1 || isAdm() || isFreeCourse(c);
       setAmbient(ambTheme(c));
       var isFirst = ls.length && ls[0].id === l.id && !(c && c.free_first === false), idx = ls.map(function (x) { return x.id; }).indexOf(l.id), nextL = ls[idx + 1];
       if (!lessonTasks(l)) { $app.innerHTML = '<div class="page"><div class="empty">' + t('Цей урок ще недоступний обраною мовою. Скоро!') + ' <a href="#/course/' + esc(l.course_id) + '">' + t('До марафону') + '</a></div></div>'; return; }
@@ -1846,7 +1848,7 @@ document.addEventListener('click', function (e) {
 function bundleHtml() {
   var price = (SETTINGS && SETTINGS.bundle_price) || '149 zł';
   return '<div class="panel bundle"><div><div class="eyebrow">' + tx({uk:'ПАКЕТ', pl:'PAKIET', en:'BUNDLE'}) + '</div><h3>' + tx({uk:'Усі марафони в одному ключі', pl:'Wszystkie maratony w jednym kluczu', en:'Every marathon in one key'}) + '</h3>' +
-    '<p class="muted">' + tx({uk:'Гаррі Поттер, Щоденники вампіра, Сам удома, Друзі — і всі нові курси, що з\'являться. Три мови: EN · PL · UA.', pl:'Harry Potter, Pamiętniki wampirów, Kevin sam w domu, Przyjaciele — i wszystkie nowe kursy. Trzy języki: EN · PL · UA.', en:'Harry Potter, The Vampire Diaries, Home Alone, Friends — and every new course. Three languages: EN · PL · UA.'}) + '</p></div>' +
+    '<p class="muted">' + tx({uk:'Гаррі Поттер, Щоденники вампіра, Сам удома, Друзі — і всі нові курси, що з\'являться. Три мови: EN · PL · UA.', pl:'Harry Potter, Pamiętniki wampirów, Kevin sam w domu, Przyjaciele, Zwierzogród — i wszystkie nowe kursy. Trzy języki: EN · PL · UA.', en:'Harry Potter, The Vampire Diaries, Home Alone, Friends, Zootopia — and every new course. Three languages: EN · PL · UA.'}) + '</p></div>' +
     '<div class="bundle-buy"><div class="amount">' + esc(price) + '</div><button class="btn btn-red" type="button" data-buy-bundle>' + tx({uk:'Купити пакет', pl:'Kup pakiet', en:'Buy the bundle'}) + '</button><small class="muted">BLIK · Przelewy24 · ' + tx({uk:'картка', pl:'karta', en:'card'}) + '</small></div></div>';
 }
 function viewPaid(sid) {
@@ -2055,6 +2057,7 @@ var _viewPricing = viewPricing;
 viewPricing = function () { return Promise.resolve(_viewPricing()).then(function () { var p = $app.querySelector('.prices'); if (p) p.insertAdjacentHTML('afterend', bundleHtml()); }); };
 var _viewBuy = viewBuy;
 viewBuy = function () { return Promise.resolve(_viewBuy()).then(function () { var p = $app.querySelector('.prices'); if (p) p.insertAdjacentHTML('afterend', bundleHtml()); }); };
+if (API.myEnrollments) { var _me = API.myEnrollments; API.myEnrollments = function () { return Promise.all([_me.apply(API, arguments), API.listCourses(false).catch(function () { return []; })]).then(function (r) { var ids = r[0].slice(); r[1].forEach(function (c) { if (isFreeCourse(c) && c.lessons_count && ids.indexOf(c.id) < 0) ids.push(c.id); }); return ids; }); }; }
 if (API.saveProgress) { var _sp = API.saveProgress; API.saveProgress = function () { bumpActivity(1, 0); return _sp.apply(API, arguments); }; }
 
 /* ---------- адмін: продажі та воронка ---------- */
