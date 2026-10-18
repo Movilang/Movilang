@@ -80,3 +80,43 @@ D[11] = [
  ("Did you ____ him?", ["call", "called", "calls"], 0, ("Did + V.", "Did + V.", "Did + verb.")),
  ("They ____ in the park.", ["walked", "walk yesterday", "walkd"], 0, ("-ed.", "-ed.", "-ed.")),
 ]
+D[13] = [
+ ("We ____ to the office.", ["went", "goed", "go yesterday"], 0, ("Go → went.", "Go → went.", "Go → went.")),
+ ("I ____ a long line.", ["saw", "seed", "see yesterday"], 0, ("See → saw.", "See → saw.", "See → saw.")),
+ ("It ____ hours.", ["took", "taked", "takes yesterday"], 0, ("Take → took.", "Take → took.", "Take → took.")),
+ ("She ____ outside.", ["ran", "runned", "run yesterday"], 0, ("Run → ran.", "Run → ran.", "Run → ran.")),
+ ("They ____ the answer.", ["got", "getted", "get yesterday"], 0, ("Get → got.", "Get → got.", "Get → got.")),
+ ("He ____ a joke.", ["told", "telled", "tell yesterday"], 0, ("Tell → told.", "Tell → told.", "Tell → told.")),
+]
+D[14] = [
+ ("____ you see him?", ["Did", "Do", "Were"], 0, ("Did you…?", "Did you…?", "Did you…?")),
+ ("Where did he ____?", ["go", "went", "goes"], 0, ("Did + go.", "Did + go.", "Did + go.")),
+ ("What ____ you eat?", ["did", "do yesterday", "was"], 0, ("What did…?", "What did…?", "What did…?")),
+ ("Did she ____ you?", ["call", "called", "calls"], 0, ("Did + V.", "Did + V.", "Did + verb.")),
+ ("Yes, I ____.", ["did", "do", "was"], 0, ("Yes, I did.", "Yes, I did.", "Yes, I did.")),
+ ("Why did they ____ him?", ["take", "took", "takes"], 0, ("Did + take.", "Did + take.", "Did + take.")),
+]
+D[15] = [
+ ("Help ____!", ["me", "I", "my"], 0, ("I → me.", "I → me.", "I → me.")),
+ ("I can see ____. (Nick)", ["him", "he", "his"], 0, ("He → him.", "He → him.", "He → him.")),
+ ("Look at ____! (Judy)", ["her", "she", "hers"], 0, ("She → her.", "She → her.", "She → her.")),
+ ("He's following ____. (we)", ["us", "we", "our"], 0, ("We → us.", "We → us.", "We → us.")),
+ ("Call ____! (the police)", ["them", "they", "their"], 0, ("They → them.", "They → them.", "They → them.")),
+ ("Take ____! (the radio)", ["it", "its", "him"], 0, ("It.", "It.", "It.")),
+]
+D[16] = [
+ ("A lion is ____ than a cat.", ["bigger", "more big", "biger"], 0, ("Big → bigger.", "Big → bigger.", "Big → bigger.")),
+ ("This road is ____ dangerous.", ["more", "most", "-er"], 0, ("More + довге.", "More + długie.", "More + long word.")),
+ ("You're ____ than me.", ["better", "gooder", "more good"], 0, ("Good → better.", "Good → better.", "Good → better.")),
+ ("A cheetah is faster ____ a sloth.", ["than", "that", "then"], 0, ("Than.", "Than.", "Than.")),
+ ("It's ____ here.", ["quieter", "more quiet er", "quietter"], 0, ("Quiet → quieter.", "Quiet → quieter.", "Quiet → quieter.")),
+ ("He's ____ than you think.", ["kinder", "more kinder", "kindier"], 0, ("Kind → kinder.", "Kind → kinder.", "Kind → kinder.")),
+]
+D[17] = [
+ ("We ____ going to follow them.", ["are", "is", "am"], 0, ("We → are.", "We → are.", "We → are.")),
+ ("I'm going ____ help.", ["to", "for", "-"], 0, ("Going to.", "Going to.", "Going to.")),
+ ("It's going to ____.", ["rain", "rains", "raining"], 0, ("To + V.", "To + V.", "To + verb.")),
+ ("____ you going to come?", ["Are", "Do", "Is"], 0, ("Are you going…?", "Are you going…?", "Are you going…?")),
+ ("She ____ going to quit.", ["isn't", "aren't", "doesn't"], 0, ("She → isn't.", "She → isn't.", "She → isn't.")),
+ ("They're going to ____ the van.", ["follow", "follows", "following"], 0, ("To + V.", "To + V.", "To + verb.")),
+]

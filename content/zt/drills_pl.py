@@ -80,3 +80,43 @@ D[11] = [
  ("Czy ____ do niego? (ty, ż.)", ["dzwoniłaś", "dzwoniłeś", "dzwonił"], 0, ("Ty (ż.).", "Ty (ż.).", "You (f.).")),
  ("Oni ____ po parku.", ["spacerowali", "spacerował", "spacerują wczoraj"], 0, ("Oni → -li.", "Oni → -li.", "They → -li.")),
 ]
+D[13] = [
+ ("Poszliśmy do ____.", ["urzędu", "urząd", "urzędem"], 0, ("Do + dopełniacz.", "Do + dopełniacz.", "Do + genitive.")),
+ ("Ja (ż.) ____ długą kolejkę.", ["zobaczyłam", "zobaczyłem", "zobaczył"], 0, ("Ja (ż.).", "Ja (ż.).", "I (f.).")),
+ ("To ____ godziny.", ["trwało", "trwał", "trwa wczoraj"], 0, ("To → trwało.", "To → trwało.", "It → trwało.")),
+ ("Ona ____ na zewnątrz.", ["wybiegła", "wybiegł", "wybiega wczoraj"], 0, ("Ona → -ła.", "Ona → -ła.", "She → -ła.")),
+ ("Oni ____ odpowiedź.", ["dostali", "dostał", "dostała"], 0, ("Oni → -li.", "Oni → -li.", "They → -li.")),
+ ("On ____ dowcip.", ["opowiedział", "opowiedziała", "opowiada wczoraj"], 0, ("On → -ł.", "On → -ł.", "He → -ł.")),
+]
+D[14] = [
+ ("____ go widziałeś?", ["Czy", "Co", "Kto"], 0, ("Czy.", "Czy.", "Czy.")),
+ ("Dokąd on ____?", ["poszedł", "poszła", "pójść"], 0, ("On → poszedł.", "On → poszedł.", "He → poszedł.")),
+ ("Co ____? (ty, m.)", ["jadłeś", "jadłam", "jadł"], 0, ("Ty (m.).", "Ty (m.).", "You (m.).")),
+ ("Czy ona do ciebie ____?", ["dzwoniła", "dzwonił", "dzwonić"], 0, ("Ona → -ła.", "Ona → -ła.", "She → -ła.")),
+ ("Tak, ____. (widziałem)", ["widziałem", "widzę", "zobaczę"], 0, ("Przeszłość.", "Przeszłość.", "Past.")),
+ ("Dlaczego go ____? (oni)", ["zabrali", "zabrał", "zabrała"], 0, ("Oni → -li.", "Oni → -li.", "They → -li.")),
+]
+D[15] = [
+ ("Pomóż ____!", ["mi", "ja", "mój"], 0, ("Celownik.", "Celownik.", "Dative.")),
+ ("Widzę ____. (Nick)", ["go", "on", "jego dom"], 0, ("Biernik.", "Biernik.", "Accusative.")),
+ ("Spójrz na ____! (Judy)", ["nią", "ona", "jej"], 0, ("Na + biernik.", "Na + biernik.", "Na + accusative.")),
+ ("On nas ____.", ["goni", "gonią", "gonię"], 0, ("On → goni.", "On → goni.", "He → goni.")),
+ ("Zadzwoń do ____! (policja)", ["nich", "oni", "im"], 0, ("Do + dopełniacz.", "Do + dopełniacz.", "Do + genitive.")),
+ ("Weź ____! (radio)", ["je", "go", "ją"], 0, ("Radio (n.) → je.", "Radio (n.) → je.", "Neuter → je.")),
+]
+D[16] = [
+ ("Lew jest ____ niż kot.", ["większy", "duży", "największy"], 0, ("Większy.", "Większy.", "Większy.")),
+ ("Ta droga jest ____ niebezpieczna.", ["bardziej", "więcej", "najbardziej"], 0, ("Bardziej.", "Bardziej.", "Bardziej.")),
+ ("Jesteś ____ ode mnie.", ["lepszy", "dobry", "najlepszy"], 0, ("Lepszy.", "Lepszy.", "Lepszy.")),
+ ("Gepard jest szybszy ____ leniwiec.", ["niż", "jak", "że"], 0, ("Niż.", "Niż.", "Niż.")),
+ ("Tu jest ____.", ["ciszej", "cicho", "najciszej"], 0, ("Ciszej.", "Ciszej.", "Ciszej.")),
+ ("On jest ____, niż myślisz.", ["milszy", "miły", "najmilszy"], 0, ("Milszy.", "Milszy.", "Milszy.")),
+]
+D[17] = [
+ ("____ ich śledzić.", ["Będziemy", "Byliśmy", "Jesteśmy"], 0, ("Przyszłość.", "Przyszłość.", "Future.")),
+ ("Zamierzam ____.", ["pomóc", "pomagam", "pomogłem"], 0, ("Bezokolicznik.", "Bezokolicznik.", "Infinitive.")),
+ ("Jutro ____ padać.", ["będzie", "było", "jest"], 0, ("Będzie.", "Będzie.", "Będzie.")),
+ ("Czy ____ przyjść?", ["zamierzasz", "zamierzam", "zamierza"], 0, ("Ty → zamierzasz.", "Ty → zamierzasz.", "You → zamierzasz.")),
+ ("Ona nie zamierza ____.", ["odejść", "odchodzi", "odeszła"], 0, ("Bezokolicznik.", "Bezokolicznik.", "Infinitive.")),
+ ("Oni będą ____ furgonetkę.", ["śledzić", "śledzą", "śledzili"], 0, ("Bezokolicznik.", "Bezokolicznik.", "Infinitive.")),
+]

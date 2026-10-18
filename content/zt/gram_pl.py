@@ -164,3 +164,84 @@ G[11] = [
 ]
 D[11] = ("Napisz o zeszłym weekendzie (30+ słów). Co robiłeś/robiłaś? Użyj: grałem/grałam, oglądałem/oglądałam, odwiedziłem/odwiedziłam, nie…", 30,
  ("W weekend grałam… Oglądałam… Odwiedziłam… Nie…", "W weekend grałam… Oglądałam… Odwiedziłam… Nie…", "W weekend grałam… Oglądałam… Odwiedziłam… Nie…"))
+
+# ---- Арка 3
+T[13] = ("Przeszłość: poszedł, zobaczył, wziął, przyszedł", "Przeszłość: poszedł, zobaczył, wziął", "Past: poszedł, zobaczył, wziął")
+G[13] = [
+ ("Nick i Judy ____ do urzędu.", ["poszli", "poszedł", "poszła"], 0,
+  [("Так! Вони (чол. + жін.) → poszli.", "Tak! Oni → poszli.", "Yes! They (mixed) → poszli."),
+   ("Poszedł — він.", "„Poszedł” — on.", "Poszedł is he."),
+   ("Poszła — вона.", "„Poszła” — ona.", "Poszła is she.")],
+  ("Iść: poszedłem/poszłam, poszedł/poszła, poszli/poszły.", "Iść: poszedłem/poszłam, poszedł/poszła, poszli/poszły.", "Iść: poszedłem/poszłam, poszedł/poszła, poszli/poszły.")),
+ ("Flash w końcu ____ nazwę firmy.", ["znalazł", "znalazła", "znajdzie"], 0,
+  [("Так! Флеш (він) → znalazł.", "Tak! Flash (on) → znalazł.", "Yes! Flash (he) → znalazł."),
+   ("Znalazła — вона.", "„Znalazła” — ona.", "Znalazła is she."),
+   ("Znajdzie — майбутнє.", "„Znajdzie” — przyszłość.", "Znajdzie is future.")],
+  ("Znaleźć → znalazł, znalazła.", "Znaleźć → znalazł, znalazła.", "Znaleźć → znalazł, znalazła.")),
+]
+D[13] = ("Opisz dzień, kiedy coś trwało wieki (30+ słów). Dokąd poszedłeś/poszłaś? Co zobaczyłeś/zobaczyłaś? Co dostałeś/dostałaś?", 30,
+ ("W zeszłym miesiącu poszłam… Zobaczyłam… To trwało… W końcu dostałam…", "W zeszłym miesiącu poszłam… Zobaczyłam… To trwało… W końcu dostałam…", "W zeszłym miesiącu poszłam… Zobaczyłam… To trwało… W końcu dostałam…"))
+
+T[14] = ("Pytania w przeszłości: Czy widziałeś? Gdzie poszedł?", "Pytania w przeszłości", "Past questions: Czy widziałeś? Gdzie poszedł?")
+G[14] = [
+ ("Pan Big: „____ przyszliście skrzywdzić moją rodzinę?”", ["Czy", "Co", "Gdzie"], 0,
+  [("Так! Питання так/ні → Czy.", "Tak! Pytanie tak/nie → Czy.", "Yes! Yes/no question → Czy."),
+   ("Co — «що».", "„Co” — rzecz.", "Co means what."),
+   ("Gdzie — «де».", "„Gdzie” — miejsce.", "Gdzie means where.")],
+  ("Did you…? = Czy + минулий час…?", "Did you…? = Czy + przeszły…?", "Did you…? = Czy + past…?")),
+ ("Judy: „Dokąd ____ wydra po imprezie?”", ["pojechała", "pojedzie", "jedzie"], 0,
+  [("Так! Минуле, видра (жін.) → pojechała.", "Tak! Przeszłość, wydra (ż.) → pojechała.", "Yes! Past, wydra (f.) → pojechała."),
+   ("Pojedzie — майбутнє.", "„Pojedzie” — przyszłość.", "Pojedzie is future."),
+   ("Jedzie — теперішній.", "„Jedzie” — teraźniejszy.", "Jedzie is present.")],
+  ("У польській немає did: Dokąd pojechała?", "Po polsku nie ma did.", "Polish has no did: Dokąd pojechała?")),
+]
+D[14] = ("Przeprowadź wywiad z przyjacielem o weekendzie. Napisz 6 pytań i odpowiedzi (30+ słów). Użyj: Czy…? Gdzie…? Co…? Z kim…?", 30,
+ ("Czy byłeś…? Tak. Gdzie poszedłeś? Poszedłem… Co jadłeś?", "Czy byłeś…? Tak. Gdzie poszedłeś? Poszedłem… Co jadłeś?", "Czy byłeś…? Tak. Gdzie poszedłeś? Poszedłem… Co jadłeś?"))
+
+T[15] = ("Zaimki: mnie, go, ją, nas, ich", "Zaimki: mnie, go, ją, nas, ich", "Object pronouns: mnie, go, ją, nas, ich")
+G[15] = [
+ ("Nick spada! Judy: „Trzymaj się ____!”", ["mnie", "ja", "mój"], 0,
+  [("Так! Trzymać się + родовий → mnie.", "Tak! Trzymać się + dopełniacz → mnie.", "Yes! Trzymać się + genitive → mnie."),
+   ("Ja — підмет.", "„Ja” — podmiot.", "Ja is a subject."),
+   ("Mój — «мій».", "„Mój” — dzierżawczy.", "Mój is possessive.")],
+  ("Ja → mnie, ty → cię/ciebie, on → go/jego, ona → ją/jej, my → nas, oni → ich.", "Ja → mnie, on → go, ona → ją, my → nas, oni → ich.", "Ja → mnie, on → go, ona → ją, my → nas, oni → ich.")),
+ ("Manchas biegnie za Judy i Nickiem. Widzi ____!", ["ich", "oni", "im"], 0,
+  [("Так! Widzieć + знахідний → ich.", "Tak! Widzieć + biernik → ich.", "Yes! Widzieć + accusative → ich."),
+   ("Oni — підмет.", "„Oni” — podmiot.", "Oni is a subject."),
+   ("Im — давальний.", "„Im” — celownik.", "Im is dative.")],
+  ("Widzę go / ją / ich. Daję mu / jej / im.", "Widzę go / ją / ich. Daję mu / jej / im.", "Widzę go / ją / ich. Daję mu / jej / im.")),
+]
+D[15] = ("Napisz o przyjacielu, który ci pomógł (30+ słów). Co się stało? Jak ci pomógł? Użyj: mnie, mi, go, mu, ją, jej, nas, ich.", 30,
+ ("Mój przyjaciel pomógł mi, kiedy… Zadzwoniłam do niego… Dał mi… My…", "Mój przyjaciel pomógł mi, kiedy… Zadzwoniłam do niego… Dał mi… My…", "Mój przyjaciel pomógł mi, kiedy… Zadzwoniłam do niego… Dał mi… My…"))
+
+T[16] = ("Stopień wyższy: większy, szybszy, bardziej niebezpieczny", "Stopień wyższy", "Comparatives: większy, szybszy, bardziej")
+G[16] = [
+ ("Komendant Bogo jest ____ niż Judy.", ["większy", "duży", "największy"], 0,
+  [("Так! Порівняння → większy.", "Tak! Porównanie → większy.", "Yes! Comparison → większy."),
+   ("Duży — звичайна форма.", "„Duży” — stopień równy.", "Duży is the base form."),
+   ("Największy — найвищий ступінь.", "„Największy” — stopień najwyższy.", "Największy is the superlative.")],
+  ("Duży → większy, dobry → lepszy, mały → mniejszy.", "Duży → większy, dobry → lepszy.", "Duży → większy, dobry → lepszy, mały → mniejszy.")),
+ ("Manchas jest teraz ____ niebezpieczny niż zwykły jaguar.", ["bardziej", "więcej", "najbardziej"], 0,
+  [("Так! Довгі прикметники → bardziej.", "Tak! Długie przymiotniki → bardziej.", "Yes! Long adjectives → bardziej."),
+   ("Więcej — про кількість.", "„Więcej” — o ilości.", "Więcej is about amount."),
+   ("Najbardziej — найвищий.", "„Najbardziej” — najwyższy.", "Najbardziej is the superlative.")],
+  ("More dangerous = bardziej niebezpieczny.", "More dangerous = bardziej niebezpieczny.", "More dangerous = bardziej niebezpieczny.")),
+]
+D[16] = ("Porównaj dwie osoby lub dwa zwierzęta (30+ słów). Kto jest większy, szybszy, milszy, bardziej interesujący? Użyj: …-szy niż, bardziej … niż.", 30,
+ ("Mój kot jest mniejszy niż pies. Pies jest szybszy… Siostra jest bardziej…", "Mój kot jest mniejszy niż pies. Pies jest szybszy… Siostra jest bardziej…", "Mój kot jest mniejszy niż pies. Pies jest szybszy… Siostra jest bardziej…"))
+
+T[17] = ("Plany: zamierzam / będę + bezokolicznik", "Plany: zamierzam / będę + bezokolicznik", "Plans: zamierzam / będę + infinitive")
+G[17] = [
+ ("Judy: „Dziś wieczorem ____ śledzić wilki.”", ["będziemy", "byliśmy", "jesteśmy"], 0,
+  [("Так! Майбутнє: będziemy + інфінітив.", "Tak! Przyszłość: będziemy + bezokolicznik.", "Yes! Future: będziemy + infinitive."),
+   ("Byliśmy — минуле.", "„Byliśmy” — przeszłość.", "Byliśmy is past."),
+   ("Jesteśmy — теперішній.", "„Jesteśmy” — teraźniejszy.", "Jesteśmy is present.")],
+  ("Going to = zamierzam / będę + bezokolicznik.", "Going to = zamierzam / będę.", "Going to = zamierzam / będę + infinitive.")),
+ ("Bellwether: „____ wam pomóc!”", ["Zamierzam", "Zamierzała", "Zamierzaliśmy"], 0,
+  [("Так! Я → zamierzam.", "Tak! Ja → zamierzam.", "Yes! I → zamierzam."),
+   ("Zamierzała — минуле.", "„Zamierzała” — przeszłość.", "Zamierzała is past."),
+   ("Неправильна особа.", "Zła osoba.", "Wrong person.")],
+  ("Zamierzam + bezokolicznik.", "Zamierzam + bezokolicznik.", "Zamierzam + infinitive.")),
+]
+D[17] = ("Napisz o planach na następny weekend (30+ słów). Co zamierzasz robić? Czego nie zamierzasz? Czy będzie padać?", 30,
+ ("W weekend zamierzam… Moi przyjaciele będą… Nie zamierzam… Będzie…", "W weekend zamierzam… Moi przyjaciele będą… Nie zamierzam… Będzie…", "W weekend zamierzam… Moi przyjaciele będą… Nie zamierzam… Będzie…"))
