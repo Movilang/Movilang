@@ -47,3 +47,11 @@
 
 Курс «Щоденники вампіра»: джерело — `content/tvd/*.py`, збірка й самоперевірка — `python3 content/tvd/build.py` → `content/tvd/tvd1.json`, завантаження в базу — `migration-tvd.sql`.
 Не редагуйте уроки цього курсу в адмін-редакторі уроків: він не знає нових полів (картки, словник, квест).
+
+## Оплата онлайн (Stripe: BLIK, Przelewy24, картка) — з 2026-10-18
+1. Supabase → SQL Editor → запустити `migration-extras.sql`.
+2. stripe.com → акаунт (PL), Settings → Payment methods: увімкнути BLIK і Przelewy24.
+3. Supabase → Edge Functions → створити `checkout` (код: `supabase/functions/checkout/index.ts`) і `stripe-webhook` (код: `supabase/functions/stripe-webhook/index.ts`, **Verify JWT вимкнути**).
+4. Stripe → Developers → Webhooks → Add endpoint: `https://pybzpbkmdupvtsmxlqvr.supabase.co/functions/v1/stripe-webhook`, події `checkout.session.completed` і `checkout.session.async_payment_succeeded`.
+5. Supabase → Edge Functions → Secrets: `STRIPE_SECRET_KEY` (sk_live_…), `STRIPE_WEBHOOK_SECRET` (whsec_…), `SITE_URL` = https://movilang.pages.dev.
+Ціна курсу береться з поля «ціна» курсу, ціна пакета — з налаштування `bundle_price`.

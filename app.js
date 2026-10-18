@@ -374,7 +374,7 @@ function SupabaseBackend(url, key) {
     });
   }
   return {
-    mode:'supabase',
+    mode:'supabase', sb:sb,
     getUser: function () { return profile().then(function (u) { cachedUser = u; return u; }); },
     signUp: function (email, pass, name) {
       return sb.auth.signUp({email:email.trim(), password:pass, options:{data:{name:name, lang:LANG, theme:THEME}, emailRedirectTo: location.origin + '/#/confirmed'}}).then(function (r) {
@@ -511,7 +511,7 @@ function renderMobileNav() {
   };
 }
 function renderNav() {
-  var links = '<a href="#/">' + tx({uk:'Головна', pl:'Strona główna', en:'Home'}) + '</a><a href="#/catalog">' + tx({uk:'Каталог', pl:'Katalog', en:'Catalogue'}) + '</a><a href="#/trial">' + tx({uk:'Пробний урок', pl:'Lekcja próbna', en:'Trial lesson'}) + '</a><a href="#/guide">' + tx({uk:'Посібник', pl:'Poradnik', en:'Guide'}) + '</a>' + (USER ? '<a href="#/words">' + tx({uk:'Словник', pl:'Słownik', en:'Words'}) + '</a>' : '') + '<a href="#/pricing">' + tx({uk:'Тарифи', pl:'Cennik', en:'Pricing'}) + '</a>';
+  var links = '<a href="#/">' + tx({uk:'Головна', pl:'Strona główna', en:'Home'}) + '</a><a href="#/catalog">' + tx({uk:'Каталог', pl:'Katalog', en:'Catalogue'}) + '</a><a href="#/trial">' + tx({uk:'Пробний урок', pl:'Lekcja próbna', en:'Trial lesson'}) + '</a>' + (USER ? '' : '<a href="#/test">' + tx({uk:'Тест рівня', pl:'Test poziomu', en:'Level test'}) + '</a>') + '<a href="#/guide">' + tx({uk:'Посібник', pl:'Poradnik', en:'Guide'}) + '</a>' + (USER ? '<a href="#/words">' + tx({uk:'Словник', pl:'Słownik', en:'Words'}) + '</a>' : '') + '<a href="#/pricing">' + tx({uk:'Тарифи', pl:'Cennik', en:'Pricing'}) + '</a>';
   if (USER) links += '<a href="#/cabinet">' + tx({uk:'Кабінет', pl:'Konto', en:'Account'}) + '</a>';
   if (isAdm()) links += '<a href="#/admin" style="color:var(--nav-admin)">' + tx({uk:'Адмін', pl:'Admin', en:'Admin'}) + '</a>';
   document.getElementById('navlinks').innerHTML = links;
@@ -1376,11 +1376,11 @@ function viewAdmin() {
   if (USER.role === 'admin' && !ADMIN_MODE) { ADMIN_MODE = true; try { localStorage.setItem('ml_admin_mode', '1'); } catch (e) {} renderNav(); }
   if (USER.role !== 'admin') { $app.innerHTML = t('<div class="page"><div class="empty">Ця сторінка доступна лише адміністратору.</div></div>'); return Promise.resolve(); }
   $app.innerHTML = t('<div class="page"><div class="sec-head"><div class="eyebrow">Адмін-панель</div><h2>Керування MoviLang</h2></div><div class="tabs" role="tablist">') +
-    [['stats',t('Статистика')],['users',t('Користувачі')],['courses',t('Курси й уроки')],['keys',t('Ключі доступу')],['site',t('Тексти сайту')],['look',t('Вигляд і кольори')],['analytics','📊 ' + tx({uk:'Аналітика', pl:'Analityka', en:'Analytics'})],['times','⏱ ' + tx({uk:'Час', pl:'Czas', en:'Time'})]].map(function (t) { return '<button class="tab' + (adminTab === t[0] ? ' on' : '') + '" type="button" role="tab" data-t="' + t[0] + '">' + t[1] + '</button>'; }).join('') +
+    [['stats',t('Статистика')],['users',t('Користувачі')],['courses',t('Курси й уроки')],['keys',t('Ключі доступу')],['site',t('Тексти сайту')],['look',t('Вигляд і кольори')],['analytics','📊 ' + tx({uk:'Аналітика', pl:'Analityka', en:'Analytics'})],['times','⏱ ' + tx({uk:'Час', pl:'Czas', en:'Time'})],['sales','💳 ' + tx({uk:'Продажі', pl:'Sprzedaż', en:'Sales'})]].map(function (t) { return '<button class="tab' + (adminTab === t[0] ? ' on' : '') + '" type="button" role="tab" data-t="' + t[0] + '">' + t[1] + '</button>'; }).join('') +
     t('</div><div id="adminBody"><p class="muted">Завантаження…</p></div></div>');
   $app.querySelectorAll('.tab').forEach(function (b) { b.onclick = function () { adminTab = b.dataset.t; ADM_UID = null; viewAdmin(); }; });
   var body = document.getElementById('adminBody');
-  var f = {stats:adminStats, users:adminUsers, courses:adminCourses, keys:adminKeys, site:adminSite, look:adminLook, times:adminTimes, analytics:adminAnalytics}[adminTab];
+  var f = {stats:adminStats, users:adminUsers, courses:adminCourses, keys:adminKeys, site:adminSite, look:adminLook, times:adminTimes, analytics:adminAnalytics, sales:adminSales}[adminTab];
   return f(body).catch(function (e) { body.innerHTML = t('<div class="empty">Помилка: ') + esc(e.message) + '</div>'; });
 }
 
@@ -1821,6 +1821,276 @@ function setAmbient(theme) {
   el.innerHTML = h; document.body.insertBefore(el, document.body.firstChild);
 }
 document.addEventListener('visibilitychange', function () { document.body.classList.toggle('amb-paused', document.hidden); });
+/* ================= EXTRAS 2026-10-18: оплата, пакет, тест рівня, серія, повторення, продажі ================= */
+function todayStr(off) { var d = new Date(Date.now() + (off || 0) * 86400000); return d.getFullYear() + '-' + String(d.getMonth() + 1).padStart(2, '0') + '-' + String(d.getDate()).padStart(2, '0'); }
+function lsGet(k, d) { try { var v = localStorage.getItem(k); return v == null ? d : JSON.parse(v); } catch (e) { return d; } }
+function lsSet(k, v) { try { localStorage.setItem(k, JSON.stringify(v)); } catch (e) {} }
+
+/* ---------- оплата ---------- */
+function startCheckout(courseId, bundle) {
+  if (!USER) { toast(tx({uk:'Спершу створи кабінет або увійди — так курс одразу з\'явиться в тебе.', pl:'Najpierw załóż konto lub zaloguj się — kurs od razu pojawi się na Twoim koncie.', en:'Create an account or log in first — the course will appear in it right away.'}), 'info'); lsSet('ml_after_login', bundle ? 'bundle' : courseId); location.hash = '#/register'; return; }
+  if (API.mode === 'demo' || !API.token) { location.hash = '#/buy'; return; }
+  toast(tx({uk:'Відкриваю оплату…', pl:'Otwieram płatność…', en:'Opening checkout…'}), 'info');
+  API.token().then(function (tk) {
+    return fetch(cfg.SUPABASE_URL + '/functions/v1/checkout', {method:'POST', headers:{'Content-Type':'application/json', Authorization:'Bearer ' + tk, apikey:cfg.SUPABASE_ANON_KEY}, body:JSON.stringify(bundle ? {bundle:true} : {course_id:courseId})});
+  }).then(function (r) { return r.json().then(function (j) { if (!r.ok || !j.url) throw new Error(j.error || 'HTTP ' + r.status); return j; }); })
+    .then(function (j) { location.href = j.url; })
+    .catch(function (e) { toast(tx({uk:'Онлайн-оплата поки недоступна: ', pl:'Płatność online jest chwilowo niedostępna: ', en:'Online payment is unavailable: '}) + e.message, 'err'); location.hash = '#/buy'; });
+}
+document.addEventListener('click', function (e) {
+  var a = e.target.closest && e.target.closest('a[href="#/buy"]'), hp = location.hash.split('/');
+  if (a && (hp[1] === 'course' || hp[1] === 'lesson') && hp[2]) { e.preventDefault(); if (hp[1] === 'course') startCheckout(hp[2]); else API.getLesson(hp[2]).then(function (l) { startCheckout(l && l.course_id); }); return; }
+  var b = e.target.closest && e.target.closest('[data-buy-course],[data-buy-bundle]'); if (!b) return;
+  e.preventDefault(); startCheckout(b.dataset.buyCourse || null, b.hasAttribute('data-buy-bundle'));
+});
+function bundleHtml() {
+  var price = (SETTINGS && SETTINGS.bundle_price) || '149 zł';
+  return '<div class="panel bundle"><div><div class="eyebrow">' + tx({uk:'ПАКЕТ', pl:'PAKIET', en:'BUNDLE'}) + '</div><h3>' + tx({uk:'Усі марафони в одному ключі', pl:'Wszystkie maratony w jednym kluczu', en:'Every marathon in one key'}) + '</h3>' +
+    '<p class="muted">' + tx({uk:'Гаррі Поттер, Щоденники вампіра, Сам удома, Друзі — і всі нові курси, що з\'являться. Три мови: EN · PL · UA.', pl:'Harry Potter, Pamiętniki wampirów, Kevin sam w domu, Przyjaciele — i wszystkie nowe kursy. Trzy języki: EN · PL · UA.', en:'Harry Potter, The Vampire Diaries, Home Alone, Friends — and every new course. Three languages: EN · PL · UA.'}) + '</p></div>' +
+    '<div class="bundle-buy"><div class="amount">' + esc(price) + '</div><button class="btn btn-red" type="button" data-buy-bundle>' + tx({uk:'Купити пакет', pl:'Kup pakiet', en:'Buy the bundle'}) + '</button><small class="muted">BLIK · Przelewy24 · ' + tx({uk:'картка', pl:'karta', en:'card'}) + '</small></div></div>';
+}
+function viewPaid(sid) {
+  if (!requireUser()) return Promise.resolve();
+  $app.innerHTML = '<div class="page"><div class="panel paid"><div class="c3-seal">⏳</div><h2>' + tx({uk:'Перевіряємо оплату…', pl:'Sprawdzamy płatność…', en:'Checking your payment…'}) + '</h2><p class="muted" id="paidMsg">' + tx({uk:'Зазвичай це кілька секунд. BLIK і Przelewy24 інколи до хвилини.', pl:'Zwykle to kilka sekund. BLIK i Przelewy24 czasem do minuty.', en:'Usually a few seconds; BLIK and Przelewy24 can take up to a minute.'}) + '</p></div></div>';
+  var tries = 0;
+  function poll() {
+    if (!API.sb) return Promise.resolve();
+    return API.sb.from('orders').select('*').eq('session_id', sid).maybeSingle().then(function (r) {
+      var o = r.data;
+      if (o && o.status === 'paid') {
+        API.clearCache && API.clearCache();
+        var box = $app.querySelector('.paid'); if (!box) return;
+        box.innerHTML = '<div class="c3-seal">🎉</div><h2>' + tx({uk:'Оплату отримано! Курс відкрито.', pl:'Płatność przyjęta! Kurs odblokowany.', en:'Payment received! Course unlocked.'}) + '</h2>' +
+          '<p class="muted">' + tx({uk:'Твій ключ (про всяк випадок, щоб подарувати чи зберегти):', pl:'Twój klucz (na wszelki wypadek — do zachowania lub podarowania):', en:'Your key (keep it or gift it):'}) + '</p><p class="keycode">' + esc(String(o.key_code || '').replace(/(.{4})(?=.)/g, '$1-')) + '</p>' +
+          '<div class="row" style="justify-content:center">' + (o.course_id ? '<a class="btn btn-red" href="#/course/' + esc(o.course_id) + '">' + tx({uk:'До курсу', pl:'Do kursu', en:'Go to the course'}) + '</a>' : '') + '<a class="btn btn-ghost" href="#/cabinet">' + tx({uk:'Мій кабінет', pl:'Mój kabinet', en:'My dashboard'}) + '</a></div>';
+        return;
+      }
+      if (++tries < 40) setTimeout(poll, 2500);
+      else { var m = document.getElementById('paidMsg'); if (m) m.innerHTML = tx({uk:'Оплата ще обробляється. Курс з\'явиться в кабінеті автоматично. Якщо ні — напиши на ', pl:'Płatność jest jeszcze przetwarzana. Kurs pojawi się w kabinecie automatycznie. Jeśli nie — napisz na ', en:'The payment is still processing; the course will appear automatically. If not, write to '}) + 'info.movielang@gmail.com'; }
+    });
+  }
+  poll(); return Promise.resolve();
+}
+
+/* ---------- тест рівня ---------- */
+var LVL_Q = [
+ ['A1', 'My sister ____ a teacher.', ['is', 'are', 'am', 'be']],
+ ['A1', 'I ____ coffee every morning.', ['drink', 'drinks', 'drinking', 'am drink']],
+ ['A1', 'There ____ two cats in the kitchen.', ['are', 'is', 'be', 'has']],
+ ['A2', 'Yesterday we ____ to the cinema.', ['went', 'go', 'goed', 'have gone']],
+ ['A2', 'Look! It ____ outside.', ['is raining', 'rains', 'rain', 'raining']],
+ ['A2', 'This film is ____ than the book.', ['better', 'more good', 'best', 'gooder']],
+ ['B1', 'I ____ never ____ to London.', ['have / been', 'did / go', 'was / be', 'have / go']],
+ ['B1', 'If it rains tomorrow, we ____ at home.', ['will stay', 'stay', 'would stay', 'stayed']],
+ ['B1', 'The letter ____ by Harry\'s owl.', ['was brought', 'brought', 'was bring', 'has bring']],
+ ['B2', 'If I ____ about the party, I would have come.', ['had known', 'knew', 'have known', 'would know']],
+ ['B2', 'She asked me where ____.', ['I lived', 'did I live', 'do I live', 'I do live']],
+ ['B2', 'I wish I ____ so much yesterday.', ['hadn\'t said', 'didn\'t say', 'don\'t say', 'wouldn\'t say']]
+];
+var LVL_REC = {A1:'A1–A2', A2:'A2', B1:'B1', B2:'B2'};
+function viewTest() {
+  var qs = LVL_Q.map(function (q) { return {lvl:q[0], q:q[1], right:q[2][0], opts:shuffle(q[2])}; }), i = 0, score = {A1:0, A2:0, B1:0, B2:0};
+  function render() {
+    if (i >= qs.length) return finish();
+    var q = qs[i];
+    $app.innerHTML = '<div class="page"><div class="sec-head"><div class="eyebrow">' + tx({uk:'Тест рівня', pl:'Test poziomu', en:'Level test'}) + ' · ' + (i + 1) + ' / ' + qs.length + '</div><h2>' + tx({uk:'Обери правильну відповідь', pl:'Wybierz poprawną odpowiedź', en:'Choose the right answer'}) + '</h2></div>' +
+      '<div class="panel lvltest"><div class="c3-prog"><i style="width:' + Math.round(i / qs.length * 100) + '%"></i></div><p class="lvl-q">' + esc(q.q).replace('____', '<span class="gap">____</span>') + '</p><div class="lvl-opts">' +
+      q.opts.map(function (o, k) { return '<button type="button" class="btn btn-ghost" data-k="' + k + '">' + esc(o) + '</button>'; }).join('') + '</div><button type="button" class="btn btn-ghost btn-sm" id="lvlSkip">' + tx({uk:'Не знаю', pl:'Nie wiem', en:'I don\'t know'}) + '</button></div></div>';
+    $app.querySelectorAll('[data-k]').forEach(function (b) { b.onclick = function () { var ok = q.opts[+b.dataset.k] === q.right; if (ok) score[q.lvl]++; b.classList.add(ok ? 'right' : 'wrong'); setTimeout(function () { i++; render(); }, 350); }; });
+    document.getElementById('lvlSkip').onclick = function () { i++; render(); };
+  }
+  function finish() {
+    var lvl = 'A1'; if (score.A1 >= 2) lvl = 'A2'; if (lvl === 'A2' && score.A2 >= 2) lvl = 'B1'; if (lvl === 'B1' && score.B1 >= 2) lvl = 'B2'; if (lvl === 'B2' && score.B2 < 2) lvl = 'B1+';
+    if (lvl === 'B1+') lvl = 'B1';
+    lsSet('ml_level', lvl); if (USER && API.sb) API.sb.rpc('set_my_level', {p_level:lvl}).then(function () {}, function () {});
+    var total = score.A1 + score.A2 + score.B1 + score.B2;
+    return API.listCourses(false).then(function (cs) {
+      var order = ['A1', 'A2', 'B1', 'B2'], li = order.indexOf(lvl);
+      function fit(c) { var lv = String(c.level || '').match(/[ABC][12]/g) || []; return lv.some(function (x) { var k = order.indexOf(x); return k === li || k === li + 1; }); }
+      var rec = cs.filter(fit); if (!rec.length) rec = cs.slice(0, 2);
+      var desc = {A1:tx({uk:'Початковий. Почни з простих сцен і базових часів.', pl:'Początkujący. Zacznij od prostych scen i podstawowych czasów.', en:'Beginner. Start with simple scenes and basic tenses.'}), A2:tx({uk:'Базовий. Ти розумієш прості діалоги — час для комедій і сімейного кіно.', pl:'Podstawowy. Rozumiesz proste dialogi — czas na komedie i kino familijne.', en:'Elementary. You follow simple dialogue — time for comedies and family films.'}), B1:tx({uk:'Середній. Серіали з живою розмовною мовою — саме для тебе.', pl:'Średni. Seriale z żywym, potocznym językiem są dla Ciebie.', en:'Intermediate. Series with real everyday speech are for you.'}), B2:tx({uk:'Вище середнього. Складна граматика й швидкі діалоги.', pl:'Wyższy średni. Trudna gramatyka i szybkie dialogi.', en:'Upper-intermediate. Advanced grammar and fast dialogue.'})}[lvl];
+      $app.innerHTML = '<div class="page"><div class="panel paid"><div class="eyebrow">' + tx({uk:'Твій результат', pl:'Twój wynik', en:'Your result'}) + ' · ' + total + ' / ' + qs.length + '</div><div class="lvl-big">' + lvl + '</div><p class="lead">' + desc + '</p></div>' +
+        '<div class="sec-head" style="margin-top:28px"><h2>' + tx({uk:'Рекомендовані марафони', pl:'Polecane maratony', en:'Recommended marathons'}) + '</h2></div>' + catalogGrid(rec) +
+        '<div class="row" style="justify-content:center;margin-top:20px"><a class="btn btn-red" href="#/trial">' + tx({uk:'Безкоштовний пробний урок', pl:'Darmowa lekcja próbna', en:'Free trial lesson'}) + '</a><button class="btn btn-ghost" type="button" id="lvlAgain">' + tx({uk:'Пройти ще раз', pl:'Powtórz test', en:'Retake'}) + '</button></div></div>';
+      document.getElementById('lvlAgain').onclick = function () { viewTest(); };
+    });
+  }
+  render(); return Promise.resolve();
+}
+function levelTeaser() {
+  var lv = lsGet('ml_level', null);
+  return '<section><div class="panel teaser"><div><div class="eyebrow">' + tx({uk:'2 хвилини', pl:'2 minuty', en:'2 minutes'}) + '</div><h3>' + (lv ? tx({uk:'Твій рівень: ', pl:'Twój poziom: ', en:'Your level: '}) + lv : tx({uk:'Не знаєш свій рівень?', pl:'Nie znasz swojego poziomu?', en:'Not sure about your level?'})) + '</h3><p class="muted">' + tx({uk:'12 питань — і ми підкажемо, з якого фільму почати.', pl:'12 pytań — i podpowiemy, od którego filmu zacząć.', en:'12 questions and we\'ll tell you which film to start with.'}) + '</p></div><a class="btn btn-red" href="#/test">' + (lv ? tx({uk:'Пройти ще раз', pl:'Zrób test ponownie', en:'Retake the test'}) : tx({uk:'Пройти тест рівня', pl:'Zrób test poziomu', en:'Take the level test'})) + '</a></div></section>';
+}
+
+/* ---------- активність, серія 🔥 і денна ціль ---------- */
+function bumpActivity(lessons, reviews) {
+  var d = todayStr(), loc = lsGet('ml_act', {}); var r = loc[d] || {l:0, r:0}; r.l += lessons; r.r += reviews; loc[d] = r; lsSet('ml_act', loc);
+  if (USER && API.sb) API.sb.rpc('bump_activity', {p_day:d, p_lessons:lessons, p_reviews:reviews}).then(function () {}, function () {});
+}
+function loadActivity() {
+  var loc = lsGet('ml_act', {});
+  var pr = (USER && API.sb) ? API.sb.from('activity').select('*').eq('user_id', USER.id).then(function (r) { return r.data || []; }, function () { return []; }) : Promise.resolve([]);
+  return Promise.all([pr, Promise.all(LANGS.map(function (l) { return API.myProgress(l).catch(function () { return []; }); }))]).then(function (r) {
+    var days = {};
+    Object.keys(loc).forEach(function (d) { days[d] = {l:loc[d].l || 0, r:loc[d].r || 0}; });
+    r[0].forEach(function (a) { var x = days[a.day] || {l:0, r:0}; x.l = Math.max(x.l, a.lessons); x.r = Math.max(x.r, a.reviews); days[a.day] = x; });
+    r[1].forEach(function (ps) { ps.forEach(function (p) { [p.completed_at, p.retry_at].forEach(function (ts) { if (!ts) return; var dd = new Date(ts), k = dd.getFullYear() + '-' + String(dd.getMonth() + 1).padStart(2, '0') + '-' + String(dd.getDate()).padStart(2, '0'); var x = days[k] || {l:0, r:0}; x.l = Math.max(x.l, 1); days[k] = x; }); }); });
+    var streak = 0, off = days[todayStr()] ? 0 : -1;
+    while (days[todayStr(off - streak)]) streak++;
+    var best = 0, run = 0, keys = Object.keys(days).sort(), prev = null;
+    keys.forEach(function (k) { var t0 = new Date(k + 'T12:00:00').getTime(); run = prev && Math.round((t0 - prev) / 86400000) === 1 ? run + 1 : 1; prev = t0; best = Math.max(best, run); });
+    return {days:days, streak:streak, best:Math.max(best, streak), today:days[todayStr()] || {l:0, r:0}};
+  });
+}
+function goalOf() { return lsGet('ml_goal', {l:1, r:10}); }
+function todayBoxHtml(a, due) {
+  var g = goalOf(), tl = a.today.l, trv = a.today.r, done = tl >= g.l && trv >= g.r;
+  var pct = Math.round(Math.min(1, (Math.min(tl, g.l) + Math.min(trv, g.r) / Math.max(g.r, 1) * Math.max(g.l, 1)) / (g.l * 2)) * 100);
+  var wk = []; for (var i = 6; i >= 0; i--) { var d = todayStr(-i); wk.push('<i class="' + (a.days[d] ? 'on' : '') + (i === 0 ? ' now' : '') + '" title="' + d + '"></i>'); }
+  return '<div class="box today"><div class="today-top"><div class="streak"><span class="fire' + (a.streak ? '' : ' off') + '">🔥</span><div><b>' + a.streak + '</b><small>' + tx({uk:'днів поспіль', pl:'dni z rzędu', en:'day streak'}) + '</small></div></div>' +
+    '<div class="goal"><div class="ring" style="--p:' + pct + '"><span>' + (done ? '✓' : pct + '%') + '</span></div><div><b>' + tx({uk:'Ціль на сьогодні', pl:'Cel na dziś', en:'Today\'s goal'}) + '</b><small>' + tx({uk:'уроки', pl:'lekcje', en:'lessons'}) + ' ' + Math.min(tl, g.l) + '/' + g.l + ' · ' + tx({uk:'слова', pl:'słowa', en:'words'}) + ' ' + Math.min(trv, g.r) + '/' + g.r + '</small><button type="button" class="linkbtn small" id="goalEdit">' + tx({uk:'змінити ціль', pl:'zmień cel', en:'change goal'}) + '</button></div></div></div>' +
+    '<div class="wkdots">' + wk.join('') + '<small class="muted">' + tx({uk:'рекорд: ', pl:'rekord: ', en:'best: '}) + a.best + '</small></div>' +
+    '<a class="btn ' + (due ? 'btn-red' : 'btn-ghost') + ' btn-sm" href="#/review">🧠 ' + tx({uk:'Повторення дня', pl:'Powtórka dnia', en:'Daily review'}) + (due ? ' · ' + due : '') + '</a>' +
+    (!a.today.l && !a.today.r && a.streak ? '<p class="small warn-t">' + tx({uk:'Позайматися сьогодні — і серія не згорить!', pl:'Poćwicz dziś, żeby nie stracić serii!', en:'Practise today to keep your streak!'}) + '</p>' : '') + '</div>';
+}
+function bindGoal() {
+  var b = document.getElementById('goalEdit'); if (!b) return;
+  b.onclick = function () {
+    var g = goalOf();
+    var w = mbox('<h3>' + tx({uk:'Денна ціль', pl:'Cel dzienny', en:'Daily goal'}) + '</h3><div class="form"><label class="fl">' + tx({uk:'Уроків на день', pl:'Lekcji dziennie', en:'Lessons per day'}) + '<input class="inp" type="number" min="0" max="5" id="gL" value="' + g.l + '"></label><label class="fl">' + tx({uk:'Слів на повторення', pl:'Słów do powtórki', en:'Words to review'}) + '<input class="inp" type="number" min="0" max="100" step="5" id="gR" value="' + g.r + '"></label><button class="btn btn-red" type="button" id="gSave">' + tx({uk:'Зберегти', pl:'Zapisz', en:'Save'}) + '</button></div>');
+    w.querySelector('#gSave').onclick = function () { lsSet('ml_goal', {l:Math.max(0, Math.min(5, +w.querySelector('#gL').value || 0)), r:Math.max(0, Math.min(100, +w.querySelector('#gR').value || 0))}); w.remove(); route(); };
+  };
+}
+
+/* ---------- повторення слів (SRS: 1 · 3 · 7 · 14 · 30 днів) ---------- */
+var SRS_STEPS = [1, 3, 7, 14, 30], SRS_NEW = 10;
+function srsLocalKey() { return 'ml_srs_' + TARGET; }
+function srsRows() {
+  if (USER && API.sb) return API.sb.from('word_review').select('*').eq('user_id', USER.id).eq('target', TARGET).then(function (r) { var o = {}; (r.data || []).forEach(function (x) { o[x.word] = x; }); return o; }, function () { return lsGet(srsLocalKey(), {}); });
+  return Promise.resolve(lsGet(srsLocalKey(), {}));
+}
+function srsSave(row) {
+  var loc = lsGet(srsLocalKey(), {}); loc[row.word] = row; lsSet(srsLocalKey(), loc);
+  if (USER && API.sb) API.sb.from('word_review').upsert({user_id:USER.id, target:TARGET, word:row.word, meaning:row.meaning, step:row.step, due:row.due, updated_at:new Date().toISOString()}).then(function () {}, function () {});
+}
+function srsPool() {
+  return loadDefs().then(function () { return Promise.all([API.myEnrollments(), API.myProgress(TARGET)]); }).then(function (r) {
+    var enr = r[0], done = {}; r[1].forEach(function (p) { done[p.lesson_id] = 1; });
+    return Promise.all(enr.map(function (cid) { return API.listLessons(cid); })).then(function (lists) {
+      var ls = []; lists.forEach(function (x) { x.forEach(function (l) { if (done[l.id]) ls.push(l); }); });
+      return wordsOf(ls).filter(function (w) { return w.m; });
+    });
+  });
+}
+function srsQueue() {
+  return Promise.all([srsPool(), srsRows()]).then(function (r) {
+    var pool = r[0], rows = r[1], known = knownSet(), today = todayStr(), due = [], fresh = [];
+    var byW = {}; pool.forEach(function (w) { byW[w.w] = w; });
+    Object.keys(rows).forEach(function (k) { var x = rows[k]; if (x.due <= today && x.step < SRS_STEPS.length + 1) due.push({w:k, m:(byW[k] && byW[k].m) || x.meaning, ipa:byW[k] ? byW[k].ipa : '', ex:byW[k] ? byW[k].ex : '', row:x}); });
+    var newToday = lsGet('ml_srs_new_' + TARGET, {d:'', n:0}); if (newToday.d !== today) newToday = {d:today, n:0};
+    pool.forEach(function (w) { if (!rows[w.w] && !known[w.w]) fresh.push(w); });
+    fresh = fresh.slice(0, Math.max(0, SRS_NEW - newToday.n));
+    return {due:due, fresh:fresh, pool:pool, newToday:newToday};
+  });
+}
+function viewReview() {
+  if (!requireUser()) return Promise.resolve();
+  $app.innerHTML = '<div class="page"><p class="muted">' + t('Завантаження…') + '</p></div>';
+  return srsQueue().then(function (q) {
+    var cards = q.due.concat(q.fresh.map(function (w) { return {w:w.w, m:w.m, ipa:w.ipa, ex:w.ex, row:null}; }));
+    cards = shuffle(cards);
+    var head = '<div class="sec-head"><a href="#/cabinet" class="muted small">← ' + t('Мій кабінет') + '</a><div class="eyebrow">' + tx({uk:'Повторення дня', pl:'Powtórka dnia', en:'Daily review'}) + ' · ' + FLAG[TARGET] + '</div>';
+    if (!q.pool.length) { $app.innerHTML = '<div class="page">' + head + '<h2>' + tx({uk:'Поки нічого повторювати', pl:'Na razie nie ma czego powtarzać', en:'Nothing to review yet'}) + '</h2><p class="lead">' + tx({uk:'Пройди перший урок — слова з нього з\'являться тут і повертатимуться через 1, 3, 7, 14 і 30 днів.', pl:'Przejdź pierwszą lekcję — jej słowa pojawią się tutaj i będą wracać po 1, 3, 7, 14 i 30 dniach.', en:'Finish a lesson — its words will show up here and come back after 1, 3, 7, 14 and 30 days.'}) + '</p></div></div>'; return; }
+    if (!cards.length) { $app.innerHTML = '<div class="page">' + head + '<h2>✓ ' + tx({uk:'На сьогодні все!', pl:'Na dziś wszystko!', en:'All done for today!'}) + '</h2><p class="lead">' + tx({uk:'Наступні слова чекають на тебе завтра. Мозок дякує 🧠', pl:'Kolejne słowa czekają na Ciebie jutro. Mózg dziękuje 🧠', en:'More words tomorrow. Your brain says thanks 🧠'}) + '</p></div><div class="row"><a class="btn btn-red" href="#/cabinet">' + t('Мій кабінет') + '</a><a class="btn btn-ghost" href="#/words">' + tx({uk:'Мій словник', pl:'Mój słownik', en:'My words'}) + '</a></div></div>'; return; }
+    var i = 0, good = 0, total = cards.length, again = [];
+    function show() {
+      if (i >= cards.length) {
+        if (again.length) { cards = cards.concat(again); again = []; }
+        else return end();
+      }
+      var c = cards[i], others = shuffle(q.pool.filter(function (w) { return w.w !== c.w && w.m && w.m !== c.m; })).slice(0, 3).map(function (w) { return w.m; });
+      var opts = shuffle([c.m].concat(others));
+      $app.innerHTML = '<div class="page">' + head + '<h2>' + tx({uk:'Що означає це слово?', pl:'Co znaczy to słowo?', en:'What does this word mean?'}) + '</h2></div>' +
+        '<div class="panel srs"><div class="c3-prog"><i style="width:' + Math.round(Math.min(i, total) / total * 100) + '%"></i></div><div class="srs-tag">' + (c.row ? tx({uk:'повторення', pl:'powtórka', en:'review'}) : tx({uk:'нове слово', pl:'nowe słowo', en:'new word'})) + '</div>' +
+        '<div class="srs-w">' + esc(c.w) + ' <button type="button" class="linkbtn" id="srsSay" aria-label="say">🔊</button></div>' + (c.ipa ? '<div class="muted">' + esc(c.ipa) + '</div>' : '') +
+        '<div class="lvl-opts">' + opts.map(function (o, k) { return '<button type="button" class="btn btn-ghost" data-k="' + k + '">' + esc(o) + '</button>'; }).join('') + '</div><div id="srsEx" class="muted small"></div></div></div>';
+      document.getElementById('srsSay').onclick = function () { say(c.w); };
+      $app.querySelectorAll('[data-k]').forEach(function (b) { b.onclick = function () {
+        var ok = opts[+b.dataset.k] === c.m; $app.querySelectorAll('[data-k]').forEach(function (x) { x.disabled = true; if (opts[+x.dataset.k] === c.m) x.classList.add('right'); }); if (!ok) b.classList.add('wrong');
+        var step = c.row ? c.row.step : 0;
+        if (!c.retry) {
+          if (ok) { good++; step = Math.min(step + 1, SRS_STEPS.length); } else step = 0;
+          var nd = todayStr(ok ? SRS_STEPS[Math.max(0, step - 1)] : 1);
+          srsSave({word:c.w, meaning:c.m, step:step, due:nd});
+          if (!c.row) { q.newToday.n++; lsSet('ml_srs_new_' + TARGET, q.newToday); }
+          bumpActivity(0, 1);
+        }
+        if (!ok) again.push({w:c.w, m:c.m, ipa:c.ipa, ex:c.ex, row:{step:0}, retry:true});
+        if (c.ex) document.getElementById('srsEx').textContent = '“' + c.ex + '”';
+        setTimeout(function () { i++; show(); }, ok ? 650 : 1500);
+      }; });
+    }
+    function end() {
+      var pct = Math.round(good / total * 100);
+      $app.innerHTML = '<div class="page"><div class="panel paid"><div class="c3-seal">' + (pct >= 80 ? '🏆' : '🧠') + '</div><h2>' + tx({uk:'Повторення завершено!', pl:'Powtórka ukończona!', en:'Review complete!'}) + '</h2><p class="lead">' + good + ' / ' + total + ' · ' + pct + '%</p><p class="muted">' + tx({uk:'Слова з помилками повернуться завтра, правильні — пізніше.', pl:'Słowa z błędami wrócą jutro, poprawne — później.', en:'Missed words return tomorrow, the rest later.'}) + '</p><div class="row" style="justify-content:center"><a class="btn btn-red" href="#/cabinet">' + t('Мій кабінет') + '</a></div></div></div>';
+    }
+    show();
+  });
+}
+
+/* ---------- обгортки існуючих сторінок ---------- */
+var _viewCabinet = viewCabinet;
+viewCabinet = function () {
+  return Promise.resolve(_viewCabinet()).then(function () {
+    var main = document.querySelector('.dmain'); if (!main || !USER) return;
+    var ph = document.createElement('div'); ph.className = 'today-wrap'; main.insertBefore(ph, main.firstChild);
+    return Promise.all([loadActivity(), srsQueue().catch(function () { return {due:[], fresh:[]}; })]).then(function (r) { ph.innerHTML = todayBoxHtml(r[0], r[1].due.length + r[1].fresh.length); bindGoal(); });
+  }).then(function () {
+    var pend = lsGet('ml_after_login', null); if (pend && USER) { lsSet('ml_after_login', null); startCheckout(pend === 'bundle' ? null : pend, pend === 'bundle'); }
+  });
+};
+var _viewHome = viewHome;
+viewHome = function () { return Promise.resolve(_viewHome()).then(function () { var s = $app.querySelector('#pricing'); if (s) { s.insertAdjacentHTML('beforebegin', levelTeaser()); s.insertAdjacentHTML('beforeend', bundleHtml()); } }); };
+var _viewPricing = viewPricing;
+viewPricing = function () { return Promise.resolve(_viewPricing()).then(function () { var p = $app.querySelector('.prices'); if (p) p.insertAdjacentHTML('afterend', bundleHtml()); }); };
+var _viewBuy = viewBuy;
+viewBuy = function () { return Promise.resolve(_viewBuy()).then(function () { var p = $app.querySelector('.prices'); if (p) p.insertAdjacentHTML('afterend', bundleHtml()); }); };
+if (API.saveProgress) { var _sp = API.saveProgress; API.saveProgress = function () { bumpActivity(1, 0); return _sp.apply(API, arguments); }; }
+
+/* ---------- адмін: продажі та воронка ---------- */
+function adminSales(body) {
+  if (!API.sb) { body.innerHTML = '<div class="empty">' + tx({uk:'Доступно лише з базою Supabase.', pl:'Dostępne tylko z bazą Supabase.', en:'Requires Supabase.'}) + '</div>'; return Promise.resolve(); }
+  var sb = API.sb;
+  return Promise.all([sb.from('orders').select('*').order('created_at', {ascending:false}).limit(500), API.listCourses(true), sb.from('lessons').select('id,num,course_id'), sb.from('progress').select('user_id,lesson_id'), sb.from('progress_lang').select('user_id,lesson_id'), sb.from('enrollments').select('*'), sb.from('profiles').select('id,email,created_at,level'), sb.from('activity').select('*').gte('day', todayStr(-29))]).then(function (r) {
+    var orders = r[0].data || [], cs = r[1], ls = r[2].data || [], prog = (r[3].data || []).concat(r[4].data || []), enr = r[5].data || [], users = r[6].data || [], act = r[7].data || [];
+    var paid = orders.filter(function (o) { return o.status === 'paid'; }), now = Date.now();
+    var sum = function (a) { return a.reduce(function (s, o) { return s + (+o.amount || 0); }, 0) / 100; };
+    var m30 = paid.filter(function (o) { return now - new Date(o.paid_at || o.created_at) < 30 * 86400000; });
+    var cname = function (id) { var c = cs.filter(function (x) { return x.id === id; })[0]; return c ? tr(c, 'title') : '—'; };
+    var buyers = {}; enr.forEach(function (e) { buyers[e.user_id] = 1; });
+    var conv = users.length ? Math.round(Object.keys(buyers).length / users.length * 100) : 0;
+    var dau = {}; act.forEach(function (a) { dau[a.day] = (dau[a.day] || 0) + 1; });
+    var lvls = {}; users.forEach(function (u) { if (u.level) lvls[u.level] = (lvls[u.level] || 0) + 1; });
+    var funnels = cs.map(function (c) {
+      var cl = ls.filter(function (l) { return l.course_id === c.id; }).sort(function (a, b) { return a.num - b.num; });
+      var byL = {}; prog.forEach(function (p) { (byL[p.lesson_id] = byL[p.lesson_id] || {})[p.user_id] = 1; });
+      var cnt = cl.map(function (l) { return {n:l.num, u:Object.keys(byL[l.id] || {}).length}; });
+      var max = Math.max.apply(null, cnt.map(function (x) { return x.u; }).concat([1]));
+      var drop = null; for (var k = 1; k < cnt.length; k++) { var d = cnt[k - 1].u - cnt[k].u; if (cnt[k - 1].u && (!drop || d > drop.d)) drop = {d:d, n:cnt[k].n}; }
+      return '<div class="box"><h4>' + esc(tr(c, 'title')) + '</h4><div class="funnel">' + cnt.map(function (x) { return '<i title="' + tx({uk:'Урок ', pl:'Lekcja ', en:'Lesson '}) + x.n + ': ' + x.u + '" style="height:' + Math.max(2, Math.round(x.u / max * 80)) + 'px"></i>'; }).join('') + '</div><p class="small muted">' + tx({uk:'Почали: ', pl:'Zaczęło: ', en:'Started: '}) + (cnt[0] ? cnt[0].u : 0) + ' · ' + tx({uk:'дійшли до кінця: ', pl:'doszło do końca: ', en:'finished: '}) + (cnt.length ? cnt[cnt.length - 1].u : 0) + (drop && drop.d > 0 ? ' · ' + tx({uk:'найбільший відтік перед уроком ', pl:'największy odpływ przed lekcją ', en:'biggest drop before lesson '}) + drop.n + ' (−' + drop.d + ')' : '') + '</p></div>';
+    }).join('');
+    body.innerHTML = '<div style="display:grid;gap:18px"><div class="stats">' +
+      '<div class="stat"><b>' + sum(m30).toFixed(0) + ' zł</b><span>' + tx({uk:'виручка за 30 днів', pl:'przychód 30 dni', en:'revenue, 30 days'}) + '</span></div>' +
+      '<div class="stat"><b>' + sum(paid).toFixed(0) + ' zł</b><span>' + tx({uk:'виручка всього', pl:'przychód łącznie', en:'total revenue'}) + '</span></div>' +
+      '<div class="stat"><b>' + paid.length + '</b><span>' + tx({uk:'оплачених замовлень', pl:'opłaconych zamówień', en:'paid orders'}) + '</span></div>' +
+      '<div class="stat"><b>' + conv + '%</b><span>' + tx({uk:'реєстрацій → курс', pl:'rejestracji → kurs', en:'signups → course'}) + '</span></div></div>' +
+      '<div class="stats"><div class="stat"><b>' + (dau[todayStr()] || 0) + '</b><span>' + tx({uk:'активних сьогодні', pl:'aktywnych dziś', en:'active today'}) + '</span></div><div class="stat"><b>' + orders.filter(function (o) { return o.status !== 'paid'; }).length + '</b><span>' + tx({uk:'кинутих кошиків', pl:'porzuconych koszyków', en:'abandoned checkouts'}) + '</span></div><div class="stat"><b>' + (Object.keys(lvls).map(function (k) { return k + ': ' + lvls[k]; }).join(' · ') || '—') + '</b><span>' + tx({uk:'рівні з тесту', pl:'poziomy z testu', en:'test levels'}) + '</span></div></div>' +
+      '<h3>' + tx({uk:'Воронка уроків (скільки учнів пройшли кожен урок)', pl:'Lejek lekcji (ilu uczniów przeszło każdą lekcję)', en:'Lesson funnel (students per lesson)'}) + '</h3><div class="rows">' + funnels + '</div>' +
+      '<h3>' + tx({uk:'Останні замовлення', pl:'Ostatnie zamówienia', en:'Latest orders'}) + '</h3><div class="tbl-wrap"><table class="tbl"><tr><th>' + tx({uk:'Дата', pl:'Data', en:'Date'}) + '</th><th>E-mail</th><th>' + tx({uk:'Що', pl:'Co', en:'What'}) + '</th><th>' + tx({uk:'Сума', pl:'Kwota', en:'Amount'}) + '</th><th>' + tx({uk:'Статус', pl:'Status', en:'Status'}) + '</th><th>' + tx({uk:'Ключ', pl:'Klucz', en:'Key'}) + '</th></tr>' +
+      (orders.slice(0, 50).map(function (o) { return '<tr><td>' + fmtDate(o.created_at) + '</td><td>' + esc(o.email || '') + '</td><td>' + esc(o.bundle ? tx({uk:'Пакет', pl:'Pakiet', en:'Bundle'}) : cname(o.course_id)) + '</td><td>' + ((+o.amount || 0) / 100).toFixed(2) + ' zł</td><td>' + (o.status === 'paid' ? '✅' : '⏳') + '</td><td><code>' + esc(o.key_code || '') + '</code></td></tr>'; }).join('') || '<tr><td colspan="6" class="muted">' + tx({uk:'Ще немає замовлень', pl:'Brak zamówień', en:'No orders yet'}) + '</td></tr>') + '</table></div></div>';
+  });
+}
+
 function route() {
   var h = location.hash.replace(/^#\/?/, ''), parts = h.split('/'), p;
   var nav = ROUTE_LAST !== h; ROUTE_LAST = h;
@@ -1841,6 +2111,9 @@ function route() {
     case 'guide': p = viewGuide(parts[1], parts[2]); break;
     case 'words': p = viewWords(); break;
     case 'admin': p = viewAdmin(); break;
+    case 'test': p = viewTest(); break;
+    case 'review': p = viewReview(); break;
+    case 'paid': p = viewPaid(parts[1]); break;
     default: $app.innerHTML = t('<div class="page"><div class="empty">Сторінку не знайдено. <a href="#/">На головну</a></div></div>'); p = Promise.resolve();
   }
   Promise.resolve(p).catch(function (e) { $app.innerHTML = t('<div class="page"><div class="empty">Помилка: ') + esc(e.message) + '</div></div>'; })
