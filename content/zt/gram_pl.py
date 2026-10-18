@@ -245,3 +245,84 @@ G[17] = [
 ]
 D[17] = ("Napisz o planach na następny weekend (30+ słów). Co zamierzasz robić? Czego nie zamierzasz? Czy będzie padać?", 30,
  ("W weekend zamierzam… Moi przyjaciele będą… Nie zamierzam… Będzie…", "W weekend zamierzam… Moi przyjaciele będą… Nie zamierzam… Będzie…", "W weekend zamierzam… Moi przyjaciele będą… Nie zamierzam… Będzie…"))
+
+# ---- Арка 4
+T[19] = ("Stopień najwyższy: największy, najgorszy, najbardziej", "Stopień najwyższy", "Superlatives: największy, najgorszy, najbardziej")
+G[19] = [
+ ("To jest ____ klif za miastem.", ["najwyższy", "wyższy", "wysoki"], 0,
+  [("Так! Найвищий ступінь → naj-.", "Tak! Stopień najwyższy → naj-.", "Yes! Superlative → naj-."),
+   ("Wyższy — порівняння.", "„Wyższy” — stopień wyższy.", "Wyższy is a comparative."),
+   ("Wysoki — звичайна форма.", "„Wysoki” — stopień równy.", "Wysoki is the base form.")],
+  ("Naj- + stopień wyższy: wyższy → najwyższy, lepszy → najlepszy.", "Naj- + stopień wyższy.", "Naj- + comparative: wyższy → najwyższy.")),
+ ("To są ____ niebezpieczne zwierzęta w mieście.", ["najbardziej", "bardziej", "bardzo bardzo"], 0,
+  [("Так! Довгі → najbardziej.", "Tak! Długie → najbardziej.", "Yes! Long ones → najbardziej."),
+   ("Bardziej — порівняння.", "„Bardziej” — stopień wyższy.", "Bardziej is a comparative."),
+   ("Неправильно.", "Błąd.", "Wrong.")],
+  ("The most dangerous = najbardziej niebezpieczny.", "The most dangerous = najbardziej niebezpieczny.", "The most dangerous = najbardziej niebezpieczny.")),
+]
+D[19] = ("Napisz o najlepszych i najgorszych miejscach w twoim mieście (30+ słów). Użyj: największy, najlepszy, najbardziej…, najgorszy.", 30,
+ ("Największy budynek w moim mieście to… Najlepsza kawiarnia to… Najbardziej interesujące miejsce…", "Największy budynek w moim mieście to… Najlepsza kawiarnia to… Najbardziej interesujące miejsce…", "Największy budynek w moim mieście to… Najlepsza kawiarnia to… Najbardziej interesujące miejsce…"))
+
+T[20] = ("Musieć / nie wolno / nie trzeba", "Musieć / nie wolno / nie trzeba", "Must = musieć, mustn't = nie wolno")
+G[20] = [
+ ("Judy: „____ zadzwonić do komendanta!”", ["Musimy", "Musimy się", "Musiał"], 0,
+  [("Так! Ми → musimy + інфінітив.", "Tak! My → musimy + bezokolicznik.", "Yes! We → musimy + infinitive."),
+   ("Się тут зайве.", "Zbędne się.", "No się here."),
+   ("Musiał — минуле.", "„Musiał” — przeszłość.", "Musiał is past.")],
+  ("Muszę, musisz, musi, musimy, musicie, muszą.", "Muszę, musisz, musi, musimy, musicie, muszą.", "Muszę, musisz, musi, musimy, musicie, muszą.")),
+ ("Nick: „____ zgubić tego telefonu!”", ["Nie wolno ci", "Nie musisz", "Nie musi"], 0,
+  [("Так! Mustn't = nie wolno.", "Tak! Mustn't = nie wolno.", "Yes! Mustn't = nie wolno."),
+   ("Nie musisz = don't have to.", "„Nie musisz” = don't have to.", "Nie musisz = don't have to."),
+   ("Nie musi — він.", "„Nie musi” — on.", "Nie musi is he.")],
+  ("Mustn't = nie wolno · don't have to = nie musisz.", "Mustn't = nie wolno · don't have to = nie musisz.", "Mustn't = nie wolno · don't have to = nie musisz.")),
+]
+D[20] = ("Napisz zasady w domu lub w szkole (30+ słów). Co musisz robić? Czego nie wolno? Co musisz robić codziennie?", 30,
+ ("W domu muszę… Nie wolno mi… Codziennie muszę… W szkole musimy…", "W domu muszę… Nie wolno mi… Codziennie muszę… W szkole musimy…", "W domu muszę… Nie wolno mi… Codziennie muszę… W szkole musimy…"))
+
+T[21] = ("Rada: powinieneś / powinnaś / nie powinieneś", "Rada: powinieneś / powinnaś", "Advice: powinieneś / powinnaś")
+G[21] = [
+ ("Nick: „Nie ____ mówić za dużo, Carrots.”", ["powinnaś", "powinieneś", "powinna"], 0,
+  [("Так! До Джуді (жін., ти) → powinnaś.", "Tak! Do Judy (ty, ż.) → powinnaś.", "Yes! To Judy (you, f.) → powinnaś."),
+   ("Powinieneś — до чоловіка.", "„Powinieneś” — do mężczyzny.", "Powinieneś is to a male."),
+   ("Powinna — вона.", "„Powinna” — ona.", "Powinna is she.")],
+  ("Powinienem/powinnam, powinieneś/powinnaś, powinien/powinna.", "Powinienem/powinnam, powinieneś/powinnaś…", "Powinienem/powinnam, powinieneś/powinnaś, powinien/powinna.")),
+ ("Judy: „Co ____ teraz powiedzieć Nickowi?”", ["powinnam", "powinna", "powinnaś"], 0,
+  [("Так! Я (жін.) → powinnam.", "Tak! Ja (ż.) → powinnam.", "Yes! I (f.) → powinnam."),
+   ("Powinna — вона.", "„Powinna” — ona.", "Powinna is she."),
+   ("Powinnaś — ти.", "„Powinnaś” — ty.", "Powinnaś is you.")],
+  ("Should I…? = Czy powinnam/powinienem…?", "Should I…? = Czy powinnam…?", "Should I…? = Czy powinnam/powinienem…?")),
+]
+D[21] = ("Daj radę Judy (30+ słów). Co powinna zrobić? Czego nie powinna? Użyj: powinnaś, nie powinnaś, Nick powinien…", 30,
+ ("Judy, powinnaś… Nie powinnaś… Powinnaś powiedzieć… Nick powinien…", "Judy, powinnaś… Nie powinnaś… Powinnaś powiedzieć… Nick powinien…", "Judy, powinnaś… Nie powinnaś… Powinnaś powiedzieć… Nick powinien…"))
+
+T[22] = ("Szłam, kiedy… (aspekt niedokonany + dokonany)", "Szłam, kiedy… (aspekt)", "Was walking when… = szłam, kiedy…")
+G[22] = [
+ ("Kiedy Judy ____ ulicą, mama-królica odciągnęła dziecko.", ["szła", "poszła", "pójdzie"], 0,
+  [("Так! Тривала дія → недоконаний: szła.", "Tak! Czynność trwająca → niedokonany: szła.", "Yes! An ongoing action → imperfective: szła."),
+   ("Poszła — одна завершена дія.", "„Poszła” — czynność zakończona.", "Poszła is a finished action."),
+   ("Pójdzie — майбутнє.", "„Pójdzie” — przyszłość.", "Pójdzie is future.")],
+  ("Past Continuous = niedokonany (robiłam), Past Simple часто = dokonany (zrobiłam).", "Past Continuous = niedokonany; Past Simple = dokonany.", "Past Continuous ≈ imperfective; Past Simple ≈ perfective.")),
+ ("Podczas gdy zwierzęta ____ w autobusie, nikt nic nie powiedział.", ["siedziały", "usiadły", "siądą"], 0,
+  [("Так! Тривала дія → siedziały.", "Tak! Trwanie → siedziały.", "Yes! Ongoing → siedziały."),
+   ("Usiadły — разова дія.", "„Usiadły” — jednorazowo.", "Usiadły is a single action."),
+   ("Siądą — майбутнє.", "„Siądą” — przyszłość.", "Siądą is future.")],
+  ("Podczas gdy + niedokonany.", "Podczas gdy + niedokonany.", "Podczas gdy + imperfective.")),
+]
+D[22] = ("Opisz chwilę, którą pamiętasz (30+ słów). Co robiłeś/robiłaś? Co robili ludzie obok? Co się wtedy stało?", 30,
+ ("Szłam… kiedy… Moi przyjaciele siedzieli… Podczas gdy…, nagle…", "Szłam… kiedy… Moi przyjaciele siedzieli… Podczas gdy…, nagle…", "Szłam… kiedy… Moi przyjaciele siedzieli… Podczas gdy…, nagle…"))
+
+T[23] = ("Przysłówki: smutno, cicho, dobrze, szybko", "Przysłówki: smutno, cicho, dobrze", "Adverbs: smutno, cicho, dobrze, szybko")
+G[23] = [
+ ("Judy patrzy ____ na pustą drogę.", ["smutno", "smutna", "smutny"], 0,
+  [("Так! Як? → прислівник smutno.", "Tak! Jak? → przysłówek smutno.", "Yes! How? → adverb smutno."),
+   ("Smutna — прикметник.", "„Smutna” — przymiotnik.", "Smutna is an adjective."),
+   ("Smutny — прикметник.", "„Smutny” — przymiotnik.", "Smutny is an adjective.")],
+  ("Przysłówek często na -o / -ie: smutno, cicho, dobrze, ładnie.", "Przysłówek na -o / -ie.", "Polish adverbs often end in -o / -ie.")),
+ ("Gideon piecze bardzo ____.", ["dobrze", "dobry", "dobra"], 0,
+  [("Так! Як? → dobrze.", "Tak! Jak? → dobrze.", "Yes! How? → dobrze."),
+   ("Dobry — прикметник.", "„Dobry” — przymiotnik.", "Dobry is an adjective."),
+   ("Dobra — прикметник.", "„Dobra” — przymiotnik.", "Dobra is an adjective.")],
+  ("Well = dobrze.", "Well = dobrze.", "Well = dobrze.")),
+]
+D[23] = ("Napisz o kimś, kto się zmienił (30+ słów). Jak zachowywał się kiedyś? A jak teraz? Użyj: źle, miło, cicho, grzecznie, dobrze…", 30,
+ ("Kiedyś mój brat mówił głośno i grał źle. Teraz mówi cicho i…", "Kiedyś mój brat mówił głośno i grał źle. Teraz mówi cicho i…", "Kiedyś mój brat mówił głośno i grał źle. Teraz mówi cicho i…"))

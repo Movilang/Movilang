@@ -120,3 +120,43 @@ D[17] = [
  ("Ona nie zamierza ____.", ["odejść", "odchodzi", "odeszła"], 0, ("Bezokolicznik.", "Bezokolicznik.", "Infinitive.")),
  ("Oni będą ____ furgonetkę.", ["śledzić", "śledzą", "śledzili"], 0, ("Bezokolicznik.", "Bezokolicznik.", "Infinitive.")),
 ]
+D[19] = [
+ ("To ____ klif.", ["najwyższy", "wyższy", "wysoki"], 0, ("Naj-.", "Naj-.", "Naj-.")),
+ ("To ____ niebezpieczne miejsce.", ["najbardziej", "bardziej", "bardzo"], 0, ("Najbardziej.", "Najbardziej.", "Najbardziej.")),
+ ("Jesteś ____ przyjaciółką!", ["najlepszą", "lepszą", "dobrą"], 0, ("Najlepszą.", "Najlepszą.", "Najlepszą.")),
+ ("To był ____ dzień.", ["najgorszy", "gorszy", "zły"], 0, ("Najgorszy.", "Najgorszy.", "Najgorszy.")),
+ ("On jest ____ zwierzęciem tutaj.", ["największym", "większym", "dużym"], 0, ("Największym.", "Największym.", "Największym.")),
+ ("To ____ miejsce.", ["najstraszniejsze", "straszniejsze", "straszne"], 0, ("Naj-.", "Naj-.", "Naj-.")),
+]
+D[20] = [
+ ("____ zadzwonić do komendanta.", ["Musimy", "Musieliśmy", "Musieć"], 0, ("My → musimy.", "My → musimy.", "We → musimy.")),
+ ("Nie ____ ci tego zgubić!", ["wolno", "musi", "trzeba"], 0, ("Nie wolno.", "Nie wolno.", "Nie wolno.")),
+ ("____ już iść.", ["Muszę", "Musi", "Muszą"], 0, ("Ja → muszę.", "Ja → muszę.", "I → muszę.")),
+ ("Ona ____ dziś pracować.", ["musi", "muszę", "muszą"], 0, ("Ona → musi.", "Ona → musi.", "She → musi.")),
+ ("Nie ____ przychodzić. To nic.", ["musisz", "wolno", "musi"], 0, ("Nie musisz.", "Nie musisz.", "Nie musisz.")),
+ ("Musisz ____ cicho.", ["być", "jesteś", "byłeś"], 0, ("Bezokolicznik.", "Bezokolicznik.", "Infinitive.")),
+]
+D[21] = [
+ ("____ przeprosić. (ty, m.)", ["Powinieneś", "Powinnaś", "Powinien"], 0, ("Ty (m.).", "Ty (m.).", "You (m.).")),
+ ("Nie ____ tyle jeść. (ty, ż.)", ["powinnaś", "powinieneś", "powinna"], 0, ("Ty (ż.).", "Ty (ż.).", "You (f.).")),
+ ("Co ____ zrobić? (ja, ż.)", ["powinnam", "powinna", "powinnaś"], 0, ("Ja (ż.).", "Ja (ż.).", "I (f.).")),
+ ("On powinien z nią ____.", ["porozmawiać", "rozmawia", "rozmawiał"], 0, ("Bezokolicznik.", "Bezokolicznik.", "Infinitive.")),
+ ("Czy ____ do niego zadzwonić? (ja, m.)", ["powinienem", "powinien", "powinnam"], 0, ("Ja (m.).", "Ja (m.).", "I (m.).")),
+ ("Oni nie ____ się spóźniać.", ["powinni", "powinien", "powinna"], 0, ("Oni → powinni.", "Oni → powinni.", "They → powinni.")),
+]
+D[22] = [
+ ("____ do domu, kiedy zaczęło padać. (ja, ż.)", ["Szłam", "Poszłam", "Pójdę"], 0, ("Niedokonany.", "Niedokonany.", "Imperfective.")),
+ ("Oni ____ w autobusie.", ["siedzieli", "usiedli", "usiądą"], 0, ("Niedokonany.", "Niedokonany.", "Imperfective.")),
+ ("Ona ____, kiedy zadzwoniłem.", ["spała", "zasnęła", "zaśnie"], 0, ("Niedokonany.", "Niedokonany.", "Imperfective.")),
+ ("Kiedy czytałam, on ____.", ["przyszedł", "przychodził zawsze", "przyjdzie"], 0, ("Dokonany.", "Dokonany.", "Perfective.")),
+ ("Co ____ o szóstej? (ty, m.)", ["robiłeś", "zrobiłeś", "zrobisz"], 0, ("Niedokonany.", "Niedokonany.", "Imperfective.")),
+ ("Nie ____ telewizji. (my)", ["oglądaliśmy", "obejrzeliśmy", "obejrzymy"], 0, ("Niedokonany.", "Niedokonany.", "Imperfective.")),
+]
+D[23] = [
+ ("Spojrzała na mnie ____.", ["smutno", "smutna", "smutek"], 0, ("Przysłówek.", "Przysłówek.", "Adverb.")),
+ ("On piecze bardzo ____.", ["dobrze", "dobry", "dobro"], 0, ("Dobrze.", "Dobrze.", "Dobrze.")),
+ ("Jedź ____!", ["ostrożnie", "ostrożny", "ostrożność"], 0, ("Przysłówek.", "Przysłówek.", "Adverb.")),
+ ("On biega bardzo ____.", ["szybko", "szybki", "szybkość"], 0, ("Szybko.", "Szybko.", "Szybko.")),
+ ("Mów ____, proszę.", ["cicho", "cichy", "cisza"], 0, ("Cicho.", "Cicho.", "Cicho.")),
+ ("Ona pracuje ____.", ["ciężko", "ciężki", "ciężar"], 0, ("Ciężko.", "Ciężko.", "Ciężko.")),
+]

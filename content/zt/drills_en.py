@@ -120,3 +120,43 @@ D[17] = [
  ("She ____ going to quit.", ["isn't", "aren't", "doesn't"], 0, ("She → isn't.", "She → isn't.", "She → isn't.")),
  ("They're going to ____ the van.", ["follow", "follows", "following"], 0, ("To + V.", "To + V.", "To + verb.")),
 ]
+D[19] = [
+ ("It's the ____ cliff.", ["highest", "higher", "most high"], 0, ("The -est.", "The -est.", "The -est.")),
+ ("It's the ____ dangerous place.", ["most", "more", "-est"], 0, ("The most.", "The most.", "The most.")),
+ ("You're the ____ friend!", ["best", "goodest", "better"], 0, ("Good → best.", "Good → best.", "Good → best.")),
+ ("It was the ____ day.", ["worst", "baddest", "worse"], 0, ("Bad → worst.", "Bad → worst.", "Bad → worst.")),
+ ("He's the ____ animal here.", ["biggest", "bigest", "most big"], 0, ("Big → biggest.", "Big → biggest.", "Big → biggest.")),
+ ("This is the ____ place.", ["scariest", "scaryest", "most scariest"], 0, ("Y → i + est.", "Y → i + est.", "Y → i + est.")),
+]
+D[20] = [
+ ("We ____ call the chief.", ["must", "must to", "musts"], 0, ("Must + V.", "Must + V.", "Must + verb.")),
+ ("You ____ lose it!", ["mustn't", "don't must", "not must"], 0, ("Mustn't.", "Mustn't.", "Mustn't.")),
+ ("I ____ to go now.", ["have", "has", "must"], 0, ("I have to.", "I have to.", "I have to.")),
+ ("She ____ to work today.", ["has", "have", "must"], 0, ("She has to.", "She has to.", "She has to.")),
+ ("You ____ to come. It's OK.", ["don't have", "mustn't", "haven't"], 0, ("Не обов'язково.", "Nie trzeba.", "Not necessary.")),
+ ("You must ____ quiet.", ["be", "to be", "being"], 0, ("Must + be.", "Must + be.", "Must + be.")),
+]
+D[21] = [
+ ("You ____ say sorry.", ["should", "should to", "shoulds"], 0, ("Should + V.", "Should + V.", "Should + verb.")),
+ ("You ____ eat so much.", ["shouldn't", "don't should", "not should"], 0, ("Shouldn't.", "Shouldn't.", "Shouldn't.")),
+ ("What ____ I do?", ["should", "do should", "am should"], 0, ("What should I…?", "What should I…?", "What should I…?")),
+ ("He should ____ to her.", ["talk", "talks", "to talk"], 0, ("Should + V.", "Should + V.", "Should + verb.")),
+ ("____ I call him?", ["Should", "Do", "Am"], 0, ("Should I…?", "Should I…?", "Should I…?")),
+ ("They shouldn't ____ late.", ["be", "are", "to be"], 0, ("Shouldn't be.", "Shouldn't be.", "Shouldn't be.")),
+]
+D[22] = [
+ ("I ____ walking home.", ["was", "were", "am"], 0, ("I → was.", "I → was.", "I → was.")),
+ ("They ____ sitting on the bus.", ["were", "was", "are"], 0, ("They → were.", "They → were.", "They → were.")),
+ ("She was ____ when I called.", ["sleeping", "sleep", "slept"], 0, ("Was + -ing.", "Was + -ing.", "Was + -ing.")),
+ ("While I was reading, he ____.", ["arrived", "was arrive", "arriving"], 0, ("Коротка дія.", "Krótka czynność.", "Short action.")),
+ ("What ____ you doing at six?", ["were", "was", "did"], 0, ("Were you…?", "Were you…?", "Were you…?")),
+ ("We ____ watching TV.", ["weren't", "wasn't", "didn't"], 0, ("We → weren't.", "We → weren't.", "We → weren't.")),
+]
+D[23] = [
+ ("She looked at me ____.", ["sadly", "sad", "sadness"], 0, ("-ly.", "-ly.", "-ly.")),
+ ("He bakes very ____.", ["well", "good", "goodly"], 0, ("Good → well.", "Good → well.", "Good → well.")),
+ ("Drive ____!", ["carefully", "careful", "care"], 0, ("-ly.", "-ly.", "-ly.")),
+ ("He runs very ____.", ["fast", "fastly", "faster ly"], 0, ("Fast → fast.", "Fast → fast.", "Fast → fast.")),
+ ("Speak ____, please.", ["quietly", "quiet", "quietness"], 0, ("-ly.", "-ly.", "-ly.")),
+ ("She works ____.", ["hard", "hardly", "hardy"], 0, ("Hard → hard.", "Hard → hard.", "Hard → hard.")),
+]
