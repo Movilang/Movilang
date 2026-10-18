@@ -200,3 +200,35 @@ D[29] = [
  ("Mam kota ____ psa.", ["i", "albo nie", "więc"], 0, ("I.", "I.", "I.")),
  ("Biegła, ____ była spóźniona.", ["bo", "więc", "ale"], 0, ("Bo.", "Bo.", "Bo.")),
 ]
+D[31] = [
+ ("To dziewczyna, ____ śpiewa.", ["która", "który", "które"], 0, ("Która.", "Która.", "Która.")),
+ ("To pistolet, ____ strzela kulkami.", ["który", "która", "które"], 0, ("Który.", "Który.", "Który.")),
+ ("To dom, ____ mieszkam.", ["gdzie", "który", "kto"], 0, ("Gdzie.", "Gdzie.", "Gdzie.")),
+ ("To lis, ____ mi pomógł.", ["który", "która", "gdzie"], 0, ("Który.", "Który.", "Który.")),
+ ("Książka, ____ czytałam, była dobra.", ["którą", "który", "gdzie"], 0, ("Którą.", "Którą.", "Którą.")),
+ ("Park, ____ się poznaliśmy, jest duży.", ["gdzie", "który", "kto"], 0, ("Gdzie.", "Gdzie.", "Gdzie.")),
+]
+D[32] = [
+ ("Ta torba jest ____.", ["moja", "mój", "moje"], 0, ("Torba (ż.).", "Torba (ż.).", "Feminine.")),
+ ("Czy ten długopis jest ____?", ["twój", "twoja", "twoje"], 0, ("Długopis (m.).", "Długopis (m.).", "Masculine.")),
+ ("Czerwony płaszcz jest ____.", ["jej", "ją", "ona"], 0, ("Jej.", "Jej.", "Jej.")),
+ ("Dom jest ____.", ["nasz", "nasza", "nasze"], 0, ("Dom (m.).", "Dom (m.).", "Masculine.")),
+ ("To auto jest ____.", ["ich", "im", "oni"], 0, ("Ich.", "Ich.", "Ich.")),
+ ("____ to telefon?", ["Czyj", "Czyja", "Kto"], 0, ("Telefon (m.).", "Telefon (m.).", "Masculine.")),
+]
+D[33] = [
+ ("Kiedyś ____ w Kijowie. (ja, ż.)", ["mieszkałam", "zamieszkałam", "mieszkam"], 0, ("Niedokonany.", "Niedokonany.", "Imperfective.")),
+ ("Kiedyś się nie ____. (my)", ["kłóciliśmy", "pokłóciliśmy", "kłócimy"], 0, ("Niedokonany.", "Niedokonany.", "Imperfective.")),
+ ("Czy kiedyś tu ____? (ty, m.)", ["pracowałeś", "popracowałeś", "pracujesz"], 0, ("Niedokonany.", "Niedokonany.", "Imperfective.")),
+ ("Kiedyś ____ nieśmiała.", ["była", "będzie", "jest"], 0, ("Była.", "Była.", "Była.")),
+ ("Kiedyś ____ się razem. (oni)", ["bawili", "pobawili", "bawią"], 0, ("Niedokonany.", "Niedokonany.", "Imperfective.")),
+ ("Kiedyś nie ____ ryb. (on)", ["lubił", "polubił", "lubi"], 0, ("Niedokonany.", "Niedokonany.", "Imperfective.")),
+]
+D[34] = [
+ ("____ partnerami.", ["Będziemy", "Byliśmy", "Jesteśmy wczoraj"], 0, ("Przyszłość.", "Przyszłość.", "Future.")),
+ ("____ ci! (decyzja)", ["Pomogę", "Pomagam wczoraj", "Pomogłem"], 0, ("Przyszłość.", "Przyszłość.", "Future.")),
+ ("Jutro o szóstej ____ się z nią.", ["spotykam", "spotkałam", "spotykałam"], 0, ("Plan.", "Plan.", "Plan.")),
+ ("Myślę, że ____ fajnie.", ["będzie", "było", "jest wczoraj"], 0, ("Będzie.", "Będzie.", "Będzie.")),
+ ("Ona zamierza ____ policjantką.", ["zostać", "zostaje", "została"], 0, ("Bezokolicznik.", "Bezokolicznik.", "Infinitive.")),
+ ("Co ____ w ten weekend?", ["robisz", "robiłeś", "zrobiłeś"], 0, ("Plan.", "Plan.", "Plan.")),
+]

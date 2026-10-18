@@ -407,3 +407,68 @@ G[29] = [
 ]
 D[29] = ("Opisz trudny dzień (30+ słów). Co się stało? Dlaczego? Co zrobiłeś/zrobiłaś? Użyj: i, ale, więc, bo, albo.", 30,
  ("Byłam zmęczona, bo… Było trudno, ale… więc… i potem…", "Byłam zmęczona, bo… Było trudno, ale… więc… i potem…", "Byłam zmęczona, bo… Było trudno, ale… więc… i potem…"))
+
+# ---- Арка 6
+T[31] = ("Który / która / które / gdzie", "Który / która / gdzie", "Relative: który / która / które / gdzie")
+G[31] = [
+ ("Bellwether to owca, ____ wszystko zaplanowała.", ["która", "który", "które"], 0,
+  [("Так! Owca — жіночий рід → która.", "Tak! Owca (ż.) → która.", "Yes! Owca is feminine → która."),
+   ("Który — чоловічий.", "„Który” — r. męski.", "Który is masculine."),
+   ("Które — середній / множина.", "„Które” — r. nijaki / l. mnoga.", "Które is neuter / plural.")],
+  ("Który / która / które узгоджуються з іменником (і про людей, і про речі).", "Który / która / które — zgoda z rzeczownikiem.", "Który / która / które agree with the noun (people and things).")),
+ ("To sala, ____ wszystko się stało.", ["gdzie", "która", "kiedy"], 0,
+  [("Так! Місце → gdzie (або w której).", "Tak! Miejsce → gdzie.", "Yes! A place → gdzie."),
+   ("Która — без прийменника тут не підходить.", "„Która” — bez przyimka nie pasuje.", "Która doesn't fit without a preposition."),
+   ("Kiedy — час.", "„Kiedy” — czas.", "Kiedy is time.")],
+  ("Where = gdzie / w którym.", "Where = gdzie / w którym.", "Where = gdzie / w którym.")),
+]
+D[31] = ("Opisz trzy osoby, trzy rzeczy i dwa miejsca, które lubisz (30+ słów). Użyj: który, która, które, gdzie.", 30,
+ ("Mój przyjaciel to chłopak, który… Moja ulubiona rzecz to rower, który… Park, gdzie…", "Mój przyjaciel to chłopak, który… Moja ulubiona rzecz to rower, który… Park, gdzie…", "Mój przyjaciel to chłopak, który… Moja ulubiona rzecz to rower, który… Park, gdzie…"))
+
+T[32] = ("Mój / twój / jej / nasz / czyj", "Mój / twój / jej / nasz / czyj", "Possessives: mój / twój / jej / nasz / czyj")
+G[32] = [
+ ("Nick: „Długopis jest ____, Carrots.”", ["twój", "twoja", "twoje"], 0,
+  [("Так! Długopis (чол. рід) → twój.", "Tak! Długopis (m.) → twój.", "Yes! Długopis is masculine → twój."),
+   ("Twoja — жіночий.", "„Twoja” — r. żeński.", "Twoja is feminine."),
+   ("Twoje — середній.", "„Twoje” — r. nijaki.", "Twoje is neuter.")],
+  ("Польська: та сама форма з іменником і без: twój długopis / jest twój.", "Ta sama forma: twój długopis / jest twój.", "Polish uses the same form with or without a noun.")),
+ ("Judy: „To nagranie jest teraz ____!”", ["nasze", "nasz", "nasza"], 0,
+  [("Так! Nagranie (середній) → nasze.", "Tak! Nagranie (n.) → nasze.", "Yes! Nagranie is neuter → nasze."),
+   ("Nasz — чоловічий.", "„Nasz” — r. męski.", "Nasz is masculine."),
+   ("Nasza — жіночий.", "„Nasza” — r. żeński.", "Nasza is feminine.")],
+  ("Mój/moja/moje, twój/twoja/twoje, nasz/nasza/nasze; jej, jego, ich — не змінюються.", "Jej, jego, ich — nieodmienne.", "Jej, jego, ich never change.")),
+]
+D[32] = ("Napisz o rzeczach w pokoju i rzeczach rodziny (30+ słów). Czyje są? Użyj: mój, twój, jego, jej, nasz, ich, czyj.", 30,
+ ("Niebieska torba jest moja. Duży fotel jest taty — jest jego. Ogród jest nasz. Czyj jest…?", "Niebieska torba jest moja. Duży fotel jest taty — jest jego. Ogród jest nasz. Czyj jest…?", "Niebieska torba jest moja. Duży fotel jest taty — jest jego. Ogród jest nasz. Czyj jest…?"))
+
+T[33] = ("Kiedyś (dawniej) + czas przeszły niedokonany", "Kiedyś + przeszły niedokonany", "Used to = kiedyś + imperfective past")
+G[33] = [
+ ("Miasto ____ się bało, ale teraz jest spokojne.", ["kiedyś", "jutro", "zaraz"], 0,
+  [("Так! Used to = kiedyś.", "Tak! Used to = kiedyś.", "Yes! Used to = kiedyś."),
+   ("Jutro — майбутнє.", "„Jutro” — przyszłość.", "Jutro is future."),
+   ("Zaraz — «зараз же».", "„Zaraz” — za chwilę.", "Zaraz means soon.")],
+  ("Used to = kiedyś + niedokonany: kiedyś mieszkałam, kiedyś grałam.", "Kiedyś + niedokonany.", "Kiedyś + imperfective past.")),
+ ("Kiedyś Clawhauser ____ w archiwum.", ["pracował", "popracował", "pracuje"], 0,
+  [("Так! Тривале в минулому → недоконаний.", "Tak! Niedokonany → pracował.", "Yes! Imperfective → pracował."),
+   ("Popracował — коротко, разово.", "„Popracował” — krótko.", "Popracował means for a short while."),
+   ("Pracuje — теперішній.", "„Pracuje” — teraźniejszy.", "Pracuje is present.")],
+  ("Used to → недоконаний вид.", "Used to → niedokonany.", "Used to → imperfective.")),
+]
+D[33] = ("Napisz, jaki/jaka byłeś/byłaś, kiedy byłeś/byłaś mały/mała (30+ słów). Co kiedyś robiłeś/robiłaś? Czego kiedyś nie lubiłeś/lubiłaś? Co robisz teraz?", 30,
+ ("Kiedy byłam mała, kiedyś… Kiedyś nie lubiłam… Teraz…", "Kiedy byłam mała, kiedyś… Kiedyś nie lubiłam… Teraz…", "Kiedy byłam mała, kiedyś… Kiedyś nie lubiłam… Teraz…"))
+
+T[34] = ("Przyszłość: będę / zamierzam / spotykam się jutro", "Przyszłość: będę / zamierzam", "Future: będę / zamierzam / spotykam się jutro")
+G[34] = [
+ ("Judy: „____ najlepszymi partnerami!”", ["Będziemy", "Byliśmy", "Jesteśmy wczoraj"], 0,
+  [("Так! Майбутнє → będziemy.", "Tak! Przyszłość → będziemy.", "Yes! Future → będziemy."),
+   ("Byliśmy — минуле.", "„Byliśmy” — przeszłość.", "Byliśmy is past."),
+   ("Неправильно.", "Błąd.", "Wrong.")],
+  ("Будемо = будемо: będę, będziesz, będzie, będziemy…", "Być: będę, będziesz, będzie, będziemy…", "Future of być: będę, będziesz, będzie, będziemy…")),
+ ("Nick: „Spokojnie, Carrots. ____ go!”", ["Zatrzymam", "Zatrzymuję wczoraj", "Zatrzymałem"], 0,
+  [("Так! Рішення → доконаний майбутній.", "Tak! Decyzja → dokonany przyszły.", "Yes! A decision → perfective future."),
+   ("Неправильно.", "Błąd.", "Wrong."),
+   ("Zatrzymałem — минуле.", "„Zatrzymałem” — przeszłość.", "Zatrzymałem is past.")],
+  ("I'll stop it = Zatrzymam go.", "I'll stop it = Zatrzymam go.", "I'll stop it = Zatrzymam go.")),
+]
+D[34] = ("Napisz o swojej przyszłości (30+ słów). Co zamierzasz robić w przyszłym roku? Co robisz w ten weekend? Co będzie za 10 lat?", 30,
+ ("W przyszłym roku zamierzam… W weekend spotykam się z… Za dziesięć lat będę…", "W przyszłym roku zamierzam… W weekend spotykam się z… Za dziesięć lat będę…", "W przyszłym roku zamierzam… W weekend spotykam się z… Za dziesięć lat będę…"))

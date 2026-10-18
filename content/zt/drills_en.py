@@ -200,3 +200,35 @@ D[29] = [
  ("I've got a cat ____ a dog.", ["and", "or", "so"], 0, ("І.", "I.", "And.")),
  ("She ran ____ she was late.", ["because", "so", "but"], 0, ("Причина.", "Przyczyna.", "Reason.")),
 ]
+D[31] = [
+ ("She's the girl ____ sings.", ["who", "which", "where"], 0, ("Who.", "Who.", "Who.")),
+ ("This is the gun ____ shoots pellets.", ["which", "who", "where"], 0, ("Which.", "Which.", "Which.")),
+ ("That's the house ____ I live.", ["where", "which", "who"], 0, ("Where.", "Where.", "Where.")),
+ ("He's the fox ____ helped me.", ["who", "which", "where"], 0, ("Who.", "Who.", "Who.")),
+ ("The book ____ I read was good.", ["which", "who", "where"], 0, ("Which.", "Which.", "Which.")),
+ ("The park ____ we met is big.", ["where", "who", "which"], 0, ("Where.", "Where.", "Where.")),
+]
+D[32] = [
+ ("This bag is ____.", ["mine", "my", "me"], 0, ("Mine.", "Mine.", "Mine.")),
+ ("Is this pen ____?", ["yours", "your", "you"], 0, ("Yours.", "Yours.", "Yours.")),
+ ("The red coat is ____.", ["hers", "her", "she"], 0, ("Hers.", "Hers.", "Hers.")),
+ ("The house is ____.", ["ours", "our", "us"], 0, ("Ours.", "Ours.", "Ours.")),
+ ("That car is ____.", ["theirs", "their", "them"], 0, ("Theirs.", "Theirs.", "Theirs.")),
+ ("____ phone is this?", ["Whose", "Who's", "Who"], 0, ("Whose.", "Whose.", "Whose.")),
+]
+D[33] = [
+ ("I ____ to live in Kyiv.", ["used", "use", "using"], 0, ("Used to.", "Used to.", "Used to.")),
+ ("We didn't ____ to fight.", ["use", "used", "using"], 0, ("Didn't use to.", "Didn't use to.", "Didn't use to.")),
+ ("Did you use to ____ here?", ["work", "worked", "working"], 0, ("Use to + V.", "Use to + V.", "Use to + verb.")),
+ ("She used to ____ shy.", ["be", "is", "being"], 0, ("Used to be.", "Used to be.", "Used to be.")),
+ ("They used ____ play together.", ["to", "for", "-"], 0, ("Used to.", "Used to.", "Used to.")),
+ ("He ____ use to like fish.", ["didn't", "doesn't", "wasn't"], 0, ("Didn't.", "Didn't.", "Didn't.")),
+]
+D[34] = [
+ ("We're ____ to be partners.", ["going", "go", "gone"], 0, ("Going to.", "Going to.", "Going to.")),
+ ("Wait! I ____ help you!", ["'ll", "'m going", "am"], 0, ("Will.", "Will.", "Will.")),
+ ("I'm ____ her tomorrow at six.", ["meeting", "meet", "met"], 0, ("Present Continuous.", "Present Continuous.", "Present Continuous.")),
+ ("I think it ____ be fun.", ["will", "is going", "-"], 0, ("Will.", "Will.", "Will.")),
+ ("She's going to ____ a cop.", ["be", "is", "being"], 0, ("Going to be.", "Going to be.", "Going to be.")),
+ ("What ____ you doing this weekend?", ["are", "do", "will"], 0, ("Are you …-ing?", "Are you …-ing?", "Are you …-ing?")),
+]
