@@ -163,3 +163,77 @@ D[23] = [
  ('Mimo ____ różnic są razem.', ['wszystkich', 'wszystkie', 'wszystkimi'], 0, ('Повтори правило уроку.', 'Powtórz regułę lekcji.', 'Review the lesson rule.')),
  ('Uśmiechał się, ____ był smutny.', ['chociaż', 'mimo', 'jednak'], 0, ('Повтори правило уроку.', 'Powtórz regułę lekcji.', 'Review the lesson rule.')),
 ]
+
+D[25] = [
+ ('Wiesz, ____ będzie padać?', ['czy', 'że', 'jeśli'], 0, ('Повтори правило уроку.', 'Powtórz regułę lekcji.', 'Review the lesson rule.')),
+ ('Nie wiem, ____ mieszka.', ['gdzie', 'czy gdzie', 'że'], 0, ('Повтори правило уроку.', 'Powtórz regułę lekcji.', 'Review the lesson rule.')),
+ ('Mogę zapytać, dlaczego ____?', ['tańczysz', 'czy tańczysz', 'tańczyć'], 0, ('Повтори правило уроку.', 'Powtórz regułę lekcji.', 'Review the lesson rule.')),
+ ('Ciekawe, ____ ona wie.', ['czy', 'że', 'co czy'], 0, ('Повтори правило уроку.', 'Powtórz regułę lekcji.', 'Review the lesson rule.')),
+ ('Powiesz mi, która ____ godzina?', ['jest', 'czy jest', 'być'], 0, ('Повтори правило уроку.', 'Powtórz regułę lekcji.', 'Review the lesson rule.')),
+ ('Nie wiem, ____ przyjdzie.', ['czy', 'że czy', 'co'], 0, ('Повтори правило уроку.', 'Powtórz regułę lekcji.', 'Review the lesson rule.')),
+]
+D[26] = [
+ ('Jestem przyzwyczajony do ____.', ['tego', 'to', 'tym'], 0, ('Повтори правило уроку.', 'Powtórz regułę lekcji.', 'Review the lesson rule.')),
+ ('Przyzwyczaisz ____.', ['się', 'sobie', 'siebie'], 0, ('Повтори правило уроку.', 'Powtórz regułę lekcji.', 'Review the lesson rule.')),
+ ('Kiedyś ____ do południa.', ['spałem', 'śpię', 'będę spał'], 0, ('Повтори правило уроку.', 'Powtórz regułę lekcji.', 'Review the lesson rule.')),
+ ('Nie jest przyzwyczajona do ____.', ['gotowania', 'gotować', 'gotuje'], 0, ('Повтори правило уроку.', 'Powtórz regułę lekcji.', 'Review the lesson rule.')),
+ ('Przyzwyczaja się do ____.', ['psów', 'psy', 'psami'], 0, ('Повтори правило уроку.', 'Powtórz regułę lekcji.', 'Review the lesson rule.')),
+ ('Kiedyś tu ____.', ['mieszkałem', 'mieszkam', 'zamieszkam'], 0, ('Повтори правило уроку.', 'Powtórz regułę lekcji.', 'Review the lesson rule.')),
+]
+D[27] = [
+ ('Lepiej się ____!', ['pospiesz', 'pospieszysz', 'pospieszyć by'], 0, ('Повтори правило уроку.', 'Powtórz regułę lekcji.', 'Review the lesson rule.')),
+ ('Wolałbym ____ w domu.', ['zostać', 'zostanę', 'zostałem'], 0, ('Повтори правило уроку.', 'Powtórz regułę lekcji.', 'Review the lesson rule.')),
+ ('Lepiej ____ się nie spóźniaj.', ['już', 'by', 'czy'], 0, ('Повтори правило уроку.', 'Powtórz regułę lekcji.', 'Review the lesson rule.')),
+ ('Czas, żebyśmy ____.', ['wyszli', 'wyjdziemy', 'wychodzimy'], 0, ('Повтори правило уроку.', 'Powtórz regułę lekcji.', 'Review the lesson rule.')),
+ ('Wolałbym, żebyś mu nie ____.', ['mówił', 'mówisz', 'powiesz'], 0, ('Повтори правило уроку.', 'Powtórz regułę lekcji.', 'Review the lesson rule.')),
+ ('Lepiej ____ garnitur.', ['załóż', 'zakładasz', 'założyłeś'], 0, ('Повтори правило уроку.', 'Powtórz regułę lekcji.', 'Review the lesson rule.')),
+]
+D[28] = [
+ ('____ do domu, spotkałem ją.', ['Idąc', 'Poszedłszy by', 'Iść'], 0, ('Повтори правило уроку.', 'Powtórz regułę lekcji.', 'Review the lesson rule.')),
+ ('____ obiad, wyszliśmy.', ['Zjadłszy', 'Jedząc wczoraj', 'Zjeść'], 0, ('Повтори правило уроку.', 'Powtórz regułę lekcji.', 'Review the lesson rule.')),
+ ('Obraz ____ przez Lily.', ['namalowany', 'malując', 'malować'], 0, ('Повтори правило уроку.', 'Powtórz regułę lekcji.', 'Review the lesson rule.')),
+ ('____ codziennie, poprawiła się.', ['Ćwicząc', 'Ćwiczony', 'Ćwiczyć'], 0, ('Повтори правило уроку.', 'Powtórz regułę lekcji.', 'Review the lesson rule.')),
+ ('____ do domu, zrobiła herbatę.', ['Wróciwszy', 'Wracany', 'Wracać'], 0, ('Повтори правило уроку.', 'Powtórz regułę lekcji.', 'Review the lesson rule.')),
+ ('____ list, schowała go.', ['Przeczytawszy', 'Czytany', 'Czytać'], 0, ('Повтори правило уроку.', 'Powtórz regułę lekcji.', 'Review the lesson rule.')),
+]
+D[29] = [
+ ('Nigdy ____ nie widziałem.', ['tego', 'to', 'tym'], 0, ('Повтори правило уроку.', 'Powtórz regułę lekcji.', 'Review the lesson rule.')),
+ ('Nie tylko jest mądra, ____ zabawna.', ['ale i', 'ale nie', 'lecz nie'], 0, ('Повтори правило уроку.', 'Powtórz regułę lekcji.', 'Review the lesson rule.')),
+ ('Rzadko ____ płaczę.', ['kiedy', 'kto', 'co'], 0, ('Повтори правило уроку.', 'Powtórz regułę lekcji.', 'Review the lesson rule.')),
+ ('W żadnym ____ nie wychodź.', ['wypadku', 'wypadek', 'wypadkiem'], 0, ('Повтори правило уроку.', 'Powtórz regułę lekcji.', 'Review the lesson rule.')),
+ ('Nigdy w życiu nie ____ tak szczęśliwy.', ['byłem', 'jestem', 'będę'], 0, ('Повтори правило уроку.', 'Powtórz regułę lekcji.', 'Review the lesson rule.')),
+ ('Nie tylko przyszedł, ale ____ ugotował.', ['też', 'nie', 'ani'], 0, ('Повтори правило уроку.', 'Powtórz regułę lekcji.', 'Review the lesson rule.')),
+]
+
+D[31] = [
+ ('Zapytali, ____ jestem gotowa.', ['czy', 'że', 'co'], 0, ('Повтори правило уроку.', 'Powtórz regułę lekcji.', 'Review the lesson rule.')),
+ ('Kazali mi ____ prace.', ['przysłać', 'przysyłam', 'przyślę'], 0, ('Повтори правило уроку.', 'Powtórz regułę lekcji.', 'Review the lesson rule.')),
+ ('Poprosiła, ____ nie mówił.', ['żebym', 'że', 'czy'], 0, ('Повтори правило уроку.', 'Powtórz regułę lekcji.', 'Review the lesson rule.')),
+ ('Zapytali, dlaczego ____ jechać.', ['chcę', 'czy chcę', 'chcieć'], 0, ('Повтори правило уроку.', 'Powtórz regułę lekcji.', 'Review the lesson rule.')),
+ ('Powiedziała mi, ____ czekał.', ['żebym', 'że', 'czy'], 0, ('Повтори правило уроку.', 'Powtórz regułę lekcji.', 'Review the lesson rule.')),
+ ('Zapytał, ____ mieszkam.', ['gdzie', 'czy gdzie', 'że'], 0, ('Повтори правило уроку.', 'Powtórz regułę lekcji.', 'Review the lesson rule.')),
+]
+D[32] = [
+ ('Miałem do ciebie ____.', ['zadzwonić', 'dzwonię', 'zadzwonię'], 0, ('Повтори правило уроку.', 'Powtórz regułę lekcji.', 'Review the lesson rule.')),
+ ('Właśnie ____ wychodzić.', ['miałem', 'mam', 'będę miał'], 0, ('Повтори правило уроку.', 'Powtórz regułę lekcji.', 'Review the lesson rule.')),
+ ('Powiedział, że ____.', ['przyjdzie', 'przyszedłby', 'przychodził'], 0, ('Повтори правило уроку.', 'Powtórz regułę lekcji.', 'Review the lesson rule.')),
+ ('Mieliśmy ____.', ['wyjść', 'wyjdziemy', 'wychodzimy'], 0, ('Повтори правило уроку.', 'Powtórz regułę lekcji.', 'Review the lesson rule.')),
+ ('Myślałem, że ____ padać.', ['będzie', 'było', 'jest'], 0, ('Повтори правило уроку.', 'Powtórz regułę lekcji.', 'Review the lesson rule.')),
+ ('Miałeś ____!', ['zadzwonić', 'zadzwonisz', 'dzwonisz'], 0, ('Повтори правило уроку.', 'Powtórz regułę lekcji.', 'Review the lesson rule.')),
+]
+D[33] = [
+ ('Jest ____ zimno!', ['tak', 'taki', 'za bardzo by'], 0, ('Повтори правило уроку.', 'Powtórz regułę lekcji.', 'Review the lesson rule.')),
+ ('To ____ ładny dzień!', ['taki', 'tak', 'za'], 0, ('Повтори правило уроку.', 'Powtórz regułę lekcji.', 'Review the lesson rule.')),
+ ('Jestem ____ zmęczony, żeby iść.', ['za', 'tak że', 'dość że'], 0, ('Повтори правило уроку.', 'Powtórz regułę lekcji.', 'Review the lesson rule.')),
+ ('Jest wystarczająco ____?', ['duże', 'duży być', 'dużo'], 0, ('Повтори правило уроку.', 'Powtórz regułę lekcji.', 'Review the lesson rule.')),
+ ('Mamy ____ czasu.', ['dość', 'za', 'tak'], 0, ('Повтори правило уроку.', 'Powtórz regułę lekcji.', 'Review the lesson rule.')),
+ ('Było tak późno, ____ wyszliśmy.', ['że', 'żeby', 'bo'], 0, ('Повтори правило уроку.', 'Powtórz regułę lekcji.', 'Review the lesson rule.')),
+]
+D[34] = [
+ ('Jeśli podgrzejesz lód, ____.', ['topnieje', 'topniałby', 'stopniał'], 0, ('Повтори правило уроку.', 'Powtórz regułę lekcji.', 'Review the lesson rule.')),
+ ('Jeśli będzie padać, ____.', ['zostaniemy', 'zostalibyśmy', 'zostaliśmy'], 0, ('Повтори правило уроку.', 'Powtórz regułę lekcji.', 'Review the lesson rule.')),
+ ('Gdybym był bogaty, ____.', ['podróżowałbym', 'podróżuję', 'będę podróżował'], 0, ('Повтори правило уроку.', 'Powtórz regułę lekcji.', 'Review the lesson rule.')),
+ ('Gdybym wiedział, ____ przyszedł.', ['bym', 'będę', 'jestem'], 0, ('Повтори правило уроку.', 'Powtórz regułę lekcji.', 'Review the lesson rule.')),
+ ('Spóźnisz się, ____ się pospieszysz.', ['chyba że', 'jeśli', 'gdyby'], 0, ('Повтори правило уроку.', 'Powtórz regułę lekcji.', 'Review the lesson rule.')),
+ ('Weź płaszcz na ____ zimna.', ['wypadek', 'wypadku', 'wypadkiem'], 0, ('Повтори правило уроку.', 'Powtórz regułę lekcji.', 'Review the lesson rule.')),
+]

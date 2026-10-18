@@ -326,3 +326,149 @@ G[23] = [
 ]
 D[23] = ("Porównaj dwie bardzo różne osoby (50+ słów). Użyj: chociaż, mimo że, mimo, jednak.", 50,
  ("Chociaż mój brat lubi…, ja… Mimo różnic… Jednak…", "Chociaż mój brat lubi…, ja… Mimo różnic… Jednak…", "Chociaż mój brat lubi…, ja… Mimo różnic… Jednak…"))
+
+# ---- Łuk 5
+T[25] = ("Непрямі питання: Czy wiesz, czy…? Nie wiem, gdzie…", "Pytania zależne: Czy wiesz, czy…? Nie wiem, gdzie…", "Indirect questions: Czy wiesz, czy…?")
+G[25] = [
+ ("Wiesz, ____ jutro będzie padać?", ["czy", "że", "jeśli"], 0,
+  [("Так! Так/ні → czy.", "Tak! Czy.", "Yes! Yes/no → czy."),
+   ("Że — для тверджень.", "„Że” — twierdzenia.", "Że is for statements."),
+   ("Jeśli = умова, не питання.", "„Jeśli” = warunek.", "Jeśli is a condition.")],
+  ("If / whether ≈ czy.", "If/whether ≈ czy.", "If / whether ≈ czy.")),
+ ("Mogę zapytać, dlaczego ____ na dachu?", ["tańczysz", "czy tańczysz", "tańczyć"], 0,
+  [("Так! Порядок не змінюється.", "Tak! Szyk bez zmian.", "Yes! Word order stays the same."),
+   ("Подвійне питання.", "Podwójne pytanie.", "Double question."),
+   ("Інфінітив — ні.", "Nie.", "No.")],
+  ("У польській порядок слів майже не міняється.", "Szyk się nie zmienia.", "Polish word order hardly changes.")),
+]
+D[25] = ("Napisz uprzejmy e-mail do hotelu (50+ słów). Zapytaj o cenę, godzinę zameldowania i parking — pytaniami pośrednimi.", 50,
+ ("Czy mogliby Państwo powiedzieć, ile… Chciałbym wiedzieć, czy… Czy wiedzą Państwo, o której…", "Czy mogliby Państwo powiedzieć, ile… Chciałbym wiedzieć, czy… Czy wiedzą Państwo, o której…", "Czy mogliby Państwo powiedzieć, ile… Chciałbym wiedzieć, czy… Czy wiedzą Państwo, o której…"))
+
+T[26] = ("Звичка: kiedyś + минулий / przyzwyczaić się do + родовий", "Nawyk: kiedyś / przyzwyczaić się do", "Habit: kiedyś / przyzwyczaić się do")
+G[26] = [
+ ("Robin nie jest przyzwyczajona do ____ do łóżka.", ["śniadań", "śniadania jeść", "śniadaniami"], 0,
+  [("Так! Do + родовий.", "Tak! Do + dopełniacz.", "Yes! Do + genitive."),
+   ("Ні.", "Nie.", "No."),
+   ("Орудний — ні.", "Nie.", "No.")],
+  ("Być przyzwyczajonym do czegoś.", "Przyzwyczajony do czegoś.", "Przyzwyczajony do + genitive.")),
+ ("Ted ____ się do wstawania o szóstej.", ["przyzwyczaja", "przyzwyczajony", "przyzwyczajenie"], 0,
+  [("Так! Процес → przyzwyczajać się.", "Tak! Proces.", "Yes! Process."),
+   ("Прикметник без «jest».", "Brak „jest”.", "Adjective without jest."),
+   ("Іменник.", "Rzeczownik.", "Noun.")],
+  ("Get used to ≈ przyzwyczajać się.", "Get used to ≈ przyzwyczajać się.", "Get used to ≈ przyzwyczajać się.")),
+]
+D[26] = ("Opisz dużą zmianę w życiu (50+ słów). Co kiedyś robiłeś(-aś)? Do czego trudno było się przyzwyczaić?", 50,
+ ("Kiedyś mieszkałem… Na początku nie byłem przyzwyczajony do… Teraz…", "Kiedyś mieszkałem… Na początku nie byłem przyzwyczajony do… Teraz…", "Kiedyś mieszkałem… Na początku nie byłem przyzwyczajony do… Teraz…"))
+
+T[27] = ("Поради й перевага: lepiej + інфінітив, wolałbym", "Rady: lepiej + bezokolicznik, wolałbym", "Advice: lepiej + infinitive, wolałbym")
+G[27] = [
+ ("Lepiej ____ garnitur, Ted!", ["załóż", "założyć by", "zakładasz"], 0,
+  [("Так! Lepiej + наказовий / інфінітив.", "Tak! Lepiej + tryb rozkazujący.", "Yes! Lepiej + imperative."),
+   ("Ні.", "Nie.", "No."),
+   ("Ні.", "Nie.", "No.")],
+  ("You'd better ≈ lepiej (załóż / założyć).", "You'd better ≈ lepiej.", "You'd better ≈ lepiej.")),
+ ("____ małe wesele.", ["Wolałabym", "Wolę by", "Wolałam będę"], 0,
+  [("Так! I'd rather ≈ wolałabym.", "Tak!", "Yes! I'd rather ≈ wolałabym."),
+   ("Ні.", "Nie.", "No."),
+   ("Ні.", "Nie.", "No.")],
+  ("Wolałbym, żebyś + минулий.", "Wolałbym, żebyś + przeszły.", "Wolałbym, żebyś + past.")),
+]
+D[27] = ("Daj rady przyjacielowi, który zaczyna nową pracę (50+ słów). Użyj: lepiej…, wolałbym…, czas, żebyś…", 50,
+ ("Lepiej przyjdź wcześnie. Lepiej nie… Wolałbym… Czas, żebyś…", "Lepiej przyjdź wcześnie. Lepiej nie… Wolałbym… Czas, żebyś…", "Lepiej przyjdź wcześnie. Lepiej nie… Wolałbym… Czas, żebyś…"))
+
+T[28] = ("Дієприслівники: malując, skończywszy, wróciwszy", "Imiesłowy przysłówkowe: malując, skończywszy", "Adverbial participles: malując, skończywszy")
+G[28] = [
+ ("____ co wieczór, Lily zrozumiała, jak kocha sztukę.", ["Malując", "Namalowany", "Malować"], 0,
+  [("Так! -ąc = одночасна дія.", "Tak! -ąc = jednocześnie.", "Yes! -ąc = simultaneous action."),
+   ("Пасивний прикметник.", "Imiesłów bierny.", "Passive participle."),
+   ("Інфінітив.", "Bezokolicznik.", "Infinitive.")],
+  ("-ąc = while doing (-ing).", "-ąc = podczas.", "-ąc = while doing.")),
+ ("____ obraz, pokazała go przyjaciołom.", ["Skończywszy", "Kończąc", "Skończony"], 0,
+  [("Так! -wszy = після того, як.", "Tak! -wszy = po.", "Yes! -wszy = having done."),
+   ("Одночасно — не те.", "Jednocześnie — nie.", "Not simultaneous."),
+   ("Пасив.", "Bierny.", "Passive.")],
+  ("-wszy / -łszy = having done (книжне).", "-wszy = having done.", "-wszy = having done (formal).")),
+]
+D[28] = ("Opisz dzień, w którym odkryłeś(-aś) coś o sobie (50+ słów). Użyj imiesłowów: -ąc, -wszy.", 50,
+ ("Idąc do szkoły… Skończywszy… zrozumiałem… Wróciwszy do domu…", "Idąc do szkoły… Skończywszy… zrozumiałem… Wróciwszy do domu…", "Idąc do szkoły… Skończywszy… zrozumiałem… Wróciwszy do domu…"))
+
+T[29] = ("Урочистий стиль: Nigdy nie…, Nie tylko…, ale i…, Rzadko kiedy…", "Styl uroczysty: Nigdy nie…, Nie tylko…, ale i…", "Formal style: Nigdy nie…, Nie tylko…, ale i…")
+G[29] = [
+ ("Nigdy ____ nie widziałem takiej pary.", ["w życiu", "życiem", "życie"], 0,
+  [("Так! Nigdy w życiu = never in my life.", "Tak!", "Yes! Nigdy w życiu = never in my life."),
+   ("Ні.", "Nie.", "No."),
+   ("Ні.", "Nie.", "No.")],
+  ("Польська — подвійне заперечення: nigdy nie.", "Podwójne przeczenie.", "Polish uses double negation: nigdy nie.")),
+ ("Marshall jest nie tylko przyjacielem, ____ bratem.", ["ale i", "ale nie", "lecz nie"], 0,
+  [("Так! Nie tylko…, ale i / ale też.", "Tak!", "Yes! Nie tylko…, ale i."),
+   ("Інший зміст.", "Inny sens.", "Different meaning."),
+   ("Інший зміст.", "Inny sens.", "Different meaning.")],
+  ("Nie tylko…, ale (także/i)… = not only… but also.", "Nie tylko…, ale i…", "Nie tylko…, ale i… = not only… but also.")),
+]
+D[29] = ("Napisz krótką mowę weselną lub urodzinową (50+ słów). Użyj: nigdy nie…, nie tylko…, ale i…, rzadko kiedy…", 50,
+ ("Nigdy nie poznałem nikogo, kto… Nie tylko jest…, ale i… Rzadko kiedy…", "Nigdy nie poznałem nikogo, kto… Nie tylko jest…, ale i… Rzadko kiedy…", "Nigdy nie poznałem nikogo, kto… Nie tylko jest…, ale i… Rzadko kiedy…"))
+
+# ---- Łuk 6
+T[31] = ("Непрямі питання й накази: zapytali, czy…; kazali mi…; poprosiła, żebym…", "Pytania i polecenia zależne: zapytali, czy…; kazali mi…", "Reported questions & commands: zapytali, czy…; kazali mi…")
+G[31] = [
+ ("Zapytali, ____ jestem gotowa się przeprowadzić.", ["czy", "że", "jeśli"], 0,
+  [("Так! Так/ні → czy.", "Tak! Czy.", "Yes! Czy."),
+   ("Що — твердження.", "„Że” — twierdzenie.", "Statement."),
+   ("Умова.", "Warunek.", "Condition.")],
+  ("Asked if ≈ zapytał, czy.", "Zapytał, czy.", "Asked if ≈ zapytał, czy.")),
+ ("Lily poprosiła Robin, ____ nic nie mówiła.", ["żeby", "że", "czy"], 0,
+  [("Так! Poprosić, żeby + минула форма.", "Tak! Żeby + forma przeszła.", "Yes! Żeby + past form."),
+   ("Ні.", "Nie.", "No."),
+   ("Ні.", "Nie.", "No.")],
+  ("Asked her not to = poprosiła, żeby nie…", "Poprosiła, żeby nie…", "Asked her not to = poprosiła, żeby nie…")),
+]
+D[31] = ("Opisz rozmowę kwalifikacyjną lub egzamin (50+ słów). O co pytali? Co kazali zrobić?", 50,
+ ("Zapytali mnie, dlaczego… Chcieli wiedzieć, czy… Kazali mi… Poprosili, żebym…", "Zapytali mnie, dlaczego… Chcieli wiedzieć, czy… Kazali mi… Poprosili, żebym…", "Zapytali mnie, dlaczego… Chcieli wiedzieć, czy… Kazali mi… Poprosili, żebym…"))
+
+T[32] = ("Майбутнє в минулому: miała powiedzieć, właśnie miała, obiecała, że powie", "Przyszłość w przeszłości: miała powiedzieć, obiecała, że powie", "Future in the past: miała powiedzieć")
+G[32] = [
+ ("Lily ____ powiedzieć Marshallowi wieczorem.", ["miała", "ma", "będzie miała"], 0,
+  [("Так! Mieć + інфінітив = was going to / was supposed to.", "Tak! Miała + bezokolicznik.", "Yes! Miała + infinitive = was going to."),
+   ("Теперішній.", "Teraźniejszy.", "Present."),
+   ("Майбутній.", "Przyszły.", "Future.")],
+  ("Miałem zadzwonić = I was going to call.", "Miałem zadzwonić.", "Miałem zadzwonić = I was going to call.")),
+ ("Obiecała sobie, że mu ____.", ["powie", "powiedziała", "powiedziałaby"], 0,
+  [("Так! Після że — майбутній, без зсуву часу.", "Tak! Bez przesunięcia.", "Yes! Future after że, no backshift."),
+   ("Інший зміст.", "Inny sens.", "Different meaning."),
+   ("Умовний — ні.", "Nie tryb.", "Not conditional.")],
+  ("Польська не зсуває час: obiecała, że powie.", "Bez przesunięcia czasu.", "Polish doesn't backshift: obiecała, że powie.")),
+]
+D[32] = ("Opisz plan, który się nie udał (50+ słów). Co miałeś(-aś) zrobić? Co właśnie miałeś(-aś) zrobić, kiedy…?", 50,
+ ("Zeszłego lata miałem… Właśnie miałem…, kiedy… Myślałem, że… W końcu…", "Zeszłego lata miałem… Właśnie miałem…, kiedy… Myślałem, że… W końcu…", "Zeszłego lata miałem… Właśnie miałem…, kiedy… Myślałem, że… W końcu…"))
+
+T[33] = ("Підсилення: tak, taki, za, wystarczająco / dość", "Wzmacnianie: tak, taki, za, wystarczająco", "Intensifiers: tak, taki, za, wystarczająco")
+G[33] = [
+ ("To była ____ trudna rozmowa, że Ted wyszedł.", ["tak", "taka", "za"], 0,
+  [("Так! Tak + прикметник (тут перед прикметником).", "Tak! Tak + przymiotnik.", "Yes! Tak + adjective."),
+   ("Taka — перед іменником без прикметника.", "„Taka” — przed rzeczownikiem.", "Taka goes with a noun."),
+   ("Za = too.", "„Za” = too.", "Za = too.")],
+  ("Tak + прикм./присл.; taki + іменник; za = too; dość/wystarczająco = enough.", "Tak + przym.; taki + rzecz.", "Tak + adj; taki + noun; za = too; dość = enough.")),
+ ("Nie jestem ____ silny, żeby cię puścić.", ["wystarczająco", "za", "tak bardzo że"], 0,
+  [("Так! Enough = wystarczająco / dość.", "Tak!", "Yes! Enough = wystarczająco."),
+   ("Інший зміст.", "Inny sens.", "Different meaning."),
+   ("Ні.", "Nie.", "No.")],
+  ("Wystarczająco стоїть перед прикметником.", "Wystarczająco przed przymiotnikiem.", "Wystarczająco comes before the adjective.")),
+]
+D[33] = ("Opisz bardzo emocjonalny dzień (50+ słów). Użyj: tak…, że; taki…, że; za…, żeby; wystarczająco…, żeby.", 50,
+ ("To był taki dzień, że… Byłem tak…, że… Byłem za…, żeby… Nie byłem wystarczająco…", "To był taki dzień, że… Byłem tak…, że… Byłem za…, żeby… Nie byłem wystarczająco…", "To był taki dzień, że… Byłem tak…, że… Byłem za…, żeby… Nie byłem wystarczająco…"))
+
+T[34] = ("Усі умовні: jeśli…, gdyby…, chyba że…, pod warunkiem że…", "Wszystkie tryby: jeśli…, gdyby…, chyba że…", "All conditionals: jeśli…, gdyby…, chyba że…")
+G[34] = [
+ ("____ wrócisz, będę czekał.", ["Jeśli", "Gdyby", "Chyba że"], 0,
+  [("Так! Реальна умова → jeśli + майбутній.", "Tak! Jeśli.", "Yes! A real condition → jeśli."),
+   ("Gdyby — уявне.", "„Gdyby” — wyobrażone.", "Gdyby is imaginary."),
+   ("Chyba że = unless.", "„Chyba że” = unless.", "Chyba że = unless.")],
+  ("Jeśli = реальне · gdyby = уявне · chyba że = unless.", "Jeśli · gdyby · chyba że.", "Jeśli = real · gdyby = imaginary · chyba że = unless.")),
+ ("Nic się nie zmieni, ____ spróbujesz.", ["chyba że", "jeśli", "gdyby"], 0,
+  [("Так! Unless = chyba że.", "Tak!", "Yes! Unless = chyba że."),
+   ("Інший зміст.", "Inny sens.", "Different meaning."),
+   ("Ні.", "Nie.", "No.")],
+  ("Chyba że + майбутній/теперішній.", "Chyba że.", "Chyba że + future/present.")),
+]
+D[34] = ("Napisz list do siebie z przeszłości (50+ słów). Użyj: jeśli…, gdyby…, chyba że…", 50,
+ ("Jeśli będziesz ciężko pracować… Gdybym był tobą… Gdybym wiedział… Chyba że…", "Jeśli będziesz ciężko pracować… Gdybym był tobą… Gdybym wiedział… Chyba że…", "Jeśli będziesz ciężko pracować… Gdybym był tobą… Gdybym wiedział… Chyba że…"))

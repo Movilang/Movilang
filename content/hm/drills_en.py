@@ -163,3 +163,77 @@ D[23] = [
  ("Even ____ I'm tired, I'll come.", ['though', 'although', 'despite'], 0, ('Even though.', 'Even though.', 'Even though.')),
  ('Despite ____ tired, she worked.', ['being', 'be', 'is'], 0, ('Despite + -ing.', 'Despite + -ing.', 'Despite + -ing.')),
 ]
+
+D[25] = [
+ ('Do you know if it ____ rain?', ['will', 'does will', 'is'], 0, ('If + subject + verb.', 'If + subject + verb.', 'If + subject + verb.')),
+ ('Can I ask why you ____ dancing?', ['are', 'do', 'is'], 0, ('Subject + verb.', 'Subject + verb.', 'Subject + verb.')),
+ ('Tell me where the bar ____.', ['is', 'does', 'are'], 0, ('Is at the end.', 'Is at the end.', 'Is at the end.')),
+ ('I wonder ____ she knows.', ['if', 'does', 'is'], 0, ('I wonder if.', 'I wonder if.', 'I wonder if.')),
+ ('Could you tell me what time it ____?', ['is', 'does', 'be'], 0, ('It is.', 'It is.', 'It is.')),
+ ('Do you know where he ____?', ['lives', 'does live', 'live'], 0, ('He lives.', 'He lives.', 'He lives.')),
+]
+D[26] = [
+ ("I'm used to ____ early.", ['getting up', 'get up', 'got up'], 0, ('+ -ing.', '+ -ing.', '+ -ing.')),
+ ("You'll get used ____ it.", ['to', 'for', 'with'], 0, ('Get used to.', 'Get used to.', 'Get used to.')),
+ ('I ____ to sleep till noon.', ['used', 'use', 'am used'], 0, ('Used to + V.', 'Used to + V.', 'Used to + V.')),
+ ("She isn't used to ____.", ['cooking', 'cook', 'cooked'], 0, ('+ -ing.', '+ -ing.', '+ -ing.')),
+ ("He's getting used to the ____.", ['dogs', "dog's", 'dogging'], 0, ('+ noun.', '+ noun.', '+ noun.')),
+ ('Did you use ____ live here?', ['to', '-', 'for'], 0, ('Use to.', 'Use to.', 'Use to.')),
+]
+D[27] = [
+ ("You'd better ____.", ['hurry', 'to hurry', 'hurrying'], 0, ('No to.', 'No to.', 'No to.')),
+ ("I'd rather ____ home.", ['stay', 'to stay', 'staying'], 0, ('No to.', 'No to.', 'No to.')),
+ ("I'd prefer ____ wait.", ['to', '-', 'for'], 0, ('Prefer to.', 'Prefer to.', 'Prefer to.')),
+ ("It's time we ____.", ['left', 'leave', 'leaving'], 0, ('Past.', 'Past.', 'Past.')),
+ ("You'd better ____ be late.", ['not', "don't", 'no'], 0, ('Better not.', 'Better not.', 'Better not.')),
+ ("I'd rather you ____ tell him.", ["didn't", "don't", "won't"], 0, ('Past.', 'Past.', 'Past.')),
+]
+D[28] = [
+ ('____ finished, she left.', ['Having', 'Has', 'Have'], 0, ('Having + V3.', 'Having + V3.', 'Having + V3.')),
+ ('A picture ____ by Lily.', ['painted', 'painting', 'paint'], 0, ('Passive.', 'Passive.', 'Passive.')),
+ ('____ home, I saw her.', ['Walking', 'Walked', 'Walk'], 0, ('-ing.', '-ing.', '-ing.')),
+ ('____ by the news, he sat down.', ['Shocked', 'Shocking', 'Shock'], 0, ('V3.', 'V3.', 'V3.')),
+ ('Having ____ dinner, we went out.', ['eaten', 'eat', 'ate'], 0, ('V3.', 'V3.', 'V3.')),
+ ('____ every day, she improved.', ['Practising', 'Practised', 'Practise'], 0, ('-ing.', '-ing.', '-ing.')),
+]
+D[29] = [
+ ('Never ____ I seen this.', ['have', 'I have', 'did I have'], 0, ('Inversion.', 'Inversion.', 'Inversion.')),
+ ("Not only ____ he smart, he's kind.", ['is', 'he is', 'does'], 0, ('Is he.', 'Is he.', 'Is he.')),
+ ('Rarely ____ I cry.', ['do', 'I', 'am do'], 0, ('Do I.', 'Do I.', 'Do I.')),
+ ('Seldom ____ we meet.', ['do', 'we do', 'are'], 0, ('Do we.', 'Do we.', 'Do we.')),
+ ('Under no circumstances ____ you leave.', ['should', 'you should', 'do'], 0, ('Should you.', 'Should you.', 'Should you.')),
+ ('Never ____ she so happy.', ['had she been', 'she had been', 'been she'], 0, ('Had she been.', 'Had she been.', 'Had she been.')),
+]
+
+D[31] = [
+ ('They asked if I ____ ready.', ['was', 'am', 'were being'], 0, ('Backshift.', 'Backshift.', 'Backshift.')),
+ ('She told me ____ wait.', ['to', '-', 'for'], 0, ('Told + to.', 'Told + to.', 'Told + to.')),
+ ('He asked me not ____ tell.', ['to', '-', 'that'], 0, ('Not to.', 'Not to.', 'Not to.')),
+ ('They asked why I ____ to go.', ['wanted', 'did want', 'want'], 0, ('No did.', 'No did.', 'No did.')),
+ ('She asked ____ I could help.', ['if', 'that', 'what'], 0, ('If.', 'If.', 'If.')),
+ ('He asked where I ____.', ['lived', 'did live', 'live'], 0, ('No did.', 'No did.', 'No did.')),
+]
+D[32] = [
+ ('I was going ____ call you.', ['to', '-', 'for'], 0, ('Going to.', 'Going to.', 'Going to.')),
+ ('She was about ____ speak.', ['to', '-', 'for'], 0, ('About to.', 'About to.', 'About to.')),
+ ('He said he ____ come.', ['would', 'will', 'is'], 0, ('Would.', 'Would.', 'Would.')),
+ ('We were ____ to leave.', ['going', 'go', 'gone'], 0, ('Going to.', 'Going to.', 'Going to.')),
+ ('I thought it ____ rain.', ['would', 'will', 'is'], 0, ('Would.', 'Would.', 'Would.')),
+ ('You were supposed ____ call!', ['to', '-', 'for'], 0, ('Supposed to.', 'Supposed to.', 'Supposed to.')),
+]
+D[33] = [
+ ("It's ____ cold!", ['so', 'such', 'enough'], 0, ('So + adj.', 'So + adj.', 'So + adj.')),
+ ("It's ____ a nice day!", ['such', 'so', 'too'], 0, ('Such a + noun.', 'Such a + noun.', 'Such a + noun.')),
+ ("I'm too tired ____ go.", ['to', 'for', 'that'], 0, ('Too… to.', 'Too… to.', 'Too… to.')),
+ ('Is it big ____?', ['enough', 'too', 'so'], 0, ('Adj + enough.', 'Adj + enough.', 'Adj + enough.')),
+ ('We have ____ time.', ['enough', 'too', 'so'], 0, ('Enough + noun.', 'Enough + noun.', 'Enough + noun.')),
+ ('It was so late ____ we left.', ['that', 'to', 'for'], 0, ('So… that.', 'So… that.', 'So… that.')),
+]
+D[34] = [
+ ('If you heat ice, it ____.', ['melts', 'will melt', 'would melt'], 0, ('Zero.', 'Zero.', 'Zero.')),
+ ('If it rains, we ____ stay in.', ['will', 'would', 'had'], 0, ('First.', 'First.', 'First.')),
+ ('If I were rich, I ____ travel.', ['would', 'will', 'had'], 0, ('Second.', 'Second.', 'Second.')),
+ ('If I had known, I ____ come.', ['would have', 'will', 'would'], 0, ('Third.', 'Third.', 'Third.')),
+ ("____ you hurry, you'll be late.", ['Unless', 'If', 'Provided'], 0, ('Unless.', 'Unless.', 'Unless.')),
+ ("Take a coat in ____ it's cold.", ['case', 'if', 'unless'], 0, ('In case.', 'In case.', 'In case.')),
+]
