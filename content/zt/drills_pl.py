@@ -40,3 +40,43 @@ D[5] = [
  ("Czy ona tu ____?", ["pracuje", "pracuję", "pracujesz"], 0, ("Ona → pracuje.", "Ona → pracuje.", "She → pracuje.")),
  ("Komendant ____ do pracy autem.", ["jeździ", "jeżdżę", "jeżdżą"], 0, ("On → jeździ.", "On → jeździ.", "He → jeździ.")),
 ]
+D[7] = [
+ ("Patrz! Nick ____ lody.", ["kupuje", "kupował", "kupi"], 0, ("Teraz.", "Teraz.", "Now.")),
+ ("Ja ____ za lisem.", ["idę", "idzie", "idą"], 0, ("Ja → idę.", "Ja → idę.", "I → idę.")),
+ ("Oni ____ w kolejce.", ["czekają", "czeka", "czekam"], 0, ("Oni → czekają.", "Oni → czekają.", "They → czekają.")),
+ ("Co ____ robisz?", ["teraz", "wczoraj", "jutro"], 0, ("Teraz.", "Teraz.", "Now.")),
+ ("Ona teraz nie ____.", ["pracuje", "pracowała", "pracuję"], 0, ("Teraźniejszy.", "Teraźniejszy.", "Present.")),
+ ("Finnick ____ do Judy.", ["macha", "machał", "machać"], 0, ("Teraźniejszy.", "Teraźniejszy.", "Present.")),
+]
+D[8] = [
+ ("Potrzebuję trochę ____.", ["wody", "woda", "wodę"], 0, ("Dopełniacz.", "Dopełniacz.", "Genitive.")),
+ ("Masz jakieś ____?", ["pieniądze", "pieniędzy", "pieniądzami"], 0, ("Biernik.", "Biernik.", "Accusative.")),
+ ("Mam ____ pomysł!", ["pewien", "pewną", "pewne"], 0, ("Pomysł (m.).", "Pomysł (m.).", "Masculine.")),
+ ("Na dachu jest jedno ____.", ["wiadro", "wiadra", "wiader"], 0, ("Mianownik.", "Mianownik.", "Nominative.")),
+ ("Nie mamy ____.", ["soku", "sok", "sokiem"], 0, ("Dopełniacz.", "Dopełniacz.", "Genitive.")),
+ ("Ma kilka ____.", ["patyków", "patyki", "patykami"], 0, ("Dopełniacz.", "Dopełniacz.", "Genitive.")),
+]
+D[9] = [
+ ("____ drzwi, proszę.", ["Otwórz", "Otwiera", "Otworzyć"], 0, ("Rozkaz.", "Rozkaz.", "Imperative.")),
+ ("Nie ____!", ["płacz", "płacze", "płakać"], 0, ("Rozkaz.", "Rozkaz.", "Imperative.")),
+ ("____!", ["Chodźmy", "Chodzimy", "Chodzić"], 0, ("Let's go.", "Let's go.", "Let's go.")),
+ ("Proszę ____.", ["usiąść", "usiądź", "siada"], 0, ("Proszę + bezokolicznik.", "Proszę + bezokolicznik.", "Proszę + infinitive.")),
+ ("Nie ____ się!", ["spóźniaj", "spóźnia", "spóźniać"], 0, ("Rozkaz.", "Rozkaz.", "Imperative.")),
+ ("____ go!", ["Znajdźmy", "Znajdziemy", "Znaleźć"], 0, ("Let's find.", "Let's find.", "Let's find.")),
+]
+D[10] = [
+ ("Nick ____ tam wczoraj.", ["był", "była", "byli"], 0, ("On → był.", "On → był.", "He → był.")),
+ ("My ____ w domu.", ["byliśmy", "był", "byłam"], 0, ("My → byliśmy.", "My → byliśmy.", "We → byliśmy.")),
+ ("Czy ____ w pracy? (ty, m.)", ["byłeś", "byłam", "był"], 0, ("Ty → byłeś.", "Ty → byłeś.", "You → byłeś.")),
+ ("Wczoraj ____ zimno.", ["było", "był", "była"], 0, ("Było.", "Było.", "Było.")),
+ ("Oni nie ____ przyjaciółmi.", ["byli", "był", "było"], 0, ("Oni → byli.", "Oni → byli.", "They → byli.")),
+ ("Ja (ż.) ____ zajęta.", ["byłam", "byłem", "była"], 0, ("Ja (ż.) → byłam.", "Ja (ż.) → byłam.", "I (f.) → byłam.")),
+]
+D[11] = [
+ ("Rozmawialiśmy z ____.", ["Yaxem", "Yax", "Yaxa"], 0, ("Z + narzędnik.", "Z + narzędnik.", "Z + instrumental.")),
+ ("Auto się ____.", ["zatrzymało", "zatrzymuje", "zatrzyma"], 0, ("Przeszłość.", "Przeszłość.", "Past.")),
+ ("Nie ____. (ja, m.)", ["wiedziałem", "wiem", "wiedziała"], 0, ("Ja (m.).", "Ja (m.).", "I (m.).")),
+ ("Ona ____ pytanie.", ["zadała", "zadał", "zadaje wczoraj"], 0, ("Ona → -ła.", "Ona → -ła.", "She → -ła.")),
+ ("Czy ____ do niego? (ty, ż.)", ["dzwoniłaś", "dzwoniłeś", "dzwonił"], 0, ("Ty (ż.).", "Ty (ż.).", "You (f.).")),
+ ("Oni ____ po parku.", ["spacerowali", "spacerował", "spacerują wczoraj"], 0, ("Oni → -li.", "Oni → -li.", "They → -li.")),
+]
