@@ -1,0 +1,26 @@
+# MoviLang · резервна копія бази щонеділі. Файл зберігається у вкладці Actions → backup → Artifacts (90 днів).
+# GitHub → Settings → Secrets → Actions: SUPABASE_DB_URL
+#   (Supabase → Project Settings → Database → Connection string → URI, режим "Session pooler", з паролем).
+name: backup
+on:
+  schedule: [{ cron: "0 3 * * 0" }]
+  workflow_dispatch:
+jobs:
+  dump:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Install pg_dump 17
+        run: |
+          sudo install -d /usr/share/postgresql-common/pgdg
+          sudo curl -fsSo /usr/share/postgresql-common/pgdg/apt.postgresql.org.asc https://www.postgresql.org/media/keys/ACCC4CF8.asc
+          echo "deb [signed-by=/usr/share/postgresql-common/pgdg/apt.postgresql.org.asc] https://apt.postgresql.org/pub/repos/apt $(lsb_release -cs)-pgdg main" | sudo tee /etc/apt/sources.list.d/pgdg.list
+          sudo apt-get update -qq && sudo apt-get install -y -qq postgresql-client-17
+      - name: Dump
+        env: { DB: "${{ secrets.SUPABASE_DB_URL }}" }
+        run: |
+          D=$(date +%F)
+          /usr/lib/postgresql/17/bin/pg_dump "$DB" --schema=public --no-owner --no-privileges -Fc -f movilang-$D.dump
+          /usr/lib/postgresql/17/bin/pg_dump "$DB" --schema=auth --data-only --table=auth.users --no-owner -Fc -f movilang-auth-$D.dump || true
+          ls -la
+      - uses: actions/upload-artifact@v4
+        with: { name: "movilang-backup-${{ github.run_id }}", path: "*.dump", retention-days: 90 }

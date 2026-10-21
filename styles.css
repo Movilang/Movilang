@@ -867,3 +867,41 @@ body.has-amb #app,body.has-amb footer{position:relative;z-index:1}
 .warn-t{color:#ff8a3d;margin:0}
 .funnel{display:flex;gap:2px;align-items:flex-end;height:84px}.funnel i{flex:1;background:linear-gradient(var(--progress-1,#ff6b4a),var(--progress-2,#ffb04a));border-radius:2px 2px 0 0;min-width:3px}
 .tbl-wrap{overflow-x:auto}.tbl{width:100%;border-collapse:collapse;font-size:14px}.tbl th,.tbl td{padding:8px;border-bottom:1px solid rgba(127,127,127,.2);text-align:left;white-space:nowrap}
+
+/* ---- 2026-10-22: друзі, рейтинг, подарунки, відгуки, підтримка, cookies ---- */
+.askb{margin-right:6px}
+.quicklinks{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 16px}
+.quicklinks a{padding:8px 14px;border:1px solid var(--line);border-radius:999px;background:var(--panel);text-decoration:none;color:var(--fg);font-size:14px}
+.quicklinks a:hover{border-color:var(--red,#ff4d5a)}
+.duo{display:grid;gap:10px;margin-top:8px}
+.frow2{display:grid;grid-template-columns:minmax(120px,1.4fr) 2fr auto;gap:10px;align-items:center;padding:8px 10px;border-radius:10px;background:var(--bg2,rgba(127,127,127,.06))}
+.frow2.me{outline:1px solid var(--red,#ff4d5a)}
+.frow2 .fbar{height:10px;border-radius:6px;background:rgba(127,127,127,.18);overflow:hidden}
+.frow2 .fbar i{display:block;height:100%;background:var(--red,#ff4d5a);border-radius:6px}
+.linkbtn{background:none;border:0;color:var(--muted);text-decoration:underline;cursor:pointer;padding:0;font:inherit}
+.refbox{margin-top:16px;padding:12px 14px;border:1px dashed var(--line);border-radius:12px}
+.lboard tr.me td{background:rgba(255,77,90,.1)}
+.giftform{display:grid;gap:12px;max-width:560px}
+.giftcard{max-width:480px;margin:0 auto 18px;padding:28px;border-radius:18px;text-align:center;background:linear-gradient(160deg,#4b1446,#12050f);color:#fff;border:2px solid #ff7ad9}
+.giftcard .gc-top{letter-spacing:3px;font-weight:700;color:#ff9be4}
+.giftcard blockquote{font-style:italic;opacity:.9;margin:12px 0}
+.giftcard .gc-what{font-size:18px;font-weight:600}
+.stars{color:#f5b301;letter-spacing:1px}
+.starpick{display:flex;gap:4px;margin:8px 0}
+.starpick button{font-size:28px;background:none;border:0;cursor:pointer;color:rgba(127,127,127,.4)}
+.starpick button.on{color:#f5b301}
+.revbox{margin-top:16px}
+.reviews{margin-top:18px}.revlist{display:grid;gap:12px;margin-top:10px}
+.rev{padding:10px 12px;border-radius:10px;background:rgba(127,127,127,.06)}
+.tk,.qa{padding:10px 0;border-bottom:1px solid var(--line)}
+.qa.new{background:rgba(255,77,90,.08);border-radius:8px;padding:10px}
+.tk-ans{padding:8px 10px;border-left:3px solid var(--red,#ff4d5a);background:rgba(127,127,127,.06);border-radius:6px}
+.qadm.new,.tkadm{border-left:3px solid var(--red,#ff4d5a)}
+.qadm,.tkadm{margin-bottom:12px;display:grid;gap:8px}
+.tab .cnt{display:inline-block;min-width:18px;padding:0 5px;border-radius:9px;background:var(--red,#ff4d5a);color:#fff;font-size:11px;line-height:18px;text-align:center}
+.pill.bad{background:rgba(255,77,90,.18);color:#ff4d5a}
+.qans{margin-top:18px}.mkt{display:block;margin-top:14px}
+.legal{display:block;margin-top:6px;font-size:13px}.legal a{color:var(--muted)}
+.cookiebar{position:fixed;left:12px;right:12px;bottom:76px;z-index:60;display:flex;gap:12px;align-items:center;justify-content:space-between;max-width:760px;margin:auto;padding:12px 16px;border-radius:14px;background:var(--panel);border:1px solid var(--line);box-shadow:0 8px 30px rgba(0,0,0,.35);font-size:14px}
+@media (min-width:900px){.cookiebar{bottom:16px}}
+@media print{body.pgift *{visibility:hidden}body.pgift .giftcard,body.pgift .giftcard *{visibility:visible}body.pgift .giftcard{position:absolute;left:0;right:0;top:20px}}

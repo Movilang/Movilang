@@ -1,0 +1,14 @@
+# MoviLang · щоденні листи (вітання, нагадування, кинутий кошик).
+# GitHub → Settings → Secrets and variables → Actions → New secret: CRON_SECRET (той самий, що в Supabase).
+name: daily-mailer
+on:
+  schedule: [{ cron: "0 8 * * *" }]   # щодня о 8:00 UTC (10:00 у Польщі влітку)
+  workflow_dispatch:
+jobs:
+  mail:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Run mailer
+        run: |
+          curl -fsS -X POST "https://pybzpbkmdupvtsmxlqvr.supabase.co/functions/v1/mailer" \
+            -H "x-cron-secret: ${{ secrets.CRON_SECRET }}" -H "Content-Type: application/json" -d '{}'

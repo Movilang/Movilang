@@ -55,3 +55,23 @@
 4. Stripe → Developers → Webhooks → Add endpoint: `https://pybzpbkmdupvtsmxlqvr.supabase.co/functions/v1/stripe-webhook`, події `checkout.session.completed` і `checkout.session.async_payment_succeeded`.
 5. Supabase → Edge Functions → Secrets: `STRIPE_SECRET_KEY` (sk_live_…), `STRIPE_WEBHOOK_SECRET` (whsec_…), `SITE_URL` = https://movilang.pages.dev.
 Ціна курсу береться з поля «ціна» курсу, ціна пакета — з налаштування `bundle_price`.
+
+## Оновлення 2026-10-22: друзі, рейтинг, подарунки, реферали, відгуки, підтримка, листи, бекап
+
+1. **SQL:** вставити `migration-2026-10-22.sql` у Supabase → SQL Editor → Run.
+2. **Edge Functions** (Supabase → Edge Functions → Deploy / Edit, вставити код):
+   - `checkout` — оновлений код (подарунки, знижка −20 % для рефералів);
+   - `stripe-webhook` — оновлений код (подарунки, бонуси рефералів, листи), **Verify JWT вимкнути**;
+   - `mailer` — новий, **Verify JWT вимкнути**;
+   - `admin-refund` — новий (повернення коштів з адмінки).
+3. **Secrets** (Supabase → Edge Functions → Secrets):
+   - `RESEND_API_KEY` — ключ із resend.com (безкоштовно до 3000 листів/міс.);
+   - `MAIL_FROM` — напр. `MoviLang <hello@твій-домен>` (до підтвердження домену в Resend можна `MoviLang <onboarding@resend.dev>` — листи йдуть лише на твою пошту);
+   - `CRON_SECRET` — будь-який довгий випадковий рядок.
+4. **GitHub → Settings → Secrets and variables → Actions:**
+   - `CRON_SECRET` — той самий рядок (щоденні листи, `.github/workflows/daily.yml`);
+   - `SUPABASE_DB_URL` — Supabase → Connect → Session pooler URI з паролем (щотижневий бекап, `.github/workflows/backup.yml`; файл — у вкладці Actions → backup → Artifacts, зберігається 90 днів).
+5. **Правові сторінки:** у `privacy.html` і `terms.html` заповнити `[UZUPEŁNIJ: …]` (ім'я / фірма, адреса, NIP).
+
+Нові сторінки: `#/friends` (дует і реферальне посилання `?ref=КОД`), `#/top` (рейтинг тижня), `#/gift` (подарунок), `#/support` (підтримка й повернення), `/blog/`, `/privacy.html`, `/terms.html`.
+Нові вкладки адмінки: Питання, Підтримка (з кнопкою повернення коштів), Відгуки, Де кидають, Звіт за місяць (CSV/PDF), Перевірка курсів (автоперевірка + знайти й замінити).

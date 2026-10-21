@@ -132,7 +132,7 @@ moment|/ˈməʊmənt/|noun|A2|мить|chwila|Не той момент.|Nie ta c
 to delay|/dɪˈleɪ/|verb|B2|відкладати, затримувати|odwlekać|Лілі відкладає розмову.|Lily odwleka rozmowę.|Lily delays the conversation.|Don't delay!|The train was delayed.|Nie zwlekaj!|Pociąg miał opóźnienie.|Не зволікай!|Потяг затримався.
 """),
   gloss(("Сцена 2 · Кав'ярня · Сльози", "Scena 2 · Kawiarnia · Łzy", "Scene 2 · The café · Tears"), """
-would|/wʊd/|modal|B1|(сказав, що) буде|(mówił, że) będzie|Вона обіцяла, що скаже.|Obiecała, że powie.|She promised she would tell him.|He said he would come.|I knew it would rain.|Mówił, że przyjdzie.|Wiedziałem, że będzie padać.|Він казав, що прийде.|Я знав, що піде дощ.
+would|/wʊd/|modal|B1|буде (у непрямій мові)|będzie (w mowie zależnej)|Вона обіцяла, що скаже.|Obiecała, że powie.|She promised she would tell him.|He said he would come.|I knew it would rain.|Mówił, że przyjdzie.|Wiedziałem, że będzie padać.|Він казав, що прийде.|Я знав, що піде дощ.
 to promise oneself|/ˈprɒmɪs wʌnˈself/|phrase|B2|обіцяти собі|obiecać sobie|Лілі обіцяла собі сказати.|Lily obiecała sobie powiedzieć.|Lily promised herself she'd tell.|I promised myself.|She promised herself to change.|Obiecałem sobie.|Obiecała sobie zmianę.|Я пообіцяв собі.|Вона пообіцяла собі змінитися.
 to cry|/kraɪ/|verb|A2|плакати|płakać|Лілі плаче.|Lily płacze.|Lily cries.|Don't cry.|The baby is crying.|Nie płacz.|Dziecko płacze.|Не плач.|Дитина плаче.
 scared|/skeəd/|adjective|A2|наляканий|przestraszony|Лілі налякана.|Lily jest przestraszona.|Lily is scared.|I'm scared.|Are you scared?|Boję się.|Boisz się?|Мені страшно.|Тобі страшно?

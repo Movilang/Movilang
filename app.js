@@ -1017,11 +1017,11 @@ function runPlayer(container, lesson, onFinish, ctxLs) {
       (gRuleTask(tk, lesson) ? '<div class="rulew"><button type="button" class="qtrb rulebtn" id="ruleBtn">📘 ' + tx({uk:'Нагадати правило', pl:'Przypomnij zasadę', en:'Show the rule'}) + '</button><div class="rulebox" id="ruleBox" hidden></div></div>' : '') +
       (tk.say && tk.type === 'speaking' ? '<div class="sayline">' + esc(tk.say) + '</div>' : '');
   }
-  function foot() { var tk0 = tasks[cur] || {}; return '<div class="tfb" id="tfb"></div><div class="tnav"><span class="hint">' + (SKIPPABLE[tk0.type] && tk0.type !== 'speaking' ? '<button type="button" class="skipb" id="skipErr">' + tx({uk:'Не можу зараз (пропустити)', pl:'Nie mogę teraz (pomiń)', en:'Can\'t do it now (skip)'}) + '</button> ' : '') + '<span class="hint">' + t('Завдання') + ': ' + FLAG[TARGET] + ' · ' + t('Підказки') + ': ' + FLAG[LANG] + '</span></span><button class="btn btn-red" type="button" id="tnext" hidden>' + t('Далі') + '</button></div>'; }
+  function foot() { var tk0 = tasks[cur] || {}; return '<div class="tfb" id="tfb"></div><div class="tnav"><span class="hint">' + (SKIPPABLE[tk0.type] && tk0.type !== 'speaking' ? '<button type="button" class="skipb" id="skipErr">' + tx({uk:'Не можу зараз (пропустити)', pl:'Nie mogę teraz (pomiń)', en:'Can\'t do it now (skip)'}) + '</button> ' : '') + (isInfo(tk0.type) ? '' : '<button type="button" class="skipb askb" data-ask-lid="' + esc(lesson.id) + '" data-ask-n="' + cur + '">❓ ' + tx({uk:'Не зрозумів', pl:'Nie rozumiem', en:'I don\'t get it'}) + '</button> ') + '<span class="hint">' + t('Завдання') + ': ' + FLAG[TARGET] + ' · ' + t('Підказки') + ': ' + FLAG[LANG] + '</span></span><button class="btn btn-red" type="button" id="tnext" hidden>' + t('Далі') + '</button></div>'; }
   function skipMsg() { return '⚠ ' + tx({uk:'Завдання пропущено — зараховано як помилку. Можна повернутися до нього, пройшовши урок ще раз.', pl:'Zadanie pominięte — liczy się jako błąd. Możesz do niego wrócić, przechodząc lekcję jeszcze raz.', en:'Task skipped — it counts as a mistake. You can come back to it by retaking the lesson.'}); }
   var firstR = true;
   function render() {
-    render0();
+    render0(); if (typeof sessTrack === 'function') sessTrack(lesson.id, cur, tasks.length, false); ASK_CTX = {lid:lesson.id, tasks:tasks};
     var sk = card.querySelector('#skipErr'); if (sk) sk.onclick = function () { if (snaps[cur] || res[cur] != null) return; sk.disabled = true; done(false, skipMsg()); };
     if (firstR) { firstR = false; return; }
     var r = card.getBoundingClientRect(); if (r.top < 70 || r.top > window.innerHeight * 0.35) window.scrollTo({top:window.pageYOffset + r.top - 84, behavior:'smooth'});
@@ -1202,6 +1202,7 @@ function runPlayer(container, lesson, onFinish, ctxLs) {
   function firstOpen() { for (var i = 0; i < tasks.length; i++) if (!isInfo(tasks[i].type) && res[i] == null) return i; return -1; }
   function finish() {
     var per = tasks.map(function (tk, i) { var o = {n:i, type:tk.type, sec:durs[i] || 0, ok:res[i] == null ? null : !!res[i]}; if (hints[i]) o.h = hints[i]; return o; }); LAST_TIMES = {total:per.reduce(function (a, x) { return a + x.sec; }, 0), per:per};
+    if (typeof sessTrack === 'function') sessTrack(lesson.id, tasks.length, tasks.length, true);
     var sc = res.filter(function (x) { return x === true; }).length, pct = scored ? Math.round(sc / scored * 100) : 0; cur = tasks.length; renderSide();
     card.innerHTML = '<div class="tres"><span class="ttag">' + t('РЕЗУЛЬТАТ') + '</span><div class="big">' + sc + ' / ' + scored + '</div><p class="lead" style="text-align:center" id="tresText">' + pct + '%</p><div id="tresExtra" style="width:100%"></div><div class="row" style="justify-content:center" id="tresBtns"></div></div>';
     onFinish(pct, finalText, card.querySelector('#tresText'), card.querySelector('#tresBtns'), function () { cur = 0; res = []; snaps = []; hints = {}; maxReached = FREE ? tasks.length - 1 : 0; tStart = {}; durs = {}; render(); }, card.querySelector('#tresExtra'));
@@ -1301,8 +1302,9 @@ function viewLesson(id) {
         if (!enrolled && extra) { var rest = ls.slice(idx + 1); extra.innerHTML = '<div class="upsell"><h3>' + (pct >= 70 ? t('Відмінно! Ти готовий до повного марафону.') : t('Гарний старт! Повний марафон допоможе закріпити.')) + '</h3><p class="muted">' + t('Ще') + ' ' + rest.length + ' ' + t('уроків чекають на тебе:') + '</p><ol class="uplist">' + rest.slice(0, 6).map(function (x) { return '<li><b>' + esc(tr(x, 'title')) + '</b> <span class="muted small">· ' + esc(x.grammar) + '</span></li>'; }).join('') + (rest.length > 6 ? '<li class="muted">+ ' + (rest.length - 6) + ' ' + t('уроків, фінальний проєкт і сертифікат') + '</li>' : '') + '</ol><div class="price-tag"><b>' + esc(c ? c.price : '') + '</b> <span class="muted">' + t('один раз · доступ на 12 місяців') + '</span></div></div>'; }
         var vb = l.variants || {};
         if (extra && vb.badge && pct >= 50) extra.insertAdjacentHTML('afterbegin', '<div class="badge-win"><span class="bw-i">' + esc(vb.badge.icon || '🏅') + '</span><div><div class="eyebrow">' + tx({uk:'Нагорода уроку', pl:'Nagroda lekcji', en:'Lesson reward'}) + '</div><b>' + esc(lf(vb.badge, 'name')) + '</b><p class="muted small">' + esc(lf(vb.badge, 'text') || '') + '</p></div></div>');
-        if (extra && vb.cert && pct >= 70) extra.insertAdjacentHTML('beforeend', '<div class="cert" id="certBox"><div class="eyebrow">' + tx({uk:'Сертифікат', pl:'Certyfikat', en:'Certificate'}) + '</div><h3>' + esc(vb['cert_' + LANG] || vb.cert) + '</h3><p>' + esc(USER && (USER.name || USER.email) || '') + '</p><p class="muted small">' + esc(c ? tr(c, 'title') : '') + ' · ' + new Date().toLocaleDateString() + ' · ' + pct + '%</p><button class="btn btn-ghost btn-sm" type="button" onclick="window.print()">' + tx({uk:'Друкувати', pl:'Drukuj', en:'Print'}) + '</button></div>');
+        if (extra && vb.cert && pct >= 70) extra.insertAdjacentHTML('beforeend', '<div class="cert" id="certBox"><div class="eyebrow">' + tx({uk:'Сертифікат', pl:'Certyfikat', en:'Certificate'}) + '</div><h3>' + esc(vb['cert_' + LANG] || vb.cert) + '</h3><p>' + esc(USER && (USER.name || USER.email) || '') + '</p><p class="muted small">' + esc(c ? tr(c, 'title') : '') + ' · ' + new Date().toLocaleDateString() + ' · ' + pct + '%</p><button class="btn btn-ghost btn-sm" type="button" data-print="1">' + tx({uk:'Друкувати', pl:'Drukuj', en:'Print'}) + '</button></div>');
         if (USER && LAST_TIMES) API.saveTimes(l.id, pct, LAST_TIMES).catch(function () {});
+        if (USER && extra && enrolled && (l.num === 6 || (l.variants && l.variants.cert))) reviewPrompt(extra, c, l.variants && l.variants.cert ? 36 : 6);
         if (USER) { API.saveProgress(l.id, pct, finalText).then(function (r) { textEl.textContent = r && r.retry ? t('Повторна спроба: ') + pct + t('%. Перший результат зберігається, новий показано в дужках.') : t('Бал: ') + pct + t('%. Результат збережено в кабінеті.'); }); }
         else textEl.textContent = t('Бал: ') + pct + t('%. Створи кабінет, щоб зберігати прогрес.');
         btns.innerHTML = (nextL && enrolled ? '<a class="btn btn-red" href="#/lesson/' + esc(nextL.id) + t('">Наступний урок</a>') : (!enrolled ? t('<a class="btn btn-red" href="#/buy">Отримати ключ доступу</a>') : '')) + '<a class="btn btn-ghost" href="' + (USER ? '#/cabinet' : '#/register') + '">' + (USER ? t('Мій кабінет') : t('Створити кабінет')) + t('</a><button class="btn btn-ghost" type="button" id="again">Пройти ще раз</button>');
@@ -2094,6 +2096,408 @@ function adminSales(body) {
   });
 }
 
+/* =====================================================================
+   2026-10-22: друзі й дует, рейтинг, питання викладачу, подарунки, реферали,
+   відгуки, «де кидають», перевірка курсів, пошук-заміна, підтримка, звіт за місяць, RODO
+   ===================================================================== */
+function L3(uk, pl, en) { return tx({uk:uk, pl:pl, en:en}); }
+function SB() { return API.sb || null; }
+function needSb(body) { if (SB()) return false; (body || $app).innerHTML = '<div class="page"><div class="empty">' + L3('Доступно лише з базою Supabase.', 'Dostępne tylko z bazą Supabase.', 'Requires Supabase.') + '</div></div>'; return true; }
+function rpc(name, args) { return SB().rpc(name, args || {}).then(function (r) { if (r.error) throw new Error(r.error.message); return r.data; }); }
+function q(pr) { return pr.then(function (r) { if (r.error) throw new Error(r.error.message); return r.data; }); }
+function plain(s) { return String(s || '').replace(/<[^>]+>/g, '').replace(/\s+/g, ' ').trim(); }
+function siteUrl() { return (window.MOVILANG_SITE && window.MOVILANG_SITE.URL) || (location.origin + location.pathname.replace(/index\.html$/, '')); }
+var ME_PROF = null;
+function myProf(force) {
+  if (!USER || !SB()) return Promise.resolve(null);
+  if (ME_PROF && !force) return Promise.resolve(ME_PROF);
+  return q(SB().from('profiles').select('id,nick,friend_code,ref_credits,referred_by,marketing,created_at').eq('id', USER.id).maybeSingle()).then(function (p) { ME_PROF = p; return p; });
+}
+
+/* ---------- реферальне посилання / посилання для дуету: ?ref=CODE ---------- */
+(function () { var m = location.search.match(/[?&]ref=([A-Za-z0-9]{4,10})/); if (m) lsSet('ml_ref', m[1].toUpperCase()); })();
+function applyRef() {
+  var code = lsGet('ml_ref', null); if (!code || !USER || !SB()) return;
+  rpc('claim_referral', {p_code:code}).catch(function () { return false; }).then(function (ok) {
+    return rpc('add_friend', {p_code:code}).then(function (nick) { lsSet('ml_ref', null); toast(L3('Ви тепер друзі з ', 'Jesteście teraz znajomymi: ', 'You are now friends with ') + nick + (ok ? L3(' · −20% на першу покупку!', ' · −20% na pierwszy zakup!', ' · −20% off your first purchase!') : '')); }).catch(function () { lsSet('ml_ref', null); });
+  });
+}
+
+/* ---------- сесії уроків ---------- */
+var SESS = null;
+function sessTrack(lid, n, total, fin) {
+  if (!USER || !SB() || API.mode === 'demo') return;
+  if (!SESS || SESS.lid !== lid || SESS.fin) {
+    if (fin) return;
+    SESS = {lid:lid, id:null, last:n, fin:false, p:null};
+    SESS.p = SB().from('lesson_sessions').insert({user_id:USER.id, lesson_id:lid, target:TARGET, last_task:n, total:total}).select('id').single().then(function (r) { if (r.data) SESS.id = r.data.id; }).catch(function () {});
+    return;
+  }
+  if (!fin && n <= SESS.last) return;
+  SESS.last = Math.max(SESS.last, n); if (fin) SESS.fin = true;
+  var s = SESS; Promise.resolve(s.p).then(function () { if (s.id) SB().from('lesson_sessions').update({last_task:s.last, finished:!!fin, updated_at:new Date().toISOString()}).eq('id', s.id).then(function () {}); });
+}
+
+/* ---------- «Не зрозумів» → питання викладачу ---------- */
+var ASK_CTX = null;
+document.addEventListener('click', function (e) {
+  var b = e.target.closest && e.target.closest('[data-ask-lid]'); if (!b) return;
+  e.preventDefault();
+  if (!USER) { toast(L3('Увійди, щоб поставити питання викладачу.', 'Zaloguj się, aby zadać pytanie lektorowi.', 'Log in to ask the teacher.'), 'info'); return; }
+  var n = +b.dataset.askN, tk = ASK_CTX && ASK_CTX.lid === b.dataset.askLid ? ASK_CTX.tasks[n] : null, tq = tk ? plain(lf(tk, 'q')).slice(0, 300) : '';
+  var w = mbox('<h3>❓ ' + L3('Питання викладачу', 'Pytanie do lektora', 'Ask the teacher') + '</h3>' + (tq ? '<p class="muted small" style="margin:8px 0">' + esc(tq) + '</p>' : '') +
+    '<textarea class="inp-s" id="askTx" rows="4" style="width:100%" placeholder="' + esc(L3('Що саме незрозуміло? Напиши своїми словами.', 'Co dokładnie jest niejasne? Napisz własnymi słowami.', 'What exactly is unclear? Write in your own words.')) + '"></textarea>' +
+    '<p class="hint" style="margin:6px 0 12px">' + L3('Відповідь прийде на пошту і з\'явиться в кабінеті (зазвичай до 24 год).', 'Odpowiedź przyjdzie e-mailem i pojawi się w kabinecie (zwykle do 24 h).', 'The answer will arrive by e-mail and in your dashboard (usually within 24 h).') + '</p>' +
+    '<div class="row" style="justify-content:flex-end"><button class="btn btn-red" type="button" id="askGo">' + L3('Надіслати', 'Wyślij', 'Send') + '</button></div>');
+  w.querySelector('#askGo').onclick = function () {
+    var txt = w.querySelector('#askTx').value.trim(); if (txt.length < 5) { toast(L3('Напиши трохи більше.', 'Napisz trochę więcej.', 'Write a bit more.'), 'err'); return; }
+    if (!SB()) { w.remove(); toast(L3('Надіслано (демо).', 'Wysłano (demo).', 'Sent (demo).')); return; }
+    q(SB().from('questions').insert({user_id:USER.id, email:USER.email, lesson_id:b.dataset.askLid, target:TARGET, task_n:n, task_q:tq, text:txt.slice(0, 2000)})).then(function () { w.remove(); toast(L3('Питання надіслано! Відповімо найближчим часом.', 'Pytanie wysłane! Odpowiemy wkrótce.', 'Question sent! We\'ll reply soon.')); }).catch(function (er) { toast(er.message, 'err'); });
+  };
+});
+
+/* ---------- друзі й дует ---------- */
+function viewFriends() {
+  if (!requireUser()) return Promise.resolve(); if (needSb()) return Promise.resolve();
+  return Promise.all([myProf(true), rpc('my_friends'), rpc('ml_points', {p_uid:USER.id, p_since:new Date(Date.now() - 7 * 864e5).toISOString()}).catch(function () { return 0; }), q(SB().from('progress').select('lesson_id', {count:'exact', head:true}).eq('user_id', USER.id)).catch(function () { return null; })]).then(function (r) {
+    var p = r[0] || {}, fr = r[1] || [], myPts = r[2] || 0, link = siteUrl().replace(/\/$/, '') + '/?ref=' + p.friend_code + '#/register';
+    var max = Math.max.apply(null, fr.map(function (f) { return f.week_points; }).concat([myPts, 1]));
+    var bar = function (name, pts, sub, me) { return '<div class="frow2' + (me ? ' me' : '') + '"><div><b>' + esc(name) + '</b><div class="muted small">' + sub + '</div></div><div class="fbar"><i style="width:' + Math.round(pts / max * 100) + '%"></i></div><b>' + pts + '</b></div>'; };
+    $app.innerHTML = '<div class="page"><div class="sec-head"><div class="eyebrow">' + L3('Дует', 'Duet', 'Duo') + '</div><h2>' + L3('Вчися разом із другом', 'Ucz się razem z przyjacielem', 'Learn together with a friend') + '</h2><p class="lead">' + L3('Проходьте курси паралельно, бачте прогрес одне одного і змагайтеся за очки тижня.', 'Przechodźcie kursy równolegle, widźcie swoje postępy i rywalizujcie o punkty tygodnia.', 'Take courses side by side, see each other\'s progress and compete for weekly points.') + '</p></div>' +
+      '<div class="rows"><div class="panel"><h3>' + L3('Твій профіль', 'Twój profil', 'Your profile') + '</h3>' +
+        '<label class="fl">' + L3('Нік (видно друзям і в рейтингу)', 'Nick (widoczny dla znajomych i w rankingu)', 'Nickname (visible to friends and on the leaderboard)') + '<div class="row"><input class="inp-s" id="nkIn" maxlength="20" value="' + esc(p.nick || '') + '"><button class="btn btn-ghost btn-sm" type="button" id="nkGo">' + L3('Зберегти', 'Zapisz', 'Save') + '</button></div></label>' +
+        '<p style="margin-top:14px">' + L3('Твій код друга:', 'Twój kod znajomego:', 'Your friend code:') + ' <b class="keycode" style="font-size:20px">' + esc(p.friend_code || '') + '</b></p>' +
+        '<label class="fl">' + L3('Посилання-запрошення', 'Link z zaproszeniem', 'Invite link') + '<div class="row"><input class="inp-s" id="lnk" readonly value="' + esc(link) + '"><button class="btn btn-red btn-sm" type="button" id="lnkCp">' + L3('Копіювати', 'Kopiuj', 'Copy') + '</button></div></label>' +
+        '<div class="refbox"><b>🎁 ' + L3('Запроси друга — обом знижка', 'Zaproś znajomego — zniżka dla obojga', 'Invite a friend — you both save') + '</b><p class="muted small">' + L3('Друг отримує −20% на першу покупку, а ти — −20% на наступну за кожного друга, який купив курс.', 'Znajomy dostaje −20% na pierwszy zakup, a Ty −20% na kolejny za każdego znajomego, który kupił kurs.', 'Your friend gets −20% on their first purchase, and you get −20% on your next one for every friend who buys.') + '</p><p>' + L3('Твої бонуси:', 'Twoje bonusy:', 'Your bonuses:') + ' <b>' + (p.ref_credits || 0) + '</b> × −20%</p></div></div>' +
+      '<div class="panel"><h3>' + L3('Додати друга за кодом', 'Dodaj znajomego po kodzie', 'Add a friend by code') + '</h3><div class="row"><input class="inp-s" id="frCode" maxlength="10" placeholder="ABC123" style="text-transform:uppercase"><button class="btn btn-red btn-sm" type="button" id="frAdd">' + L3('Додати', 'Dodaj', 'Add') + '</button></div>' +
+        '<h3 style="margin-top:20px">' + L3('Очки за 7 днів', 'Punkty z 7 dni', 'Points, last 7 days') + '</h3><div class="duo">' +
+        bar(p.nick || L3('Я', 'Ja', 'Me'), myPts, L3('це ти', 'to Ty', 'that\'s you'), true) +
+        fr.map(function (f) { return bar(f.nick, f.week_points, (f.course ? esc(f.course) + ' · ' : '') + f.lessons + ' ' + L3('уроків', 'lekcji', 'lessons') + ' · ' + (f.last_active ? L3('активність ', 'aktywność ', 'active ') + fmtDate(f.last_active) : L3('ще не почав(ла)', 'jeszcze nie zaczął(-ęła)', 'not started yet')) + ' · <button type="button" class="linkbtn" data-unfr="' + esc(f.friend_id) + '">' + L3('прибрати', 'usuń', 'remove') + '</button>', false); }).join('') +
+        (fr.length ? '' : '<p class="muted small">' + L3('Поки що друзів немає. Надішли посилання або код!', 'Na razie brak znajomych. Wyślij link albo kod!', 'No friends yet. Send your link or code!') + '</p>') +
+        '</div><p style="margin-top:14px"><a href="#/top">🏆 ' + L3('Рейтинг тижня', 'Ranking tygodnia', 'Weekly leaderboard') + ' →</a></p></div></div></div>';
+    document.getElementById('nkGo').onclick = function () { rpc('set_my_nick', {p_nick:document.getElementById('nkIn').value}).then(function (n) { ME_PROF = null; toast(L3('Нік збережено: ', 'Nick zapisany: ', 'Nickname saved: ') + n); }).catch(function (e) { toast(e.message, 'err'); }); };
+    document.getElementById('lnkCp').onclick = function () { var i = document.getElementById('lnk'); i.select(); try { navigator.clipboard.writeText(i.value); } catch (e) { document.execCommand('copy'); } toast(L3('Скопійовано', 'Skopiowano', 'Copied')); };
+    document.getElementById('frAdd').onclick = function () { rpc('add_friend', {p_code:document.getElementById('frCode').value}).then(function (n) { toast(L3('Додано: ', 'Dodano: ', 'Added: ') + n); route(); }).catch(function (e) { toast(e.message, 'err'); }); };
+    $app.querySelectorAll('[data-unfr]').forEach(function (b) { b.onclick = function () { var id = b.dataset.unfr; Promise.all([SB().from('friendships').delete().eq('user_id', USER.id).eq('friend_id', id), SB().from('friendships').delete().eq('user_id', id).eq('friend_id', USER.id)]).then(function () { route(); }); }; });
+  });
+}
+
+/* ---------- рейтинг тижня ---------- */
+function viewTop() {
+  if (needSb()) return Promise.resolve();
+  return Promise.all([rpc('leaderboard_week'), myProf()]).then(function (r) {
+    var rows = r[0] || [], p = r[1], medal = ['🥇', '🥈', '🥉'];
+    $app.innerHTML = '<div class="page"><div class="sec-head"><div class="eyebrow">' + L3('Рейтинг', 'Ranking', 'Leaderboard') + '</div><h2>🏆 ' + L3('Найкращі за 7 днів', 'Najlepsi z 7 dni', 'Top of the last 7 days') + '</h2><p class="lead">' + L3('10 очок за кожен урок + бонус за бал. Видно лише ніки.', '10 punktów za każdą lekcję + bonus za wynik. Widoczne są tylko nicki.', '10 points per lesson + a score bonus. Only nicknames are shown.') + '</p></div>' +
+      (USER && p && !p.nick ? '<div class="panel" style="margin-bottom:16px">💡 ' + L3('Обери нік, щоб тебе впізнали в рейтингу:', 'Wybierz nick, by Cię rozpoznano w rankingu:', 'Pick a nickname to be recognised on the board:') + ' <a href="#/friends">' + L3('налаштувати', 'ustaw', 'set it') + '</a></div>' : '') +
+      '<div class="panel"><table class="tbl lboard"><tr><th>#</th><th>' + L3('Нік', 'Nick', 'Nickname') + '</th><th>' + L3('Уроків', 'Lekcji', 'Lessons') + '</th><th>' + L3('Очки', 'Punkty', 'Points') + '</th></tr>' +
+      (rows.map(function (x, i) { return '<tr' + (x.me ? ' class="me"' : '') + '><td>' + (medal[i] || i + 1) + '</td><td><b>' + esc(x.nick) + '</b>' + (x.me ? ' ← ' + L3('ти', 'Ty', 'you') : '') + '</td><td>' + x.lessons + '</td><td><b>' + x.points + '</b></td></tr>'; }).join('') || '<tr><td colspan="4" class="muted">' + L3('Цього тижня ще ніхто не пройшов урок. Будь першим!', 'W tym tygodniu nikt jeszcze nie ukończył lekcji. Bądź pierwszy!', 'Nobody has finished a lesson this week. Be the first!') + '</td></tr>') +
+      '</table></div><p style="margin-top:14px"><a href="#/friends">👥 ' + L3('Змагайся з друзями', 'Rywalizuj ze znajomymi', 'Compete with friends') + ' →</a></p></div>';
+  });
+}
+
+/* ---------- подарунковий сертифікат ---------- */
+var _startCheckout = startCheckout;
+startCheckout = function (courseId, bundle, extra) {
+  if (!extra) return _startCheckout(courseId, bundle);
+  if (!USER) { lsSet('ml_after_login', null); location.hash = '#/register'; toast(L3('Спершу увійди — подарунок прив\'яжемо до твого замовлення.', 'Najpierw się zaloguj — prezent przypiszemy do Twojego zamówienia.', 'Log in first — the gift will be tied to your order.'), 'info'); return; }
+  if (API.mode === 'demo' || !API.token) { location.hash = '#/buy'; return; }
+  toast(L3('Відкриваю оплату…', 'Otwieram płatność…', 'Opening checkout…'), 'info');
+  API.token().then(function (tk) { return fetch(cfg.SUPABASE_URL + '/functions/v1/checkout', {method:'POST', headers:{'Content-Type':'application/json', Authorization:'Bearer ' + tk, apikey:cfg.SUPABASE_ANON_KEY}, body:JSON.stringify(Object.assign(bundle ? {bundle:true} : {course_id:courseId}, extra))}); })
+    .then(function (r) { return r.json().then(function (j) { if (!r.ok || !j.url) throw new Error(j.error || 'HTTP ' + r.status); return j; }); })
+    .then(function (j) { location.href = j.url; }).catch(function (e) { toast(e.message, 'err'); });
+};
+function viewGift(pre) {
+  return API.listCourses(false).then(function (cs) {
+    var price = (SETTINGS && SETTINGS.bundle_price) || '149 zł';
+    $app.innerHTML = '<div class="page"><div class="sec-head"><div class="eyebrow">🎁 ' + L3('Подарунок', 'Prezent', 'Gift') + '</div><h2>' + L3('Подаруй курс близькій людині', 'Podaruj kurs bliskiej osobie', 'Give a course as a gift') + '</h2><p class="lead">' + L3('Після оплати ти отримаєш код і листівку для друку. Можемо також надіслати лист отримувачу.', 'Po opłaceniu dostaniesz kod i kartkę do wydruku. Możemy też wysłać e-mail do obdarowanego.', 'After payment you get a code and a printable card. We can also e-mail the recipient.') + '</p></div>' +
+      '<div class="panel giftform"><label class="fl">' + L3('Що даруємо', 'Co dajemy', 'What to give') + '<select class="inp-s" id="gWhat"><option value="bundle">' + L3('Усі курси (пакет)', 'Wszystkie kursy (pakiet)', 'All courses (bundle)') + ' — ' + esc(price) + '</option>' + cs.filter(function (c) { return !isFreeCourse(c); }).map(function (c) { return '<option value="' + esc(c.id) + '"' + (pre === c.id ? ' selected' : '') + '>' + esc(tr(c, 'title')) + ' — ' + esc(c.price) + '</option>'; }).join('') + '</select></label>' +
+      '<label class="fl">' + L3('E-mail отримувача (необов\'язково)', 'E-mail obdarowanego (opcjonalnie)', 'Recipient e-mail (optional)') + '<input class="inp-s" id="gTo" type="email" placeholder="friend@gmail.com"></label>' +
+      '<label class="fl">' + L3('Побажання (до 300 символів)', 'Życzenia (do 300 znaków)', 'Message (up to 300 characters)') + '<textarea class="inp-s" id="gMsg" rows="3" maxlength="300"></textarea></label>' +
+      '<button class="btn btn-red" type="button" id="gGo">🎁 ' + L3('Оплатити подарунок', 'Zapłać za prezent', 'Pay for the gift') + '</button><small class="muted">BLIK · Przelewy24 · ' + L3('картка', 'karta', 'card') + '</small></div></div>';
+    document.getElementById('gGo').onclick = function () { var v = document.getElementById('gWhat').value; startCheckout(v === 'bundle' ? null : v, v === 'bundle', {gift:true, gift_to:document.getElementById('gTo').value.trim(), gift_msg:document.getElementById('gMsg').value.trim()}); };
+  });
+}
+function giftCardHtml(o, what) {
+  return '<div class="giftcard" id="giftCard"><div class="gc-top">🎁 MoviLang</div><h2>' + L3('Подарунок для тебе!', 'Prezent dla Ciebie!', 'A gift for you!') + '</h2><p class="gc-what">' + esc(what) + '</p>' + (o.gift_msg ? '<blockquote>' + esc(o.gift_msg) + '</blockquote>' : '') +
+    '<p class="muted small">' + L3('Твій код:', 'Twój kod:', 'Your code:') + '</p><p class="keycode">' + esc(String(o.key_code || '').replace(/(.{4})(?=.)/g, '$1-')) + '</p><p class="small">' + esc(siteUrl().replace(/^https?:\/\//, '').replace(/\/$/, '')) + ' → ' + L3('Кабінет → Активувати ключ', 'Kabinet → Aktywuj klucz', 'Dashboard → Activate key') + '</p></div>' +
+    '<div class="row" style="justify-content:center"><button class="btn btn-red" type="button" data-print="gift">🖨 ' + L3('Друкувати листівку', 'Drukuj kartkę', 'Print the card') + '</button><a class="btn btn-ghost" href="#/cabinet">' + L3('Мій кабінет', 'Mój kabinet', 'My dashboard') + '</a></div>';
+}
+var _viewPaid = viewPaid;
+viewPaid = function (sid) {
+  return Promise.resolve(_viewPaid(sid)).then(function () {
+    if (!SB()) return; var tries = 0;
+    (function chk() { SB().from('orders').select('*').eq('session_id', sid).maybeSingle().then(function (r) { var o = r.data; if (o && o.gift && o.status === 'paid') { API.listCourses(false).then(function (cs) { var c = cs.filter(function (x) { return x.id === o.course_id; })[0]; var box = $app.querySelector('.paid'); if (box) box.innerHTML = giftCardHtml(o, o.bundle ? L3('Усі курси MoviLang', 'Wszystkie kursy MoviLang', 'All MoviLang courses') : (c ? tr(c, 'title') : '')); }); } else if (o && o.gift && ++tries < 40) setTimeout(chk, 2600); }); })();
+  });
+};
+
+/* ---------- відгуки ---------- */
+function stars(n) { return '★★★★★'.slice(0, n) + '☆☆☆☆☆'.slice(0, 5 - n); }
+function reviewPrompt(host, c, stage) {
+  if (!SB() || !c) return;
+  q(SB().from('reviews').select('id').eq('user_id', USER.id).eq('course_id', c.id).eq('stage', stage)).then(function (rows) {
+    if (rows && rows.length) return;
+    var box = document.createElement('div'); box.className = 'panel revbox';
+    box.innerHTML = '<h3>' + (stage === 36 ? L3('Курс завершено! Як враження?', 'Kurs ukończony! Jakie wrażenia?', 'Course finished! How was it?') : L3('Як тобі курс поки що?', 'Jak Ci się podoba kurs?', 'How do you like the course so far?')) + '</h3><div class="starpick">' + [1, 2, 3, 4, 5].map(function (i) { return '<button type="button" data-st="' + i + '">★</button>'; }).join('') + '</div><textarea class="inp-s" id="rvTx" rows="3" maxlength="800" placeholder="' + esc(L3('Кілька слів (необов\'язково)', 'Kilka słów (opcjonalnie)', 'A few words (optional)')) + '"></textarea><div class="row" style="justify-content:flex-end;margin-top:8px"><button class="btn btn-red btn-sm" type="button" id="rvGo" disabled>' + L3('Надіслати відгук', 'Wyślij opinię', 'Send review') + '</button></div>';
+    host.appendChild(box); var rating = 0;
+    box.querySelectorAll('[data-st]').forEach(function (b) { b.onclick = function () { rating = +b.dataset.st; box.querySelectorAll('[data-st]').forEach(function (x) { x.classList.toggle('on', +x.dataset.st <= rating); }); box.querySelector('#rvGo').disabled = false; }; });
+    box.querySelector('#rvGo').onclick = function () { q(SB().from('reviews').insert({user_id:USER.id, course_id:c.id, stage:stage, rating:rating, text:box.querySelector('#rvTx').value.trim() || null})).then(function () { box.innerHTML = '<p>💛 ' + L3('Дякуємо за відгук!', 'Dziękujemy za opinię!', 'Thanks for your review!') + '</p>'; }).catch(function (e) { toast(e.message, 'err'); }); };
+  }).catch(function () {});
+}
+var _viewCourse = viewCourse;
+viewCourse = function (id) {
+  return Promise.resolve(_viewCourse(id)).then(function () {
+    var host = $app.querySelector('.mcard'); if (!host) return;
+    var buy = $app.querySelector('.mhead-info .row'); if (buy) buy.insertAdjacentHTML('beforeend', '<a class="btn btn-ghost" href="#/gift/' + esc(id) + '">🎁 ' + L3('Подарувати', 'Podaruj', 'Gift it') + '</a>');
+    if (!SB()) return;
+    rpc('course_reviews', {p_course:id}).then(function (rv) {
+      if (!rv || !rv.length) return;
+      var avg = rv.reduce(function (a, x) { return a + x.rating; }, 0) / rv.length;
+      host.insertAdjacentHTML('beforeend', '<div class="panel reviews"><h3>' + L3('Відгуки учнів', 'Opinie uczniów', 'Student reviews') + ' · <span class="stars">' + stars(Math.round(avg)) + '</span> ' + avg.toFixed(1) + ' (' + rv.length + ')</h3><div class="revlist">' + rv.map(function (x) { return '<div class="rev"><div><b>' + esc(x.nick) + '</b> <span class="stars">' + stars(x.rating) + '</span></div>' + (x.text ? '<p>' + esc(x.text) + '</p>' : '') + '<span class="muted small">' + fmtDate(x.created_at) + '</span></div>'; }).join('') + '</div></div>');
+    }).catch(function () {});
+  });
+};
+
+/* ---------- підтримка й повернення ---------- */
+var TK_KIND = {question:['Питання', 'Pytanie', 'Question'], refund:['Повернення коштів', 'Zwrot pieniędzy', 'Refund'], bug:['Помилка на сайті', 'Błąd na stronie', 'Bug'], other:['Інше', 'Inne', 'Other']};
+var TK_ST = {new:['Нове', 'Nowe', 'New'], in_progress:['В роботі', 'W toku', 'In progress'], resolved:['Вирішено', 'Rozwiązane', 'Resolved'], refunded:['Кошти повернено', 'Zwrócono pieniądze', 'Refunded'], rejected:['Відхилено', 'Odrzucone', 'Rejected']};
+function kl(m, k) { var a = m[k] || [k, k, k]; return L3(a[0], a[1], a[2]); }
+function viewSupport() {
+  if (!requireUser()) return Promise.resolve(); if (needSb()) return Promise.resolve();
+  return Promise.all([q(SB().from('orders').select('*').eq('user_id', USER.id).eq('status', 'paid').order('paid_at', {ascending:false})), q(SB().from('tickets').select('*').eq('user_id', USER.id).order('created_at', {ascending:false})), API.listCourses(true)]).then(function (r) {
+    var orders = r[0] || [], tks = r[1] || [], cs = r[2], cn = function (o) { if (o.bundle) return L3('Пакет', 'Pakiet', 'Bundle'); var c = cs.filter(function (x) { return x.id === o.course_id; })[0]; return c ? tr(c, 'title') : '—'; };
+    $app.innerHTML = '<div class="page"><div class="sec-head"><div class="eyebrow">' + L3('Підтримка', 'Pomoc', 'Support') + '</div><h2>' + L3('Чим допомогти?', 'Jak możemy pomóc?', 'How can we help?') + '</h2><p class="lead">' + L3('Повернення коштів можливе протягом 14 днів після покупки, якщо пройдено не більше 2 уроків курсу.', 'Zwrot pieniędzy jest możliwy w ciągu 14 dni od zakupu, jeśli ukończono nie więcej niż 2 lekcje kursu.', 'Refunds are available within 14 days of purchase if no more than 2 lessons have been completed.') + ' <a href="/terms.html" target="_blank">' + L3('Правила', 'Regulamin', 'Terms') + '</a></p></div>' +
+      '<div class="rows"><div class="panel"><label class="fl">' + L3('Тема', 'Temat', 'Topic') + '<select class="inp-s" id="tkK">' + Object.keys(TK_KIND).map(function (k) { return '<option value="' + k + '">' + kl(TK_KIND, k) + '</option>'; }).join('') + '</select></label>' +
+      '<label class="fl" id="tkOW" hidden>' + L3('Замовлення', 'Zamówienie', 'Order') + '<select class="inp-s" id="tkO">' + (orders.map(function (o) { return '<option value="' + esc(o.id) + '">' + fmtDate(o.paid_at) + ' · ' + esc(cn(o)) + ' · ' + ((+o.amount || 0) / 100).toFixed(2) + ' zł</option>'; }).join('') || '<option value="">' + L3('Немає оплачених замовлень', 'Brak opłaconych zamówień', 'No paid orders') + '</option>') + '</select></label>' +
+      '<label class="fl">' + L3('Опиши ситуацію', 'Opisz sytuację', 'Describe the issue') + '<textarea class="inp-s" id="tkT" rows="5" maxlength="3000"></textarea></label><button class="btn btn-red" type="button" id="tkGo">' + L3('Надіслати', 'Wyślij', 'Send') + '</button></div>' +
+      '<div class="panel"><h3>' + L3('Мої звернення', 'Moje zgłoszenia', 'My requests') + '</h3>' + (tks.map(function (x) { return '<div class="tk"><div class="row" style="justify-content:space-between"><b>' + kl(TK_KIND, x.kind) + '</b><span class="pill">' + kl(TK_ST, x.status) + '</span></div><p class="small">' + esc(x.text) + '</p>' + (x.admin_note ? '<p class="small tk-ans">💬 ' + esc(x.admin_note) + '</p>' : '') + '<span class="muted small">' + fmtDate(x.created_at) + '</span></div>'; }).join('') || '<p class="muted small">' + L3('Звернень ще немає.', 'Brak zgłoszeń.', 'No requests yet.') + '</p>') + '</div></div></div>';
+    var k = document.getElementById('tkK'); k.onchange = function () { document.getElementById('tkOW').hidden = k.value !== 'refund'; };
+    document.getElementById('tkGo').onclick = function () {
+      var txt = document.getElementById('tkT').value.trim(); if (txt.length < 5) { toast(L3('Опиши трохи детальніше.', 'Opisz trochę dokładniej.', 'Please add a bit more detail.'), 'err'); return; }
+      q(SB().from('tickets').insert({user_id:USER.id, email:USER.email, kind:k.value, order_id:k.value === 'refund' ? (document.getElementById('tkO').value || null) : null, text:txt})).then(function () { toast(L3('Надіслано! Відповімо на пошту.', 'Wysłano! Odpowiemy e-mailem.', 'Sent! We\'ll reply by e-mail.')); route(); }).catch(function (e) { toast(e.message, 'err'); });
+    };
+  });
+}
+
+/* ---------- кабінет: швидкі посилання, відповіді викладача, підписка ---------- */
+var _viewCabinet2 = viewCabinet;
+viewCabinet = function () {
+  return Promise.resolve(_viewCabinet2()).then(function () {
+    var main = document.querySelector('.dmain'); if (!main || !USER) return;
+    var tw = main.querySelector('.today-wrap'), box = document.createElement('div'); box.className = 'quicklinks';
+    box.innerHTML = '<a href="#/friends">👥 ' + L3('Друзі й дует', 'Znajomi i duet', 'Friends & duo') + '</a><a href="#/top">🏆 ' + L3('Рейтинг', 'Ranking', 'Leaderboard') + '</a><a href="#/gift">🎁 ' + L3('Подарувати курс', 'Podaruj kurs', 'Gift a course') + '</a><a href="#/support">🛟 ' + L3('Підтримка', 'Pomoc', 'Support') + '</a>';
+    if (tw && tw.nextSibling) main.insertBefore(box, tw.nextSibling); else main.insertBefore(box, main.firstChild);
+    applyRef();
+    if (!SB()) return;
+    Promise.all([q(SB().from('questions').select('*').eq('user_id', USER.id).order('created_at', {ascending:false}).limit(20)), myProf(true)]).then(function (r) {
+      var qs = r[0] || [], p = r[1] || {};
+      var html = '';
+      if (qs.length) html += '<div class="panel qans"><h3>❓ ' + L3('Мої питання викладачу', 'Moje pytania do lektora', 'My questions to the teacher') + '</h3>' + qs.map(function (x) { return '<div class="qa' + (x.answer && !x.seen ? ' new' : '') + '"><p class="small"><b>' + L3('Ти:', 'Ty:', 'You:') + '</b> ' + esc(x.text) + '</p>' + (x.answer ? '<p class="small tk-ans">💬 ' + esc(x.answer) + '</p>' : '<p class="muted small">⏳ ' + L3('чекає на відповідь', 'czeka na odpowiedź', 'waiting for an answer') + '</p>') + (x.lesson_id ? '<a class="small" href="#/lesson/' + esc(x.lesson_id) + '">' + L3('до уроку', 'do lekcji', 'to the lesson') + ' →</a>' : '') + '</div>'; }).join('') + '</div>';
+      html += '<label class="small muted mkt"><input type="checkbox" id="mkt"' + (p.marketing !== false ? ' checked' : '') + '> ' + L3('Надсилати мені нагадування й новини на пошту', 'Wysyłaj mi przypomnienia i nowości e-mailem', 'Send me reminders and news by e-mail') + '</label>';
+      main.insertAdjacentHTML('beforeend', html);
+      var unseen = qs.filter(function (x) { return x.answer && !x.seen; }).map(function (x) { return x.id; });
+      if (unseen.length) { toast(L3('Викладач відповів на твоє питання!', 'Lektor odpowiedział na Twoje pytanie!', 'The teacher answered your question!')); SB().from('questions').update({seen:true}).in('id', unseen).then(function () {}); }
+      var m = document.getElementById('mkt'); if (m) m.onchange = function () { rpc('set_marketing', {p_on:m.checked}).then(function () { toast(L3('Збережено', 'Zapisano', 'Saved')); }); };
+    }).catch(function () {});
+  });
+};
+
+/* =================== АДМІН =================== */
+var _viewAdmin = viewAdmin;
+var ADM_EXTRA = {questions:['❓ Питання', '❓ Pytania', '❓ Questions'], support:['🛟 Підтримка', '🛟 Pomoc', '🛟 Support'], reviews:['⭐ Відгуки', '⭐ Opinie', '⭐ Reviews'], drops:['🚪 Де кидають', '🚪 Gdzie porzucają', '🚪 Drop-offs'], report:['💰 Звіт за місяць', '💰 Raport miesięczny', '💰 Monthly report'], check:['🧪 Перевірка курсів', '🧪 Kontrola kursów', '🧪 Course check']};
+viewAdmin = function () {
+  if (ADM_EXTRA[adminTab]) {
+    var keep = adminTab; adminTab = 'stats';
+    return Promise.resolve(_viewAdmin()).then(function () { adminTab = keep; admExtraTabs(); var body = document.getElementById('adminBody'); if (!body) return; body.innerHTML = '<p class="muted">…</p>'; $app.querySelectorAll('.tab').forEach(function (b) { b.classList.toggle('on', b.dataset.t === keep); b.setAttribute('aria-selected', b.dataset.t === keep); });
+      var f = {questions:admQuestions, support:admSupport, reviews:admReviews, drops:admDrops, report:admReport, check:admCheck}[keep]; return f(body).catch(function (e) { body.innerHTML = '<div class="empty">' + esc(e.message) + '</div>'; }); });
+  }
+  return Promise.resolve(_viewAdmin()).then(admExtraTabs);
+};
+function admExtraTabs() {
+  var tabs = $app.querySelector('.tabs'); if (!tabs || tabs.dataset.x) return; tabs.dataset.x = 1;
+  Object.keys(ADM_EXTRA).forEach(function (k) { var b = document.createElement('button'); b.type = 'button'; b.className = 'tab' + (adminTab === k ? ' on' : ''); b.dataset.t = k; b.setAttribute('role', 'tab'); b.textContent = kl(ADM_EXTRA, k); b.onclick = function () { adminTab = k; ADM_UID = null; viewAdmin(); }; tabs.appendChild(b); });
+  if (!SB()) return;
+  Promise.all([SB().from('questions').select('id', {count:'exact', head:true}).eq('status', 'new'), SB().from('tickets').select('id', {count:'exact', head:true}).eq('status', 'new'), SB().from('reviews').select('id', {count:'exact', head:true}).eq('approved', false)]).then(function (r) {
+    [['questions', r[0].count], ['support', r[1].count], ['reviews', r[2].count]].forEach(function (x) { var b = tabs.querySelector('[data-t="' + x[0] + '"]'); if (b && x[1]) b.insertAdjacentHTML('beforeend', ' <span class="cnt">' + x[1] + '</span>'); });
+  });
+}
+function lessonMap() { return q(SB().from('lessons').select('id,num,course_id,title,title_pl')).then(function (ls) { var m = {}; (ls || []).forEach(function (l) { m[l.id] = l; }); return m; }); }
+
+function admQuestions(body) {
+  if (needSb(body)) return Promise.resolve();
+  return Promise.all([q(SB().from('questions').select('*').order('status', {ascending:false}).order('created_at', {ascending:false}).limit(200)), lessonMap()]).then(function (r) {
+    var qs = r[0] || [], lm = r[1]; qs.sort(function (a, b) { return (a.status === 'new' ? 0 : 1) - (b.status === 'new' ? 0 : 1); });
+    body.innerHTML = '<p class="hint">' + L3('Після відповіді учень побачить її в кабінеті й отримає лист (якщо налаштовано RESEND_API_KEY).', 'Po odpowiedzi uczeń zobaczy ją w kabinecie i dostanie e-mail (jeśli ustawiono RESEND_API_KEY).', 'The student sees the answer in the dashboard and gets an e-mail (if RESEND_API_KEY is set).') + '</p>' +
+      (qs.map(function (x) { var l = lm[x.lesson_id]; return '<div class="panel qadm' + (x.status === 'new' ? ' new' : '') + '" data-qid="' + x.id + '"><div class="row" style="justify-content:space-between"><span class="small muted">' + fmtDate(x.created_at) + ' · ' + esc(x.email || '') + ' · ' + FLAG[x.target || 'en'] + (l ? ' · <a href="#/lesson/' + esc(l.id) + '">' + L3('урок ', 'lekcja ', 'lesson ') + l.num + '</a>, ' + L3('завд. ', 'zad. ', 'task ') + ((x.task_n || 0) + 1) : '') + '</span><span class="pill">' + (x.status === 'new' ? L3('нове', 'nowe', 'new') : L3('відповідь є', 'odpowiedziano', 'answered')) + '</span></div>' + (x.task_q ? '<p class="muted small">📝 ' + esc(x.task_q) + '</p>' : '') + '<p><b>' + esc(x.text) + '</b></p><textarea class="inp-s" rows="3" style="width:100%">' + esc(x.answer || '') + '</textarea><div class="row" style="justify-content:flex-end;margin-top:6px"><button class="btn btn-red btn-sm" type="button" data-qans>' + L3('Відповісти', 'Odpowiedz', 'Answer') + '</button></div></div>'; }).join('') || '<div class="empty">' + L3('Питань ще немає.', 'Brak pytań.', 'No questions yet.') + '</div>');
+    body.querySelectorAll('[data-qans]').forEach(function (b) { b.onclick = function () { var box = b.closest('[data-qid]'), id = +box.dataset.qid, ans = box.querySelector('textarea').value.trim(); if (!ans) return;
+      q(SB().from('questions').update({answer:ans, status:'answered', answered_at:new Date().toISOString(), seen:false}).eq('id', id)).then(function () {
+        API.token().then(function (tk) { return fetch(cfg.SUPABASE_URL + '/functions/v1/mailer', {method:'POST', headers:{'Content-Type':'application/json', Authorization:'Bearer ' + tk, apikey:cfg.SUPABASE_ANON_KEY}, body:JSON.stringify({type:'answer', question_id:id})}); }).then(function (r) { toast(r && r.ok ? L3('Відповідь надіслано (і лист теж)', 'Odpowiedź wysłana (i e-mail też)', 'Answer sent (e-mail too)') : L3('Відповідь збережено (лист не надіслано — перевір RESEND_API_KEY)', 'Odpowiedź zapisana (e-mail nie wysłany — sprawdź RESEND_API_KEY)', 'Answer saved (no e-mail — check RESEND_API_KEY)'), r && r.ok ? 'ok' : 'info'); }).catch(function () { toast(L3('Відповідь збережено', 'Odpowiedź zapisana', 'Answer saved')); });
+        admQuestions(body);
+      }).catch(function (e) { toast(e.message, 'err'); }); }; });
+  });
+}
+
+function admSupport(body) {
+  if (needSb(body)) return Promise.resolve();
+  return Promise.all([q(SB().from('tickets').select('*').order('created_at', {ascending:false}).limit(300)), q(SB().from('orders').select('*')), API.listCourses(true), q(SB().from('lessons').select('id,course_id')), q(SB().from('progress').select('user_id,lesson_id,completed_at'))]).then(function (r) {
+    var tks = r[0] || [], om = {}, cs = r[2], lc = {}; (r[1] || []).forEach(function (o) { om[o.id] = o; }); (r[3] || []).forEach(function (l) { lc[l.id] = l.course_id; });
+    var prog = r[4] || [];
+    var cn = function (o) { if (o.bundle) return L3('Пакет', 'Pakiet', 'Bundle'); var c = cs.filter(function (x) { return x.id === o.course_id; })[0]; return c ? tr(c, 'title') : '—'; };
+    tks.sort(function (a, b) { return (a.status === 'new' ? 0 : a.status === 'in_progress' ? 1 : 2) - (b.status === 'new' ? 0 : b.status === 'in_progress' ? 1 : 2); });
+    body.innerHTML = (tks.map(function (x) { var o = om[x.order_id], done = o ? prog.filter(function (p) { return p.user_id === x.user_id && (o.bundle || lc[p.lesson_id] === o.course_id) && p.completed_at >= o.paid_at; }).length : 0, days = o && o.paid_at ? Math.floor((Date.now() - new Date(o.paid_at)) / 864e5) : null;
+      return '<div class="panel tkadm" data-tid="' + x.id + '"><div class="row" style="justify-content:space-between"><b>' + kl(TK_KIND, x.kind) + '</b><span class="small muted">' + fmtDate(x.created_at) + ' · ' + esc(x.email || '') + '</span></div><p>' + esc(x.text) + '</p>' +
+        (o ? '<p class="small">🧾 ' + esc(cn(o)) + ' · ' + ((+o.amount || 0) / 100).toFixed(2) + ' zł · ' + L3('оплачено ', 'opłacono ', 'paid ') + fmtDate(o.paid_at) + ' (' + days + ' ' + L3('дн. тому', 'dni temu', 'days ago') + ') · ' + L3('пройдено уроків після покупки: ', 'lekcji po zakupie: ', 'lessons done since purchase: ') + done + ' · ' + L3('статус: ', 'status: ', 'status: ') + esc(o.status) + (days != null && days <= 14 && done <= 2 ? ' · ✅ ' + L3('підпадає під правила повернення', 'kwalifikuje się do zwrotu', 'eligible for refund') : ' · ⚠ ' + L3('поза правилами повернення', 'poza zasadami zwrotu', 'outside refund rules')) + '</p>' : '') +
+        '<div class="row" style="gap:8px;flex-wrap:wrap"><select class="inp-s" data-tst style="max-width:200px">' + Object.keys(TK_ST).map(function (k) { return '<option value="' + k + '"' + (x.status === k ? ' selected' : '') + '>' + kl(TK_ST, k) + '</option>'; }).join('') + '</select><input class="inp-s" data-tnote placeholder="' + esc(L3('Відповідь / нотатка (учень бачить)', 'Odpowiedź / notatka (uczeń widzi)', 'Reply / note (student sees it)')) + '" value="' + esc(x.admin_note || '') + '" style="flex:1;min-width:220px"><button class="btn btn-ghost btn-sm" type="button" data-tsave>' + L3('Зберегти', 'Zapisz', 'Save') + '</button>' +
+        (o && o.status === 'paid' ? '<button class="btn btn-danger btn-sm" type="button" data-trefund="' + esc(o.id) + '">💸 ' + L3('Повернути кошти', 'Zwróć pieniądze', 'Refund') + '</button>' : '') + '</div></div>'; }).join('') || '<div class="empty">' + L3('Звернень ще немає.', 'Brak zgłoszeń.', 'No tickets yet.') + '</div>');
+    body.querySelectorAll('[data-tsave]').forEach(function (b) { b.onclick = function () { var box = b.closest('[data-tid]'); q(SB().from('tickets').update({status:box.querySelector('[data-tst]').value, admin_note:box.querySelector('[data-tnote]').value.trim() || null, updated_at:new Date().toISOString()}).eq('id', +box.dataset.tid)).then(function () { toast(L3('Збережено', 'Zapisano', 'Saved')); }).catch(function (e) { toast(e.message, 'err'); }); }; });
+    body.querySelectorAll('[data-trefund]').forEach(function (b) { b.onclick = function () {
+      if (!b.dataset.c) { b.dataset.c = 1; b.textContent = L3('Точно? Гроші повернуться, доступ закриється', 'Na pewno? Pieniądze wrócą, dostęp zostanie zamknięty', 'Sure? Money returns, access is revoked'); return; }
+      b.disabled = true; var box = b.closest('[data-tid]');
+      API.token().then(function (tk) { return fetch(cfg.SUPABASE_URL + '/functions/v1/admin-refund', {method:'POST', headers:{'Content-Type':'application/json', Authorization:'Bearer ' + tk, apikey:cfg.SUPABASE_ANON_KEY}, body:JSON.stringify({order_id:b.dataset.trefund, ticket_id:+box.dataset.tid})}); })
+        .then(function (r) { return r.json().then(function (j) { if (!r.ok) throw new Error(j.error || 'HTTP ' + r.status); }); }).then(function () { toast(L3('Кошти повернено', 'Pieniądze zwrócone', 'Refunded')); admSupport(body); }).catch(function (e) { b.disabled = false; toast(e.message, 'err'); });
+    }; });
+  });
+}
+
+function admReviews(body) {
+  if (needSb(body)) return Promise.resolve();
+  return Promise.all([q(SB().from('reviews').select('*').order('created_at', {ascending:false}).limit(300)), API.listCourses(true), q(SB().from('profiles').select('id,email,nick'))]).then(function (r) {
+    var rv = r[0] || [], cs = r[1], pm = {}; (r[2] || []).forEach(function (p) { pm[p.id] = p; });
+    var cn = function (id) { var c = cs.filter(function (x) { return x.id === id; })[0]; return c ? tr(c, 'title') : '—'; };
+    var by = {}; rv.forEach(function (x) { var a = by[x.course_id] = by[x.course_id] || {n:0, s:0}; a.n++; a.s += x.rating; });
+    body.innerHTML = '<div class="stats" style="margin-bottom:14px">' + Object.keys(by).map(function (k) { return '<div class="stat"><b>' + (by[k].s / by[k].n).toFixed(1) + ' ★</b><span>' + esc(cn(k)) + ' (' + by[k].n + ')</span></div>'; }).join('') + '</div>' +
+      '<p class="hint">' + L3('На сторінці курсу показуються лише схвалені відгуки.', 'Na stronie kursu widać tylko zatwierdzone opinie.', 'Only approved reviews are shown on course pages.') + '</p>' +
+      (rv.map(function (x) { var p = pm[x.user_id] || {}; return '<div class="panel" data-rid="' + x.id + '"><div class="row" style="justify-content:space-between"><span><span class="stars">' + stars(x.rating) + '</span> · <b>' + esc(cn(x.course_id)) + '</b> · ' + L3('після уроку ', 'po lekcji ', 'after lesson ') + x.stage + '</span><span class="small muted">' + esc(p.nick || p.email || '') + ' · ' + fmtDate(x.created_at) + '</span></div>' + (x.text ? '<p>' + esc(x.text) + '</p>' : '') + '<div class="row" style="gap:8px"><button class="btn btn-sm ' + (x.approved ? 'btn-ghost' : 'btn-red') + '" type="button" data-rap="' + (x.approved ? 0 : 1) + '">' + (x.approved ? L3('Сховати', 'Ukryj', 'Hide') : L3('Схвалити', 'Zatwierdź', 'Approve')) + '</button><button class="btn btn-danger btn-sm" type="button" data-rdel>' + L3('Видалити', 'Usuń', 'Delete') + '</button></div></div>'; }).join('') || '<div class="empty">' + L3('Відгуків ще немає.', 'Brak opinii.', 'No reviews yet.') + '</div>');
+    body.querySelectorAll('[data-rap]').forEach(function (b) { b.onclick = function () { q(SB().from('reviews').update({approved:b.dataset.rap === '1'}).eq('id', +b.closest('[data-rid]').dataset.rid)).then(function () { admReviews(body); }); }; });
+    body.querySelectorAll('[data-rdel]').forEach(function (b) { b.onclick = function () { q(SB().from('reviews').delete().eq('id', +b.closest('[data-rid]').dataset.rid)).then(function () { admReviews(body); }); }; });
+  });
+}
+
+var DROP_C = null;
+function admDrops(body) {
+  if (needSb(body)) return Promise.resolve();
+  return Promise.all([API.listCourses(true), q(SB().from('lessons').select('id,num,course_id,title,title_pl')), q(SB().from('lesson_sessions').select('lesson_id,user_id,last_task,total,finished,updated_at').gte('started_at', new Date(Date.now() - 90 * 864e5).toISOString()).limit(20000))]).then(function (r) {
+    var cs = r[0], ls = r[1] || [], ss = r[2] || [];
+    if (!DROP_C) DROP_C = cs[0] && cs[0].id;
+    var cl = ls.filter(function (l) { return l.course_id === DROP_C; }).sort(function (a, b) { return a.num - b.num; });
+    var rows = cl.map(function (l) { var s = ss.filter(function (x) { return x.lesson_id === l.id; }), fin = s.filter(function (x) { return x.finished; }).length, ab = s.filter(function (x) { return !x.finished && Date.now() - new Date(x.updated_at) > 3600e3; });
+      var hist = {}; ab.forEach(function (x) { hist[x.last_task] = (hist[x.last_task] || 0) + 1; }); var top = Object.keys(hist).sort(function (a, b) { return hist[b] - hist[a]; }).slice(0, 3);
+      return {l:l, n:s.length, fin:fin, ab:ab.length, rate:s.length ? Math.round(ab.length / s.length * 100) : 0, top:top.map(function (k) { return L3('завд. ', 'zad. ', 'task ') + (+k + 1) + ' (' + hist[k] + ')'; }).join(', ')}; });
+    var worst = rows.slice().filter(function (x) { return x.n >= 3; }).sort(function (a, b) { return b.rate - a.rate; })[0];
+    body.innerHTML = '<p class="hint">' + L3('Кожен запуск уроку записується. «Кинули» — вийшли з уроку й не повернулися понад годину. Дані за 90 днів (нові з моменту оновлення).', 'Każde uruchomienie lekcji jest zapisywane. „Porzucili” — wyszli z lekcji i nie wrócili przez ponad godzinę. Dane z 90 dni.', 'Every lesson start is logged. “Dropped” = left the lesson and did not return for over an hour. Last 90 days.') + '</p>' +
+      '<select class="inp-s" id="drC" style="max-width:340px;margin:10px 0">' + cs.map(function (c) { return '<option value="' + esc(c.id) + '"' + (c.id === DROP_C ? ' selected' : '') + '>' + esc(tr(c, 'title')) + '</option>'; }).join('') + '</select>' +
+      (worst && worst.rate ? '<div class="panel" style="margin-bottom:12px">⚠ ' + L3('Найчастіше кидають урок ', 'Najczęściej porzucana lekcja ', 'Most abandoned lesson ') + '<b>' + worst.l.num + '. ' + esc(tr(worst.l, 'title')) + '</b> — ' + worst.rate + '%' + (worst.top ? ' · ' + L3('найчастіше на ', 'najczęściej na ', 'mostly at ') + worst.top : '') + '</div>' : '') +
+      '<div class="tbl-wrap"><table class="tbl"><tr><th>' + L3('Урок', 'Lekcja', 'Lesson') + '</th><th>' + L3('Запусків', 'Uruchomień', 'Starts') + '</th><th>' + L3('Завершили', 'Ukończyli', 'Finished') + '</th><th>' + L3('Кинули', 'Porzucili', 'Dropped') + '</th><th>' + L3('На якому завданні', 'Na którym zadaniu', 'At which task') + '</th></tr>' +
+      rows.map(function (x) { return '<tr><td>' + x.l.num + '. ' + esc(tr(x.l, 'title')) + '</td><td>' + x.n + '</td><td>' + x.fin + '</td><td>' + (x.ab ? '<span class="pill' + (x.rate >= 40 ? ' bad' : '') + '">' + x.ab + ' · ' + x.rate + '%</span>' : '0') + '</td><td class="small">' + (x.top || '—') + '</td></tr>'; }).join('') + '</table></div>' +
+      '<p class="small muted" style="margin-top:10px">' + L3('Порада: відкрий урок у вкладці «Курси й уроки» і спрости завдання, на якому кидають.', 'Wskazówka: otwórz lekcję w „Kursy i lekcje” i uprość zadanie, na którym ludzie odpadają.', 'Tip: open the lesson in “Courses & lessons” and simplify the task where people drop.') + '</p>';
+    document.getElementById('drC').onchange = function (e) { DROP_C = e.target.value; admDrops(body); };
+  });
+}
+
+var REP_M = null;
+function admReport(body) {
+  if (needSb(body)) return Promise.resolve();
+  if (!REP_M) REP_M = new Date().toISOString().slice(0, 7);
+  return Promise.all([q(SB().from('orders').select('*').order('created_at', {ascending:false}).limit(5000)), API.listCourses(true), q(SB().from('profiles').select('id,created_at,referred_by,role'))]).then(function (r) {
+    var orders = r[0] || [], cs = r[1], users = (r[2] || []).filter(function (u) { return u.role !== 'admin'; });
+    var inM = function (d) { return d && String(d).slice(0, 7) === REP_M; };
+    var paid = orders.filter(function (o) { return (o.status === 'paid' || o.status === 'refunded') && inM(o.paid_at); }), refunds = orders.filter(function (o) { return o.status === 'refunded' && inM(o.refunded_at); });
+    var sum = function (a) { return a.reduce(function (s, o) { return s + (+o.amount || 0); }, 0) / 100; };
+    var gross = sum(paid), ref = sum(refunds), net = gross - ref;
+    var cn = function (o) { if (o.bundle) return L3('Пакет', 'Pakiet', 'Bundle'); var c = cs.filter(function (x) { return x.id === o.course_id; })[0]; return c ? tr(c, 'title') : '—'; };
+    var byC = {}; paid.forEach(function (o) { var k = cn(o), a = byC[k] = byC[k] || {n:0, s:0}; a.n++; a.s += (+o.amount || 0) / 100; });
+    var best = Object.keys(byC).sort(function (a, b) { return byC[b].s - byC[a].s; });
+    var su = users.filter(function (u) { return inM(u.created_at); }), suIds = {}; su.forEach(function (u) { suIds[u.id] = 1; });
+    var buyersNew = {}; paid.forEach(function (o) { if (suIds[o.user_id]) buyersNew[o.user_id] = 1; });
+    var allBuyers = {}; paid.forEach(function (o) { allBuyers[o.user_id] = 1; });
+    var y = +REP_M.slice(0, 4), mo = +REP_M.slice(5, 7), dim = new Date(y, mo, 0).getDate(), days = [];
+    for (var d = 1; d <= dim; d++) { var ds = REP_M + '-' + String(d).padStart(2, '0'); days.push({d:d, v:sum(paid.filter(function (o) { return String(o.paid_at).slice(0, 10) === ds; }))}); }
+    var maxD = Math.max.apply(null, days.map(function (x) { return x.v; }).concat([1]));
+    var prevM = new Date(y, mo - 2, 1), pm = prevM.getFullYear() + '-' + String(prevM.getMonth() + 1).padStart(2, '0');
+    var prevNet = sum(orders.filter(function (o) { return (o.status === 'paid' || o.status === 'refunded') && String(o.paid_at || '').slice(0, 7) === pm; })) - sum(orders.filter(function (o) { return o.status === 'refunded' && String(o.refunded_at || '').slice(0, 7) === pm; }));
+    var months = []; for (var i = 0; i < 12; i++) { var dd = new Date(); dd.setDate(1); dd.setMonth(dd.getMonth() - i); months.push(dd.getFullYear() + '-' + String(dd.getMonth() + 1).padStart(2, '0')); }
+    body.innerHTML = '<div class="row" style="gap:8px;margin-bottom:14px"><select class="inp-s" id="repM" style="max-width:200px">' + months.map(function (m) { return '<option' + (m === REP_M ? ' selected' : '') + '>' + m + '</option>'; }).join('') + '</select><button class="btn btn-ghost btn-sm" type="button" id="repCsv">⬇ CSV</button><button class="btn btn-ghost btn-sm" type="button" data-print="1">🖨 PDF</button></div>' +
+      '<div class="stats"><div class="stat"><b>' + net.toFixed(2) + ' zł</b><span>' + L3('чиста виручка', 'przychód netto', 'net revenue') + (prevNet ? ' (' + (net >= prevNet ? '+' : '') + Math.round((net - prevNet) / prevNet * 100) + '% ' + L3('до мин. міс.', 'm/m', 'MoM') + ')' : '') + '</span></div><div class="stat"><b>' + gross.toFixed(2) + ' zł</b><span>' + L3('оплачено', 'opłacono', 'gross') + '</span></div><div class="stat"><b>' + ref.toFixed(2) + ' zł</b><span>' + L3('повернення', 'zwroty', 'refunds') + ' (' + refunds.length + ')</span></div><div class="stat"><b>' + (paid.length ? (gross / paid.length).toFixed(2) : '0') + ' zł</b><span>' + L3('середній чек', 'średni koszyk', 'avg order') + '</span></div></div>' +
+      '<div class="stats" style="margin-top:12px"><div class="stat"><b>' + paid.length + '</b><span>' + L3('замовлень', 'zamówień', 'orders') + '</span></div><div class="stat"><b>' + su.length + '</b><span>' + L3('реєстрацій', 'rejestracji', 'sign-ups') + '</span></div><div class="stat"><b>' + (su.length ? Math.round(Object.keys(buyersNew).length / su.length * 100) : 0) + '%</b><span>' + L3('нові: зареєструвався → купив', 'nowi: rejestracja → zakup', 'new: sign-up → purchase') + '</span></div><div class="stat"><b>' + paid.filter(function (o) { return o.gift; }).length + ' / ' + paid.filter(function (o) { return o.discount; }).length + '</b><span>' + L3('подарунків / зі знижкою', 'prezentów / ze zniżką', 'gifts / discounted') + '</span></div></div>' +
+      '<div class="rows" style="margin-top:16px"><div class="box"><h4>' + L3('Виручка по днях', 'Przychód dziennie', 'Revenue by day') + '</h4><div class="week" style="grid-template-columns:repeat(' + dim + ',1fr);height:140px">' + days.map(function (x) { return '<div title="' + x.d + ': ' + x.v.toFixed(2) + ' zł"><i style="height:' + Math.max(2, Math.round(x.v / maxD * 100)) + 'px"></i>' + (x.d % 5 === 1 ? x.d : '') + '</div>'; }).join('') + '</div></div>' +
+      '<div class="box"><h4>' + L3('Найкращі курси', 'Najlepsze kursy', 'Best courses') + '</h4>' + (best.map(function (k, i) { return '<div class="b row" style="justify-content:space-between"><span>' + (i === 0 ? '🏆 ' : '') + esc(k) + '</span><b>' + byC[k].s.toFixed(2) + ' zł · ' + byC[k].n + '</b></div>'; }).join('') || '<p class="muted small">—</p>') + '</div></div>';
+    document.getElementById('repM').onchange = function (e) { REP_M = e.target.value; admReport(body); };
+    document.getElementById('repCsv').onclick = function () {
+      var lines = [['date', 'email', 'item', 'amount_pln', 'status', 'gift', 'discount_pct', 'key']].concat(paid.concat(refunds.filter(function (o) { return paid.indexOf(o) < 0; })).map(function (o) { return [String(o.paid_at || '').slice(0, 19), o.email || '', cn(o), ((+o.amount || 0) / 100).toFixed(2), o.status, o.gift ? 1 : 0, o.discount || 0, o.key_code || '']; }));
+      var csv = lines.map(function (r) { return r.map(function (v) { return '"' + String(v).replace(/"/g, '""') + '"'; }).join(','); }).join('\n');
+      var a = document.createElement('a'); a.href = URL.createObjectURL(new Blob(['﻿' + csv], {type:'text/csv'})); a.download = 'movilang-' + REP_M + '.csv'; a.click();
+    };
+  });
+}
+
+/* ---------- перевірка курсів + пошук-заміна ---------- */
+var CYR = /[Ѐ-ӿ]/, CHK_C = null;
+function checkLesson(l) {
+  var out = [], add = function (set, n, msg) { out.push({set:set, n:n, msg:msg}); };
+  if (!l.title_pl) add('—', null, L3('немає title_pl', 'brak title_pl', 'missing title_pl'));
+  if (!l.title_en) add('—', null, L3('немає title_en', 'brak title_en', 'missing title_en'));
+  var sets = {en:l.tasks || []}; LANGS.forEach(function (x) { if (x !== 'en') sets[x] = (l.variants && l.variants[x]) || null; });
+  Object.keys(sets).forEach(function (k) {
+    var ts = sets[k]; if (!ts) { add(k, null, L3('немає версії ', 'brak wersji ', 'no version ') + k.toUpperCase()); return; }
+    if (!ts.length) add(k, null, L3('порожній набір завдань', 'pusty zestaw zadań', 'empty task set'));
+    ts.forEach(function (tk, i) {
+      if (!tk || !tk.type) { add(k, i, L3('без типу', 'bez typu', 'no type')); return; }
+      if (isInfo(tk.type)) return;
+      var opts = tk.options || [];
+      if (!String(tk.q || '').trim() && !tk.items && !tk.pairs && !tk.words) add(k, i, L3('порожнє питання', 'puste pytanie', 'empty question'));
+      if (opts.length && typeof tk.answer === 'number' && (tk.answer < 0 || tk.answer >= opts.length)) add(k, i, L3('відповідь поза межами варіантів', 'odpowiedź poza zakresem', 'answer index out of range'));
+      if (opts.length && !/^(order|type)$/.test(tk.type)) { var seen = {}; opts.forEach(function (o) { var z = String(o).trim().toLowerCase(); if (!z) add(k, i, L3('порожній варіант', 'pusta opcja', 'empty option')); else if (seen[z]) add(k, i, L3('дубль варіанта: ', 'zduplikowana opcja: ', 'duplicate option: ') + o); seen[z] = 1; }); }
+      if (tk.why && opts.length && tk.why.length !== opts.length) add(k, i, L3('why ≠ кількість варіантів', 'why ≠ liczba opcji', 'why ≠ options count'));
+      if (k === 'en' && opts.some(function (o) { return CYR.test(o); })) add(k, i, L3('кирилиця у варіантах EN', 'cyrylica w opcjach EN', 'Cyrillic in EN options'));
+      Object.keys(tk).forEach(function (f) { if (tk[f] === '' && !/^(answer|img)$/.test(f)) add(k, i, L3('порожнє поле ', 'puste pole ', 'empty field ') + f); });
+    });
+  });
+  return out;
+}
+function admCheck(body) {
+  if (needSb(body)) return Promise.resolve();
+  return Promise.all([API.listCourses(true), q(SB().from('lessons').select('id,num,course_id,title,title_pl,title_en,scene,scene_pl,scene_en,grammar,tasks,variants'))]).then(function (r) {
+    var cs = r[0], ls = r[1] || []; if (!CHK_C) CHK_C = cs[0] && cs[0].id;
+    var cl = ls.filter(function (l) { return l.course_id === CHK_C; }).sort(function (a, b) { return a.num - b.num; });
+    var probs = []; cl.forEach(function (l) { checkLesson(l).forEach(function (p) { p.l = l; probs.push(p); }); });
+    body.innerHTML = '<select class="inp-s" id="ckC" style="max-width:340px;margin-bottom:12px">' + cs.map(function (c) { return '<option value="' + esc(c.id) + '"' + (c.id === CHK_C ? ' selected' : '') + '>' + esc(tr(c, 'title')) + '</option>'; }).join('') + '</select>' +
+      '<div class="panel" style="margin-bottom:16px"><h3>🧪 ' + L3('Автоперевірка', 'Autokontrola', 'Auto-check') + ' · ' + cl.length + ' ' + L3('уроків', 'lekcji', 'lessons') + '</h3>' +
+      (probs.length ? '<p class="muted small">' + L3('Знайдено проблем: ', 'Znaleziono problemów: ', 'Problems found: ') + probs.length + '</p><div class="tbl-wrap"><table class="tbl"><tr><th>' + L3('Урок', 'Lekcja', 'Lesson') + '</th><th>' + L3('Мова', 'Język', 'Lang') + '</th><th>#</th><th>' + L3('Проблема', 'Problem', 'Problem') + '</th></tr>' + probs.slice(0, 400).map(function (p) { return '<tr><td><a href="#/lesson/' + esc(p.l.id) + '">' + p.l.num + '</a></td><td>' + esc(p.set) + '</td><td>' + (p.n == null ? '—' : p.n + 1) + '</td><td>' + esc(p.msg) + '</td></tr>'; }).join('') + '</table></div>' : '<p>✅ ' + L3('Проблем не знайдено.', 'Nie znaleziono problemów.', 'No problems found.') + '</p>') + '</div>' +
+      '<div class="panel"><h3>🔎 ' + L3('Знайти й замінити в усьому курсі', 'Znajdź i zamień w całym kursie', 'Find & replace across the course') + '</h3><p class="hint">' + L3('Швидко виправити опечатку без SQL. Шукає в назвах, описах сцен і всіх завданнях (EN/PL/UA). Великі/малі літери враховуються.', 'Szybka poprawka literówki bez SQL. Szuka w tytułach, opisach scen i wszystkich zadaniach (EN/PL/UA). Rozróżnia wielkość liter.', 'Fix a typo without SQL. Searches titles, scene texts and every task (EN/PL/UA). Case-sensitive.') + '</p>' +
+      '<div class="row" style="gap:8px;flex-wrap:wrap"><input class="inp-s" id="frF" placeholder="' + esc(L3('знайти', 'znajdź', 'find')) + '" style="flex:1;min-width:180px"><input class="inp-s" id="frR" placeholder="' + esc(L3('замінити на', 'zamień na', 'replace with')) + '" style="flex:1;min-width:180px"><button class="btn btn-ghost btn-sm" type="button" id="frFind">' + L3('Знайти', 'Szukaj', 'Find') + '</button><button class="btn btn-red btn-sm" type="button" id="frGo" disabled>' + L3('Замінити всюди', 'Zamień wszędzie', 'Replace all') + '</button></div><div id="frOut" class="small" style="margin-top:10px"></div></div>';
+    document.getElementById('ckC').onchange = function (e) { CHK_C = e.target.value; admCheck(body); };
+    var FIELDS = ['title', 'title_pl', 'title_en', 'scene', 'scene_pl', 'scene_en', 'grammar', 'tasks', 'variants'], hits = [];
+    var enc = function (s) { return JSON.stringify(s).slice(1, -1); };
+    document.getElementById('frFind').onclick = function () {
+      var f = document.getElementById('frF').value; hits = []; if (f.length < 2) { toast(L3('Мінімум 2 символи', 'Minimum 2 znaki', 'At least 2 characters'), 'err'); return; }
+      var ef = enc(f);
+      cl.forEach(function (l) { var n = 0; FIELDS.forEach(function (k) { if (l[k] == null) return; var sj = typeof l[k] === 'string' ? enc(l[k]) : JSON.stringify(l[k]); n += sj.split(ef).length - 1; }); if (n) hits.push({l:l, n:n}); });
+      var tot = hits.reduce(function (a, x) { return a + x.n; }, 0);
+      document.getElementById('frOut').innerHTML = tot ? L3('Знайдено: ', 'Znaleziono: ', 'Found: ') + '<b>' + tot + '</b> ' + L3('у уроках', 'w lekcjach', 'in lessons') + ': ' + hits.map(function (x) { return '<a href="#/lesson/' + esc(x.l.id) + '">' + x.l.num + '</a>×' + x.n; }).join(', ') : L3('Нічого не знайдено.', 'Nic nie znaleziono.', 'Nothing found.');
+      document.getElementById('frGo').disabled = !tot;
+    };
+    document.getElementById('frGo').onclick = function () {
+      var f = document.getElementById('frF').value, rr = document.getElementById('frR').value, ef = enc(f), er = enc(rr), b = this;
+      if (!b.dataset.c) { b.dataset.c = 1; b.textContent = L3('Точно замінити? Натисни ще раз', 'Na pewno zamienić? Kliknij jeszcze raz', 'Sure? Click again'); return; }
+      b.disabled = true;
+      Promise.all(hits.map(function (x) { var upd = {}; FIELDS.forEach(function (k) { var v = x.l[k]; if (v == null) return; if (typeof v === 'string') { var nv = JSON.parse('"' + enc(v).split(ef).join(er) + '"'); if (nv !== v) upd[k] = nv; } else { var sj = JSON.stringify(v); if (sj.indexOf(ef) > -1) upd[k] = JSON.parse(sj.split(ef).join(er)); } }); return q(SB().from('lessons').update(upd).eq('id', x.l.id)); }))
+        .then(function () { API.clearCache && API.clearCache(); toast(L3('Замінено в уроках: ', 'Zamieniono w lekcjach: ', 'Replaced in lessons: ') + hits.length); admCheck(body); }).catch(function (e) { toast(e.message, 'err'); b.disabled = false; });
+    };
+  });
+}
+
+document.addEventListener('click', function (e) { var b = e.target.closest && e.target.closest('[data-print]'); if (!b) return; if (b.dataset.print === 'gift') document.body.classList.add('pgift'); window.print(); document.body.classList.remove('pgift'); });
+/* ---------- RODO: банер cookies + посилання у футері ---------- */
+(function () {
+  var f = document.querySelector('footer');
+  if (f && !document.getElementById('legalLinks')) f.insertAdjacentHTML('beforeend', '<span id="legalLinks" class="legal"><a href="/privacy.html">Polityka prywatności</a> · <a href="/terms.html">Regulamin</a> · <a href="/blog/">Blog</a> · <a href="#/support">Pomoc</a> · <a href="#/gift">🎁 Prezent</a></span>');
+  if (lsGet('ml_cookie_ok', null)) return;
+  var b = document.createElement('div'); b.className = 'cookiebar'; b.setAttribute('role', 'dialog');
+  b.innerHTML = '<span>' + L3('Ми використовуємо лише необхідні файли cookie та локальне сховище браузера (вхід, налаштування, прогрес). Без реклами й трекерів.', 'Używamy wyłącznie niezbędnych plików cookie i pamięci przeglądarki (logowanie, ustawienia, postęp). Bez reklam i trackerów.', 'We only use essential cookies and browser storage (login, settings, progress). No ads or trackers.') + ' <a href="/privacy.html">' + L3('Детальніше', 'Więcej', 'More') + '</a></span><button class="btn btn-red btn-sm" type="button">OK</button>';
+  b.querySelector('button').onclick = function () { lsSet('ml_cookie_ok', Date.now()); b.remove(); };
+  document.body.appendChild(b);
+})();
+
+
 function route() {
   var h = location.hash.replace(/^#\/?/, ''), parts = h.split('/'), p;
   var nav = ROUTE_LAST !== h; ROUTE_LAST = h;
@@ -2117,6 +2521,10 @@ function route() {
     case 'test': p = viewTest(); break;
     case 'review': p = viewReview(); break;
     case 'paid': p = viewPaid(parts[1]); break;
+    case 'friends': p = viewFriends(); break;
+    case 'top': p = viewTop(); break;
+    case 'gift': p = viewGift(parts[1]); break;
+    case 'support': p = viewSupport(); break;
     default: $app.innerHTML = t('<div class="page"><div class="empty">Сторінку не знайдено. <a href="#/">На головну</a></div></div>'); p = Promise.resolve();
   }
   Promise.resolve(p).catch(function (e) { $app.innerHTML = t('<div class="page"><div class="empty">Помилка: ') + esc(e.message) + '</div></div>'; })
