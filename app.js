@@ -717,6 +717,7 @@ function viewCourse(id) {
       var pick = function () { var s = document.getElementById('admLes').value; return s ? [s] : avIds; };
       af.onclick = function () { var ids = pick(), v = Math.max(0, Math.min(100, +document.getElementById('admPct').value || 0)); API.adminSetProgress(ids, TARGET, v).then(function () { return API.addLang(id, TARGET); }).then(function () { toast(tx({uk:'Готово: ', pl:'Gotowe: ', en:'Done: '}) + ids.length + ' × ' + v + '%'); route(); }).catch(function (e) { toast(e.message, 'err'); }); };
       document.getElementById('admReset').onclick = function () { API.adminResetOwn(pick(), TARGET).then(function () { toast(tx({uk:'Результати скинуто', pl:'Wyniki wyczyszczone', en:'Results reset'})); route(); }).catch(function (e) { toast(e.message, 'err'); }); }; }
+    worldPanel(c, ls, done, enrolled);
   });
 }
 
@@ -1375,7 +1376,8 @@ function viewGuide(tg, id) {
 function viewLesson(id) {
   return loadDefs().then(function () { return API.getLesson(id); }).then(function (l) {
     if (!l) { $app.innerHTML = t('<div class="page"><div class="empty">Урок не знайдено.</div></div>'); return; }
-    return Promise.all([API.getCourse(l.course_id), API.listLessons(l.course_id), API.myEnrollments()]).then(function (r) {
+    return Promise.all([API.getCourse(l.course_id), API.listLessons(l.course_id), API.myEnrollments(), API.myProgress().catch(function () { return []; })]).then(function (r) {
+      var prevDone = {}; (r[3] || []).forEach(function (p) { prevDone[p.lesson_id] = p; });
       var c = r[0], ls = r[1], enrolled = r[2].indexOf(l.course_id) > -1 || isAdm() || isFreeCourse(c);
       setAmbient(ambTheme(c));
       var isFirst = ls.length && ls[0].id === l.id && !(c && c.free_first === false), idx = ls.map(function (x) { return x.id; }).indexOf(l.id), nextL = ls[idx + 1];
@@ -1387,6 +1389,7 @@ function viewLesson(id) {
         var vb = l.variants || {};
         if (extra && vb.badge && pct >= 50) extra.insertAdjacentHTML('afterbegin', '<div class="badge-win"><span class="bw-i">' + esc(vb.badge.icon || '🏅') + '</span><div><div class="eyebrow">' + tx({uk:'Нагорода уроку', pl:'Nagroda lekcji', en:'Lesson reward'}) + '</div><b>' + esc(lf(vb.badge, 'name')) + '</b><p class="muted small">' + esc(lf(vb.badge, 'text') || '') + '</p></div></div>');
         if (extra && vb.cert && pct >= 70) extra.insertAdjacentHTML('beforeend', '<div class="cert" id="certBox"><div class="eyebrow">' + tx({uk:'Сертифікат', pl:'Certyfikat', en:'Certificate'}) + '</div><h3>' + esc(vb['cert_' + LANG] || vb.cert) + '</h3><p>' + esc(USER && (USER.name || USER.email) || '') + '</p><p class="muted small">' + esc(c ? tr(c, 'title') : '') + ' · ' + new Date().toLocaleDateString() + ' · ' + pct + '%</p><button class="btn btn-ghost btn-sm" type="button" data-print="1">' + tx({uk:'Друкувати', pl:'Drukuj', en:'Print'}) + '</button></div>');
+        worldReward(extra, c, l, ls, pct, prevDone);
         if (USER && LAST_TIMES) API.saveTimes(l.id, pct, LAST_TIMES).catch(function () {});
         if (USER && extra && enrolled && (l.num === 6 || (l.variants && l.variants.cert))) reviewPrompt(extra, c, l.variants && l.variants.cert ? 36 : 6);
         if (USER) { API.saveProgress(l.id, pct, finalText).then(function (r) { textEl.textContent = r && r.retry ? t('Повторна спроба: ') + pct + t('%. Перший результат зберігається, новий показано в дужках.') : t('Бал: ') + pct + t('%. Результат збережено в кабінеті.'); }); }
@@ -2582,6 +2585,196 @@ document.addEventListener('click', function (e) { var b = e.target.closest && e.
 })();
 
 
+/* ================= ІГРОВИЙ СВІТ КУРСУ (world.js) ================= */
+function worldOf(c) { var W = window.MOVILANG_WORLDS || {}; return c && c.slug && W[c.slug] ? W[c.slug] : null; }
+function wl(o) { return o ? (o[LANG] || o.uk || o.en || '') : ''; }
+function wIsBoss(l) { return (l.tasks || []).some(function (x) { return x.type === 'quest'; }) || !!(l.variants && l.variants.cert); }
+function wLessonPts(l, score) { return (10 + Math.floor((+score || 0) / 10)) * (wIsBoss(l) ? 3 : 1); }
+function wPoints(ls, done) { return ls.reduce(function (a, l) { return a + (done[l.id] ? wLessonPts(l, done[l.id].score) : 0); }, 0); }
+function wLocalKey(cid) { return 'ml_world_' + cid; }
+function wFaction(c) {
+  var loc = lsGet(wLocalKey(c.id), null);
+  if (!USER || !SB()) return Promise.resolve(loc);
+  return rpc('world_me', {p_course:c.id}).then(function (r) {
+    var f = r && r[0] && r[0].faction;
+    if (!f && loc) return rpc('join_faction', {p_course:c.id, p_faction:loc}).catch(function () { return loc; }); // гість → акаунт
+    if (f) lsSet(wLocalKey(c.id), f);
+    return f || null;
+  }).catch(function () { return loc; });
+}
+function wSetFaction(c, f) {
+  lsSet(wLocalKey(c.id), f);
+  if (!USER || !SB()) return Promise.resolve(f);
+  return rpc('join_faction', {p_course:c.id, p_faction:f}).then(function (x) { if (x) lsSet(wLocalKey(c.id), x); return x || f; }).catch(function () { return f; });
+}
+function wWords(l, n) {
+  var out = [];
+  (l.tasks || []).forEach(function (tk) { if (tk.type === 'glossary') (tk.items || []).forEach(function (w) { if (w.w && out.length < (n || 99)) out.push(w); }); });
+  return out;
+}
+function wCrest(f, big) { return '<span class="w-crest' + (big ? ' big' : '') + '" style="--fc:' + esc(f.color) + '">' + esc(f.icon) + '</span>'; }
+
+/* ---- ритуал входу ---- */
+function wRitual(c, onDone) {
+  var W = worldOf(c), R = W.ritual, qs = R.questions, i = 0, tally = {};
+  var box = mbox('<div class="w-rit"><div class="w-rit-i">' + esc(R.icon) + '</div><div class="eyebrow">' + tx({uk:'Ритуал входу', pl:'Rytuał wejścia', en:'Entry ritual'}) + '</div><h3>' + esc(wl(R.title)) + '</h3><p class="muted">' + esc(wl(R.intro)) + '</p><div id="wrBody"></div></div>');
+  var body = box.querySelector('#wrBody');
+  function step() {
+    if (i >= qs.length) return reveal();
+    var qq = qs[i];
+    body.innerHTML = '<div class="w-rit-prog">' + qs.map(function (_, k) { return '<i class="' + (k < i ? 'on' : k === i ? 'cur' : '') + '"></i>'; }).join('') + '</div>' +
+      '<p class="w-rit-q">' + esc(qq.q) + ' <button type="button" class="spk" id="wrSay">🔊</button></p>' + (LANG !== 'en' && wl(qq.hint) ? '<details class="w-rit-h"><summary>' + tx({uk:'Переклад', pl:'Tłumaczenie', en:'Translation'}) + '</summary>' + esc(wl(qq.hint)) + '</details>' : '') +
+      '<div class="w-rit-a">' + shuffle(qq.a.map(function (a, k) { return k; })).map(function (k) { return '<button type="button" class="topt" data-k="' + k + '">' + esc(qq.a[k][0]) + '</button>'; }).join('') + '</div>';
+    body.querySelector('#wrSay').onclick = function () { say(qq.q); };
+    body.querySelectorAll('[data-k]').forEach(function (b) { b.onclick = function () { var f = qq.a[+b.dataset.k][1]; tally[f] = (tally[f] || 0) + 1; b.classList.add('right'); setTimeout(function () { i++; step(); }, 260); }; });
+  }
+  function reveal() {
+    var best = null; Object.keys(W.factions).forEach(function (f) { if (best == null || (tally[f] || 0) > (tally[best] || 0)) best = f; });
+    var F = W.factions[best];
+    body.innerHTML = '<div class="w-reveal" style="--fc:' + esc(F.color) + '"><p class="muted">' + esc(wl(R.reveal)) + '</p>' + wCrest(F, true) + '<h2>' + esc(wl(F)) + '!</h2><p class="w-motto">' + esc(wl(F.motto)) + '</p><p class="small muted">' + tx({uk:'За кожен урок ти приноситимеш своїй стороні ', pl:'Za każdą lekcję przyniesiesz swojej stronie ', en:'Every lesson earns your side '}) + esc(W.points.icon + ' ' + wl(W.points)) + '.</p><button type="button" class="btn btn-red" id="wrOk">' + tx({uk:'Приєднатися', pl:'Dołącz', en:'Join'}) + '</button></div>';
+    try { say(wl(F) ); } catch (e) {}
+    body.querySelector('#wrOk').onclick = function () { wSetFaction(c, best).then(function (f) { box.remove(); toast(W.factions[f] ? W.factions[f].icon + ' ' + wl(W.factions[f]) : '✓'); if (onDone) onDone(f); }); };
+  }
+  step();
+}
+
+/* ---- панель світу на сторінці курсу ---- */
+function worldPanel(c, ls, done, enrolled) {
+  var W = worldOf(c); if (!W) return;
+  var host = document.querySelector('.mcard .panel'); if (!host) return;
+  var el = document.createElement('div'); el.className = 'w-panel'; el.innerHTML = '<span class="muted small">…</span>';
+  var mh = host.querySelector('.mhead'); if (mh) mh.insertAdjacentElement('afterend', el); else host.prepend(el);
+  wFaction(c).then(function (f) {
+    var F = f && W.factions[f], pts = wPoints(ls, done), base = '#/world/' + esc(c.id);
+    if (!F) {
+      el.innerHTML = '<div class="w-cta"><span class="w-rit-i">' + esc(W.ritual.icon) + '</span><div><b>' + esc(wl(W.ritual.title)) + '</b><p class="small muted">' + tx({uk:'Пройди ритуал входу, обери сторону й збирай ', pl:'Przejdź rytuał wejścia, wybierz stronę i zbieraj ', en:'Take the entry ritual, pick your side and collect '}) + esc(W.points.icon + ' ' + wl(W.points)) + '.</p></div><button type="button" class="btn btn-red btn-sm" id="wGo">' + tx({uk:'Почати', pl:'Zacznij', en:'Start'}) + '</button></div>';
+      el.querySelector('#wGo').onclick = function () { wRitual(c, function () { route(); }); };
+      return;
+    }
+    var nCards = ls.filter(function (l) { return wIsBoss(l) && done[l.id]; }).length, nAll = ls.filter(wIsBoss).length, nJ = ls.filter(function (l) { return done[l.id]; }).length;
+    el.style.setProperty('--fc', F.color);
+    el.innerHTML = '<div class="w-me">' + wCrest(F) + '<div class="w-me-t"><small>' + tx({uk:'Твоя сторона', pl:'Twoja strona', en:'Your side'}) + '</small><b>' + esc(wl(F)) + '</b></div><div class="w-pts"><b>' + pts + '</b><small>' + esc(W.points.icon + ' ' + wl(W.points)) + '</small></div></div>' +
+      '<div class="w-links"><a href="' + base + '/rank">🏆 ' + esc(wl(W.standings)) + '</a><a href="' + base + '/cards">' + esc(W.cardIcon) + ' ' + esc(wl(W.collection)) + ' <b>' + nCards + '/' + nAll + '</b></a><a href="' + base + '/journal">' + esc(W.journal.icon) + ' ' + esc(wl(W.journal.title)) + ' <b>' + nJ + '</b></a></div>';
+  });
+}
+
+/* ---- нагорода на екрані результату ---- */
+function worldReward(extra, c, l, ls, pct, prevDone) {
+  var W = worldOf(c); if (!W || !extra) return;
+  var gain = wLessonPts(l, pct), had = prevDone && prevDone[l.id];
+  if (had) gain = Math.max(0, gain - wLessonPts(l, had.score));
+  var el = document.createElement('div'); el.className = 'w-gain'; extra.prepend(el);
+  wFaction(c).then(function (f) {
+    var F = f && W.factions[f];
+    if (!F) {
+      el.innerHTML = '<div class="w-cta"><span class="w-rit-i">' + esc(W.ritual.icon) + '</span><div><b>' + esc(wl(W.ritual.title)) + '</b><p class="small muted">' + tx({uk:'Обери сторону, щоб цей урок приніс їй очки.', pl:'Wybierz stronę, aby ta lekcja dała jej punkty.', en:'Pick a side so this lesson earns it points.'}) + '</p></div><button type="button" class="btn btn-red btn-sm" id="wGo2">' + tx({uk:'Ритуал', pl:'Rytuał', en:'Ritual'}) + '</button></div>';
+      el.querySelector('#wGo2').onclick = function () { wRitual(c, function () { el.remove(); worldReward(extra, c, l, ls, pct, prevDone); }); };
+      return;
+    }
+    el.style.setProperty('--fc', F.color);
+    el.innerHTML = '<div class="w-me">' + wCrest(F) + '<div class="w-me-t"><small>' + esc(wl(F)) + '</small><b class="w-plus">+<span id="wCnt">0</span> ' + esc(W.points.icon) + '</b><small>' + esc(wl(W.points)) + '</small></div></div>';
+    var cnt = el.querySelector('#wCnt'), k = 0, stepN = Math.max(1, Math.ceil(gain / 25)), tm = setInterval(function () { k = Math.min(gain, k + stepN); cnt.textContent = k; if (k >= gain) clearInterval(tm); }, 35);
+    var jl = '<a class="btn btn-ghost btn-sm" href="#/world/' + esc(c.id) + '/journal">' + esc(W.journal.icon) + ' ' + tx({uk:'Нова сторінка: ', pl:'Nowa strona: ', en:'New page: '}) + esc(wl(W.journal.title)) + '</a>';
+    if (wIsBoss(l) && pct >= 50 && !had) {
+      var b = (l.variants && l.variants.badge) || {}, words = wWords(l, 3);
+      el.insertAdjacentHTML('beforeend', '<div class="w-newcard"><div class="eyebrow">' + tx({uk:'Нова картка!', pl:'Nowa karta!', en:'New card!'}) + ' · ' + esc(wl(W.collection)) + '</div>' + wCardHtml(W, l, b, words, pct >= 100, false) + '</div>');
+    }
+    el.insertAdjacentHTML('beforeend', '<div class="row" style="justify-content:center;margin-top:8px">' + jl + '</div>');
+  });
+}
+
+/* ---- картка колекції ---- */
+function wCardHtml(W, l, b, words, gold, locked) {
+  if (locked) return '<div class="w-card locked"><div class="w-card-i">' + esc(W.cardIcon) + '</div><b>???</b><small>' + tx({uk:'Урок ', pl:'Lekcja ', en:'Lesson '}) + l.num + '</small></div>';
+  return '<div class="w-card' + (gold ? ' gold' : '') + '" tabindex="0"><div class="w-card-in"><div class="w-card-f"><div class="w-card-i">' + esc(b.icon || W.cardIcon) + '</div><b>' + esc(lf(b, 'name') || tr(l, 'title')) + '</b><small>' + esc(tr(l, 'title')) + '</small>' + (gold ? '<span class="w-gold">★ 100%</span>' : '') + '</div>' +
+    '<div class="w-card-b"><p class="small">' + esc(lf(b, 'text') || '') + '</p><ul>' + words.map(function (w) { return '<li><b>' + esc(w.w) + '</b> <span class="spk" data-say="' + esc(w.w) + '">🔊</span><br><small>' + esc(wordMeaning(w)) + '</small></li>'; }).join('') + '</ul></div></div></div>';
+}
+function wBindCards(root) {
+  root.querySelectorAll('.w-card:not(.locked)').forEach(function (cd) { cd.onclick = function (e) { if (e.target.closest('.spk')) return; cd.classList.toggle('flip'); }; cd.onkeydown = function (e) { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); cd.classList.toggle('flip'); } }; });
+  root.querySelectorAll('.spk[data-say]').forEach(function (s) { s.onclick = function (e) { e.stopPropagation(); say(s.dataset.say); }; });
+}
+
+/* ---- запис журналу ---- */
+function wJournalEntry(W, l, p, F) {
+  var ws = wWords(l, 6).filter(function (w) { return w.w; }), J = W.journal;
+  var v = {scene_en: String(l.scene_en || '').replace(/[.!?…\s]+$/, ''), faction: F ? F.en : ''};
+  ws.slice(0, 3).forEach(function (w, i) { v['w' + (i + 1)] = w.w; v['t' + (i + 1)] = wordMeaning(w); v['line' + (i + 1)] = w.line || ''; });
+  var lines = J.lines, start = (l.num || 0) % lines.length, txt = '';
+  for (var k = 0; k < lines.length && !txt; k++) {
+    var tpl = lines[(start + k) % lines.length], ok = true;
+    var out = tpl.replace(/\{(\w+)\}/g, function (_, key) { if (!v[key]) ok = false; return v[key] || ''; });
+    if (ok) txt = out;
+  }
+  if (!txt) txt = ws.length ? 'Today: ' + ws.slice(0, 3).map(function (w) { return w.w; }).join(', ') + '.' : (v.scene_en || tr(l, 'scene') || tr(l, 'title')) + '.';
+  txt = esc(txt);
+  ws.slice(0, 3).forEach(function (w) { txt = txt.replace(new RegExp('(“|\\b)(' + w.w.replace(/[.*+?^${}()|[\]\\]/g, '\\$&') + ')(?=”|\\b)', 'i'), '$1<mark title="' + esc(wordMeaning(w)) + '">$2</mark>'); });
+  var b = (l.variants && l.variants.badge) || {};
+  return '<article class="w-page"><header><span>' + tx({uk:'Сторінка ', pl:'Strona ', en:'Page '}) + l.num + '</span><time>' + fmtDate(p.completed_at) + '</time></header>' +
+    '<h4>' + esc(tr(l, 'title')) + '</h4><p class="w-open">' + esc(J.open) + '</p><p class="w-txt">' + txt + '</p>' +
+    (p.answer && String(p.answer).trim().length > 2 ? '<blockquote class="w-mine"><small>' + tx({uk:'Мій запис', pl:'Mój wpis', en:'My entry'}) + '</small>' + esc(String(p.answer).slice(0, 1200)) + '</blockquote>' : '') +
+    '<p class="w-sign">' + esc(J.sign.replace('{faction}', F ? F.en : '')) + '</p>' + (b.icon ? '<div class="w-stamp" title="' + esc(lf(b, 'name') || '') + '">' + esc(b.icon) + '</div>' : '') + '</article>';
+}
+
+/* ---- сторінка «Мій світ» ---- */
+function viewWorld(cid, tab) {
+  tab = tab || 'me';
+  return Promise.all([API.getCourse(cid), API.listLessons(cid), API.myProgress()]).then(function (r) {
+    var c = r[0], ls = r[1] || [], done = {}, W = worldOf(c);
+    if (!c || !W) { $app.innerHTML = '<div class="page"><div class="empty">' + tx({uk:'Для цього курсу ігрового світу ще немає.', pl:'Ten kurs nie ma jeszcze świata gry.', en:'This course has no game world yet.'}) + '</div></div>'; return; }
+    setAmbient(ambTheme(c));
+    (r[2] || []).forEach(function (p) { done[p.lesson_id] = p; });
+    return wFaction(c).then(function (f) {
+      var F = f && W.factions[f], pts = wPoints(ls, done);
+      var tabs = [['me', tx({uk:'Мій світ', pl:'Mój świat', en:'My world'})], ['rank', '🏆 ' + wl(W.standings)], ['cards', W.cardIcon + ' ' + wl(W.collection)], ['journal', W.journal.icon + ' ' + wl(W.journal.title)]];
+      $app.innerHTML = '<div class="page w-world"' + (F ? ' style="--fc:' + esc(F.color) + '"' : '') + '><div class="sec-head"><a href="#/course/' + esc(c.id) + '" class="muted small">← ' + esc(tr(c, 'title')) + '</a><div class="eyebrow">' + tx({uk:'Ігровий світ', pl:'Świat gry', en:'Game world'}) + '</div><h2>' + esc(tr(c, 'title')) + '</h2></div>' +
+        '<nav class="w-tabs">' + tabs.map(function (x) { return '<a href="#/world/' + esc(c.id) + '/' + x[0] + '" class="' + (x[0] === tab ? 'on' : '') + '">' + esc(x[1]) + '</a>'; }).join('') + '</nav><div id="wBody"></div></div>';
+      var body = document.getElementById('wBody');
+      if (!F && tab !== 'rank') {
+        body.innerHTML = '<div class="w-cta big"><span class="w-rit-i">' + esc(W.ritual.icon) + '</span><div><b>' + esc(wl(W.ritual.title)) + '</b><p class="muted">' + esc(wl(W.ritual.intro)) + '</p></div><button type="button" class="btn btn-red" id="wGo">' + tx({uk:'Почати ритуал', pl:'Zacznij rytuał', en:'Start the ritual'}) + '</button></div>';
+        body.querySelector('#wGo').onclick = function () { wRitual(c, function () { route(); }); };
+        return;
+      }
+      if (tab === 'me') {
+        var bosses = ls.filter(wIsBoss), nCards = bosses.filter(function (l) { return done[l.id]; }).length, nDone = ls.filter(function (l) { return done[l.id]; }).length;
+        var arcs = []; ls.forEach(function (l) { var a = (l.variants && (l.variants['arc_' + LANG] || l.variants.arc)) || ''; var g = arcs[arcs.length - 1]; if (!g || g.name !== a) arcs.push(g = {name:a, n:0, d:0}); g.n++; if (done[l.id]) g.d++; });
+        body.innerHTML = '<div class="w-hero">' + wCrest(F, true) + '<div><small class="muted">' + tx({uk:'Твоя сторона', pl:'Twoja strona', en:'Your side'}) + '</small><h3>' + esc(wl(F)) + '</h3><p class="w-motto">' + esc(wl(F.motto)) + '</p></div></div>' +
+          '<div class="w-stats"><div><b>' + pts + '</b><span>' + esc(W.points.icon + ' ' + wl(W.points)) + '</span></div><div><b>' + nDone + '/' + ls.length + '</b><span>' + tx({uk:'уроків', pl:'lekcji', en:'lessons'}) + '</span></div><div><b>' + nCards + '/' + bosses.length + '</b><span>' + esc(wl(W.collection)) + '</span></div><div id="wRank"><b>…</b><span>' + tx({uk:'місце', pl:'miejsce', en:'rank'}) + '</span></div></div>' +
+          '<h3 class="w-h">' + tx({uk:'Мапа арок', pl:'Mapa łuków', en:'Arc map'}) + '</h3><div class="w-map">' + arcs.map(function (a, i) { var pc = Math.round(a.d / a.n * 100); return '<div class="w-arc' + (pc >= 100 ? ' full' : '') + '"><span class="w-arc-n">' + (i + 1) + '</span><div><b>' + esc(a.name.replace(/^[^·]*·\s*/, '') || '—') + '</b><div class="w-bar"><i style="width:' + pc + '%"></i></div><small class="muted">' + a.d + '/' + a.n + '</small></div></div>'; }).join('') + '</div>' +
+          '<h3 class="w-h">' + esc(wl(W.artifacts)) + '</h3><div class="bdgs">' + ls.filter(function (l) { return done[l.id] && l.variants && l.variants.badge; }).map(function (l) { var b = l.variants.badge; return '<div class="bdg" title="' + esc(lf(b, 'text') || '') + '"><span class="bdg-i">' + esc(b.icon) + '</span><b>' + esc(lf(b, 'name')) + '</b><small>' + tx({uk:'Урок ', pl:'Lekcja ', en:'Lesson '}) + l.num + '</small></div>'; }).join('') + '</div>';
+        if (USER && SB()) rpc('world_me', {p_course:c.id}).then(function (x) { var rk = x && x[0] && x[0].rank; if (rk) document.querySelector('#wRank b').textContent = '#' + rk; }).catch(function () { document.querySelector('#wRank b').textContent = '—'; });
+        else document.querySelector('#wRank b').textContent = '—';
+      }
+      if (tab === 'rank') {
+        body.innerHTML = '<div id="wSt"><span class="muted">…</span></div><h3 class="w-h">' + tx({uk:'Топ-10 учнів', pl:'Top 10 uczniów', en:'Top 10 learners'}) + '</h3><div id="wTop"><span class="muted">…</span></div>';
+        if (!SB()) { body.innerHTML = '<div class="empty">' + tx({uk:'Рейтинг доступний лише з базою.', pl:'Ranking dostępny tylko z bazą.', en:'Standings need the database.'}) + '</div>'; return; }
+        rpc('world_standings', {p_course:c.id}).then(function (rows) {
+          var m = {}; (rows || []).forEach(function (x) { m[x.faction] = x; });
+          var list = Object.keys(W.factions).map(function (k) { return {k:k, F:W.factions[k], p:m[k] ? m[k].points : 0, n:m[k] ? m[k].members : 0}; }).sort(function (a, b) { return b.p - a.p; });
+          var max = Math.max(1, list[0].p);
+          document.getElementById('wSt').innerHTML = '<div class="w-cup">' + list.map(function (x, i) { return '<div class="w-row' + (x.k === f ? ' mine' : '') + '" style="--fc:' + esc(x.F.color) + '"><span class="w-pos">' + (i + 1) + '</span>' + wCrest(x.F) + '<div class="w-row-m"><b>' + esc(wl(x.F)) + '</b><div class="w-bar"><i style="width:' + Math.round(x.p / max * 100) + '%"></i></div><small class="muted">' + x.n + ' ' + tx({uk:'учнів', pl:'uczniów', en:'learners'}) + '</small></div><b class="w-row-p">' + x.p + ' ' + esc(W.points.icon) + '</b></div>'; }).join('') + '</div>';
+        }).catch(function () { document.getElementById('wSt').innerHTML = '<div class="empty">' + tx({uk:'Рейтинг ще не запущено.', pl:'Ranking jeszcze nie działa.', en:'Standings are not live yet.'}) + '</div>'; });
+        if (USER) rpc('world_top', {p_course:c.id}).then(function (rows) {
+          document.getElementById('wTop').innerHTML = (rows || []).length ? '<ol class="w-top">' + rows.map(function (x) { var FF = W.factions[x.faction] || {}; return '<li class="' + (x.me ? 'mine' : '') + '"><span>' + esc(FF.icon || '') + '</span><b>' + esc(x.nick) + '</b><em>' + x.points + ' ' + esc(W.points.icon) + '</em></li>'; }).join('') + '</ol>' : '<p class="muted">—</p>';
+        }).catch(function () { document.getElementById('wTop').innerHTML = '<p class="muted">—</p>'; });
+        else document.getElementById('wTop').innerHTML = '<p class="muted"><a href="#/login">' + t('Увійди') + '</a></p>';
+      }
+      if (tab === 'cards') {
+        var bs = ls.filter(wIsBoss), got = bs.filter(function (l) { return done[l.id]; }).length;
+        body.innerHTML = '<p class="muted">' + tx({uk:'Картки видаються за «босів» і фінал. Натисни на картку, щоб перевернути й повторити слова. Золота рамка — за 100 %.', pl:'Karty zdobywasz za „bossów” i finał. Kliknij kartę, aby ją odwrócić i powtórzyć słowa. Złota ramka — za 100%.', en:'Cards come from bosses and the finale. Tap a card to flip it and review its words. Gold frame for 100%.'}) + '</p><p><b>' + got + ' / ' + bs.length + '</b> · ' + (bs.length - got ? tx({uk:'залишилось знайти ', pl:'zostało do znalezienia ', en:'left to find: '}) + (bs.length - got) : tx({uk:'колекцію зібрано!', pl:'kolekcja kompletna!', en:'collection complete!'})) + '</p>' +
+          '<div class="w-album">' + bs.map(function (l) { var p = done[l.id]; return wCardHtml(W, l, (l.variants && l.variants.badge) || {}, wWords(l, 3), p && +p.score >= 100, !p); }).join('') + '</div>';
+        wBindCards(body);
+      }
+      if (tab === 'journal') {
+        var pages = ls.filter(function (l) { return done[l.id]; });
+        body.innerHTML = '<div class="w-book"><div class="w-cover"><span>' + esc(W.journal.icon) + '</span><h3>' + esc(wl(W.journal.title)) + '</h3><p class="muted small">' + esc(USER ? (USER.name || USER.email || '') : '') + ' · ' + pages.length + ' / ' + ls.length + '</p>' + (pages.length ? '<button type="button" class="btn btn-ghost btn-sm" id="wPrint">🖨 ' + tx({uk:'Завантажити PDF', pl:'Pobierz PDF', en:'Download PDF'}) + '</button>' : '') + '</div>' +
+          (pages.length ? pages.map(function (l) { return wJournalEntry(W, l, done[l.id], F); }).join('') : '<div class="empty">' + tx({uk:'Пройди перший урок — і тут з\'явиться перша сторінка.', pl:'Ukończ pierwszą lekcję — pojawi się tu pierwsza strona.', en:'Finish your first lesson to unlock the first page.'}) + '</div>') +
+          (pages.length < ls.length ? '<div class="w-page locked">🔒 ' + tx({uk:'Наступна сторінка відкриється після уроку ', pl:'Następna strona otworzy się po lekcji ', en:'The next page unlocks after lesson '}) + (ls.filter(function (l) { return !done[l.id]; })[0] || {}).num + '</div>' : '') + '</div>';
+        var pb = document.getElementById('wPrint'); if (pb) pb.onclick = function () { document.documentElement.classList.add('print-journal'); setTimeout(function () { window.print(); document.documentElement.classList.remove('print-journal'); }, 200); };
+      }
+    });
+  });
+}
+
 function route() {
   var h = location.hash.replace(/^#\/?/, ''), parts = h.split('/'), p;
   var nav = ROUTE_LAST !== h; ROUTE_LAST = h;
@@ -2609,6 +2802,7 @@ function route() {
     case 'top': p = viewTop(); break;
     case 'gift': p = viewGift(parts[1]); break;
     case 'support': p = viewSupport(); break;
+    case 'world': p = viewWorld(parts[1], parts[2]); break;
     default: $app.innerHTML = t('<div class="page"><div class="empty">Сторінку не знайдено. <a href="#/">На головну</a></div></div>'); p = Promise.resolve();
   }
   Promise.resolve(p).catch(function (e) { $app.innerHTML = t('<div class="page"><div class="empty">Помилка: ') + esc(e.message) + '</div></div>'; })
