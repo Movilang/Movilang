@@ -905,3 +905,25 @@ body.has-amb #app,body.has-amb footer{position:relative;z-index:1}
 .cookiebar{position:fixed;left:12px;right:12px;bottom:76px;z-index:60;display:flex;gap:12px;align-items:center;justify-content:space-between;max-width:760px;margin:auto;padding:12px 16px;border-radius:14px;background:var(--panel);border:1px solid var(--line);box-shadow:0 8px 30px rgba(0,0,0,.35);font-size:14px}
 @media (min-width:900px){.cookiebar{bottom:16px}}
 @media print{body.pgift *{visibility:hidden}body.pgift .giftcard,body.pgift .giftcard *{visibility:visible}body.pgift .giftcard{position:absolute;left:0;right:0;top:20px}}
+/* ===== continue card ===== */
+.contc{position:relative;display:flex;gap:14px;align-items:center;margin:0 0 22px;padding:14px 18px 18px;border-radius:16px;border:1px solid var(--line);background:color-mix(in srgb,var(--red) 10%,var(--panel));color:var(--fg);text-decoration:none;max-width:520px;overflow:hidden;transition:transform .15s}
+.contc:hover{transform:translateY(-2px);border-color:var(--red)}
+.cc-play{flex:0 0 auto;width:46px;height:46px;border-radius:50%;display:grid;place-items:center;background:var(--red);color:var(--btnfg,#fff);font-size:18px;box-shadow:0 8px 24px -8px var(--red)}
+.cc-txt{display:grid;gap:2px;min-width:0}
+.cc-txt b{font-size:16px}
+.cc-txt .eyebrow{font-size:11px}
+.cc-bar{position:absolute;left:0;right:0;bottom:0;height:4px;background:var(--line)}
+.cc-bar i{display:block;height:100%;background:var(--red)}
+/* ===== character letters ===== */
+.wnewr{all:unset;cursor:pointer;display:block;margin:4px 0 12px;padding:10px 14px;border-radius:12px;background:color-mix(in srgb,var(--gold) 16%,transparent);border:1px solid color-mix(in srgb,var(--gold) 45%,transparent)}
+.wnewr:hover{border-color:var(--gold)}
+.wthread{margin-top:14px;display:grid;gap:10px;border-top:1px dashed var(--line);padding-top:12px}
+.wth-h{font-size:14px;color:var(--gold)}
+.wmsg{max-width:92%;padding:10px 14px;border-radius:14px;background:var(--panel);border:1px solid var(--line)}
+.wmsg.ch{justify-self:start;border-left:3px solid var(--gold);font-family:Georgia,'Times New Roman',serif}
+.wmsg.me{justify-self:end;background:color-mix(in srgb,var(--neon) 8%,var(--panel))}
+.wmsg p{margin:4px 0 0;white-space:pre-wrap;line-height:1.55}
+.wm-who{font-size:12px;font-weight:600;color:var(--muted);display:flex;align-items:center;gap:6px;font-family:var(--f-body)}
+.wreply{display:grid;gap:8px}
+.wreply .btn{justify-self:start}
+.wth-wait{margin-top:8px}

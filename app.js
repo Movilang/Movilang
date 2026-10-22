@@ -566,7 +566,7 @@ function viewHome() {
   return API.listCourses(false).then(function (courses) {
     var s = LS();
     $app.innerHTML =
-      '<section class="hero"><div><div class="eyebrow">' + esc(s.hero_eyebrow) + '</div>' +
+      '<section class="hero"><div><div id="contCard"></div><div class="eyebrow">' + esc(s.hero_eyebrow) + '</div>' +
       '<h1 style="margin-top:18px"><span class="w">' + esc(s.hero_w1) + '</span><span class="w">' + esc(s.hero_w2) + '</span><span class="w">' + esc(s.hero_w3) + '</span></h1>' +
       '<div class="hero-sub">WATCH · UNDERSTAND · SPEAK</div><p class="lead">' + esc(s.hero_lead) + '</p>' +
       '<div class="hero-cta"><a class="btn btn-red" href="' + (USER ? '#/cabinet' : '#/register') + '"><span class="play"></span>' + (USER ? t('Мій кабінет') : t('Створити кабінет')) + t('</a><a class="btn btn-ghost" href="#/trial">Пробний урок безкоштовно</a></div>') +
@@ -578,7 +578,29 @@ function viewHome() {
       t('<section><div class="sec-head"><div class="eyebrow">Каталог</div><h2>Фільми та серіали</h2></div>') + catalogGrid(courses) + '</section>' +
       t('<section id="pricing"><div class="sec-head"><div class="eyebrow">Тарифи</div><h2>Обери свій квиток</h2></div>') + pricingHtml() + '</section>' +
       t('<section><div class="sec-head"><div class="eyebrow">FAQ</div><h2>Питання та відповіді</h2></div>') + faqHtml() + '</section>';
+    fillContinue();
   });
+}
+function fillContinue() {
+  var host = document.getElementById('contCard'); if (!host) return;
+  var r = null; try { r = JSON.parse(localStorage.getItem('ml_resume') || 'null'); } catch (e) {}
+  function show(l, c, idx, n) {
+    if (!l || !lessonTasks(l) || !document.getElementById('contCard')) return;
+    var pct = n ? Math.round(idx / n * 100) : 0;
+    host.innerHTML = '<a class="contc" href="#/lesson/' + esc(l.id) + '"><span class="cc-play">▶</span><span class="cc-txt"><span class="eyebrow">' + (idx ? tx({uk:'Продовжити', pl:'Kontynuuj', en:'Continue'}) : tx({uk:'Наступний урок', pl:'Następna lekcja', en:'Next lesson'})) + '</span><b>' + esc(c ? tr(c, 'title') : '') + ' · ' + tx({uk:'Урок', pl:'Lekcja', en:'Lesson'}) + ' ' + l.num + '</b><span class="muted small">' + esc(tr(l, 'title')) + (idx ? ' · ' + tx({uk:'завдання', pl:'zadanie', en:'task'}) + ' ' + (idx + 1) + ' / ' + n : '') + '</span></span><i class="cc-bar"><i style="width:' + pct + '%"></i></i></a>';
+  }
+  function byLesson(lid, idx, n) { return API.getLesson(lid).then(function (l) { if (!l) return false; return API.getCourse(l.course_id).then(function (c) { show(l, c, idx, n); return true; }); }); }
+  var p = r && r.tg === TARGET && r.lid ? byLesson(r.lid, r.idx || 0, r.n || 0).catch(function () { return false; }) : Promise.resolve(false);
+  p.then(function (okd) {
+    if (okd || !USER) return;
+    return API.myEnrollments().then(function (cids) {
+      if (!cids.length) return;
+      return Promise.all([API.listLessons(cids[0]), API.myProgress(), API.getCourse(cids[0])]).then(function (x) {
+        var done = {}; x[1].forEach(function (pp) { done[pp.lesson_id] = 1; });
+        var nx = x[0].filter(function (l) { return !done[l.id] && lessonTasks(l); })[0]; if (nx) show(nx, x[2], 0, 0);
+      });
+    });
+  }).catch(function () {});
 }
 function viewCatalog() { return API.listCourses(false).then(function (c) { $app.innerHTML = t('<div class="page"><div class="sec-head"><div class="eyebrow">Каталог</div><h2>Фільми та серіали</h2></div>') + catalogGrid(c) + '</div>'; }); }
 function viewPricing() { $app.innerHTML = t('<div class="page"><div class="sec-head"><div class="eyebrow">Тарифи</div><h2>Обери свій квиток</h2></div>') + pricingHtml() + t('<div class="sec-head" style="margin-top:30px"><h2>Питання та відповіді</h2></div>') + faqHtml() + '</div>'; return Promise.resolve(); }
@@ -948,17 +970,73 @@ function ltHtml(text, ms) {
   if (!ms.length) return '<b>✓ ' + tx({uk:'Помилок не знайдено. Чудово!', pl:'Nie znaleziono błędów. Świetnie!', en:'No mistakes found. Great!'}) + '</b>';
   return '<b>' + tx({uk:'Знайдено можливих помилок: ', pl:'Znalezione możliwe błędy: ', en:'Possible mistakes found: '}) + ms.length + '</b><ol>' + ms.slice(0, 20).map(function (m) { return '<li><span class="ltbad">' + esc(text.substr(m.o, m.l)) + '</span>' + (m.r && m.r.length ? ' → <span class="ltgood">' + esc(m.r.join(' / ')) + '</span>' : '') + '<br><span class="muted small">' + esc(m.msg) + '</span></li>'; }).join('') + '</ol>';
 }
+function aiReply(payload) {
+  var C = window.MOVILANG_CONFIG || {};
+  if (!C.SUPABASE_URL || !C.SUPABASE_ANON_KEY) return Promise.reject(new Error('demo'));
+  return fetch(C.SUPABASE_URL + '/functions/v1/ai-reply', {method:'POST', headers:{'Content-Type':'application/json', apikey:C.SUPABASE_ANON_KEY, Authorization:'Bearer ' + C.SUPABASE_ANON_KEY}, body:JSON.stringify(payload)})
+    .then(function (r) { return r.json().then(function (j) { if (!r.ok || j.error) throw new Error(j.error || 'ai'); return j; }); });
+}
+function wReplyCtx(w) {
+  return (w.lesson_id ? API.getLesson(w.lesson_id).catch(function () { return null; }) : Promise.resolve(null)).then(function (l) {
+    return (l ? API.getCourse(l.course_id).catch(function () { return null; }) : Promise.resolve(null)).then(function (c) {
+      return {target:w.target || 'en', text:w.text, task:w.task || '', course:c ? (c.title_en || c.title) : '', lesson:l ? (l.title_en || l.title) : '', scene:l ? (l.scene_en || l.scene || '') : ''};
+    });
+  });
+}
+var PR_BUSY = false;
+function processReplies() {
+  if (!USER || PR_BUSY) return; PR_BUSY = true;
+  var since = Date.now() - 3 * 86400000, got = [];
+  API.myWritings().then(function (ws) {
+    var todo = ws.filter(function (w) { return !w.reply && new Date(w.created_at).getTime() > since && String(w.text || '').length > 20; }).slice(0, 2);
+    return todo.reduce(function (pr, w) { return pr.then(function () {
+      return wReplyCtx(w).then(aiReply).then(function (o) { var rep = {who:o.who, seen:false, msgs:[{r:'char', t:o.reply, at:new Date().toISOString()}]}; got.push(o.who); return API.updateWriting(w.id, {reply:rep}); }).catch(function () {});
+    }); }, Promise.resolve());
+  }).catch(function () {}).then(function () {
+    PR_BUSY = false;
+    if (got.length) { if (API.clearCache) API.clearCache(); toast('📬 ' + got[0] + ' ' + tx({uk:'відповів(ла) на твій лист! Дивись у Кабінеті.', pl:'odpisał(a) na twój list! Zobacz w Koncie.', en:'replied to your letter! See your Account.'})); if (/#\/cabinet/.test(location.hash)) route(); }
+  });
+}
+function wThreadWrap(w, html) {
+  var L = function (uk, pl, en) { return tx({uk:uk, pl:pl, en:en}); }, rp = w.reply;
+  html = html.replace('<summary>', '<summary>' + (rp && rp.msgs ? '<span class="pill ' + (rp.seen ? '' : 'ok') + ' wrpill">📬 ' + esc(rp.who) + (rp.seen ? '' : ' · ' + L('нова відповідь', 'nowa odpowiedź', 'new reply')) + '</span>' : ''));
+  var th = '';
+  if (rp && rp.msgs) {
+    th = '<div class="wthread"><div class="wth-h">📬 ' + L('Листування з', 'Korespondencja z', 'Letters with') + ' <b>' + esc(rp.who) + '</b></div>' + rp.msgs.map(function (m) { return '<div class="wmsg ' + (m.r === 'me' ? 'me' : 'ch') + '"><div class="wm-who">' + (m.r === 'me' ? L('Ти', 'Ty', 'You') : esc(rp.who)) + ' · <span class="muted small">' + fmtDate(m.at) + '</span>' + (m.r === 'me' ? '' : ' <button type="button" class="spk" data-wsay="' + esc(m.t) + '" data-wtg="' + (w.target || 'en') + '">🔊</button>') + '</div><p>' + esc(m.t) + '</p></div>'; }).join('') +
+      (rp.msgs.length < 13 ? (rp.msgs[rp.msgs.length - 1].r === 'me' ? '<p class="muted small" data-retry="' + esc(w.id) + '">⏳ ' + L('Чекаємо на відповідь…', 'Czekamy na odpowiedź…', 'Waiting for a reply…') + '</p>' : '<div class="wreply"><textarea class="inp-s" rows="3" data-wta="' + esc(w.id) + '" placeholder="' + L('Напиши відповідь мовою, яку вивчаєш…', 'Napisz odpowiedź w języku, którego się uczysz…', 'Write back in the language you are learning…') + '"></textarea><button type="button" class="btn btn-red btn-sm" data-wsend="' + esc(w.id) + '">✉ ' + L('Відповісти', 'Odpowiedz', 'Reply') + '</button></div>') : '<p class="muted small">' + L('Листування завершено. Пиши листи в нових уроках!', 'Korespondencja zakończona. Pisz listy w nowych lekcjach!', 'This conversation is over. Write more letters in new lessons!') + '</p>') + '</div>';
+  } else if (w.text && new Date(w.created_at).getTime() > Date.now() - 3 * 86400000) th = '<p class="muted small wth-wait">📬 ' + L('Персонаж скоро відповість на цей лист.', 'Postać wkrótce odpowie na ten list.', 'The character will reply to this letter soon.') + '</p>';
+  return html.replace(/<\/div><\/details>$/, th + '</div></details>');
+}
+function wThreadBind(box, ws) {
+  var W = {}; ws.forEach(function (w) { W[w.id] = w; });
+  box.querySelectorAll('[data-wsay]').forEach(function (b) { b.onclick = function (e) { e.preventDefault(); say(b.dataset.wsay, SPEECH[b.dataset.wtg]); }; });
+  box.querySelectorAll('details.wtxt').forEach(function (d) { d.addEventListener('toggle', function () { var w = W[d.dataset.id]; if (d.open && w && w.reply && !w.reply.seen) { w.reply.seen = true; API.updateWriting(w.id, {reply:w.reply}).catch(function () {}); var pl = d.querySelector('.wrpill'); if (pl) { pl.classList.remove('ok'); pl.textContent = '📬 ' + w.reply.who; } } }); });
+  try { var ow = sessionStorage.getItem('ml_openw'); if (ow) { sessionStorage.removeItem('ml_openw'); var od = box.querySelector('details.wtxt[data-id="' + ow + '"]'); if (od) { od.open = true; setTimeout(function () { var last = od.querySelector('.wmsg:last-of-type') || od; last.scrollIntoView({behavior:'smooth', block:'center'}); }, 200); } } } catch (e) {}
+  var nb = box.querySelector('[data-openw]'); if (nb) nb.onclick = function () { var d = box.querySelector('details.wtxt[data-id="' + nb.dataset.openw + '"]'); if (d) { d.open = true; d.scrollIntoView({behavior:'smooth', block:'start'}); } nb.remove(); };
+  box.querySelectorAll('[data-wsend]').forEach(function (b) { b.onclick = function () {
+    var w = W[b.dataset.wsend], ta = box.querySelector('[data-wta="' + b.dataset.wsend + '"]'), txt = ta.value.trim();
+    if (txt.split(/\s+/).length < 3) { toast(tx({uk:'Напиши хоча б кілька слів', pl:'Napisz chociaż kilka słów', en:'Write at least a few words'}), 'info'); return; }
+    b.disabled = true; ta.disabled = true; b.textContent = '⏳ ' + tx({uk:'Надсилаю…', pl:'Wysyłam…', en:'Sending…'});
+    w.reply.msgs.push({r:'me', t:txt, at:new Date().toISOString()});
+    API.updateWriting(w.id, {reply:w.reply}).then(function () { return wReplyCtx(w); }).then(function (ctx) { ctx.who = w.reply.who; ctx.history = w.reply.msgs; return aiReply(ctx); })
+      .then(function (o) { w.reply.msgs.push({r:'char', t:o.reply, at:new Date().toISOString()}); w.reply.seen = true; return API.updateWriting(w.id, {reply:w.reply}); })
+      .catch(function () { toast(tx({uk:'Лист збережено. Відповідь прийде трохи пізніше.', pl:'List zapisany. Odpowiedź przyjdzie trochę później.', en:'Saved. The reply will come a bit later.'}), 'info'); })
+      .then(function () { try { sessionStorage.setItem('ml_openw', w.id); } catch (e) {} if (API.clearCache) API.clearCache(); route(); });
+  }; });
+  box.querySelectorAll('[data-retry]').forEach(function (el) { var w = W[el.dataset.retry]; wReplyCtx(w).then(function (ctx) { ctx.who = w.reply.who; ctx.history = w.reply.msgs; return aiReply(ctx); }).then(function (o) { w.reply.msgs.push({r:'char', t:o.reply, at:new Date().toISOString()}); w.reply.seen = false; return API.updateWriting(w.id, {reply:w.reply}).then(function () { if (API.clearCache) API.clearCache(); route(); }); }).catch(function () {}); });
+}
 function renderWritings(host) {
   if (!host || !USER) return;
   API.myWritings().then(function (ws) {
     if (!ws.length) return;
     var L = function (uk, pl, en) { return tx({uk:uk, pl:pl, en:en}); };
     var box = document.createElement('div'); box.className = 'box'; box.id = 'myTexts'; box.style.marginTop = '18px';
-    box.innerHTML = '<h4>✍ ' + L('Мої тексти', 'Moje teksty', 'My texts') + '</h4><div class="wtexts">' + ws.map(function (w) {
+    var unseenR = ws.filter(function (w) { return w.reply && w.reply.msgs && !w.reply.seen; });
+    box.innerHTML = '<h4>✍ ' + L('Мої тексти і листи', 'Moje teksty i listy', 'My texts and letters') + '</h4>' + (unseenR.length ? '<button type="button" class="wnewr" data-openw="' + esc(unseenR[0].id) + '">📬 ' + L('Тобі відповів', 'Odpisał(a) ci', 'You have a reply from') + ' <b>' + esc(unseenR[0].reply.who) + '</b>' + (unseenR.length > 1 ? ' +' + (unseenR.length - 1) : '') + ' →</button>' : '') + '<div class="wtexts">' + ws.map(function (w) {
       var n = w.issues && w.issues.ai ? (w.issues.errors || []).length : (w.issues || []).length, st = w.status === 'pending' ? '<span class="pill warn">⏳ ' + L('чекає на перевірку', 'czeka na sprawdzenie', 'waiting for check') + '</span>' : '<span class="pill ' + (n ? 'warn' : 'ok') + '">' + (n ? n + ' ' + L('помилок', 'błędów', 'mistakes') : '✓ ' + L('без помилок', 'bez błędów', 'no mistakes')) + '</span>' + (w.seen ? '' : ' <span class="pill ok">' + L('нове', 'nowe', 'new') + '</span>');
-      return '<details class="wtxt" data-id="' + esc(w.id) + '"' + (w.seen ? '' : ' data-unseen="1"') + '><summary><span>' + FLAG[w.target || 'en'] + ' · ' + fmtDate(w.created_at) + '</span><span class="muted small wsnip">' + esc(String(w.text).slice(0, 60)) + '…</span>' + st + '</summary><div class="wbody"><p class="wfull">' + esc(w.text) + '</p>' + (w.status === 'pending' ? '<p class="muted small">' + L('Ми перевіримо текст автоматично, щойно сервіс буде доступний. Сайт повідомить, коли результат буде готовий.', 'Sprawdzimy tekst automatycznie, gdy usługa będzie dostępna. Strona da znać, gdy wynik będzie gotowy.', 'We will check it automatically when the service is available. The site will notify you.') + '</p>' : '<div class="ltbox">' + issuesHtml(w.text, w.issues) + '</div>') + '</div></details>';
+      return wThreadWrap(w, '<details class="wtxt" data-id="' + esc(w.id) + '"' + (w.seen ? '' : ' data-unseen="1"') + '><summary><span>' + FLAG[w.target || 'en'] + ' · ' + fmtDate(w.created_at) + '</span><span class="muted small wsnip">' + esc(String(w.text).slice(0, 60)) + '…</span>' + st + '</summary><div class="wbody"><p class="wfull">' + esc(w.text) + '</p>' + (w.status === 'pending' ? '<p class="muted small">' + L('Ми перевіримо текст автоматично, щойно сервіс буде доступний. Сайт повідомить, коли результат буде готовий.', 'Sprawdzimy tekst automatycznie, gdy usługa będzie dostępna. Strona da znać, gdy wynik będzie gotowy.', 'We will check it automatically when the service is available. The site will notify you.') + '</p>' : '<div class="ltbox">' + issuesHtml(w.text, w.issues) + '</div>') + '</div></details>');
     }).join('') + '</div>';
-    host.appendChild(box);
+    host.appendChild(box); wThreadBind(box, ws);
     box.querySelectorAll('details[data-unseen]').forEach(function (d) { d.addEventListener('toggle', function () { if (d.open && d.dataset.unseen) { delete d.dataset.unseen; API.updateWriting(+d.dataset.id || d.dataset.id, {seen:true}).catch(function () {}); } }); });
     if (location.hash.indexOf('texts') > -1) box.scrollIntoView({behavior:'smooth'});
   }).catch(function () {});
@@ -1028,7 +1106,7 @@ function runPlayer(container, lesson, onFinish, ctxLs) {
   }
   function render0() {
     card.classList.remove('tin'); void card.offsetWidth; card.classList.add('tin');
-    var tk = tasks[cur]; if (cur > maxReached) maxReached = cur; if (!snaps[cur] && tStart[cur] == null) tStart[cur] = Date.now(); renderSide();
+    var tk = tasks[cur]; if (cur > maxReached) maxReached = cur; if (!snaps[cur] && tStart[cur] == null) tStart[cur] = Date.now(); renderSide(); lpSave();
     if (snaps[cur]) { card.innerHTML = '<div class="tlock">🔒 ' + t('Відповідь уже дано. Щоб змінити, пройди урок ще раз.') + '</div>' + snaps[cur]; bindSay(tk); var nb = card.querySelector('#tnext'); if (nb) { nb.hidden = false; nb.disabled = false; nb.textContent = cur < tasks.length - 1 ? t('Далі') : t('Показати результат'); nb.onclick = next; } return; }
     var h = head(tk), type = tk.type;
     if (type === 'intro') {
@@ -1132,14 +1210,15 @@ function runPlayer(container, lesson, onFinish, ctxLs) {
         sb0.textContent = '⏳ ' + tx({uk:'Вчитель-ШІ перевіряє…', pl:'Nauczyciel AI sprawdza…', en:'AI teacher is checking…'});
         smartCheck(finalText, taskQ, TARGET).then(function (r) {
           fin0(); var box = document.createElement('div'); box.className = 'ltbox'; box.innerHTML = issuesHtml(finalText, r.issues); ta.insertAdjacentElement('afterend', box);
-          if (USER) API.saveWriting(Object.assign({}, base, {status:'checked', issues:r.issues, score:r.score, checked_at:new Date().toISOString(), seen:true})).catch(function () {});
+          if (USER) API.saveWriting(Object.assign({}, base, {status:'checked', issues:r.issues, score:r.score, checked_at:new Date().toISOString(), seen:true})).then(function () { setTimeout(processReplies, 500); }).catch(function () {});
+          if (USER) { var nt = document.createElement('p'); nt.className = 'muted small wth-wait'; nt.innerHTML = '📬 ' + tx({uk:'Герой, якому ти писав(ла), відповість на лист — відповідь з\'явиться в <a href="#/cabinet">Кабінеті</a>.', pl:'Bohater, do którego pisałeś(-aś), odpisze — odpowiedź pojawi się w <a href="#/cabinet">Koncie</a>.', en:'The character you wrote to will reply — find it in your <a href="#/cabinet">Account</a>.'}); box.insertAdjacentElement('afterend', nt); }
           var msg = r.wrongLang ? tx({uk:'Текст написано не тією мовою. ', pl:'Tekst jest w innym języku. ', en:'Wrong language. '}) : r.pass ? t('Відповідь збережено! ') : tx({uk:'Текст збережено. Переглянь виправлення вище. ', pl:'Tekst zapisany. Przejrzyj poprawki powyżej. ', en:'Text saved. Review the corrections above. '});
           done(!!r.pass, msg + (lf(tk, 'tip') || ''));
         }).catch(function () {
           fin0(); var wait = document.createElement('div'); wait.className = 'ltbox ltwait';
           wait.innerHTML = '<b>⏳ ' + tx({uk:'Перевірку тексту відкладено', pl:'Sprawdzenie tekstu odłożone', en:'Text check postponed'}) + '</b><p>' + (USER ? tx({uk:'Сервіс перевірки зараз перевантажений. Твій текст збережено — ми перевіримо його автоматично, щойно сервіс звільниться. Результат побачиш у <a href="#/cabinet">Кабінет → Мої тексти</a>, а коли він буде готовий, сайт тебе повідомить.', pl:'Usługa sprawdzania jest teraz przeciążona. Twój tekst jest zapisany — sprawdzimy go automatycznie, gdy usługa będzie dostępna. Wynik zobaczysz w <a href="#/cabinet">Konto → Moje teksty</a>, a strona da ci znać, gdy będzie gotowy.', en:'The checking service is busy right now. Your text is saved — we will check it automatically as soon as it is available. You will find the result in <a href="#/cabinet">Account → My texts</a>, and the site will let you know when it is ready.'}) : tx({uk:'Сервіс перевірки зараз перевантажений. Створи кабінет, щоб зберігати тексти й отримувати перевірку пізніше.', pl:'Usługa sprawdzania jest teraz przeciążona. Załóż konto, aby zapisywać teksty i otrzymać sprawdzenie później.', en:'The checking service is busy. Create an account to save texts and get them checked later.'})) + '</p>';
           ta.insertAdjacentElement('afterend', wait);
-          if (USER) API.saveWriting(Object.assign({}, base, {status:'pending'})).then(function () { setTimeout(processPendingWritings, 60000); }).catch(function () {});
+          if (USER) API.saveWriting(Object.assign({}, base, {status:'pending'})).then(function () { setTimeout(processPendingWritings, 60000); setTimeout(processReplies, 1500); }).catch(function () {});
           done(true, t('Відповідь збережено! ') + (lf(tk, 'tip') || ''));
         }); }; }
   }
@@ -1188,7 +1267,7 @@ function runPlayer(container, lesson, onFinish, ctxLs) {
     card.querySelectorAll('.topt,#tsubmit,#tcheck').forEach(function (x) { x.disabled = true; });
     card.querySelectorAll('button:not(#tnext):not(#tsay):not(#ruleBtn):not(.g-chip):not(.spk),input:not(.g-q),select:not(.g-sel),textarea').forEach(function (x) { x.disabled = true; });
     var n = card.querySelector('#tnext'); n.hidden = false; n.textContent = cur < tasks.length - 1 ? t('Далі') : t('Показати результат');
-    snaps[cur] = card.innerHTML;
+    snaps[cur] = card.innerHTML; lpSave();
     renderSide(); n.onclick = next; n.focus();
   }
   function answerMC(b) {
@@ -1201,12 +1280,17 @@ function runPlayer(container, lesson, onFinish, ctxLs) {
   function next() { if (cur < tasks.length - 1) { cur++; render(); } else if (res.filter(function (x, i) { return !isInfo(tasks[i].type) && x == null; }).length && firstOpen() > -1) { cur = firstOpen(); render(); toast(t('Є завдання без відповіді'), 'info'); } else finish(); }
   function firstOpen() { for (var i = 0; i < tasks.length; i++) if (!isInfo(tasks[i].type) && res[i] == null) return i; return -1; }
   function finish() {
+    lpClear();
     var per = tasks.map(function (tk, i) { var o = {n:i, type:tk.type, sec:durs[i] || 0, ok:res[i] == null ? null : !!res[i]}; if (hints[i]) o.h = hints[i]; return o; }); LAST_TIMES = {total:per.reduce(function (a, x) { return a + x.sec; }, 0), per:per};
     if (typeof sessTrack === 'function') sessTrack(lesson.id, tasks.length, tasks.length, true);
     var sc = res.filter(function (x) { return x === true; }).length, pct = scored ? Math.round(sc / scored * 100) : 0; cur = tasks.length; renderSide();
     card.innerHTML = '<div class="tres"><span class="ttag">' + t('РЕЗУЛЬТАТ') + '</span><div class="big">' + sc + ' / ' + scored + '</div><p class="lead" style="text-align:center" id="tresText">' + pct + '%</p><div id="tresExtra" style="width:100%"></div><div class="row" style="justify-content:center" id="tresBtns"></div></div>';
-    onFinish(pct, finalText, card.querySelector('#tresText'), card.querySelector('#tresBtns'), function () { cur = 0; res = []; snaps = []; hints = {}; maxReached = FREE ? tasks.length - 1 : 0; tStart = {}; durs = {}; render(); }, card.querySelector('#tresExtra'));
+    onFinish(pct, finalText, card.querySelector('#tresText'), card.querySelector('#tresBtns'), function () { cur = 0; res = []; snaps = []; hints = {}; finalText = ''; maxReached = FREE ? tasks.length - 1 : 0; tStart = {}; durs = {}; render(); }, card.querySelector('#tresExtra'));
   }
+  var LPK = 'ml_lp_' + lesson.id + '_' + TARGET;
+  function lpSave() { if (FREE || !lesson.id) return; try { localStorage.setItem(LPK, JSON.stringify({n:tasks.length, cur:cur, maxReached:maxReached, res:res, snaps:snaps, durs:durs, hints:hints, finalText:finalText})); localStorage.setItem('ml_resume', JSON.stringify({lid:lesson.id, cid:lesson.course_id, tg:TARGET, num:lesson.num, idx:cur, n:tasks.length, at:Date.now()})); } catch (e) {} }
+  function lpClear() { if (FREE || !lesson.id) return; try { localStorage.removeItem(LPK); var ls2 = ctxLs || [], ix = ls2.map(function (x) { return x.id; }).indexOf(lesson.id), nx = ls2[ix + 1]; if (nx) localStorage.setItem('ml_resume', JSON.stringify({lid:nx.id, cid:nx.course_id, tg:TARGET, num:nx.num, idx:0, n:0, fresh:true, at:Date.now()})); else localStorage.removeItem('ml_resume'); } catch (e) {} }
+  if (!FREE) { try { var sv = JSON.parse(localStorage.getItem(LPK) || 'null'); if (sv && sv.n === tasks.length && sv.cur > 0) { cur = Math.min(sv.cur, tasks.length - 1); maxReached = sv.maxReached || cur; res = sv.res || []; snaps = sv.snaps || []; durs = sv.durs || {}; hints = sv.hints || {}; finalText = sv.finalText || ''; setTimeout(function () { toast(tx({uk:'Продовжуємо з того місця, де ти зупинився', pl:'Kontynuujemy od miejsca, w którym skończyłeś', en:'Picking up where you left off'}), 'info'); }, 300); } } catch (e) {} }
   loadGuide(TARGET).catch(function () {});
   if (!tasks.length) { card.innerHTML = t('<div class="empty">У цьому уроці ще немає завдань.</div>'); return; }
   render();
@@ -2543,6 +2627,6 @@ Promise.all([API.getUser().catch(function () { return null; }), API.getSettings(
   renderNav(); route();
   if (!LANG_SET) langModal(true);
   setTimeout(function () { API.prefetch(); }, 300);
-  setTimeout(processPendingWritings, 4000); setTimeout(loadTtsSet, 1500); setInterval(processPendingWritings, 5 * 60 * 1000);
+  setTimeout(processPendingWritings, 4000); setTimeout(processReplies, 9000); setInterval(processReplies, 4 * 60 * 1000); setTimeout(loadTtsSet, 1500); setInterval(processPendingWritings, 5 * 60 * 1000);
 });
 })();
