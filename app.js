@@ -497,6 +497,7 @@ function renderMobileNav() {
     var w = mbox('<div class="msheet">' + (USER ? '<div class="mrow muted small">' + esc(USER.name || '') + ' · ' + esc(USER.email || '') + '</div>' : '') +
       '<button type="button" class="mitemrow" id="msLang">🌐 ' + L('Мови', 'Języki', 'Languages') + '<b>🎬 ' + FLAG[TARGET] + ' · 💬 ' + FLAG[LANG] + '</b></button>' +
       '<button type="button" class="mitemrow" id="msTheme">' + (THEME === 'dark' ? '☀ ' + L('Світла тема', 'Jasny motyw', 'Light theme') : '☾ ' + L('Темна тема', 'Ciemny motyw', 'Dark theme')) + '</button>' +
+      (USER ? '<a class="mitemrow" href="#/chats">💬 ' + L('Чати з героями', 'Czaty z bohaterami', 'Chats with characters') + '</a>' : '') +
       '<a class="mitemrow" href="#/guide">📘 ' + L('Посібник з граматики', 'Poradnik gramatyczny', 'Grammar guide') + '</a>' +
       (USER ? '<a class="mitemrow" href="#/words">📖 ' + L('Мій словник', 'Mój słownik', 'My words') + '</a>' : '') +
       '<a class="mitemrow" href="#/pricing">💳 ' + L('Тарифи', 'Cennik', 'Pricing') + '</a>' +
@@ -511,7 +512,7 @@ function renderMobileNav() {
   };
 }
 function renderNav() {
-  var links = '<a href="#/">' + tx({uk:'Головна', pl:'Strona główna', en:'Home'}) + '</a><a href="#/catalog">' + tx({uk:'Каталог', pl:'Katalog', en:'Catalogue'}) + '</a><a href="#/trial">' + tx({uk:'Пробний урок', pl:'Lekcja próbna', en:'Trial lesson'}) + '</a>' + (USER ? '' : '<a href="#/test">' + tx({uk:'Тест рівня', pl:'Test poziomu', en:'Level test'}) + '</a>') + '<a href="#/guide">' + tx({uk:'Посібник', pl:'Poradnik', en:'Guide'}) + '</a>' + (USER ? '<a href="#/words">' + tx({uk:'Словник', pl:'Słownik', en:'Words'}) + '</a>' : '') + '<a href="#/pricing">' + tx({uk:'Тарифи', pl:'Cennik', en:'Pricing'}) + '</a>';
+  var links = '<a href="#/">' + tx({uk:'Головна', pl:'Strona główna', en:'Home'}) + '</a><a href="#/catalog">' + tx({uk:'Каталог', pl:'Katalog', en:'Catalogue'}) + '</a><a href="#/trial">' + tx({uk:'Пробний урок', pl:'Lekcja próbna', en:'Trial lesson'}) + '</a>' + (USER ? '' : '<a href="#/test">' + tx({uk:'Тест рівня', pl:'Test poziomu', en:'Level test'}) + '</a>') + '<a href="#/guide">' + tx({uk:'Посібник', pl:'Poradnik', en:'Guide'}) + '</a>' + (USER ? '<a href="#/chats">' + tx({uk:'Чати', pl:'Czaty', en:'Chats'}) + '</a><a href="#/words">' + tx({uk:'Словник', pl:'Słownik', en:'Words'}) + '</a>' : '') + '<a href="#/pricing">' + tx({uk:'Тарифи', pl:'Cennik', en:'Pricing'}) + '</a>';
   if (USER) links += '<a href="#/cabinet">' + tx({uk:'Кабінет', pl:'Konto', en:'Account'}) + '</a>';
   if (isAdm()) links += '<a href="#/admin" style="color:var(--nav-admin)">' + tx({uk:'Адмін', pl:'Admin', en:'Admin'}) + '</a>';
   document.getElementById('navlinks').innerHTML = links;
@@ -994,7 +995,7 @@ function processReplies() {
     }); }, Promise.resolve());
   }).catch(function () {}).then(function () {
     PR_BUSY = false;
-    if (got.length) { if (API.clearCache) API.clearCache(); toast('📬 ' + got[0] + ' ' + tx({uk:'відповів(ла) на твій лист! Дивись у Кабінеті.', pl:'odpisał(a) na twój list! Zobacz w Koncie.', en:'replied to your letter! See your Account.'})); if (/#\/cabinet/.test(location.hash)) route(); }
+    if (got.length) { if (API.clearCache) API.clearCache(); toast('💬 ' + got[0] + ' ' + tx({uk:'відповів(ла) на твій лист! Відкрий «Чати».', pl:'odpisał(a) na twój list! Otwórz „Czaty”.', en:'replied to your letter! Open “Chats”.'})); if (/#\/(cabinet|chats)/.test(location.hash)) route(); }
   });
 }
 function wThreadWrap(w, html) {
@@ -1002,8 +1003,7 @@ function wThreadWrap(w, html) {
   html = html.replace('<summary>', '<summary>' + (rp && rp.msgs ? '<span class="pill ' + (rp.seen ? '' : 'ok') + ' wrpill">📬 ' + esc(rp.who) + (rp.seen ? '' : ' · ' + L('нова відповідь', 'nowa odpowiedź', 'new reply')) + '</span>' : ''));
   var th = '';
   if (rp && rp.msgs) {
-    th = '<div class="wthread"><div class="wth-h">📬 ' + L('Листування з', 'Korespondencja z', 'Letters with') + ' <b>' + esc(rp.who) + '</b></div>' + rp.msgs.map(function (m) { return '<div class="wmsg ' + (m.r === 'me' ? 'me' : 'ch') + '"><div class="wm-who">' + (m.r === 'me' ? L('Ти', 'Ty', 'You') : esc(rp.who)) + ' · <span class="muted small">' + fmtDate(m.at) + '</span>' + (m.r === 'me' ? '' : ' <button type="button" class="spk" data-wsay="' + esc(m.t) + '" data-wtg="' + (w.target || 'en') + '">🔊</button>') + '</div><p>' + esc(m.t) + '</p></div>'; }).join('') +
-      (rp.msgs.length < 13 ? (rp.msgs[rp.msgs.length - 1].r === 'me' ? '<p class="muted small" data-retry="' + esc(w.id) + '">⏳ ' + L('Чекаємо на відповідь…', 'Czekamy na odpowiedź…', 'Waiting for a reply…') + '</p>' : '<div class="wreply"><textarea class="inp-s" rows="3" data-wta="' + esc(w.id) + '" placeholder="' + L('Напиши відповідь мовою, яку вивчаєш…', 'Napisz odpowiedź w języku, którego się uczysz…', 'Write back in the language you are learning…') + '"></textarea><button type="button" class="btn btn-red btn-sm" data-wsend="' + esc(w.id) + '">✉ ' + L('Відповісти', 'Odpowiedz', 'Reply') + '</button></div>') : '<p class="muted small">' + L('Листування завершено. Пиши листи в нових уроках!', 'Korespondencja zakończona. Pisz listy w nowych lekcjach!', 'This conversation is over. Write more letters in new lessons!') + '</p>') + '</div>';
+    th = '<a class="btn btn-ghost btn-sm wchatlink" href="#/chats">💬 ' + L('Відкрити чат з', 'Otwórz czat z', 'Open chat with') + ' ' + esc(rp.who) + ' →</a>';
   } else if (w.text && new Date(w.created_at).getTime() > Date.now() - 3 * 86400000) th = '<p class="muted small wth-wait">📬 ' + L('Персонаж скоро відповість на цей лист.', 'Postać wkrótce odpowie na ten list.', 'The character will reply to this letter soon.') + '</p>';
   return html.replace(/<\/div><\/details>$/, th + '</div></details>');
 }
@@ -1025,9 +1025,139 @@ function wThreadBind(box, ws) {
   }; });
   box.querySelectorAll('[data-retry]').forEach(function (el) { var w = W[el.dataset.retry]; wReplyCtx(w).then(function (ctx) { ctx.who = w.reply.who; ctx.history = w.reply.msgs; return aiReply(ctx); }).then(function (o) { w.reply.msgs.push({r:'char', t:o.reply, at:new Date().toISOString()}); w.reply.seen = false; return API.updateWriting(w.id, {reply:w.reply}).then(function () { if (API.clearCache) API.clearCache(); route(); }); }).catch(function () {}); });
 }
+/* ================= messenger with course characters ================= */
+var CHAT_MAX = 40;
+function chNorm(s) { return String(s || '').toLowerCase().replace(/[^\p{L} ]+/gu, ' ').replace(/\s+/g, ' ').trim(); }
+function chSame(a, b) { a = chNorm(a); b = chNorm(b); if (!a || !b) return false; if (a === b || a.indexOf(b) > -1 || b.indexOf(a) > -1) return true; var la = a.split(' '), lb = b.split(' '); return la[la.length - 1] === lb[lb.length - 1] && la[la.length - 1].length > 3 || la[0] === lb[0] && la[0].length > 3; }
+function chColor(s) { var h = 0; s = String(s || ''); for (var i = 0; i < s.length; i++) h = (h * 31 + s.charCodeAt(i)) % 360; return 'hsl(' + h + ' 55% 45%)'; }
+function chAva(name, big) { var p = String(name || '?').trim().split(/\s+/); return '<span class="ch-ava' + (big ? ' big' : '') + '" style="background:' + chColor(name) + '">' + esc((p[0][0] || '?') + (p[1] ? p[1][0] : '')).toUpperCase() + '</span>'; }
+function chTime(at) { if (!at) return ''; var d = new Date(at), now = new Date(); return d.toDateString() === now.toDateString() ? String(d.getHours()).padStart(2, '0') + ':' + String(d.getMinutes()).padStart(2, '0') : fmtDate(at); }
+function chParseTask(task) { var m = /^chat:([^|]*)\|(.*)$/.exec(String(task || '')); return m ? {who:m[1], cid:m[2]} : null; }
+/* Build contacts: course characters (from "cards" tasks) + everyone who has written back */
+function chLoad() {
+  return Promise.all([API.myWritings(), API.myEnrollments().catch(function () { return []; })]).then(function (r) {
+    var ws = r[0] || [], cids = (r[1] || []).slice();
+    var lessonIds = {}; ws.forEach(function (w) { if (w.lesson_id) lessonIds[w.lesson_id] = 1; });
+    return Promise.all(Object.keys(lessonIds).map(function (id) { return API.getLesson(id).catch(function () { return null; }); })).then(function (ls) {
+      var LC = {}; ls.forEach(function (l) { if (l) { LC[l.id] = l.course_id; if (cids.indexOf(l.course_id) < 0) cids.push(l.course_id); } });
+      ws.forEach(function (w) { var p = chParseTask(w.task); if (p && p.cid && cids.indexOf(p.cid) < 0) cids.push(p.cid); });
+      return Promise.all(cids.map(function (cid) { return Promise.all([API.getCourse(cid).catch(function () { return null; }), API.listLessons(cid).catch(function () { return []; })]); })).then(function (cs) {
+        var contacts = [], byKey = {};
+        function add(cid, course, name, role, alias) { var al = [name].concat(alias || []).filter(Boolean); var ex = contacts.filter(function (c) { return c.cid === cid && c.alias.some(function (a) { return al.some(function (b) { return chSame(a, b); }); }); })[0]; if (ex) { if (role && !ex.role) ex.role = role; al.forEach(function (a) { if (ex.alias.indexOf(a) < 0) ex.alias.push(a); }); return ex; } var c = {key:cid + '~' + chNorm(al[al.length - 1]).replace(/ /g, '-'), cid:cid, course:course, name:name, aiName:al[al.length - 1], alias:al, role:role || '', threads:[]}; contacts.push(c); byKey[c.key] = c; return c; }
+        cs.forEach(function (x, i) { var c = x[0]; if (!c) return; (x[1] || []).forEach(function (l) { (lessonTasks(l) || l.tasks || []).forEach(function (tk) { if (tk.type === 'cards') (tk.cards || []).forEach(function (cd) { add(cids[i], c, LANG === 'uk' ? (cd.uk || cd.en) : (cd.en || cd.uk), lf(cd, 'role'), [cd.uk, cd.en]); }); }); }); });
+        var CM = {}; cs.forEach(function (x, i) { if (x[0]) CM[cids[i]] = x[0]; });
+        ws.forEach(function (w) {
+          var p = chParseTask(w.task), cid = p ? p.cid : LC[w.lesson_id], who = p ? p.who : (w.reply && w.reply.who);
+          if (!cid || !who || !CM[cid]) return;
+          add(cid, CM[cid], who).threads.push(w);
+        });
+        contacts.forEach(function (c) {
+          c.threads.sort(function (a, b) { return a.created_at < b.created_at ? -1 : 1; });
+          c.msgs = []; c.unread = 0;
+          c.threads.forEach(function (w) {
+            var p = chParseTask(w.task);
+            if (!p) c.msgs.push({r:'me', t:w.text, at:w.created_at, chk:w.issues && w.issues.ai ? w.issues : null, letter:true, w:w});
+            ((w.reply && w.reply.msgs) || []).forEach(function (m, k) { c.msgs.push({r:m.r, t:m.t, at:m.at, chk:m.chk || (p && k === 0 && w.issues && w.issues.ai ? w.issues : null), w:w, k:k}); });
+            if (w.reply && w.reply.msgs && !w.reply.seen) c.unread++;
+          });
+          c.last = c.msgs[c.msgs.length - 1] || null;
+          c.target = (c.threads[c.threads.length - 1] || {}).target || TARGET;
+        });
+        contacts.sort(function (a, b) { var A = a.last ? a.last.at : '', B = b.last ? b.last.at : ''; return A === B ? (a.name < b.name ? -1 : 1) : (A < B ? 1 : -1); });
+        return {contacts:contacts, byKey:byKey};
+      });
+    });
+  });
+}
+function chCheckHtml(chk, open) {
+  if (!chk) return '';
+  var n = (chk.errors || []).length, L = function (uk, pl, en) { return tx({uk:uk, pl:pl, en:en}); };
+  if (chk.pending) return '<div class="ch-chk wait">⏳ ' + L('Перевіряю помилки…', 'Sprawdzam błędy…', 'Checking mistakes…') + '</div>';
+  if (chk.fail) return '<div class="ch-chk wait">' + L('Перевірка зараз недоступна', 'Sprawdzanie teraz niedostępne', 'Check unavailable right now') + '</div>';
+  return '<details class="ch-chk ' + (n ? 'bad' : 'ok') + '"' + (open ? ' open' : '') + '><summary>' + (n ? '✍ ' + n + ' ' + L('помилк' + (n === 1 ? 'а' : n < 5 ? 'и' : ''), n === 1 ? 'błąd' : n < 5 ? 'błędy' : 'błędów', n === 1 ? 'mistake' : 'mistakes') : '✓ ' + L('без помилок', 'bez błędów', 'no mistakes')) + (chk.score != null ? ' · ' + chk.score + '/100' : '') + '</summary>' +
+    (n ? '<ul>' + chk.errors.map(function (e) { return '<li><s>' + esc(e.wrong) + '</s> → <b>' + esc(e.fix) + '</b><br><span>' + esc(e.why) + '</span></li>'; }).join('') + '</ul>' : '') + (chk.comment ? '<p>' + esc(chk.comment) + '</p>' : '') + '</details>';
+}
+function chFit() {
+  var w = document.getElementById('chats'); if (!w) return;
+  if (window.innerWidth > 760 || !w.classList.contains('has-cur')) { w.style.removeProperty('--chh'); return; }
+  var nav = document.querySelector('nav.top'), mn = document.getElementById('mnav'), top = nav ? nav.getBoundingClientRect().bottom : 60, bot = mn ? window.innerHeight - mn.getBoundingClientRect().top : 90;
+  window.scrollTo(0, w.getBoundingClientRect().top + window.scrollY - top - 8);
+  w.style.setProperty('--chh', Math.max(320, window.innerHeight - top - bot - 16) + 'px');
+}
+window.addEventListener('resize', function () { if (/#\/chats/.test(location.hash)) chFit(); });
+function viewChats(key) {
+  if (!requireUser()) return Promise.resolve();
+  var L = function (uk, pl, en) { return tx({uk:uk, pl:pl, en:en}); };
+  $app.innerHTML = '<div class="page"><p class="muted">' + L('Відкриваю чати…', 'Otwieram czaty…', 'Opening chats…') + '</p></div>';
+  return chLoad().then(function (D) {
+    var cur = key ? D.byKey[decodeURIComponent(key)] : null, q = '';
+    $app.innerHTML = '<div class="page chats-page"><div class="sec-head"><div class="eyebrow">💬 ' + L('Чати з героями', 'Czaty z bohaterami', 'Chats with characters') + '</div><h2>' + L('Пиши героям курсу — вони відповідають', 'Pisz do bohaterów — oni odpisują', 'Write to the characters — they write back') + '</h2></div>' +
+      '<div class="chats' + (cur ? ' has-cur' : '') + '" id="chats"><aside class="ch-list"><input class="inp-s ch-q" id="chQ" type="search" placeholder="' + L('Пошук героя…', 'Szukaj bohatera…', 'Find a character…') + '"><div id="chL"></div></aside><section class="ch-win" id="chW"></section></div></div>';
+    var listEl = document.getElementById('chL'), win = document.getElementById('chW'), wrap = document.getElementById('chats');
+    function drawList() {
+      if (!D.contacts.length) { listEl.innerHTML = '<p class="muted small" style="padding:12px">' + L('Ще немає героїв. Почни будь-який курс — і герої з\'являться тут.', 'Brak bohaterów. Zacznij dowolny kurs — pojawią się tutaj.', 'No characters yet. Start a course and they will appear here.') + '</p>'; return; }
+      var ql = q.toLowerCase(), groups = {}, order = [];
+      D.contacts.forEach(function (c) { if (ql && (c.name + ' ' + tr(c.course, 'title')).toLowerCase().indexOf(ql) < 0) return; var g = c.last ? '_active' : c.cid; if (!groups[g]) { groups[g] = []; order.push(g); } groups[g].push(c); });
+      order.sort(function (a, b) { return a === '_active' ? -1 : b === '_active' ? 1 : 0; });
+      listEl.innerHTML = order.map(function (g) { return '<div class="ch-grp">' + (g === '_active' ? L('Листування', 'Rozmowy', 'Conversations') : esc(tr(groups[g][0].course, 'title'))) + '</div>' + groups[g].map(function (c) {
+        return '<a class="ch-item' + (c === cur ? ' on' : '') + '" href="#/chats/' + encodeURIComponent(c.key) + '">' + chAva(c.name) + '<span class="ch-it"><b>' + esc(c.name) + '</b><span class="muted small">' + (c.last ? (c.last.r === 'me' ? L('Ти: ', 'Ty: ', 'You: ') : '') + esc(String(c.last.t).slice(0, 48)) : esc(c.role || tr(c.course, 'title'))) + '</span></span><span class="ch-meta">' + (c.last ? '<span class="muted small">' + chTime(c.last.at) + '</span>' : '') + (c.unread ? '<i class="ch-badge">' + c.unread + '</i>' : '') + '</span></a>'; }).join(''); }).join('') || '<p class="muted small" style="padding:12px">' + L('Нічого не знайдено.', 'Nic nie znaleziono.', 'Nothing found.') + '</p>';
+    }
+    function drawWin() {
+      if (!cur) { win.innerHTML = '<div class="ch-empty">💬<p>' + L('Обери героя зліва, щоб почати листування.', 'Wybierz bohatera po lewej, aby zacząć rozmowę.', 'Pick a character on the left to start chatting.') + '</p></div>'; return; }
+      var c = cur, last = c.threads[c.threads.length - 1], waiting = c.last && c.last.r === 'me', full = last && last.reply && last.reply.msgs && last.reply.msgs.length >= CHAT_MAX;
+      var day = '';
+      win.innerHTML = '<header class="ch-head"><a class="ch-back" href="#/chats">←</a>' + chAva(c.name, true) + '<div><b>' + esc(c.name) + '</b><div class="muted small">' + esc(tr(c.course, 'title')) + ' · ' + FLAG[c.target] + (c.role ? ' · ' + esc(c.role) : '') + '</div></div></header>' +
+        '<div class="ch-msgs" id="chM">' + (c.msgs.length ? '' : '<div class="ch-hint">' + L('Напиши першим! Привітайся, запитай щось про сцену або розкажи про свій день — мовою, яку вивчаєш.', 'Napisz pierwszy! Przywitaj się, zapytaj o scenę albo opowiedz o swoim dniu — w języku, którego się uczysz.', 'Write first! Say hi, ask about a scene or tell them about your day — in the language you are learning.') + '</div>') +
+        c.msgs.map(function (m, i) {
+          var d = fmtDate(m.at), sep = d !== day ? '<div class="ch-day">' + d + '</div>' : ''; day = d;
+          return sep + '<div class="ch-row ' + (m.r === 'me' ? 'me' : 'them') + '"><div class="ch-bub">' + (m.letter ? '<div class="ch-tag">✉ ' + L('лист з уроку', 'list z lekcji', 'letter from a lesson') + '</div>' : '') + '<p>' + esc(m.t) + '</p><div class="ch-foot">' + (m.r === 'me' ? '' : '<button type="button" class="spk" data-csay="' + i + '">🔊</button>') + '<span>' + chTime(m.at) + '</span></div></div>' + (m.r === 'me' ? chCheckHtml(m.chk, i === c.msgs.length - 1 || (i === c.msgs.length - 2 && !waiting)) : '') + '</div>';
+        }).join('') + (waiting ? '<div class="ch-row them"><div class="ch-bub ch-typing"><i></i><i></i><i></i></div></div>' : '') + '</div>' +
+        (full ? '<p class="muted small ch-full">' + L('Ця розмова дуже довга — напиши новий лист в уроці, щоб почати нову.', 'Ta rozmowa jest bardzo długa — napisz nowy list w lekcji.', 'This conversation is very long — write a new letter in a lesson to start another.') + '</p>' :
+        '<form class="ch-send" id="chF"><textarea id="chT" rows="1" placeholder="' + L('Повідомлення мовою курсу…', 'Wiadomość w języku kursu…', 'Message in the course language…') + '"></textarea><button class="btn btn-red" type="submit" id="chB" aria-label="' + L('Надіслати', 'Wyślij', 'Send') + '">➤</button></form>');
+      chFit(); var M = document.getElementById('chM'); M.scrollTop = M.scrollHeight;
+      win.querySelectorAll('[data-csay]').forEach(function (b) { b.onclick = function () { say(c.msgs[+b.dataset.csay].t, SPEECH[c.target]); }; });
+      if (c.unread) { c.threads.forEach(function (w) { if (w.reply && !w.reply.seen) { w.reply.seen = true; API.updateWriting(w.id, {reply:w.reply}).catch(function () {}); } }); c.unread = 0; drawList(); }
+      var T = document.getElementById('chT'), F = document.getElementById('chF');
+      if (T) { T.oninput = function () { T.style.height = 'auto'; T.style.height = Math.min(140, T.scrollHeight) + 'px'; }; T.onkeydown = function (e) { if (e.key === 'Enter' && !e.shiftKey && window.innerWidth > 760) { e.preventDefault(); F.requestSubmit(); } }; if (window.innerWidth > 760) T.focus({preventScroll:true}); }
+      if (F) F.onsubmit = function (e) { e.preventDefault(); send(T.value.trim()); };
+      if (waiting) retry();
+    }
+    function persist(w) { return w.id ? API.updateWriting(w.id, {reply:w.reply}) : Promise.resolve(); }
+    function analyse(w, m) {
+      m.chk = {pending:true}; persist(w);
+      return aiCheck(m.t, tx({uk:'Повідомлення в чаті героєві ', pl:'Wiadomość na czacie do ', en:'Chat message to '}) + (cur.aiName || cur.name) + '. ' + tx({uk:'Оцінюй лише мовні помилки, не тему.', pl:'Oceniaj tylko błędy językowe.', en:'Judge only language mistakes, not the topic.'}), w.target || TARGET)
+        .then(function (o) { m.chk = {ai:1, score:o.score, lang_ok:o.lang_ok, comment:o.comment, errors:o.errors || []}; }).catch(function () { m.chk = {fail:true}; }).then(function () { return persist(w); });
+    }
+    function ask(w) {
+      var c = cur;
+      return wReplyCtx(w).then(function (ctx) { ctx.who = c.aiName || c.name; if (chParseTask(w.task)) { ctx.task = 'Free text chat with ' + (c.aiName || c.name) + ' (course ' + (c.course.title_en || c.course.title) + ')'; ctx.course = c.course.title_en || c.course.title; } ctx.history = w.reply.msgs.map(function (m) { return {r:m.r, t:m.t}; }); if (chParseTask(w.task)) { ctx.text = ctx.history[0].t; ctx.history = ctx.history.slice(1); } return aiReply(ctx); })
+        .then(function (o) { w.reply.msgs.push({r:'char', t:o.reply, at:new Date().toISOString()}); w.reply.seen = true; return persist(w); });
+    }
+    var busy = false;
+    function retry() { if (busy) return; busy = true; var w = cur.threads[cur.threads.length - 1]; ask(w).catch(function () {}).then(function () { busy = false; refresh(); }); }
+    function send(txt) {
+      if (busy || !txt) return; if (txt.split(/\s+/).length < 2) { toast(L('Напиши хоча б кілька слів', 'Napisz chociaż kilka słów', 'Write at least a few words'), 'info'); return; }
+      busy = true; var c = cur, w = c.threads[c.threads.length - 1], now = new Date().toISOString(), startP;
+      if (!w) {
+        w = {lesson_id:null, target:TARGET, support:LANG, task:'chat:' + (c.aiName || c.name) + '|' + c.cid, text:txt, status:'checked', seen:true, reply:{who:c.aiName || c.name, seen:true, msgs:[{r:'me', t:txt, at:now}]}};
+        startP = API.saveWriting(w).then(function (row) { if (row && row.id) w.id = row.id; c.threads.push(w); });
+      } else { if (!w.reply) w.reply = {who:c.aiName || c.name, seen:true, msgs:[]}; w.reply.msgs.push({r:'me', t:txt, at:now}); startP = persist(w); }
+      var m = w.reply.msgs[w.reply.msgs.length - 1];
+      c.msgs.push({r:'me', t:txt, at:now, chk:{pending:true}, w:w}); c.last = c.msgs[c.msgs.length - 1];
+      drawWin(); drawList();
+      startP.then(function () { return Promise.all([analyse(w, m), ask(w).catch(function () { toast(L('Герой зараз зайнятий — відповість трохи пізніше.', 'Bohater jest zajęty — odpisze trochę później.', 'The character is busy — they will reply a bit later.'), 'info'); })]); })
+        .then(function () { busy = false; refresh(); });
+    }
+    function refresh() { if (API.clearCache) API.clearCache(); var k = cur && cur.key; chLoad().then(function (D2) { D = D2; cur = k ? D.byKey[k] : null; drawList(); drawWin(); }); }
+    document.getElementById('chQ').oninput = function (e) { q = e.target.value.trim(); drawList(); };
+    drawList(); drawWin();
+  });
+}
+
 function renderWritings(host) {
   if (!host || !USER) return;
   API.myWritings().then(function (ws) {
+    ws = ws.filter(function (w) { return !chParseTask(w.task); });
     if (!ws.length) return;
     var L = function (uk, pl, en) { return tx({uk:uk, pl:pl, en:en}); };
     var box = document.createElement('div'); box.className = 'box'; box.id = 'myTexts'; box.style.marginTop = '18px';
@@ -1211,7 +1341,7 @@ function runPlayer(container, lesson, onFinish, ctxLs) {
         smartCheck(finalText, taskQ, TARGET).then(function (r) {
           fin0(); var box = document.createElement('div'); box.className = 'ltbox'; box.innerHTML = issuesHtml(finalText, r.issues); ta.insertAdjacentElement('afterend', box);
           if (USER) API.saveWriting(Object.assign({}, base, {status:'checked', issues:r.issues, score:r.score, checked_at:new Date().toISOString(), seen:true})).then(function () { setTimeout(processReplies, 500); }).catch(function () {});
-          if (USER) { var nt = document.createElement('p'); nt.className = 'muted small wth-wait'; nt.innerHTML = '📬 ' + tx({uk:'Герой, якому ти писав(ла), відповість на лист — відповідь з\'явиться в <a href="#/cabinet">Кабінеті</a>.', pl:'Bohater, do którego pisałeś(-aś), odpisze — odpowiedź pojawi się w <a href="#/cabinet">Koncie</a>.', en:'The character you wrote to will reply — find it in your <a href="#/cabinet">Account</a>.'}); box.insertAdjacentElement('afterend', nt); }
+          if (USER) { var nt = document.createElement('p'); nt.className = 'muted small wth-wait'; nt.innerHTML = '📬 ' + tx({uk:'Герой, якому ти писав(ла), відповість на лист — відповідь з\'явиться в <a href="#/chats">Чатах</a>.', pl:'Bohater, do którego pisałeś(-aś), odpisze — odpowiedź pojawi się w <a href="#/chats">Czatach</a>.', en:'The character you wrote to will reply — find it in <a href="#/chats">Chats</a>.'}); box.insertAdjacentElement('afterend', nt); }
           var msg = r.wrongLang ? tx({uk:'Текст написано не тією мовою. ', pl:'Tekst jest w innym języku. ', en:'Wrong language. '}) : r.pass ? t('Відповідь збережено! ') : tx({uk:'Текст збережено. Переглянь виправлення вище. ', pl:'Tekst zapisany. Przejrzyj poprawki powyżej. ', en:'Text saved. Review the corrections above. '});
           done(!!r.pass, msg + (lf(tk, 'tip') || ''));
         }).catch(function () {
@@ -2596,6 +2726,7 @@ function route() {
     case 'login': p = viewAuth('login'); break;
     case 'register': p = viewAuth('register'); break;
     case 'cabinet': p = viewCabinet(); break;
+    case 'chats': p = viewChats(parts[1]); break;
     case 'achievements': p = viewAchievements(); break;
     case 'course': p = viewCourse(parts[1]); break;
     case 'lesson': p = viewLesson(parts[1]); break;
