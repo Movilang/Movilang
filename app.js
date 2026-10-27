@@ -62,7 +62,7 @@ function ttName(k) { return (TT_L[LANG] && TT_L[LANG][k]) || TASK_TYPES[k] || k;
 var TASK_TYPES = { reading:'READING', intro:'START', match:'MATCH', order:'WORD ORDER', type:'TYPE IT', tf:'TRUE / FALSE', vocabulary:'VOCABULARY', listening:'LISTENING', subtitles:'SUBTITLES', grammar:'GRAMMAR', speaking:'SPEAKING', quiz:'MINI QUIZ', final:'FINAL', cards:'CHARACTERS', glossary:'SCENE GLOSSARY', quest:'QUEST', drill:'DRILL' };
 function isInfo(k) { return k === 'intro' || k === 'cards' || k === 'glossary'; }
 var POSTER_CLASSES = ['p1','p2','p3','p4','p5','p6','p7','p8'];
-var POSTER_ART = ['harry-potter-1','vampire-diaries-1','home-alone','zootopia','friends-s1','himym-s1'];
+var POSTER_ART = ['cars','harry-potter-1','vampire-diaries-1','home-alone','zootopia','friends-s1','himym-s1'];
 
 
 /* ================= i18n + theme ================= */

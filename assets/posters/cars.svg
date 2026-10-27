@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 600"><defs><linearGradient id="s" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#2b1b4f"/><stop offset=".45" stop-color="#e2557a"/><stop offset=".7" stop-color="#ffb35c"/><stop offset="1" stop-color="#ffd98a"/></linearGradient><linearGradient id="r" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#3a2f3a"/><stop offset="1" stop-color="#1c171c"/></linearGradient></defs>
+<rect width="400" height="600" fill="url(#s)"/>
+<g fill="#fff" opacity=".8"><circle cx="40" cy="40" r="1.5"/><circle cx="120" cy="70" r="1.2"/><circle cx="300" cy="30" r="1.6"/><circle cx="360" cy="90" r="1.1"/><circle cx="210" cy="50" r="1"/></g>
+<circle cx="200" cy="330" r="70" fill="#ffe7a0" opacity=".85"/>
+<g fill="#9c3d3a"><path d="M0 360 V300 H40 V280 H95 V300 H120 V360Z"/><path d="M270 360 V290 H300 V255 H350 V285 H400 V360Z"/></g>
+<g fill="#c4553f"><path d="M150 360 V320 H175 V305 H215 V330 H240 V360Z"/></g>
+<rect y="355" width="400" height="245" fill="#e8a25a"/>
+<path d="M170 360 L230 360 L400 600 L0 600Z" fill="url(#r)"/>
+<g fill="#ffd34d"><path d="M198 380 h4 l4 30 h-12z"/><path d="M196 430 h8 l6 45 h-20z"/><path d="M193 500 h14 l8 60 h-30z"/></g>
+<g fill="#3e7a3a"><path d="M60 470 v-60 a8 8 0 0 1 16 0 v60z"/><path d="M48 440 h12 v-20 a6 6 0 0 0 -12 0z"/><path d="M76 430 h12 v-25 a6 6 0 0 0 -12 0z"/><path d="M330 500 v-70 a9 9 0 0 1 18 0 v70z"/><path d="M316 470 h14 v-22 a7 7 0 0 0 -14 0z"/></g>
+<g transform="translate(250 140)"><rect width="120" height="56" rx="10" fill="#1d1430" stroke="#ff4f9a" stroke-width="4"/><text x="60" y="38" font-family="Georgia,serif" font-size="26" font-weight="bold" fill="#ffd34d" text-anchor="middle">66</text></g>
+<rect x="306" y="196" width="8" height="160" fill="#1d1430"/>
+<g transform="translate(30 150)"><rect width="150" height="44" rx="22" fill="none" stroke="#5ef0ff" stroke-width="4"/><text x="75" y="30" font-family="Arial,sans-serif" font-size="20" fill="#5ef0ff" text-anchor="middle" font-weight="bold">CAFÉ · V8</text></g>
+<g transform="translate(140 520)"><path d="M10 40 Q20 10 60 10 L100 10 Q120 12 120 40 Z" fill="#d6262b"/><circle cx="32" cy="42" r="12" fill="#111"/><circle cx="96" cy="42" r="12" fill="#111"/><rect x="45" y="16" width="40" height="12" rx="4" fill="#9fd8ff"/></g>
+</svg>
