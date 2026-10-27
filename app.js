@@ -62,6 +62,7 @@ function ttName(k) { return (TT_L[LANG] && TT_L[LANG][k]) || TASK_TYPES[k] || k;
 var TASK_TYPES = { reading:'READING', intro:'START', match:'MATCH', order:'WORD ORDER', type:'TYPE IT', tf:'TRUE / FALSE', vocabulary:'VOCABULARY', listening:'LISTENING', subtitles:'SUBTITLES', grammar:'GRAMMAR', speaking:'SPEAKING', quiz:'MINI QUIZ', final:'FINAL', cards:'CHARACTERS', glossary:'SCENE GLOSSARY', quest:'QUEST', drill:'DRILL' };
 function isInfo(k) { return k === 'intro' || k === 'cards' || k === 'glossary'; }
 var POSTER_CLASSES = ['p1','p2','p3','p4','p5','p6','p7','p8'];
+var POSTER_ART = ['harry-potter-1','vampire-diaries-1','home-alone','zootopia','friends-s1','himym-s1'];
 
 
 /* ================= i18n + theme ================= */
@@ -536,8 +537,8 @@ function heroSvg() {
 function isFreeCourse(c) { return !!c && /^\s*(0|free|darmo|za darmo|безкошт)/i.test(String(c.price || '')); }
 function priceTxt(c) { return isFreeCourse(c) ? tx({uk:'Безкоштовно', pl:'Za darmo', en:'Free'}) : (c.price || ''); }
 function posterHtml(c, small) {
-  var cls = POSTER_CLASSES.indexOf(c.poster) > -1 ? c.poster : 'p1';
-  return '<div class="poster ' + cls + '"' + (small ? ' style="width:120px;flex:0 0 120px;padding:10px"' : '') + '><span class="perf l"></span><span class="perf r"></span>' +
+  var cls = POSTER_CLASSES.indexOf(c.poster) > -1 ? c.poster : 'p1', art = POSTER_ART.indexOf(c.slug) > -1 ? 'assets/posters/' + c.slug + '.svg?v=1' : '';
+  return '<div class="poster ' + cls + (art ? ' art" style="background-image:linear-gradient(to top,#000c 0,#0006 30%,#0000 55%),url(' + art + ')' + (small ? ';width:120px;flex:0 0 120px;padding:10px' : '') + '"' : '"' + (small ? ' style="width:120px;flex:0 0 120px;padding:10px"' : '')) + '><span class="perf l"></span><span class="perf r"></span>' +
     (small ? '' : '<span class="tag">' + (c.kind === 'series' ? t('СЕРІАЛ') : t('ФІЛЬМ')) + ' · ' + esc(c.level) + '</span>' + (c.lessons_count ? (isFreeCourse(c) ? '<span class="tag new">' + tx({uk:'БЕЗКОШТОВНО', pl:'ZA DARMO', en:'FREE'}) + '</span>' : '') : t('<span class="tag new">СКОРО</span>'))) +
     '<div class="ptitle"' + (small ? ' style="font-size:14px"' : '') + '>' + esc(tr(c, 'title')) + '</div></div>';
 }

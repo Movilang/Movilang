@@ -998,3 +998,4 @@ body.has-amb #app,body.has-amb footer{position:relative;z-index:1}
   .ch-head{padding:8px 10px}
 }
 .chats section.ch-win{padding:0;border-top:0}
+.poster.art{background-size:cover;background-position:center}
