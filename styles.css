@@ -1093,3 +1093,4 @@ html.print-journal body *{visibility:hidden}html.print-journal .w-book,html.prin
 .posterup .pu-prev .poster{width:150px;min-height:0;aspect-ratio:2/3}
 @media (max-width:520px){.posterup{grid-template-columns:1fr}}
 .q-line{display:block}.q-sub{display:block;margin-top:10px;font-size:.55em;font-weight:500;color:var(--muted);line-height:1.4}
+.dict-tr{margin:4px 0 12px;padding:10px 14px;border-left:3px solid var(--gold);background:var(--bg2);border-radius:8px}.dict-tr small{display:block;color:var(--muted);margin-bottom:4px}.dict-tr b{font-size:18px}
