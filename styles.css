@@ -1067,3 +1067,8 @@ body.has-amb #app,body.has-amb footer{position:relative;z-index:1}
 .w-page.locked{background:var(--panel);color:var(--muted);border-left-color:var(--line);text-align:center;font-family:var(--f-body)}
 html.print-journal body *{visibility:hidden}html.print-journal .w-book,html.print-journal .w-book *{visibility:visible}
 @media print{html.print-journal .w-book{position:absolute;left:0;top:0;width:100%}html.print-journal .w-page{break-inside:avoid;box-shadow:none}html.print-journal #wPrint{display:none}}
+.w-tr{margin-top:10px;font-family:var(--f-body);font-size:14px;color:#5a4636}.w-tr summary{cursor:pointer;color:#8a6a44}.w-tr p{margin:6px 0 0;line-height:1.5}
+.w-page .spk{cursor:pointer;font-size:14px;opacity:.7}
+.w-page details.w-tr{background:#fff7;border:1px dashed #b08d3c;border-radius:8px;padding:2px 12px}
+.w-page details.w-tr summary{color:#8a6a44;font-size:13px}.w-page details.w-tr summary::after{color:#8a6a44}
+.w-page details.w-tr p{color:#3a2c20;padding-bottom:8px;max-width:none}

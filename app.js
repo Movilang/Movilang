@@ -2827,7 +2827,16 @@ function wBindCards(root) {
 }
 
 /* ---- запис журналу ---- */
-function wJournalEntry(W, l, p, F) {
+function wJournalHand(slug, l, F) {
+  var e = ((window.MOVILANG_JOURNALS || {})[slug] || {})[l.num]; if (!e) return null;
+  var gl = {}; wWords(l).forEach(function (w) { gl[String(w.w).toLowerCase()] = w; });
+  function fx(s, lg) { return String(s || '').replace(/\{faction\}/g, F ? (F[lg] || F.en) : ''); }
+  var en = esc(fx(e.en, 'en')).replace(/\[\[([\s\S]+?)\]\]/g, function (_, w) { var raw = w.replace(/&#39;/g, "'").replace(/&amp;/g, '&'), g = gl[raw.toLowerCase()]; return '<mark' + (g ? ' title="' + esc(g.w + ' — ' + wordMeaning(g)) + '"' : '') + '>' + w + '</mark>'; });
+  var trn = LANG !== 'en' && e[LANG] ? '<details class="w-tr"><summary>' + tx({uk:'Переклад', pl:'Tłumaczenie', en:'Translation'}) + '</summary><p>' + esc(fx(e[LANG], LANG)) + '</p></details>' : '';
+  return '<p class="w-txt">' + en + ' <span class="spk" data-say="' + esc(fx(e.en, 'en').replace(/\[\[|\]\]/g, '')) + '">🔊</span></p>' + trn;
+}
+function wJournalEntry(W, l, p, F, slug) {
+  var hand = slug ? wJournalHand(slug, l, F) : null;
   var ws = wWords(l, 6).filter(function (w) { return w.w; }), J = W.journal;
   var v = {scene_en: String(l.scene_en || '').replace(/[.!?…\s]+$/, ''), faction: F ? F.en : ''};
   ws.slice(0, 3).forEach(function (w, i) { v['w' + (i + 1)] = w.w; v['t' + (i + 1)] = wordMeaning(w); v['line' + (i + 1)] = w.line || ''; });
@@ -2842,7 +2851,7 @@ function wJournalEntry(W, l, p, F) {
   ws.slice(0, 3).forEach(function (w) { txt = txt.replace(new RegExp('(“|\\b)(' + w.w.replace(/[.*+?^${}()|[\]\\]/g, '\\$&') + ')(?=”|\\b)', 'i'), '$1<mark title="' + esc(wordMeaning(w)) + '">$2</mark>'); });
   var b = (l.variants && l.variants.badge) || {};
   return '<article class="w-page"><header><span>' + tx({uk:'Сторінка ', pl:'Strona ', en:'Page '}) + l.num + '</span><time>' + fmtDate(p.completed_at) + '</time></header>' +
-    '<h4>' + esc(tr(l, 'title')) + '</h4><p class="w-open">' + esc(J.open) + '</p><p class="w-txt">' + txt + '</p>' +
+    '<h4>' + esc(tr(l, 'title')) + '</h4><p class="w-open">' + esc(J.open) + '</p>' + (hand || '<p class="w-txt">' + txt + '</p>') +
     (p.answer && String(p.answer).trim().length > 2 ? '<blockquote class="w-mine"><small>' + tx({uk:'Мій запис', pl:'Mój wpis', en:'My entry'}) + '</small>' + esc(String(p.answer).slice(0, 1200)) + '</blockquote>' : '') +
     '<p class="w-sign">' + esc(J.sign.replace('{faction}', F ? F.en : '')) + '</p>' + (b.icon ? '<div class="w-stamp" title="' + esc(lf(b, 'name') || '') + '">' + esc(b.icon) + '</div>' : '') + '</article>';
 }
@@ -2899,9 +2908,9 @@ function viewWorld(cid, tab) {
       if (tab === 'journal') {
         var pages = ls.filter(function (l) { return done[l.id]; });
         body.innerHTML = '<div class="w-book"><div class="w-cover"><span>' + esc(W.journal.icon) + '</span><h3>' + esc(wl(W.journal.title)) + '</h3><p class="muted small">' + esc(USER ? (USER.name || USER.email || '') : '') + ' · ' + pages.length + ' / ' + ls.length + '</p>' + (pages.length ? '<button type="button" class="btn btn-ghost btn-sm" id="wPrint">🖨 ' + tx({uk:'Завантажити PDF', pl:'Pobierz PDF', en:'Download PDF'}) + '</button>' : '') + '</div>' +
-          (pages.length ? pages.map(function (l) { return wJournalEntry(W, l, done[l.id], F); }).join('') : '<div class="empty">' + tx({uk:'Пройди перший урок — і тут з\'явиться перша сторінка.', pl:'Ukończ pierwszą lekcję — pojawi się tu pierwsza strona.', en:'Finish your first lesson to unlock the first page.'}) + '</div>') +
+          (pages.length ? pages.map(function (l) { return wJournalEntry(W, l, done[l.id], F, c.slug); }).join('') : '<div class="empty">' + tx({uk:'Пройди перший урок — і тут з\'явиться перша сторінка.', pl:'Ukończ pierwszą lekcję — pojawi się tu pierwsza strona.', en:'Finish your first lesson to unlock the first page.'}) + '</div>') +
           (pages.length < ls.length ? '<div class="w-page locked">🔒 ' + tx({uk:'Наступна сторінка відкриється після уроку ', pl:'Następna strona otworzy się po lekcji ', en:'The next page unlocks after lesson '}) + (ls.filter(function (l) { return !done[l.id]; })[0] || {}).num + '</div>' : '') + '</div>';
-        var pb = document.getElementById('wPrint'); if (pb) pb.onclick = function () { document.documentElement.classList.add('print-journal'); setTimeout(function () { window.print(); document.documentElement.classList.remove('print-journal'); }, 200); };
+        wBindCards(body); var pb = document.getElementById('wPrint'); if (pb) pb.onclick = function () { document.documentElement.classList.add('print-journal'); setTimeout(function () { window.print(); document.documentElement.classList.remove('print-journal'); }, 200); };
       }
     });
   });
