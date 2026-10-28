@@ -2963,39 +2963,59 @@ function wtWordAt(x, y) {
   var w = s.slice(a, b).replace(/^['’-]+|['’-]+$/g, ''); if (!w || !/\p{L}/u.test(w)) return null;
   var rg = document.createRange(); rg.setStart(node, a); rg.setEnd(node, b); var rect = rg.getBoundingClientRect();
   if (x < rect.left - 4 || x > rect.right + 4 || y < rect.top - 4 || y > rect.bottom + 4) return null; // клік поруч зі словом, а не на ньому
-  var sent = s.length < 300 ? s : s.slice(Math.max(0, a - 120), b + 120);
-  return {w:w, rect:rect, sent:sent.trim(), el:node.parentElement};
+  var blk = node.parentElement && node.parentElement.closest('p,li,button,label,td,th,h1,h2,h3,h4,blockquote,.tq,.lead,.topt,div') || node.parentElement, full = blk ? blk.textContent : s, pos = a;
+  try { var pr = document.createRange(); pr.setStart(blk, 0); pr.setEnd(node, a); pos = pr.toString().length; } catch (er) { full = s; }
+  var st = 0, en = full.length, m, reS = /[.!?…]+["”»)]*\s+/g;
+  while ((m = reS.exec(full))) { var e2 = m.index + m[0].length; if (e2 <= pos) st = e2; else { en = m.index + m[0].replace(/\s+$/, '').length; break; } }
+  var sent = full.slice(st, en).replace(/\s+/g, ' ').trim(); if (sent.length > 400) sent = sent.slice(0, 400);
+  return {w:w, rect:rect, sent:sent, el:node.parentElement};
 }
 function wtClose() { var o = document.getElementById('wtPop'); if (o) o.remove(); }
+function wtApi(text, ctx, src, dst) {
+  if (!cfg.SUPABASE_URL || WT.noApi) return Promise.resolve(null);
+  var k = 'f|' + src + '|' + dst + '|' + text + '|' + (ctx || ''); if (WT.cache[k]) return Promise.resolve(WT.cache[k]);
+  var tok = API.token ? API.token().catch(function () { return null; }) : Promise.resolve(null);
+  return tok.then(function (tk) { return fetch(cfg.SUPABASE_URL + '/functions/v1/translate', {method:'POST', headers:{'Content-Type':'application/json', apikey:cfg.SUPABASE_ANON_KEY, Authorization:'Bearer ' + (tk || cfg.SUPABASE_ANON_KEY)}, body:JSON.stringify({text:text, context:ctx || '', src:src, dst:dst})}); })
+    .then(function (r) { if (r.status === 503 || r.status === 404) { WT.noApi = true; return null; } return r.ok ? r.json() : null; })
+    .then(function (j) { var t = j && j.text; if (!t) return null; WT.cache[k] = t; var ks = Object.keys(WT.cache); if (ks.length > 800) delete WT.cache[ks[0]]; lsSet('ml_wt_cache', WT.cache); return t; })
+    .catch(function () { return null; });
+}
 function wtShow(hit) {
   wtClose();
-  var raw = hit.w, low = raw.toLowerCase(), scr = wtLangOf(raw), src, dst;
+  var raw = hit.w, low = raw.toLowerCase(), scr = wtLangOf(raw), src, dst, sent = hit.sent && hit.sent.length > raw.length + 2 ? hit.sent : '';
   if (scr) src = scr; else src = TARGET === 'uk' ? (LANG === 'uk' ? 'en' : LANG) : TARGET;
   dst = src === TARGET ? LANG : TARGET; if (dst === src) dst = src === 'en' ? (LANG === 'en' ? 'uk' : LANG) : 'en';
   var pop = document.createElement('div'); pop.id = 'wtPop'; pop.className = 'wtpop'; pop.setAttribute('role', 'dialog');
-  pop.innerHTML = '<div class="wt-h"><b>' + esc(raw) + '</b> <span class="muted small">' + FLAG[src] + ' → ' + FLAG[dst] + '</span><button type="button" class="wt-x" aria-label="✕">✕</button></div><div class="wt-b"><span class="muted small">…</span></div>' +
-    '<div class="wt-f"><button type="button" class="tgl" data-wt-say>🔊</button>' + (src === TARGET ? '<button type="button" class="tgl" data-wt-add>＋ ' + L3('у повторення', 'do powtórek', 'to review') + '</button>' : '') + '</div>';
+  var hl = sent ? esc(sent).replace(new RegExp('(^|[^\\p{L}])(' + raw.replace(/[.*+?^${}()|[\]\\]/g, '\\$&') + ')(?![\\p{L}])', 'u'), '$1<mark>$2</mark>') : '';
+  pop.innerHTML = '<div class="wt-h"><b>' + esc(raw) + '</b> <span class="muted small wt-dir">' + FLAG[src] + ' → ' + FLAG[dst] + '</span><button type="button" class="wt-x" aria-label="✕">✕</button></div>' +
+    '<div class="wt-b"><div class="wt-ctx"><span class="muted small">…</span></div><div class="wt-dict"></div></div>' +
+    (sent ? '<div class="wt-s"><div class="wt-src">' + hl + '</div><div class="wt-st"></div><button type="button" class="linkbtn small" data-wt-sent>↪ ' + L3('Перекласти все речення', 'Przetłumacz całe zdanie', 'Translate the whole sentence') + '</button></div>' : '') +
+    '<div class="wt-f"><button type="button" class="tgl" data-wt-say>🔊</button>' + (sent ? '<button type="button" class="tgl" data-wt-say2>🔊 ' + L3('речення', 'zdanie', 'sentence') + '</button>' : '') + '<button type="button" class="tgl" data-wt-add hidden>＋ ' + L3('у повторення', 'do powtórek', 'to review') + '</button></div>';
   document.body.appendChild(pop);
-  var r = hit.rect, pw = Math.min(300, window.innerWidth - 20), left = Math.max(10, Math.min(window.innerWidth - pw - 10, r.left + r.width / 2 - pw / 2));
-  pop.style.width = pw + 'px'; pop.style.left = left + 'px';
-  var below = r.bottom + 8, ph = 150; pop.style.top = (below + ph > window.innerHeight ? Math.max(10, r.top - ph - 8) : below) + 'px';
+  var place = function () { var r = hit.rect, pw = Math.min(340, window.innerWidth - 20), left = Math.max(10, Math.min(window.innerWidth - pw - 10, r.left + r.width / 2 - pw / 2)); pop.style.width = pw + 'px'; pop.style.left = left + 'px'; var ph = pop.offsetHeight || 180, below = r.bottom + 8; pop.style.top = (below + ph > window.innerHeight - 70 ? Math.max(10, r.top - ph - 8) : below) + 'px'; };
+  place();
   pop.querySelector('.wt-x').onclick = wtClose;
   pop.querySelector('[data-wt-say]').onclick = function () { say(raw, SPEECH[src]); };
-  var body = pop.querySelector('.wt-b'), mean = '';
+  var s2 = pop.querySelector('[data-wt-say2]'); if (s2) s2.onclick = function () { say(sent, SPEECH[src]); };
+  var ctxBox = pop.querySelector('.wt-ctx'), dictBox = pop.querySelector('.wt-dict'), mean = '', addB = pop.querySelector('[data-wt-add]');
+  function setMean(t) { if (t && !mean) { mean = t; if (src === TARGET) addB.hidden = false; } }
   wtDict().then(function (d) {
-    var f = wtLookup(d, src, low), lines = [];
-    if (!f && !scr) { var alt = src === TARGET ? LANG : TARGET; if (alt !== src && alt !== 'uk') { var f2 = wtLookup(d, alt, low); if (f2) { f = f2; dst = src; src = alt; pop.querySelector('.wt-h .muted').textContent = FLAG[src] + ' → ' + FLAG[dst]; } } }
-    if (f) { var t = f.tr[dst] || f.tr[LANG] || f.tr.en || f.tr.uk || f.tr.pl; if (t) { mean = t; lines.push('<div class="wt-t">' + esc(t) + '</div>' + (f.key !== low ? '<div class="muted small">' + (f.approx ? '≈ ' : '') + esc(f.key) + '</div>' : '')); }
-      var other = ['en', 'pl', 'uk'].filter(function (x) { return x !== src && x !== dst && f.tr[x]; })[0]; if (other) lines.push('<div class="small muted">' + FLAG[other] + ' ' + esc(f.tr[other]) + '</div>'); }
-    if (lines.length) { body.innerHTML = lines.join(''); if (!f.approx) return; }
-    return wtOnline(low, src, dst).then(function (t) {
+    var f = wtLookup(d, src, low);
+    if (!f && !scr) { var alt = src === TARGET ? LANG : TARGET; if (alt !== src && alt !== 'uk') { var f2 = wtLookup(d, alt, low); if (f2) { f = f2; dst = src; src = alt; pop.querySelector('.wt-dir').textContent = FLAG[src] + ' → ' + FLAG[dst]; } } }
+    if (f) { var t = f.tr[dst] || f.tr.en || f.tr.uk || f.tr.pl, other = ['en', 'pl', 'uk'].filter(function (x) { return x !== src && x !== dst && f.tr[x]; })[0];
+      if (t) dictBox.innerHTML = '<div class="small"><span class="muted">📖 ' + L3('словник курсу', 'słownik kursu', 'course glossary') + ':</span> ' + (f.approx ? '≈ ' : '') + (f.key !== low ? esc(f.key) + ' — ' : '') + '<b>' + esc(t) + '</b>' + (other ? ' · ' + FLAG[other] + ' ' + esc(f.tr[other]) : '') + '</div>'; }
+    // головне — переклад саме в цьому реченні (DeepL / Google через Supabase)
+    return wtApi(raw, sent, src, dst).then(function (ct) {
       if (!document.body.contains(pop)) return;
-      if (t) { if (!mean) mean = t; body.insertAdjacentHTML(lines.length ? 'beforeend' : 'afterbegin', (lines.length ? '<div class="small">🌐 ' : '<div class="wt-t">') + esc(t) + '</div>'); if (!lines.length) { var sp = body.querySelector('.muted.small'); if (sp && sp.textContent === '…') sp.remove(); } }
-      else if (!lines.length) body.innerHTML = '<span class="muted small">' + L3('Перекладу не знайдено', 'Nie znaleziono tłumaczenia', 'No translation found') + '</span>';
+      if (ct) { ctxBox.innerHTML = '<div class="wt-t">' + esc(ct) + '</div>' + (sent ? '<div class="muted small">' + L3('у цьому реченні', 'w tym zdaniu', 'in this sentence') + '</div>' : ''); setMean(ct); place(); return; }
+      if (f && !f.approx) { ctxBox.innerHTML = '<div class="wt-t">' + esc(f.tr[dst] || '') + '</div>'; dictBox.innerHTML = ''; setMean(f.tr[dst]); place(); return; }
+      return wtOnline(low, src, dst).then(function (t2) { if (!document.body.contains(pop)) return; ctxBox.innerHTML = t2 ? '<div class="wt-t">' + esc(t2) + '</div><div class="muted small">🌐 ' + L3('без контексту', 'bez kontekstu', 'without context') + '</div>' : (f ? '' : '<span class="muted small">' + L3('Перекладу не знайдено', 'Nie znaleziono tłumaczenia', 'No translation found') + '</span>'); setMean(t2 || (f && f.tr[dst])); place(); });
     });
   });
-  var add = pop.querySelector('[data-wt-add]');
-  if (add) add.onclick = function () { if (!mean) return; srsSave({word:low, meaning:mean, step:0, due:todayStr()}); add.disabled = true; add.textContent = '✓ ' + L3('додано', 'dodano', 'added'); };
+  var sb = pop.querySelector('[data-wt-sent]');
+  if (sb) sb.onclick = function () { var box = pop.querySelector('.wt-st'); sb.disabled = true; box.innerHTML = '<span class="muted small">…</span>';
+    wtApi(sent, '', src, dst).then(function (t) { return t || wtOnline(sent, src, dst); }).then(function (t) { box.innerHTML = t ? '<div class="wt-stt">' + esc(t) + '</div>' : '<span class="muted small">' + L3('Не вдалося перекласти', 'Nie udało się przetłumaczyć', 'Could not translate') + '</span>'; sb.hidden = !!t; place(); }); };
+  addB.onclick = function () { if (!mean) return; srsSave({word:low, meaning:mean, step:0, due:todayStr()}); addB.disabled = true; addB.textContent = '✓ ' + L3('додано', 'dodano', 'added'); };
 }
 (function () {
   if (lsGet('ml_wt_off', false)) return;

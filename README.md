@@ -85,3 +85,9 @@
 - `journal` — `open`, `sign`, `lines` (шаблони з `{w1..w3}`, `{t1..t3}`, `{line1..3}`, `{scene_en}`).
 База: запустити `migration-world.sql` (таблиця `world_profiles`, RPC `join_faction`, `world_me`, `world_standings`, `world_top`).
 Сторінка світу: `#/world/<id курсу>/me|rank|cards|journal`.
+
+## Переклад слова з контекстом (DeepL / Google), 2026-10-28
+1. SQL: `migration-2026-10-28-translate.sql` (кеш перекладів).
+2. Edge Function `translate` (код: `supabase/functions/translate/index.ts`), Verify JWT можна лишити ввімкненим.
+3. Secret: `DEEPL_API_KEY` (deepl.com → API Free, 500 000 символів/міс. безкоштовно; ключ закінчується на `:fx`) **або** `GOOGLE_TRANSLATE_KEY`.
+Без ключа сайт працює як раніше: словник курсів + MyMemory без контексту.

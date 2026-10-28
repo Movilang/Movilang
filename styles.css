@@ -1081,3 +1081,7 @@ html.print-journal body *{visibility:hidden}html.print-journal .w-book,html.prin
 .wt-f{display:flex;gap:6px}
 @media (hover:none){#app,.lmodal{-webkit-touch-callout:none;-webkit-user-select:none;user-select:none}#app input,#app textarea,.lmodal input,.lmodal textarea{-webkit-user-select:text;user-select:text}}
 #app p,#app li,#app h2,#app h3,#app .tq,#app .lead{cursor:text}
+.wt-s{margin:8px 0;padding:8px 10px;border-radius:10px;background:rgba(127,127,127,.08);font-size:14px;line-height:1.45}
+.wt-s mark{background:rgba(255,77,90,.25);color:inherit;border-radius:3px;padding:0 2px}
+.wt-stt{margin-top:6px;padding-top:6px;border-top:1px dashed var(--line);font-weight:500}
+.wt-dict{margin-top:4px}
