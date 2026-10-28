@@ -1877,11 +1877,11 @@ function courseEditor(body, id) {
   });
 }
 
-function lessonEditor(body, courseId, lessonId, nextNum) {
+function lessonEditor(body, courseId, lessonId, nextNum, focus) {
   var p = lessonId ? API.getLesson(lessonId) : Promise.resolve({course_id:courseId, num:nextNum, title:'', grammar:'', scene:'', tasks:[]});
   return p.then(function (l) {
     var V = JSON.parse(JSON.stringify(l.variants || {}));
-    var sets = {en:JSON.parse(JSON.stringify(l.tasks || [])), pl:V.pl || [], uk:V.uk || []}, VER = 'en', tasks = sets.en;
+    var sets = {en:JSON.parse(JSON.stringify(l.tasks || [])), pl:V.pl || [], uk:V.uk || []}, VER = focus && sets[focus.ver] ? focus.ver : 'en', tasks = sets[VER];
     var VNAME = {en:'🇬🇧 EN (' + tx({uk:'основна', pl:'główna', en:'base'}) + ')', pl:'🇵🇱 PL', uk:'🇺🇦 UA'};
     function tipKeys() { return VER === 'en' ? ['tip', 'tip_uk', 'tip_pl'] : ['tip_en', 'tip_uk', 'tip_pl']; }
     function qtKeys() { return LANGS.filter(function (x) { return x !== VER; }).map(function (x) { return 'qt_' + x; }); }
@@ -1930,7 +1930,7 @@ function lessonEditor(body, courseId, lessonId, nextNum) {
         t('<button class="btn btn-ghost btn-sm" type="button" id="addT" style="justify-self:start">+ Додати завдання</button>') +
         t('<div class="row"><button class="btn btn-red" type="submit">Зберегти урок</button>') + (lessonId ? '<a class="btn btn-ghost btn-sm" href="#/lesson/' + esc(lessonId) + t('">Переглянути як учень</a><button class="btn btn-danger btn-sm" type="button" id="delL">Видалити урок</button>') : '') + '</div><div class="msg" id="lMsg"></div></form></div>';
       function grabG() { body.querySelectorAll('[data-g]').forEach(function (g) { var k = VER + '_grammar_' + g.dataset.g; if (g.value.trim()) V[k] = g.value.trim(); else delete V[k]; }); }
-      document.getElementById('backC').onclick = function () { courseEditor(body, courseId); };
+      document.getElementById('backC').onclick = function () { if (focus) { adminTab = 'check'; location.hash = '#/admin'; } else courseEditor(body, courseId); };
       body.querySelectorAll('[data-ver]').forEach(function (b) { b.onclick = function () { var e = collect(); if (e) { toast(e, 'err'); return; } grabG(); VER = b.dataset.ver; tasks = sets[VER]; render(); }; });
       var ce = document.getElementById('copyEn'); if (ce) ce.onclick = function () { sets[VER] = sets.en.map(function (x) { return {type:x.type, img:x.img, q:'', options:[], answer:x.answer || 0}; }).map(function (x) { if (!x.img) delete x.img; return x; }); tasks = sets[VER]; render(); };
       document.getElementById('addT').onclick = function () { collect(); tasks.push({type:'quiz', q:'', options:[], answer:0}); render(); };
@@ -1945,13 +1945,28 @@ function lessonEditor(body, courseId, lessonId, nextNum) {
         V.pl = sets.pl; V.uk = sets.uk; if (!V.pl.length) delete V.pl; if (!V.uk.length) delete V.uk;
         var nl = {id:lessonId || undefined, course_id:courseId, num:parseInt(document.getElementById('lNum').value, 10) || 1, title:title, grammar:document.getElementById('lGr').value, scene:document.getElementById('lScene').value, title_pl:document.getElementById('lTitlePl').value.trim(), scene_pl:document.getElementById('lScenePl').value.trim(), title_en:document.getElementById('lTitleEn').value.trim() || null, scene_en:document.getElementById('lSceneEn').value.trim() || null, tasks:sets.en, variants:V};
         if (l.variants === undefined && !V.pl && !V.uk) delete nl.variants;
-        API.saveLesson(nl).then(function () { toast(t('Урок збережено')); courseEditor(body, courseId); }).catch(function (err) { msg.className = 'msg err'; msg.textContent = err.message; });
+        API.saveLesson(nl).then(function () { toast(t('Урок збережено')); API.clearCache && API.clearCache(); if (focus) { adminTab = 'check'; if (location.hash === '#/admin') route(); else location.hash = '#/admin'; } else courseEditor(body, courseId); }).catch(function (err) { msg.className = 'msg err'; msg.textContent = err.message; });
       };
       var dl = document.getElementById('delL');
       if (dl) dl.onclick = function () { if (!dl.dataset.c) { dl.dataset.c = 1; dl.textContent = t('Точно видалити? Натисни ще раз'); return; } API.deleteLesson(lessonId).then(function () { toast(t('Урок видалено')); courseEditor(body, courseId); }); };
     }
     render();
+    if (focus && focus.idx != null) {
+      var fe = body.querySelector('.task-edit[data-i="' + focus.idx + '"]');
+      if (fe) { fe.classList.add('task-hl'); var dd = fe.querySelector('details'); if (dd) dd.open = true;
+        var fld = /opcj|option|варіант/i.test(focus.msg || '') ? fe.querySelector('[data-f="options"]') : /pytani|question|питанн/i.test(focus.msg || '') ? fe.querySelector('[data-f="q"]') : null;
+        if (fld) fld.classList.add('fld-hl');
+        if (focus.msg) fe.insertAdjacentHTML('afterbegin', '<div class="task-hl-msg">⚠ ' + esc(focus.msg) + '</div>');
+        setTimeout(function () { fe.scrollIntoView({behavior:'smooth', block:'center'}); if (fld) fld.focus(); }, 80); }
+    }
   });
+}
+function viewAdminEdit(lessonId, ver, idx) {
+  if (!requireUser() || USER.role !== 'admin') return viewAdmin();
+  $app.innerHTML = '<div class="page"><div class="sec-head"><a href="#/admin" class="muted small">← ' + L3('Адмін-панель', 'Panel admina', 'Admin panel') + '</a></div><div id="adminBody"><p class="muted">…</p></div></div>';
+  var body = document.getElementById('adminBody'), m = ''; try { m = decodeURIComponent((location.hash.split('?m=')[1] || '')); } catch (e) {}
+  return API.getLesson(lessonId).then(function (l) { if (!l) { body.innerHTML = '<div class="empty">—</div>'; return; }
+    return lessonEditor(body, l.course_id, lessonId, null, {ver:ver || 'en', idx:idx === '' || idx == null ? null : +idx, msg:m}); });
 }
 
 function adminKeys(body) {
@@ -2796,7 +2811,7 @@ function admCheck(body) {
     var probs = []; cl.forEach(function (l) { checkLesson(l).forEach(function (p) { p.l = l; probs.push(p); }); });
     body.innerHTML = '<select class="inp-s" id="ckC" style="max-width:340px;margin-bottom:12px">' + cs.map(function (c) { return '<option value="' + esc(c.id) + '"' + (c.id === CHK_C ? ' selected' : '') + '>' + esc(tr(c, 'title')) + '</option>'; }).join('') + '</select>' +
       '<div class="panel" style="margin-bottom:16px"><h3>🧪 ' + L3('Автоперевірка', 'Autokontrola', 'Auto-check') + ' · ' + cl.length + ' ' + L3('уроків', 'lekcji', 'lessons') + '</h3>' +
-      (probs.length ? '<p class="muted small">' + L3('Знайдено проблем: ', 'Znaleziono problemów: ', 'Problems found: ') + probs.length + '</p><div class="tbl-wrap"><table class="tbl"><tr><th>' + L3('Урок', 'Lekcja', 'Lesson') + '</th><th>' + L3('Мова', 'Język', 'Lang') + '</th><th>#</th><th>' + L3('Проблема', 'Problem', 'Problem') + '</th></tr>' + probs.slice(0, 400).map(function (p) { return '<tr><td><a href="#/lesson/' + esc(p.l.id) + '">' + p.l.num + '</a></td><td>' + esc(p.set) + '</td><td>' + (p.n == null ? '—' : p.n + 1) + '</td><td>' + esc(p.msg) + '</td></tr>'; }).join('') + '</table></div>' : '<p>✅ ' + L3('Проблем не знайдено.', 'Nie znaleziono problemów.', 'No problems found.') + '</p>') + '</div>' +
+      (probs.length ? '<p class="muted small">' + L3('Знайдено проблем: ', 'Znaleziono problemów: ', 'Problems found: ') + probs.length + '</p><div class="tbl-wrap"><table class="tbl"><tr><th>' + L3('Урок', 'Lekcja', 'Lesson') + '</th><th>' + L3('Мова', 'Język', 'Lang') + '</th><th>#</th><th>' + L3('Проблема', 'Problem', 'Problem') + '</th></tr>' + probs.slice(0, 400).map(function (p) { return '<tr><td><a href="#/admin/edit/' + esc(p.l.id) + '/' + (/^(en|pl|uk)$/.test(p.set) ? p.set : 'en') + '/' + (p.n == null ? '' : p.n) + '?m=' + encodeURIComponent(p.msg) + '" title="' + esc(L3('Відкрити в редакторі', 'Otwórz w edytorze', 'Open in editor')) + '">✏️ ' + p.l.num + '</a> <a href="#/lesson/' + esc(p.l.id) + '" class="muted small" title="' + esc(L3('Як учень', 'Jako uczeń', 'As student')) + '">👁</a></td><td>' + esc(p.set) + '</td><td>' + (p.n == null ? '—' : p.n + 1) + '</td><td>' + esc(p.msg) + '</td></tr>'; }).join('') + '</table></div>' : '<p>✅ ' + L3('Проблем не знайдено.', 'Nie znaleziono problemów.', 'No problems found.') + '</p>') + '</div>' +
       '<div class="panel"><h3>🔎 ' + L3('Знайти й замінити в усьому курсі', 'Znajdź i zamień w całym kursie', 'Find & replace across the course') + '</h3><p class="hint">' + L3('Швидко виправити опечатку без SQL. Шукає в назвах, описах сцен і всіх завданнях (EN/PL/UA). Великі/малі літери враховуються.', 'Szybka poprawka literówki bez SQL. Szuka w tytułach, opisach scen i wszystkich zadaniach (EN/PL/UA). Rozróżnia wielkość liter.', 'Fix a typo without SQL. Searches titles, scene texts and every task (EN/PL/UA). Case-sensitive.') + '</p>' +
       '<div class="row" style="gap:8px;flex-wrap:wrap"><input class="inp-s" id="frF" placeholder="' + esc(L3('знайти', 'znajdź', 'find')) + '" style="flex:1;min-width:180px"><input class="inp-s" id="frR" placeholder="' + esc(L3('замінити на', 'zamień na', 'replace with')) + '" style="flex:1;min-width:180px"><button class="btn btn-ghost btn-sm" type="button" id="frFind">' + L3('Знайти', 'Szukaj', 'Find') + '</button><button class="btn btn-red btn-sm" type="button" id="frGo" disabled>' + L3('Замінити всюди', 'Zamień wszędzie', 'Replace all') + '</button></div><div id="frOut" class="small" style="margin-top:10px"></div></div>';
     document.getElementById('ckC').onchange = function (e) { CHK_C = e.target.value; admCheck(body); };
@@ -3177,7 +3192,7 @@ function route() {
     case 'lesson': p = viewLesson(parts[1]); break;
     case 'guide': p = viewGuide(parts[1], parts[2]); break;
     case 'words': p = viewWords(); break;
-    case 'admin': p = viewAdmin(); break;
+    case 'admin': p = parts[1] === 'edit' ? viewAdminEdit(parts[2], parts[3], (parts[4] || '').split('?')[0]) : viewAdmin(); break;
     case 'test': p = viewTest(); break;
     case 'review': p = viewReview(); break;
     case 'paid': p = viewPaid(parts[1]); break;

@@ -1101,3 +1101,5 @@ html.print-journal body *{visibility:hidden}html.print-journal .w-book,html.prin
 .dr-built{min-height:40px;padding:8px 12px;border:1px dashed var(--line);border-radius:10px;font-size:16px}
 .dr-w.used{opacity:.35}
 .dr-it[hidden]{display:none!important}
+.task-hl{outline:2px solid var(--red);outline-offset:4px;border-radius:12px}.task-hl-msg{background:color-mix(in srgb,var(--red) 18%,transparent);color:var(--fg);padding:8px 12px;border-radius:8px;font-weight:600;margin-bottom:8px}
+.fld-hl{border-color:var(--red)!important;box-shadow:0 0 0 2px color-mix(in srgb,var(--red) 40%,transparent)}
