@@ -888,6 +888,67 @@ var TASK_INS = {vocabulary:'Обери правильне слово', grammar:'
 function shuffle(a) { a = a.slice(); for (var i = a.length - 1; i > 0; i--) { var j = Math.floor(Math.random() * (i + 1)); var x = a[i]; a[i] = a[j]; a[j] = x; } return a; }
 function norm(s) { return String(s || '').toLowerCase().replace(/[’']/g, "'").replace(/[^\p{L}\p{N}' ]+/gu, ' ').replace(/\s+/g, ' ').trim(); }
 /* auto "reading" task: the lesson's own gap sentences joined into one short text with grammar choices */
+/* ===== Стандарт уроку «15 хвилин»: перебудова будь-якого старого уроку в картки-набори =====
+   Схема: герої → [словник сцени → пари сцени → набір сцени (репліки з фільму + питання уроку)] × сцени
+   → граматика-набір → читання → квест → «Пиши й складай» → говоріння → слова → фінальний твір.
+   Уроки, де вже є kind:'set' (ручні), не чіпаємо. */
+function L3x(uk, pl, en) { return tx({uk:uk, pl:pl, en:en}); }
+function reEsc(x) { return String(x).replace(/[.*+?^${}()|[\]\\]/g, '\\$&'); }
+function setTaskItem(tk) {
+  var q = tk.q || '', loc = lf(tk, 'q') || q, it = {}, tr = tk['qt_' + LANG] || '';
+  if (/_{3,}/.test(q) && loc !== q && !/_{3,}/.test(loc)) { it.q = q; tr = loc; } else it.q = loc;
+  var why = lf(tk, 'why'), tip = lf(tk, 'tip') || '';
+  if (tk.type === 'order') { it.k = 'order'; it.options = tk.options || []; var tt = String(tip).replace(/^\s*(Переклад|Tłumaczenie|Translation)\s*:\s*/i, ''); it.q = L3x('Склади репліку', 'Ułóż kwestię', 'Build the line') + (tt ? ': «' + tt + '»' : ''); it.exp = it.options.join(' '); it.tag = L3x('Склади', 'Ułóż', 'Build'); return it; }
+  if (tk.type === 'type') { it.k = 'type'; it.options = tk.options || []; it.exp = tip; it.tag = L3x('Впиши', 'Wpisz', 'Type'); if (tr) it.tr = tr; return it; }
+  it.options = (tk.options || []).slice(); it.answer = +tk.answer || 0;
+  if (tk.type === 'tf') { it.options = [L3x('Правда', 'Prawda', 'True'), L3x('Неправда', 'Fałsz', 'False')]; it.tag = L3x('Правда чи ні?', 'Prawda czy nie?', 'True or false?'); }
+  else if (tk.type === 'grammar') it.tag = L3x('Граматика', 'Gramatyka', 'Grammar');
+  else if (tk.type === 'quiz') it.tag = L3x('Сюжет', 'Fabuła', 'Story');
+  else it.tag = L3x('Репліка', 'Kwestia', 'Line');
+  it.exp = ((why && why[it.answer]) ? why[it.answer] + ' ' : '') + tip;
+  if (tr) it.tr = tr;
+  return it;
+}
+function upgradeLesson(tasks) {
+  var seed = 0; JSON.stringify(tasks.map(function (x) { return x.q || x.label || x.type; })).split("").forEach(function (c) { seed = (seed * 31 + c.charCodeAt(0)) | 0; });
+  var rnd = function () { seed = (seed + 0x6D2B79F5) | 0; var t2 = Math.imul(seed ^ (seed >>> 15), 1 | seed); t2 = (t2 + Math.imul(t2 ^ (t2 >>> 7), 61 | t2)) ^ t2; return ((t2 ^ (t2 >>> 14)) >>> 0) / 4294967296; };
+  var shuffle = function (a) { a = a.slice(); for (var q = a.length - 1; q > 0; q--) { var r = Math.floor(rnd() * (q + 1)), x = a[q]; a[q] = a[r]; a[r] = x; } return a; };
+  if (!tasks || tasks.length < 6 || tasks.length > 26) return tasks;
+  if (tasks.some(function (x) { return x.type === 'drill' && x.kind === 'set'; })) return tasks;
+  var B = {head:[], gl:[], gram:[], mc:[], tf:[], order:[], type:[], quest:[], speak:[], fin:[], drill:[], rest:[]};
+  tasks.forEach(function (x) { var k = {cards:'head', intro:'head', glossary:'gl', grammar:'gram', vocabulary:'mc', quiz:'mc', listening:'mc', subtitles:'mc', tf:'tf', order:'order', type:'type', quest:'quest', speaking:'speak', final:'fin', drill:'drill'}[x.type]; if (x.type === 'match') return; (B[k] || B.rest).push(x); });
+  if (!B.gl.length) return tasks;
+  var out = B.head.slice(), pool = shuffle(B.mc.concat(B.tf)), per = Math.ceil(pool.length / B.gl.length), allW = [];
+  B.gl.forEach(function (g) { (g.items || []).forEach(function (w) { if (w.w) allW.push(w); }); });
+  B.gl.forEach(function (g, gi) {
+    var ws = (g.items || []).filter(function (w) { return w.w; }), sl = lf(g, 'label') || '';
+    out.push(g);
+    var pairs = ws.slice(0, 5).map(function (w) { return w.w + '=' + (wordMeaning(w) || w.uk || ''); }).filter(function (x) { return !/=$/.test(x); });
+    if (pairs.length >= 3) out.push({type:'match', options:pairs, label:sl.replace(/\s*·.*$/, '') + ' · ' + L3x('СЛОВА', 'SŁOWA', 'WORDS'), q:L3x("З'єднай слова сцени з перекладом.", 'Połącz słowa sceny z tłumaczeniem.', 'Match the scene words with their translations.')});
+    var items = [];
+    ws.forEach(function (w) {
+      if (items.length >= 4 || !w.line || String(w.line).split(/\s+/).length < 3) return;
+      var base = function (x) { return String(x.w).replace(/^to\s+/i, ''); }, re = new RegExp('(^|[^\\p{L}])(' + reEsc(base(w)) + ')(?=[^\\p{L}]|$)', 'iu'); if (!re.test(w.line) || (w.line.match(new RegExp('(^|[^\\p{L}])' + reEsc(base(w)) + '(?=[^\\p{L}]|$)', 'giu')) || []).length > 1) return;
+      var others = shuffle(allW.filter(function (x) { return x.w !== w.w && w.pos && x.pos && x.pos !== w.pos; })).slice(0, 2);
+      if (others.length < 2) others = shuffle(allW.filter(function (x) { return x.w !== w.w; })).slice(0, 2);
+      var opts = shuffle([base(w)].concat(others.map(base)));
+      items.push({q:w.line.replace(re, '$1____'), options:opts, answer:opts.indexOf(base(w)), tag:L3x('Репліка з фільму', 'Kwestia z filmu', 'Line from the film'), tr:lf(w, 'who') || '', exp:w.w + ' — ' + (wordMeaning(w) || '')});
+    });
+    pool.slice(gi * per, gi * per + per).forEach(function (tk) { items.push(setTaskItem(tk)); });
+    if (items.length >= 3) out.push({type:'drill', kind:'set', items:shuffle(items), label:sl, q:L3x('Ти в цій сцені. Встав репліки, суди, що правда, зрозумій героїв.', 'Jesteś w tej scenie. Uzupełnij kwestie, oceń, co prawda, zrozum bohaterów.', 'You are in this scene. Fill in the lines, judge what is true, understand the heroes.'), ins:L3x('Набір питань сцени', 'Zestaw pytań sceny', 'Scene question set'), tip:L3x('Потрібно 70%+.', 'Potrzeba 70%+.', 'You need 70%+.')});
+  });
+  if (B.gram.length) out.push({type:'drill', kind:'set', items:B.gram.map(setTaskItem), label:L3x('ГРАМАТИКА СЦЕН', 'GRAMATYKA SCEN', 'SCENE GRAMMAR'), q:L3x('Репліки героїв. Обери правильну форму.', 'Kwestie bohaterów. Wybierz poprawną formę.', 'The heroes\' lines. Choose the correct form.'), ins:L3x('Граматика уроку в репліках', 'Gramatyka lekcji w kwestiach', 'The lesson grammar in lines'), tip:L3x('Потрібно 70%+.', 'Potrzeba 70%+.', 'You need 70%+.')});
+  B.drill.filter(function (d) { return d.kind !== 'vocab'; }).forEach(function (d) { out.push(d); });
+  B.quest.forEach(function (q) { out.push(q); });
+  var wr = B.order.concat(B.type).map(setTaskItem);
+  shuffle(allW).forEach(function (w) { if (wr.length >= 8) return; var m = wordMeaning(w); if (!m || /^(напр|np|e\.g)/i.test(m)) return; var tl = {en:L3x('англійською', 'po angielsku', 'in English'), pl:L3x('польською', 'po polsku', 'in Polish'), uk:L3x('українською', 'po ukraińsku', 'in Ukrainian')}[TARGET] || ''; wr.push({k:'type', q:L3x('Напиши', 'Napisz', 'Write') + ' ' + tl + ': «' + m + '»', options:[w.w, String(w.w).replace(/^to\s+/i, '')], exp:w.w, tag:L3x('Напиши слово', 'Napisz słowo', 'Write the word'), tr:lf(w, 'who') || ''}); });
+  if (wr.length >= 3) out.push({type:'drill', kind:'set', items:wr, label:L3x('ПИШИ Й СКЛАДАЙ', 'PISZ I UKŁADAJ', 'WRITE AND BUILD'), q:L3x('Слова й репліки цього уроку — тепер сам.', 'Słowa i kwestie tej lekcji — teraz samodzielnie.', 'This lesson\'s words and lines — now on your own.'), ins:L3x('Впиши й склади', 'Wpisz i ułóż', 'Type and build'), tip:L3x('Потрібно 70%+.', 'Potrzeba 70%+.', 'You need 70%+.')});
+  B.speak.slice(0, 2).forEach(function (x) { out.push(x); });
+  B.drill.filter(function (d) { return d.kind === 'vocab'; }).forEach(function (d) { out.push(d); });
+  B.rest.forEach(function (x) { out.push(x); });
+  B.fin.forEach(function (x) { out.push(x); });
+  return out;
+}
 function withReading(tasks) {
   if (!tasks.length || tasks.some(function (x) { return x.type === 'reading'; })) return tasks;
   /* the grammar drill becomes one connected text instead of being a second, separate copy of the same sentences */
@@ -1217,7 +1278,7 @@ function processPendingWritings() {
   }).catch(function () {}).then(function () { PW_BUSY = false; });
 }
 function runPlayer(container, lesson, onFinish, ctxLs) {
-  var hints = {}, tStart = {}, durs = {}, tasks = withReading((lessonTasks(lesson) || []).filter(function (x) { return !(x.say && x.type !== 'speaking'); })), cur = 0, res = [], finalText = '', snaps = [], maxReached = 0;
+  var hints = {}, tStart = {}, durs = {}, tasks = withReading(upgradeLesson((lessonTasks(lesson) || []).filter(function (x) { return !(x.say && x.type !== 'speaking'); }))), cur = 0, res = [], finalText = '', snaps = [], maxReached = 0;
   var FREE = isAdm() && ADMIN_MODE; if (FREE) maxReached = tasks.length - 1;
   var scored = tasks.filter(function (x) { return !isInfo(x.type); }).length;
   function numOf(i) { var n = 0; for (var j = 0; j <= i; j++) if (!isInfo(tasks[j].type)) n++; return n; }
