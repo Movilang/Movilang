@@ -1227,7 +1227,9 @@ function runPlayer(container, lesson, onFinish, ctxLs) {
   function renderSide() { side.innerHTML = tasks.map(function (tk, i) { var c = i === cur ? 'on' : ''; if (res[i] === true) c += ' ok'; if (res[i] === false) c += ' bad'; return '<button type="button" class="tstep ' + c + (i <= maxReached && i !== cur ? ' nav' : '') + '" data-go="' + i + '"' + (i > maxReached ? ' disabled' : '') + '><i>' + (tk.type === 'intro' ? '▶' : isInfo(tk.type) ? '📖' : numOf(i)) + '</i>' + esc(tag(tk)) + (res[i] != null ? '' : '') + '</button>'; }).join('');
     side.querySelectorAll('[data-go]').forEach(function (b) { b.onclick = function () { var i = +b.dataset.go; if (i <= maxReached && i !== cur) { cur = i; render(); } }; }); }
   function plainQ(s) { return String(s || '').replace(/<[^>]+>/g, '').replace(/_{2,}/g, '…'); }
-  function qHtml(tk) { return esc(lf(tk, 'q')).replace(/&lt;(\/?)(b|i)&gt;/g, '<$1$2>').replace(/_{3,}/g, '<span class="gap">____</span>'); }
+  function qFmt(v) { return esc(v).replace(/&lt;(\/?)(b|i)&gt;/g, '<$1$2>').replace(/_{3,}/g, '<span class="gap">____</span>'); }
+  // Якщо репліка з пропуском є лише в q (мовою навчання), а переклад q_xx — без пропуску, показуємо обидва: репліку і переклад під нею.
+  function qHtml(tk) { var loc = lf(tk, 'q'); if (/_{3,}/.test(tk.q || '') && loc !== tk.q && !/_{3,}/.test(loc || '')) return '<span class="q-line">' + qFmt(tk.q) + '</span><span class="q-sub">' + qFmt(loc) + '</span>'; return qFmt(loc); }
   function head(tk) {
     var n = numOf(cur);
     return '<div class="ttop"><span class="ttag">' + esc(tag(tk)) + '</span>' + (isInfo(tk.type) ? '' : '<span class="tcount">' + n + ' / ' + scored + '</span>') + '</div>' +

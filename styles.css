@@ -1092,3 +1092,4 @@ html.print-journal body *{visibility:hidden}html.print-journal .w-book,html.prin
 .posterup{display:grid;grid-template-columns:150px 1fr;gap:16px;align-items:start;padding:12px;border:1px dashed var(--line);border-radius:12px}
 .posterup .pu-prev .poster{width:150px;min-height:0;aspect-ratio:2/3}
 @media (max-width:520px){.posterup{grid-template-columns:1fr}}
+.q-line{display:block}.q-sub{display:block;margin-top:10px;font-size:.55em;font-weight:500;color:var(--muted);line-height:1.4}
