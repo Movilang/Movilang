@@ -897,7 +897,7 @@ function withReading(tasks) {
   var seen = {};
   tasks.forEach(function (x) { if (x.type === 'grammar') seen[norm(x.q)] = 1; });
   (tasks[di].items || []).forEach(function (it) { if (!it.k && /_{3,}/.test(it.q || '') && (it.q.match(/_{3,}/g) || []).length === 1 && (it.options || []).length > 1 && !seen[norm(it.q)]) items.push({q:it.q, options:it.options, answer:+it.answer || 0}); });
-  items = items.slice(0, 6);
+  items = items.slice(0, 12);
   if (items.length < 3) return tasks;
   var rt = {type:'reading', items:items, _auto:1};
   return tasks.slice(0, di).concat([rt], tasks.slice(di + 1));
