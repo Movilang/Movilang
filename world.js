@@ -77,8 +77,8 @@ window.MOVILANG_WORLDS = {
     collection: {uk: 'Карти Містик Фоллс', pl: 'Karty Mystic Falls', en: 'Mystic Falls cards'}, cardIcon: '🃏',
     artifacts: {uk: 'Артефакти уроків', pl: 'Artefakty lekcji', en: 'Lesson artifacts'},
     journal: {
-      title: {uk: 'Щоденник Олени', pl: 'Pamiętnik Eleny', en: 'Elena\'s Diary'}, icon: '📔',
-      open: 'Dear Diary,', sign: '— Elena',
+      title: {uk: 'Мій щоденник з Містик Фоллс', pl: 'Mój pamiętnik z Mystic Falls', en: 'My Mystic Falls diary'}, icon: '📔',
+      open: 'Dear Diary,', sign: '— the new kid at Mystic Falls High',
       lines: [
         'Today felt different. {scene_en}. I keep thinking about one word: “{w1}”. Somebody said: “{line1}”',
         'I can\'t sleep. Stefan said “{w1}”, and Damon just smiled. Bonnie says it means {t1}. I\'m not sure I want to know.',
@@ -119,8 +119,8 @@ window.MOVILANG_WORLDS = {
     collection: {uk: 'Фото з холодильника', pl: 'Zdjęcia z lodówki', en: 'Fridge photos'}, cardIcon: '📸',
     artifacts: {uk: 'Сувеніри з квартири', pl: 'Pamiątki z mieszkania', en: 'Apartment souvenirs'},
     journal: {
-      title: {uk: 'Нотатки з Central Perk', pl: 'Notatki z Central Perk', en: 'Central Perk notes'}, icon: '☕',
-      open: 'Note on a napkin:', sign: '— written on the orange couch',
+      title: {uk: 'Щоденник сьомого друга', pl: 'Pamiętnik siódmego przyjaciela', en: 'The seventh friend\'s diary'}, icon: '☕',
+      open: 'Dear Diary,', sign: '— written on the orange couch',
       lines: [
         'So today: {scene_en}. Best line of the day: “{line1}”',
         'New word I stole from the gang: “{w1}”. It means {t1}. Chandler used it sarcastically, of course.',
@@ -161,14 +161,88 @@ window.MOVILANG_WORLDS = {
     collection: {uk: 'Різдвяні іграшки', pl: 'Bombki choinkowe', en: 'Christmas ornaments'}, cardIcon: '🎁',
     artifacts: {uk: 'Речі з дому', pl: 'Rzeczy z domu', en: 'Things from the house'},
     journal: {
-      title: {uk: 'Записник Кевіна', pl: 'Notes Kevina', en: 'Kevin\'s notebook'}, icon: '📒',
-      open: 'Kevin\'s notebook. TOP SECRET.', sign: '— Kevin McCallister, man of the house',
+      title: {uk: 'Мій таємний записник', pl: 'Mój tajny notes', en: 'My secret notebook'}, icon: '📒',
+      open: 'My secret notebook. TOP SECRET.', sign: '— Kevin\'s friend from next door',
       lines: [
         'Today: {scene_en}. New word: “{w1}”. I heard: “{line1}”',
         'Battle plan, part 2. Words I need: {w1}, {w2}, {w3}. Buzz would never understand.',
         'I\'m not afraid anymore. Today I learned “{w1}”. It means {t1}. Very useful against burglars.',
         'Dear Santa, I learned “{w1}” and “{w2}”. Please bring my family back. P.S. And more pizza.'
       ]
+    }
+  },
+
+  'himym-s1': {
+    theme: null,
+    points: {icon: '🍺', uk: 'келихи в MacLaren\'s', pl: 'kufle w MacLaren\'s', en: 'MacLaren\'s pints'},
+    ritual: {
+      icon: '🎺',
+      title: {uk: 'Хто ти в банді?', pl: 'Kim jesteś w paczce?', en: 'Who are you in the gang?'},
+      intro: {uk: 'Ваш столик у MacLaren\'s вільний. П\'ять питань англійською — і стане ясно, чия ти людина.', pl: 'Wasz stolik w MacLaren\'s jest wolny. Pięć pytań po angielsku — i wszystko będzie jasne.', en: 'Your booth at MacLaren\'s is free. Five questions, and it will be clear whose person you are.'},
+      reveal: {uk: 'Барні піднімає келих: «Це буде ЛЕГЕН… стривай… ДАРНО!» Твоя команда:', pl: 'Barney unosi kufel: „Będzie LEGEN… czekaj… DARNIE!” Twoja drużyna:', en: 'Barney raises his glass: "It\'s going to be LEGEN… wait for it… DARY!" Your team:'},
+      questions: [
+        {q: 'It\'s Friday night. What\'s the plan?', hint: {uk: 'Вечір п\'ятниці. Який план?', pl: 'Piątkowy wieczór. Jaki plan?', en: ''},
+          a: [['Suit up! Tonight is going to be legendary.', 'barney'], ['Find the one. She could be here tonight.', 'ted'], ['A quiet night in with wine and cheese.', 'lily'], ['Hockey at the bar with a scotch.', 'robin']]},
+        {q: 'Your friend has a big problem. You…', hint: {uk: 'У твого друга велика проблема. Ти…', pl: 'Twój przyjaciel ma duży problem. Ty…', en: ''},
+          a: [['…make a plan and secretly fix everything.', 'lily'], ['…give a long speech about fate.', 'ted'], ['…say: "Challenge accepted!"', 'barney'], ['…tell the truth, even if it hurts.', 'robin']]},
+        {q: 'What is in your closet?', hint: {uk: 'Що в тебе в шафі?', pl: 'Co masz w szafie?', en: ''},
+          a: [['Twenty identical suits.', 'barney'], ['An old shirt that reminds me of my ex.', 'ted'], ['Paintings nobody has seen.', 'lily'], ['A secret from my past. Don\'t ask.', 'robin']]},
+        {q: 'Choose a perfect date.', hint: {uk: 'Обери ідеальне побачення.', pl: 'Wybierz idealną randkę.', en: ''},
+          a: [['Steal a blue French horn for her.', 'ted'], ['A shooting range and a hockey game.', 'robin'], ['Dinner at home with my best friend.', 'lily'], ['Date? I have a playbook for that.', 'barney']]},
+        {q: 'Choose one word that describes you.', hint: {uk: 'Обери одне слово про себе.', pl: 'Wybierz jedno słowo o sobie.', en: ''},
+          a: [['Romantic.', 'ted'], ['Awesome.', 'barney'], ['Loyal.', 'lily'], ['Independent.', 'robin']]}
+      ]
+    },
+    factions: {
+      ted: {icon: '🎺', color: '#2f6fae', uk: 'Команда Теда', pl: 'Drużyna Teda', en: 'Team Ted', motto: {uk: 'Віра в долю', pl: 'Wiara w przeznaczenie', en: 'Believe in fate'}},
+      barney: {icon: '🤵', color: '#3a3a4a', uk: 'Команда Барні', pl: 'Drużyna Barneya', en: 'Team Barney', motto: {uk: 'Одягни костюм!', pl: 'Załóż garnitur!', en: 'Suit up!'}},
+      lily: {icon: '🎨', color: '#c0577a', uk: 'Команда Лілі й Маршалла', pl: 'Drużyna Lily i Marshalla', en: 'Team Lily & Marshall', motto: {uk: 'Любов і вірність', pl: 'Miłość i wierność', en: 'Love and loyalty'}},
+      robin: {icon: '🏒', color: '#c4302b', uk: 'Команда Робін', pl: 'Drużyna Robin', en: 'Team Robin', motto: {uk: 'Свобода понад усе', pl: 'Wolność ponad wszystko', en: 'Freedom first'}}
+    },
+    standings: {uk: 'Рейтинг столиків MacLaren\'s', pl: 'Ranking stolików MacLaren\'s', en: 'MacLaren\'s booth standings'},
+    collection: {uk: 'Легендарні історії', pl: 'Legendarne historie', en: 'Legendary stories'}, cardIcon: '📼',
+    artifacts: {uk: 'Сувеніри банди', pl: 'Pamiątki paczki', en: 'Gang souvenirs'},
+    journal: {
+      title: {uk: 'Нотатки з MacLaren\'s', pl: 'Notatki z MacLaren\'s', en: 'Notes from MacLaren\'s'}, icon: '📓',
+      open: 'Note to future me:', sign: '— your past self, New York',
+      lines: ['Tonight at MacLaren\'s: {scene_en}. Word of the night: “{w1}”.', 'New words: {w1}, {w2}, {w3}. Barney says they are legendary.']
+    }
+  },
+
+  'cars': {
+    theme: null,
+    points: {icon: '🏁', uk: 'кола', pl: 'okrążenia', en: 'laps'},
+    ritual: {
+      icon: '🏎️',
+      title: {uk: 'Твоє місце в Радіатор-Спрінгз', pl: 'Twoje miejsce w Chłodnicy Górskiej', en: 'Your place in Radiator Springs'},
+      intro: {uk: 'Стара дорога 66, захід сонця, неонові вогні. П\'ять простих питань англійською — і місто покаже, де твій гараж.', pl: 'Stara droga 66, zachód słońca, neony. Pięć prostych pytań po angielsku — i miasto pokaże ci twój garaż.', en: 'Old Route 66, sunset, neon lights. Five easy questions, and the town shows you your garage.'},
+      reveal: {uk: 'Неонові вогні спалахують. Твоя команда:', pl: 'Neony się zapalają. Twoja drużyna:', en: 'The neon lights come on. Your team:'},
+      questions: [
+        {q: 'What do you love?', hint: {uk: 'Що ти любиш?', pl: 'Co kochasz?', en: ''},
+          a: [['Speed! I am fast.', 'speed'], ['My friends.', 'tow'], ['A quiet road in the mountains.', 'cone'], ['Old stories and wise advice.', 'doc']]},
+        {q: 'What colour are you?', hint: {uk: 'Якого ти кольору?', pl: 'Jakiego jesteś koloru?', en: ''},
+          a: [['Red.', 'speed'], ['Brown and a little rusty.', 'tow'], ['Blue.', 'cone'], ['Dark blue.', 'doc']]},
+        {q: 'Your friend is lost on the road. You…', hint: {uk: 'Твій друг загубився на дорозі. Ти…', pl: 'Twój przyjaciel zgubił się na drodze. Ty…', en: ''},
+          a: [['…drive very fast to find him.', 'speed'], ['…tow him home.', 'tow'], ['…give him a room for the night.', 'cone'], ['…show him the right way.', 'doc']]},
+        {q: 'Where do you sleep?', hint: {uk: 'Де ти спиш?', pl: 'Gdzie śpisz?', en: ''},
+          a: [['In a big trailer.', 'speed'], ['In a junkyard.', 'tow'], ['In a cone motel.', 'cone'], ['In a garage.', 'doc']]},
+        {q: 'Choose one word.', hint: {uk: 'Обери одне слово.', pl: 'Wybierz jedno słowo.', en: ''},
+          a: [['Fast.', 'speed'], ['Funny.', 'tow'], ['Kind.', 'cone'], ['Wise.', 'doc']]}
+      ]
+    },
+    factions: {
+      speed: {icon: '⚡', color: '#c4302b', uk: 'Команда Блискавки', pl: 'Drużyna Zygzaka', en: 'Team Lightning', motto: {uk: 'Я — швидкість!', pl: 'Jestem szybkością!', en: 'I am speed!'}},
+      tow: {icon: '🪝', color: '#8a5a3a', uk: 'Буксир Метра', pl: 'Holownik Złomka', en: 'Mater\'s Tow Crew', motto: {uk: 'Друзі понад усе', pl: 'Przyjaciele ponad wszystko', en: 'Friends first'}},
+      cone: {icon: '🔶', color: '#3b6fd4', uk: 'Мотель «Затишний конус»', pl: 'Motel „Przytulny Pachołek”', en: 'The Cozy Cone', motto: {uk: 'Дорога — це життя', pl: 'Droga to życie', en: 'The road is life'}},
+      doc: {icon: '🏆', color: '#1f3a6b', uk: 'Гараж Дока', pl: 'Warsztat Doca', en: 'Doc\'s Garage', motto: {uk: 'Мудрість і досвід', pl: 'Mądrość i doświadczenie', en: 'Wisdom and experience'}}
+    },
+    standings: {uk: 'Велика гонка команд', pl: 'Wielki wyścig drużyn', en: 'The big team race'},
+    collection: {uk: 'Наліпки з гонок', pl: 'Naklejki z wyścigów', en: 'Race stickers'}, cardIcon: '🏁',
+    artifacts: {uk: 'Сувеніри з дороги 66', pl: 'Pamiątki z drogi 66', en: 'Route 66 souvenirs'},
+    journal: {
+      title: {uk: 'Бортовий журнал', pl: 'Dziennik trasy', en: 'My road logbook'}, icon: '🗺️',
+      open: 'Logbook:', sign: '— the rookie of the pit crew',
+      lines: ['Today: {scene_en}. New word: “{w1}”.', 'Words for the road: {w1}, {w2}, {w3}.']
     }
   },
 
@@ -203,8 +277,8 @@ window.MOVILANG_WORLDS = {
     collection: {uk: 'Справи ZPD', pl: 'Akta ZPD', en: 'ZPD case files'}, cardIcon: '🗂️',
     artifacts: {uk: 'Значки і жетони', pl: 'Odznaki i żetony', en: 'Badges and tokens'},
     journal: {
-      title: {uk: 'Блокнот Джуді Гопс', pl: 'Notatnik Judy Hops', en: 'Judy Hopps\' notebook'}, icon: '🥕',
-      open: 'Officer Hopps — field notes.', sign: '— J. Hopps, ZPD',
+      title: {uk: 'Блокнот новачка ZPD', pl: 'Notatnik rekruta ZPD', en: 'A ZPD rookie\'s notebook'}, icon: '🥕',
+      open: 'Rookie\'s field notes.', sign: '— rookie officer, ZPD',
       lines: [
         'Case update: {scene_en}. Key word: “{w1}”. Witness said: “{line1}”',
         'Note to self: “{w1}” means {t1}. Nick laughed when I wrote it down. Whatever.',

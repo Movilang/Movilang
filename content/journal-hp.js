@@ -1,11 +1,11 @@
 // Листи з Гоґвортсу — ручні записи журналу для курсу harry-potter-1.
 // Учень — першокурсник, який пише додому. Слова з уроку позначені [[так]] — сайт підсвітить їх і покаже переклад.
-// en — 3–5 речень англійською; pl / uk — переклад.
+// en — 3–5 речень англійською; pl / uk — переклад. Рід: {чоловічий|жіночий}, напр. poznał{em|am}.
 (window.MOVILANG_JOURNALS = window.MOVILANG_JOURNALS || {})['harry-potter-1'] = {
   1: {
     en: 'On the train I met a boy with a [[scar]] shaped like lightning. There is a [[rumour]] that he is [[famous]] in our world, but he grew up with his [[relatives]] and slept in a [[cupboard]] under the stairs. I asked if they were kind to him. He just said, "[[I\'m afraid so]]… not."',
-    pl: 'W pociągu poznałem chłopaka z blizną w kształcie błyskawicy. Krąży plotka, że jest sławny w naszym świecie, ale wychowywał się u krewnych i spał w komórce pod schodami. Zapytałem, czy byli dla niego dobrzy. Odpowiedział tylko: „Obawiam się, że… nie”.',
-    uk: 'У потязі я познайомився з хлопцем, у якого шрам у формі блискавки. Ходять чутки, що він знаменитий у нашому світі, але виріс він у родичів і спав у комірчині під сходами. Я спитав, чи були вони до нього добрі. Він лише відповів: «Боюся, що… ні».'
+    pl: 'W pociągu poznał{em|am} chłopaka z blizną w kształcie błyskawicy. Krąży plotka, że jest sławny w naszym świecie, ale wychowywał się u krewnych i spał w komórce pod schodami. Zapytał{em|am}, czy byli dla niego dobrzy. Odpowiedział tylko: „Obawiam się, że… nie”.',
+    uk: 'У потязі я познайоми{вся|лася} з хлопцем, у якого шрам у формі блискавки. Ходять чутки, що він знаменитий у нашому світі, але виріс він у родичів і спав у комірчині під сходами. Я спита{в|ла}, чи були вони до нього добрі. Він лише відповів: «Боюся, що… ні».'
   },
   2: {
     en: 'Harry told me the funniest story today. At the [[zoo]], on his cousin\'s birthday, he talked to a big [[snake]] in the [[reptile house]]. Then the glass just disappeared! His uncle had [[warned]] him: "No [[funny business]]." I think the snake had other plans.',
@@ -24,8 +24,8 @@
   },
   5: {
     en: 'Tonight I imagined I was in that hut with Harry. The storm, the [[spoiled]] cousin, the uncle who [[complained]] about everything. I wouldn\'t [[trust]] the Dursleys with a goldfish. But the night ended [[perfect]]ly: Harry finally got his letter.',
-    pl: 'Dziś wieczorem wyobraziłem sobie, że jestem w tej chacie z Harrym. Burza, rozpieszczony kuzyn, wujek, który na wszystko narzekał. Nie powierzyłbym Dursleyom nawet złotej rybki. Ale noc skończyła się idealnie: Harry w końcu dostał swój list.',
-    uk: 'Сьогодні ввечері я уявив, що я в тій хатині з Гаррі. Буря, розбещений кузен, дядько, який на все скаржився. Я б не довірив Дурслям навіть золоту рибку. Але ніч закінчилася ідеально: Гаррі нарешті отримав свій лист.'
+    pl: 'Dziś wieczorem wyobraził{em|am} sobie, że jestem w tej chacie z Harrym. Burza, rozpieszczony kuzyn, wujek, który na wszystko narzekał. Nie powierzył{bym|abym} Dursleyom nawet złotej rybki. Ale noc skończyła się idealnie: Harry w końcu dostał swój list.',
+    uk: 'Сьогодні ввечері я уяви{в|ла}, що я в тій хатині з Гаррі. Буря, розбещений кузен, дядько, який на все скаржився. Я б не довіри{в|ла} Дурслям навіть золоту рибку. Але ніч закінчилася ідеально: Гаррі нарешті отримав свій лист.'
   },
   6: {
     en: 'In London there is a [[pub]] that [[Muggles]] walk past without seeing it. Behind it is a [[brick wall]], and if you know which brick to tap, it opens. People [[recognized]] Harry and wanted to [[shake hands]] with him. He was so [[nervous]]!',
@@ -34,23 +34,23 @@
   },
   7: {
     en: 'Thank you for the money for Diagon Alley! I followed my [[shopping list]]: [[robes]], a pewter [[cauldron]], a [[spell book]] and all the other [[equipment]]. The street was so [[crowded]] that I lost my scarf. Don\'t worry, I still have [[enough]] for an owl… maybe.',
-    pl: 'Dziękuję za pieniądze na ulicę Pokątną! Kupowałem według listy zakupów: szaty, cynowy kociołek, księgę zaklęć i resztę wyposażenia. Na ulicy był taki tłok, że zgubiłem szalik. Nie martwcie się, wystarczy mi jeszcze na sowę… chyba.',
-    uk: 'Дякую за гроші на Алею Діаґон! Я купував за списком: мантії, олов\'яний казанок, книжку заклять і все інше спорядження. На вулиці була така тиснява, що я загубив шарф. Не хвилюйтеся, мені ще вистачить на сову… мабуть.'
+    pl: 'Dziękuję za pieniądze na ulicę Pokątną! Kupował{em|am} według listy zakupów: szaty, cynowy kociołek, księgę zaklęć i resztę wyposażenia. Na ulicy był taki tłok, że zgubił{em|am} szalik. Nie martwcie się, wystarczy mi jeszcze na sowę… chyba.',
+    uk: 'Дякую за гроші на Алею Діаґон! Я купува{в|ла} за списком: мантії, олов\'яний казанок, книжку заклять і все інше спорядження. На вулиці була така тиснява, що я загуби{в|ла} шарф. Не хвилюйтеся, мені ще вистачить на сову… мабуть.'
   },
   8: {
     en: 'The [[wand-maker]]\'s shop was tiny and [[dusty]], with thousands of [[boxes]] up to the ceiling. I had to [[try]] seven wands. Every time I [[gave it a wave]], something broke. Then one wand felt warm in my hand. The old man smiled: "The wand [[chooses]] the wizard."',
-    pl: 'Sklep wytwórcy różdżek był malutki i zakurzony, z tysiącami pudełek aż pod sufit. Musiałem wypróbować siedem różdżek. Za każdym razem, gdy nią machnąłem, coś się psuło. Potem jedna różdżka zrobiła się ciepła w mojej dłoni. Staruszek się uśmiechnął: „To różdżka wybiera czarodzieja”.',
-    uk: 'Крамничка майстра чарівних паличок була крихітна й запилена, з тисячами коробок аж до стелі. Мені довелося спробувати сім паличок. Щоразу, як я нею махав, щось ламалося. Потім одна паличка потеплішала в моїй руці. Старий усміхнувся: «Паличка обирає чарівника».'
+    pl: 'Sklep wytwórcy różdżek był malutki i zakurzony, z tysiącami pudełek aż pod sufit. Musiał{em|am} wypróbować siedem różdżek. Za każdym razem, gdy nią machn{ąłem|ęłam}, coś się psuło. Potem jedna różdżka zrobiła się ciepła w mojej dłoni. Staruszek się uśmiechnął: „To różdżka wybiera czarodzieja”.',
+    uk: 'Крамничка майстра чарівних паличок була крихітна й запилена, з тисячами коробок аж до стелі. Мені довелося спробувати сім паличок. Щоразу, як я нею маха{в|ла}, щось ламалося. Потім одна паличка потеплішала в моїй руці. Старий усміхнувся: «Паличка обирає чарівника».'
   },
   9: {
     en: 'I was [[lost]] at King\'s Cross for twenty minutes! My [[ticket]] said [[platform]] nine and three-quarters, and the [[guard]] said it didn\'t [[exist]]. Then a red-haired family showed me the trick: you walk straight at the [[barrier]] between nine and ten. I closed my eyes and ran.',
-    pl: 'Przez dwadzieścia minut błąkałem się po King\'s Cross! Na bilecie był peron dziewięć i trzy czwarte, a konduktor mówił, że taki nie istnieje. Potem rudowłosa rodzina pokazała mi sztuczkę: trzeba iść prosto na barierkę między dziewiątką a dziesiątką. Zamknąłem oczy i pobiegłem.',
-    uk: 'Я двадцять хвилин блукав вокзалом Кінґс-Крос! У квитку була платформа дев\'ять і три чверті, а черговий казав, що такої не існує. Потім руда родина показала мені хитрість: треба йти просто на бар\'єр між дев\'ятою і десятою. Я заплющив очі й побіг.'
+    pl: 'Przez dwadzieścia minut błąkał{em|am} się po King\'s Cross! Na bilecie był peron dziewięć i trzy czwarte, a konduktor mówił, że taki nie istnieje. Potem rudowłosa rodzina pokazała mi sztuczkę: trzeba iść prosto na barierkę między dziewiątką a dziesiątką. Zamkn{ąłem|ęłam} oczy i pobiegł{em|am}.',
+    uk: 'Я двадцять хвилин блука{в|ла} вокзалом Кінґс-Крос! У квитку була платформа дев\'ять і три чверті, а черговий казав, що такої не існує. Потім руда родина показала мені хитрість: треба йти просто на бар\'єр між дев\'ятою і десятою. Я заплющи{в|ла} очі й {побіг|побігла}.'
   },
   10: {
     en: 'On the Hogwarts Express I shared a compartment with Harry and a boy called Ron. Ron has a [[rat]] and lots of [[hand-me-down]] things, but he is really funny. We bought half the [[trolley]]! A girl came in and showed us a [[spell]]. She has already read all the books.',
-    pl: 'W Ekspresie do Hogwartu siedziałem w przedziale z Harrym i chłopakiem o imieniu Ron. Ron ma szczura i mnóstwo rzeczy po starszych braciach, ale jest naprawdę zabawny. Wykupiliśmy pół wózka ze słodyczami! Weszła dziewczyna i pokazała nam zaklęcie. Przeczytała już wszystkie książki.',
-    uk: 'У Гоґвортс-експресі я їхав в одному купе з Гаррі та хлопцем на ім\'я Рон. У Рона є щур і купа речей після старших братів, але він дуже кумедний. Ми скупили пів візка зі солодощами! Зайшла дівчинка й показала нам закляття. Вона вже прочитала всі підручники.'
+    pl: 'W Ekspresie do Hogwartu siedział{em|am} w przedziale z Harrym i chłopakiem o imieniu Ron. Ron ma szczura i mnóstwo rzeczy po starszych braciach, ale jest naprawdę zabawny. Wykupiliśmy pół wózka ze słodyczami! Weszła dziewczyna i pokazała nam zaklęcie. Przeczytała już wszystkie książki.',
+    uk: 'У Гоґвортс-експресі я їха{в|ла} в одному купе з Гаррі та хлопцем на ім\'я Рон. У Рона є щур і купа речей після старших братів, але він дуже кумедний. Ми скупили пів візка зі солодощами! Зайшла дівчинка й показала нам закляття. Вона вже прочитала всі підручники.'
   },
   11: {
     en: 'I made it! Everything is [[safe]] in my trunk, [[except]] my scarf (still lost). Harry told me about Gringotts: [[goblins]] run the bank, and Hagrid took a small [[package]] from a secret [[vault]]. Nobody knows what is inside. Now I can see the castle lights from the window!',
@@ -70,12 +70,12 @@
   14: {
     en: 'Our first [[Potions]] lesson was in a cold dungeon. Professor Snape asked Harry three hard questions, and Harry could only say: "[[I don\'t know, sir]]." Snape called him a [[celebrity]] and said [[fame]] isn\'t everything. Note to self: always [[pay attention]] in Potions.',
     pl: 'Pierwsza lekcja eliksirów była w zimnym lochu. Profesor Snape zadał Harry\'emu trzy trudne pytania, a Harry mógł tylko powiedzieć: „Nie wiem, panie profesorze”. Snape nazwał go celebrytą i powiedział, że sława to nie wszystko. Notatka dla siebie: na eliksirach zawsze uważać.',
-    uk: 'Наш перший урок зіллєваріння був у холодному підземеллі. Професор Снейп поставив Гаррі три важкі запитання, і Гаррі міг лише сказати: «Я не знаю, сер». Снейп назвав його знаменитістю й сказав, що слава — це ще не все. Нотатка собі: на зіллях завжди бути уважним.'
+    uk: 'Наш перший урок зіллєваріння був у холодному підземеллі. Професор Снейп поставив Гаррі три важкі запитання, і Гаррі міг лише сказати: «Я не знаю, сер». Снейп назвав його знаменитістю й сказав, що слава — це ще не все. Нотатка собі: на зіллях завжди бути уважн{им|ою}.'
   },
   15: {
     en: 'Today was our first [[flying lesson]]! Madam Hooch told us to [[step up]] to the brooms and say "[[Up!]]". Mine jumped into my hand at once. Then Neville [[lost control]] and flew into a wall. When the [[whistle]] blew, I was shaking, but I loved it.',
-    pl: 'Dziś mieliśmy pierwszą lekcję latania! Pani Hooch kazała nam podejść do mioteł i powiedzieć: „Do góry!”. Moja od razu wskoczyła mi do ręki. Potem Neville stracił panowanie i wleciał w ścianę. Kiedy zabrzmiał gwizdek, cały się trząsłem, ale byłem zachwycony.',
-    uk: 'Сьогодні в нас був перший урок польотів! Мадам Гуч сказала підійти до мітел і промовити: «Вгору!». Моя одразу стрибнула мені в руку. Потім Невіл утратив контроль і влетів у стіну. Коли пролунав свисток, я весь тремтів, але мені страшенно сподобалося.'
+    pl: 'Dziś mieliśmy pierwszą lekcję latania! Pani Hooch kazała nam podejść do mioteł i powiedzieć: „Do góry!”. Moja od razu wskoczyła mi do ręki. Potem Neville stracił panowanie i wleciał w ścianę. Kiedy zabrzmiał gwizdek, {cały|cała} się {trząsłem|trzęsłam}, ale był{em|am} zachwycon{y|a}.',
+    uk: 'Сьогодні в нас був перший урок польотів! Мадам Гуч сказала підійти до мітел і промовити: «Вгору!». Моя одразу стрибнула мені в руку. Потім Невіл утратив контроль і влетів у стіну. Коли пролунав свисток, я {весь|вся} тремті{в|ла}, але мені страшенно сподобалося.'
   },
   16: {
     en: 'At breakfast six owls brought Harry a long [[parcel]]. Inside was a [[Nimbus 2000]], the best [[broom]] in the world! Malfoy was so [[jealous]]. Harry is the youngest player on the house [[team]] in a century. Ron says it [[runs in the family]]: Harry\'s dad played too.',
@@ -84,8 +84,8 @@
   },
   17: {
     en: 'My first week is over and I want to tell you everything. I found out where the kitchens are, I saw a [[ghost]] without a head, and we had a [[feast]] every night. We almost entered the [[forbidden]] corridor by mistake. It took [[courage]] to run back the right way!',
-    pl: 'Mój pierwszy tydzień się skończył i chcę wam wszystko opowiedzieć. Dowiedziałem się, gdzie są kuchnie, widziałem ducha bez głowy, a co wieczór była uczta. Prawie weszliśmy przez pomyłkę do zakazanego korytarza. Trzeba było odwagi, żeby uciec właściwą drogą!',
-    uk: 'Мій перший тиждень минув, і я хочу розповісти вам усе. Я дізнався, де кухні, бачив привида без голови, і щовечора був бенкет. Ми ледь не зайшли випадково в заборонений коридор. Знадобилася сміливість, щоб утекти правильною дорогою!'
+    pl: 'Mój pierwszy tydzień się skończył i chcę wam wszystko opowiedzieć. Dowiedział{em|am} się, gdzie są kuchnie, widział{em|am} ducha bez głowy, a co wieczór była uczta. Prawie weszliśmy przez pomyłkę do zakazanego korytarza. Trzeba było odwagi, żeby uciec właściwą drogą!',
+    uk: 'Мій перший тиждень минув, і я хочу розповісти вам усе. Я дізна{вся|лася}, де кухні, бачи{в|ла} привида без голови, і щовечора був бенкет. Ми ледь не зайшли випадково в заборонений коридор. Знадобилася сміливість, щоб утекти правильною дорогою!'
   },
   18: {
     en: 'In Charms we learned to [[levitate]] a feather. You have to [[pronounce]] the spell correctly and do the "[[swish and flick]]". Seamus made his feather [[explode]]. Hermione did it [[well done]] on the first try, and Ron said she was a [[nightmare]]. She heard him and cried.',
@@ -104,8 +104,8 @@
   },
   21: {
     en: 'Merry [[Christmas]]! When I [[woke up]], there was a [[jumper]] from you at the end of my bed. Thank you! Ron\'s mum [[knitted]] one for Harry too. And Harry got a strange present with [[no name]], just a [[note]]: "[[Use it well]]." It was a [[cloak]] that makes you invisible!',
-    pl: 'Wesołych Świąt! Kiedy się obudziłem, w nogach łóżka leżał sweter od was. Dziękuję! Mama Rona zrobiła na drutach sweter także dla Harry\'ego. A Harry dostał dziwny prezent bez podpisu, tylko z liścikiem: „Zrób z tego dobry użytek”. To była peleryna, która czyni niewidzialnym!',
-    uk: 'Веселого Різдва! Коли я прокинувся, біля ліжка лежав светр від вас. Дякую! Мама Рона зв\'язала светр і для Гаррі. А Гаррі отримав дивний подарунок без імені, тільки з запискою: «Використай її з розумом». Це була мантія, що робить невидимим!'
+    pl: 'Wesołych Świąt! Kiedy się obudził{em|am}, w nogach łóżka leżał sweter od was. Dziękuję! Mama Rona zrobiła na drutach sweter także dla Harry\'ego. A Harry dostał dziwny prezent bez podpisu, tylko z liścikiem: „Zrób z tego dobry użytek”. To była peleryna, która czyni niewidzialnym!',
+    uk: 'Веселого Різдва! Коли я прокину{вся|лася}, біля ліжка лежав светр від вас. Дякую! Мама Рона зв\'язала светр і для Гаррі. А Гаррі отримав дивний подарунок без імені, тільки з запискою: «Використай її з розумом». Це була мантія, що робить невидимим!'
   },
   22: {
     en: 'Harry showed me an old [[mirror]] in an [[empty]] classroom. When he looks into it, he sees his parents [[standing behind]] him. They [[smile]] and [[wave at]] him. Ron saw himself as [[Head Boy]]. Dumbledore says the mirror shows what we want most, but it\'s not good to live in dreams.',
@@ -114,8 +114,8 @@
   },
   23: {
     en: 'Last night I borrowed Harry\'s cloak (shh!). I [[overheard]] Filch in the [[dungeons]] say that he [[can\'t stand]] students out of bed. I almost [[fainted]] when Mrs Norris looked straight at me. Next time I will just read a book about [[charms]] instead.',
-    pl: 'Wczoraj w nocy pożyczyłem pelerynę Harry\'ego (ciii!). Podsłuchałem w lochach, jak Filch mówił, że nie znosi uczniów poza łóżkami. Prawie zemdlałem, kiedy Pani Norris spojrzała prosto na mnie. Następnym razem po prostu poczytam książkę o zaklęciach.',
-    uk: 'Учора вночі я позичив мантію Гаррі (тсс!). Я підслухав у підземеллі, як Філч казав, що терпіти не може учнів поза ліжками. Я ледь не зомлів, коли місіс Норіс подивилася просто на мене. Наступного разу я краще почитаю книжку про заклинання.'
+    pl: 'Wczoraj w nocy pożyczył{em|am} pelerynę Harry\'ego (ciii!). Podsłuchał{em|am} w lochach, jak Filch mówił, że nie znosi uczniów poza łóżkami. Prawie zemdlał{em|am}, kiedy Pani Norris spojrzała prosto na mnie. Następnym razem po prostu poczytam książkę o zaklęciach.',
+    uk: 'Учора вночі я позичи{в|ла} мантію Гаррі (тсс!). Я підслуха{в|ла} у підземеллі, як Філч казав, що терпіти не може учнів поза ліжками. Я ледь не {зомлів|зомліла}, коли місіс Норіс подивилася просто на мене. Наступного разу я краще почитаю книжку про заклинання.'
   },
   24: {
     en: 'Hagrid [[let slip]] a name: Nicolas Flamel. He told us not to [[get involved]], because it\'s [[dangerous]]. We [[searched]] the library for weeks and found no [[clue]]. Then Hermione remembered a heavy old book in her room. Flamel made the Philosopher\'s Stone!',
@@ -144,8 +144,8 @@
   },
   29: {
     en: 'I [[looked up]] the Philosopher\'s Stone in the library. It can turn metal into gold and help you [[live forever]]. Some people think it\'s just a [[legend]], but it\'s real, and it\'s here in the castle. Someone wants to [[steal]] it. It feels [[pointless]] to study for exams now.',
-    pl: 'Poszukałem w bibliotece informacji o Kamieniu Filozoficznym. Zamienia metal w złoto i pozwala żyć wiecznie. Niektórzy myślą, że to tylko legenda, ale on jest prawdziwy i jest tu, w zamku. Ktoś chce go ukraść. Nauka do egzaminów wydaje się teraz bez sensu.',
-    uk: 'Я пошукав у бібліотеці про філософський камінь. Він перетворює метал на золото й дає змогу жити вічно. Дехто думає, що це лише легенда, але він справжній і він тут, у замку. Хтось хоче його вкрасти. Готуватися до іспитів тепер здається безглуздим.'
+    pl: 'Poszukał{em|am} w bibliotece informacji o Kamieniu Filozoficznym. Zamienia metal w złoto i pozwala żyć wiecznie. Niektórzy myślą, że to tylko legenda, ale on jest prawdziwy i jest tu, w zamku. Ktoś chce go ukraść. Nauka do egzaminów wydaje się teraz bez sensu.',
+    uk: 'Я пошука{в|ла} у бібліотеці про філософський камінь. Він перетворює метал на золото й дає змогу жити вічно. Дехто думає, що це лише легенда, але він справжній і він тут, у замку. Хтось хоче його вкрасти. Готуватися до іспитів тепер здається безглуздим.'
   },
   30: {
     en: 'Dumbledore has [[left for]] London, to the [[Ministry of Magic]]. Tonight Harry, Ron and Hermione are going through the trapdoor alone. Neville tried to [[stand up to]] them and [[fight]] them, but Hermione had to freeze him. "[[Sorry about this]]," she said. I\'m so scared for them.',
@@ -179,7 +179,7 @@
   },
   36: {
     en: 'This is my last letter from Hogwarts this year. I passed all my exams, I have real friends and a broom I can almost fly. Tomorrow the Hogwarts Express takes us back to King\'s Cross. See you on platform nine and three-quarters. I have so much to tell you!',
-    pl: 'To mój ostatni list z Hogwartu w tym roku. Zdałem wszystkie egzaminy, mam prawdziwych przyjaciół i miotłę, na której prawie umiem latać. Jutro Ekspres do Hogwartu zawiezie nas z powrotem na King\'s Cross. Do zobaczenia na peronie dziewięć i trzy czwarte. Mam wam tyle do opowiedzenia!',
-    uk: 'Це мій останній лист із Гоґвортсу цього року. Я склав усі іспити, у мене є справжні друзі й мітла, на якій я майже вмію літати. Завтра Гоґвортс-експрес повезе нас назад на Кінґс-Крос. До зустрічі на платформі дев\'ять і три чверті. Мені стільки треба вам розповісти!'
+    pl: 'To mój ostatni list z Hogwartu w tym roku. Zdał{em|am} wszystkie egzaminy, mam prawdziwych przyjaciół i miotłę, na której prawie umiem latać. Jutro Ekspres do Hogwartu zawiezie nas z powrotem na King\'s Cross. Do zobaczenia na peronie dziewięć i trzy czwarte. Mam wam tyle do opowiedzenia!',
+    uk: 'Це мій останній лист із Гоґвортсу цього року. Я скла{в|ла} усі іспити, у мене є справжні друзі й мітла, на якій я майже вмію літати. Завтра Гоґвортс-експрес повезе нас назад на Кінґс-Крос. До зустрічі на платформі дев\'ять і три чверті. Мені стільки треба вам розповісти!'
   }
 };
