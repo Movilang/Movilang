@@ -892,11 +892,11 @@ function withReading(tasks) {
   if (!tasks.length || tasks.some(function (x) { return x.type === 'reading'; })) return tasks;
   /* the grammar drill becomes one connected text instead of being a second, separate copy of the same sentences */
   var di = -1, items = [];
-  tasks.forEach(function (x, i) { if (di < 0 && x.type === 'drill' && x.kind !== 'vocab' && (x.items || []).some(function (it) { return /_{3,}/.test(it.q || ''); })) di = i; });
+  tasks.forEach(function (x, i) { if (di < 0 && x.type === 'drill' && x.kind !== 'vocab' && x.kind !== 'set' && (x.items || []).some(function (it) { return /_{3,}/.test(it.q || ''); })) di = i; });
   if (di < 0) return tasks;
   var seen = {};
   tasks.forEach(function (x) { if (x.type === 'grammar') seen[norm(x.q)] = 1; });
-  (tasks[di].items || []).forEach(function (it) { if (/_{3,}/.test(it.q || '') && (it.q.match(/_{3,}/g) || []).length === 1 && (it.options || []).length > 1 && !seen[norm(it.q)]) items.push({q:it.q, options:it.options, answer:+it.answer || 0}); });
+  (tasks[di].items || []).forEach(function (it) { if (!it.k && /_{3,}/.test(it.q || '') && (it.q.match(/_{3,}/g) || []).length === 1 && (it.options || []).length > 1 && !seen[norm(it.q)]) items.push({q:it.q, options:it.options, answer:+it.answer || 0}); });
   items = items.slice(0, 6);
   if (items.length < 3) return tasks;
   var rt = {type:'reading', items:items, _auto:1};
@@ -1265,21 +1265,45 @@ function runPlayer(container, lesson, onFinish, ctxLs) {
       card.innerHTML = h; card.querySelector('#tstart').onclick = function () { res[cur] = null; next(); }; bindSay(tk); return;
     }
     if (type === 'drill') {
+      // Набір завдань в одній картці. Пункт: k = mc (типово) | type (впиши) | order (склади з частин).
+      // it.tr / it.tr_pl / it.tr_en — переклад-підказка під питанням. Пункти відкриваються по одному.
       var its = tk.items || [], got = 0, answered = 0;
-      h += '<div class="drill">' + its.map(function (it, k) { return '<div class="dr-it" data-k="' + k + '"><div class="dr-q"><span class="dr-n">' + (k + 1) + '</span> ' + qHtml({q:lf(it, 'q')}) + (it['q_' + LANG] ? '' : ' <button type="button" class="spk" data-say="' + esc(plainQ(it.q)) + '">🔊</button>') + '</div><div class="dr-opts">' + (it.options || []).map(function (o, j) { return '<button type="button" class="dr-o" data-j="' + j + '">' + esc(o) + '</button>'; }).join('') + '</div><div class="dr-fb"></div></div>'; }).join('') + '</div><div class="dr-score" id="drScore">0 / ' + its.length + '</div>' + foot();
+      var itemHtml = function (it, k) {
+        var kind = it.k || 'mc', body = '';
+        if (kind === 'type') body = '<div class="dr-row"><input class="inp-s dr-in" autocomplete="off" spellcheck="false" placeholder="' + t('Твоя відповідь') + '"><button type="button" class="dr-o dr-chk">' + t('Перевірити') + '</button></div>';
+        else if (kind === 'order') body = '<div class="dr-built"></div><div class="dr-opts">' + shuffle((it.options || []).map(function (w, j) { return j; })).map(function (j) { return '<button type="button" class="dr-o dr-w" data-j="' + j + '">' + esc(it.options[j]) + '</button>'; }).join('') + '</div><div class="dr-row"><button type="button" class="dr-o dr-clr">↺</button><button type="button" class="dr-o dr-chk">' + t('Перевірити') + '</button></div>';
+        else body = '<div class="dr-opts">' + (it.options || []).map(function (o, j) { return '<button type="button" class="dr-o dr-mc" data-j="' + j + '">' + esc(o) + '</button>'; }).join('') + '</div>';
+        var tr = lf(it, 'tr');
+        return '<div class="dr-it" data-k="' + k + '"' + (k ? ' hidden' : '') + '>' + (it.tag ? '<div class="dr-tag">' + esc(lf(it, 'tag')) + '</div>' : '') + '<div class="dr-q"><span class="dr-n">' + (k + 1) + '</span> ' + qHtml({q:lf(it, 'q')}) + '</div>' + (tr ? '<div class="dr-tr">' + esc(tr) + '</div>' : '') + body + '<div class="dr-fb"></div></div>';
+      };
+      h += '<div class="dr-prog">' + its.map(function (_, k) { return '<i data-p="' + k + '"></i>'; }).join('') + '</div><div class="drill">' + its.map(itemHtml).join('') + '</div><div class="dr-score" id="drScore">0 / ' + its.length + '</div>' + foot();
       card.innerHTML = h; bindSay(tk);
       card.querySelectorAll('.dr-it').forEach(function (row) {
-        var it = its[+row.dataset.k];
-        row.querySelectorAll('.dr-o').forEach(function (b) { b.onclick = function () {
-          var j = +b.dataset.j, ok = j === +it.answer; answered++; if (ok) got++;
-          row.querySelectorAll('.dr-o').forEach(function (x) { x.disabled = true; if (+x.dataset.j === +it.answer) x.classList.add('right'); });
+        var k = +row.dataset.k, it = its[k], kind = it.k || 'mc';
+        var finish = function (ok, shown) {
+          answered++; if (ok) got++;
+          row.querySelectorAll('button,input').forEach(function (x) { x.disabled = true; });
+          row.classList.add(ok ? 'ok' : 'bad');
+          var pi = card.querySelector('[data-p="' + k + '"]'); if (pi) pi.className = ok ? 'ok' : 'bad';
+          row.querySelector('.dr-fb').textContent = (ok ? '✓ ' : '✗ ' + (shown ? shown + ' — ' : '')) + (lf(it, 'exp') || '');
+          card.querySelector('#drScore').textContent = got + ' / ' + its.length;
+          var nx = card.querySelector('.dr-it[data-k="' + (k + 1) + '"]'); if (nx) { nx.hidden = false; setTimeout(function () { nx.scrollIntoView({behavior:'smooth', block:'nearest'}); var f = nx.querySelector('input'); if (f) f.focus(); }, 60); }
+          if (answered === its.length) done(got / its.length >= 0.7, got + ' / ' + its.length + '. ' + (lf(tk, 'tip') || ''));
+        };
+        if (kind === 'mc') row.querySelectorAll('.dr-mc').forEach(function (b) { b.onclick = function () {
+          var j = +b.dataset.j, ok = j === +it.answer;
+          row.querySelectorAll('.dr-mc').forEach(function (x) { if (+x.dataset.j === +it.answer) x.classList.add('right'); });
           if (!ok) b.classList.add('wrong');
           var g = row.querySelector('.gap'); if (g) g.textContent = it.options[it.answer];
-          row.classList.add(ok ? 'ok' : 'bad');
-          row.querySelector('.dr-fb').textContent = (ok ? '✓ ' : '✗ ') + (lf(it, 'exp') || '');
-          card.querySelector('#drScore').textContent = got + ' / ' + its.length;
-          if (answered === its.length) done(got / its.length >= 0.7, got + ' / ' + its.length + '. ' + (lf(tk, 'tip') || ''));
+          finish(ok);
         }; });
+        if (kind === 'type') { var inp = row.querySelector('.dr-in'), chk = function () { if (!inp.value.trim()) return; var ok = (it.options || []).some(function (a) { return norm(a) === norm(inp.value); }); finish(ok, ok ? '' : it.options[0]); };
+          row.querySelector('.dr-chk').onclick = chk; inp.onkeydown = function (e) { if (e.key === 'Enter') chk(); }; }
+        if (kind === 'order') { var built = [], box = row.querySelector('.dr-built');
+          var draw = function () { box.textContent = built.map(function (j) { return it.options[j]; }).join(' '); row.querySelectorAll('.dr-w').forEach(function (b) { b.classList.toggle('used', built.indexOf(+b.dataset.j) > -1); }); };
+          row.querySelectorAll('.dr-w').forEach(function (b) { b.onclick = function () { var j = +b.dataset.j; if (built.indexOf(j) < 0) { built.push(j); draw(); } }; });
+          row.querySelector('.dr-clr').onclick = function () { built = []; draw(); };
+          row.querySelector('.dr-chk').onclick = function () { if (built.length < it.options.length) return; var said = built.map(function (j) { return it.options[j]; }).join(' '), ok = norm(said) === norm(it.options.join(' ')); finish(ok, ok ? '' : it.options.join(' ')); }; }
       });
       if (FREE && cur < tasks.length - 1) { var nbd = card.querySelector('#tnext'); nbd.hidden = false; nbd.textContent = '⏭ ' + tx({uk:'Пропустити (адмін)', pl:'Pomiń (admin)', en:'Skip (admin)'}); nbd.onclick = function () { cur++; render(); }; }
       return;

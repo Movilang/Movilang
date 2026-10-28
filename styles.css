@@ -1094,3 +1094,10 @@ html.print-journal body *{visibility:hidden}html.print-journal .w-book,html.prin
 @media (max-width:520px){.posterup{grid-template-columns:1fr}}
 .q-line{display:block}.q-sub{display:block;margin-top:10px;font-size:.55em;font-weight:500;color:var(--muted);line-height:1.4}
 .dict-tr{margin:4px 0 12px;padding:10px 14px;border-left:3px solid var(--gold);background:var(--bg2);border-radius:8px}.dict-tr small{display:block;color:var(--muted);margin-bottom:4px}.dict-tr b{font-size:18px}
+.dr-prog{display:flex;gap:5px;margin:4px 0 12px}.dr-prog i{flex:1;height:5px;border-radius:3px;background:var(--line)}.dr-prog i.ok{background:var(--ok)}.dr-prog i.bad{background:var(--red)}
+.dr-tag{font:600 11px var(--f-mono);letter-spacing:.08em;color:var(--gold);text-transform:uppercase}
+.dr-tr{font-size:13px;color:var(--muted);margin-top:-4px}
+.dr-row{display:flex;gap:6px;flex-wrap:wrap}.dr-row .dr-in{flex:1;min-width:180px}
+.dr-built{min-height:40px;padding:8px 12px;border:1px dashed var(--line);border-radius:10px;font-size:16px}
+.dr-w.used{opacity:.35}
+.dr-it[hidden]{display:none!important}
