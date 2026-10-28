@@ -499,6 +499,7 @@ function renderMobileNav() {
       '<button type="button" class="mitemrow" id="msLang">🌐 ' + L('Мови', 'Języki', 'Languages') + '<b>🎬 ' + FLAG[TARGET] + ' · 💬 ' + FLAG[LANG] + '</b></button>' +
       '<button type="button" class="mitemrow" id="msTheme">' + (THEME === 'dark' ? '☀ ' + L('Світла тема', 'Jasny motyw', 'Light theme') : '☾ ' + L('Темна тема', 'Ciemny motyw', 'Dark theme')) + '</button>' +
       (USER ? '<a class="mitemrow" href="#/chats">💬 ' + L('Чати з героями', 'Czaty z bohaterami', 'Chats with characters') + '</a>' : '') +
+      '<button type="button" class="mitemrow" id="msWt">👆 ' + L('Переклад слова дотиком', 'Tłumaczenie słowa dotykiem', 'Tap-to-translate') + '<b>' + (lsGet('ml_wt_off', false) ? L('вимк.', 'wył.', 'off') : L('увімк.', 'wł.', 'on')) + '</b></button>' +
       '<a class="mitemrow" href="#/guide">📘 ' + L('Посібник з граматики', 'Poradnik gramatyczny', 'Grammar guide') + '</a>' +
       (USER ? '<a class="mitemrow" href="#/words">📖 ' + L('Мій словник', 'Mój słownik', 'My words') + '</a>' : '') +
       '<a class="mitemrow" href="#/pricing">💳 ' + L('Тарифи', 'Cennik', 'Pricing') + '</a>' +
@@ -508,6 +509,7 @@ function renderMobileNav() {
     w.querySelectorAll('a').forEach(function (a) { a.addEventListener('click', function () { w.remove(); }); });
     w.querySelector('#msLang').onclick = function () { w.remove(); langModal(false); };
     w.querySelector('#msTheme').onclick = function () { w.remove(); toggleTheme(); };
+    w.querySelector('#msWt').onclick = function () { lsSet('ml_wt_off', !lsGet('ml_wt_off', false)); w.remove(); location.reload(); };
     var ma = w.querySelector('#msAdm'); if (ma) ma.onclick = function () { w.remove(); setAdminMode(!ADMIN_MODE); };
     var mo = w.querySelector('#msOut'); if (mo) mo.onclick = function () { w.remove(); API.signOut().then(function () { USER = null; location.hash = '#/'; renderNav(); route(); }); };
   };
@@ -2915,6 +2917,110 @@ function viewWorld(cid, tab) {
     });
   });
 }
+
+/* ---------- натисни / утримай будь-яке слово → переклад ---------- */
+var WT = {dict:null, p:null, cache:lsGet('ml_wt_cache', {})};
+function wtDict() { if (WT.dict) return Promise.resolve(WT.dict); if (WT.p) return WT.p; WT.p = fetch('content/dict.json?v=1').then(function (r) { return r.ok ? r.json() : {en:{}, pl:{}, uk:{}}; }).catch(function () { return {en:{}, pl:{}, uk:{}}; }).then(function (d) { WT.dict = d; return d; }); return WT.p; }
+var EN_IRR = {was:'be', were:'be', is:'be', are:'be', am:'be', been:'be', went:'go', gone:'go', saw:'see', seen:'see', took:'take', taken:'take', made:'make', said:'say', had:'have', has:'have', did:'do', done:'do', does:'do', got:'get', came:'come', knew:'know', known:'know', thought:'think', told:'tell', found:'find', gave:'give', given:'give', left:'leave', felt:'feel', stole:'steal', stolen:'steal', ran:'run', met:'meet', sat:'sit', stood:'stand', wrote:'write', written:'write', ate:'eat', eaten:'eat', drank:'drink', fell:'fall', fallen:'fall', broke:'break', broken:'break', bought:'buy', brought:'bring', caught:'catch', taught:'teach', kept:'keep', slept:'sleep', spent:'spend', lost:'lose', paid:'pay', heard:'hear', held:'hold', began:'begin', begun:'begin', chose:'choose', chosen:'choose', flew:'fly', flown:'fly', forgot:'forget', forgotten:'forget', hid:'hide', hidden:'hide', rode:'ride', rose:'rise', sang:'sing', spoke:'speak', spoken:'speak', swam:'swim', threw:'throw', thrown:'throw', woke:'wake', wore:'wear', won:'win', children:'child', men:'man', women:'woman', feet:'foot', mice:'mouse', better:'good', best:'good', worse:'bad', worst:'bad'};
+function wtCands(w, lang) {
+  var c = [w];
+  if (lang === 'en') {
+    w = w.replace(/['’](s|re|ve|ll|d|m|t)$/, ''); if (/n['’]t$/.test(w)) w = w.replace(/n['’]t$/, ''); c.push(w);
+    if (EN_IRR[w]) c.push(EN_IRR[w]);
+    [[/ies$/, 'y'], [/ied$/, 'y'], [/ying$/, 'ie'], [/([^aeiou])\1(ed|ing)$/, '$1'], [/ing$/, 'e'], [/ing$/, ''], [/ed$/, 'e'], [/ed$/, ''], [/es$/, ''], [/s$/, ''], [/ly$/, ''], [/er$/, ''], [/est$/, '']].forEach(function (r) { if (r[0].test(w)) c.push(w.replace(r[0], r[1])); });
+  }
+  return c.filter(function (x, i, a) { return x && a.indexOf(x) === i; });
+}
+function wtLookup(d, lang, w) {
+  var dl = d[lang] || {}, c = wtCands(w, lang);
+  for (var i = 0; i < c.length; i++) if (dl[c[i]]) return {key:c[i], tr:dl[c[i]]};
+  if (lang !== 'en' && w.length >= 4) { // польська / українська: шукаємо за основою
+    for (var cut = 1; cut <= 3 && w.length - cut >= 4; cut++) { var stem = w.slice(0, w.length - cut), best = null;
+      for (var k in dl) if (k.indexOf(stem) === 0 && k.indexOf(' ') < 0 && (!best || k.length < best.length)) best = k;
+      if (best) return {key:best, tr:dl[best], approx:true}; }
+  }
+  return null;
+}
+function wtLangOf(w) {
+  if (/[Ѐ-ӿ]/.test(w)) return 'uk';
+  if (/[ąćęłńóśźż]/i.test(w)) return 'pl';
+  return null;
+}
+function wtOnline(w, src, dst) {
+  var k = src + '|' + dst + '|' + w; if (WT.cache[k]) return Promise.resolve(WT.cache[k]);
+  return fetch('https://api.mymemory.translated.net/get?q=' + encodeURIComponent(w) + '&langpair=' + src + '|' + dst).then(function (r) { return r.json(); }).then(function (j) {
+    var t = j && j.responseData && j.responseData.translatedText; if (!t || /MYMEMORY|INVALID|QUERY LENGTH/i.test(t) || t.toLowerCase() === w.toLowerCase()) return null;
+    WT.cache[k] = t; var keys = Object.keys(WT.cache); if (keys.length > 800) delete WT.cache[keys[0]]; lsSet('ml_wt_cache', WT.cache); return t;
+  }).catch(function () { return null; });
+}
+function wtWordAt(x, y) {
+  var node, off;
+  if (document.caretRangeFromPoint) { var r = document.caretRangeFromPoint(x, y); if (!r) return null; node = r.startContainer; off = r.startOffset; }
+  else if (document.caretPositionFromPoint) { var p = document.caretPositionFromPoint(x, y); if (!p) return null; node = p.offsetNode; off = p.offset; }
+  if (!node || node.nodeType !== 3) return null;
+  var s = node.textContent, re = /[\p{L}\p{M}'’-]/u, a = off, b = off;
+  while (a > 0 && re.test(s[a - 1])) a--; while (b < s.length && re.test(s[b])) b++;
+  var w = s.slice(a, b).replace(/^['’-]+|['’-]+$/g, ''); if (!w || !/\p{L}/u.test(w)) return null;
+  var rg = document.createRange(); rg.setStart(node, a); rg.setEnd(node, b); var rect = rg.getBoundingClientRect();
+  if (x < rect.left - 4 || x > rect.right + 4 || y < rect.top - 4 || y > rect.bottom + 4) return null; // клік поруч зі словом, а не на ньому
+  var sent = s.length < 300 ? s : s.slice(Math.max(0, a - 120), b + 120);
+  return {w:w, rect:rect, sent:sent.trim(), el:node.parentElement};
+}
+function wtClose() { var o = document.getElementById('wtPop'); if (o) o.remove(); }
+function wtShow(hit) {
+  wtClose();
+  var raw = hit.w, low = raw.toLowerCase(), scr = wtLangOf(raw), src, dst;
+  if (scr) src = scr; else src = TARGET === 'uk' ? (LANG === 'uk' ? 'en' : LANG) : TARGET;
+  dst = src === TARGET ? LANG : TARGET; if (dst === src) dst = src === 'en' ? (LANG === 'en' ? 'uk' : LANG) : 'en';
+  var pop = document.createElement('div'); pop.id = 'wtPop'; pop.className = 'wtpop'; pop.setAttribute('role', 'dialog');
+  pop.innerHTML = '<div class="wt-h"><b>' + esc(raw) + '</b> <span class="muted small">' + FLAG[src] + ' → ' + FLAG[dst] + '</span><button type="button" class="wt-x" aria-label="✕">✕</button></div><div class="wt-b"><span class="muted small">…</span></div>' +
+    '<div class="wt-f"><button type="button" class="tgl" data-wt-say>🔊</button>' + (src === TARGET ? '<button type="button" class="tgl" data-wt-add>＋ ' + L3('у повторення', 'do powtórek', 'to review') + '</button>' : '') + '</div>';
+  document.body.appendChild(pop);
+  var r = hit.rect, pw = Math.min(300, window.innerWidth - 20), left = Math.max(10, Math.min(window.innerWidth - pw - 10, r.left + r.width / 2 - pw / 2));
+  pop.style.width = pw + 'px'; pop.style.left = left + 'px';
+  var below = r.bottom + 8, ph = 150; pop.style.top = (below + ph > window.innerHeight ? Math.max(10, r.top - ph - 8) : below) + 'px';
+  pop.querySelector('.wt-x').onclick = wtClose;
+  pop.querySelector('[data-wt-say]').onclick = function () { say(raw, SPEECH[src]); };
+  var body = pop.querySelector('.wt-b'), mean = '';
+  wtDict().then(function (d) {
+    var f = wtLookup(d, src, low), lines = [];
+    if (!f && !scr) { var alt = src === TARGET ? LANG : TARGET; if (alt !== src && alt !== 'uk') { var f2 = wtLookup(d, alt, low); if (f2) { f = f2; dst = src; src = alt; pop.querySelector('.wt-h .muted').textContent = FLAG[src] + ' → ' + FLAG[dst]; } } }
+    if (f) { var t = f.tr[dst] || f.tr[LANG] || f.tr.en || f.tr.uk || f.tr.pl; if (t) { mean = t; lines.push('<div class="wt-t">' + esc(t) + '</div>' + (f.key !== low ? '<div class="muted small">' + (f.approx ? '≈ ' : '') + esc(f.key) + '</div>' : '')); }
+      var other = ['en', 'pl', 'uk'].filter(function (x) { return x !== src && x !== dst && f.tr[x]; })[0]; if (other) lines.push('<div class="small muted">' + FLAG[other] + ' ' + esc(f.tr[other]) + '</div>'); }
+    if (lines.length) { body.innerHTML = lines.join(''); if (!f.approx) return; }
+    return wtOnline(low, src, dst).then(function (t) {
+      if (!document.body.contains(pop)) return;
+      if (t) { if (!mean) mean = t; body.insertAdjacentHTML(lines.length ? 'beforeend' : 'afterbegin', (lines.length ? '<div class="small">🌐 ' : '<div class="wt-t">') + esc(t) + '</div>'); if (!lines.length) { var sp = body.querySelector('.muted.small'); if (sp && sp.textContent === '…') sp.remove(); } }
+      else if (!lines.length) body.innerHTML = '<span class="muted small">' + L3('Перекладу не знайдено', 'Nie znaleziono tłumaczenia', 'No translation found') + '</span>';
+    });
+  });
+  var add = pop.querySelector('[data-wt-add]');
+  if (add) add.onclick = function () { if (!mean) return; srsSave({word:low, meaning:mean, step:0, due:todayStr()}); add.disabled = true; add.textContent = '✓ ' + L3('додано', 'dodano', 'added'); };
+}
+(function () {
+  if (lsGet('ml_wt_off', false)) return;
+  var t0 = null, timer = null, fired = false, sx = 0, sy = 0;
+  var SKIP = 'input,textarea,select,option,#wtPop,.lmodal .lbox input,[contenteditable],code,.keycode,nav.top,.mnav';
+  var INTER = 'button,a,label,summary,[role=button],[data-go],[data-st],.topt,.tstep';
+  function inApp(el) { return el && el.closest && (el.closest('#app') || el.closest('.lmodal')) && !el.closest(SKIP); }
+  document.addEventListener('pointerdown', function (e) {
+    if (e.button && e.button !== 0) return; fired = false; if (!inApp(e.target)) return;
+    sx = e.clientX; sy = e.clientY; clearTimeout(timer);
+    timer = setTimeout(function () { var h = wtWordAt(sx, sy); if (h) { fired = true; try { navigator.vibrate && navigator.vibrate(15); } catch (er) {} wtShow(h); } }, 480);
+  }, true);
+  document.addEventListener('pointermove', function (e) { if (timer && (Math.abs(e.clientX - sx) > 10 || Math.abs(e.clientY - sy) > 10)) { clearTimeout(timer); timer = null; } }, true);
+  ['pointerup', 'pointercancel'].forEach(function (ev) { document.addEventListener(ev, function () { clearTimeout(timer); timer = null; }, true); });
+  document.addEventListener('contextmenu', function (e) { if (fired) e.preventDefault(); }, true);
+  document.addEventListener('click', function (e) {
+    if (fired) { e.preventDefault(); e.stopPropagation(); fired = false; return; } // утримання не натискає кнопку
+    var pop = document.getElementById('wtPop'); if (pop && !pop.contains(e.target)) { wtClose(); }
+    if (!inApp(e.target) || e.target.closest(INTER)) return; // звичайний клік по кнопці — як раніше; переклад — утриманням
+    var sel = window.getSelection && String(window.getSelection()); if (sel && sel.length > 1) return;
+    var h = wtWordAt(e.clientX, e.clientY); if (h) wtShow(h);
+  }, true);
+  window.addEventListener('scroll', function () { wtClose(); }, {passive:true});
+  document.addEventListener('keydown', function (e) { if (e.key === 'Escape') wtClose(); });
+})();
 
 function route() {
   var h = location.hash.replace(/^#\/?/, ''), parts = h.split('/'), p;

@@ -1072,3 +1072,12 @@ html.print-journal body *{visibility:hidden}html.print-journal .w-book,html.prin
 .w-page details.w-tr{background:#fff7;border:1px dashed #b08d3c;border-radius:8px;padding:2px 12px}
 .w-page details.w-tr summary{color:#8a6a44;font-size:13px}.w-page details.w-tr summary::after{color:#8a6a44}
 .w-page details.w-tr p{color:#3a2c20;padding-bottom:8px;max-width:none}
+
+/* ---- переклад слова по натисканню ---- */
+.wtpop{position:fixed;z-index:90;padding:12px 14px;border-radius:14px;background:var(--panel);border:1px solid var(--line);box-shadow:0 10px 34px rgba(0,0,0,.45);font-size:15px;line-height:1.4;animation:wtin .12s ease-out}
+@keyframes wtin{from{opacity:0;transform:translateY(4px)}to{opacity:1;transform:none}}
+.wt-h{display:flex;align-items:center;gap:8px}.wt-h b{font-size:17px}.wt-x{margin-left:auto;background:none;border:0;color:var(--muted);font-size:16px;cursor:pointer}
+.wt-b{margin:8px 0}.wt-t{font-size:17px;font-weight:600;color:var(--fg)}
+.wt-f{display:flex;gap:6px}
+@media (hover:none){#app,.lmodal{-webkit-touch-callout:none;-webkit-user-select:none;user-select:none}#app input,#app textarea,.lmodal input,.lmodal textarea{-webkit-user-select:text;user-select:text}}
+#app p,#app li,#app h2,#app h3,#app .tq,#app .lead{cursor:text}
