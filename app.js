@@ -1404,14 +1404,14 @@ function runPlayer(container, lesson, onFinish, ctxLs) {
     if (type === 'reading') {
       var its = tk.items || [];
       h = h.replace('<div class="tq', '<div class="tins">' + tx({uk:'Прочитай текст і обери правильні форми', pl:'Przeczytaj tekst i wybierz poprawne formy', en:'Read the text and choose the correct forms'}) + '</div><div class="tq');
-      h += '<div class="rtext">' + its.map(function (it, k) { var parts = esc(String(it.q).replace(/<[^>]+>/g, '')).split(/_{3,}/); return parts[0] + '<select class="rsel" data-k="' + k + '"><option value="">…</option>' + it.options.map(function (o, j) { return '<option value="' + j + '">' + esc(o) + '</option>'; }).join('') + '</select>' + (parts[1] || ''); }).join(' ') + '</div><div class="row"><button class="btn btn-red" type="button" id="rcheck">' + t('Перевірити') + '</button></div>';
+      h += (lf(tk, 'title') ? '<h4 class="rtitle">' + esc(lf(tk, 'title')) + '</h4>' : '') + '<div class="rtext">' + its.map(function (it, k) { if (!(it.options || []).length) return esc(String(it.q).replace(/<[^>]+>/g, '')); var parts = esc(String(it.q).replace(/<[^>]+>/g, '')).split(/_{3,}/); return parts[0] + '<select class="rsel" data-k="' + k + '"><option value="">…</option>' + it.options.map(function (o, j) { return '<option value="' + j + '">' + esc(o) + '</option>'; }).join('') + '</select>' + (parts[1] || ''); }).join(' ') + '</div><div class="row"><button class="btn btn-red" type="button" id="rcheck">' + t('Перевірити') + '</button></div>';
       h += foot(); card.innerHTML = h; bindSay(tk);
       card.querySelector('#rcheck').onclick = function () {
         var sels = card.querySelectorAll('.rsel'), good = 0;
         if ([].some.call(sels, function (s) { return s.value === ''; })) { var fb0 = card.querySelector('#tfb'); fb0.className = 'tfb err'; fb0.textContent = tx({uk:'Заповни всі пропуски.', pl:'Uzupełnij wszystkie luki.', en:'Fill in all the gaps.'}); return; }
         sels.forEach(function (s) { var it = its[+s.dataset.k], ok = +s.value === it.answer; if (ok) good++; s.classList.add(ok ? 'right' : 'wrong'); if (!ok) s.insertAdjacentHTML('afterend', '<span class="rfix">' + esc(it.options[it.answer]) + '</span>'); s.disabled = true; });
-        var ok = good >= Math.ceil(its.length * 0.67); this.disabled = true;
-        done(ok, (ok ? t('Правильно! ') : t('Майже. ')) + good + ' / ' + its.length);
+        var nq = sels.length, ok = good >= Math.ceil(nq * 0.67); this.disabled = true;
+        done(ok, (ok ? t('Правильно! ') : t('Майже. ')) + good + ' / ' + nq);
       };
       return;
     }
