@@ -1089,3 +1089,6 @@ html.print-journal body *{visibility:hidden}html.print-journal .w-book,html.prin
 .spk,.spk-in,#fcSay,#srsSay,[data-wt-say],[data-csay],[data-wsay],[data-gsay],[data-say],.voxbox,#tsay{display:none!important}
 .w-gsel{display:flex;flex-wrap:wrap;gap:6px;justify-content:center;align-items:center;margin:10px 0;font-size:13px;color:#d9c9a8}
 .w-gsel .tgl{padding:4px 10px;border-radius:999px;border:1px solid #6b4a2a;background:transparent;color:#efe2c4;cursor:pointer}.w-gsel .tgl.on{background:#f1c27d;color:#2b2118}
+.posterup{display:grid;grid-template-columns:150px 1fr;gap:16px;align-items:start;padding:12px;border:1px dashed var(--line);border-radius:12px}
+.posterup .pu-prev .poster{width:150px;min-height:0;aspect-ratio:2/3}
+@media (max-width:520px){.posterup{grid-template-columns:1fr}}

@@ -546,7 +546,7 @@ function heroSvg() {
 function isFreeCourse(c) { return !!c && /^\s*(0|free|darmo|za darmo|безкошт)/i.test(String(c.price || '')); }
 function priceTxt(c) { return isFreeCourse(c) ? tx({uk:'Безкоштовно', pl:'Za darmo', en:'Free'}) : (c.price || ''); }
 function posterHtml(c, small) {
-  var cls = POSTER_CLASSES.indexOf(c.poster) > -1 ? c.poster : 'p1', art = POSTER_ART.indexOf(c.slug) > -1 ? 'assets/posters/' + c.slug + '.svg?v=1' : '';
+  var cls = POSTER_CLASSES.indexOf(c.poster) > -1 ? c.poster : 'p1', art = c.poster_url && /^https:\/\//.test(c.poster_url) ? c.poster_url.replace(/[()'"\s]/g, encodeURIComponent) : POSTER_ART.indexOf(c.slug) > -1 ? 'assets/posters/' + c.slug + '.svg?v=1' : '';
   return '<div class="poster ' + cls + (art ? ' art" style="background-image:linear-gradient(to top,#000c 0,#0006 30%,#0000 55%),url(' + art + ')' + (small ? ';width:120px;flex:0 0 120px;padding:10px' : '') + '"' : '"' + (small ? ' style="width:120px;flex:0 0 120px;padding:10px"' : '')) + '><span class="perf l"></span><span class="perf r"></span>' +
     (small ? '' : '<span class="tag">' + (c.kind === 'series' ? t('СЕРІАЛ') : t('ФІЛЬМ')) + ' · ' + esc(c.level) + '</span>' + (c.lessons_count ? (isFreeCourse(c) ? '<span class="tag new">' + tx({uk:'БЕЗКОШТОВНО', pl:'ZA DARMO', en:'FREE'}) + '</span>' : '') : t('<span class="tag new">СКОРО</span>'))) +
     '<div class="ptitle"' + (small ? ' style="font-size:14px"' : '') + '>' + esc(tr(c, 'title')) + '</div></div>';
@@ -1723,6 +1723,12 @@ function adminCourses(body) {
   });
 }
 
+function posterResize(file) {
+  return new Promise(function (res, rej) { var img = new Image(), u = URL.createObjectURL(file);
+    img.onload = function () { var W = 900, sc = Math.min(1, W / img.width), cv = document.createElement('canvas'); cv.width = Math.round(img.width * sc); cv.height = Math.round(img.height * sc);
+      cv.getContext('2d').drawImage(img, 0, 0, cv.width, cv.height); URL.revokeObjectURL(u); cv.toBlob(function (b) { b ? res(b) : rej(new Error('resize failed')); }, 'image/jpeg', 0.86); };
+    img.onerror = function () { rej(new Error('bad image')); }; img.src = u; });
+}
 function courseEditor(body, id) {
   var p = id ? Promise.all([API.getCourse(id), API.listLessons(id)]) : Promise.resolve([{title:'', kind:'film', level:'A2', price:'49 zł', poster:'p1', published:false, description:'', slug:''}, []]);
   return p.then(function (r) {
@@ -1737,11 +1743,24 @@ function courseEditor(body, id) {
       t('<label class="fl" for="cPub">Статус<select class="inp-s" id="cPub"><option value="1"') + (c.published ? ' selected' : '') + t('>Опубліковано</option><option value="0"') + (!c.published ? ' selected' : '') + t('>Чернетка</option></select></label></div>') +
       t('<label class="fl" for="cDesc">Опис<textarea class="inp-s" id="cDesc">') + esc(c.description) + '</textarea></label>' +
       '<label class="fl" for="cDescPl">🇵🇱 Opis po polsku<textarea class="inp-s" id="cDescPl">' + esc(c.description_pl) + '</textarea></label>' +
+      (id ? '<div class="posterup"><div class="pu-prev">' + posterHtml(c) + '</div><div><b>🖼 ' + tx({uk:'Власний постер', pl:'Własny plakat', en:'Custom poster'}) + '</b><p class="muted small">' + tx({uk:'JPG / PNG / WebP, найкраще вертикальний 2:3 (напр. 1024×1536). Автоматично зменшується до 900 px.', pl:'JPG / PNG / WebP, najlepiej pionowy 2:3 (np. 1024×1536). Automatycznie zmniejszany do 900 px.', en:'JPG / PNG / WebP, ideally portrait 2:3 (e.g. 1024×1536). Auto-resized to 900 px.'}) + '</p><input type="file" id="cPosterFile" accept="image/jpeg,image/png,image/webp" hidden><div class="row" style="gap:8px"><button class="btn btn-ghost btn-sm" type="button" id="cPosterUp">⬆ ' + tx({uk:'Завантажити', pl:'Wgraj', en:'Upload'}) + '</button>' + (c.poster_url ? '<button class="btn btn-danger btn-sm" type="button" id="cPosterDel">' + tx({uk:'Прибрати', pl:'Usuń', en:'Remove'}) + '</button>' : '') + '</div><div class="msg" id="cPosterMsg"></div></div></div>' : '') +
       t('<div class="row"><button class="btn btn-red" type="submit">Зберегти курс</button>') + (id ? t('<button class="btn btn-danger btn-sm" type="button" id="delC">Видалити курс</button>') : '') + '</div><div class="msg" id="cMsg"></div></form>' +
       (id && c.slug === 'harry-potter-1' ? '<div class="panel" style="display:grid;gap:10px;border-color:var(--highlight)"><h3>' + t('Повний курс: 16 уроків B1–B2') + '</h3><p class="muted small">' + t('Замінить поточні уроки цього курсу на нову програму (130 інтерактивних завдань з ілюстраціями).') + '</p><div class="row"><button class="btn btn-red btn-sm" type="button" id="importHP">' + t('Завантажити 16 уроків') + '</button><span class="small muted" id="importMsg"></span></div></div>' : '') +
       (id ? t('<div class="panel" style="display:grid;gap:14px"><div class="row" style="justify-content:space-between"><h3>Уроки (') + ls.length + t(')</h3><button class="btn btn-red btn-sm" type="button" id="newL">+ Новий урок</button></div>') +
         (ls.length ? '<ul class="lessons" style="margin:0">' + ls.map(function (l) { return '<li><span class="lnum">' + String(l.num).padStart(2, '0') + '</span><span class="ltitle">' + esc(tr(l, 'title')) + '<small>' + esc(l.grammar) + ' · ' + (l.tasks || []).length + t(' завдань</small></span><button class="btn btn-ghost btn-sm" type="button" data-l="') + esc(l.id) + t('">Редагувати</button></li>'); }).join('') + '</ul>' : t('<div class="empty">Додай перший урок.</div>')) + '</div>' : t('<p class="muted">Після збереження курсу можна буде додавати уроки.</p>')) + '</div>';
     document.getElementById('back').onclick = function () { viewAdmin(); };
+    var pfi = document.getElementById('cPosterFile'), pup = document.getElementById('cPosterUp'), pdel = document.getElementById('cPosterDel');
+    if (pup) pup.onclick = function () { pfi.click(); };
+    if (pfi) pfi.onchange = function () { var f = pfi.files[0], pm = document.getElementById('cPosterMsg'); if (!f) return; if (!API.sb) { pm.className = 'msg err'; pm.textContent = 'Supabase only'; return; }
+      pm.className = 'msg'; pm.textContent = tx({uk:'Завантаження…', pl:'Wgrywanie…', en:'Uploading…'});
+      posterResize(f).then(function (blob) { var path = (c.slug || id) + '-' + Date.now() + '.jpg';
+        return API.sb.storage.from('posters').upload(path, blob, {contentType:'image/jpeg', upsert:true}).then(function (r) { if (r.error) throw new Error(r.error.message);
+          var url = API.sb.storage.from('posters').getPublicUrl(path).data.publicUrl, old = c.poster_url;
+          return API.sb.from('courses').update({poster_url:url}).eq('id', id).then(function (u) { if (u.error) throw new Error(u.error.message);
+            if (old && old.indexOf('/posters/') > -1) API.sb.storage.from('posters').remove([old.split('/posters/').pop()]).then(function () {});
+            API.clearCache && API.clearCache(); toast(tx({uk:'Постер оновлено', pl:'Plakat zaktualizowany', en:'Poster updated'})); courseEditor(body, id); }); }); })
+        .catch(function (e) { pm.className = 'msg err'; pm.textContent = e.message; }); };
+    if (pdel) pdel.onclick = function () { var old = c.poster_url; API.sb.from('courses').update({poster_url:null}).eq('id', id).then(function () { if (old && old.indexOf('/posters/') > -1) API.sb.storage.from('posters').remove([old.split('/posters/').pop()]).then(function () {}); API.clearCache && API.clearCache(); courseEditor(body, id); }); };
     document.getElementById('cForm').onsubmit = function (e) {
       e.preventDefault();
       var title = document.getElementById('cTitle').value.trim(), msg = document.getElementById('cMsg');
