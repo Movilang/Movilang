@@ -11,7 +11,7 @@ QG = {"en": "Complete the sentences.", "pl": "Uzupełnij zdania.", "uk": "Доп
 QV = {"en": "Fill each gap with a word from the scene.", "pl": "Wybierz słowo ze sceny.", "uk": "Обери слово зі сцени."}
 
 def _base(kind, target, items):
-    d = {"type": "drill", "q": QG[target] if kind == "gram" else QV[target], "items": items}
+    d = {"type": "drill", "kind": kind, "q": QG[target] if kind == "gram" else QV[target], "items": items}
     Q = QG if kind == "gram" else QV
     d["q_uk"], d["q_pl"], d["q_en"] = Q["uk"], Q["pl"], Q["en"]
     d["label"], d["label_pl"], d["label_en"] = LAB[kind]
@@ -34,13 +34,15 @@ def en_vocab_drill(gloss_items, pool, seed):
     cands = []
     for it in gloss_items:
         w = re.sub(r"^to ", "", it["w"]); w = re.sub(r"\s*\(.*?\)", "", w).strip()
-        if len(w) < 3 or it["ex"].startswith("—"): continue
-        m = re.search(r"\b" + re.escape(w) + r"\b", it["ex"], re.I)
-        if m: cands.append((it, w, m))
+        if len(w) < 3: continue
+        for src in (it.get("line", ""), it.get("ex", "")):
+            if not src or src.startswith("—"): continue
+            m = re.search(r"\b" + re.escape(w) + r"\b", src, re.I)
+            if m: cands.append((it, w, m, src)); break
     rnd.shuffle(cands)
     words = [re.sub(r"\s*\(.*?\)", "", re.sub(r"^to ", "", x["w"])).strip() for x in pool]
-    for it, w, m in cands[:6]:
-        q = it["ex"][:m.start()] + "____" + it["ex"][m.end():]
+    for it, w, m, src in cands[:6]:
+        q = src[:m.start()] + "____" + src[m.end():]
         wrong = [x for x in words if x.lower() != w.lower() and len(x) > 2]
         opts = [m.group(0)] + rnd.sample(wrong, 2); rnd.shuffle(opts)
         d = {"q": q, "options": opts, "answer": opts.index(m.group(0))}

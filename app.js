@@ -879,16 +879,17 @@ function norm(s) { return String(s || '').toLowerCase().replace(/[’']/g, "'").
 /* auto "reading" task: the lesson's own gap sentences joined into one short text with grammar choices */
 function withReading(tasks) {
   if (!tasks.length || tasks.some(function (x) { return x.type === 'reading'; })) return tasks;
-  var items = [];
-  tasks.forEach(function (x) {
-    if ((x.type === 'grammar' || x.type === 'subtitles') && /_{3,}/.test(x.q || '') && (x.options || []).length > 1) items.push({q:x.q, options:x.options, answer:+x.answer || 0});
-    if (x.type === 'drill') (x.items || []).forEach(function (it) { if (/_{3,}/.test(it.q || '') && (it.options || []).length > 1) items.push({q:it.q, options:it.options, answer:+it.answer || 0}); });
-  });
-  items = items.filter(function (it) { return (it.q.match(/_{3,}/g) || []).length === 1; }).slice(0, 5);
-  if (items.length < 2) return tasks;
+  /* the grammar drill becomes one connected text instead of being a second, separate copy of the same sentences */
+  var di = -1, items = [];
+  tasks.forEach(function (x, i) { if (di < 0 && x.type === 'drill' && x.kind !== 'vocab' && (x.items || []).some(function (it) { return /_{3,}/.test(it.q || ''); })) di = i; });
+  if (di < 0) return tasks;
+  var seen = {};
+  tasks.forEach(function (x) { if (x.type === 'grammar') seen[norm(x.q)] = 1; });
+  (tasks[di].items || []).forEach(function (it) { if (/_{3,}/.test(it.q || '') && (it.q.match(/_{3,}/g) || []).length === 1 && (it.options || []).length > 1 && !seen[norm(it.q)]) items.push({q:it.q, options:it.options, answer:+it.answer || 0}); });
+  items = items.slice(0, 6);
+  if (items.length < 3) return tasks;
   var rt = {type:'reading', items:items, _auto:1};
-  var at = tasks.length; for (var i = tasks.length - 1; i > tasks.length / 2; i--) if (tasks[i].type === 'speaking' || tasks[i].type === 'final') at = i;
-  return tasks.slice(0, at).concat([rt], tasks.slice(at));
+  return tasks.slice(0, di).concat([rt], tasks.slice(di + 1));
 }
 var SKIPPABLE = {speaking:1, listening:1, type:1, final:1, subtitles:1};
 /* ---------- personal dictionary + flashcards ---------- */
@@ -1320,7 +1321,7 @@ function runPlayer(container, lesson, onFinish, ctxLs) {
       var draw = function () { line.innerHTML = picked.length ? picked.map(function (i, pos) { return '<button class="ochip in" type="button" data-pos="' + pos + '">' + esc(tk.options[i]) + '</button>'; }).join('') : '<span class="hint">' + t('Натискай слова в правильному порядку…') + '</span>'; line.querySelectorAll('[data-pos]').forEach(function (b) { b.onclick = function () { var i = picked.splice(+b.dataset.pos, 1)[0]; card.querySelector('[data-oi="' + i + '"]').disabled = false; draw(); }; }); };
       card.querySelectorAll('[data-oi]').forEach(function (b) { b.onclick = function () { picked.push(+b.dataset.oi); b.disabled = true; draw(); }; });
       card.querySelector('#oclear').onclick = function () { picked = []; card.querySelectorAll('[data-oi]').forEach(function (b) { b.disabled = false; }); draw(); };
-      card.querySelector('#tcheck').onclick = function () { var got = picked.map(function (i) { return tk.options[i]; }).join(' '), ok = norm(got) === norm(tk.options.join(' ')); line.classList.add(ok ? 'good' : 'bad'); card.querySelectorAll('.ochip').forEach(function (x) { x.disabled = true; }); done(ok, (ok ? t('Правильно! ') : t('Правильно: ') + tk.options.join(' ') + '. ') + (lf(tk, 'tip') || '')); };
+      card.querySelector('#tcheck').onclick = function () { var got = picked.map(function (i) { return tk.options[i]; }).join(' '), ok = norm(got) === norm(tk.options.join(' ')); line.classList.add(ok ? 'good' : 'bad'); card.querySelectorAll('.ochip').forEach(function (x) { x.disabled = true; }); done(ok, (ok ? t('Правильно! ') : t('Правильно: ') + tk.options.join(' ').replace(/[.!?…]+$/, '') + '. ') + (lf(tk, 'tip') || '')); };
     }
     if (type === 'match') {
       var selL = null, matched = 0, errors = 0, total = (lf(tk, 'options') || []).length;
