@@ -1850,6 +1850,7 @@ function courseEditor(body, id) {
       (id ? t('<div class="panel" style="display:grid;gap:14px"><div class="row" style="justify-content:space-between"><h3>Уроки (') + ls.length + t(')</h3><button class="btn btn-red btn-sm" type="button" id="newL">+ Новий урок</button></div>') +
         (ls.length ? '<ul class="lessons" style="margin:0">' + ls.map(function (l) { return '<li><span class="lnum">' + String(l.num).padStart(2, '0') + '</span><span class="ltitle">' + esc(tr(l, 'title')) + '<small>' + esc(l.grammar) + ' · ' + (l.tasks || []).length + t(' завдань</small></span><button class="btn btn-ghost btn-sm" type="button" data-l="') + esc(l.id) + t('">Редагувати</button></li>'); }).join('') + '</ul>' : t('<div class="empty">Додай перший урок.</div>')) + '</div>' : t('<p class="muted">Після збереження курсу можна буде додавати уроки.</p>')) + '</div>';
     document.getElementById('back').onclick = function () { viewAdmin(); };
+    if (id && API.sb) { var stdHost = document.createElement('div'); var form = document.getElementById('cForm'); form.parentNode.insertBefore(stdHost, form.nextSibling); stdImportPanel(stdHost, ls.map(function (l) { return l.id; })); }
     var pfi = document.getElementById('cPosterFile'), pup = document.getElementById('cPosterUp'), pdel = document.getElementById('cPosterDel');
     if (pup) pup.onclick = function () { pfi.click(); };
     if (pfi) pfi.onchange = function () { var f = pfi.files[0], pm = document.getElementById('cPosterMsg'); if (!f) return; if (!API.sb) { pm.className = 'msg err'; pm.textContent = 'Supabase only'; return; }
@@ -2817,27 +2818,18 @@ function checkLesson(l) {
   });
   return out;
 }
-function admCheck(body) {
-  if (needSb(body)) return Promise.resolve();
-  return Promise.all([API.listCourses(true), q(SB().from('lessons').select('id,num,course_id,title,title_pl,title_en,scene,scene_pl,scene_en,grammar,tasks,variants'))]).then(function (r) {
-    var cs = r[0], ls = r[1] || []; if (!CHK_C) CHK_C = cs[0] && cs[0].id;
-    var cl = ls.filter(function (l) { return l.course_id === CHK_C; }).sort(function (a, b) { return a.num - b.num; });
-    var probs = []; cl.forEach(function (l) { checkLesson(l).forEach(function (p) { p.l = l; probs.push(p); }); });
-    body.innerHTML = '<select class="inp-s" id="ckC" style="max-width:340px;margin-bottom:12px">' + cs.map(function (c) { return '<option value="' + esc(c.id) + '"' + (c.id === CHK_C ? ' selected' : '') + '>' + esc(tr(c, 'title')) + '</option>'; }).join('') + '</select>' +
-      '<div class="panel" style="margin-bottom:16px"><h3>🧪 ' + L3('Автоперевірка', 'Autokontrola', 'Auto-check') + ' · ' + cl.length + ' ' + L3('уроків', 'lekcji', 'lessons') + '</h3>' +
-      (probs.length ? '<p class="muted small">' + L3('Знайдено проблем: ', 'Znaleziono problemów: ', 'Problems found: ') + probs.length + '</p><div class="tbl-wrap"><table class="tbl"><tr><th>' + L3('Урок', 'Lekcja', 'Lesson') + '</th><th>' + L3('Мова', 'Język', 'Lang') + '</th><th>#</th><th>' + L3('Проблема', 'Problem', 'Problem') + '</th></tr>' + probs.slice(0, 400).map(function (p) { return '<tr><td><a href="#/admin/edit/' + esc(p.l.id) + '/' + (/^(en|pl|uk)$/.test(p.set) ? p.set : 'en') + '/' + (p.n == null ? '' : p.n) + '?m=' + encodeURIComponent(p.msg) + '" title="' + esc(L3('Відкрити в редакторі', 'Otwórz w edytorze', 'Open in editor')) + '">✏️ ' + p.l.num + '</a> <a href="#/lesson/' + esc(p.l.id) + '" class="muted small" title="' + esc(L3('Як учень', 'Jako uczeń', 'As student')) + '">👁</a></td><td>' + esc(p.set) + '</td><td>' + (p.n == null ? '—' : p.n + 1) + '</td><td>' + esc(p.msg) + '</td></tr>'; }).join('') + '</table></div>' : '<p>✅ ' + L3('Проблем не знайдено.', 'Nie znaleziono problemów.', 'No problems found.') + '</p>') + '</div>' +
-      '<div class="panel"><h3>🔎 ' + L3('Знайти й замінити в усьому курсі', 'Znajdź i zamień w całym kursie', 'Find & replace across the course') + '</h3><p class="hint">' + L3('Швидко виправити опечатку без SQL. Шукає в назвах, описах сцен і всіх завданнях (EN/PL/UA). Великі/малі літери враховуються.', 'Szybka poprawka literówki bez SQL. Szuka w tytułach, opisach scen i wszystkich zadaniach (EN/PL/UA). Rozróżnia wielkość liter.', 'Fix a typo without SQL. Searches titles, scene texts and every task (EN/PL/UA). Case-sensitive.') + '</p>' +
-      '<div class="row" style="gap:8px;flex-wrap:wrap"><input class="inp-s" id="frF" placeholder="' + esc(L3('знайти', 'znajdź', 'find')) + '" style="flex:1;min-width:180px"><input class="inp-s" id="frR" placeholder="' + esc(L3('замінити на', 'zamień na', 'replace with')) + '" style="flex:1;min-width:180px"><button class="btn btn-ghost btn-sm" type="button" id="frFind">' + L3('Знайти', 'Szukaj', 'Find') + '</button><button class="btn btn-red btn-sm" type="button" id="frGo" disabled>' + L3('Замінити всюди', 'Zamień wszędzie', 'Replace all') + '</button></div><div id="frOut" class="small" style="margin-top:10px"></div></div>';
-    document.getElementById('ckC').onchange = function (e) { CHK_C = e.target.value; admCheck(body); };
+function stdImportPanel(host, lessonIds) {
     var ib = document.createElement('div'); ib.className = 'panel'; ib.style.marginBottom = '16px';
     ib.innerHTML = '<h3>📥 ' + L3('Імпорт уроків стандарту', 'Import lekcji standardu', 'Import standard lessons') + '</h3><p class="hint">' + L3('Завантажує в базу готові уроки з репозиторію (content/std). Перед заміною робиться резервна копія.', 'Wgrywa do bazy gotowe lekcje z repozytorium (content/std). Przed podmianą robi kopię zapasową.', 'Uploads ready lessons from the repo (content/std) into the database, with a backup first.') + '</p><div class="row" style="gap:8px"><button class="btn btn-red btn-sm" type="button" id="stdGo">' + L3('Імпортувати нові', 'Importuj nowe', 'Import new') + '</button><span class="small muted" id="stdSt"></span></div>';
-    body.insertBefore(ib, body.children[1] || null);
-    document.getElementById('stdGo').onclick = function () {
-      var st = document.getElementById('stdSt'), btn = this; btn.disabled = true; st.textContent = '…';
+    host.appendChild(ib);
+    ib.querySelector('#stdGo').onclick = function () {
+      var st = ib.querySelector('#stdSt'), btn = this; btn.disabled = true; st.textContent = '…';
       fetch('content/std/index.json?t=' + Date.now()).then(function (r) { return r.json(); }).then(function (files) {
-        var done = 0, skip = 0, errs = [];
+        var mine = {}; (lessonIds || []).forEach(function (x) { mine[x] = 1; });
+        var done = 0, skip = 0, other = 0, errs = [];
         return files.reduce(function (pr, f) { return pr.then(function () {
           return fetch('content/std/' + f + '?t=' + Date.now()).then(function (r) { return r.json(); }).then(function (d) {
+            if (lessonIds && !mine[d.lesson_id]) { other++; return; }
             var note = 'std-' + d.tg;
             return q(SB().from('lessons').select('id,tasks,variants').eq('id', d.lesson_id).maybeSingle()).then(function (l) {
               if (!l) throw new Error('no lesson ' + d.lesson_id);
@@ -2856,6 +2848,20 @@ function admCheck(body) {
         }); }, Promise.resolve()).then(function () { API.clearCache && API.clearCache(); st.textContent = L3('Завантажено: ', 'Wgrano: ', 'Uploaded: ') + done + ' · ' + L3('вже були: ', 'już były: ', 'already there: ') + skip + (errs.length ? ' · ' + L3('помилки: ', 'błędy: ', 'errors: ') + errs.join('; ') : ''); btn.disabled = false; });
       }).catch(function (e) { st.textContent = e.message; btn.disabled = false; });
     };
+}
+
+function admCheck(body) {
+  if (needSb(body)) return Promise.resolve();
+  return Promise.all([API.listCourses(true), q(SB().from('lessons').select('id,num,course_id,title,title_pl,title_en,scene,scene_pl,scene_en,grammar,tasks,variants'))]).then(function (r) {
+    var cs = r[0], ls = r[1] || []; if (!CHK_C) CHK_C = 'all'; var ALL = CHK_C === 'all', cn = {}; cs.forEach(function (c) { cn[c.id] = tr(c, 'title'); });
+    var cl = ls.filter(function (l) { return ALL || l.course_id === CHK_C; }).sort(function (a, b) { return (a.course_id === b.course_id ? 0 : (cn[a.course_id] || '') < (cn[b.course_id] || '') ? -1 : 1) || a.num - b.num; });
+    var probs = []; cl.forEach(function (l) { checkLesson(l).forEach(function (p) { p.l = l; probs.push(p); }); });
+    body.innerHTML = '<select class="inp-s" id="ckC" style="max-width:340px;margin-bottom:12px"><option value="all"' + (ALL ? ' selected' : '') + '>🌐 ' + L3('Усі курси', 'Wszystkie kursy', 'All courses') + '</option>' + cs.map(function (c) { return '<option value="' + esc(c.id) + '"' + (c.id === CHK_C ? ' selected' : '') + '>' + esc(tr(c, 'title')) + '</option>'; }).join('') + '</select>' +
+      '<div class="panel" style="margin-bottom:16px"><h3>🧪 ' + L3('Автоперевірка', 'Autokontrola', 'Auto-check') + ' · ' + cl.length + ' ' + L3('уроків', 'lekcji', 'lessons') + '</h3>' +
+      (probs.length ? '<p class="muted small">' + L3('Знайдено проблем: ', 'Znaleziono problemów: ', 'Problems found: ') + probs.length + '</p>' + (ALL ? '<div class="stats" style="margin:10px 0">' + cs.map(function (c) { var n = probs.filter(function (p) { return p.l.course_id === c.id; }).length; return '<div class="stat"><b>' + (n ? '⚠ ' + n : '✅ 0') + '</b><span>' + esc(cn[c.id]) + '</span></div>'; }).join('') + '</div>' : '') + '<div class="tbl-wrap"><table class="tbl"><tr>' + (ALL ? '<th>' + L3('Курс', 'Kurs', 'Course') + '</th>' : '') + '<th>' + L3('Урок', 'Lekcja', 'Lesson') + '</th><th>' + L3('Мова', 'Język', 'Lang') + '</th><th>#</th><th>' + L3('Проблема', 'Problem', 'Problem') + '</th></tr>' + probs.slice(0, 3000).map(function (p) { return '<tr>' + (ALL ? '<td class="small">' + esc(cn[p.l.course_id] || '') + '</td>' : '') + '<td><a href="#/admin/edit/' + esc(p.l.id) + '/' + (/^(en|pl|uk)$/.test(p.set) ? p.set : 'en') + '/' + (p.n == null ? '' : p.n) + '?m=' + encodeURIComponent(p.msg) + '" title="' + esc(L3('Відкрити в редакторі', 'Otwórz w edytorze', 'Open in editor')) + '">✏️ ' + p.l.num + '</a> <a href="#/lesson/' + esc(p.l.id) + '" class="muted small" title="' + esc(L3('Як учень', 'Jako uczeń', 'As student')) + '">👁</a></td><td>' + esc(p.set) + '</td><td>' + (p.n == null ? '—' : p.n + 1) + '</td><td>' + esc(p.msg) + '</td></tr>'; }).join('') + '</table></div>' : '<p>✅ ' + L3('Проблем не знайдено.', 'Nie znaleziono problemów.', 'No problems found.') + '</p>') + '</div>' +
+      '<div class="panel"><h3>🔎 ' + (ALL ? L3('Знайти й замінити в УСІХ курсах', 'Znajdź i zamień we WSZYSTKICH kursach', 'Find & replace across ALL courses') : L3('Знайти й замінити в усьому курсі', 'Znajdź i zamień w całym kursie', 'Find & replace across the course')) + '</h3><p class="hint">' + L3('Швидко виправити опечатку без SQL. Шукає в назвах, описах сцен і всіх завданнях (EN/PL/UA). Великі/малі літери враховуються.', 'Szybka poprawka literówki bez SQL. Szuka w tytułach, opisach scen i wszystkich zadaniach (EN/PL/UA). Rozróżnia wielkość liter.', 'Fix a typo without SQL. Searches titles, scene texts and every task (EN/PL/UA). Case-sensitive.') + '</p>' +
+      '<div class="row" style="gap:8px;flex-wrap:wrap"><input class="inp-s" id="frF" placeholder="' + esc(L3('знайти', 'znajdź', 'find')) + '" style="flex:1;min-width:180px"><input class="inp-s" id="frR" placeholder="' + esc(L3('замінити на', 'zamień na', 'replace with')) + '" style="flex:1;min-width:180px"><button class="btn btn-ghost btn-sm" type="button" id="frFind">' + L3('Знайти', 'Szukaj', 'Find') + '</button><button class="btn btn-red btn-sm" type="button" id="frGo" disabled>' + L3('Замінити всюди', 'Zamień wszędzie', 'Replace all') + '</button></div><div id="frOut" class="small" style="margin-top:10px"></div></div>';
+    document.getElementById('ckC').onchange = function (e) { CHK_C = e.target.value; admCheck(body); };
 
     var FIELDS = ['title', 'title_pl', 'title_en', 'scene', 'scene_pl', 'scene_en', 'grammar', 'tasks', 'variants'], hits = [];
     var enc = function (s) { return JSON.stringify(s).slice(1, -1); };
