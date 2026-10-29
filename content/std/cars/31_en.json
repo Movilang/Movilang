@@ -1,0 +1,1387 @@
+{
+ "lesson_id": "7572356c-b4bb-49ee-b457-03ac57be6b33",
+ "tg": "en",
+ "tasks": [
+  {
+   "ref": 0
+  },
+  {
+   "type": "intro",
+   "label": "ТВОЯ РОЛЬ",
+   "label_pl": "TWOJA ROLA",
+   "label_en": "YOUR ROLE",
+   "q": "Каліфорнія, день великої гонки. Ти в боксі Маккуїна на величезному стадіоні, у навушниках шум трибун. Сьогодні всі порівнюють: хто швидший, хто старший, де краще. Слухай і відповідай англійською.",
+   "q_pl": "Kalifornia, dzień wielkiego wyścigu. Jesteś w boksie Zygzaka na ogromnym stadionie, w słuchawkach szum trybun. Dziś wszyscy porównują: kto szybszy, kto starszy, gdzie lepiej. Słuchaj i odpowiadaj po angielsku.",
+   "q_en": "California, the day of the big race. You're in McQueen's pit box at a huge stadium, the noise of the stands in your headset. Today everyone compares: who's faster, who's older, where it's better. Listen and answer in English."
+  },
+  {
+   "ref": 1
+  },
+  {
+   "type": "match",
+   "options": [
+    "bigger=більший",
+    "stadium=стадіон",
+    "louder=гучніший",
+    "stands=трибуни",
+    "huge=величезний"
+   ],
+   "options_pl": [
+    "bigger=większy",
+    "stadium=stadion",
+    "louder=głośniejszy",
+    "stands=trybuny",
+    "huge=ogromny"
+   ],
+   "options_en": [
+    "bigger=not as small",
+    "stadium=a big place for races",
+    "louder=more noisy",
+    "stands=seats for the fans",
+    "huge=very, very big"
+   ],
+   "label": "СЦЕНА 1 · СЛОВА",
+   "label_pl": "SCENA 1 · SŁOWA",
+   "label_en": "SCENE 1 · WORDS",
+   "q": "З'єднай англійські слова з перекладом.",
+   "q_pl": "Połącz angielskie słowa z tłumaczeniem.",
+   "q_en": "Match the English words with their meanings.",
+   "qt_pl": "Połącz angielskie słowa z tłumaczeniem.",
+   "qt_en": "Match the English words with their meanings.",
+   "ins": "П'ять пар зі сцени",
+   "ins_pl": "Pięć par ze sceny",
+   "ins_en": "Five pairs from the scene",
+   "tip": "Не впевнений? Повернись до словника.",
+   "tip_pl": "Nie masz pewności? Wróć do słowniczka.",
+   "tip_en": "Not sure? Go back to the glossary."
+  },
+  {
+   "type": "drill",
+   "kind": "set",
+   "items": [
+    {
+     "q": "It's ____ than our town!",
+     "options": [
+      "bigger",
+      "smaller",
+      "quieter"
+     ],
+     "answer": 0,
+     "exp": "Bigger = більший.",
+     "exp_pl": "Bigger = większy.",
+     "exp_en": "Bigger = not as small.",
+     "tr": "Він більший за наше містечко!",
+     "tr_pl": "Jest większy niż nasze miasteczko!",
+     "tr_en": "It's bigger than our town!",
+     "tag": "Репліка",
+     "tag_pl": "Kwestia",
+     "tag_en": "Line"
+    },
+    {
+     "q": "Look at the ____! They are full.",
+     "options": [
+      "stands",
+      "tank",
+      "screen"
+     ],
+     "answer": 0,
+     "exp": "Stands = трибуни.",
+     "exp_pl": "Stands = trybuny.",
+     "exp_en": "Stands = the seats for the fans.",
+     "tr": "Подивись на трибуни! Вони повні.",
+     "tr_pl": "Popatrz na trybuny! Są pełne.",
+     "tr_en": "Look at the stands! They are full.",
+     "tag": "Репліка",
+     "tag_pl": "Kwestia",
+     "tag_en": "Line"
+    },
+    {
+     "q": "It's ____ than thunder!",
+     "options": [
+      "brighter",
+      "louder",
+      "older"
+     ],
+     "answer": 1,
+     "exp": "Louder = гучніший — це про звук.",
+     "exp_pl": "Louder = głośniejszy — to o dźwięku.",
+     "exp_en": "Louder is about sound.",
+     "tr": "Це гучніше за грім!",
+     "tr_pl": "To głośniejsze niż grzmot!",
+     "tr_en": "It's louder than thunder!",
+     "tag": "Репліка",
+     "tag_pl": "Kwestia",
+     "tag_en": "Line"
+    },
+    {
+     "q": "The stadium is smaller than Radiator Springs.",
+     "options": [
+      "True",
+      "False"
+     ],
+     "answer": 1,
+     "exp": "Ні, стадіон більший за все містечко.",
+     "exp_pl": "Nie, stadion jest większy niż całe miasteczko.",
+     "exp_en": "No, the stadium is bigger than the whole town.",
+     "tr": "Стадіон менший за Радіатор-Спрінгс.",
+     "tr_pl": "Stadion jest mniejszy niż Radiator Springs.",
+     "tr_en": "The stadium is smaller than Radiator Springs.",
+     "tag": "Правда чи ні?",
+     "tag_pl": "Prawda czy nie?",
+     "tag_en": "True or false?"
+    },
+    {
+     "q": "McQueen: \"What a stadium! It's huge!\" How does he feel?",
+     "options": [
+      "Bored",
+      "Surprised",
+      "Angry"
+     ],
+     "answer": 1,
+     "exp": "Huge = величезний. Він здивований.",
+     "exp_pl": "Huge = ogromny. Jest zaskoczony.",
+     "exp_en": "Huge = very big. He is surprised.",
+     "tr": "Маккуїн: «Який стадіон! Він величезний!» Як він почувається?",
+     "tr_pl": "Zygzak: „Co za stadion! Jest ogromny!” Jak się czuje?",
+     "tr_en": "McQueen: \"What a stadium! It's huge!\" How does he feel?",
+     "tag": "Зрозумій героя",
+     "tag_pl": "Zrozum bohatera",
+     "tag_en": "Read the hero"
+    },
+    {
+     "q": "The fans shout. McQueen can't hear you. What do you say?",
+     "options": [
+      "It's louder here! Use the headset!",
+      "It's quieter here!",
+      "The stands are empty!"
+     ],
+     "answer": 0,
+     "exp": "Тут гучніше — потрібні навушники.",
+     "exp_pl": "Tu jest głośniej — potrzebne słuchawki.",
+     "exp_en": "It's louder here — you need the headset.",
+     "tr": "Фанати кричать. Маккуїн тебе не чує. Що ти скажеш?",
+     "tr_pl": "Fani krzyczą. Zygzak cię nie słyszy. Co mówisz?",
+     "tr_en": "The fans shout. McQueen can't hear you. What do you say?",
+     "tag": "Твій вибір",
+     "tag_pl": "Twój wybór",
+     "tag_en": "Your call"
+    }
+   ],
+   "label": "СЦЕНА 1 · СТАДІОН",
+   "label_pl": "SCENA 1 · STADION",
+   "label_en": "SCENE 1 · THE STADIUM",
+   "q": "Ви заїжджаєте на стадіон у Каліфорнії. Ти вперше бачиш його зсередини.",
+   "q_pl": "Wjeżdżacie na stadion w Kalifornii. Pierwszy raz widzisz go od środka.",
+   "q_en": "You drive into the stadium in California. You see it from the inside for the first time.",
+   "ins": "Встав слово, обери правду, зрозумій героя",
+   "ins_pl": "Wstaw słowo, oceń prawdę, zrozum bohatera",
+   "ins_en": "Fill the gap, judge true/false, understand the hero",
+   "tip": "Потрібно 70%+.",
+   "tip_pl": "Potrzeba 70%+.",
+   "tip_en": "You need 70%+."
+  },
+  {
+   "ref": 2
+  },
+  {
+   "type": "match",
+   "options": [
+    "faster=швидший",
+    "older=старший",
+    "younger=молодший",
+    "rival=суперник",
+    "calm=спокійний"
+   ],
+   "options_pl": [
+    "faster=szybszy",
+    "older=starszy",
+    "younger=młodszy",
+    "rival=rywal",
+    "calm=spokojny"
+   ],
+   "options_en": [
+    "faster=more quick",
+    "older=not as young",
+    "younger=not as old",
+    "rival=the car you race against",
+    "calm=not nervous"
+   ],
+   "label": "СЦЕНА 2 · СЛОВА",
+   "label_pl": "SCENA 2 · SŁOWA",
+   "label_en": "SCENE 2 · WORDS",
+   "q": "З'єднай англійські слова з перекладом.",
+   "q_pl": "Połącz angielskie słowa z tłumaczeniem.",
+   "q_en": "Match the English words with their meanings.",
+   "qt_pl": "Połącz angielskie słowa z tłumaczeniem.",
+   "qt_en": "Match the English words with their meanings.",
+   "ins": "П'ять пар зі сцени",
+   "ins_pl": "Pięć par ze sceny",
+   "ins_en": "Five pairs from the scene",
+   "tip": "Не впевнений? Повернись до словника.",
+   "tip_pl": "Nie masz pewności? Wróć do słowniczka.",
+   "tip_en": "Not sure? Go back to the glossary."
+  },
+  {
+   "type": "drill",
+   "kind": "set",
+   "items": [
+    {
+     "q": "Chick: \"I'm ____ than you, McQueen!\"",
+     "options": [
+      "faster",
+      "fast",
+      "fastest"
+     ],
+     "answer": 0,
+     "exp": "Faster than = швидший за.",
+     "exp_pl": "Faster than = szybszy od.",
+     "exp_en": "Faster than = more quick than.",
+     "tr": "Чік: «Я швидший за тебе, Маккуїне!»",
+     "tr_pl": "Chick: „Jestem szybszy od ciebie, Zygzak!”",
+     "tr_en": "Chick: \"I'm faster than you, McQueen!\"",
+     "tag": "Репліка",
+     "tag_pl": "Kwestia",
+     "tag_en": "Line"
+    },
+    {
+     "q": "The King: \"I'm ____, but more experienced.\"",
+     "options": [
+      "younger",
+      "older",
+      "louder"
+     ],
+     "answer": 1,
+     "exp": "Older = старший.",
+     "exp_pl": "Older = starszy.",
+     "exp_en": "Older = not as young.",
+     "tr": "Король: «Я старший, але досвідченіший».",
+     "tr_pl": "Król: „Jestem starszy, ale bardziej doświadczony”.",
+     "tr_en": "The King: \"I'm older, but more experienced.\"",
+     "tag": "Репліка",
+     "tag_pl": "Kwestia",
+     "tag_en": "Line"
+    },
+    {
+     "q": "Chick is McQueen's old ____.",
+     "options": [
+      "rival",
+      "friend",
+      "sponsor"
+     ],
+     "answer": 0,
+     "exp": "Rival = суперник.",
+     "exp_pl": "Rival = rywal.",
+     "exp_en": "Rival = the car you race against.",
+     "tr": "Чік — давній суперник Маккуїна.",
+     "tr_pl": "Chick to stary rywal Zygzaka.",
+     "tr_en": "Chick is McQueen's old rival.",
+     "tag": "Репліка",
+     "tag_pl": "Kwestia",
+     "tag_en": "Line"
+    },
+    {
+     "q": "McQueen is younger than the King.",
+     "options": [
+      "True",
+      "False"
+     ],
+     "answer": 0,
+     "exp": "Так, Маккуїн — новачок.",
+     "exp_pl": "Tak, Zygzak jest debiutantem.",
+     "exp_en": "Yes, McQueen is a rookie.",
+     "tr": "Маккуїн молодший за Короля.",
+     "tr_pl": "Zygzak jest młodszy od Króla.",
+     "tr_en": "McQueen is younger than the King.",
+     "tag": "Правда чи ні?",
+     "tag_pl": "Prawda czy nie?",
+     "tag_en": "True or false?"
+    },
+    {
+     "q": "The King: \"Stay calm.\" Why does he say this?",
+     "options": [
+      "He wants to help McQueen",
+      "He is angry",
+      "He wants to sleep"
+     ],
+     "answer": 0,
+     "exp": "Calm = спокійний. Король — мудрий.",
+     "exp_pl": "Calm = spokojny. Król jest mądry.",
+     "exp_en": "Calm = not nervous. The King is wise.",
+     "tr": "Король: «Залишайся спокійним». Чому він так каже?",
+     "tr_pl": "Król: „Zachowaj spokój”. Dlaczego tak mówi?",
+     "tr_en": "The King: \"Stay calm.\" Why does he say this?",
+     "tag": "Зрозумій героя",
+     "tag_pl": "Zrozum bohatera",
+     "tag_en": "Read the hero"
+    },
+    {
+     "q": "Chick is rude to you in the pit. What do you say?",
+     "options": [
+      "McQueen is better than you!",
+      "McQueen is worse than you!",
+      "You are calm!"
+     ],
+     "answer": 0,
+     "exp": "Better than = кращий за.",
+     "exp_pl": "Better than = lepszy od.",
+     "exp_en": "Better than = more good than.",
+     "tr": "Чік грубий з тобою в боксі. Що ти скажеш?",
+     "tr_pl": "Chick jest dla ciebie niemiły w boksie. Co mówisz?",
+     "tr_en": "Chick is rude to you in the pit. What do you say?",
+     "tag": "Твій вибір",
+     "tag_pl": "Twój wybór",
+     "tag_en": "Your call"
+    }
+   ],
+   "label": "СЦЕНА 2 · СУПЕРНИКИ",
+   "label_pl": "SCENA 2 · RYWALE",
+   "label_en": "SCENE 2 · RIVALS",
+   "q": "На старті три машини: Маккуїн, Король і Чік Хікс. Чік говорить голосно.",
+   "q_pl": "Na starcie trzy auta: Zygzak, Król i Chick Hicks. Chick mówi głośno.",
+   "q_en": "Three cars at the start: McQueen, the King and Chick Hicks. Chick talks loudly.",
+   "ins": "Встав слово, обери правду, зрозумій героя",
+   "ins_pl": "Wstaw słowo, oceń prawdę, zrozum bohatera",
+   "ins_en": "Fill the gap, judge true/false, understand the hero",
+   "tip": "Потрібно 70%+.",
+   "tip_pl": "Potrzeba 70%+.",
+   "tip_en": "You need 70%+."
+  },
+  {
+   "ref": 3
+  },
+  {
+   "type": "match",
+   "options": [
+    "better than=кращий за",
+    "quieter=тихіший",
+    "smaller=менший",
+    "warmer=тепліший",
+    "more important=важливіший"
+   ],
+   "options_pl": [
+    "better than=lepszy niż",
+    "quieter=cichszy",
+    "smaller=mniejszy",
+    "warmer=cieplejszy",
+    "more important=ważniejszy"
+   ],
+   "options_en": [
+    "better than=more good than",
+    "quieter=not as loud",
+    "smaller=not as big",
+    "warmer=not as cold",
+    "more important=it matters more"
+   ],
+   "label": "СЦЕНА 3 · СЛОВА",
+   "label_pl": "SCENA 3 · SŁOWA",
+   "label_en": "SCENE 3 · WORDS",
+   "q": "З'єднай англійські слова з перекладом.",
+   "q_pl": "Połącz angielskie słowa z tłumaczeniem.",
+   "q_en": "Match the English words with their meanings.",
+   "qt_pl": "Połącz angielskie słowa z tłumaczeniem.",
+   "qt_en": "Match the English words with their meanings.",
+   "ins": "П'ять пар зі сцени",
+   "ins_pl": "Pięć par ze sceny",
+   "ins_en": "Five pairs from the scene",
+   "tip": "Не впевнений? Повернись до словника.",
+   "tip_pl": "Nie masz pewności? Wróć do słowniczka.",
+   "tip_en": "Not sure? Go back to the glossary."
+  },
+  {
+   "type": "drill",
+   "kind": "set",
+   "items": [
+    {
+     "q": "It's smaller, ____ it's home.",
+     "options": [
+      "but",
+      "than",
+      "the"
+     ],
+     "answer": 0,
+     "exp": "Smaller, but… — менше, але…",
+     "exp_pl": "Mniejsze, ale…",
+     "exp_en": "Smaller, but…",
+     "tr": "Воно менше, але це дім.",
+     "tr_pl": "Jest mniejsze, ale to dom.",
+     "tr_en": "It's smaller, but it's home.",
+     "tag": "Репліка",
+     "tag_pl": "Kwestia",
+     "tag_en": "Line"
+    },
+    {
+     "q": "Friends are ____ than fame.",
+     "options": [
+      "better",
+      "good",
+      "best"
+     ],
+     "answer": 0,
+     "exp": "Better than = кращі за.",
+     "exp_pl": "Better than = lepsi niż.",
+     "exp_en": "Better than = more good than.",
+     "tr": "Друзі кращі за славу.",
+     "tr_pl": "Przyjaciele są lepsi niż sława.",
+     "tr_en": "Friends are better than fame.",
+     "tag": "Репліка",
+     "tag_pl": "Kwestia",
+     "tag_en": "Line"
+    },
+    {
+     "q": "The town is ____ than the stadium.",
+     "options": [
+      "louder",
+      "quieter",
+      "bigger"
+     ],
+     "answer": 1,
+     "exp": "Quieter = тихіший.",
+     "exp_pl": "Quieter = cichszy.",
+     "exp_en": "Quieter = not as loud.",
+     "tr": "Містечко тихіше за стадіон.",
+     "tr_pl": "Miasteczko jest cichsze niż stadion.",
+     "tr_en": "The town is quieter than the stadium.",
+     "tag": "Репліка",
+     "tag_pl": "Kwestia",
+     "tag_en": "Line"
+    },
+    {
+     "q": "McQueen thinks about Sally and his friends.",
+     "options": [
+      "True",
+      "False"
+     ],
+     "answer": 0,
+     "exp": "Так, він сумує за містечком.",
+     "exp_pl": "Tak, tęskni za miasteczkiem.",
+     "exp_en": "Yes, he misses the town.",
+     "tr": "Маккуїн думає про Саллі й друзів.",
+     "tr_pl": "Zygzak myśli o Sally i przyjaciołach.",
+     "tr_en": "McQueen thinks about Sally and his friends.",
+     "tag": "Правда чи ні?",
+     "tag_pl": "Prawda czy nie?",
+     "tag_en": "True or false?"
+    },
+    {
+     "q": "McQueen: \"It's brighter here… but the town was better.\" What does he feel?",
+     "options": [
+      "He misses the town",
+      "He loves the lights",
+      "He is hungry"
+     ],
+     "answer": 0,
+     "exp": "Він сумує за містечком.",
+     "exp_pl": "Tęskni za miasteczkiem.",
+     "exp_en": "He misses the town.",
+     "tr": "Маккуїн: «Тут яскравіше… але в містечку було краще». Що він відчуває?",
+     "tr_pl": "Zygzak: „Tu jest jaśniej… ale w miasteczku było lepiej”. Co czuje?",
+     "tr_en": "McQueen: \"It's brighter here… but the town was better.\" What does he feel?",
+     "tag": "Зрозумій героя",
+     "tag_pl": "Zrozum bohatera",
+     "tag_en": "Read the hero"
+    },
+    {
+     "q": "McQueen asks you: \"Are you ready?\" You answer:",
+     "options": [
+      "Yes! I'm ready!",
+      "Yes! I'm readier!",
+      "No, I'm bigger."
+     ],
+     "answer": 0,
+     "exp": "Ready = готовий.",
+     "exp_pl": "Ready = gotowy.",
+     "exp_en": "Ready = prepared.",
+     "tr": "Маккуїн питає: «Ти готовий?» Ти відповідаєш:",
+     "tr_pl": "Zygzak pyta: „Gotowy?” Odpowiadasz:",
+     "tr_en": "McQueen asks you: \"Are you ready?\" You answer:",
+     "tag": "Твій вибір",
+     "tag_pl": "Twój wybór",
+     "tag_en": "Your call"
+    }
+   ],
+   "label": "СЦЕНА 3 · ДУМКИ",
+   "label_pl": "SCENA 3 · MYŚLI",
+   "label_en": "SCENE 3 · THOUGHTS",
+   "q": "Маккуїн дивиться на трибуни, але думає про Радіатор-Спрінгс.",
+   "q_pl": "Zygzak patrzy na trybuny, ale myśli o Radiator Springs.",
+   "q_en": "McQueen looks at the stands, but he thinks about Radiator Springs.",
+   "ins": "Встав слово, обери правду, зрозумій героя",
+   "ins_pl": "Wstaw słowo, oceń prawdę, zrozum bohatera",
+   "ins_en": "Fill the gap, judge true/false, understand the hero",
+   "tip": "Потрібно 70%+.",
+   "tip_pl": "Potrzeba 70%+.",
+   "tip_en": "You need 70%+."
+  },
+  {
+   "type": "intro",
+   "label": "ПРАВИЛО",
+   "label_pl": "ZASADA",
+   "label_en": "RULE",
+   "q": "Порівняння англійською. Короткі слова: + -er + than: fast → faster than, big → bigger than (подвоюємо g), friendly → friendlier. Довгі слова: more + слово: more famous, more important. Неправильні: good → better, bad → worse. Приклади: «I'm faster than you!» · «It's bigger than our town!» · «Friends are more important than the cup.»",
+   "q_pl": "Stopień wyższy po angielsku. Krótkie słowa: + -er + than: fast → faster than, big → bigger than (podwajamy g), friendly → friendlier. Długie słowa: more + słowo: more famous, more important. Nieregularne: good → better, bad → worse. Przykłady: „I'm faster than you!” · „It's bigger than our town!” · „Friends are more important than the cup.”",
+   "q_en": "Comparatives. Short words: + -er + than: fast → faster than, big → bigger than (double the g), friendly → friendlier. Long words: more + word: more famous, more important. Irregular: good → better, bad → worse. Examples: \"I'm faster than you!\" · \"It's bigger than our town!\" · \"Friends are more important than the cup.\""
+  },
+  {
+   "type": "drill",
+   "kind": "set",
+   "items": [
+    {
+     "q": "Chick: \"I'm ____ than the King!\"",
+     "options": [
+      "fast",
+      "faster",
+      "more fast"
+     ],
+     "answer": 1,
+     "exp": "Коротке слово: fast → faster.",
+     "exp_pl": "Krótkie słowo: fast → faster.",
+     "exp_en": "Short word: fast → faster."
+    },
+    {
+     "q": "McQueen: \"The stadium is ____ than our town.\"",
+     "options": [
+      "biger",
+      "bigger",
+      "more big"
+     ],
+     "answer": 1,
+     "exp": "Big → bigger (подвоєне g).",
+     "exp_pl": "Big → bigger (podwójne g).",
+     "exp_en": "Big → bigger (double g)."
+    },
+    {
+     "q": "The King: \"I'm ____ than you, kid.\"",
+     "options": [
+      "older",
+      "more old",
+      "oldest"
+     ],
+     "answer": 0,
+     "exp": "Old → older.",
+     "exp_pl": "Old → older.",
+     "exp_en": "Old → older."
+    },
+    {
+     "q": "Chick: \"I'm going to be ____ than McQueen!\"",
+     "options": [
+      "famouser",
+      "more famous",
+      "famous"
+     ],
+     "answer": 1,
+     "exp": "Довге слово: more famous.",
+     "exp_pl": "Długie słowo: more famous.",
+     "exp_en": "Long word: more famous."
+    },
+    {
+     "q": "McQueen: \"Friends are ____ than fame.\"",
+     "options": [
+      "gooder",
+      "better",
+      "more good"
+     ],
+     "answer": 1,
+     "exp": "Good → better.",
+     "exp_pl": "Good → better.",
+     "exp_en": "Good → better."
+    },
+    {
+     "q": "Doc (in McQueen's head): \"The cup is not ____ than friends.\"",
+     "options": [
+      "importanter",
+      "more important",
+      "important"
+     ],
+     "answer": 1,
+     "exp": "More important.",
+     "exp_pl": "More important.",
+     "exp_en": "More important."
+    },
+    {
+     "q": "You: \"Chick's driving is ____ than before!\"",
+     "options": [
+      "badder",
+      "worse",
+      "more bad"
+     ],
+     "answer": 1,
+     "exp": "Bad → worse.",
+     "exp_pl": "Bad → worse.",
+     "exp_en": "Bad → worse."
+    },
+    {
+     "q": "McQueen: \"The people in town are ____.\"",
+     "options": [
+      "friendlyer",
+      "friendlier",
+      "more friendlier"
+     ],
+     "answer": 1,
+     "exp": "Friendly → friendlier (y → i).",
+     "exp_pl": "Friendly → friendlier (y → i).",
+     "exp_en": "Friendly → friendlier (y → i)."
+    },
+    {
+     "q": "You: \"The King is calmer ____ Chick.\"",
+     "options": [
+      "that",
+      "than",
+      "then"
+     ],
+     "answer": 1,
+     "exp": "Після порівняння — than.",
+     "exp_pl": "Po stopniu wyższym — than.",
+     "exp_en": "After a comparative — than."
+    },
+    {
+     "q": "McQueen: \"Radiator Springs is ____ than California.\"",
+     "options": [
+      "quieter",
+      "more quiet than",
+      "quiet"
+     ],
+     "answer": 0,
+     "exp": "Quiet → quieter.",
+     "exp_pl": "Quiet → quieter.",
+     "exp_en": "Quiet → quieter."
+    }
+   ],
+   "label": "ГРАМАТИКА · ХТО ШВИДШИЙ?",
+   "label_pl": "GRAMATYKA · KTO SZYBSZY?",
+   "label_en": "GRAMMAR · WHO'S FASTER?",
+   "q": "Репліки на старті. Обери правильну форму порівняння.",
+   "q_pl": "Kwestie na starcie. Wybierz poprawną formę stopnia wyższego.",
+   "q_en": "Lines at the start. Choose the correct comparative.",
+   "ins": "-er + than, more…, better / worse",
+   "ins_pl": "-er + than, more…, better / worse",
+   "ins_en": "-er + than, more…, better / worse",
+   "tip": "Потрібно 70%+.",
+   "tip_pl": "Potrzeba 70%+.",
+   "tip_en": "You need 70%+."
+  },
+  {
+   "type": "reading",
+   "items": [
+    {
+     "q": "Today is the big day in California."
+    },
+    {
+     "q": "The stadium is ____. It has thousands of seats.",
+     "options": [
+      "huge",
+      "quiet",
+      "small"
+     ],
+     "answer": 0
+    },
+    {
+     "q": "It is bigger ____ the whole town of Radiator Springs.",
+     "options": [
+      "then",
+      "than",
+      "that"
+     ],
+     "answer": 1
+    },
+    {
+     "q": "The fans in the ____ shout and sing.",
+     "options": [
+      "stands",
+      "tank",
+      "garage"
+     ],
+     "answer": 0
+    },
+    {
+     "q": "It's ____ here than at any race.",
+     "options": [
+      "quieter",
+      "louder",
+      "smaller"
+     ],
+     "answer": 1
+    },
+    {
+     "q": "Three cars are ready for the race."
+    },
+    {
+     "q": "Chick Hicks is loud. He says, \"I'm ____ than you, McQueen!\"",
+     "options": [
+      "faster",
+      "fast",
+      "more fast"
+     ],
+     "answer": 0
+    },
+    {
+     "q": "The King is ____ than McQueen and Chick.",
+     "options": [
+      "younger",
+      "older",
+      "smaller"
+     ],
+     "answer": 1
+    },
+    {
+     "q": "He is calm. He is more ____ than the young cars.",
+     "options": [
+      "experienced",
+      "experiencer",
+      "experience"
+     ],
+     "answer": 0
+    },
+    {
+     "q": "McQueen is the youngest car on the track."
+    },
+    {
+     "q": "He is ____ famous than Chick now, and Chick is angry.",
+     "options": [
+      "most",
+      "more",
+      "much"
+     ],
+     "answer": 1
+    },
+    {
+     "q": "But McQueen is a bit nervous today."
+    },
+    {
+     "q": "He looks at the bright lights. \"It's ____ here,\" he thinks.",
+     "options": [
+      "darker",
+      "brighter",
+      "quieter"
+     ],
+     "answer": 1
+    },
+    {
+     "q": "But Radiator Springs is ____ and warmer.",
+     "options": [
+      "louder",
+      "bigger",
+      "friendlier"
+     ],
+     "answer": 2
+    },
+    {
+     "q": "For McQueen, friends are now ____ important than the cup.",
+     "options": [
+      "more",
+      "most",
+      "better"
+     ],
+     "answer": 0
+    },
+    {
+     "q": "The race starts in ten minutes. Who is going to win?"
+    }
+   ],
+   "title": "«Новини гонок»: великий день у Каліфорнії",
+   "title_pl": "„Wiadomości wyścigowe”: wielki dzień w Kalifornii",
+   "title_en": "“Racing News”: a big day in California",
+   "label": "НОВИНИ ГОНОК",
+   "label_pl": "WIADOMOŚCI WYŚCIGOWE",
+   "label_en": "RACING NEWS",
+   "q": "Газета «Новини гонок» пише про день перед фінальною гонкою. Прочитай статтю англійською й обери правильні слова.",
+   "q_pl": "Gazeta „Wiadomości wyścigowe” pisze o dniu przed finałowym wyścigiem. Przeczytaj artykuł po angielsku i wybierz właściwe słowa.",
+   "q_en": "The “Racing News” paper writes about the day of the final race. Read the article and choose the right words.",
+   "tip": "Короткі слова: -er; довгі: more.",
+   "tip_pl": "Krótkie słowa: -er; długie: more.",
+   "tip_en": "Short words: -er; long words: more."
+  },
+  {
+   "type": "drill",
+   "kind": "set",
+   "items": [
+    {
+     "q": "Where is the race?",
+     "options": [
+      "In Radiator Springs",
+      "In California",
+      "In the desert"
+     ],
+     "answer": 1,
+     "exp": "In California.",
+     "exp_pl": "W Kalifornii.",
+     "exp_en": "In California.",
+     "tr": "Де гонка?",
+     "tr_pl": "Gdzie jest wyścig?",
+     "tr_en": "Where is the race?",
+     "tag": "Сюжет",
+     "tag_pl": "Fabuła",
+     "tag_en": "Plot"
+    },
+    {
+     "q": "Which is bigger?",
+     "options": [
+      "Radiator Springs",
+      "The stadium",
+      "They are the same"
+     ],
+     "answer": 1,
+     "exp": "The stadium is bigger than the whole town.",
+     "exp_pl": "Stadion jest większy niż całe miasteczko.",
+     "exp_en": "The stadium is bigger than the whole town.",
+     "tr": "Що більше?",
+     "tr_pl": "Co jest większe?",
+     "tr_en": "Which is bigger?",
+     "tag": "Сюжет",
+     "tag_pl": "Fabuła",
+     "tag_en": "Plot"
+    },
+    {
+     "q": "Who is the oldest car?",
+     "options": [
+      "The King",
+      "Chick",
+      "McQueen"
+     ],
+     "answer": 0,
+     "exp": "The King is older than McQueen and Chick.",
+     "exp_pl": "Król jest starszy od Zygzaka i Chicka.",
+     "exp_en": "The King is older than McQueen and Chick.",
+     "tr": "Хто найстарша машина?",
+     "tr_pl": "Kto jest najstarszym autem?",
+     "tr_en": "Who is the oldest car?",
+     "tag": "Сюжет",
+     "tag_pl": "Fabuła",
+     "tag_en": "Plot"
+    },
+    {
+     "q": "Why is Chick angry?",
+     "options": [
+      "McQueen is more famous",
+      "His tyres are old",
+      "The stadium is small"
+     ],
+     "answer": 0,
+     "exp": "McQueen is more famous than Chick now.",
+     "exp_pl": "Zygzak jest teraz bardziej sławny niż Chick.",
+     "exp_en": "McQueen is more famous than Chick now.",
+     "tr": "Чому Чік злий?",
+     "tr_pl": "Dlaczego Chick jest zły?",
+     "tr_en": "Why is Chick angry?",
+     "tag": "Сюжет",
+     "tag_pl": "Fabuła",
+     "tag_en": "Plot"
+    },
+    {
+     "q": "What is more important for McQueen now?",
+     "options": [
+      "The cup",
+      "Friends",
+      "The lights"
+     ],
+     "answer": 1,
+     "exp": "Friends are more important than the cup.",
+     "exp_pl": "Przyjaciele są ważniejsi niż puchar.",
+     "exp_en": "Friends are more important than the cup.",
+     "tr": "Що тепер важливіше для Маккуїна?",
+     "tr_pl": "Co jest teraz ważniejsze dla Zygzaka?",
+     "tr_en": "What is more important for McQueen now?",
+     "tag": "Сюжет",
+     "tag_pl": "Fabuła",
+     "tag_en": "Plot"
+    }
+   ],
+   "label": "РОЗУМІННЯ ТЕКСТУ",
+   "label_pl": "ROZUMIENIE TEKSTU",
+   "label_en": "READING CHECK",
+   "q": "Питання до статті «Новини гонок».",
+   "q_pl": "Pytania do artykułu „Wiadomości wyścigowe”.",
+   "q_en": "Questions about the “Racing News” article.",
+   "ins": "П'ять питань до тексту",
+   "ins_pl": "Pięć pytań do tekstu",
+   "ins_en": "Five questions about the text",
+   "tip": "Потрібно 70%+.",
+   "tip_pl": "Potrzeba 70%+.",
+   "tip_en": "You need 70%+."
+  },
+  {
+   "type": "quest",
+   "img": "pitch",
+   "start": "s1",
+   "steps": {
+    "s1": {
+     "q": "McQueen: \"Wow! Is the stadium big?\" (Ого! Стадіон великий?)",
+     "q_pl": "McQueen: \"Wow! Is the stadium big?\" (Wow! Czy stadion jest duży?)",
+     "q_en": "McQueen: \"Wow! Is the stadium big?\"",
+     "scene": "Ви заїжджаєте на стадіон.",
+     "scene_pl": "Wjeżdżacie na stadion.",
+     "scene_en": "You drive into the stadium.",
+     "choices": [
+      {
+       "t": "Yes! It's bigger than our town!",
+       "ok": true,
+       "next": "s2",
+       "fb": "Так! Bigger than — правильно.",
+       "fb_pl": "Tak! Bigger than — dobrze.",
+       "fb_en": "Yes! Bigger than — correct."
+      },
+      {
+       "t": "Yes! It's more big than our town!",
+       "ok": false,
+       "next": "s1b",
+       "fb": "Кажемо bigger, не more big.",
+       "fb_pl": "Mówimy bigger, nie more big.",
+       "fb_en": "We say bigger, not more big."
+      }
+     ]
+    },
+    "s1b": {
+     "q": "McQueen: \"More big? Say it right, rookie!\" (Більший? Скажи правильно, новачку!)",
+     "q_pl": "McQueen: \"More big? Say it right, rookie!\" (Większy? Powiedz to dobrze, nowicjuszu!)",
+     "q_en": "McQueen: \"More big? Say it right, rookie!\"",
+     "scene": "Він сміється.",
+     "scene_pl": "Śmieje się.",
+     "scene_en": "He laughs.",
+     "choices": [
+      {
+       "t": "Sorry! It's bigger and louder!",
+       "ok": true,
+       "next": "s2",
+       "fb": "Так!",
+       "fb_pl": "Tak!",
+       "fb_en": "Yes!"
+      },
+      {
+       "t": "It's biger and louder!",
+       "ok": false,
+       "next": "end_bad",
+       "fb": "Bigger — з двома g.",
+       "fb_pl": "Bigger — z dwoma g.",
+       "fb_en": "Bigger has two g's."
+      }
+     ]
+    },
+    "s2": {
+     "q": "Chick: \"Ha! I'm faster than your car, kid!\" (Ха! Я швидший за твою машину, малий!)",
+     "q_pl": "Chick: \"Ha! I'm faster than your car, kid!\" (Ha! Jestem szybszy od twojego auta, mały!)",
+     "q_en": "Chick: \"Ha! I'm faster than your car, kid!\"",
+     "scene": "Чік під'їжджає до вашого боксу.",
+     "scene_pl": "Chick podjeżdża do waszego boksu.",
+     "scene_en": "Chick drives up to your pit box.",
+     "choices": [
+      {
+       "t": "No! McQueen is faster than you!",
+       "ok": true,
+       "next": "s3",
+       "fb": "Faster than — чудово.",
+       "fb_pl": "Faster than — świetnie.",
+       "fb_en": "Faster than — great."
+      },
+      {
+       "t": "No! McQueen is more fast than you!",
+       "ok": false,
+       "next": "s3",
+       "fb": "Кажемо faster.",
+       "fb_pl": "Mówimy faster.",
+       "fb_en": "We say faster."
+      }
+     ]
+    },
+    "s3": {
+     "q": "The King: \"Kid, stay calm. Is fame important?\" (Малий, будь спокійним. Слава важлива?)",
+     "q_pl": "The King: \"Kid, stay calm. Is fame important?\" (Mały, spokojnie. Czy sława jest ważna?)",
+     "q_en": "The King: \"Kid, stay calm. Is fame important?\"",
+     "scene": "Король говорить з Маккуїном перед стартом.",
+     "scene_pl": "Król rozmawia z Zygzakiem przed startem.",
+     "scene_en": "The King talks to McQueen before the start.",
+     "choices": [
+      {
+       "t": "Friends are more important than fame.",
+       "ok": true,
+       "next": "end_good",
+       "fb": "Мудро!",
+       "fb_pl": "Mądrze!",
+       "fb_en": "Wise!"
+      },
+      {
+       "t": "The cup is better than everything!",
+       "ok": true,
+       "next": "end_mid",
+       "fb": "Так думав старий Маккуїн…",
+       "fb_pl": "Tak myślał stary Zygzak…",
+       "fb_en": "That's what the old McQueen thought…"
+      }
+     ]
+    }
+   },
+   "endings": {
+    "end_good": {
+     "good": true,
+     "title": "Кінцівка: Мудрий новачок",
+     "title_pl": "Zakończenie: Mądry nowicjusz",
+     "title_en": "Ending: A wise rookie",
+     "text": "Король усміхається: «Ти розумніший, ніж я думав». Маккуїн спокійніший, і ти готовий до гонки.",
+     "text_pl": "Król się uśmiecha: „Jesteś mądrzejszy, niż myślałem”. Zygzak jest spokojniejszy, a ty gotowy do wyścigu.",
+     "text_en": "The King smiles: \"You're smarter than I thought.\" McQueen is calmer, and you're ready for the race."
+    },
+    "end_mid": {
+     "good": true,
+     "title": "Кінцівка: Тільки кубок",
+     "title_pl": "Zakończenie: Tylko puchar",
+     "title_en": "Ending: Only the cup",
+     "text": "Король хитає головою. Маккуїн знервований і думає тільки про кубок. Гонка буде важка.",
+     "text_pl": "Król kręci głową. Zygzak jest zdenerwowany i myśli tylko o pucharze. Wyścig będzie trudny.",
+     "text_en": "The King shakes his head. McQueen is nervous and thinks only about the cup. The race is going to be hard."
+    },
+    "end_bad": {
+     "good": false,
+     "title": "Кінцівка: Тебе не зрозуміли",
+     "title_pl": "Zakończenie: Nie zrozumiano cię",
+     "title_en": "Ending: Nobody understood you",
+     "text": "Маккуїн вимикає радіо. Спробуй ще раз: «It's bigger than our town!»",
+     "text_pl": "Zygzak wyłącza radio. Spróbuj jeszcze raz: „It's bigger than our town!”",
+     "text_en": "McQueen turns off the radio. Try again: \"It's bigger than our town!\""
+    }
+   },
+   "label": "КВЕСТ: ПЕРЕД СТАРТОМ",
+   "label_pl": "QUEST: PRZED STARTEM",
+   "label_en": "QUEST: BEFORE THE START",
+   "q": "До старту десять хвилин. Маккуїн, Чік і Король говорять з тобою. Відповідай англійською.",
+   "q_pl": "Dziesięć minut do startu. Zygzak, Chick i Król mówią do ciebie. Odpowiadaj po angielsku.",
+   "q_en": "Ten minutes to the start. McQueen, Chick and the King talk to you. Answer in English.",
+   "ins": "Кожен вибір веде далі. Відповідай англійською",
+   "ins_pl": "Każdy wybór prowadzi dalej. Odpowiadaj po angielsku",
+   "ins_en": "Every choice leads on. Answer in English",
+   "tip": "Квест перевіряє слова й граматику уроку.",
+   "tip_pl": "Quest sprawdza słowa i gramatykę lekcji.",
+   "tip_en": "The quest checks the lesson words and grammar."
+  },
+  {
+   "type": "drill",
+   "kind": "set",
+   "items": [
+    {
+     "k": "type",
+     "q": "Напиши англійською: «Я швидший за тебе!»",
+     "q_pl": "Napisz po angielsku: „Jestem szybszy od ciebie!”",
+     "q_en": "Type it in English: “I'm faster than you!”",
+     "options": [
+      "I'm faster than you!",
+      "I'm faster than you",
+      "I am faster than you!",
+      "I am faster than you"
+     ],
+     "exp": "I'm faster than you!",
+     "exp_pl": "I'm faster than you!",
+     "exp_en": "I'm faster than you!",
+     "tag": "Напиши",
+     "tag_pl": "Napisz",
+     "tag_en": "Write"
+    },
+    {
+     "k": "order",
+     "q": "Склади репліку: «Він більший за наше містечко!»",
+     "q_pl": "Ułóż kwestię: „Jest większy niż nasze miasteczko!”",
+     "q_en": "Build the line: “It's bigger than our town!”",
+     "options": [
+      "It's",
+      "bigger",
+      "than",
+      "our",
+      "town!"
+     ],
+     "exp": "It's bigger than our town!",
+     "exp_pl": "It's bigger than our town!",
+     "exp_en": "It's bigger than our town!",
+     "tag": "Склади",
+     "tag_pl": "Ułóż",
+     "tag_en": "Build"
+    },
+    {
+     "k": "type",
+     "q": "Напиши англійською: «Стадіон величезний.»",
+     "q_pl": "Napisz po angielsku: „Stadion jest ogromny.”",
+     "q_en": "Type it in English: “The stadium is huge.”",
+     "options": [
+      "The stadium is huge.",
+      "The stadium is huge"
+     ],
+     "exp": "The stadium is huge.",
+     "exp_pl": "The stadium is huge.",
+     "exp_en": "The stadium is huge.",
+     "tag": "Напиши",
+     "tag_pl": "Napisz",
+     "tag_en": "Write"
+    },
+    {
+     "k": "order",
+     "q": "Склади репліку: «Друзі кращі за славу.»",
+     "q_pl": "Ułóż kwestię: „Przyjaciele są lepsi niż sława.”",
+     "q_en": "Build the line: “Friends are better than fame.”",
+     "options": [
+      "Friends",
+      "are",
+      "better",
+      "than",
+      "fame."
+     ],
+     "exp": "Friends are better than fame.",
+     "exp_pl": "Friends are better than fame.",
+     "exp_en": "Friends are better than fame.",
+     "tag": "Склади",
+     "tag_pl": "Ułóż",
+     "tag_en": "Build"
+    },
+    {
+     "k": "type",
+     "q": "Напиши англійською: «Я старший за тебе.»",
+     "q_pl": "Napisz po angielsku: „Jestem starszy od ciebie.”",
+     "q_en": "Type it in English: “I'm older than you.”",
+     "options": [
+      "I'm older than you.",
+      "I'm older than you",
+      "I am older than you.",
+      "I am older than you"
+     ],
+     "exp": "I'm older than you.",
+     "exp_pl": "I'm older than you.",
+     "exp_en": "I'm older than you.",
+     "tag": "Напиши",
+     "tag_pl": "Napisz",
+     "tag_en": "Write"
+    },
+    {
+     "k": "order",
+     "q": "Склади репліку: «Містечко тихіше за стадіон.»",
+     "q_pl": "Ułóż kwestię: „Miasteczko jest cichsze niż stadion.”",
+     "q_en": "Build the line: “The town is quieter than the stadium.”",
+     "options": [
+      "The",
+      "town",
+      "is",
+      "quieter",
+      "than",
+      "the",
+      "stadium."
+     ],
+     "exp": "The town is quieter than the stadium.",
+     "exp_pl": "The town is quieter than the stadium.",
+     "exp_en": "The town is quieter than the stadium.",
+     "tag": "Склади",
+     "tag_pl": "Ułóż",
+     "tag_en": "Build"
+    },
+    {
+     "k": "type",
+     "q": "Напиши англійською: «Ти готовий?»",
+     "q_pl": "Napisz po angielsku: „Jesteś gotowy?”",
+     "q_en": "Type it in English: “Are you ready?”",
+     "options": [
+      "Are you ready?",
+      "Are you ready"
+     ],
+     "exp": "Are you ready?",
+     "exp_pl": "Are you ready?",
+     "exp_en": "Are you ready?",
+     "tag": "Напиши",
+     "tag_pl": "Napisz",
+     "tag_en": "Write"
+    },
+    {
+     "k": "order",
+     "q": "Склади репліку: «Друзі важливіші за кубок.»",
+     "q_pl": "Ułóż kwestię: „Przyjaciele są ważniejsi niż puchar.”",
+     "q_en": "Build the line: “Friends are more important than the cup.”",
+     "options": [
+      "Friends",
+      "are",
+      "more",
+      "important",
+      "than",
+      "the",
+      "cup."
+     ],
+     "exp": "Friends are more important than the cup.",
+     "exp_pl": "Friends are more important than the cup.",
+     "exp_en": "Friends are more important than the cup.",
+     "tag": "Склади",
+     "tag_pl": "Ułóż",
+     "tag_en": "Build"
+    }
+   ],
+   "label": "РАДІО КОМАНДИ",
+   "label_pl": "RADIO ZESPOŁU",
+   "label_en": "TEAM RADIO",
+   "q": "Ти записуєш репліки зі старту. Напиши й склади їх англійською.",
+   "q_pl": "Zapisujesz kwestie ze startu. Napisz i ułóż je po angielsku.",
+   "q_en": "You write down the lines from the start. Write and build them in English.",
+   "ins": "Пиши й складай репліки",
+   "ins_pl": "Pisz i układaj kwestie",
+   "ins_en": "Write and build the lines",
+   "tip": "Потрібно 70%+.",
+   "tip_pl": "Potrzeba 70%+.",
+   "tip_en": "You need 70%+."
+  },
+  {
+   "type": "speaking",
+   "say": "It's bigger than our town! And it's louder than thunder!",
+   "label": "ГОВОРІННЯ",
+   "label_pl": "MÓWIENIE",
+   "label_en": "SPEAKING",
+   "q": "Скажи вголос, як Маккуїн, коли він бачить стадіон.",
+   "q_pl": "Powiedz na głos jak Zygzak, gdy widzi stadion.",
+   "q_en": "Say it aloud like McQueen when he sees the stadium.",
+   "qt_pl": "Powiedz na głos jak Zygzak, gdy widzi stadion.",
+   "qt_en": "Say it aloud like McQueen when he sees the stadium.",
+   "ins": "Прочитай і скажи вголос англійською",
+   "ins_pl": "Przeczytaj i powiedz na głos po angielsku",
+   "ins_en": "Read it and say it aloud",
+   "tip": "Переклад: Він більший за наше містечко! І гучніший за грім!",
+   "tip_pl": "Tłumaczenie: Jest większy niż nasze miasteczko! I głośniejszy niż grzmot!",
+   "tip_en": "Meaning: The stadium is bigger and louder than anything."
+  },
+  {
+   "type": "speaking",
+   "say": "The town is smaller, but it's warmer. Friends are better than fame.",
+   "label": "ГОВОРІННЯ",
+   "label_pl": "MÓWIENIE",
+   "label_en": "SPEAKING",
+   "q": "Скажи вголос думки Маккуїна перед стартом.",
+   "q_pl": "Powiedz na głos myśli Zygzaka przed startem.",
+   "q_en": "Say McQueen's thoughts aloud before the start.",
+   "qt_pl": "Powiedz na głos myśli Zygzaka przed startem.",
+   "qt_en": "Say McQueen's thoughts aloud before the start.",
+   "ins": "Прочитай і скажи вголос англійською",
+   "ins_pl": "Przeczytaj i powiedz na głos po angielsku",
+   "ins_en": "Read it and say it aloud",
+   "tip": "Переклад: Містечко менше, але тепліше. Друзі кращі за славу.",
+   "tip_pl": "Tłumaczenie: Miasteczko jest mniejsze, ale cieplejsze. Przyjaciele są lepsi niż sława.",
+   "tip_en": "Meaning: The small town feels warmer; friends matter more than fame."
+  },
+  {
+   "type": "drill",
+   "kind": "set",
+   "items": [
+    {
+     "q": "A car is ____ than a bike.",
+     "options": [
+      "slower",
+      "faster",
+      "older"
+     ],
+     "answer": 1,
+     "exp": "Faster = швидший.",
+     "exp_pl": "Faster = szybszy.",
+     "exp_en": "Faster = more quick."
+    },
+    {
+     "q": "An elephant is ____ than a cat.",
+     "options": [
+      "bigger",
+      "smaller",
+      "younger"
+     ],
+     "answer": 0,
+     "exp": "Bigger = більший.",
+     "exp_pl": "Bigger = większy.",
+     "exp_en": "Bigger = not as small."
+    },
+    {
+     "q": "The library is ____ than the stadium.",
+     "options": [
+      "louder",
+      "quieter",
+      "huger"
+     ],
+     "answer": 1,
+     "exp": "Quieter = тихіший.",
+     "exp_pl": "Quieter = cichszy.",
+     "exp_en": "Quieter = not as loud."
+    },
+    {
+     "q": "Thousands of fans sit in the ____.",
+     "options": [
+      "stands",
+      "wheels",
+      "voice"
+     ],
+     "answer": 0,
+     "exp": "Stands = трибуни.",
+     "exp_pl": "Stands = trybuny.",
+     "exp_en": "Stands = seats for fans."
+    },
+    {
+     "q": "The bus is full of people. It's ____.",
+     "options": [
+      "calm",
+      "crowded",
+      "ready"
+     ],
+     "answer": 1,
+     "exp": "Crowded = переповнений.",
+     "exp_pl": "Crowded = zatłoczony.",
+     "exp_en": "Crowded = full of people."
+    },
+    {
+     "q": "Chick wants to win. He is McQueen's ____.",
+     "options": [
+      "rival",
+      "stand",
+      "stadium"
+     ],
+     "answer": 0,
+     "exp": "Rival = суперник.",
+     "exp_pl": "Rival = rywal.",
+     "exp_en": "Rival = the one you race against."
+    },
+    {
+     "q": "Today is ____ than yesterday. The sun is out!",
+     "options": [
+      "warmer",
+      "colder",
+      "older"
+     ],
+     "answer": 0,
+     "exp": "Warmer = тепліший.",
+     "exp_pl": "Warmer = cieplejszy.",
+     "exp_en": "Warmer = not as cold."
+    },
+    {
+     "q": "I have a test today. I'm a bit ____.",
+     "options": [
+      "huge",
+      "nervous",
+      "brighter"
+     ],
+     "answer": 1,
+     "exp": "Nervous = знервований.",
+     "exp_pl": "Nervous = zdenerwowany.",
+     "exp_en": "Nervous = worried."
+    }
+   ],
+   "label": "ПІСЛЯ СТАРТУ · СЛОВА",
+   "label_pl": "PO STARCIE · SŁOWA",
+   "label_en": "AFTER THE START · WORDS",
+   "q": "Журналісти питають тебе про стадіон і гонщиків. Відповідай.",
+   "q_pl": "Dziennikarze pytają cię o stadion i kierowców. Odpowiadaj.",
+   "q_en": "Reporters ask you about the stadium and the racers. Answer.",
+   "ins": "Слова уроку в нових реченнях",
+   "ins_pl": "Słowa lekcji w nowych zdaniach",
+   "ins_en": "Lesson words in new sentences",
+   "tip": "Потрібно 70%+.",
+   "tip_pl": "Potrzeba 70%+.",
+   "tip_en": "You need 70%+."
+  },
+  {
+   "type": "final",
+   "img": "diary",
+   "answer": 25,
+   "label": "ЛИСТ ДРУЗЯМ",
+   "label_pl": "LIST DO PRZYJACIÓŁ",
+   "label_en": "LETTER TO FRIENDS",
+   "q": "Ти в Каліфорнії. Напиши листівку друзям у Радіатор-Спрінгс (25+ слів): який стадіон? хто швидший? хто старший? що краще — стадіон чи містечко?",
+   "q_pl": "Jesteś w Kalifornii. Napisz pocztówkę do przyjaciół w Radiator Springs po angielsku (25+ słów): jaki jest stadion? kto jest szybszy? kto starszy? co lepsze — stadion czy miasteczko?",
+   "q_en": "You are in California. Write a postcard to your friends in Radiator Springs (25+ words): what is the stadium like? who is faster? who is older? which is better — the stadium or the town?",
+   "ins": "Напиши англійською",
+   "ins_pl": "Napisz po angielsku",
+   "ins_en": "Write it in English",
+   "tip": "Hi friends! The stadium is huge. It's bigger than… Chick says he is faster than… The King is older… But Radiator Springs is better because…",
+   "tip_pl": "Hi friends! The stadium is huge. It's bigger than… Chick says he is faster than… The King is older… But Radiator Springs is better because…",
+   "tip_en": "Hi friends! The stadium is huge. It's bigger than… Chick says he is faster than… The King is older… But Radiator Springs is better because…"
+  }
+ ]
+}

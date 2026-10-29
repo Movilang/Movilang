@@ -1,0 +1,1466 @@
+{
+ "lesson_id": "96e494b4-4cc7-4ac2-9fd5-e2a40a282dde",
+ "tg": "en",
+ "tasks": [
+  {
+   "ref": 0
+  },
+  {
+   "type": "intro",
+   "label": "ТВОЯ РОЛЬ",
+   "label_pl": "TWOJA ROLA",
+   "label_en": "YOUR ROLE",
+   "q": "Ти — новачок із команди механіків Маккуїна, і ти з ним у Радіатор-Спрінгс. Уночі ви бачите Дока на старій трасі. Сьогодні ти почуєш його історію — англійською.",
+   "q_pl": "Jesteś nowicjuszem z ekipy mechaników Zygzaka i jesteś z nim w Chłodnicy Górskiej. W nocy widzicie Doca na starym torze. Dziś usłyszysz jego historię — po angielsku.",
+   "q_en": "You're the rookie from McQueen's pit crew, and you're with him in Radiator Springs. At night you both see Doc on the old track. Today you'll hear his story — in English."
+  },
+  {
+   "ref": 1
+  },
+  {
+   "type": "match",
+   "options": [
+    "brilliant=блискучий",
+    "to drift=дрифтувати",
+    "yesterday=учора",
+    "surprised=здивований",
+    "everywhere=усюди"
+   ],
+   "options_pl": [
+    "brilliant=świetny",
+    "to drift=wchodzić bokiem",
+    "yesterday=wczoraj",
+    "surprised=zaskoczony",
+    "everywhere=wszędzie"
+   ],
+   "options_en": [
+    "brilliant=very, very good",
+    "to drift=to slide sideways in a turn",
+    "yesterday=the day before today",
+    "surprised=“Oh! I didn't know!”",
+    "everywhere=in all places"
+   ],
+   "label": "СЦЕНА 1 · СЛОВА",
+   "label_pl": "SCENA 1 · SŁOWA",
+   "label_en": "SCENE 1 · WORDS",
+   "q": "З'єднай англійські слова з перекладом.",
+   "q_pl": "Połącz angielskie słowa z tłumaczeniem.",
+   "q_en": "Match the English words with their meanings.",
+   "qt_pl": "Połącz angielskie słowa z tłumaczeniem.",
+   "qt_en": "Match the English words with their meanings.",
+   "ins": "П'ять пар зі сцени",
+   "ins_pl": "Pięć par ze sceny",
+   "ins_en": "Five pairs from the scene",
+   "tip": "Не впевнений? Повернись до словника сцени.",
+   "tip_pl": "Nie masz pewności? Wróć do słownika sceny.",
+   "tip_en": "Not sure? Go back to the scene glossary."
+  },
+  {
+   "type": "drill",
+   "kind": "set",
+   "items": [
+    {
+     "q": "Look! He's ____!",
+     "options": [
+      "sleeping",
+      "drifting",
+      "crying"
+     ],
+     "answer": 1,
+     "exp": "Drifting = дрифтує.",
+     "exp_pl": "Drifting = wchodzi bokiem.",
+     "exp_en": "Drifting = sliding sideways in a turn.",
+     "tr": "Дивись! Він дрифтує!",
+     "tr_pl": "Patrz! Wchodzi bokiem!",
+     "tr_en": "Look! He's drifting!",
+     "tag": "Репліка",
+     "tag_pl": "Kwestia",
+     "tag_en": "Line"
+    },
+    {
+     "q": "That was ____!",
+     "options": [
+      "brilliant",
+      "yesterday",
+      "everywhere"
+     ],
+     "answer": 0,
+     "exp": "Brilliant = блискучий.",
+     "exp_pl": "Brilliant = świetny.",
+     "exp_en": "Brilliant = very, very good.",
+     "tr": "Це було блискуче!",
+     "tr_pl": "To było genialne!",
+     "tr_en": "That was brilliant!",
+     "tag": "Репліка",
+     "tag_pl": "Kwestia",
+     "tag_en": "Line"
+    },
+    {
+     "q": "I was so ____!",
+     "options": [
+      "year",
+      "ago",
+      "surprised"
+     ],
+     "answer": 2,
+     "exp": "Surprised = здивований.",
+     "exp_pl": "Surprised = zaskoczony.",
+     "exp_en": "Surprised = “Oh! I didn't know!”.",
+     "tr": "Я був такий здивований!",
+     "tr_pl": "Byłem taki zaskoczony!",
+     "tr_en": "I was so surprised!",
+     "tag": "Репліка",
+     "tag_pl": "Kwestia",
+     "tag_en": "Line"
+    },
+    {
+     "q": "Doc drives slowly and badly.",
+     "options": [
+      "True",
+      "False"
+     ],
+     "answer": 1,
+     "exp": "Ні, Док їде блискуче.",
+     "exp_pl": "Nie, Doc jedzie genialnie.",
+     "exp_en": "No, Doc drives brilliantly.",
+     "tr": "Док їде повільно й погано.",
+     "tr_pl": "Doc jedzie wolno i słabo.",
+     "tr_en": "Doc drives slowly and badly.",
+     "tag": "Правда чи ні?",
+     "tag_pl": "Prawda czy nie?",
+     "tag_en": "True or false?"
+    },
+    {
+     "q": "Doc is alone on the dirt track.",
+     "options": [
+      "True",
+      "False"
+     ],
+     "answer": 0,
+     "exp": "Так, він їде сам.",
+     "exp_pl": "Tak, jedzie sam.",
+     "exp_en": "Yes, he drives alone.",
+     "tr": "Док сам на ґрунтовій трасі.",
+     "tr_pl": "Doc jest sam na torze gruntowym.",
+     "tr_en": "Doc is alone on the dirt track.",
+     "tag": "Правда чи ні?",
+     "tag_pl": "Prawda czy nie?",
+     "tag_en": "True or false?"
+    },
+    {
+     "q": "You see Doc on the track. What do you say to McQueen?",
+     "options": [
+      "He's a slow old car.",
+      "Let's go to sleep.",
+      "Wow! He's brilliant!"
+     ],
+     "answer": 2,
+     "exp": "Ти бачиш, що Док — справжній гонщик.",
+     "exp_pl": "Widzisz, że Doc to prawdziwy kierowca.",
+     "exp_en": "You can see Doc is a real racer.",
+     "tr": "Ти бачиш Дока на трасі. Що ти кажеш Маккуїну?",
+     "tr_pl": "Widzisz Doca na torze. Co mówisz Zygzakowi?",
+     "tr_en": "You see Doc on the track. What do you say to McQueen?",
+     "tag": "Твій вибір",
+     "tag_pl": "Twój wybór",
+     "tag_en": "Your call"
+    }
+   ],
+   "label": "СЦЕНА 1 · ТРАСА",
+   "label_pl": "SCENA 1 · TOR",
+   "label_en": "SCENE 1 · THE TRACK",
+   "q": "Ніч. Док їде сам по старій трасі. Ви з Маккуїном дивитеся.",
+   "q_pl": "Noc. Doc jedzie sam po starym torze. Ty i Zygzak patrzycie.",
+   "q_en": "Night. Doc drives alone on the old track. You and McQueen watch.",
+   "ins": "Встав слово, обери правду, зрозумій героя",
+   "ins_pl": "Wstaw słowo, oceń prawdę, zrozum bohatera",
+   "ins_en": "Fill the gap, judge true/false, understand the hero",
+   "tip": "Потрібно 70%+.",
+   "tip_pl": "Potrzeba 70%+.",
+   "tip_en": "You need 70%+."
+  },
+  {
+   "ref": 2
+  },
+  {
+   "type": "match",
+   "options": [
+    "accident=аварія",
+    "hospital=лікарня",
+    "the past=минуле",
+    "hurt=ображений",
+    "unfair=несправедливий"
+   ],
+   "options_pl": [
+    "accident=wypadek",
+    "hospital=szpital",
+    "the past=przeszłość",
+    "hurt=zraniony",
+    "unfair=niesprawiedliwy"
+   ],
+   "options_en": [
+    "accident=a crash on the road",
+    "hospital=a place for sick people",
+    "the past=the time before now",
+    "hurt=sad because someone was bad to you",
+    "unfair=not fair, not right"
+   ],
+   "label": "СЦЕНА 2 · СЛОВА",
+   "label_pl": "SCENA 2 · SŁOWA",
+   "label_en": "SCENE 2 · WORDS",
+   "q": "З'єднай англійські слова з перекладом.",
+   "q_pl": "Połącz angielskie słowa z tłumaczeniem.",
+   "q_en": "Match the English words with their meanings.",
+   "qt_pl": "Połącz angielskie słowa z tłumaczeniem.",
+   "qt_en": "Match the English words with their meanings.",
+   "ins": "П'ять пар зі сцени",
+   "ins_pl": "Pięć par ze sceny",
+   "ins_en": "Five pairs from the scene",
+   "tip": "Не впевнений? Повернись до словника сцени.",
+   "tip_pl": "Nie masz pewności? Wróć do słownika sceny.",
+   "tip_en": "Not sure? Go back to the scene glossary."
+  },
+  {
+   "type": "drill",
+   "kind": "set",
+   "items": [
+    {
+     "q": "It was a bad ____.",
+     "options": [
+      "accident",
+      "year",
+      "hospital"
+     ],
+     "answer": 0,
+     "exp": "Accident = аварія.",
+     "exp_pl": "Accident = wypadek.",
+     "exp_en": "Accident = a crash on the road.",
+     "tr": "Це була страшна аварія.",
+     "tr_pl": "To był zły wypadek.",
+     "tr_en": "It was a bad accident.",
+     "tag": "Репліка",
+     "tag_pl": "Kwestia",
+     "tag_en": "Line"
+    },
+    {
+     "q": "I was in ____ for a long time.",
+     "options": [
+      "crowd",
+      "hospital",
+      "photo"
+     ],
+     "answer": 1,
+     "exp": "Hospital = лікарня.",
+     "exp_pl": "Hospital = szpital.",
+     "exp_en": "Hospital = a place for sick people.",
+     "tr": "Я довго був у лікарні.",
+     "tr_pl": "Długo byłem w szpitalu.",
+     "tr_en": "I was in hospital for a long time.",
+     "tag": "Репліка",
+     "tag_pl": "Kwestia",
+     "tag_en": "Line"
+    },
+    {
+     "q": "They weren't ____.",
+     "options": [
+      "accident",
+      "hospital",
+      "interested"
+     ],
+     "answer": 2,
+     "exp": "Interested = зацікавлений.",
+     "exp_pl": "Interested = zainteresowany.",
+     "exp_en": "Interested = they want to know more.",
+     "tr": "Їм було нецікаво.",
+     "tr_pl": "Nie byli zainteresowani.",
+     "tr_en": "They weren't interested.",
+     "tag": "Репліка",
+     "tag_pl": "Kwestia",
+     "tag_en": "Line"
+    },
+    {
+     "q": "You're the ____.",
+     "options": [
+      "past",
+      "new",
+      "long"
+     ],
+     "answer": 0,
+     "exp": "The past = минуле.",
+     "exp_pl": "The past = przeszłość.",
+     "exp_en": "The past = the time before now.",
+     "tr": "Ти — минуле.",
+     "tr_pl": "Jesteś przeszłością.",
+     "tr_en": "You're the past.",
+     "tag": "Репліка",
+     "tag_pl": "Kwestia",
+     "tag_en": "Line"
+    },
+    {
+     "q": "When Doc came back, the fans were happy to see him.",
+     "options": [
+      "True",
+      "False"
+     ],
+     "answer": 1,
+     "exp": "Ні. Була нова зірка, а Док їм був нецікавий.",
+     "exp_pl": "Nie. Była nowa gwiazda, a Doc ich nie interesował.",
+     "exp_en": "No. There was a new star, and they weren't interested in Doc.",
+     "tr": "Коли Док повернувся, фанати були раді його бачити.",
+     "tr_pl": "Kiedy Doc wrócił, fani cieszyli się, że go widzą.",
+     "tr_en": "When Doc came back, the fans were happy to see him.",
+     "tag": "Правда чи ні?",
+     "tag_pl": "Prawda czy nie?",
+     "tag_en": "True or false?"
+    },
+    {
+     "q": "Doc: “It wasn't fair!” How does Doc feel?",
+     "options": [
+      "Happy and glad",
+      "Hurt and angry",
+      "Tired and sleepy"
+     ],
+     "answer": 1,
+     "exp": "It wasn't fair = це було несправедливо. Док ображений.",
+     "exp_pl": "It wasn't fair = to nie było fair. Doc jest zraniony.",
+     "exp_en": "Doc is hurt: they forgot him.",
+     "tr": "Док: «Це було несправедливо!» Як почувається Док?",
+     "tr_pl": "Doc: „To nie było fair!” Jak czuje się Doc?",
+     "tr_en": "Doc: “It wasn't fair!” How does Doc feel?",
+     "tag": "Зрозумій героя",
+     "tag_pl": "Zrozum bohatera",
+     "tag_en": "Read the hero"
+    }
+   ],
+   "label": "СЦЕНА 2 · ВЕЛИКА АВАРІЯ",
+   "label_pl": "SCENA 2 · WIELKI WYPADEK",
+   "label_en": "SCENE 2 · THE BIG CRASH",
+   "q": "Док розповідає про 1954 рік. Ти слухаєш і не дихаєш.",
+   "q_pl": "Doc opowiada o roku 1954. Słuchasz i nie oddychasz.",
+   "q_en": "Doc talks about 1954. You listen and hold your breath.",
+   "ins": "Встав слово, обери правду, зрозумій героя",
+   "ins_pl": "Wstaw słowo, oceń prawdę, zrozum bohatera",
+   "ins_en": "Fill the gap, judge true/false, understand the hero",
+   "tip": "Потрібно 70%+.",
+   "tip_pl": "Potrzeba 70%+.",
+   "tip_en": "You need 70%+."
+  },
+  {
+   "ref": 3
+  },
+  {
+   "type": "match",
+   "options": [
+    "to leave=їхати геть",
+    "lonely=самотній",
+    "truth=правда",
+    "famous=відомий",
+    "sorry=шкода"
+   ],
+   "options_pl": [
+    "to leave=odjeżdżać",
+    "lonely=samotny",
+    "truth=prawda",
+    "famous=sławny",
+    "sorry=przykro"
+   ],
+   "options_en": [
+    "to leave=to go away",
+    "lonely=sad and alone",
+    "truth=what is real",
+    "famous=everyone knows you",
+    "sorry=you feel bad for someone"
+   ],
+   "label": "СЦЕНА 3 · СЛОВА",
+   "label_pl": "SCENA 3 · SŁOWA",
+   "label_en": "SCENE 3 · WORDS",
+   "q": "З'єднай англійські слова з перекладом.",
+   "q_pl": "Połącz angielskie słowa z tłumaczeniem.",
+   "q_en": "Match the English words with their meanings.",
+   "qt_pl": "Połącz angielskie słowa z tłumaczeniem.",
+   "qt_en": "Match the English words with their meanings.",
+   "ins": "П'ять пар зі сцени",
+   "ins_pl": "Pięć par ze sceny",
+   "ins_en": "Five pairs from the scene",
+   "tip": "Не впевнений? Повернись до словника сцени.",
+   "tip_pl": "Nie masz pewności? Wróć do słownika sceny.",
+   "tip_en": "Not sure? Go back to the scene glossary."
+  },
+  {
+   "type": "drill",
+   "kind": "set",
+   "items": [
+    {
+     "q": "I'm ____, Doc.",
+     "options": [
+      "hospital",
+      "sorry",
+      "ago"
+     ],
+     "answer": 1,
+     "exp": "Sorry = шкода, вибач.",
+     "exp_pl": "Sorry = przykro.",
+     "exp_en": "Sorry = you feel bad for someone.",
+     "tr": "Мені шкода, Доку.",
+     "tr_pl": "Przykro mi, Doc.",
+     "tr_en": "I'm sorry, Doc.",
+     "tag": "Репліка",
+     "tag_pl": "Kwestia",
+     "tag_en": "Line"
+    },
+    {
+     "q": "I was ____ once.",
+     "options": [
+      "famous",
+      "again",
+      "truth"
+     ],
+     "answer": 0,
+     "exp": "Famous = відомий.",
+     "exp_pl": "Famous = sławny.",
+     "exp_en": "Famous = everyone knows you.",
+     "tr": "Колись я був відомий.",
+     "tr_pl": "Kiedyś byłem sławny.",
+     "tr_en": "I was famous once.",
+     "tag": "Репліка",
+     "tag_pl": "Kwestia",
+     "tag_en": "Line"
+    },
+    {
+     "q": "Tell me the ____.",
+     "options": [
+      "lonely",
+      "again",
+      "truth"
+     ],
+     "answer": 2,
+     "exp": "Truth = правда.",
+     "exp_pl": "Truth = prawda.",
+     "exp_en": "Truth = what is real.",
+     "tr": "Скажи мені правду.",
+     "tr_pl": "Powiedz mi prawdę.",
+     "tr_en": "Tell me the truth.",
+     "tag": "Репліка",
+     "tag_pl": "Kwestia",
+     "tag_en": "Line"
+    },
+    {
+     "q": "Doc was never at a race again.",
+     "options": [
+      "True",
+      "False"
+     ],
+     "answer": 0,
+     "exp": "Так. Він поїхав і більше не повернувся.",
+     "exp_pl": "Tak. Odszedł i już nie wrócił.",
+     "exp_en": "Yes. He left and never came back.",
+     "tr": "Док більше ніколи не був на гонках.",
+     "tr_pl": "Doc już nigdy nie był na wyścigu.",
+     "tr_en": "Doc was never at a race again.",
+     "tag": "Правда чи ні?",
+     "tag_pl": "Prawda czy nie?",
+     "tag_en": "True or false?"
+    },
+    {
+     "q": "McQueen knew Doc's story before tonight.",
+     "options": [
+      "True",
+      "False"
+     ],
+     "answer": 1,
+     "exp": "Ні, він дізнається правду тільки зараз.",
+     "exp_pl": "Nie, poznaje prawdę dopiero teraz.",
+     "exp_en": "No, he learns the truth only now.",
+     "tr": "Маккуїн знав історію Дока раніше.",
+     "tr_pl": "Zygzak znał historię Doca wcześniej.",
+     "tr_en": "McQueen knew Doc's story before tonight.",
+     "tag": "Правда чи ні?",
+     "tag_pl": "Prawda czy nie?",
+     "tag_en": "True or false?"
+    },
+    {
+     "q": "Doc is sad and quiet. What do you say?",
+     "options": [
+      "You're the past!",
+      "I'm sorry, Doc.",
+      "Drive faster, old car!"
+     ],
+     "answer": 1,
+     "exp": "Добрі слова — правильний вибір.",
+     "exp_pl": "Dobre słowa to właściwy wybór.",
+     "exp_en": "Kind words are the right choice.",
+     "tr": "Док сумний і мовчить. Що ти скажеш?",
+     "tr_pl": "Doc jest smutny i cichy. Co powiesz?",
+     "tr_en": "Doc is sad and quiet. What do you say?",
+     "tag": "Твій вибір",
+     "tag_pl": "Twój wybór",
+     "tag_en": "Your call"
+    }
+   ],
+   "label": "СЦЕНА 3 · ПРАВДА",
+   "label_pl": "SCENA 3 · PRAWDA",
+   "label_en": "SCENE 3 · THE TRUTH",
+   "q": "Тепер Маккуїн розуміє, чому Док такий сердитий.",
+   "q_pl": "Teraz Zygzak rozumie, dlaczego Doc jest taki zły.",
+   "q_en": "Now McQueen understands why Doc is so angry.",
+   "ins": "Встав слово, обери правду, зрозумій героя",
+   "ins_pl": "Wstaw słowo, oceń prawdę, zrozum bohatera",
+   "ins_en": "Fill the gap, judge true/false, understand the hero",
+   "tip": "Потрібно 70%+.",
+   "tip_pl": "Potrzeba 70%+.",
+   "tip_en": "You need 70%+."
+  },
+  {
+   "type": "intro",
+   "label": "ПРАВИЛО",
+   "label_pl": "ZASADA",
+   "label_en": "RULE",
+   "q": "Минулий час від be: I / he / she / it → was; you / we / they → were. Заперечення: wasn't, weren't. Питання: Were you…? Was he…? Приклади: I was a champion. The fans were everywhere. They weren't interested. Where were you yesterday?",
+   "q_pl": "Czas przeszły od be: I / he / she / it → was; you / we / they → were. Przeczenie: wasn't, weren't. Pytanie: Were you…? Was he…? Przykłady: I was a champion (Byłem mistrzem). The fans were everywhere. They weren't interested. Where were you yesterday?",
+   "q_en": "Past of be: I / he / she / it → was; you / we / they → were. Negative: wasn't, weren't. Questions: Were you…? Was he…? Examples: I was a champion. The fans were everywhere. They weren't interested. Where were you yesterday?"
+  },
+  {
+   "type": "drill",
+   "kind": "set",
+   "items": [
+    {
+     "q": "Doc: “I ____ a champion.”",
+     "options": [
+      "were",
+      "was",
+      "be"
+     ],
+     "answer": 1,
+     "exp": "I → was.",
+     "exp_pl": "I → was.",
+     "exp_en": "I → was."
+    },
+    {
+     "q": "Doc: “The fans ____ everywhere.”",
+     "options": [
+      "were",
+      "was",
+      "is"
+     ],
+     "answer": 0,
+     "exp": "The fans = they → were.",
+     "exp_pl": "The fans = they → were.",
+     "exp_en": "The fans = they → were."
+    },
+    {
+     "q": "McQueen: “Where ____ you yesterday?”",
+     "options": [
+      "was",
+      "were",
+      "did"
+     ],
+     "answer": 1,
+     "exp": "You → were.",
+     "exp_pl": "You → were.",
+     "exp_en": "You → were."
+    },
+    {
+     "q": "Doc: “They ____ interested.”",
+     "options": [
+      "wasn't",
+      "didn't",
+      "weren't"
+     ],
+     "answer": 2,
+     "exp": "They → weren't.",
+     "exp_pl": "They → weren't.",
+     "exp_en": "They → weren't."
+    },
+    {
+     "q": "Doc: “It ____ fair!”",
+     "options": [
+      "wasn't",
+      "weren't",
+      "not was"
+     ],
+     "answer": 0,
+     "exp": "It → wasn't.",
+     "exp_pl": "It → wasn't.",
+     "exp_en": "It → wasn't."
+    },
+    {
+     "q": "Doc: “It ____ a bad accident.”",
+     "options": [
+      "were",
+      "are",
+      "was"
+     ],
+     "answer": 2,
+     "exp": "It → was.",
+     "exp_pl": "It → was.",
+     "exp_en": "It → was."
+    },
+    {
+     "q": "McQueen: “____ you famous, Doc?”",
+     "options": [
+      "Were",
+      "Was",
+      "Did"
+     ],
+     "answer": 0,
+     "exp": "Питання: Were you…?",
+     "exp_pl": "Pytanie: Were you…?",
+     "exp_en": "Question: Were you…?"
+    },
+    {
+     "q": "Doc: “Yes, I ____.”",
+     "options": [
+      "were",
+      "was",
+      "did"
+     ],
+     "answer": 1,
+     "exp": "Коротка відповідь: Yes, I was.",
+     "exp_pl": "Krótka odpowiedź: Yes, I was.",
+     "exp_en": "Short answer: Yes, I was."
+    },
+    {
+     "q": "You: “McQueen and I ____ so surprised.”",
+     "options": [
+      "was",
+      "were",
+      "is"
+     ],
+     "answer": 1,
+     "exp": "McQueen and I = we → were.",
+     "exp_pl": "McQueen and I = we → were.",
+     "exp_en": "McQueen and I = we → were."
+    },
+    {
+     "q": "Sally: “Doc ____ in hospital for a long time.”",
+     "options": [
+      "was",
+      "were",
+      "be"
+     ],
+     "answer": 0,
+     "exp": "Doc = he → was.",
+     "exp_pl": "Doc = he → was.",
+     "exp_en": "Doc = he → was."
+    },
+    {
+     "q": "Doc: “The new star ____ young and fast.”",
+     "options": [
+      "were",
+      "was",
+      "are"
+     ],
+     "answer": 1,
+     "exp": "The star = it/he → was.",
+     "exp_pl": "The star = it/he → was.",
+     "exp_en": "The star = it/he → was."
+    },
+    {
+     "q": "McQueen: “____ the crash fifty years ago?”",
+     "options": [
+      "Were",
+      "Did",
+      "Was"
+     ],
+     "answer": 2,
+     "exp": "The crash = it → Was it…?",
+     "exp_pl": "The crash = it → Was it…?",
+     "exp_en": "The crash = it → Was it…?"
+    }
+   ],
+   "label": "ГРАМАТИКА · WAS / WERE",
+   "label_pl": "GRAMATYKA · WAS / WERE",
+   "label_en": "GRAMMAR · WAS / WERE",
+   "q": "Репліки з розповіді Дока. Обери правильну форму.",
+   "q_pl": "Kwestie z opowieści Doca. Wybierz poprawną formę.",
+   "q_en": "Lines from Doc's story. Choose the correct form.",
+   "ins": "was / were, wasn't / weren't",
+   "ins_pl": "was / were, wasn't / weren't",
+   "ins_en": "was / were, wasn't / weren't",
+   "tip": "Потрібно 70%+.",
+   "tip_pl": "Potrzeba 70%+.",
+   "tip_en": "You need 70%+."
+  },
+  {
+   "type": "reading",
+   "items": [
+    {
+     "q": "Last night McQueen ____ on the old dirt track.",
+     "options": [
+      "was",
+      "were",
+      "are"
+     ],
+     "answer": 0
+    },
+    {
+     "q": "Doc was there too. He was alone."
+    },
+    {
+     "q": "Doc drove fast and ____ in the turns.",
+     "options": [
+      "drifted",
+      "hospital",
+      "lonely"
+     ],
+     "answer": 0
+    },
+    {
+     "q": "McQueen was very ____.",
+     "options": [
+      "unfair",
+      "surprised",
+      "ago"
+     ],
+     "answer": 1
+    },
+    {
+     "q": "Then Doc told his story."
+    },
+    {
+     "q": "Fifty years ____, Doc was a champion.",
+     "options": [
+      "again",
+      "yesterday",
+      "ago"
+     ],
+     "answer": 2
+    },
+    {
+     "q": "The fans ____ everywhere.",
+     "options": [
+      "was",
+      "were",
+      "is"
+     ],
+     "answer": 1
+    },
+    {
+     "q": "In 1954 there was a big ____.",
+     "options": [
+      "accident",
+      "feeling",
+      "song"
+     ],
+     "answer": 0
+    },
+    {
+     "q": "Doc was in ____ for a long time.",
+     "options": [
+      "truth",
+      "hospital",
+      "year"
+     ],
+     "answer": 1
+    },
+    {
+     "q": "When he came back, there was a ____ star.",
+     "options": [
+      "new",
+      "long",
+      "sorry"
+     ],
+     "answer": 0
+    },
+    {
+     "q": "The fans ____ interested in Doc.",
+     "options": [
+      "wasn't",
+      "didn't",
+      "weren't"
+     ],
+     "answer": 2
+    },
+    {
+     "q": "They said: “You're the ____.”",
+     "options": [
+      "truth",
+      "past",
+      "year"
+     ],
+     "answer": 1
+    },
+    {
+     "q": "It was ____, and Doc was hurt.",
+     "options": [
+      "unfair",
+      "famous",
+      "brilliant"
+     ],
+     "answer": 0
+    },
+    {
+     "q": "He left and was never at a race ____.",
+     "options": [
+      "ago",
+      "again",
+      "everywhere"
+     ],
+     "answer": 1
+    },
+    {
+     "q": "He stayed in Radiator Springs. He was ____ for many years.",
+     "options": [
+      "glad",
+      "new",
+      "lonely"
+     ],
+     "answer": 2
+    },
+    {
+     "q": "Now McQueen knows the truth. He says: “I'm sorry, Doc.”"
+    }
+   ],
+   "title": "«Вісті Радіатор-Спрінгс»: таємниця Гудзонського Шершня",
+   "title_pl": "„Wiadomości z Chłodnicy Górskiej”: tajemnica Hudson Hornet",
+   "title_en": "“Radiator Springs News”: the Hudson Hornet's secret",
+   "label": "ГАЗЕТА МІСТЕЧКА",
+   "label_pl": "GAZETA MIASTECZKA",
+   "label_en": "TOWN NEWSPAPER",
+   "q": "Місцева газета пише про історію Дока. Прочитай статтю англійською й обери правильні слова.",
+   "q_pl": "Lokalna gazeta pisze o historii Doca. Przeczytaj artykuł po angielsku i wybierz właściwe słowa.",
+   "q_en": "The local paper tells Doc's story. Read the article and choose the right words.",
+   "tip": "was — один, were — багато (і you).",
+   "tip_pl": "was — jeden, were — wielu (i you).",
+   "tip_en": "was — one, were — many (and you)."
+  },
+  {
+   "type": "drill",
+   "kind": "set",
+   "items": [
+    {
+     "q": "Where was Doc last night?",
+     "options": [
+      "In hospital",
+      "On the dirt track",
+      "In California"
+     ],
+     "answer": 1,
+     "exp": "Він був на старій трасі.",
+     "exp_pl": "Był na starym torze.",
+     "exp_en": "He was on the old track.",
+     "tr": "Де був Док минулої ночі?",
+     "tr_pl": "Gdzie był Doc zeszłej nocy?",
+     "tr_en": "Where was Doc last night?",
+     "tag": "Сюжет",
+     "tag_pl": "Fabuła",
+     "tag_en": "Plot"
+    },
+    {
+     "q": "What was Doc fifty years ago?",
+     "options": [
+      "A champion",
+      "A reporter",
+      "A tow truck"
+     ],
+     "answer": 0,
+     "exp": "Він був чемпіоном.",
+     "exp_pl": "Był mistrzem.",
+     "exp_en": "He was a champion.",
+     "tr": "Ким був Док п'ятдесят років тому?",
+     "tr_pl": "Kim był Doc pięćdziesiąt lat temu?",
+     "tr_en": "What was Doc fifty years ago?",
+     "tag": "Сюжет",
+     "tag_pl": "Fabuła",
+     "tag_en": "Plot"
+    },
+    {
+     "q": "What happened in 1954?",
+     "options": [
+      "A new road",
+      "A big party",
+      "A big accident"
+     ],
+     "answer": 2,
+     "exp": "Була велика аварія.",
+     "exp_pl": "Był wielki wypadek.",
+     "exp_en": "There was a big accident.",
+     "tr": "Що сталося в 1954 році?",
+     "tr_pl": "Co się stało w 1954 roku?",
+     "tr_en": "What happened in 1954?",
+     "tag": "Сюжет",
+     "tag_pl": "Fabuła",
+     "tag_en": "Plot"
+    },
+    {
+     "q": "Why was Doc hurt?",
+     "options": [
+      "McQueen was rude",
+      "The fans weren't interested in him",
+      "He lost his tyres"
+     ],
+     "answer": 1,
+     "exp": "Фанатам був цікавий новий гонщик.",
+     "exp_pl": "Fanów interesował nowy kierowca.",
+     "exp_en": "The fans wanted the new star.",
+     "tr": "Чому Док був ображений?",
+     "tr_pl": "Dlaczego Doc był zraniony?",
+     "tr_en": "Why was Doc hurt?",
+     "tag": "Сюжет",
+     "tag_pl": "Fabuła",
+     "tag_en": "Plot"
+    },
+    {
+     "q": "How does McQueen feel at the end?",
+     "options": [
+      "Angry",
+      "Sorry for Doc",
+      "Bored"
+     ],
+     "answer": 1,
+     "exp": "Він каже: «I'm sorry, Doc».",
+     "exp_pl": "Mówi: „I'm sorry, Doc”.",
+     "exp_en": "He says: “I'm sorry, Doc.”",
+     "tr": "Як почувається Маккуїн наприкінці?",
+     "tr_pl": "Jak czuje się Zygzak na końcu?",
+     "tr_en": "How does McQueen feel at the end?",
+     "tag": "Сюжет",
+     "tag_pl": "Fabuła",
+     "tag_en": "Plot"
+    }
+   ],
+   "label": "РОЗУМІННЯ ТЕКСТУ",
+   "label_pl": "ROZUMIENIE TEKSTU",
+   "label_en": "READING CHECK",
+   "q": "П'ять питань до статті.",
+   "q_pl": "Pięć pytań do artykułu.",
+   "q_en": "Five questions about the article.",
+   "ins": "Обери правильну відповідь",
+   "ins_pl": "Wybierz poprawną odpowiedź",
+   "ins_en": "Choose the right answer",
+   "tip": "Потрібно 70%+.",
+   "tip_pl": "Potrzeba 70%+.",
+   "tip_en": "You need 70%+."
+  },
+  {
+   "type": "quest",
+   "img": "comet",
+   "start": "s1",
+   "steps": {
+    "s1": {
+     "q": "Маккуїн: «Look! Who is that on the track?» (Дивись! Хто це на трасі?)",
+     "q_pl": "Zygzak: „Look! Who is that on the track?” (Patrz! Kto to jest na torze?)",
+     "q_en": "McQueen: “Look! Who is that on the track?”",
+     "scene": "Ніч. Ви з Маккуїном ховаєтеся за скелею.",
+     "scene_pl": "Noc. Ty i Zygzak chowacie się za skałą.",
+     "scene_en": "Night. You and McQueen hide behind a rock.",
+     "choices": [
+      {
+       "t": "It's Doc! He's brilliant!",
+       "ok": true,
+       "next": "s2",
+       "fb": "Так!",
+       "fb_pl": "Tak!",
+       "fb_en": "Yes!"
+      },
+      {
+       "t": "It were Doc.",
+       "ok": false,
+       "next": "s1b",
+       "fb": "It → was, і тут потрібен теперішній час.",
+       "fb_pl": "It → was, a tu potrzebny jest czas teraźniejszy.",
+       "fb_en": "It → was, and here we need the present: It's Doc."
+      }
+     ]
+    },
+    "s1b": {
+     "q": "Маккуїн: «What? Say it again!» (Що? Скажи ще раз!)",
+     "q_pl": "Zygzak: „What? Say it again!” (Co? Powiedz jeszcze raz!)",
+     "q_en": "McQueen: “What? Say it again!”",
+     "scene": "Маккуїн не розуміє.",
+     "scene_pl": "Zygzak nie rozumie.",
+     "scene_en": "McQueen doesn't understand.",
+     "choices": [
+      {
+       "t": "It's Doc! Look at him!",
+       "ok": true,
+       "next": "s2",
+       "fb": "Так!",
+       "fb_pl": "Tak!",
+       "fb_en": "Yes!"
+      },
+      {
+       "t": "Doc were it.",
+       "ok": false,
+       "next": "end_bad",
+       "fb": "Так не кажуть.",
+       "fb_pl": "Tak się nie mówi.",
+       "fb_en": "That's not English."
+      }
+     ]
+    },
+    "s2": {
+     "q": "Док: «Why are you here? Where were you?» (Чому ви тут? Де ви були?)",
+     "q_pl": "Doc: „Why are you here? Where were you?” (Dlaczego tu jesteście? Gdzie byliście?)",
+     "q_en": "Doc: “Why are you here? Where were you?”",
+     "scene": "Док вас помітив. Він сердитий.",
+     "scene_pl": "Doc was zauważył. Jest zły.",
+     "scene_en": "Doc sees you. He's angry.",
+     "choices": [
+      {
+       "t": "We were behind the rock.",
+       "ok": true,
+       "next": "s3",
+       "fb": "We → were. Чесно!",
+       "fb_pl": "We → were. Szczerze!",
+       "fb_en": "We → were. Honest!"
+      },
+      {
+       "t": "We was behind the rock.",
+       "ok": false,
+       "next": "s3",
+       "fb": "We → were, не was.",
+       "fb_pl": "We → were, nie was.",
+       "fb_en": "We → were, not was."
+      }
+     ]
+    },
+    "s3": {
+     "q": "Док: «I was a champion. Then there was an accident.» (Я був чемпіоном. Потім була аварія.)",
+     "q_pl": "Doc: „I was a champion. Then there was an accident.” (Byłem mistrzem. Potem był wypadek.)",
+     "q_en": "Doc: “I was a champion. Then there was an accident.”",
+     "scene": "Маккуїн дивиться на тебе: «Спитай його!»",
+     "scene_pl": "Zygzak patrzy na ciebie: „Zapytaj go!”",
+     "scene_en": "McQueen looks at you: “Ask him!”",
+     "choices": [
+      {
+       "t": "Was you in hospital?",
+       "ok": false,
+       "next": "s4",
+       "fb": "You → Were you…?",
+       "fb_pl": "You → Were you…?",
+       "fb_en": "You → Were you…?"
+      },
+      {
+       "t": "Were you in hospital?",
+       "ok": true,
+       "next": "s4",
+       "fb": "Правильне питання!",
+       "fb_pl": "Poprawne pytanie!",
+       "fb_en": "Good question!"
+      }
+     ]
+    },
+    "s4": {
+     "q": "Док: «Yes, I was. When I came back, they weren't interested.» (Так. Коли я повернувся, їм було нецікаво.)",
+     "q_pl": "Doc: „Yes, I was. When I came back, they weren't interested.” (Tak. Kiedy wróciłem, nie byli zainteresowani.)",
+     "q_en": "Doc: “Yes, I was. When I came back, they weren't interested.”",
+     "scene": "Док дивиться на свої кубки.",
+     "scene_pl": "Doc patrzy na swoje puchary.",
+     "scene_en": "Doc looks at his cups.",
+     "choices": [
+      {
+       "t": "I'm sorry, Doc. It wasn't fair.",
+       "ok": true,
+       "next": "end_good",
+       "fb": "Добрі й правильні слова.",
+       "fb_pl": "Dobre i poprawne słowa.",
+       "fb_en": "Kind and correct words."
+      },
+      {
+       "t": "It was a long time ago, Doc.",
+       "ok": true,
+       "next": "end_mid",
+       "fb": "Правильно, але холодно.",
+       "fb_pl": "Poprawnie, ale chłodno.",
+       "fb_en": "Correct, but a bit cold."
+      },
+      {
+       "t": "Well, you're the past.",
+       "ok": false,
+       "next": "end_bad",
+       "fb": "Ой! Це дуже боляче для Дока.",
+       "fb_pl": "Ojej! To bardzo boli Doca.",
+       "fb_en": "Ouch! That really hurts Doc."
+      }
+     ]
+    }
+   },
+   "endings": {
+    "end_good": {
+     "good": true,
+     "title": "Кінцівка: Він тобі довіряє",
+     "title_pl": "Zakończenie: Ufa ci",
+     "title_en": "Ending: He trusts you",
+     "text": "Док мовчить, потім тихо каже: «Thank you, kid». Уперше він не сердитий.",
+     "text_pl": "Doc milczy, potem cicho mówi: „Thank you, kid”. Pierwszy raz nie jest zły.",
+     "text_en": "Doc is quiet, then says softly: “Thank you, kid.” For the first time he isn't angry."
+    },
+    "end_mid": {
+     "good": true,
+     "title": "Кінцівка: Тиха ніч",
+     "title_pl": "Zakończenie: Cicha noc",
+     "title_en": "Ending: A quiet night",
+     "text": "Док киває й їде в гараж. Ви знаєте правду, але він ще сам.",
+     "text_pl": "Doc kiwa głową i jedzie do garażu. Znacie prawdę, ale on wciąż jest sam.",
+     "text_en": "Doc nods and drives to his garage. You know the truth, but he's still alone."
+    },
+    "end_bad": {
+     "good": false,
+     "title": "Кінцівка: Двері зачинено",
+     "title_pl": "Zakończenie: Zamknięte drzwi",
+     "title_en": "Ending: The door is closed",
+     "text": "Док сердито їде геть і зачиняє гараж. Спробуй ще раз: was / were і добрі слова.",
+     "text_pl": "Doc ze złością odjeżdża i zamyka garaż. Spróbuj jeszcze raz: was / were i dobre słowa.",
+     "text_en": "Doc drives away angrily and closes his garage. Try again: was / were and kind words."
+    }
+   },
+   "label": "КВЕСТ: НІЧНА ТРАСА",
+   "label_pl": "QUEST: NOCNY TOR",
+   "label_en": "QUEST: THE NIGHT TRACK",
+   "q": "Ти з Маккуїном бачиш Дока на трасі. Говори з ними англійською.",
+   "q_pl": "Ty i Zygzak widzicie Doca na torze. Rozmawiaj z nimi po angielsku.",
+   "q_en": "You and McQueen see Doc on the track. Talk to them in English.",
+   "ins": "Кожен вибір веде далі. Обирай уважно — англійською",
+   "ins_pl": "Każdy wybór prowadzi dalej. Wybieraj uważnie — po angielsku",
+   "ins_en": "Every choice leads on. Choose carefully — in English",
+   "tip": "Квест перевіряє слова й граматику уроку.",
+   "tip_pl": "Quest sprawdza słowa i gramatykę lekcji.",
+   "tip_en": "The quest checks the lesson's words and grammar."
+  },
+  {
+   "type": "drill",
+   "kind": "set",
+   "items": [
+    {
+     "k": "type",
+     "q": "Напиши англійською: «Я був чемпіоном.»",
+     "q_pl": "Napisz po angielsku: „Byłem mistrzem.”",
+     "q_en": "Type Doc's line: “I ___ a champion.”",
+     "options": [
+      "I was a champion.",
+      "I was a champion"
+     ],
+     "exp": "I was a champion.",
+     "exp_pl": "I was a champion.",
+     "exp_en": "I was a champion.",
+     "tag": "Напиши",
+     "tag_pl": "Napisz",
+     "tag_en": "Write"
+    },
+    {
+     "k": "order",
+     "q": "Склади репліку: «Фанати були всюди.»",
+     "q_pl": "Ułóż kwestię: „Fani byli wszędzie.”",
+     "q_en": "Build the line: the fans — everywhere (past).",
+     "options": [
+      "The",
+      "fans",
+      "were",
+      "everywhere."
+     ],
+     "exp": "The fans were everywhere.",
+     "exp_pl": "The fans were everywhere.",
+     "exp_en": "The fans were everywhere.",
+     "tag": "Склади",
+     "tag_pl": "Ułóż",
+     "tag_en": "Build"
+    },
+    {
+     "k": "type",
+     "q": "Напиши англійською: «Їм було нецікаво.»",
+     "q_pl": "Napisz po angielsku: „Nie byli zainteresowani.”",
+     "q_en": "Type the line: “They ___ interested.” (negative)",
+     "options": [
+      "They weren't interested.",
+      "They weren't interested",
+      "They were not interested.",
+      "They were not interested"
+     ],
+     "exp": "They weren't interested.",
+     "exp_pl": "They weren't interested.",
+     "exp_en": "They weren't interested.",
+     "tag": "Напиши",
+     "tag_pl": "Napisz",
+     "tag_en": "Write"
+    },
+    {
+     "k": "order",
+     "q": "Склади репліку: «Де ти був учора?»",
+     "q_pl": "Ułóż kwestię: „Gdzie byłeś wczoraj?”",
+     "q_en": "Build McQueen's question: where — you — yesterday?",
+     "options": [
+      "Where",
+      "were",
+      "you",
+      "yesterday?"
+     ],
+     "exp": "Where were you yesterday?",
+     "exp_pl": "Where were you yesterday?",
+     "exp_en": "Where were you yesterday?",
+     "tag": "Склади",
+     "tag_pl": "Ułóż",
+     "tag_en": "Build"
+    },
+    {
+     "k": "type",
+     "q": "Напиши англійською: «Це було несправедливо.»",
+     "q_pl": "Napisz po angielsku: „To było niesprawiedliwe.”",
+     "q_en": "Type Doc's line: “It ___ fair!” (negative)",
+     "options": [
+      "It wasn't fair.",
+      "It wasn't fair",
+      "It was not fair.",
+      "It was not fair",
+      "It was unfair.",
+      "It was unfair"
+     ],
+     "exp": "It wasn't fair.",
+     "exp_pl": "It wasn't fair.",
+     "exp_en": "It wasn't fair.",
+     "tag": "Напиши",
+     "tag_pl": "Napisz",
+     "tag_en": "Write"
+    },
+    {
+     "k": "order",
+     "q": "Склади репліку: «Це була страшна аварія.»",
+     "q_pl": "Ułóż kwestię: „To był zły wypadek.”",
+     "q_en": "Build the line: a bad accident (past).",
+     "options": [
+      "It",
+      "was",
+      "a",
+      "bad",
+      "accident."
+     ],
+     "exp": "It was a bad accident.",
+     "exp_pl": "It was a bad accident.",
+     "exp_en": "It was a bad accident.",
+     "tag": "Склади",
+     "tag_pl": "Ułóż",
+     "tag_en": "Build"
+    },
+    {
+     "k": "type",
+     "q": "Напиши англійською: «Мені шкода, Доку.»",
+     "q_pl": "Napisz po angielsku: „Przykro mi, Doc.”",
+     "q_en": "Type McQueen's kind words to Doc: “I'm ___, Doc.”",
+     "options": [
+      "I'm sorry, Doc.",
+      "I'm sorry, Doc",
+      "I am sorry, Doc.",
+      "I am sorry, Doc",
+      "I'm sorry Doc.",
+      "I'm sorry Doc"
+     ],
+     "exp": "I'm sorry, Doc.",
+     "exp_pl": "I'm sorry, Doc.",
+     "exp_en": "I'm sorry, Doc.",
+     "tag": "Напиши",
+     "tag_pl": "Napisz",
+     "tag_en": "Write"
+    },
+    {
+     "k": "order",
+     "q": "Склади репліку: «Колись я був відомий.»",
+     "q_pl": "Ułóż kwestię: „Kiedyś byłem sławny.”",
+     "q_en": "Build Doc's line: famous — once.",
+     "options": [
+      "I",
+      "was",
+      "famous",
+      "once."
+     ],
+     "exp": "I was famous once.",
+     "exp_pl": "I was famous once.",
+     "exp_en": "I was famous once.",
+     "tag": "Склади",
+     "tag_pl": "Ułóż",
+     "tag_en": "Build"
+    }
+   ],
+   "label": "ІСТОРІЯ ДОКА",
+   "label_pl": "HISTORIA DOCA",
+   "label_en": "DOC'S STORY",
+   "q": "Ти записуєш історію Дока для команди. Напиши й склади репліки англійською.",
+   "q_pl": "Zapisujesz historię Doca dla ekipy. Napisz i ułóż kwestie po angielsku.",
+   "q_en": "You write down Doc's story for the team. Write and build the lines.",
+   "ins": "Пиши й складай репліки англійською",
+   "ins_pl": "Pisz i układaj kwestie po angielsku",
+   "ins_en": "Write and build the lines in English",
+   "tip": "Потрібно 70%+.",
+   "tip_pl": "Potrzeba 70%+.",
+   "tip_en": "You need 70%+."
+  },
+  {
+   "type": "speaking",
+   "say": "I was a champion. The fans were everywhere.",
+   "label": "ГОВОРІННЯ",
+   "label_pl": "MÓWIENIE",
+   "label_en": "SPEAKING",
+   "q": "Скажи вголос, як Док.",
+   "q_pl": "Powiedz na głos jak Doc.",
+   "q_en": "Say it out loud, like Doc.",
+   "qt_pl": "Powiedz na głos jak Doc.",
+   "qt_en": "Say it out loud, like Doc.",
+   "ins": "Прочитай і скажи вголос",
+   "ins_pl": "Przeczytaj i powiedz na głos",
+   "ins_en": "Read it and say it aloud",
+   "tip": "Переклад: Я був чемпіоном. Фанати були всюди.",
+   "tip_pl": "Tłumaczenie: Byłem mistrzem. Fani byli wszędzie.",
+   "tip_en": "Tip: say “was” short — /wəz/."
+  },
+  {
+   "type": "speaking",
+   "say": "I'm sorry, Doc. It wasn't fair.",
+   "label": "ГОВОРІННЯ",
+   "label_pl": "MÓWIENIE",
+   "label_en": "SPEAKING",
+   "q": "Скажи вголос, як Маккуїн.",
+   "q_pl": "Powiedz na głos jak Zygzak.",
+   "q_en": "Say it out loud, like McQueen.",
+   "qt_pl": "Powiedz na głos jak Zygzak.",
+   "qt_en": "Say it out loud, like McQueen.",
+   "ins": "Прочитай і скажи вголос",
+   "ins_pl": "Przeczytaj i powiedz na głos",
+   "ins_en": "Read it and say it aloud",
+   "tip": "Переклад: Мені шкода, Доку. Це було несправедливо.",
+   "tip_pl": "Tłumaczenie: Przykro mi, Doc. To nie było fair.",
+   "tip_en": "Tip: “wasn't” = /ˈwɒznt/."
+  },
+  {
+   "type": "drill",
+   "kind": "set",
+   "items": [
+    {
+     "q": "A car crash on the road is an ____.",
+     "options": [
+      "accident",
+      "hospital",
+      "year"
+     ],
+     "answer": 0,
+     "exp": "Accident = аварія.",
+     "exp_pl": "Accident = wypadek.",
+     "exp_en": "Accident = a crash."
+    },
+    {
+     "q": "Sick cars go to ____.",
+     "options": [
+      "the past",
+      "hospital",
+      "the track"
+     ],
+     "answer": 1,
+     "exp": "Hospital = лікарня.",
+     "exp_pl": "Hospital = szpital.",
+     "exp_en": "Hospital = a place for the sick."
+    },
+    {
+     "q": "There are twelve months in a ____.",
+     "options": [
+      "night",
+      "feeling",
+      "year"
+     ],
+     "answer": 2,
+     "exp": "Year = рік.",
+     "exp_pl": "Year = rok.",
+     "exp_en": "Year = 12 months."
+    },
+    {
+     "q": "The day before today is ____.",
+     "options": [
+      "ago",
+      "yesterday",
+      "again"
+     ],
+     "answer": 1,
+     "exp": "Yesterday = учора.",
+     "exp_pl": "Yesterday = wczoraj.",
+     "exp_en": "Yesterday = the day before today."
+    },
+    {
+     "q": "Everyone knows Lightning McQueen. He's ____.",
+     "options": [
+      "lonely",
+      "unfair",
+      "famous"
+     ],
+     "answer": 2,
+     "exp": "Famous = відомий.",
+     "exp_pl": "Famous = sławny.",
+     "exp_en": "Famous = everyone knows you."
+    },
+    {
+     "q": "No friends, no fans — Doc was ____.",
+     "options": [
+      "lonely",
+      "brilliant",
+      "interested"
+     ],
+     "answer": 0,
+     "exp": "Lonely = самотній.",
+     "exp_pl": "Lonely = samotny.",
+     "exp_en": "Lonely = sad and alone."
+    },
+    {
+     "q": "Doc's driving is very, very good. It's ____!",
+     "options": [
+      "unfair",
+      "brilliant",
+      "hurt"
+     ],
+     "answer": 1,
+     "exp": "Brilliant = блискучий.",
+     "exp_pl": "Brilliant = świetny.",
+     "exp_en": "Brilliant = very, very good."
+    },
+    {
+     "q": "Mater: “Say it ____, please!”",
+     "options": [
+      "again",
+      "ago",
+      "everywhere"
+     ],
+     "answer": 0,
+     "exp": "Again = знову, ще раз.",
+     "exp_pl": "Again = jeszcze raz.",
+     "exp_en": "Again = one more time."
+    },
+    {
+     "q": "Doc didn't tell anyone. Now McQueen knows the ____.",
+     "options": [
+      "year",
+      "accident",
+      "truth"
+     ],
+     "answer": 2,
+     "exp": "Truth = правда.",
+     "exp_pl": "Truth = prawda.",
+     "exp_en": "Truth = what is real."
+    }
+   ],
+   "label": "ПІСЛЯ СЦЕНИ · СЛОВА",
+   "label_pl": "PO SCENIE · SŁOWNICTWO",
+   "label_en": "AFTER THE SCENE · WORDS",
+   "q": "Наступного ранку Метр ставить тобі питання. Відповідай.",
+   "q_pl": "Następnego ranka Złomek zadaje ci pytania. Odpowiadaj.",
+   "q_en": "The next morning Mater asks you questions. Answer.",
+   "ins": "Слова уроку в нових реченнях",
+   "ins_pl": "Słowa lekcji w nowych zdaniach",
+   "ins_en": "Lesson words in new sentences",
+   "tip": "Потрібно 70%+.",
+   "tip_pl": "Potrzeba 70%+.",
+   "tip_en": "You need 70%+."
+  },
+  {
+   "type": "final",
+   "img": "diary",
+   "answer": 25,
+   "label": "ЗВІТ ДЛЯ КОМАНДИ",
+   "label_pl": "RAPORT DLA EKIPY",
+   "label_en": "REPORT FOR THE TEAM",
+   "q": "Напиши команді коротку історію Дока англійською (25+ слів): ким він був? де були фанати? що сталося в 1954? чому він був ображений? Використай was / were / wasn't / weren't.",
+   "q_pl": "Napisz ekipie krótką historię Doca po angielsku (25+ słów): kim był? gdzie byli fani? co się stało w 1954? dlaczego był zraniony? Użyj was / were / wasn't / weren't.",
+   "q_en": "Write Doc's short story for the team (25+ words): what was he? where were the fans? what happened in 1954? why was he hurt? Use was / were / wasn't / weren't.",
+   "ins": "Напиши звіт англійською",
+   "ins_pl": "Napisz raport po angielsku",
+   "ins_en": "Write the report in English",
+   "tip": "Doc was a champion. The fans were… In 1954 there was… He was in… The fans weren't… It wasn't…",
+   "tip_pl": "Doc was a champion. The fans were… In 1954 there was… He was in… The fans weren't… It wasn't…",
+   "tip_en": "Doc was a champion. The fans were… In 1954 there was… He was in… The fans weren't… It wasn't…"
+  }
+ ]
+}

@@ -2829,6 +2829,34 @@ function admCheck(body) {
       '<div class="panel"><h3>🔎 ' + L3('Знайти й замінити в усьому курсі', 'Znajdź i zamień w całym kursie', 'Find & replace across the course') + '</h3><p class="hint">' + L3('Швидко виправити опечатку без SQL. Шукає в назвах, описах сцен і всіх завданнях (EN/PL/UA). Великі/малі літери враховуються.', 'Szybka poprawka literówki bez SQL. Szuka w tytułach, opisach scen i wszystkich zadaniach (EN/PL/UA). Rozróżnia wielkość liter.', 'Fix a typo without SQL. Searches titles, scene texts and every task (EN/PL/UA). Case-sensitive.') + '</p>' +
       '<div class="row" style="gap:8px;flex-wrap:wrap"><input class="inp-s" id="frF" placeholder="' + esc(L3('знайти', 'znajdź', 'find')) + '" style="flex:1;min-width:180px"><input class="inp-s" id="frR" placeholder="' + esc(L3('замінити на', 'zamień na', 'replace with')) + '" style="flex:1;min-width:180px"><button class="btn btn-ghost btn-sm" type="button" id="frFind">' + L3('Знайти', 'Szukaj', 'Find') + '</button><button class="btn btn-red btn-sm" type="button" id="frGo" disabled>' + L3('Замінити всюди', 'Zamień wszędzie', 'Replace all') + '</button></div><div id="frOut" class="small" style="margin-top:10px"></div></div>';
     document.getElementById('ckC').onchange = function (e) { CHK_C = e.target.value; admCheck(body); };
+    var ib = document.createElement('div'); ib.className = 'panel'; ib.style.marginBottom = '16px';
+    ib.innerHTML = '<h3>📥 ' + L3('Імпорт уроків стандарту', 'Import lekcji standardu', 'Import standard lessons') + '</h3><p class="hint">' + L3('Завантажує в базу готові уроки з репозиторію (content/std). Перед заміною робиться резервна копія.', 'Wgrywa do bazy gotowe lekcje z repozytorium (content/std). Przed podmianą robi kopię zapasową.', 'Uploads ready lessons from the repo (content/std) into the database, with a backup first.') + '</p><div class="row" style="gap:8px"><button class="btn btn-red btn-sm" type="button" id="stdGo">' + L3('Імпортувати нові', 'Importuj nowe', 'Import new') + '</button><span class="small muted" id="stdSt"></span></div>';
+    body.insertBefore(ib, body.children[1] || null);
+    document.getElementById('stdGo').onclick = function () {
+      var st = document.getElementById('stdSt'), btn = this; btn.disabled = true; st.textContent = '…';
+      fetch('content/std/index.json?t=' + Date.now()).then(function (r) { return r.json(); }).then(function (files) {
+        var done = 0, skip = 0, errs = [];
+        return files.reduce(function (pr, f) { return pr.then(function () {
+          return fetch('content/std/' + f + '?t=' + Date.now()).then(function (r) { return r.json(); }).then(function (d) {
+            var note = 'std-' + d.tg;
+            return q(SB().from('lessons').select('id,tasks,variants').eq('id', d.lesson_id).maybeSingle()).then(function (l) {
+              if (!l) throw new Error('no lesson ' + d.lesson_id);
+              var cur = d.tg === 'en' ? l.tasks : (l.variants || {})[d.tg];
+              if (JSON.stringify(cur || []).length > 10 && JSON.stringify(cur).indexOf(JSON.stringify(d.tasks.filter(function (x) { return !('ref' in x); })[0] || {}).slice(0, 120)) > -1) { skip++; return; }
+              return q(SB().from('lesson_backups').select('tasks,variants').eq('lesson_id', d.lesson_id).eq('note', note).order('id').limit(1)).then(function (bk) {
+                var b = bk && bk[0], p0 = Promise.resolve();
+                if (!b) { b = {tasks:l.tasks, variants:l.variants}; p0 = q(SB().from('lesson_backups').insert({lesson_id:d.lesson_id, tasks:l.tasks, variants:l.variants, note:note})); }
+                var src = d.tg === 'en' ? (b.tasks || []) : ((b.variants || {})[d.tg] || []);
+                var out = d.tasks.map(function (x) { return 'ref' in x ? src[x.ref] : x; }).filter(Boolean);
+                var upd = {}; if (d.tg === 'en') upd.tasks = out; else { var v = JSON.parse(JSON.stringify(l.variants || {})); v[d.tg] = out; upd.variants = v; }
+                return p0.then(function () { return q(SB().from('lessons').update(upd).eq('id', d.lesson_id)); }).then(function () { done++; st.textContent = done + ' / ' + files.length; });
+              });
+            });
+          }).catch(function (e) { errs.push(f + ': ' + e.message); });
+        }); }, Promise.resolve()).then(function () { API.clearCache && API.clearCache(); st.textContent = L3('Завантажено: ', 'Wgrano: ', 'Uploaded: ') + done + ' · ' + L3('вже були: ', 'już były: ', 'already there: ') + skip + (errs.length ? ' · ' + L3('помилки: ', 'błędy: ', 'errors: ') + errs.join('; ') : ''); btn.disabled = false; });
+      }).catch(function (e) { st.textContent = e.message; btn.disabled = false; });
+    };
+
     var FIELDS = ['title', 'title_pl', 'title_en', 'scene', 'scene_pl', 'scene_en', 'grammar', 'tasks', 'variants'], hits = [];
     var enc = function (s) { return JSON.stringify(s).slice(1, -1); };
     document.getElementById('frFind').onclick = function () {

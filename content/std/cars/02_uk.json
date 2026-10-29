@@ -1,0 +1,1598 @@
+{
+ "lesson_id": "b477f60c-5af2-48d2-b18b-ffabba5c93c0",
+ "tg": "uk",
+ "tasks": [
+  {
+   "ref": 0
+  },
+  {
+   "type": "intro",
+   "label": "ТВОЯ РОЛЬ",
+   "label_pl": "TWOJA ROLA",
+   "label_en": "YOUR ROLE",
+   "q": "Гонка закінчилася, але ти ще в боксі з ключем у руці. Навколо — камери, мікрофони й журналісти. Маккуїн кричить: «Я переможець!» А ти дивишся на табло… і бачиш три машини на одному фото.",
+   "q_pl": "Wyścig się skończył, ale ty wciąż stoisz w boksie z kluczem w ręku. Dookoła kamery, mikrofony i dziennikarze. Zygzak krzyczy: „Jestem zwycięzcą!” A ty patrzysz na tablicę… i widzisz trzy auta na jednym zdjęciu.",
+   "q_en": "The race is over, but you're still in the pit box with a wrench in your hand. Cameras, microphones and reporters are everywhere. McQueen shouts: “I'm the winner!” And you look at the board… and see three cars in one photo."
+  },
+  {
+   "ref": 1
+  },
+  {
+   "type": "match",
+   "options": [
+    "переможець=winner",
+    "нічия=tie",
+    "втомлений=tired",
+    "другий=second",
+    "разом=together"
+   ],
+   "options_pl": [
+    "переможець=zwycięzca",
+    "нічия=remis",
+    "втомлений=zmęczony",
+    "другий=drugi",
+    "разом=razem"
+   ],
+   "options_en": [
+    "переможець=winner",
+    "нічия=tie",
+    "втомлений=tired",
+    "другий=second",
+    "разом=together"
+   ],
+   "label": "СЦЕНА 1 · СЛОВА",
+   "label_pl": "SCENA 1 · SŁOWA",
+   "label_en": "SCENE 1 · WORDS",
+   "q": "З'єднай слова сцени з перекладом.",
+   "q_pl": "Połącz słowa sceny z tłumaczeniem.",
+   "q_en": "Match the scene words with their translations.",
+   "qt_pl": "Połącz słowa sceny z tłumaczeniem.",
+   "qt_en": "Match the scene words with their translations.",
+   "ins": "П'ять пар зі сцени",
+   "ins_pl": "Pięć par ze sceny",
+   "ins_en": "Five pairs from the scene",
+   "tip": "Не впевнений? Повернись до словника сцени.",
+   "tip_pl": "Nie masz pewności? Wróć do słownika sceny.",
+   "tip_en": "Not sure? Go back to the scene glossary."
+  },
+  {
+   "type": "drill",
+   "kind": "set",
+   "items": [
+    {
+     "q": "Маккуїн: «Я ____!»",
+     "options": [
+      "переможець",
+      "нічия",
+      "третій"
+     ],
+     "answer": 0,
+     "exp": "Переможець = winner.",
+     "exp_pl": "Переможець = zwycięzca.",
+     "exp_en": "Переможець = winner.",
+     "tr": "I'm the winner!",
+     "tr_pl": "Jestem zwycięzcą!",
+     "tr_en": "I'm the winner!",
+     "tag": "Репліка",
+     "tag_pl": "Kwestia",
+     "tag_en": "Line"
+    },
+    {
+     "q": "Диктор: «Стоп! Це ____!»",
+     "options": [
+      "кубок",
+      "нічия",
+      "шина"
+     ],
+     "answer": 1,
+     "exp": "Нічия = tie.",
+     "exp_pl": "Нічия = remis.",
+     "exp_en": "Нічия = tie.",
+     "tr": "Stop! It's a tie!",
+     "tr_pl": "Stop! To remis!",
+     "tr_en": "Stop! It's a tie!",
+     "tag": "Репліка",
+     "tag_pl": "Kwestia",
+     "tag_en": "Line"
+    },
+    {
+     "q": "Чік: «Цього разу я не ____!»",
+     "options": [
+      "разом",
+      "перший",
+      "другий"
+     ],
+     "answer": 2,
+     "exp": "Чік завжди другий — і він сердитий.",
+     "exp_pl": "Chick jest zawsze drugi — i jest zły.",
+     "exp_en": "Chick is always second — and he's angry.",
+     "tr": "This time I'm not second!",
+     "tr_pl": "Tym razem nie jestem drugi!",
+     "tr_en": "This time I'm not second!",
+     "tag": "Репліка",
+     "tag_pl": "Kwestia",
+     "tag_en": "Line"
+    },
+    {
+     "q": "Три машини фінішують ____.",
+     "options": [
+      "сам",
+      "разом",
+      "втомлений"
+     ],
+     "answer": 1,
+     "exp": "Разом = together.",
+     "exp_pl": "Разом = razem.",
+     "exp_en": "Разом = together.",
+     "tr": "Three cars finish together.",
+     "tr_pl": "Trzy auta kończą razem.",
+     "tr_en": "Three cars finish together.",
+     "tag": "Сюжет",
+     "tag_pl": "Fabuła",
+     "tag_en": "Plot"
+    },
+    {
+     "q": "Маккуїн — переможець гонки.",
+     "options": [
+      "Правда",
+      "Неправда"
+     ],
+     "answer": 1,
+     "exp": "Ні, це нічия.",
+     "exp_pl": "Nie, to remis.",
+     "exp_en": "No, it's a tie.",
+     "tr": "McQueen is the winner of the race.",
+     "tr_pl": "Zygzak jest zwycięzcą wyścigu.",
+     "tr_en": "McQueen is the winner of the race.",
+     "tag": "Правда чи ні?",
+     "tag_pl": "Prawda czy nie?",
+     "tag_en": "True or false?"
+    },
+    {
+     "q": "Чік завжди другий.",
+     "options": [
+      "Правда",
+      "Неправда"
+     ],
+     "answer": 0,
+     "exp": "Так, тому він сердитий.",
+     "exp_pl": "Tak, dlatego jest zły.",
+     "exp_en": "Yes, that's why he's angry.",
+     "tr": "Chick is always second.",
+     "tr_pl": "Chick jest zawsze drugi.",
+     "tr_en": "Chick is always second.",
+     "tag": "Правда чи ні?",
+     "tag_pl": "Prawda czy nie?",
+     "tag_en": "True or false?"
+    },
+    {
+     "q": "Маккуїн кричить: «Я переможець!» Але він ще не знає результату. Який він?",
+     "options": [
+      "Дуже втомлений",
+      "Дуже тихий",
+      "Дуже впевнений"
+     ],
+     "answer": 2,
+     "exp": "Впевнений = sure, confident.",
+     "exp_pl": "Впевнений = pewny siebie.",
+     "exp_en": "Впевнений = sure, confident.",
+     "tr": "McQueen shouts: “I'm the winner!” But he doesn't know the result yet. What is he like?",
+     "tr_pl": "Zygzak krzyczy: „Jestem zwycięzcą!” Ale jeszcze nie zna wyniku. Jaki jest?",
+     "tr_en": "McQueen shouts: “I'm the winner!” But he doesn't know the result yet. What is he like?",
+     "tag": "Зрозумій героя",
+     "tag_pl": "Zrozum bohatera",
+     "tag_en": "Read the hero"
+    }
+   ],
+   "label": "СЦЕНА 1 · ФОТОФІНІШ",
+   "label_pl": "SCENA 1 · FOTOFINISZ",
+   "label_en": "SCENE 1 · PHOTO FINISH",
+   "q": "Три машини на фініші разом. Хто переміг?",
+   "q_pl": "Trzy auta razem na mecie. Kto wygrał?",
+   "q_en": "Three cars at the finish together. Who won?",
+   "ins": "Встав слово, обери правду, зрозумій героя",
+   "ins_pl": "Wstaw słowo, oceń prawdę, zrozum bohatera",
+   "ins_en": "Fill the gap, judge true/false, understand the hero",
+   "tip": "Потрібно 70%+.",
+   "tip_pl": "Potrzeba 70%+.",
+   "tip_en": "You need 70%+."
+  },
+  {
+   "ref": 2
+  },
+  {
+   "type": "match",
+   "options": [
+    "питання=question",
+    "відповідь=answer",
+    "камера=camera",
+    "щасливий=happy",
+    "відомий=famous"
+   ],
+   "options_pl": [
+    "питання=pytanie",
+    "відповідь=odpowiedź",
+    "камера=kamera",
+    "щасливий=szczęśliwy",
+    "відомий=sławny"
+   ],
+   "options_en": [
+    "питання=question",
+    "відповідь=answer",
+    "камера=camera",
+    "щасливий=happy",
+    "відомий=famous"
+   ],
+   "label": "СЦЕНА 2 · СЛОВА",
+   "label_pl": "SCENA 2 · SŁOWA",
+   "label_en": "SCENE 2 · WORDS",
+   "q": "З'єднай слова сцени з перекладом.",
+   "q_pl": "Połącz słowa sceny z tłumaczeniem.",
+   "q_en": "Match the scene words with their translations.",
+   "qt_pl": "Połącz słowa sceny z tłumaczeniem.",
+   "qt_en": "Match the scene words with their translations.",
+   "ins": "П'ять пар зі сцени",
+   "ins_pl": "Pięć par ze sceny",
+   "ins_en": "Five pairs from the scene",
+   "tip": "Не впевнений? Повернись до словника сцени.",
+   "tip_pl": "Nie masz pewności? Wróć do słownika sceny.",
+   "tip_en": "Not sure? Go back to the scene glossary."
+  },
+  {
+   "type": "drill",
+   "kind": "set",
+   "items": [
+    {
+     "q": "Журналіст: «Одне ____, будь ласка!»",
+     "options": [
+      "відповідь",
+      "питання",
+      "камера"
+     ],
+     "answer": 1,
+     "exp": "Питання = question.",
+     "exp_pl": "Питання = pytanie.",
+     "exp_en": "Питання = question.",
+     "tr": "One question, please!",
+     "tr_pl": "Jedno pytanie, proszę!",
+     "tr_en": "One question, please!",
+     "tag": "Репліка",
+     "tag_pl": "Kwestia",
+     "tag_en": "Line"
+    },
+    {
+     "q": "Журналіст: «Ти ____?» Маккуїн: «Так! Дуже!»",
+     "options": [
+      "щасливий",
+      "другий",
+      "нічия"
+     ],
+     "answer": 0,
+     "exp": "Щасливий = happy.",
+     "exp_pl": "Щасливий = szczęśliwy.",
+     "exp_en": "Щасливий = happy.",
+     "tr": "Reporter: “Are you happy?” McQueen: “Yes! Very!”",
+     "tr_pl": "Dziennikarz: „Jesteś szczęśliwy?” Zygzak: „Tak! Bardzo!”",
+     "tr_en": "Reporter: “Are you happy?” McQueen: “Yes! Very!”",
+     "tag": "Репліка",
+     "tag_pl": "Kwestia",
+     "tag_en": "Line"
+    },
+    {
+     "q": "Маккуїн: «Усміхнись на ____!»",
+     "options": [
+      "нічию",
+      "відповідь",
+      "камеру"
+     ],
+     "answer": 2,
+     "exp": "Камера = camera.",
+     "exp_pl": "Камера = kamera.",
+     "exp_en": "Камера = camera.",
+     "tr": "McQueen: “Smile for the camera!”",
+     "tr_pl": "Zygzak: „Uśmiechnij się do kamery!”",
+     "tr_en": "McQueen: “Smile for the camera!”",
+     "tag": "Репліка",
+     "tag_pl": "Kwestia",
+     "tag_en": "Line"
+    },
+    {
+     "q": "Маккуїн: «Тепер я ____!»",
+     "options": [
+      "другий",
+      "відомий",
+      "тихий"
+     ],
+     "answer": 1,
+     "exp": "Відомий = famous.",
+     "exp_pl": "Відомий = sławny.",
+     "exp_en": "Відомий = famous.",
+     "tr": "McQueen: “Now I'm famous!”",
+     "tr_pl": "Zygzak: „Teraz jestem sławny!”",
+     "tr_en": "McQueen: “Now I'm famous!”",
+     "tag": "Репліка",
+     "tag_pl": "Kwestia",
+     "tag_en": "Line"
+    },
+    {
+     "q": "Чік грубий з журналістами.",
+     "options": [
+      "Правда",
+      "Неправда"
+     ],
+     "answer": 0,
+     "exp": "Так, він кричить на них.",
+     "exp_pl": "Tak, krzyczy na nich.",
+     "exp_en": "Yes, he shouts at them.",
+     "tr": "Chick is rude to the reporters.",
+     "tr_pl": "Chick jest niegrzeczny dla dziennikarzy.",
+     "tr_en": "Chick is rude to the reporters.",
+     "tag": "Правда чи ні?",
+     "tag_pl": "Prawda czy nie?",
+     "tag_en": "True or false?"
+    },
+    {
+     "q": "У журналістів немає питань.",
+     "options": [
+      "Правда",
+      "Неправда"
+     ],
+     "answer": 1,
+     "exp": "У них багато питань!",
+     "exp_pl": "Mają mnóstwo pytań!",
+     "exp_en": "They have lots of questions!",
+     "tr": "The reporters have no questions.",
+     "tr_pl": "Dziennikarze nie mają pytań.",
+     "tr_en": "The reporters have no questions.",
+     "tag": "Правда чи ні?",
+     "tag_pl": "Prawda czy nie?",
+     "tag_en": "True or false?"
+    },
+    {
+     "q": "Журналіст питає тебе: «Ти механік Маккуїна?» Що ти кажеш?",
+     "options": [
+      "Ні, я не камера.",
+      "Так, я його механік.",
+      "Так, я нічия."
+     ],
+     "answer": 1,
+     "exp": "Так, я… — проста відповідь.",
+     "exp_pl": "Так, я… (Tak, jestem…) — prosta odpowiedź.",
+     "exp_en": "Так, я… (Yes, I am…) — a simple answer.",
+     "tr": "A reporter asks you: “Are you McQueen's mechanic?” What do you say?",
+     "tr_pl": "Dziennikarz pyta cię: „Jesteś mechanikiem Zygzaka?” Co mówisz?",
+     "tr_en": "A reporter asks you: “Are you McQueen's mechanic?” What do you say?",
+     "tag": "Твій вибір",
+     "tag_pl": "Twój wybór",
+     "tag_en": "Your call"
+    }
+   ],
+   "label": "СЦЕНА 2 · ІНТЕРВ'Ю",
+   "label_pl": "SCENA 2 · WYWIAD",
+   "label_en": "SCENE 2 · THE INTERVIEW",
+   "q": "Журналісти оточують Маккуїна. У них багато питань.",
+   "q_pl": "Dziennikarze otaczają Zygzaka. Mają dużo pytań.",
+   "q_en": "The reporters surround McQueen. They have lots of questions.",
+   "ins": "Встав слово, обери правду, зрозумій героя",
+   "ins_pl": "Wstaw słowo, oceń prawdę, zrozum bohatera",
+   "ins_en": "Fill the gap, judge true/false, understand the hero",
+   "tip": "Потрібно 70%+.",
+   "tip_pl": "Potrzeba 70%+.",
+   "tip_en": "You need 70%+."
+  },
+  {
+   "ref": 3
+  },
+  {
+   "type": "match",
+   "options": [
+    "команда=team",
+    "порада=advice",
+    "друг=friend",
+    "тиждень=week",
+    "важливий=important"
+   ],
+   "options_pl": [
+    "команда=zespół",
+    "порада=rada",
+    "друг=przyjaciel",
+    "тиждень=tydzień",
+    "важливий=ważny"
+   ],
+   "options_en": [
+    "команда=team",
+    "порада=advice",
+    "друг=friend",
+    "тиждень=week",
+    "важливий=important"
+   ],
+   "label": "СЦЕНА 3 · СЛОВА",
+   "label_pl": "SCENA 3 · SŁOWA",
+   "label_en": "SCENE 3 · WORDS",
+   "q": "З'єднай слова сцени з перекладом.",
+   "q_pl": "Połącz słowa sceny z tłumaczeniem.",
+   "q_en": "Match the scene words with their translations.",
+   "qt_pl": "Połącz słowa sceny z tłumaczeniem.",
+   "qt_en": "Match the scene words with their translations.",
+   "ins": "П'ять пар зі сцени",
+   "ins_pl": "Pięć par ze sceny",
+   "ins_en": "Five pairs from the scene",
+   "tip": "Не впевнений? Повернись до словника сцени.",
+   "tip_pl": "Nie masz pewności? Wróć do słownika sceny.",
+   "tip_en": "Not sure? Go back to the scene glossary."
+  },
+  {
+   "type": "drill",
+   "kind": "set",
+   "items": [
+    {
+     "q": "Король: «Тобі потрібна ____.»",
+     "options": [
+      "порада",
+      "команда",
+      "камера"
+     ],
+     "answer": 1,
+     "exp": "Команда = team.",
+     "exp_pl": "Команда = zespół.",
+     "exp_en": "Команда = team.",
+     "tr": "The King: “You need a team.”",
+     "tr_pl": "Król: „Potrzebujesz zespołu.”",
+     "tr_en": "The King: “You need a team.”",
+     "tag": "Репліка",
+     "tag_pl": "Kwestia",
+     "tag_en": "Line"
+    },
+    {
+     "q": "Король: «Ось моя ____, малий.»",
+     "options": [
+      "порада",
+      "нічия",
+      "тиждень"
+     ],
+     "answer": 0,
+     "exp": "Порада = advice.",
+     "exp_pl": "Порада = rada.",
+     "exp_en": "Порада = advice.",
+     "tr": "The King: “Here's my advice, kid.”",
+     "tr_pl": "Król: „Oto moja rada, mały.”",
+     "tr_en": "The King: “Here's my advice, kid.”",
+     "tag": "Репліка",
+     "tag_pl": "Kwestia",
+     "tag_en": "Line"
+    },
+    {
+     "q": "Диктор: «Нова гонка — через ____!»",
+     "options": [
+      "сонце",
+      "друг",
+      "тиждень"
+     ],
+     "answer": 2,
+     "exp": "Тиждень = week.",
+     "exp_pl": "Тиждень = tydzień.",
+     "exp_en": "Тиждень = week.",
+     "tr": "Announcer: “The new race is in a week!”",
+     "tr_pl": "Spiker: „Nowy wyścig za tydzień!”",
+     "tr_en": "Announcer: “The new race is in a week!”",
+     "tag": "Репліка",
+     "tag_pl": "Kwestia",
+     "tag_en": "Line"
+    },
+    {
+     "q": "Король: «Гонки — ____ робота.»",
+     "options": [
+      "третя",
+      "важка",
+      "порожня"
+     ],
+     "answer": 1,
+     "exp": "Важкий = hard.",
+     "exp_pl": "Важкий = trudny, ciężki.",
+     "exp_en": "Важкий = hard.",
+     "tr": "The King: “Racing is hard work.”",
+     "tr_pl": "Król: „Wyścigi to ciężka praca.”",
+     "tr_en": "The King: “Racing is hard work.”",
+     "tag": "Репліка",
+     "tag_pl": "Kwestia",
+     "tag_en": "Line"
+    },
+    {
+     "q": "Де буде нова гонка?",
+     "options": [
+      "У трейлері",
+      "У Каліфорнії",
+      "У кафе"
+     ],
+     "answer": 1,
+     "exp": "Через тиждень — у Каліфорнії.",
+     "exp_pl": "Za tydzień — w Kalifornii.",
+     "exp_en": "In a week — in California.",
+     "tr": "Where will the new race be?",
+     "tr_pl": "Gdzie będzie nowy wyścig?",
+     "tr_en": "Where will the new race be?",
+     "tag": "Сюжет",
+     "tag_pl": "Fabuła",
+     "tag_en": "Plot"
+    },
+    {
+     "q": "Маккуїн думає, що команда — це важливо.",
+     "options": [
+      "Правда",
+      "Неправда"
+     ],
+     "answer": 1,
+     "exp": "Він думає, що все може сам.",
+     "exp_pl": "Myśli, że wszystko zrobi sam.",
+     "exp_en": "He thinks he can do it all alone.",
+     "tr": "McQueen thinks a team is important.",
+     "tr_pl": "Zygzak myśli, że zespół jest ważny.",
+     "tr_en": "McQueen thinks a team is important.",
+     "tag": "Правда чи ні?",
+     "tag_pl": "Prawda czy nie?",
+     "tag_en": "True or false?"
+    },
+    {
+     "q": "Король дає Маккуїну пораду.",
+     "options": [
+      "Правда",
+      "Неправда"
+     ],
+     "answer": 0,
+     "exp": "«Тобі потрібна команда».",
+     "exp_pl": "„Potrzebujesz zespołu”.",
+     "exp_en": "“You need a team.”",
+     "tr": "The King gives McQueen some advice.",
+     "tr_pl": "Król daje Zygzakowi radę.",
+     "tr_en": "The King gives McQueen some advice.",
+     "tag": "Правда чи ні?",
+     "tag_pl": "Prawda czy nie?",
+     "tag_en": "True or false?"
+    },
+    {
+     "q": "Король: «Ти не сам, малий. Будь розумним.» Що він хоче сказати?",
+     "options": [
+      "Потрібна нова шина",
+      "Потрібні друзі й команда",
+      "Потрібна камера"
+     ],
+     "answer": 1,
+     "exp": "Король знає: один — не чемпіон.",
+     "exp_pl": "Król wie: w pojedynkę nie zostaniesz mistrzem.",
+     "exp_en": "The King knows: alone you're no champion.",
+     "tr": "The King: “You're not alone, kid. Be smart.” What does he mean?",
+     "tr_pl": "Król: „Nie jesteś sam, mały. Bądź mądry.” Co chce powiedzieć?",
+     "tr_en": "The King: “You're not alone, kid. Be smart.” What does he mean?",
+     "tag": "Зрозумій героя",
+     "tag_pl": "Zrozum bohatera",
+     "tag_en": "Read the hero"
+    }
+   ],
+   "label": "СЦЕНА 3 · ПОРАДА КОРОЛЯ",
+   "label_pl": "SCENA 3 · RADA KRÓLA",
+   "label_en": "SCENE 3 · THE KING'S ADVICE",
+   "q": "Король під’їжджає до Маккуїна. Ти стоїш поруч і чуєш усе.",
+   "q_pl": "Król podjeżdża do Zygzaka. Stoisz obok i słyszysz wszystko.",
+   "q_en": "The King rolls up to McQueen. You stand nearby and hear everything.",
+   "ins": "Встав слово, обери правду, зрозумій героя",
+   "ins_pl": "Wstaw słowo, oceń prawdę, zrozum bohatera",
+   "ins_en": "Fill the gap, judge true/false, understand the hero",
+   "tip": "Потрібно 70%+.",
+   "tip_pl": "Potrzeba 70%+.",
+   "tip_en": "You need 70%+."
+  },
+  {
+   "type": "intro",
+   "label": "ПРАВИЛО",
+   "label_pl": "ZASADA",
+   "label_en": "RULE",
+   "q": "Заперечення: «не» стоїть перед словом: Я не втомлений. Він не переможець. Це не легко. Питання: просто підніми голос у кінці: Ти щасливий? Можна почати з «чи»: Чи ти впевнений? Відповідь: Так, я щасливий. / Ні, я не втомлений.",
+   "q_pl": "Przeczenie: „не” stoi przed słowem: Я не втомлений (nie jestem zmęczony). Він не переможець. Це не легко. Pytanie: wystarczy podnieść głos na końcu: Ти щасливий? (Jesteś szczęśliwy?) Można zacząć od „чи” (jak „czy”): Чи ти впевнений? Odpowiedź: Так, я щасливий. / Ні, я не втомлений.",
+   "q_en": "Negatives: “не” goes before the word: Я не втомлений (I'm not tired). Він не переможець. Це не легко. Questions: just raise your voice at the end: Ти щасливий? (Are you happy?) You can start with “чи”: Чи ти впевнений? Answers: Так, я щасливий. / Ні, я не втомлений."
+  },
+  {
+   "type": "drill",
+   "kind": "set",
+   "items": [
+    {
+     "q": "Маккуїн: «Я ____ втомлений!»",
+     "options": [
+      "не",
+      "ні",
+      "чи"
+     ],
+     "answer": 0,
+     "exp": "«Не» стоїть перед словом.",
+     "exp_pl": "„Не” stoi przed słowem.",
+     "exp_en": "“Не” goes before the word.",
+     "tr": "I'm not tired!",
+     "tr_pl": "Nie jestem zmęczony!",
+     "tr_en": "I'm not tired!"
+    },
+    {
+     "q": "Журналіст: «____ ти щасливий?»",
+     "options": [
+      "Не",
+      "Чи",
+      "Ні"
+     ],
+     "answer": 1,
+     "exp": "«Чи» на початку питання.",
+     "exp_pl": "„Чи” = czy, na początku pytania.",
+     "exp_en": "“Чи” opens a yes/no question.",
+     "tr": "Are you happy?",
+     "tr_pl": "Czy jesteś szczęśliwy?",
+     "tr_en": "Are you happy?"
+    },
+    {
+     "q": "Диктор: «Маккуїн ____ переможець. Це нічия!»",
+     "options": [
+      "ні",
+      "чи",
+      "не"
+     ],
+     "answer": 2,
+     "exp": "Він не переможець.",
+     "exp_pl": "Він не переможець = nie jest zwycięzcą.",
+     "exp_en": "Він не переможець = he isn't the winner.",
+     "tr": "McQueen isn't the winner. It's a tie!",
+     "tr_pl": "Zygzak nie jest zwycięzcą. To remis!",
+     "tr_en": "McQueen isn't the winner. It's a tie!"
+    },
+    {
+     "q": "Журналіст: «Ти втомлений?» Маккуїн: «____, я не втомлений!»",
+     "options": [
+      "Так",
+      "Ні",
+      "Чи"
+     ],
+     "answer": 1,
+     "exp": "Ні, я не… — два слова: «ні» і «не».",
+     "exp_pl": "Ні = nie (odpowiedź), не = nie (przed słowem).",
+     "exp_en": "Ні = no (answer), не = not (before the word).",
+     "tr": "“Are you tired?” “No, I'm not tired!”",
+     "tr_pl": "„Jesteś zmęczony?” „Nie, nie jestem zmęczony!”",
+     "tr_en": "“Are you tired?” “No, I'm not tired!”"
+    },
+    {
+     "q": "Журналіст: «Ти щасливий?» Маккуїн: «Так, я ____!»",
+     "options": [
+      "не щасливий",
+      "щасливий",
+      "чи щасливий"
+     ],
+     "answer": 1,
+     "exp": "Так, я щасливий.",
+     "exp_pl": "Так = tak: я щасливий.",
+     "exp_en": "Так = yes: я щасливий.",
+     "tr": "“Are you happy?” “Yes, I'm happy!”",
+     "tr_pl": "„Jesteś szczęśliwy?” „Tak, jestem szczęśliwy!”",
+     "tr_en": "“Are you happy?” “Yes, I'm happy!”"
+    },
+    {
+     "q": "Ти питаєш Маккуїна: «Are you sure?»",
+     "options": [
+      "Ти не впевнений.",
+      "Впевнений не ти?",
+      "Ти впевнений?"
+     ],
+     "answer": 2,
+     "exp": "Питання = звичайний порядок + «?».",
+     "exp_pl": "Pytanie = zwykły szyk + „?”.",
+     "exp_en": "A question = normal word order + “?”.",
+     "tr": "Are you sure?",
+     "tr_pl": "Jesteś pewny?",
+     "tr_en": "Are you sure?"
+    },
+    {
+     "q": "Чік: «Я ____ другий! Я перший!»",
+     "options": [
+      "ні",
+      "не",
+      "так"
+     ],
+     "answer": 1,
+     "exp": "Я не другий.",
+     "exp_pl": "Я не другий = nie jestem drugi.",
+     "exp_en": "Я не другий = I'm not second.",
+     "tr": "I'm not second! I'm first!",
+     "tr_pl": "Nie jestem drugi! Jestem pierwszy!",
+     "tr_en": "I'm not second! I'm first!"
+    },
+    {
+     "q": "Король: «Гонки — це ____ легко.»",
+     "options": [
+      "чи",
+      "ні",
+      "не"
+     ],
+     "answer": 2,
+     "exp": "Це не легко.",
+     "exp_pl": "Це не легко = to nie jest łatwe.",
+     "exp_en": "Це не легко = it isn't easy.",
+     "tr": "The King: “Racing isn't easy.”",
+     "tr_pl": "Król: „Wyścigi to nie jest łatwa rzecz.”",
+     "tr_en": "The King: “Racing isn't easy.”"
+    },
+    {
+     "q": "Журналіст: «Чік, ти ____?» Чік: «Ні! Я не грубий!»",
+     "options": [
+      "не грубий",
+      "чи грубий",
+      "грубий"
+     ],
+     "answer": 2,
+     "exp": "У питанні: Ти грубий?",
+     "exp_pl": "W pytaniu: Ти грубий? (Jesteś niegrzeczny?)",
+     "exp_en": "The question: Ти грубий? (Are you rude?)",
+     "tr": "“Chick, are you rude?” “No! I'm not rude!”",
+     "tr_pl": "„Chick, jesteś niegrzeczny?” „Nie! Nie jestem niegrzeczny!”",
+     "tr_en": "“Chick, are you rude?” “No! I'm not rude!”"
+    },
+    {
+     "q": "Маккуїн про Короля: «Він ____ молодий. Він старий.»",
+     "options": [
+      "ні",
+      "не",
+      "чи"
+     ],
+     "answer": 1,
+     "exp": "Він не молодий.",
+     "exp_pl": "Він не молодий = nie jest młody.",
+     "exp_en": "Він не молодий = he isn't young.",
+     "tr": "He isn't young. He's old.",
+     "tr_pl": "On nie jest młody. Jest stary.",
+     "tr_en": "He isn't young. He's old."
+    },
+    {
+     "q": "Ти: «Ми команда?» Маккуїн: «Ні, ми ____ команда.»",
+     "options": [
+      "так",
+      "ні",
+      "не"
+     ],
+     "answer": 2,
+     "exp": "Ні, ми не команда.",
+     "exp_pl": "Ні, ми не команда = nie, nie jesteśmy zespołem.",
+     "exp_en": "Ні, ми не команда = no, we're not a team.",
+     "tr": "“Are we a team?” “No, we're not a team.”",
+     "tr_pl": "„Jesteśmy zespołem?” „Nie, nie jesteśmy zespołem.”",
+     "tr_en": "“Are we a team?” “No, we're not a team.”"
+    },
+    {
+     "q": "Журналіст: «____ Король щасливий?»",
+     "options": [
+      "Чи",
+      "Ні",
+      "Не"
+     ],
+     "answer": 0,
+     "exp": "«Чи» на початку питання.",
+     "exp_pl": "„Чи” = czy.",
+     "exp_en": "“Чи” opens the question.",
+     "tr": "Is the King happy?",
+     "tr_pl": "Czy Król jest szczęśliwy?",
+     "tr_en": "Is the King happy?"
+    }
+   ],
+   "label": "ГРАМАТИКА · НІ ЧИ ТАК?",
+   "label_pl": "GRAMATYKA · TAK CZY NIE?",
+   "label_en": "GRAMMAR · YES OR NO?",
+   "q": "Питання журналістів і відповіді героїв. Обери правильну форму.",
+   "q_pl": "Pytania dziennikarzy i odpowiedzi bohaterów. Wybierz poprawną formę.",
+   "q_en": "The reporters' questions and the heroes' answers. Choose the correct form.",
+   "ins": "«Не», «ні», «чи» і питання",
+   "ins_pl": "„Не”, „ні”, „чи” i pytania",
+   "ins_en": "“Не”, “ні”, “чи” and questions",
+   "tip": "Потрібно 70%+.",
+   "tip_pl": "Potrzeba 70%+.",
+   "tip_en": "You need 70%+."
+  },
+  {
+   "type": "reading",
+   "items": [
+    {
+     "q": "Учора на стадіоні була велика гонка за Кубок Поршня."
+    },
+    {
+     "q": "Маккуїн, Король і Чік фінішували ____.",
+     "options": [
+      "разом",
+      "сам",
+      "другий"
+     ],
+     "answer": 0
+    },
+    {
+     "q": "Це ____! Переможця немає.",
+     "options": [
+      "порада",
+      "нічия",
+      "камера"
+     ],
+     "answer": 1
+    },
+    {
+     "q": "Але Маккуїн цього не знає."
+    },
+    {
+     "q": "Він кричить: «Я ____!»",
+     "options": [
+      "тиждень",
+      "питання",
+      "переможець"
+     ],
+     "answer": 2
+    },
+    {
+     "q": "Потім приходять журналісти з камерами й мікрофонами."
+    },
+    {
+     "q": "У них одне ____: «Ти щасливий?»",
+     "options": [
+      "питання",
+      "відповідь",
+      "команда"
+     ],
+     "answer": 0
+    },
+    {
+     "q": "Маккуїн відповідає: «Так! І я не ____!»",
+     "options": [
+      "втомлені",
+      "втомлений",
+      "втомлена"
+     ],
+     "answer": 1
+    },
+    {
+     "q": "Чік ____ з журналістами.",
+     "options": [
+      "відомий",
+      "грубий",
+      "другий"
+     ],
+     "answer": 1
+    },
+    {
+     "q": "Він кричить: «Цього разу я не другий!»"
+    },
+    {
+     "q": "Король старий і ____ з усіма.",
+     "options": [
+      "грубий",
+      "приємний",
+      "третій"
+     ],
+     "answer": 1
+    },
+    {
+     "q": "Він тихо каже Маккуїну: «Ти швидкий, малий. Але ти сам»."
+    },
+    {
+     "q": "«Тобі потрібна ____».",
+     "options": [
+      "команда",
+      "команди",
+      "командою"
+     ],
+     "answer": 0
+    },
+    {
+     "q": "Маккуїн не слухає. Він думає: «Мені не ____ команда».",
+     "options": [
+      "потрібен",
+      "потрібні",
+      "потрібна"
+     ],
+     "answer": 2
+    },
+    {
+     "q": "Нова гонка буде через ____ у Каліфорнії.",
+     "options": [
+      "тиждень",
+      "сонце",
+      "камеру"
+     ],
+     "answer": 0
+    },
+    {
+     "q": "Хто буде чемпіоном? Це ____ питання!",
+     "options": [
+      "важлива",
+      "важливе",
+      "важливий"
+     ],
+     "answer": 1
+    }
+   ],
+   "label": "НОВИНИ ГОНОК",
+   "label_pl": "WIADOMOŚCI WYŚCIGOWE",
+   "label_en": "RACING NEWS",
+   "q": "Газета пише про фінал і про інтерв’ю після гонки. Прочитай статтю й обери правильні слова.",
+   "q_pl": "Gazeta pisze o finale i o wywiadzie po wyścigu. Przeczytaj artykuł po ukraińsku i wybierz właściwe słowa.",
+   "q_en": "The paper reports on the final and the interview after the race. Read the article in Ukrainian and choose the right words.",
+   "tip": "Шукай «не», «ні» і питання.",
+   "tip_pl": "Szukaj „не”, „ні” i pytań.",
+   "tip_en": "Look for “не”, “ні” and questions.",
+   "title": "«Новини гонок»: хто чемпіон?",
+   "title_pl": "„Wiadomości wyścigowe”: kto jest mistrzem?",
+   "title_en": "“Racing News”: who is the champion?"
+  },
+  {
+   "type": "drill",
+   "kind": "set",
+   "items": [
+    {
+     "q": "Хто переміг у гонці?",
+     "options": [
+      "Маккуїн",
+      "Ніхто — це нічия",
+      "Король"
+     ],
+     "answer": 1,
+     "exp": "Три машини фінішували разом.",
+     "exp_pl": "Trzy auta skończyły razem.",
+     "exp_en": "Three cars finished together.",
+     "tr": "Who won the race?",
+     "tr_pl": "Kto wygrał wyścig?",
+     "tr_en": "Who won the race?",
+     "tag": "Текст",
+     "tag_pl": "Tekst",
+     "tag_en": "Text"
+    },
+    {
+     "q": "Що питають журналісти?",
+     "options": [
+      "«Ти щасливий?»",
+      "«Де твоя шина?»",
+      "«Де Мак?»"
+     ],
+     "answer": 0,
+     "exp": "Одне питання: «Ти щасливий?»",
+     "exp_pl": "Jedno pytanie: „Jesteś szczęśliwy?”",
+     "exp_en": "One question: “Are you happy?”",
+     "tr": "What do the reporters ask?",
+     "tr_pl": "O co pytają dziennikarze?",
+     "tr_en": "What do the reporters ask?",
+     "tag": "Текст",
+     "tag_pl": "Tekst",
+     "tag_en": "Text"
+    },
+    {
+     "q": "Чік: «Цього разу я не другий!» Чому він так каже?",
+     "options": [
+      "Він друг Маккуїна",
+      "Він утомлений",
+      "Він завжди другий"
+     ],
+     "answer": 2,
+     "exp": "Чік завжди другий після Короля.",
+     "exp_pl": "Chick jest zawsze drugi za Królem.",
+     "exp_en": "Chick is always second behind the King.",
+     "tr": "Chick: “This time I'm not second!” Why does he say that?",
+     "tr_pl": "Chick: „Tym razem nie jestem drugi!” Dlaczego tak mówi?",
+     "tr_en": "Chick: “This time I'm not second!” Why does he say that?",
+     "tag": "Текст",
+     "tag_pl": "Tekst",
+     "tag_en": "Text"
+    },
+    {
+     "q": "Яку пораду дає Король?",
+     "options": [
+      "Тобі потрібен кубок",
+      "Тобі потрібна команда",
+      "Тобі потрібна камера"
+     ],
+     "answer": 1,
+     "exp": "«Тобі потрібна команда».",
+     "exp_pl": "„Potrzebujesz zespołu”.",
+     "exp_en": "“You need a team.”",
+     "tr": "What advice does the King give?",
+     "tr_pl": "Jaką radę daje Król?",
+     "tr_en": "What advice does the King give?",
+     "tag": "Текст",
+     "tag_pl": "Tekst",
+     "tag_en": "Text"
+    },
+    {
+     "q": "Де і коли нова гонка?",
+     "options": [
+      "У Каліфорнії, через тиждень",
+      "На стадіоні, завтра",
+      "У трейлері, вночі"
+     ],
+     "answer": 0,
+     "exp": "Через тиждень у Каліфорнії.",
+     "exp_pl": "Za tydzień w Kalifornii.",
+     "exp_en": "In a week in California.",
+     "tr": "Where and when is the new race?",
+     "tr_pl": "Gdzie i kiedy jest nowy wyścig?",
+     "tr_en": "Where and when is the new race?",
+     "tag": "Текст",
+     "tag_pl": "Tekst",
+     "tag_en": "Text"
+    }
+   ],
+   "label": "РОЗУМІННЯ ТЕКСТУ",
+   "label_pl": "ROZUMIENIE TEKSTU",
+   "label_en": "READING CHECK",
+   "q": "Питання до статті «Новини гонок».",
+   "q_pl": "Pytania do artykułu „Wiadomości wyścigowe”.",
+   "q_en": "Questions about the “Racing News” article.",
+   "ins": "П’ять питань до тексту",
+   "ins_pl": "Pięć pytań do tekstu",
+   "ins_en": "Five questions about the text",
+   "tip": "Потрібно 70%+.",
+   "tip_pl": "Potrzeba 70%+.",
+   "tip_en": "You need 70%+."
+  },
+  {
+   "type": "quest",
+   "img": "mirror",
+   "start": "s1",
+   "q": "Журналісти питають тебе, механіка Маккуїна. Відповідай українською.",
+   "q_pl": "Dziennikarze pytają ciebie, mechanika Zygzaka. Odpowiadaj po ukraińsku.",
+   "q_en": "The reporters question you, McQueen's mechanic. Answer in Ukrainian.",
+   "label": "КВЕСТ: ПРЕСА",
+   "label_pl": "QUEST: PRASA",
+   "label_en": "QUEST: THE PRESS",
+   "ins": "Кожен вибір веде далі. Обирай уважно — українською",
+   "ins_pl": "Każdy wybór prowadzi dalej. Wybieraj uważnie — po ukraińsku",
+   "ins_en": "Every choice leads on. Choose carefully — in Ukrainian",
+   "tip": "Квест перевіряє слова й граматику уроку.",
+   "tip_pl": "Quest sprawdza słowa i gramatykę lekcji.",
+   "tip_en": "The quest checks the lesson's words and grammar.",
+   "steps": {
+    "s1": {
+     "q": "Журналіст: «Ти механік Маккуїна?»",
+     "q_pl": "Dziennikarz: „Ти механік Маккуїна?” (Jesteś mechanikiem Zygzaka?)",
+     "q_en": "Reporter: “Ти механік Маккуїна?” (Are you McQueen's mechanic?)",
+     "scene": "Камери навколо тебе.",
+     "scene_pl": "Dookoła ciebie kamery.",
+     "scene_en": "Cameras all around you.",
+     "choices": [
+      {
+       "t": "Так, я його механік.",
+       "ok": true,
+       "next": "s2",
+       "fb": "Так! Коротко й правильно.",
+       "fb_pl": "Tak! Krótko i poprawnie.",
+       "fb_en": "Yes! Short and correct."
+      },
+      {
+       "t": "Ні я механік не.",
+       "ok": false,
+       "next": "s1b",
+       "fb": "Так не кажуть.",
+       "fb_pl": "Tak się nie mówi.",
+       "fb_en": "That's not how we say it."
+      }
+     ]
+    },
+    "s1b": {
+     "q": "Журналіст: «Що? Ти механік чи ні?»",
+     "q_pl": "Dziennikarz: „Що? Ти механік чи ні?” (Co? Jesteś mechanikiem czy nie?)",
+     "q_en": "Reporter: “Що? Ти механік чи ні?” (What? Are you a mechanic or not?)",
+     "scene": "Журналіст не розуміє.",
+     "scene_pl": "Dziennikarz nie rozumie.",
+     "scene_en": "The reporter doesn't understand.",
+     "choices": [
+      {
+       "t": "Так. Я механік.",
+       "ok": true,
+       "next": "s2",
+       "fb": "Так!",
+       "fb_pl": "Tak!",
+       "fb_en": "Yes!"
+      },
+      {
+       "t": "Чи я механік ні.",
+       "ok": false,
+       "next": "end_bad",
+       "fb": "«Чи» — для питання.",
+       "fb_pl": "„Чи” jest do pytań.",
+       "fb_en": "“Чи” is for questions."
+      }
+     ]
+    },
+    "s2": {
+     "q": "Журналіст: «Маккуїн втомлений?»",
+     "q_pl": "Dziennikarz: „Маккуїн втомлений?” (Zygzak jest zmęczony?)",
+     "q_en": "Reporter: “Маккуїн втомлений?” (Is McQueen tired?)",
+     "scene": "Маккуїн кричить: «Ні!»",
+     "scene_pl": "Zygzak krzyczy: „Nie!”",
+     "scene_en": "McQueen shouts: “No!”",
+     "choices": [
+      {
+       "t": "Ні, він не втомлений!",
+       "ok": true,
+       "next": "s3",
+       "fb": "Ні + не — правильно.",
+       "fb_pl": "Ні + не — poprawnie.",
+       "fb_en": "Ні + не — correct."
+      },
+      {
+       "t": "Ні, він не не втомлений.",
+       "ok": false,
+       "next": "s3",
+       "fb": "Одного «не» досить.",
+       "fb_pl": "Jedno „не” wystarczy.",
+       "fb_en": "One “не” is enough."
+      }
+     ]
+    },
+    "s3": {
+     "q": "Маккуїн тихо: «Я переможець, так?»",
+     "q_pl": "Zygzak cicho: „Я переможець, так?” (Jestem zwycięzcą, tak?)",
+     "q_en": "McQueen, quietly: “Я переможець, так?” (I'm the winner, right?)",
+     "scene": "На табло — фото. Три машини разом.",
+     "scene_pl": "Na tablicy zdjęcie. Trzy auta razem.",
+     "scene_en": "The board shows a photo. Three cars together.",
+     "choices": [
+      {
+       "t": "Ні, ти не переможець. Це нічия.",
+       "ok": true,
+       "next": "s4",
+       "fb": "Чесно!",
+       "fb_pl": "Szczerze!",
+       "fb_en": "Honest!"
+      },
+      {
+       "t": "Так, ти чемпіон!",
+       "ok": false,
+       "next": "end_mid",
+       "fb": "Це неправда…",
+       "fb_pl": "To nieprawda…",
+       "fb_en": "That's not true…"
+      }
+     ]
+    },
+    "s4": {
+     "q": "Король: «Він твій друг? Йому потрібна команда.»",
+     "q_pl": "Król: „Він твій друг? Йому потрібна команда.” (To twój przyjaciel? Potrzebuje zespołu.)",
+     "q_en": "The King: “Він твій друг? Йому потрібна команда.” (Is he your friend? He needs a team.)",
+     "scene": "Маккуїн чує це.",
+     "scene_pl": "Zygzak to słyszy.",
+     "scene_en": "McQueen hears it.",
+     "choices": [
+      {
+       "t": "Так. Ми команда!",
+       "ok": true,
+       "next": "end_good",
+       "fb": "Чудово!",
+       "fb_pl": "Świetnie!",
+       "fb_en": "Great!"
+      },
+      {
+       "t": "Ні, він не мій друг.",
+       "ok": true,
+       "next": "end_mid",
+       "fb": "Чесно, але сумно.",
+       "fb_pl": "Szczerze, ale smutno.",
+       "fb_en": "Honest, but sad."
+      }
+     ]
+    }
+   },
+   "endings": {
+    "end_good": {
+     "good": true,
+     "title": "Кінцівка: Перший крок",
+     "title_pl": "Zakończenie: Pierwszy krok",
+     "title_en": "Ending: A First Step",
+     "text": "Маккуїн дивиться на тебе. Він ще гордий, але вперше думає: «Може, мені потрібна команда?»",
+     "text_pl": "Zygzak patrzy na ciebie. Wciąż jest dumny, ale pierwszy raz myśli: „Może potrzebuję zespołu?”",
+     "text_en": "McQueen looks at you. He is still proud, but for the first time he thinks: “Maybe I need a team?”"
+    },
+    "end_mid": {
+     "good": true,
+     "title": "Кінцівка: Знову сам",
+     "title_pl": "Zakończenie: Znowu sam",
+     "title_en": "Ending: Alone Again",
+     "text": "Журналісти пишуть свої статті. Маккуїн їде до трейлера сам — як у фільмі.",
+     "text_pl": "Dziennikarze piszą artykuły. Zygzak jedzie do przyczepy sam — jak w filmie.",
+     "text_en": "The reporters write their stories. McQueen drives to his trailer alone — just like in the film."
+    },
+    "end_bad": {
+     "good": false,
+     "title": "Кінцівка: Тебе не зрозуміли",
+     "title_pl": "Zakończenie: Nie zrozumiano cię",
+     "title_en": "Ending: Nobody understood you",
+     "text": "Журналісти йдуть до Чіка. Спробуй ще раз: «Так, я…» або «Ні, я не…».",
+     "text_pl": "Dziennikarze idą do Chicka. Spróbuj jeszcze raz: „Так, я…” albo „Ні, я не…”.",
+     "text_en": "The reporters go over to Chick. Try again: “Так, я…” or “Ні, я не…”."
+    }
+   }
+  },
+  {
+   "type": "drill",
+   "kind": "set",
+   "items": [
+    {
+     "k": "type",
+     "q": "Напиши українською: «I'm not tired.»",
+     "q_pl": "Napisz po ukraińsku: „Nie jestem zmęczony.”",
+     "q_en": "Write in Ukrainian: “I'm not tired.”",
+     "options": [
+      "Я не втомлений.",
+      "Я не втомлений"
+     ],
+     "exp": "Я не втомлений.",
+     "exp_pl": "Я не втомлений.",
+     "exp_en": "Я не втомлений.",
+     "tag": "Напиши",
+     "tag_pl": "Napisz",
+     "tag_en": "Write"
+    },
+    {
+     "k": "order",
+     "q": "Склади репліку: «It's a tie!»",
+     "q_pl": "Ułóż kwestię: „To remis!”",
+     "q_en": "Build the line: “It's a tie!”",
+     "options": [
+      "Це",
+      "нічия!"
+     ],
+     "exp": "Це нічия!",
+     "exp_pl": "Це нічия!",
+     "exp_en": "Це нічия!",
+     "tag": "Склади",
+     "tag_pl": "Ułóż",
+     "tag_en": "Build"
+    },
+    {
+     "k": "type",
+     "q": "Напиши українською: «Are you happy?»",
+     "q_pl": "Napisz po ukraińsku: „Jesteś szczęśliwy?”",
+     "q_en": "Write in Ukrainian: “Are you happy?”",
+     "options": [
+      "Ти щасливий?",
+      "Чи ти щасливий?",
+      "Ти щасливий",
+      "Чи ти щасливий"
+     ],
+     "exp": "Ти щасливий?",
+     "exp_pl": "Ти щасливий?",
+     "exp_en": "Ти щасливий?",
+     "tag": "Напиши",
+     "tag_pl": "Napisz",
+     "tag_en": "Write"
+    },
+    {
+     "k": "order",
+     "q": "Склади репліку: «You need a team.»",
+     "q_pl": "Ułóż kwestię: „Potrzebujesz zespołu.”",
+     "q_en": "Build the line: “You need a team.”",
+     "options": [
+      "Тобі",
+      "потрібна",
+      "команда."
+     ],
+     "exp": "Тобі потрібна команда.",
+     "exp_pl": "Тобі потрібна команда.",
+     "exp_en": "Тобі потрібна команда.",
+     "tag": "Склади",
+     "tag_pl": "Ułóż",
+     "tag_en": "Build"
+    },
+    {
+     "k": "type",
+     "q": "Напиши українською: «He isn't the winner.»",
+     "q_pl": "Napisz po ukraińsku: „On nie jest zwycięzcą.”",
+     "q_en": "Write in Ukrainian: “He isn't the winner.”",
+     "options": [
+      "Він не переможець.",
+      "Він не переможець"
+     ],
+     "exp": "Він не переможець.",
+     "exp_pl": "Він не переможець.",
+     "exp_en": "Він не переможець.",
+     "tag": "Напиши",
+     "tag_pl": "Napisz",
+     "tag_en": "Write"
+    },
+    {
+     "k": "order",
+     "q": "Склади репліку: «One question, please!»",
+     "q_pl": "Ułóż kwestię: „Jedno pytanie, proszę!”",
+     "q_en": "Build the line: “One question, please!”",
+     "options": [
+      "Одне",
+      "питання,",
+      "будь",
+      "ласка!"
+     ],
+     "exp": "Одне питання, будь ласка!",
+     "exp_pl": "Одне питання, будь ласка!",
+     "exp_en": "Одне питання, будь ласка!",
+     "tag": "Склади",
+     "tag_pl": "Ułóż",
+     "tag_en": "Build"
+    },
+    {
+     "k": "type",
+     "q": "Напиши українською: «Are you sure?»",
+     "q_pl": "Napisz po ukraińsku: „Jesteś pewny?”",
+     "q_en": "Write in Ukrainian: “Are you sure?”",
+     "options": [
+      "Ти впевнений?",
+      "Чи ти впевнений?",
+      "Ти впевнений",
+      "Чи ти впевнений"
+     ],
+     "exp": "Ти впевнений?",
+     "exp_pl": "Ти впевнений?",
+     "exp_en": "Ти впевнений?",
+     "tag": "Напиши",
+     "tag_pl": "Napisz",
+     "tag_en": "Write"
+    },
+    {
+     "k": "order",
+     "q": "Склади репліку: «This time I'm not second!»",
+     "q_pl": "Ułóż kwestię: „Tym razem nie jestem drugi!”",
+     "q_en": "Build the line: “This time I'm not second!”",
+     "options": [
+      "Цього",
+      "разу",
+      "я",
+      "не",
+      "другий!"
+     ],
+     "exp": "Цього разу я не другий!",
+     "exp_pl": "Цього разу я не другий!",
+     "exp_en": "Цього разу я не другий!",
+     "tag": "Склади",
+     "tag_pl": "Ułóż",
+     "tag_en": "Build"
+    }
+   ],
+   "label": "ПИШИ Й СКЛАДАЙ",
+   "label_pl": "PISZ I UKŁADAJ",
+   "label_en": "WRITE AND BUILD",
+   "q": "Ти записуєш репліки для «Новин гонок». Напиши й склади їх українською.",
+   "q_pl": "Zapisujesz kwestie dla „Wiadomości wyścigowych”. Napisz i ułóż je po ukraińsku.",
+   "q_en": "You note down lines for “Racing News”. Write and build them in Ukrainian.",
+   "ins": "Пиши й складай репліки",
+   "ins_pl": "Pisz i układaj kwestie",
+   "ins_en": "Write and build the lines",
+   "tip": "Потрібно 70%+.",
+   "tip_pl": "Potrzeba 70%+.",
+   "tip_en": "You need 70%+."
+  },
+  {
+   "type": "speaking",
+   "say": "Я не втомлений! Я — переможець!",
+   "label": "ГОВОРІННЯ",
+   "label_pl": "MÓWIENIE",
+   "label_en": "SPEAKING",
+   "q": "Скажи журналістам вголос, як Маккуїн.",
+   "q_pl": "Powiedz dziennikarzom na głos jak Zygzak.",
+   "q_en": "Say it to the reporters, out loud, like McQueen.",
+   "qt_pl": "Powiedz dziennikarzom na głos jak Zygzak.",
+   "qt_en": "Say it to the reporters, out loud, like McQueen.",
+   "ins": "Прочитай і скажи вголос",
+   "ins_pl": "Przeczytaj i powiedz na głos",
+   "ins_en": "Read it and say it aloud",
+   "tip": "Переклад: I'm not tired! I'm the winner!",
+   "tip_pl": "Tłumaczenie: Nie jestem zmęczony! Jestem zwycięzcą!",
+   "tip_en": "Translation: I'm not tired! I'm the winner!"
+  },
+  {
+   "type": "speaking",
+   "say": "Тобі потрібна команда, малий. Ти не сам.",
+   "label": "ГОВОРІННЯ",
+   "label_pl": "MÓWIENIE",
+   "label_en": "SPEAKING",
+   "q": "Скажи вголос спокійно, як Король.",
+   "q_pl": "Powiedz na głos spokojnie jak Król.",
+   "q_en": "Say it out loud calmly, like the King.",
+   "qt_pl": "Powiedz na głos spokojnie jak Król.",
+   "qt_en": "Say it out loud calmly, like the King.",
+   "ins": "Прочитай і скажи вголос",
+   "ins_pl": "Przeczytaj i powiedz na głos",
+   "ins_en": "Read it and say it aloud",
+   "tip": "Переклад: You need a team, kid. You're not alone.",
+   "tip_pl": "Tłumaczenie: Potrzebujesz zespołu, mały. Nie jesteś sam.",
+   "tip_en": "Translation: You need a team, kid. You're not alone."
+  },
+  {
+   "type": "drill",
+   "kind": "set",
+   "items": [
+    {
+     "q": "Перший, ____, третій.",
+     "options": [
+      "другий",
+      "разом",
+      "тиждень"
+     ],
+     "answer": 0,
+     "exp": "Другий = second.",
+     "exp_pl": "Другий = drugi.",
+     "exp_en": "Другий = second.",
+     "tr": "First, second, third.",
+     "tr_pl": "Pierwszy, drugi, trzeci.",
+     "tr_en": "First, second, third.",
+     "tag": "Слово",
+     "tag_pl": "Słowo",
+     "tag_en": "Word"
+    },
+    {
+     "q": "Гонка не завтра. Вона через один ____.",
+     "options": [
+      "друг",
+      "тиждень",
+      "номер"
+     ],
+     "answer": 1,
+     "exp": "Тиждень = week.",
+     "exp_pl": "Тиждень = tydzień.",
+     "exp_en": "Тиждень = week.",
+     "tr": "The race isn't tomorrow. It's in one week.",
+     "tr_pl": "Wyścig nie jest jutro. Jest za tydzień.",
+     "tr_en": "The race isn't tomorrow. It's in one week.",
+     "tag": "Слово",
+     "tag_pl": "Słowo",
+     "tag_en": "Word"
+    },
+    {
+     "q": "Журналіст питає, а Маккуїн дає ____.",
+     "options": [
+      "камеру",
+      "нічию",
+      "відповідь"
+     ],
+     "answer": 2,
+     "exp": "Відповідь = answer.",
+     "exp_pl": "Відповідь = odpowiedź.",
+     "exp_en": "Відповідь = answer.",
+     "tr": "The reporter asks and McQueen gives an answer.",
+     "tr_pl": "Dziennikarz pyta, a Zygzak daje odpowiedź.",
+     "tr_en": "The reporter asks and McQueen gives an answer.",
+     "tag": "Слово",
+     "tag_pl": "Słowo",
+     "tag_en": "Word"
+    },
+    {
+     "q": "Король не молодий. Він ____.",
+     "options": [
+      "старий",
+      "другий",
+      "щасливий"
+     ],
+     "answer": 0,
+     "exp": "Старий ↔ молодий.",
+     "exp_pl": "Старий (stary) ↔ молодий (młody).",
+     "exp_en": "Старий (old) ↔ молодий (young).",
+     "tr": "The King isn't young. He's old.",
+     "tr_pl": "Król nie jest młody. Jest stary.",
+     "tr_en": "The King isn't young. He's old.",
+     "tag": "Слово",
+     "tag_pl": "Słowo",
+     "tag_en": "Word"
+    },
+    {
+     "q": "Маккуїн не старий. Він ____.",
+     "options": [
+      "важкий",
+      "молодий",
+      "другий"
+     ],
+     "answer": 1,
+     "exp": "Молодий = young.",
+     "exp_pl": "Молодий = młody.",
+     "exp_en": "Молодий = young.",
+     "tr": "McQueen isn't old. He's young.",
+     "tr_pl": "Zygzak nie jest stary. Jest młody.",
+     "tr_en": "McQueen isn't old. He's young.",
+     "tag": "Слово",
+     "tag_pl": "Słowo",
+     "tag_en": "Word"
+    },
+    {
+     "q": "Усі знають Маккуїна. Він ____.",
+     "options": [
+      "грубий",
+      "тихий",
+      "відомий"
+     ],
+     "answer": 2,
+     "exp": "Відомий = famous.",
+     "exp_pl": "Відомий = sławny.",
+     "exp_en": "Відомий = famous.",
+     "tr": "Everyone knows McQueen. He's famous.",
+     "tr_pl": "Wszyscy znają Zygzaka. Jest sławny.",
+     "tr_en": "Everyone knows McQueen. He's famous.",
+     "tag": "Слово",
+     "tag_pl": "Słowo",
+     "tag_en": "Word"
+    },
+    {
+     "q": "Після гонки Мак хоче спати. Він ____.",
+     "options": [
+      "втомлений",
+      "другий",
+      "важливий"
+     ],
+     "answer": 0,
+     "exp": "Втомлений = tired.",
+     "exp_pl": "Втомлений = zmęczony.",
+     "exp_en": "Втомлений = tired.",
+     "tr": "After the race Mack wants to sleep. He's tired.",
+     "tr_pl": "Po wyścigu Maniek chce spać. Jest zmęczony.",
+     "tr_en": "After the race Mack wants to sleep. He's tired.",
+     "tag": "Слово",
+     "tag_pl": "Słowo",
+     "tag_en": "Word"
+    },
+    {
+     "q": "Фанати кричать і співають. Вони ____.",
+     "options": [
+      "порожні",
+      "у захваті",
+      "треті"
+     ],
+     "answer": 1,
+     "exp": "У захваті = excited.",
+     "exp_pl": "У захваті = zachwyceni, podekscytowani.",
+     "exp_en": "У захваті = excited, thrilled.",
+     "tr": "The fans shout and sing. They are excited.",
+     "tr_pl": "Kibice krzyczą i śpiewają. Są zachwyceni.",
+     "tr_en": "The fans shout and sing. They are excited.",
+     "tag": "Слово",
+     "tag_pl": "Słowo",
+     "tag_en": "Word"
+    },
+    {
+     "q": "Без команди дуже ____.",
+     "options": [
+      "легкий",
+      "разом",
+      "важко"
+     ],
+     "answer": 2,
+     "exp": "Важко = it's hard.",
+     "exp_pl": "Важко = trudno.",
+     "exp_en": "Важко = it's hard.",
+     "tr": "It's very hard without a team.",
+     "tr_pl": "Bez zespołu jest bardzo trudno.",
+     "tr_en": "It's very hard without a team.",
+     "tag": "Слово",
+     "tag_pl": "Słowo",
+     "tag_en": "Word"
+    }
+   ],
+   "label": "ПІСЛЯ ГОНКИ · СЛОВА",
+   "label_pl": "PO WYŚCIGU · SŁOWNICTWO",
+   "label_en": "AFTER THE RACE · WORDS",
+   "q": "Вечір після гонки. Ти прибираєш бокс і повторюєш нові слова.",
+   "q_pl": "Wieczór po wyścigu. Sprzątasz boks i powtarzasz nowe słowa.",
+   "q_en": "The evening after the race. You tidy the pit box and go over the new words.",
+   "ins": "Дев’ять питань на слова уроку",
+   "ins_pl": "Dziewięć pytań na słowa lekcji",
+   "ins_en": "Nine questions on the lesson words",
+   "tip": "Потрібно 70%+.",
+   "tip_pl": "Potrzeba 70%+.",
+   "tip_en": "You need 70%+."
+  },
+  {
+   "type": "final",
+   "img": "letter",
+   "answer": 25,
+   "label": "ІНТЕРВ'Ю",
+   "label_pl": "WYWIAD",
+   "label_en": "INTERVIEW",
+   "q": "Журналіст «Новин гонок» питає тебе про фінал. Напиши відповідь (25+ слів): Хто переміг? Маккуїн втомлений? Він щасливий? Яку пораду дає Король? Ти в його команді?",
+   "q_pl": "Dziennikarz „Wiadomości wyścigowych” pyta cię o finał. Napisz odpowiedź po ukraińsku (25+ słów): Kto wygrał? Czy Zygzak jest zmęczony? Czy jest szczęśliwy? Jaką radę daje Król? Czy jesteś w jego zespole?",
+   "q_en": "A “Racing News” reporter asks you about the final. Write your answer in Ukrainian (25+ words): Who won? Is McQueen tired? Is he happy? What advice does the King give? Are you on his team?",
+   "ins": "Напиши відповідь",
+   "ins_pl": "Napisz odpowiedź po ukraińsku",
+   "ins_en": "Write your answer in Ukrainian",
+   "tip": "Ні, Маккуїн не переможець. Це нічия. Він не втомлений, він… Король каже: «…» Я механік, і я…",
+   "tip_pl": "Ні, Маккуїн не переможець. Це нічия. Він не втомлений, він… Король каже: «…» Я механік, і я…",
+   "tip_en": "Ні, Маккуїн не переможець. Це нічия. Він не втомлений, він… Король каже: «…» Я механік, і я…"
+  }
+ ]
+}

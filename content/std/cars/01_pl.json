@@ -1,0 +1,1440 @@
+{
+ "lesson_id": "646d4cb4-11c9-4e8d-b197-2e93af95ee97",
+ "tg": "pl",
+ "tasks": [
+  {
+   "ref": 0
+  },
+  {
+   "type": "intro",
+   "label": "ТВОЯ РОЛЬ",
+   "label_pl": "TWOJA ROLA",
+   "label_en": "YOUR ROLE",
+   "q": "Сьогодні твій перший день у команді механіків Блискавки Маккуїна. Ти стоїш у боксі з ключем у руці, у навушниках — його голос. Усе, що він каже, ти мусиш зрозуміти польською.",
+   "q_pl": "Dziś twój pierwszy dzień w ekipie mechaników Zygzaka McQueena. Stoisz w boksie z kluczem w ręku, w słuchawkach słyszysz jego głos. Wszystko, co mówi, musisz zrozumieć po polsku.",
+   "q_en": "Today is your first day in Lightning McQueen's pit crew. You stand in the pit box with a wrench in your hand, his voice in your headset. You must understand everything he says in Polish."
+  },
+  {
+   "ref": 1
+  },
+  {
+   "type": "match",
+   "options": [
+    "samochód=машина",
+    "wyścig=гонка",
+    "szybki=швидкий",
+    "czerwony=червоний",
+    "gotowy=готовий"
+   ],
+   "options_pl": [
+    "samochód=car",
+    "wyścig=race",
+    "szybki=fast",
+    "czerwony=red",
+    "gotowy=ready"
+   ],
+   "options_en": [
+    "samochód=car",
+    "wyścig=race",
+    "szybki=fast",
+    "czerwony=red",
+    "gotowy=ready"
+   ],
+   "label": "СЦЕНА 1 · СЛОВА",
+   "label_pl": "SCENA 1 · SŁOWA",
+   "label_en": "SCENE 1 · WORDS",
+   "q": "З'єднай польські слова сцени з перекладом.",
+   "q_pl": "Połącz polskie słowa ze sceny z tłumaczeniem.",
+   "q_en": "Match the Polish scene words with their translations.",
+   "qt_pl": "Połącz polskie słowa ze sceny z tłumaczeniem.",
+   "qt_en": "Match the Polish scene words with their translations.",
+   "ins": "П'ять пар зі сцени",
+   "ins_pl": "Pięć par ze sceny",
+   "ins_en": "Five pairs from the scene",
+   "tip": "Не впевнений? Повернись до словника сцени.",
+   "tip_pl": "Nie masz pewności? Wróć do słownika sceny.",
+   "tip_en": "Not sure? Go back to the scene glossary."
+  },
+  {
+   "type": "drill",
+   "kind": "set",
+   "items": [
+    {
+     "q": "Mój ____ to dziewięćdziesiąt pięć.",
+     "options": [
+      "samochód",
+      "numer",
+      "mistrz"
+     ],
+     "answer": 1,
+     "exp": "Numer = номер.",
+     "exp_pl": "Numer = number.",
+     "exp_en": "Numer = number.",
+     "tr": "Мій номер — дев'яносто п'ять.",
+     "tr_pl": "My number is ninety-five.",
+     "tr_en": "My number is ninety-five.",
+     "tag": "Репліка",
+     "tag_pl": "Kwestia",
+     "tag_en": "Line"
+    },
+    {
+     "q": "Jestem ____. Bardzo szybki.",
+     "options": [
+      "stary",
+      "szybki",
+      "niebieski"
+     ],
+     "answer": 1,
+     "exp": "Szybki = швидкий.",
+     "exp_pl": "Szybki = fast.",
+     "exp_en": "Szybki = fast.",
+     "tr": "Я швидкий. Дуже швидкий.",
+     "tr_pl": "I'm fast. Very fast.",
+     "tr_en": "I'm fast. Very fast.",
+     "tag": "Репліка",
+     "tag_pl": "Kwestia",
+     "tag_en": "Line"
+    },
+    {
+     "q": "Dobra, jestem ____.",
+     "options": [
+      "gotowy",
+      "wyścig",
+      "numer"
+     ],
+     "answer": 0,
+     "exp": "Gotowy = готовий.",
+     "exp_pl": "Gotowy = ready.",
+     "exp_en": "Gotowy = ready.",
+     "tr": "Гаразд, я готовий.",
+     "tr_pl": "Okay, I'm ready.",
+     "tr_en": "Okay, I'm ready.",
+     "tag": "Репліка",
+     "tag_pl": "Kwestia",
+     "tag_en": "Line"
+    },
+    {
+     "q": "Zygzak jest czerwony.",
+     "options": [
+      "Prawda",
+      "Fałsz"
+     ],
+     "answer": 0,
+     "exp": "Czerwony = червоний.",
+     "exp_pl": "Czerwony = red.",
+     "exp_en": "Czerwony = red.",
+     "tr": "Маккуїн червоний.",
+     "tr_pl": "McQueen is red.",
+     "tr_en": "McQueen is red.",
+     "tag": "Правда чи ні?",
+     "tag_pl": "Prawda czy nie?",
+     "tag_en": "True or false?"
+    },
+    {
+     "q": "Zygzak ma dużo przyjaciół w zespole.",
+     "options": [
+      "Prawda",
+      "Fałsz"
+     ],
+     "answer": 1,
+     "exp": "Він сам і дуже гордий.",
+     "exp_pl": "He's alone and very proud.",
+     "exp_en": "He's alone and very proud.",
+     "tr": "У Маккуїна багато друзів у команді.",
+     "tr_pl": "McQueen has many friends on his team.",
+     "tr_en": "McQueen has many friends on his team.",
+     "tag": "Правда чи ні?",
+     "tag_pl": "Prawda czy nie?",
+     "tag_en": "True or false?"
+    },
+    {
+     "q": "Zygzak: „Jestem sam. W porządku.” Jak on się czuje?",
+     "options": [
+      "Jest szczęśliwy z przyjaciółmi",
+      "Jest sam, ale udaje, że jest dobrze",
+      "Jest bardzo zły"
+     ],
+     "answer": 1,
+     "exp": "Sam = сам; w porządku = усе гаразд.",
+     "exp_pl": "Sam = alone; w porządku = all is fine.",
+     "exp_en": "Sam = alone; w porządku = all is fine.",
+     "tr": "Маккуїн: «Я сам. Усе гаразд». Як він почувається?",
+     "tr_pl": "McQueen: “I'm alone. All is fine.” How does he feel?",
+     "tr_en": "McQueen: “I'm alone. All is fine.” How does he feel?",
+     "tag": "Зрозумій героя",
+     "tag_pl": "Zrozum bohatera",
+     "tag_en": "Read the hero"
+    }
+   ],
+   "label": "СЦЕНА 1 · ТРЕЙЛЕР",
+   "label_pl": "SCENA 1 · PRZYCZEPA",
+   "label_en": "SCENE 1 · THE TRAILER",
+   "q": "Трейлер перед гонкою. Маккуїн говорить сам із собою.",
+   "q_pl": "Przyczepa przed wyścigiem. Zygzak mówi sam do siebie.",
+   "q_en": "The trailer before the race. McQueen talks to himself.",
+   "ins": "Встав слово, обери правду, зрозумій героя",
+   "ins_pl": "Wstaw słowo, oceń prawdę, zrozum bohatera",
+   "ins_en": "Fill the gap, judge true/false, understand the hero",
+   "tip": "Потрібно 70%+.",
+   "tip_pl": "Potrzeba 70%+.",
+   "tip_en": "You need 70%+."
+  },
+  {
+   "ref": 2
+  },
+  {
+   "type": "match",
+   "options": [
+    "tor=траса",
+    "fan=фанат",
+    "tłum=натовп",
+    "opona=шина",
+    "zielony=зелений"
+   ],
+   "options_pl": [
+    "tor=track",
+    "fan=fan",
+    "tłum=crowd",
+    "opona=tire",
+    "zielony=green"
+   ],
+   "options_en": [
+    "tor=track",
+    "fan=fan",
+    "tłum=crowd",
+    "opona=tire",
+    "zielony=green"
+   ],
+   "label": "СЦЕНА 2 · СЛОВА",
+   "label_pl": "SCENA 2 · SŁOWA",
+   "label_en": "SCENE 2 · WORDS",
+   "q": "З'єднай польські слова сцени з перекладом.",
+   "q_pl": "Połącz polskie słowa ze sceny z tłumaczeniem.",
+   "q_en": "Match the Polish scene words with their translations.",
+   "qt_pl": "Połącz polskie słowa ze sceny z tłumaczeniem.",
+   "qt_en": "Match the Polish scene words with their translations.",
+   "ins": "П'ять пар зі сцени",
+   "ins_pl": "Pięć par ze sceny",
+   "ins_en": "Five pairs from the scene",
+   "tip": "Не впевнений? Повернись до словника сцени.",
+   "tip_pl": "Nie masz pewności? Wróć do słownika sceny.",
+   "tip_en": "Not sure? Go back to the scene glossary."
+  },
+  {
+   "type": "drill",
+   "kind": "set",
+   "items": [
+    {
+     "q": "Posłuchaj ____!",
+     "options": [
+      "tłumu",
+      "opony",
+      "pucharu"
+     ],
+     "answer": 0,
+     "exp": "Tłum = натовп → posłuchaj tłumu.",
+     "exp_pl": "Tłum = crowd → posłuchaj tłumu.",
+     "exp_en": "Tłum = crowd → posłuchaj tłumu.",
+     "tr": "Послухай натовп!",
+     "tr_pl": "Listen to the crowd!",
+     "tr_en": "Listen to the crowd!",
+     "tag": "Репліка",
+     "tag_pl": "Kwestia",
+     "tag_en": "Line"
+    },
+    {
+     "q": "To ____ okrążenie!",
+     "options": [
+      "pierwsze",
+      "ostatnie",
+      "zielone"
+     ],
+     "answer": 1,
+     "exp": "Ostatnie = останнє.",
+     "exp_pl": "Ostatnie = last.",
+     "exp_en": "Ostatnie = last.",
+     "tr": "Це останнє коло!",
+     "tr_pl": "It's the last lap!",
+     "tr_en": "It's the last lap!",
+     "tag": "Репліка",
+     "tag_pl": "Kwestia",
+     "tag_en": "Line"
+    },
+    {
+     "q": "Jestem tu, żeby ____.",
+     "options": [
+      "wygrać",
+      "spać",
+      "tor"
+     ],
+     "answer": 0,
+     "exp": "Wygrać = перемогти, виграти.",
+     "exp_pl": "Wygrać = to win.",
+     "exp_en": "Wygrać = to win.",
+     "tr": "Я тут, щоб перемогти.",
+     "tr_pl": "I'm here to win.",
+     "tr_en": "I'm here to win.",
+     "tag": "Репліка",
+     "tag_pl": "Kwestia",
+     "tag_en": "Line"
+    },
+    {
+     "q": "Radio: „Moja opona! O nie!” Co się stało?",
+     "options": [
+      "Zygzak wygrał",
+      "Problem z oponą",
+      "Zygzak śpi"
+     ],
+     "answer": 1,
+     "exp": "Opona = шина.",
+     "exp_pl": "Opona = tire.",
+     "exp_en": "Opona = tire.",
+     "tr": "Радіо: «Моя шина! О ні!» Що сталося?",
+     "tr_pl": "Radio: “My tire! Oh no!” What happened?",
+     "tr_en": "Radio: “My tire! Oh no!” What happened?",
+     "tag": "Радіо",
+     "tag_pl": "Radio",
+     "tag_en": "Radio"
+    },
+    {
+     "q": "Zygzak: „Bez opon! Tylko paliwo!” Co robisz w boksie?",
+     "options": [
+      "Zmieniam wszystkie opony",
+      "Daję tylko paliwo",
+      "Idę do domu"
+     ],
+     "answer": 1,
+     "exp": "Ти виконуєш команду — але це ризиковано!",
+     "exp_pl": "Wykonujesz polecenie — ale to ryzykowne!",
+     "exp_en": "You follow the order — but it's risky!",
+     "tr": "Маккуїн: «Без шин! Тільки пальне!» Що ти робиш у боксі?",
+     "tr_pl": "McQueen: “No tires! Only fuel!” What do you do in the pit?",
+     "tr_en": "McQueen: “No tires! Only fuel!” What do you do in the pit?",
+     "tag": "Твій вибір",
+     "tag_pl": "Twój wybór",
+     "tag_en": "Your call"
+    },
+    {
+     "q": "Chick Hicks jest zielony.",
+     "options": [
+      "Prawda",
+      "Fałsz"
+     ],
+     "answer": 0,
+     "exp": "Він зелений і злий.",
+     "exp_pl": "He's green and angry.",
+     "exp_en": "He's green and angry.",
+     "tr": "Чік Хікс зелений.",
+     "tr_pl": "Chick Hicks is green.",
+     "tr_en": "Chick Hicks is green.",
+     "tag": "Правда чи ні?",
+     "tag_pl": "Prawda czy nie?",
+     "tag_en": "True or false?"
+    }
+   ],
+   "label": "СЦЕНА 2 · ТРАСА",
+   "label_pl": "SCENA 2 · TOR",
+   "label_en": "SCENE 2 · THE TRACK",
+   "q": "Гонка за Кубок Поршня. Ти слухаєш радіо в боксі.",
+   "q_pl": "Wyścig o Puchar Tłoka. Słuchasz radia w boksie.",
+   "q_en": "The Piston Cup race. You listen to the radio in the pit.",
+   "ins": "Встав слово, обери правду, зрозумій героя",
+   "ins_pl": "Wstaw słowo, oceń prawdę, zrozum bohatera",
+   "ins_en": "Fill the gap, judge true/false, understand the hero",
+   "tip": "Потрібно 70%+.",
+   "tip_pl": "Potrzeba 70%+.",
+   "tip_en": "You need 70%+."
+  },
+  {
+   "ref": 3
+  },
+  {
+   "type": "match",
+   "options": [
+    "meta=фініш",
+    "zdjęcie=фото",
+    "puchar=кубок",
+    "mistrz=чемпіон",
+    "niebieski=синій"
+   ],
+   "options_pl": [
+    "meta=finish line",
+    "zdjęcie=photo",
+    "puchar=cup",
+    "mistrz=champion",
+    "niebieski=blue"
+   ],
+   "options_en": [
+    "meta=finish line",
+    "zdjęcie=photo",
+    "puchar=cup",
+    "mistrz=champion",
+    "niebieski=blue"
+   ],
+   "label": "СЦЕНА 3 · СЛОВА",
+   "label_pl": "SCENA 3 · SŁOWA",
+   "label_en": "SCENE 3 · WORDS",
+   "q": "З'єднай польські слова сцени з перекладом.",
+   "q_pl": "Połącz polskie słowa ze sceny z tłumaczeniem.",
+   "q_en": "Match the Polish scene words with their translations.",
+   "qt_pl": "Połącz polskie słowa ze sceny z tłumaczeniem.",
+   "qt_en": "Match the Polish scene words with their translations.",
+   "ins": "П'ять пар зі сцени",
+   "ins_pl": "Pięć par ze sceny",
+   "ins_en": "Five pairs from the scene",
+   "tip": "Не впевнений? Повернись до словника сцени.",
+   "tip_pl": "Nie masz pewności? Wróć do słownika sceny.",
+   "tip_en": "Not sure? Go back to the scene glossary."
+  },
+  {
+   "type": "drill",
+   "kind": "set",
+   "items": [
+    {
+     "q": "Spójrz na ____!",
+     "options": [
+      "zdjęcie",
+      "tor",
+      "oponę"
+     ],
+     "answer": 0,
+     "exp": "Zdjęcie = фото.",
+     "exp_pl": "Zdjęcie = photo.",
+     "exp_en": "Zdjęcie = photo.",
+     "tr": "Подивись на фото!",
+     "tr_pl": "Look at the photo!",
+     "tr_en": "Look at the photo!",
+     "tag": "Репліка",
+     "tag_pl": "Kwestia",
+     "tag_en": "Line"
+    },
+    {
+     "q": "____ jest mój!",
+     "options": [
+      "Tłum",
+      "Puchar",
+      "Meta"
+     ],
+     "answer": 1,
+     "exp": "Puchar = кубок.",
+     "exp_pl": "Puchar = cup.",
+     "exp_en": "Puchar = cup.",
+     "tr": "Кубок мій!",
+     "tr_pl": "The cup is mine!",
+     "tr_en": "The cup is mine!",
+     "tag": "Репліка",
+     "tag_pl": "Kwestia",
+     "tag_en": "Line"
+    },
+    {
+     "q": "On jest ____!",
+     "options": [
+      "oponą",
+      "zdjęciem",
+      "Królem"
+     ],
+     "answer": 2,
+     "exp": "Król → On jest Królem (Він — Король).",
+     "exp_pl": "Król → On jest Królem (He's The King).",
+     "exp_en": "Król → On jest Królem (He's The King).",
+     "tr": "Він — Король!",
+     "tr_pl": "He's The King!",
+     "tr_en": "He's The King!",
+     "tag": "Репліка",
+     "tag_pl": "Kwestia",
+     "tag_en": "Line"
+    },
+    {
+     "q": "Spiker: „Raz, dwa, trzy — to jest to samo!” Co to znaczy?",
+     "options": [
+      "Zygzak wygrał",
+      "Remis",
+      "Nie ma wyścigu"
+     ],
+     "answer": 1,
+     "exp": "To samo = те саме → нічия.",
+     "exp_pl": "To samo = the same → a tie.",
+     "exp_en": "To samo = the same → a tie.",
+     "tr": "Диктор: «Раз, два, три — це те саме!» Що це означає?",
+     "tr_pl": "Announcer: “One, two, three — it's the same!” What does it mean?",
+     "tr_en": "Announcer: “One, two, three — it's the same!” What does it mean?",
+     "tag": "Диктор",
+     "tag_pl": "Spiker",
+     "tag_en": "Announcer"
+    },
+    {
+     "q": "Po mecie wszyscy wiedzą, kto jest mistrzem.",
+     "options": [
+      "Prawda",
+      "Fałsz"
+     ],
+     "answer": 1,
+     "exp": "Нічия — буде ще одна гонка.",
+     "exp_pl": "A tie — there will be one more race.",
+     "exp_en": "A tie — there will be one more race.",
+     "tr": "Після фінішу всі знають, хто чемпіон.",
+     "tr_pl": "After the finish everyone knows who the champion is.",
+     "tr_en": "After the finish everyone knows who the champion is.",
+     "tag": "Правда чи ні?",
+     "tag_pl": "Prawda czy nie?",
+     "tag_en": "True or false?"
+    },
+    {
+     "q": "Król jest niebieski.",
+     "options": [
+      "Prawda",
+      "Fałsz"
+     ],
+     "answer": 0,
+     "exp": "Niebieski = синій.",
+     "exp_pl": "Niebieski = blue.",
+     "exp_en": "Niebieski = blue.",
+     "tr": "Король синій.",
+     "tr_pl": "The King is blue.",
+     "tr_en": "The King is blue.",
+     "tag": "Правда чи ні?",
+     "tag_pl": "Prawda czy nie?",
+     "tag_en": "True or false?"
+    }
+   ],
+   "label": "СЦЕНА 3 · ФІНІШ",
+   "label_pl": "SCENA 3 · META",
+   "label_en": "SCENE 3 · THE FINISH",
+   "q": "Три машини перетинають фініш разом. Хто переміг?",
+   "q_pl": "Trzy auta mijają metę razem. Kto wygrał?",
+   "q_en": "Three cars cross the line together. Who won?",
+   "ins": "Встав слово, обери правду, зрозумій героя",
+   "ins_pl": "Wstaw słowo, oceń prawdę, zrozum bohatera",
+   "ins_en": "Fill the gap, judge true/false, understand the hero",
+   "tip": "Потрібно 70%+.",
+   "tip_pl": "Potrzeba 70%+.",
+   "tip_en": "You need 70%+."
+  },
+  {
+   "type": "intro",
+   "label": "ПРАВИЛО",
+   "label_pl": "ZASADA",
+   "label_en": "RULE",
+   "q": "Дієслово być (бути) у польській змінюється: ja jestem, ty jesteś, on/ona jest, my jesteśmy, wy jesteście, oni są. Іменник після być стоїть в орудному відмінку: Jestem mechanikiem. On jest mistrzem. Прикметник — у називному: Jestem szybki. Król jest stary.",
+   "q_pl": "Czasownik być odmienia się: ja jestem, ty jesteś, on/ona jest, my jesteśmy, wy jesteście, oni są. Rzeczownik po być stoi w narzędniku: Jestem mechanikiem. On jest mistrzem. Przymiotnik stoi w mianowniku: Jestem szybki. Król jest stary.",
+   "q_en": "The verb być (to be) changes with the person: ja jestem, ty jesteś, on/ona jest, my jesteśmy, wy jesteście, oni są. A noun after być goes into the instrumental: Jestem mechanikiem. On jest mistrzem. An adjective stays in the nominative: Jestem szybki. Król jest stary."
+  },
+  {
+   "type": "drill",
+   "kind": "set",
+   "items": [
+    {
+     "q": "Zygzak: „Ja ____ szybki!”",
+     "options": [
+      "jest",
+      "jestem",
+      "są"
+     ],
+     "answer": 1,
+     "exp": "Ja → jestem.",
+     "exp_pl": "Ja → jestem.",
+     "exp_en": "Ja → jestem.",
+     "tr": "Я швидкий!",
+     "tr_pl": "I'm fast!",
+     "tr_en": "I'm fast!"
+    },
+    {
+     "q": "Ty: „Cześć! Jestem ____.”",
+     "options": [
+      "mechanik",
+      "mechanikiem",
+      "mechanika"
+     ],
+     "answer": 1,
+     "exp": "Іменник після być — орудний: mechanikiem.",
+     "exp_pl": "Noun after być — instrumental: mechanikiem.",
+     "exp_en": "Noun after być — instrumental: mechanikiem.",
+     "tr": "Привіт! Я механік.",
+     "tr_pl": "Hi! I'm a mechanic.",
+     "tr_en": "Hi! I'm a mechanic."
+    },
+    {
+     "q": "Zygzak do ciebie: „Ty ____ nowy?”",
+     "options": [
+      "jesteś",
+      "jestem",
+      "jesteśmy"
+     ],
+     "answer": 0,
+     "exp": "Ty → jesteś.",
+     "exp_pl": "Ty → jesteś.",
+     "exp_en": "Ty → jesteś.",
+     "tr": "Ти новенький?",
+     "tr_pl": "Are you new?",
+     "tr_en": "Are you new?"
+    },
+    {
+     "q": "Spiker: „Król ____ mistrzem!”",
+     "options": [
+      "są",
+      "jesteś",
+      "jest"
+     ],
+     "answer": 2,
+     "exp": "On (Król) → jest.",
+     "exp_pl": "On (Król) → jest.",
+     "exp_en": "On (Król) → jest.",
+     "tr": "Король — чемпіон!",
+     "tr_pl": "The King is a champion!",
+     "tr_en": "The King is a champion!"
+    },
+    {
+     "q": "Król: „Jestem ____, młody.”",
+     "options": [
+      "stary",
+      "starym",
+      "starego"
+     ],
+     "answer": 0,
+     "exp": "Прикметник без іменника — у називному: stary.",
+     "exp_pl": "Adjective alone — nominative: stary.",
+     "exp_en": "Adjective alone — nominative: stary.",
+     "tr": "Я старий, малий.",
+     "tr_pl": "I'm old, kid.",
+     "tr_en": "I'm old, kid."
+    },
+    {
+     "q": "Ty do fanów: „My ____ zespołem!”",
+     "options": [
+      "są",
+      "jesteśmy",
+      "jest"
+     ],
+     "answer": 1,
+     "exp": "My → jesteśmy.",
+     "exp_pl": "My → jesteśmy.",
+     "exp_en": "My → jesteśmy.",
+     "tr": "Ми команда!",
+     "tr_pl": "We are a team!",
+     "tr_en": "We are a team!"
+    },
+    {
+     "q": "Chick: „Ja jestem ____!”",
+     "options": [
+      "mistrz",
+      "mistrza",
+      "mistrzem"
+     ],
+     "answer": 2,
+     "exp": "Після być — орудний: mistrzem.",
+     "exp_pl": "After być — instrumental: mistrzem.",
+     "exp_en": "After być — instrumental: mistrzem.",
+     "tr": "Я чемпіон!",
+     "tr_pl": "I'm the champion!",
+     "tr_en": "I'm the champion!"
+    },
+    {
+     "q": "Spiker: „Oni ____ razem na mecie!”",
+     "options": [
+      "jest",
+      "są",
+      "jesteście"
+     ],
+     "answer": 1,
+     "exp": "Oni → są.",
+     "exp_pl": "Oni → są.",
+     "exp_en": "Oni → są.",
+     "tr": "Вони разом на фініші!",
+     "tr_pl": "They're at the finish together!",
+     "tr_en": "They're at the finish together!"
+    },
+    {
+     "q": "Ty do Zygzaka i Króla: „Wy ____ szybcy!”",
+     "options": [
+      "jesteście",
+      "jesteśmy",
+      "są"
+     ],
+     "answer": 0,
+     "exp": "Wy → jesteście.",
+     "exp_pl": "Wy → jesteście.",
+     "exp_en": "Wy → jesteście.",
+     "tr": "Ви швидкі!",
+     "tr_pl": "You're fast!",
+     "tr_en": "You're fast!"
+    },
+    {
+     "q": "Zygzak: „Jestem ____ wyścigowym.”",
+     "options": [
+      "auto",
+      "autem",
+      "auta"
+     ],
+     "answer": 1,
+     "exp": "Auto → jestem autem (орудний).",
+     "exp_pl": "Auto → jestem autem (instrumental).",
+     "exp_en": "Auto → jestem autem (instrumental).",
+     "tr": "Я гоночна машина.",
+     "tr_pl": "I'm a race car.",
+     "tr_en": "I'm a race car."
+    }
+   ],
+   "label": "ГРАМАТИКА · ХТО Є ХТО",
+   "label_pl": "GRAMATYKA · KTO JEST KIM",
+   "label_en": "GRAMMAR · WHO IS WHO",
+   "q": "Репліки з гонки. Обери правильну форму.",
+   "q_pl": "Kwestie z wyścigu. Wybierz poprawną formę.",
+   "q_en": "Lines from the race. Choose the correct form.",
+   "ins": "Форми być: jestem / jesteś / jest…",
+   "ins_pl": "Formy być: jestem / jesteś / jest…",
+   "ins_en": "Forms of być: jestem / jesteś / jest…",
+   "tip": "Потрібно 70%+.",
+   "tip_pl": "Potrzeba 70%+.",
+   "tip_en": "You need 70%+."
+  },
+  {
+   "type": "reading",
+   "items": [
+    {
+     "q": "Dziś na stadionie jest wielki ____.",
+     "options": [
+      "numer",
+      "wyścig",
+      "opona"
+     ],
+     "answer": 1
+    },
+    {
+     "q": "____ krzyczy: „Zygzak! Zygzak!”",
+     "options": [
+      "Tłum",
+      "Opona",
+      "Puchar"
+     ],
+     "answer": 0
+    },
+    {
+     "q": "Zygzak McQueen ____ czerwonym autem z numerem dziewięćdziesiąt pięć.",
+     "options": [
+      "są",
+      "jest",
+      "jestem"
+     ],
+     "answer": 1
+    },
+    {
+     "q": "Jest debiutantem, ale jest bardzo ____.",
+     "options": [
+      "szybka",
+      "szybkie",
+      "szybki"
+     ],
+     "answer": 2
+    },
+    {
+     "q": "W przyczepie mówi do siebie: „Jestem szybkością”."
+    },
+    {
+     "q": "Nie ma przyjaciół. Jest ____ i bardzo dumny.",
+     "options": [
+      "sam",
+      "sama",
+      "same"
+     ],
+     "answer": 0
+    },
+    {
+     "q": "Na torze ma dwóch rywali."
+    },
+    {
+     "q": "Król jest starym ____.",
+     "options": [
+      "mistrz",
+      "mistrzem",
+      "mistrza"
+     ],
+     "answer": 1
+    },
+    {
+     "q": "Król jest ____, dobry i mądry.",
+     "options": [
+      "niebieska",
+      "niebieski",
+      "niebieskie"
+     ],
+     "answer": 1
+    },
+    {
+     "q": "Chick Hicks jest ____ i zawsze drugi.",
+     "options": [
+      "zielona",
+      "zielone",
+      "zielony"
+     ],
+     "answer": 2
+    },
+    {
+     "q": "Na ostatnim okrążeniu pęka ____.",
+     "options": [
+      "zdjęcie",
+      "opona",
+      "puchar"
+     ],
+     "answer": 1
+    },
+    {
+     "q": "Zygzak nie chce stać w boksie: „Jestem tu, żeby ____!”",
+     "options": [
+      "spać",
+      "wygrać",
+      "meta"
+     ],
+     "answer": 1
+    },
+    {
+     "q": "Trzy auta są razem na ____.",
+     "options": [
+      "oponie",
+      "numerze",
+      "mecie"
+     ],
+     "answer": 2
+    },
+    {
+     "q": "Nikt nie wie, kto wygrał."
+    },
+    {
+     "q": "Wszyscy patrzą na ____ z mety.",
+     "options": [
+      "oponę",
+      "numer",
+      "zdjęcie"
+     ],
+     "answer": 2
+    },
+    {
+     "q": "Spiker mówi: „To remis! Za tydzień jest jeszcze jeden wyścig w Kalifornii”."
+    }
+   ],
+   "label": "НОВИНИ ГОНОК",
+   "label_pl": "WIADOMOŚCI WYŚCIGOWE",
+   "label_en": "RACING NEWS",
+   "q": "Газета «Wiadomości Wyścigowe» пише про фінальну гонку. Прочитай статтю польською й обери правильні слова.",
+   "q_pl": "Gazeta „Wiadomości Wyścigowe” pisze o finałowym wyścigu. Przeczytaj artykuł i wybierz właściwe słowa.",
+   "q_en": "The “Racing News” paper reports on the final race. Read the article in Polish and choose the right words.",
+   "tip": "Нічия — переможця поки немає.",
+   "tip_pl": "Remis — na razie nie ma zwycięzcy.",
+   "tip_en": "A tie — no winner yet.",
+   "title": "„Wiadomości Wyścigowe”: remis w Pucharze Tłoka",
+   "title_pl": "„Wiadomości Wyścigowe”: remis w Pucharze Tłoka",
+   "title_en": "“Racing News”: a tie at the Piston Cup"
+  },
+  {
+   "type": "drill",
+   "kind": "set",
+   "items": [
+    {
+     "q": "Jakiego koloru jest Zygzak?",
+     "options": [
+      "Niebieski",
+      "Czerwony",
+      "Zielony"
+     ],
+     "answer": 1,
+     "exp": "У статті: czerwonym autem.",
+     "exp_pl": "In the article: czerwonym autem (a red car).",
+     "exp_en": "In the article: czerwonym autem (a red car).",
+     "tr": "Якого кольору Маккуїн?",
+     "tr_pl": "What colour is McQueen?",
+     "tr_en": "What colour is McQueen?"
+    },
+    {
+     "q": "Kim jest Król?",
+     "options": [
+      "Debiutantem",
+      "Mechanikiem",
+      "Starym mistrzem"
+     ],
+     "answer": 2,
+     "exp": "Król jest starym mistrzem = Король — старий чемпіон.",
+     "exp_pl": "Król jest starym mistrzem = The King is an old champion.",
+     "exp_en": "Król jest starym mistrzem = The King is an old champion.",
+     "tr": "Хто такий Король?",
+     "tr_pl": "Who is The King?",
+     "tr_en": "Who is The King?"
+    },
+    {
+     "q": "Co pęka na ostatnim okrążeniu?",
+     "options": [
+      "Opona",
+      "Puchar",
+      "Meta"
+     ],
+     "answer": 0,
+     "exp": "Opona = шина.",
+     "exp_pl": "Opona = tire.",
+     "exp_en": "Opona = tire.",
+     "tr": "Що лопається на останньому колі?",
+     "tr_pl": "What bursts on the last lap?",
+     "tr_en": "What bursts on the last lap?"
+    },
+    {
+     "q": "Ile aut jest razem na mecie?",
+     "options": [
+      "Dwa",
+      "Trzy",
+      "Cztery"
+     ],
+     "answer": 1,
+     "exp": "Trzy auta = три машини.",
+     "exp_pl": "Trzy auta = three cars.",
+     "exp_en": "Trzy auta = three cars.",
+     "tr": "Скільки машин разом на фініші?",
+     "tr_pl": "How many cars are at the finish together?",
+     "tr_en": "How many cars are at the finish together?"
+    },
+    {
+     "q": "Gdzie jest następny wyścig?",
+     "options": [
+      "W Kalifornii",
+      "Na pustyni",
+      "W boksie"
+     ],
+     "answer": 0,
+     "exp": "За тиждень — гонка в Каліфорнії.",
+     "exp_pl": "In a week — a race in California.",
+     "exp_en": "In a week — a race in California.",
+     "tr": "Де наступна гонка?",
+     "tr_pl": "Where is the next race?",
+     "tr_en": "Where is the next race?"
+    }
+   ],
+   "label": "РОЗУМІННЯ ТЕКСТУ",
+   "label_pl": "ROZUMIENIE TEKSTU",
+   "label_en": "READING CHECK",
+   "q": "П'ять питань до статті.",
+   "q_pl": "Pięć pytań do artykułu.",
+   "q_en": "Five questions about the article.",
+   "ins": "Обери відповідь за текстом",
+   "ins_pl": "Wybierz odpowiedź według tekstu",
+   "ins_en": "Answer from the text",
+   "tip": "Потрібно 70%+.",
+   "tip_pl": "Potrzeba 70%+.",
+   "tip_en": "You need 70%+."
+  },
+  {
+   "type": "quest",
+   "img": "pitch",
+   "start": "s1",
+   "q": "Остання гонка сезону. Ти в боксі, у навушниках — Маккуїн. Відповідай йому польською.",
+   "q_pl": "Ostatni wyścig sezonu. Jesteś w boksie, w słuchawkach Zygzak. Odpowiadaj mu po polsku.",
+   "q_en": "The last race of the season. You're in the pit, McQueen is in your headset. Answer him in Polish.",
+   "label": "КВЕСТ: РАДІО",
+   "label_pl": "QUEST: RADIO",
+   "label_en": "QUEST: RADIO",
+   "ins": "Кожен вибір веде далі. Обирай уважно — польською",
+   "ins_pl": "Każdy wybór prowadzi dalej. Wybieraj uważnie — po polsku",
+   "ins_en": "Every choice leads on. Choose carefully — in Polish",
+   "tip": "Квест перевіряє слова й граматику уроку.",
+   "tip_pl": "Quest sprawdza słowa i gramatykę lekcji.",
+   "tip_en": "The quest checks the lesson's words and grammar.",
+   "steps": {
+    "s1": {
+     "q": "Маккуїн: „Kim jesteś? Nie znam cię.” (Хто ти? Я тебе не знаю.)",
+     "q_pl": "Zygzak: „Kim jesteś? Nie znam cię.” (Who are you? I don't know you.)",
+     "q_en": "McQueen: „Kim jesteś? Nie znam cię.” (Who are you? I don't know you.)",
+     "scene": "Старт за хвилину.",
+     "scene_pl": "Start za minutę.",
+     "scene_en": "One minute to the start.",
+     "choices": [
+      {
+       "t": "Jestem nowym mechanikiem. Jesteśmy zespołem!",
+       "ok": true,
+       "next": "s2",
+       "fb": "Так! Після być — орудний.",
+       "fb_pl": "Tak! Po być — narzędnik.",
+       "fb_en": "Yes! Instrumental after być."
+      },
+      {
+       "t": "Ja jest mechanik.",
+       "ok": false,
+       "next": "s1b",
+       "fb": "Ні: ja jestem mechanikiem.",
+       "fb_pl": "Nie: ja jestem mechanikiem.",
+       "fb_en": "No: ja jestem mechanikiem."
+      }
+     ]
+    },
+    "s1b": {
+     "q": "Маккуїн: „Co? Mów normalnie!” (Що? Говори нормально!)",
+     "q_pl": "Zygzak: „Co? Mów normalnie!” (What? Speak normally!)",
+     "q_en": "McQueen: „Co? Mów normalnie!” (What? Speak normally!)",
+     "scene": "Він сердиться.",
+     "scene_pl": "Jest zły.",
+     "scene_en": "He's angry.",
+     "choices": [
+      {
+       "t": "Jestem mechanikiem. Jestem tu, żeby pomóc.",
+       "ok": true,
+       "next": "s2",
+       "fb": "Так!",
+       "fb_pl": "Tak!",
+       "fb_en": "Yes!"
+      },
+      {
+       "t": "Mechanik jesteś ja.",
+       "ok": false,
+       "next": "end_bad",
+       "fb": "Так не кажуть.",
+       "fb_pl": "Tak się nie mówi.",
+       "fb_en": "That's not how you say it."
+      }
+     ]
+    },
+    "s2": {
+     "q": "Маккуїн: „Które to okrążenie?” (Яке це коло?)",
+     "q_pl": "Zygzak: „Które to okrążenie?” (Which lap is it?)",
+     "q_en": "McQueen: „Które to okrążenie?” (Which lap is it?)",
+     "scene": "Табло показує: залишилось 1 коло.",
+     "scene_pl": "Tablica pokazuje: zostało 1 okrążenie.",
+     "scene_en": "The board shows: 1 lap to go.",
+     "choices": [
+      {
+       "t": "To jest pierwsze okrążenie!",
+       "ok": false,
+       "next": "s3",
+       "fb": "Ні, це останнє.",
+       "fb_pl": "Nie, to ostatnie.",
+       "fb_en": "No, it's the last one."
+      },
+      {
+       "t": "To jest ostatnie okrążenie!",
+       "ok": true,
+       "next": "s3",
+       "fb": "Ostatnie = останнє.",
+       "fb_pl": "Ostatnie = ostatnie (last).",
+       "fb_en": "Ostatnie = last."
+      }
+     ]
+    },
+    "s3": {
+     "q": "Маккуїн: „Opony są dobre?” (Шини в порядку?)",
+     "q_pl": "Zygzak: „Opony są dobre?” (Are the tires okay?)",
+     "q_en": "McQueen: „Opony są dobre?” (Are the tires okay?)",
+     "scene": "Його шини старі.",
+     "scene_pl": "Jego opony są stare.",
+     "scene_en": "His tires are old.",
+     "choices": [
+      {
+       "t": "Opony są stare. Zjedź do boksu!",
+       "ok": true,
+       "next": "end_good",
+       "fb": "Розумно!",
+       "fb_pl": "Mądrze!",
+       "fb_en": "Smart!"
+      },
+      {
+       "t": "Jesteś szybki. Tylko paliwo!",
+       "ok": true,
+       "next": "end_mid",
+       "fb": "Ризиковано…",
+       "fb_pl": "Ryzykownie…",
+       "fb_en": "Risky…"
+      }
+     ]
+    }
+   },
+   "endings": {
+    "end_good": {
+     "good": true,
+     "title": "Кінцівка: Справжня команда",
+     "title_pl": "Zakończenie: Prawdziwy zespół",
+     "title_en": "Ending: A Real Team",
+     "text": "Маккуїн заїжджає в бокс, ви міняєте шини — і він фінішує разом із Королем і Чіком. Уперше він каже тобі: «Dziękuję» (дякую).",
+     "text_pl": "Zygzak zjeżdża do boksu, zmieniacie opony — i dojeżdża do mety razem z Królem i Chickiem. Pierwszy raz mówi ci: „Dziękuję”.",
+     "text_en": "McQueen pits, you change the tires — and he finishes together with The King and Chick. For the first time he says to you: “Dziękuję” (thank you)."
+    },
+    "end_mid": {
+     "good": true,
+     "title": "Кінцівка: Як у фільмі",
+     "title_pl": "Zakończenie: Jak w filmie",
+     "title_en": "Ending: Just like the film",
+     "text": "На останньому колі шини лопаються! Маккуїн ледь доїжджає до фінішу. Нічия — саме так, як у фільмі.",
+     "text_pl": "Na ostatnim okrążeniu pękają opony! Zygzak ledwo dojeżdża do mety. Remis — dokładnie jak w filmie.",
+     "text_en": "On the last lap the tires blow! McQueen barely makes it to the finish. A tie — just like in the film."
+    },
+    "end_bad": {
+     "good": false,
+     "title": "Кінцівка: Тебе не зрозуміли",
+     "title_pl": "Zakończenie: Nie zrozumiał cię",
+     "title_en": "Ending: Nobody understood you",
+     "text": "Маккуїн вимикає радіо. Спробуй ще раз — говори просто: «Jestem mechanikiem».",
+     "text_pl": "Zygzak wyłącza radio. Spróbuj jeszcze raz — mów prosto: „Jestem mechanikiem”.",
+     "text_en": "McQueen turns off the radio. Try again — keep it simple: “Jestem mechanikiem”."
+    }
+   }
+  },
+  {
+   "type": "drill",
+   "kind": "set",
+   "items": [
+    {
+     "k": "type",
+     "q": "Напиши польською: «Я швидкий.»",
+     "q_pl": "Napisz po polsku: „I'm fast.”",
+     "q_en": "Write in Polish: “I'm fast.”",
+     "options": [
+      "Jestem szybki.",
+      "Jestem szybki",
+      "Ja jestem szybki.",
+      "Ja jestem szybki"
+     ],
+     "exp": "Jestem szybki.",
+     "exp_pl": "Jestem szybki.",
+     "exp_en": "Jestem szybki.",
+     "tag": "Напиши",
+     "tag_pl": "Napisz",
+     "tag_en": "Write"
+    },
+    {
+     "k": "order",
+     "q": "Склади репліку: «Це велика гонка!»",
+     "q_pl": "Ułóż kwestię: „This is the big race!”",
+     "q_en": "Build the line: “This is the big race!”",
+     "options": [
+      "To",
+      "jest",
+      "wielki",
+      "wyścig!"
+     ],
+     "exp": "To jest wielki wyścig!",
+     "exp_pl": "To jest wielki wyścig!",
+     "exp_en": "To jest wielki wyścig!",
+     "tag": "Склади",
+     "tag_pl": "Ułóż",
+     "tag_en": "Build"
+    },
+    {
+     "k": "type",
+     "q": "Напиши польською: «Кубок мій!»",
+     "q_pl": "Napisz po polsku: „The cup is mine!”",
+     "q_en": "Write in Polish: “The cup is mine!”",
+     "options": [
+      "Puchar jest mój!",
+      "Puchar jest mój"
+     ],
+     "exp": "Puchar jest mój!",
+     "exp_pl": "Puchar jest mój!",
+     "exp_en": "Puchar jest mój!",
+     "tag": "Напиши",
+     "tag_pl": "Napisz",
+     "tag_en": "Write"
+    },
+    {
+     "k": "order",
+     "q": "Склади репліку: «Я тут, щоб перемогти.»",
+     "q_pl": "Ułóż kwestię: „I'm here to win.”",
+     "q_en": "Build the line: “I'm here to win.”",
+     "options": [
+      "Jestem",
+      "tu,",
+      "żeby",
+      "wygrać."
+     ],
+     "exp": "Jestem tu, żeby wygrać.",
+     "exp_pl": "Jestem tu, żeby wygrać.",
+     "exp_en": "Jestem tu, żeby wygrać.",
+     "tag": "Склади",
+     "tag_pl": "Ułóż",
+     "tag_en": "Build"
+    },
+    {
+     "k": "type",
+     "q": "Напиши польською: «Я механік.»",
+     "q_pl": "Napisz po polsku: „I'm a mechanic.”",
+     "q_en": "Write in Polish: “I'm a mechanic.”",
+     "options": [
+      "Jestem mechanikiem.",
+      "Jestem mechanikiem",
+      "Ja jestem mechanikiem.",
+      "Ja jestem mechanikiem"
+     ],
+     "exp": "Jestem mechanikiem.",
+     "exp_pl": "Jestem mechanikiem.",
+     "exp_en": "Jestem mechanikiem.",
+     "tag": "Напиши",
+     "tag_pl": "Napisz",
+     "tag_en": "Write"
+    },
+    {
+     "k": "order",
+     "q": "Склади репліку: «Король — старий чемпіон.»",
+     "q_pl": "Ułóż kwestię: „The King is an old champion.”",
+     "q_en": "Build the line: “The King is an old champion.”",
+     "options": [
+      "Król",
+      "jest",
+      "starym",
+      "mistrzem."
+     ],
+     "exp": "Król jest starym mistrzem.",
+     "exp_pl": "Król jest starym mistrzem.",
+     "exp_en": "Król jest starym mistrzem.",
+     "tag": "Склади",
+     "tag_pl": "Ułóż",
+     "tag_en": "Build"
+    },
+    {
+     "k": "type",
+     "q": "Напиши польською: «Ми команда!»",
+     "q_pl": "Napisz po polsku: „We're a team!”",
+     "q_en": "Write in Polish: “We're a team!”",
+     "options": [
+      "Jesteśmy zespołem!",
+      "Jesteśmy zespołem",
+      "My jesteśmy zespołem!",
+      "My jesteśmy zespołem"
+     ],
+     "exp": "Jesteśmy zespołem!",
+     "exp_pl": "Jesteśmy zespołem!",
+     "exp_en": "Jesteśmy zespołem!",
+     "tag": "Напиши",
+     "tag_pl": "Napisz",
+     "tag_en": "Write"
+    },
+    {
+     "k": "order",
+     "q": "Склади репліку: «Чік зелений і злий.»",
+     "q_pl": "Ułóż kwestię: „Chick is green and angry.”",
+     "q_en": "Build the line: “Chick is green and angry.”",
+     "options": [
+      "Chick",
+      "jest",
+      "zielony",
+      "i",
+      "zły."
+     ],
+     "exp": "Chick jest zielony i zły.",
+     "exp_pl": "Chick jest zielony i zły.",
+     "exp_en": "Chick jest zielony i zły.",
+     "tag": "Склади",
+     "tag_pl": "Ułóż",
+     "tag_en": "Build"
+    }
+   ],
+   "label": "РАДІО КОМАНДИ",
+   "label_pl": "RADIO ZESPOŁU",
+   "label_en": "TEAM RADIO",
+   "q": "Маккуїн диктує команді. Напиши й склади його репліки польською.",
+   "q_pl": "Zygzak dyktuje zespołowi. Napisz i ułóż jego kwestie po polsku.",
+   "q_en": "McQueen dictates to the team. Write and build his lines in Polish.",
+   "ins": "Пиши й складай репліки",
+   "ins_pl": "Pisz i układaj kwestie",
+   "ins_en": "Write and build the lines",
+   "tip": "Потрібно 70%+.",
+   "tip_pl": "Potrzeba 70%+.",
+   "tip_en": "You need 70%+."
+  },
+  {
+   "type": "speaking",
+   "say": "Jestem szybkością. Jestem tu, żeby wygrać!",
+   "label": "ГОВОРІННЯ",
+   "label_pl": "MÓWIENIE",
+   "label_en": "SPEAKING",
+   "q": "Скажи по радіо вголос, як Маккуїн.",
+   "q_pl": "Powiedz przez radio na głos jak Zygzak.",
+   "q_en": "Say it on the radio, out loud, like McQueen.",
+   "qt_pl": "Powiedz przez radio na głos jak Zygzak.",
+   "qt_en": "Say it on the radio, out loud, like McQueen.",
+   "ins": "Прочитай і скажи вголос",
+   "ins_pl": "Przeczytaj i powiedz na głos",
+   "ins_en": "Read it and say it aloud",
+   "tip": "Переклад: Я — швидкість. Я тут, щоб перемогти!",
+   "tip_pl": "Tłumaczenie: I am speed. I'm here to win!",
+   "tip_en": "Translation: I am speed. I'm here to win!"
+  },
+  {
+   "type": "speaking",
+   "say": "Cześć! Jestem nowym mechanikiem. Jesteśmy zespołem!",
+   "label": "ГОВОРІННЯ",
+   "label_pl": "MÓWIENIE",
+   "label_en": "SPEAKING",
+   "q": "Представся Маккуїну по радіо вголос.",
+   "q_pl": "Przedstaw się Zygzakowi przez radio na głos.",
+   "q_en": "Introduce yourself to McQueen on the radio, out loud.",
+   "qt_pl": "Przedstaw się Zygzakowi przez radio na głos.",
+   "qt_en": "Introduce yourself to McQueen on the radio, out loud.",
+   "ins": "Прочитай і скажи вголос",
+   "ins_pl": "Przeczytaj i powiedz na głos",
+   "ins_en": "Read it and say it aloud",
+   "tip": "Переклад: Привіт! Я новий механік. Ми команда!",
+   "tip_pl": "Tłumaczenie: Hi! I'm the new mechanic. We're a team!",
+   "tip_en": "Translation: Hi! I'm the new mechanic. We're a team!"
+  },
+  {
+   "type": "drill",
+   "kind": "set",
+   "items": [
+    {
+     "q": "Zygzak jest ____.",
+     "options": [
+      "niebieski",
+      "czerwony",
+      "zielony"
+     ],
+     "answer": 1,
+     "exp": "Czerwony = червоний.",
+     "exp_pl": "Czerwony = red.",
+     "exp_en": "Czerwony = red.",
+     "tr": "Маккуїн червоний.",
+     "tr_pl": "McQueen is red.",
+     "tr_en": "McQueen is red."
+    },
+    {
+     "q": "Król jest ____.",
+     "options": [
+      "niebieski",
+      "zielony",
+      "czerwony"
+     ],
+     "answer": 0,
+     "exp": "Niebieski = синій.",
+     "exp_pl": "Niebieski = blue.",
+     "exp_en": "Niebieski = blue.",
+     "tr": "Король синій.",
+     "tr_pl": "The King is blue.",
+     "tr_en": "The King is blue."
+    },
+    {
+     "q": "Chick jest ____.",
+     "options": [
+      "czerwony",
+      "niebieski",
+      "zielony"
+     ],
+     "answer": 2,
+     "exp": "Zielony = зелений.",
+     "exp_pl": "Zielony = green.",
+     "exp_en": "Zielony = green.",
+     "tr": "Чік зелений.",
+     "tr_pl": "Chick is green.",
+     "tr_en": "Chick is green."
+    },
+    {
+     "q": "Tysiące fanów na stadionie to ____.",
+     "options": [
+      "tłum",
+      "opona",
+      "meta"
+     ],
+     "answer": 0,
+     "exp": "Tłum = натовп.",
+     "exp_pl": "Tłum = crowd.",
+     "exp_en": "Tłum = crowd.",
+     "tr": "Тисячі фанатів на стадіоні — це натовп.",
+     "tr_pl": "Thousands of fans in the stadium are a crowd.",
+     "tr_en": "Thousands of fans in the stadium are a crowd."
+    },
+    {
+     "q": "Zwycięzca dostaje ____.",
+     "options": [
+      "oponę",
+      "puchar",
+      "numer"
+     ],
+     "answer": 1,
+     "exp": "Puchar = кубок.",
+     "exp_pl": "Puchar = cup.",
+     "exp_en": "Puchar = cup.",
+     "tr": "Переможець отримує кубок.",
+     "tr_pl": "The winner gets the cup.",
+     "tr_en": "The winner gets the cup."
+    },
+    {
+     "q": "Król to stary ____.",
+     "options": [
+      "fan",
+      "mistrz",
+      "tłum"
+     ],
+     "answer": 1,
+     "exp": "Mistrz = чемпіон.",
+     "exp_pl": "Mistrz = champion.",
+     "exp_en": "Mistrz = champion.",
+     "tr": "Король — старий чемпіон.",
+     "tr_pl": "The King is an old champion.",
+     "tr_en": "The King is an old champion."
+    },
+    {
+     "q": "Na mecie trzy auta są na jednym ____.",
+     "options": [
+      "zdjęciu",
+      "okrążeniu",
+      "pucharze"
+     ],
+     "answer": 0,
+     "exp": "Zdjęcie (na zdjęciu) = фото (на фото).",
+     "exp_pl": "Zdjęcie (na zdjęciu) = photo (in the photo).",
+     "exp_en": "Zdjęcie (na zdjęciu) = photo (in the photo).",
+     "tr": "На фініші три машини на одному фото.",
+     "tr_pl": "At the finish three cars are in one photo.",
+     "tr_en": "At the finish three cars are in one photo."
+    },
+    {
+     "q": "Zygzak nie ma przyjaciół. Jest bardzo ____.",
+     "options": [
+      "dumny",
+      "niebieski",
+      "stary"
+     ],
+     "answer": 0,
+     "exp": "Dumny = гордий.",
+     "exp_pl": "Dumny = proud.",
+     "exp_en": "Dumny = proud.",
+     "tr": "У Маккуїна немає друзів. Він дуже гордий.",
+     "tr_pl": "McQueen has no friends. He's very proud.",
+     "tr_en": "McQueen has no friends. He's very proud."
+    },
+    {
+     "q": "Przed startem Zygzak mówi: „Jestem ____.”",
+     "options": [
+      "ostatni",
+      "zielony",
+      "gotowy"
+     ],
+     "answer": 2,
+     "exp": "Gotowy = готовий.",
+     "exp_pl": "Gotowy = ready.",
+     "exp_en": "Gotowy = ready.",
+     "tr": "Перед стартом Маккуїн каже: «Я готовий».",
+     "tr_pl": "Before the start McQueen says: “I'm ready.”",
+     "tr_en": "Before the start McQueen says: “I'm ready.”"
+    }
+   ],
+   "label": "ПІСЛЯ ГОНКИ",
+   "label_pl": "PO WYŚCIGU",
+   "label_en": "AFTER THE RACE",
+   "q": "Журналісти питають тебе про гонку. Відповідай.",
+   "q_pl": "Dziennikarze pytają cię o wyścig. Odpowiadaj.",
+   "q_en": "Reporters ask you about the race. Answer.",
+   "ins": "Дев'ять питань на слова уроку",
+   "ins_pl": "Dziewięć pytań na słowa lekcji",
+   "ins_en": "Nine questions on the lesson words",
+   "tip": "Потрібно 70%+.",
+   "tip_pl": "Potrzeba 70%+.",
+   "tip_en": "You need 70%+."
+  },
+  {
+   "type": "final",
+   "img": "diary",
+   "answer": 25,
+   "label": "РАДІОПОВІДОМЛЕННЯ",
+   "label_pl": "WIADOMOŚĆ RADIOWA",
+   "label_en": "RADIO MESSAGE",
+   "q": "Ти новий механік. Представся Маккуїну по радіо польською (25+ слів): хто ти? як тебе звати? звідки ти? який ти? чому ти в його команді?",
+   "q_pl": "Jesteś nowym mechanikiem. Przedstaw się Zygzakowi przez radio po polsku (25+ słów): kim jesteś? jak masz na imię? skąd jesteś? jaki jesteś? dlaczego jesteś w jego zespole?",
+   "q_en": "You are the new mechanic. Introduce yourself to McQueen on the radio in Polish (25+ words): who are you? what's your name? where are you from? what are you like? why are you on his team?",
+   "ins": "Напиши повідомлення польською",
+   "ins_pl": "Napisz wiadomość po polsku",
+   "ins_en": "Write the message in Polish",
+   "tip": "Cześć, Zygzak! Jestem… Mam na imię… Jestem z… Jestem szybki/szybka… Jestem tu, żeby…",
+   "tip_pl": "Cześć, Zygzak! Jestem… Mam na imię… Jestem z… Jestem szybki/szybka… Jestem tu, żeby…",
+   "tip_en": "Cześć, Zygzak! Jestem… Mam na imię… Jestem z… Jestem szybki/szybka… Jestem tu, żeby…"
+  }
+ ]
+}

@@ -1,0 +1,1662 @@
+{
+ "lesson_id": "4879e249-1b41-46d6-9288-ab611ca26906",
+ "tg": "uk",
+ "tasks": [
+  {
+   "ref": 0
+  },
+  {
+   "type": "intro",
+   "label": "ТВОЯ РОЛЬ",
+   "label_pl": "TWOJA ROLA",
+   "label_en": "YOUR ROLE",
+   "q": "Ти — новачок із команди Маккуїна, і ти досі в Радіатор-Спрінгс. Зараз обід: ти сидиш у кафе Фло з усіма друзями. Раптом Маккуїн влітає з великою новиною про Дока.",
+   "q_pl": "Jesteś nowicjuszem z ekipy Zygzaka i wciąż jesteś w Chłodnicy Górskiej. Jest pora obiadu: siedzisz w kawiarni Flo ze wszystkimi przyjaciółmi. Nagle wpada Zygzak z wielką nowiną o Docu.",
+   "q_en": "You're the rookie from McQueen's crew, and you're still in Radiator Springs. It's lunchtime: you're sitting in Flo's café with all the friends. Suddenly McQueen bursts in with big news about Doc."
+  },
+  {
+   "ref": 1
+  },
+  {
+   "type": "match",
+   "options": [
+    "новина=news",
+    "вірити=to believe",
+    "жарт=joke",
+    "тихий=quiet",
+    "ніхто=nobody"
+   ],
+   "options_pl": [
+    "новина=nowina",
+    "вірити=wierzyć",
+    "жарт=żart",
+    "тихий=cichy",
+    "ніхто=nikt"
+   ],
+   "options_en": [
+    "новина=news",
+    "вірити=to believe",
+    "жарт=joke",
+    "тихий=quiet",
+    "ніхто=nobody"
+   ],
+   "label": "СЦЕНА 1 · СЛОВА",
+   "label_pl": "SCENA 1 · SŁOWA",
+   "label_en": "SCENE 1 · WORDS",
+   "q": "З'єднай слова сцени з перекладом.",
+   "q_pl": "Połącz słowa sceny z tłumaczeniem.",
+   "q_en": "Match the scene words with their translations.",
+   "qt_pl": "Połącz słowa sceny z tłumaczeniem.",
+   "qt_en": "Match the scene words with their translations.",
+   "ins": "П'ять пар зі сцени",
+   "ins_pl": "Pięć par ze sceny",
+   "ins_en": "Five pairs from the scene",
+   "tip": "Не впевнений? Повернись до словника сцени.",
+   "tip_pl": "Nie masz pewności? Wróć do słownika sceny.",
+   "tip_en": "Not sure? Go back to the scene glossary."
+  },
+  {
+   "type": "drill",
+   "kind": "set",
+   "items": [
+    {
+     "q": "У мене ____!",
+     "options": [
+      "новина",
+      "іржа",
+      "пляшка"
+     ],
+     "answer": 0,
+     "exp": "Новина = news.",
+     "exp_pl": "Новина = nowina.",
+     "exp_en": "Новина = news.",
+     "tr": "I've got news!",
+     "tr_pl": "Mam nowinę!",
+     "tr_en": "I've got news!",
+     "tag": "Репліка",
+     "tag_pl": "Kwestia",
+     "tag_en": "Line"
+    },
+    {
+     "q": "Док — чемпіон! Це ____!",
+     "options": [
+      "жарт",
+      "обід",
+      "правда"
+     ],
+     "answer": 2,
+     "exp": "Правда = true / the truth.",
+     "exp_pl": "Правда = prawda.",
+     "exp_en": "Правда = true / the truth.",
+     "tr": "Doc is a champion! It's true!",
+     "tr_pl": "Doc jest mistrzem! To prawda!",
+     "tr_en": "Doc is a champion! It's true!",
+     "tag": "Репліка",
+     "tag_pl": "Kwestia",
+     "tag_en": "Line"
+    },
+    {
+     "q": "____ мені не вірить!",
+     "options": [
+      "Тихий",
+      "Ніхто",
+      "Новина"
+     ],
+     "answer": 1,
+     "exp": "Ніхто = nobody.",
+     "exp_pl": "Ніхто = nikt.",
+     "exp_en": "Ніхто = nobody.",
+     "tr": "Nobody believes me!",
+     "tr_pl": "Nikt mi nie wierzy!",
+     "tr_en": "Nobody believes me!",
+     "tag": "Репліка",
+     "tag_pl": "Kwestia",
+     "tag_en": "Line"
+    },
+    {
+     "q": "Рамон: «Док? ____ старий Док?»",
+     "options": [
+      "Тихий",
+      "Швидкий",
+      "Фіолетовий"
+     ],
+     "answer": 0,
+     "exp": "Тихий = quiet. Док мало говорить.",
+     "exp_pl": "Тихий = cichy. Doc mało mówi.",
+     "exp_en": "Тихий = quiet. Doc doesn't talk much.",
+     "tr": "Ramone: “Doc? Quiet old Doc?”",
+     "tr_pl": "Ramone: „Doc? Cichy stary Doc?”",
+     "tr_en": "Ramone: “Doc? Quiet old Doc?”",
+     "tag": "Репліка",
+     "tag_pl": "Kwestia",
+     "tag_en": "Line"
+    },
+    {
+     "q": "Друзі одразу вірять Маккуїну.",
+     "options": [
+      "Правда",
+      "Неправда"
+     ],
+     "answer": 1,
+     "exp": "Ніхто не вірить. Вони сміються.",
+     "exp_pl": "Nikt nie wierzy. Śmieją się.",
+     "exp_en": "Nobody believes him. They laugh.",
+     "tr": "The friends believe McQueen straight away.",
+     "tr_pl": "Przyjaciele od razu wierzą Zygzakowi.",
+     "tr_en": "The friends believe McQueen straight away.",
+     "tag": "Правда чи ні?",
+     "tag_pl": "Prawda czy nie?",
+     "tag_en": "True or false?"
+    },
+    {
+     "q": "Маккуїн каже, що в Дока три кубки.",
+     "options": [
+      "Правда",
+      "Неправда"
+     ],
+     "answer": 0,
+     "exp": "Три Кубки Поршня в гаражі!",
+     "exp_pl": "Trzy Puchary Tłoka w garażu!",
+     "exp_en": "Three Piston Cups in the garage!",
+     "tr": "McQueen says Doc has three cups.",
+     "tr_pl": "Zygzak mówi, że Doc ma trzy puchary.",
+     "tr_en": "McQueen says Doc has three cups.",
+     "tag": "Правда чи ні?",
+     "tag_pl": "Prawda czy nie?",
+     "tag_en": "True or false?"
+    },
+    {
+     "q": "Фло сміється: «Це жарт, любий?» Що вона думає?",
+     "options": [
+      "Що Док — чемпіон",
+      "Що кафе зачинене",
+      "Що Маккуїн жартує"
+     ],
+     "answer": 2,
+     "exp": "Жарт = joke. Вона не вірить.",
+     "exp_pl": "Жарт = żart. Ona nie wierzy.",
+     "exp_en": "Жарт = joke. She doesn't believe it.",
+     "tr": "Flo laughs: “Is it a joke, honey?” What does she think?",
+     "tr_pl": "Flo się śmieje: „To żart, kochanie?” Co ona myśli?",
+     "tr_en": "Flo laughs: “Is it a joke, honey?” What does she think?",
+     "tag": "Зрозумій героя",
+     "tag_pl": "Zrozum bohatera",
+     "tag_en": "Read the hero"
+    },
+    {
+     "q": "Маккуїн дивиться на тебе: «А ти мені віриш?» Що ти кажеш?",
+     "options": [
+      "Ні, це жарт.",
+      "Так, я тобі вірю!",
+      "Я тихий обід."
+     ],
+     "answer": 1,
+     "exp": "Ти підтримуєш друга. Вірити = to believe.",
+     "exp_pl": "Wspierasz przyjaciela. Вірити = wierzyć.",
+     "exp_en": "You back your friend. Вірити = to believe.",
+     "tr": "McQueen looks at you: “And do you believe me?” What do you say?",
+     "tr_pl": "Zygzak patrzy na ciebie: „A ty mi wierzysz?” Co mówisz?",
+     "tr_en": "McQueen looks at you: “And do you believe me?” What do you say?",
+     "tag": "Твій вибір",
+     "tag_pl": "Twój wybór",
+     "tag_en": "Your call"
+    }
+   ],
+   "label": "СЦЕНА 1 · НОВИНА",
+   "label_pl": "SCENA 1 · NOWINA",
+   "label_en": "SCENE 1 · THE NEWS",
+   "q": "Маккуїн влітає в кафе. Він хоче розповісти всім про Дока.",
+   "q_pl": "Zygzak wpada do kawiarni. Chce wszystkim opowiedzieć o Docu.",
+   "q_en": "McQueen bursts into the café. He wants to tell everyone about Doc.",
+   "ins": "Встав слово, обери правду, зрозумій героя",
+   "ins_pl": "Wstaw słowo, oceń prawdę, zrozum bohatera",
+   "ins_en": "Fill the gap, judge true/false, understand the hero",
+   "tip": "Потрібно 70%+.",
+   "tip_pl": "Potrzeba 70%+.",
+   "tip_en": "You need 70%+."
+  },
+  {
+   "ref": 2
+  },
+  {
+   "type": "match",
+   "options": [
+    "трохи=some, a little",
+    "пляшка=bottle",
+    "іржа=rust",
+    "гроші=money",
+    "безкоштовний=free"
+   ],
+   "options_pl": [
+    "трохи=trochę",
+    "пляшка=butelka",
+    "іржа=rdza",
+    "гроші=pieniądze",
+    "безкоштовний=darmowy"
+   ],
+   "options_en": [
+    "трохи=some, a little",
+    "пляшка=bottle",
+    "іржа=rust",
+    "гроші=money",
+    "безкоштовний=free"
+   ],
+   "label": "СЦЕНА 2 · СЛОВА",
+   "label_pl": "SCENA 2 · SŁOWA",
+   "label_en": "SCENE 2 · WORDS",
+   "q": "З'єднай слова сцени з перекладом.",
+   "q_pl": "Połącz słowa sceny z tłumaczeniem.",
+   "q_en": "Match the scene words with their translations.",
+   "qt_pl": "Połącz słowa sceny z tłumaczeniem.",
+   "qt_en": "Match the scene words with their translations.",
+   "ins": "П'ять пар зі сцени",
+   "ins_pl": "Pięć par ze sceny",
+   "ins_en": "Five pairs from the scene",
+   "tip": "Не впевнений? Повернись до словника сцени.",
+   "tip_pl": "Nie masz pewności? Wróć do słownika sceny.",
+   "tip_en": "Not sure? Go back to the scene glossary."
+  },
+  {
+   "type": "drill",
+   "kind": "set",
+   "items": [
+    {
+     "q": "Фло: «Ось ____ пального, любий.»",
+     "options": [
+      "ніхто",
+      "трохи",
+      "гроші"
+     ],
+     "answer": 1,
+     "exp": "Трохи = some, a little.",
+     "exp_pl": "Трохи = trochę.",
+     "exp_en": "Трохи = some, a little.",
+     "tr": "Flo: “Here's some fuel, honey.”",
+     "tr_pl": "Flo: „Proszę, trochę paliwa, kochanie.”",
+     "tr_en": "Flo: “Here's some fuel, honey.”",
+     "tag": "Репліка",
+     "tag_pl": "Kwestia",
+     "tag_en": "Line"
+    },
+    {
+     "q": "Метр: «Будь-що з ____!»",
+     "options": [
+      "іржею",
+      "грошима",
+      "пляшкою"
+     ],
+     "answer": 0,
+     "exp": "Метр обожнює іржу. Іржа = rust.",
+     "exp_pl": "Złomek uwielbia rdzę. Іржа = rdza.",
+     "exp_en": "Mater loves rust. Іржа = rust.",
+     "tr": "Mater: “Anything with rust!”",
+     "tr_pl": "Złomek: „Cokolwiek z rdzą!”",
+     "tr_en": "Mater: “Anything with rust!”",
+     "tag": "Репліка",
+     "tag_pl": "Kwestia",
+     "tag_en": "Line"
+    },
+    {
+     "q": "Маккуїн: «Я можу ____!»",
+     "options": [
+      "сміятися",
+      "фіолетовий",
+      "заплатити"
+     ],
+     "answer": 2,
+     "exp": "Заплатити = to pay.",
+     "exp_pl": "Заплатити = zapłacić.",
+     "exp_en": "Заплатити = to pay.",
+     "tr": "McQueen: “I can pay!”",
+     "tr_pl": "Zygzak: „Mogę zapłacić!”",
+     "tr_en": "McQueen: “I can pay!”",
+     "tag": "Репліка",
+     "tag_pl": "Kwestia",
+     "tag_en": "Line"
+    },
+    {
+     "q": "Фло: «Для тебе — ____, любий!»",
+     "options": [
+      "дорого",
+      "безкоштовно",
+      "тихо"
+     ],
+     "answer": 1,
+     "exp": "Безкоштовно = for free.",
+     "exp_pl": "Безкоштовно = za darmo.",
+     "exp_en": "Безкоштовно = for free.",
+     "tr": "Flo: “For you it's free, honey!”",
+     "tr_pl": "Flo: „Dla ciebie za darmo, kochanie!”",
+     "tr_en": "Flo: “For you it's free, honey!”",
+     "tag": "Репліка",
+     "tag_pl": "Kwestia",
+     "tag_en": "Line"
+    },
+    {
+     "q": "Маккуїн хоче ще й оливи. Але оливи ____.",
+     "options": [
+      "є",
+      "багато",
+      "немає"
+     ],
+     "answer": 2,
+     "exp": "Немає = there isn't any.",
+     "exp_pl": "Немає = nie ma.",
+     "exp_en": "Немає = there isn't any.",
+     "tr": "McQueen wants some oil too. But there isn't any oil.",
+     "tr_pl": "Zygzak chce jeszcze oleju. Ale oleju nie ma.",
+     "tr_en": "McQueen wants some oil too. But there isn't any oil.",
+     "tag": "Сюжет",
+     "tag_pl": "Fabuła",
+     "tag_en": "Story"
+    },
+    {
+     "q": "Метр замовляє воду.",
+     "options": [
+      "Правда",
+      "Неправда"
+     ],
+     "answer": 1,
+     "exp": "Він замовляє будь-що з іржею.",
+     "exp_pl": "Zamawia cokolwiek z rdzą.",
+     "exp_en": "He orders anything with rust.",
+     "tr": "Mater orders water.",
+     "tr_pl": "Złomek zamawia wodę.",
+     "tr_en": "Mater orders water.",
+     "tag": "Правда чи ні?",
+     "tag_pl": "Prawda czy nie?",
+     "tag_en": "True or false?"
+    },
+    {
+     "q": "Шериф: «У містечка мало ____.»",
+     "options": [
+      "іржі",
+      "грошей",
+      "обіду"
+     ],
+     "answer": 1,
+     "exp": "Гроші = money. Містечко бідне.",
+     "exp_pl": "Гроші = pieniądze. Miasteczko jest biedne.",
+     "exp_en": "Гроші = money. The town is poor.",
+     "tr": "Sheriff: “The town hasn't got much money.”",
+     "tr_pl": "Szeryf: „Miasteczko ma mało pieniędzy.”",
+     "tr_en": "Sheriff: “The town hasn't got much money.”",
+     "tag": "Репліка",
+     "tag_pl": "Kwestia",
+     "tag_en": "Line"
+    },
+    {
+     "q": "Фло питає тебе: «А тобі що, любий?» Що ти кажеш?",
+     "options": [
+      "Трохи пального, будь ласка.",
+      "Ніхто, будь ласка.",
+      "Я тихий."
+     ],
+     "answer": 0,
+     "exp": "Ввічливе замовлення: трохи + пального.",
+     "exp_pl": "Uprzejme zamówienie: трохи + пального.",
+     "exp_en": "A polite order: трохи + пального.",
+     "tr": "Flo asks you: “And what about you, honey?” What do you say?",
+     "tr_pl": "Flo pyta cię: „A dla ciebie co, kochanie?” Co mówisz?",
+     "tr_en": "Flo asks you: “And what about you, honey?” What do you say?",
+     "tag": "Твій вибір",
+     "tag_pl": "Twój wybór",
+     "tag_en": "Your call"
+    }
+   ],
+   "label": "СЦЕНА 2 · ЗАМОВЛЕННЯ",
+   "label_pl": "SCENA 2 · ZAMÓWIENIE",
+   "label_en": "SCENE 2 · THE ORDER",
+   "q": "Фло приймає замовлення. Кожен хоче щось своє.",
+   "q_pl": "Flo przyjmuje zamówienia. Każdy chce czegoś innego.",
+   "q_en": "Flo takes the orders. Everyone wants something different.",
+   "ins": "Встав слово, обери правду, зрозумій героя",
+   "ins_pl": "Wstaw słowo, oceń prawdę, zrozum bohatera",
+   "ins_en": "Fill the gap, judge true/false, understand the hero",
+   "tip": "Потрібно 70%+.",
+   "tip_pl": "Potrzeba 70%+.",
+   "tip_en": "You need 70%+."
+  },
+  {
+   "ref": 3
+  },
+  {
+   "type": "match",
+   "options": [
+    "обід=lunch",
+    "частина=part",
+    "дружина=wife",
+    "фіолетовий=purple",
+    "сміх=laughter"
+   ],
+   "options_pl": [
+    "обід=obiad",
+    "частина=część",
+    "дружина=żona",
+    "фіолетовий=fioletowy",
+    "сміх=śmiech"
+   ],
+   "options_en": [
+    "обід=lunch",
+    "частина=part",
+    "дружина=wife",
+    "фіолетовий=purple",
+    "сміх=laughter"
+   ],
+   "label": "СЦЕНА 3 · СЛОВА",
+   "label_pl": "SCENA 3 · SŁOWA",
+   "label_en": "SCENE 3 · WORDS",
+   "q": "З'єднай слова сцени з перекладом.",
+   "q_pl": "Połącz słowa sceny z tłumaczeniem.",
+   "q_en": "Match the scene words with their translations.",
+   "qt_pl": "Połącz słowa sceny z tłumaczeniem.",
+   "qt_en": "Match the scene words with their translations.",
+   "ins": "П'ять пар зі сцени",
+   "ins_pl": "Pięć par ze sceny",
+   "ins_en": "Five pairs from the scene",
+   "tip": "Не впевнений? Повернись до словника сцени.",
+   "tip_pl": "Nie masz pewności? Wróć do słownika sceny.",
+   "tip_en": "Not sure? Go back to the scene glossary."
+  },
+  {
+   "type": "drill",
+   "kind": "set",
+   "items": [
+    {
+     "q": "Фло: «Час ____!»",
+     "options": [
+      "платити",
+      "обідати",
+      "вірити"
+     ],
+     "answer": 1,
+     "exp": "Обідати = to have lunch.",
+     "exp_pl": "Обідати = jeść obiad.",
+     "exp_en": "Обідати = to have lunch.",
+     "tr": "Flo: “Lunchtime!”",
+     "tr_pl": "Flo: „Czas na obiad!”",
+     "tr_en": "Flo: “Lunchtime!”",
+     "tag": "Репліка",
+     "tag_pl": "Kwestia",
+     "tag_en": "Line"
+    },
+    {
+     "q": "Рамон: «Сьогодні я ____.»",
+     "options": [
+      "фіолетовий",
+      "тихий",
+      "безкоштовний"
+     ],
+     "answer": 0,
+     "exp": "Фіолетовий = purple. Рамон часто міняє колір.",
+     "exp_pl": "Фіолетовий = fioletowy. Ramone często zmienia kolor.",
+     "exp_en": "Фіолетовий = purple. Ramone often changes colour.",
+     "tr": "Ramone: “Today I'm purple.”",
+     "tr_pl": "Ramone: „Dziś jestem fioletowy.”",
+     "tr_en": "Ramone: “Today I'm purple.”",
+     "tag": "Репліка",
+     "tag_pl": "Kwestia",
+     "tag_en": "Line"
+    },
+    {
+     "q": "Рамон: «Це моя ____ Фло.»",
+     "options": [
+      "частина",
+      "група",
+      "дружина"
+     ],
+     "answer": 2,
+     "exp": "Дружина = wife.",
+     "exp_pl": "Дружина = żona.",
+     "exp_en": "Дружина = wife.",
+     "tr": "Ramone: “This is my wife Flo.”",
+     "tr_pl": "Ramone: „To moja żona Flo.”",
+     "tr_en": "Ramone: “This is my wife Flo.”",
+     "tag": "Репліка",
+     "tag_pl": "Kwestia",
+     "tag_en": "Line"
+    },
+    {
+     "q": "Фло до Маккуїна: «Ти тепер ____ сім'ї.»",
+     "options": [
+      "пляшка",
+      "частина",
+      "новина"
+     ],
+     "answer": 1,
+     "exp": "Частина = part.",
+     "exp_pl": "Частина = część.",
+     "exp_en": "Частина = part.",
+     "tr": "Flo to McQueen: “You're part of the family now.”",
+     "tr_pl": "Flo do Zygzaka: „Jesteś teraz częścią rodziny.”",
+     "tr_en": "Flo to McQueen: “You're part of the family now.”",
+     "tag": "Репліка",
+     "tag_pl": "Kwestia",
+     "tag_en": "Line"
+    },
+    {
+     "q": "Фло — дружина Рамона.",
+     "options": [
+      "Правда",
+      "Неправда"
+     ],
+     "answer": 0,
+     "exp": "Так, вони пара.",
+     "exp_pl": "Tak, są parą.",
+     "exp_en": "Yes, they're a couple.",
+     "tr": "Flo is Ramone's wife.",
+     "tr_pl": "Flo jest żoną Ramone'a.",
+     "tr_en": "Flo is Ramone's wife.",
+     "tag": "Правда чи ні?",
+     "tag_pl": "Prawda czy nie?",
+     "tag_en": "True or false?"
+    },
+    {
+     "q": "Маккуїн обідає сам.",
+     "options": [
+      "Правда",
+      "Неправда"
+     ],
+     "answer": 1,
+     "exp": "Він сидить разом із друзями.",
+     "exp_pl": "Siedzi razem z przyjaciółmi.",
+     "exp_en": "He sits together with the friends.",
+     "tr": "McQueen has lunch alone.",
+     "tr_pl": "Zygzak je obiad sam.",
+     "tr_en": "McQueen has lunch alone.",
+     "tag": "Правда чи ні?",
+     "tag_pl": "Prawda czy nie?",
+     "tag_en": "True or false?"
+    },
+    {
+     "q": "Маккуїн всміхається: «Мені тут добре.» Як він почувається?",
+     "options": [
+      "Сердитий і сам",
+      "Як частина містечка",
+      "Дуже голодний"
+     ],
+     "answer": 1,
+     "exp": "Уперше він почувається своїм.",
+     "exp_pl": "Pierwszy raz czuje się jak u siebie.",
+     "exp_en": "For the first time he feels at home.",
+     "tr": "McQueen smiles: “I feel good here.” How does he feel?",
+     "tr_pl": "Zygzak się uśmiecha: „Dobrze mi tu.” Jak się czuje?",
+     "tr_en": "McQueen smiles: “I feel good here.” How does he feel?",
+     "tag": "Зрозумій героя",
+     "tag_pl": "Zrozum bohatera",
+     "tag_en": "Read the hero"
+    },
+    {
+     "q": "За столом багато ____.",
+     "options": [
+      "шин",
+      "сміху",
+      "кубків"
+     ],
+     "answer": 1,
+     "exp": "Сміх = laughter. Друзі сміються.",
+     "exp_pl": "Сміх = śmiech. Przyjaciele się śmieją.",
+     "exp_en": "Сміх = laughter. The friends laugh.",
+     "tr": "There's a lot of laughter at the table.",
+     "tr_pl": "Przy stole jest dużo śmiechu.",
+     "tr_en": "There's a lot of laughter at the table.",
+     "tag": "Сюжет",
+     "tag_pl": "Fabuła",
+     "tag_en": "Story"
+    }
+   ],
+   "label": "СЦЕНА 3 · ЗА СТОЛОМ",
+   "label_pl": "SCENA 3 · PRZY STOLE",
+   "label_en": "SCENE 3 · AT THE TABLE",
+   "q": "Друзі обідають разом. Маккуїн уперше не поспішає.",
+   "q_pl": "Przyjaciele jedzą razem obiad. Zygzak pierwszy raz się nie spieszy.",
+   "q_en": "The friends have lunch together. For the first time McQueen isn't in a hurry.",
+   "ins": "Встав слово, обери правду, зрозумій героя",
+   "ins_pl": "Wstaw słowo, oceń prawdę, zrozum bohatera",
+   "ins_en": "Fill the gap, judge true/false, understand the hero",
+   "tip": "Потрібно 70%+.",
+   "tip_pl": "Potrzeba 70%+.",
+   "tip_en": "You need 70%+."
+  },
+  {
+   "type": "intro",
+   "label": "ПРАВИЛО",
+   "label_pl": "ZASADA",
+   "label_en": "RULE",
+   "q": "Після «трохи», «кілька», «багато», «мало» і «немає» іменник стоїть у родовому відмінку: трохи пального, трохи оливи, кілька кубків, мало грошей, оливи немає. Порівняй: Ось олива. → Оливи немає. Ось пальне. → Трохи пального.",
+   "q_pl": "Po „трохи” (trochę), „кілька” (kilka), „багато” (dużo), „мало” (mało) i „немає” (nie ma) rzeczownik stoi w dopełniaczu — jak po polsku: трохи пального (trochę paliwa), трохи оливи (trochę oleju), кілька кубків (kilka pucharów), мало грошей, оливи немає (nie ma oleju). Porównaj: Ось олива. → Оливи немає.",
+   "q_en": "After «трохи» (some), «кілька» (a few), «багато» (a lot), «мало» (little) and «немає» (there isn't) the noun goes into the genitive case: трохи пального (some fuel), трохи оливи (some oil), кілька кубків (a few cups), мало грошей, оливи немає (there isn't any oil). Compare: Ось олива (here's oil). → Оливи немає."
+  },
+  {
+   "type": "drill",
+   "kind": "set",
+   "items": [
+    {
+     "q": "Фло: «Ось трохи ____, любий.»",
+     "options": [
+      "пального",
+      "пальне",
+      "пальним"
+     ],
+     "answer": 0,
+     "exp": "Трохи + родовий: пального.",
+     "exp_pl": "Трохи + dopełniacz: пального.",
+     "exp_en": "Трохи + genitive: пального.",
+     "tr": "Flo: “Here's some fuel, honey.”",
+     "tr_pl": "Flo: „Proszę, trochę paliwa, kochanie.”",
+     "tr_en": "Flo: “Here's some fuel, honey.”"
+    },
+    {
+     "q": "Маккуїн: «Можна трохи ____?»",
+     "options": [
+      "олива",
+      "оливу",
+      "оливи"
+     ],
+     "answer": 2,
+     "exp": "Трохи оливи.",
+     "exp_pl": "Трохи оливи (trochę oleju).",
+     "exp_en": "Трохи оливи (some oil).",
+     "tr": "McQueen: “Can I have some oil?”",
+     "tr_pl": "Zygzak: „Można trochę oleju?”",
+     "tr_en": "McQueen: “Can I have some oil?”"
+    },
+    {
+     "q": "Фло: «Вибач, ____ немає.»",
+     "options": [
+      "олива",
+      "оливи",
+      "оливою"
+     ],
+     "answer": 1,
+     "exp": "Немає + родовий: оливи немає.",
+     "exp_pl": "Немає + dopełniacz: оливи немає.",
+     "exp_en": "Немає + genitive: оливи немає.",
+     "tr": "Flo: “Sorry, there isn't any oil.”",
+     "tr_pl": "Flo: „Przepraszam, nie ma oleju.”",
+     "tr_en": "Flo: “Sorry, there isn't any oil.”"
+    },
+    {
+     "q": "Метр: «Мені трохи ____!»",
+     "options": [
+      "іржа",
+      "іржу",
+      "іржі"
+     ],
+     "answer": 2,
+     "exp": "Трохи іржі.",
+     "exp_pl": "Трохи іржі (trochę rdzy).",
+     "exp_en": "Трохи іржі (some rust).",
+     "tr": "Mater: “Some rust for me!”",
+     "tr_pl": "Złomek: „Dla mnie trochę rdzy!”",
+     "tr_en": "Mater: “Some rust for me!”"
+    },
+    {
+     "q": "Ти: «У Дока кілька ____!»",
+     "options": [
+      "кубків",
+      "кубки",
+      "кубок"
+     ],
+     "answer": 0,
+     "exp": "Кілька + родовий множини: кубків.",
+     "exp_pl": "Кілька + dopełniacz l.mn.: кубків.",
+     "exp_en": "Кілька + genitive plural: кубків.",
+     "tr": "You: “Doc has a few cups!”",
+     "tr_pl": "Ty: „Doc ma kilka pucharów!”",
+     "tr_en": "You: “Doc has a few cups!”"
+    },
+    {
+     "q": "Шериф: «У містечка мало ____.»",
+     "options": [
+      "гроші",
+      "грошей",
+      "грошима"
+     ],
+     "answer": 1,
+     "exp": "Мало + родовий: грошей.",
+     "exp_pl": "Мало + dopełniacz: грошей.",
+     "exp_en": "Мало + genitive: грошей.",
+     "tr": "Sheriff: “The town hasn't got much money.”",
+     "tr_pl": "Szeryf: „Miasteczko ma mało pieniędzy.”",
+     "tr_en": "Sheriff: “The town hasn't got much money.”"
+    },
+    {
+     "q": "Фло: «Сьогодні в мене багато ____!»",
+     "options": [
+      "клієнти",
+      "клієнтам",
+      "клієнтів"
+     ],
+     "answer": 2,
+     "exp": "Багато + родовий множини: клієнтів.",
+     "exp_pl": "Багато + dopełniacz l.mn.: клієнтів.",
+     "exp_en": "Багато + genitive plural: клієнтів.",
+     "tr": "Flo: “I've got lots of customers today!”",
+     "tr_pl": "Flo: „Mam dziś dużo klientów!”",
+     "tr_en": "Flo: “I've got lots of customers today!”"
+    },
+    {
+     "q": "Філмор: «Трохи органічного ____, друже!»",
+     "options": [
+      "пального",
+      "пальне",
+      "пальному"
+     ],
+     "answer": 0,
+     "exp": "Трохи органічного пального.",
+     "exp_pl": "Трохи органічного пального.",
+     "exp_en": "Трохи органічного пального.",
+     "tr": "Fillmore: “Some organic fuel, man!”",
+     "tr_pl": "Fillmore: „Trochę ekologicznego paliwa, stary!”",
+     "tr_en": "Fillmore: “Some organic fuel, man!”"
+    },
+    {
+     "q": "Рамон: «Мені потрібно трохи ____.»",
+     "options": [
+      "фарба",
+      "фарби",
+      "фарбу"
+     ],
+     "answer": 1,
+     "exp": "Трохи фарби (paint).",
+     "exp_pl": "Трохи фарби (trochę farby).",
+     "exp_en": "Трохи фарби (some paint).",
+     "tr": "Ramone: “I need some paint.”",
+     "tr_pl": "Ramone: „Potrzebuję trochę farby.”",
+     "tr_en": "Ramone: “I need some paint.”"
+    },
+    {
+     "q": "Ти: «Ми маємо кілька ____ для тебе.»",
+     "options": [
+      "шини",
+      "шин",
+      "шина"
+     ],
+     "answer": 1,
+     "exp": "Кілька шин.",
+     "exp_pl": "Кілька шин (kilka opon).",
+     "exp_en": "Кілька шин (a few tyres).",
+     "tr": "You: “We've got a few tyres for you.”",
+     "tr_pl": "Ty: „Mamy dla ciebie kilka opon.”",
+     "tr_en": "You: “We've got a few tyres for you.”"
+    },
+    {
+     "q": "Ліззі: «У мене немає ____.»",
+     "options": [
+      "грошей",
+      "гроші",
+      "грошима"
+     ],
+     "answer": 0,
+     "exp": "Немає + родовий: грошей.",
+     "exp_pl": "Немає + dopełniacz: грошей.",
+     "exp_en": "Немає + genitive: грошей.",
+     "tr": "Lizzie: “I haven't got any money.”",
+     "tr_pl": "Lizzie: „Nie mam pieniędzy.”",
+     "tr_en": "Lizzie: “I haven't got any money.”"
+    },
+    {
+     "q": "Фло ставить на стіл пляшку: «Ось ____ для тебе!»",
+     "options": [
+      "пляшки",
+      "пляшкою",
+      "пляшка"
+     ],
+     "answer": 2,
+     "exp": "Без «трохи / немає» — називний: пляшка.",
+     "exp_pl": "Bez „трохи / немає” — mianownik: пляшка.",
+     "exp_en": "No «трохи / немає» — nominative: пляшка.",
+     "tr": "Flo puts a bottle on the table: “Here's a bottle for you!”",
+     "tr_pl": "Flo stawia na stole butelkę: „Proszę, butelka dla ciebie!”",
+     "tr_en": "Flo puts a bottle on the table: “Here's a bottle for you!”"
+    },
+    {
+     "q": "Маккуїн: «За столом стільки ____!»",
+     "options": [
+      "друзі",
+      "друзів",
+      "другом"
+     ],
+     "answer": 1,
+     "exp": "Стільки / багато + родовий: друзів.",
+     "exp_pl": "Стільки / багато + dopełniacz: друзів.",
+     "exp_en": "Стільки / багато + genitive: друзів.",
+     "tr": "McQueen: “There are so many friends at the table!”",
+     "tr_pl": "Zygzak: „Przy stole jest tylu przyjaciół!”",
+     "tr_en": "McQueen: “There are so many friends at the table!”"
+    }
+   ],
+   "label": "ГРАМАТИКА · ТРОХИ ПАЛЬНОГО",
+   "label_pl": "GRAMATYKA · TROCHĘ PALIWA",
+   "label_en": "GRAMMAR · SOME FUEL",
+   "q": "Замовлення в кафе Фло. Обери правильну форму.",
+   "q_pl": "Zamówienia w kawiarni Flo. Wybierz poprawną formę.",
+   "q_en": "Orders at Flo's café. Choose the correct form.",
+   "ins": "Трохи, кілька, немає + родовий",
+   "ins_pl": "Трохи, кілька, немає + dopełniacz",
+   "ins_en": "Трохи, кілька, немає + genitive",
+   "tip": "Потрібно 70%+.",
+   "tip_pl": "Potrzeba 70%+.",
+   "tip_en": "You need 70%+."
+  },
+  {
+   "type": "reading",
+   "items": [
+    {
+     "q": "Обідня пора. Усі друзі сидять у кафе ____.",
+     "options": [
+      "Дока",
+      "Фло",
+      "Луїджі"
+     ],
+     "answer": 1
+    },
+    {
+     "q": "Раптом приїжджає Маккуїн. У нього велика ____.",
+     "options": [
+      "пляшка",
+      "іржа",
+      "новина"
+     ],
+     "answer": 2
+    },
+    {
+     "q": "Він кричить: «Док — ____! У нього три кубки!»",
+     "options": [
+      "чемпіон",
+      "механік",
+      "жарт"
+     ],
+     "answer": 0
+    },
+    {
+     "q": "Але ніхто йому не ____.",
+     "options": [
+      "платить",
+      "вірить",
+      "замовляє"
+     ],
+     "answer": 1
+    },
+    {
+     "q": "«Док? Тихий старий Док? Це ____!» — сміються друзі.",
+     "options": [
+      "обід",
+      "гроші",
+      "жарт"
+     ],
+     "answer": 2
+    },
+    {
+     "q": "Маккуїн сердиться, але сідає за стіл."
+    },
+    {
+     "q": "Фло наливає йому трохи ____.",
+     "options": [
+      "пального",
+      "пальне",
+      "пальним"
+     ],
+     "answer": 0
+    },
+    {
+     "q": "Маккуїн хоче ще й оливи, але оливи ____.",
+     "options": [
+      "є",
+      "немає",
+      "багато"
+     ],
+     "answer": 1
+    },
+    {
+     "q": "Метр замовляє «будь-що з ____».",
+     "options": [
+      "грошима",
+      "сміхом",
+      "іржею"
+     ],
+     "answer": 2
+    },
+    {
+     "q": "Філмор п'є своє органічне пальне."
+    },
+    {
+     "q": "Рамон сьогодні ____.",
+     "options": [
+      "фіолетовий",
+      "фіолетова",
+      "фіолетові"
+     ],
+     "answer": 0
+    },
+    {
+     "q": "Він сидить поруч зі своєю ____ Фло.",
+     "options": [
+      "групою",
+      "дружиною",
+      "частиною"
+     ],
+     "answer": 1
+    },
+    {
+     "q": "Маккуїн хоче заплатити, але Фло каже: «Для тебе — безкоштовно!»"
+    },
+    {
+     "q": "За столом багато ____.",
+     "options": [
+      "сміх",
+      "сміхом",
+      "сміху"
+     ],
+     "answer": 2
+    },
+    {
+     "q": "Друзі діляться історіями про старі часи."
+    },
+    {
+     "q": "Уперше Маккуїн почувається ____ містечка.",
+     "options": [
+      "частиною",
+      "частина",
+      "частин"
+     ],
+     "answer": 0
+    },
+    {
+     "q": "А ти сидиш поруч і всміхаєшся: команда стає більшою."
+    }
+   ],
+   "label": "ГАЗЕТА МІСТЕЧКА",
+   "label_pl": "GAZETA MIASTECZKA",
+   "label_en": "THE TOWN PAPER",
+   "q": "Шериф пише маленьку газету про день у містечку. Прочитай статтю й обери правильні слова.",
+   "q_pl": "Szeryf pisze małą gazetkę o dniu w miasteczku. Przeczytaj artykuł po ukraińsku i wybierz właściwe słowa.",
+   "q_en": "The Sheriff writes a little paper about the day in town. Read the article in Ukrainian and choose the right words.",
+   "tip": "Після «трохи» і «немає» — родовий відмінок.",
+   "tip_pl": "Po „трохи” i „немає” — dopełniacz.",
+   "tip_en": "After «трохи» and «немає» — the genitive.",
+   "title": "«Вісник Радіатор-Спрінгс»: обід у Фло",
+   "title_pl": "„Kurier Chłodnicy Górskiej”: obiad u Flo",
+   "title_en": "“Radiator Springs Herald”: lunch at Flo's"
+  },
+  {
+   "type": "drill",
+   "kind": "set",
+   "items": [
+    {
+     "q": "Яка новина в Маккуїна?",
+     "options": [
+      "Фло продає кафе",
+      "Док — колишній чемпіон",
+      "Метр купив нові шини"
+     ],
+     "answer": 1,
+     "exp": "Док — Гудзонський Шершень.",
+     "exp_pl": "Doc to Hudson Hornet.",
+     "exp_en": "Doc is the Hudson Hornet.",
+     "tr": "What news does McQueen have?",
+     "tr_pl": "Jaką nowinę ma Zygzak?",
+     "tr_en": "What news does McQueen have?",
+     "tag": "Сюжет",
+     "tag_pl": "Fabuła",
+     "tag_en": "Story"
+    },
+    {
+     "q": "Що друзі думають про новину?",
+     "options": [
+      "Що це жарт",
+      "Що це правда",
+      "Що це секрет Фло"
+     ],
+     "answer": 0,
+     "exp": "Вони сміються й не вірять.",
+     "exp_pl": "Śmieją się i nie wierzą.",
+     "exp_en": "They laugh and don't believe it.",
+     "tr": "What do the friends think about the news?",
+     "tr_pl": "Co przyjaciele myślą o nowinie?",
+     "tr_en": "What do the friends think about the news?",
+     "tag": "Сюжет",
+     "tag_pl": "Fabuła",
+     "tag_en": "Story"
+    },
+    {
+     "q": "Чого немає в кафе?",
+     "options": [
+      "пального",
+      "іржі",
+      "оливи"
+     ],
+     "answer": 2,
+     "exp": "Оливи немає.",
+     "exp_pl": "Oleju nie ma.",
+     "exp_en": "There isn't any oil.",
+     "tr": "What isn't there in the café?",
+     "tr_pl": "Czego nie ma w kawiarni?",
+     "tr_en": "What isn't there in the café?",
+     "tag": "Сюжет",
+     "tag_pl": "Fabuła",
+     "tag_en": "Story"
+    },
+    {
+     "q": "Що замовляє Метр?",
+     "options": [
+      "Трохи оливи",
+      "Будь-що з іржею",
+      "Органічне пальне"
+     ],
+     "answer": 1,
+     "exp": "Будь-що з іржею.",
+     "exp_pl": "Cokolwiek z rdzą.",
+     "exp_en": "Anything with rust.",
+     "tr": "What does Mater order?",
+     "tr_pl": "Co zamawia Złomek?",
+     "tr_en": "What does Mater order?",
+     "tag": "Сюжет",
+     "tag_pl": "Fabuła",
+     "tag_en": "Story"
+    },
+    {
+     "q": "Скільки платить Маккуїн?",
+     "options": [
+      "Нічого — це безкоштовно",
+      "Багато грошей",
+      "Десять доларів"
+     ],
+     "answer": 0,
+     "exp": "Фло: «Для тебе — безкоштовно!»",
+     "exp_pl": "Flo: „Dla ciebie za darmo!”",
+     "exp_en": "Flo: “For you it's free!”",
+     "tr": "How much does McQueen pay?",
+     "tr_pl": "Ile płaci Zygzak?",
+     "tr_en": "How much does McQueen pay?",
+     "tag": "Сюжет",
+     "tag_pl": "Fabuła",
+     "tag_en": "Story"
+    }
+   ],
+   "label": "РОЗУМІННЯ ТЕКСТУ",
+   "label_pl": "ROZUMIENIE TEKSTU",
+   "label_en": "READING COMPREHENSION",
+   "q": "Питання до статті Шерифа.",
+   "q_pl": "Pytania do artykułu Szeryfa.",
+   "q_en": "Questions about the Sheriff's article.",
+   "ins": "П'ять питань до тексту",
+   "ins_pl": "Pięć pytań do tekstu",
+   "ins_en": "Five questions on the text",
+   "tip": "Потрібно 70%+.",
+   "tip_pl": "Potrzeba 70%+.",
+   "tip_en": "You need 70%+."
+  },
+  {
+   "type": "quest",
+   "img": "cake",
+   "start": "s1",
+   "q": "Ти обідаєш у кафе Фло разом із Маккуїном і друзями. Говори українською.",
+   "q_pl": "Jesz obiad w kawiarni Flo razem z Zygzakiem i przyjaciółmi. Mów po ukraińsku.",
+   "q_en": "You're having lunch at Flo's café with McQueen and the friends. Speak Ukrainian.",
+   "label": "КВЕСТ: ЗА СТОЛОМ У ФЛО",
+   "label_pl": "QUEST: PRZY STOLE U FLO",
+   "label_en": "QUEST: AT FLO'S TABLE",
+   "ins": "Кожен вибір веде далі. Обирай уважно — українською",
+   "ins_pl": "Każdy wybór prowadzi dalej. Wybieraj uważnie — po ukraińsku",
+   "ins_en": "Every choice leads on. Choose carefully — in Ukrainian",
+   "tip": "Квест перевіряє слова й граматику уроку.",
+   "tip_pl": "Quest sprawdza słowa i gramatykę lekcji.",
+   "tip_en": "The quest checks the lesson's words and grammar.",
+   "steps": {
+    "s1": {
+     "q": "Фло: «Що тобі, любий?»",
+     "q_pl": "Фло: «Що тобі, любий?» (Co dla ciebie, kochanie?)",
+     "q_en": "Фло: «Що тобі, любий?» (What can I get you, honey?)",
+     "scene": "Ти сідаєш за стіл.",
+     "scene_pl": "Siadasz przy stole.",
+     "scene_en": "You sit down at the table.",
+     "choices": [
+      {
+       "t": "Трохи пального, будь ласка.",
+       "ok": true,
+       "next": "s2",
+       "fb": "Так, родовий після «трохи».",
+       "fb_pl": "Tak, dopełniacz po „трохи”.",
+       "fb_en": "Yes, genitive after «трохи»."
+      },
+      {
+       "t": "Трохи пальне, будь ласка.",
+       "ok": false,
+       "next": "s1b",
+       "fb": "Після «трохи» потрібен родовий: пального.",
+       "fb_pl": "Po „трохи” potrzebny dopełniacz: пального.",
+       "fb_en": "After «трохи» you need the genitive: пального."
+      }
+     ]
+    },
+    "s1b": {
+     "q": "Фло: «Що-що? Скажи ще раз, любий.»",
+     "q_pl": "Фло: «Що-що? Скажи ще раз, любий.» (Co takiego? Powiedz jeszcze raz, kochanie.)",
+     "q_en": "Фло: «Що-що? Скажи ще раз, любий.» (Come again? Say it once more, honey.)",
+     "scene": "Фло не зрозуміла.",
+     "scene_pl": "Flo nie zrozumiała.",
+     "scene_en": "Flo didn't understand.",
+     "choices": [
+      {
+       "t": "Пальне трохи є.",
+       "ok": false,
+       "next": "end_bad",
+       "fb": "Так не кажуть.",
+       "fb_pl": "Tak się nie mówi.",
+       "fb_en": "That's not how we say it."
+      },
+      {
+       "t": "Трохи пального, будь ласка!",
+       "ok": true,
+       "next": "s2",
+       "fb": "Так, родовий після «трохи».",
+       "fb_pl": "Tak, dopełniacz po „трохи”.",
+       "fb_en": "Yes, genitive after «трохи»."
+      }
+     ]
+    },
+    "s2": {
+     "q": "Маккуїн: «Фло, а можна ще трохи оливи?»",
+     "q_pl": "Маккуїн: «Фло, а можна ще трохи оливи?» (Flo, a można jeszcze trochę oleju?)",
+     "q_en": "Маккуїн: «Фло, а можна ще трохи оливи?» (Flo, can I have some oil too?)",
+     "scene": "Фло дивиться на тебе. На полиці порожньо.",
+     "scene_pl": "Flo patrzy na ciebie. Półka jest pusta.",
+     "scene_en": "Flo looks at you. The shelf is empty.",
+     "choices": [
+      {
+       "t": "На жаль, олива немає.",
+       "ok": false,
+       "next": "s3",
+       "fb": "Немає + родовий: оливи немає.",
+       "fb_pl": "Немає + dopełniacz: оливи немає.",
+       "fb_en": "Немає + genitive: оливи немає."
+      },
+      {
+       "t": "На жаль, оливи немає.",
+       "ok": true,
+       "next": "s3",
+       "fb": "Правильно!",
+       "fb_pl": "Dobrze!",
+       "fb_en": "Correct!"
+      }
+     ]
+    },
+    "s3": {
+     "q": "Маккуїн тихо: «Ніхто мені не вірить. А ти?»",
+     "q_pl": "Маккуїн тихо: «Ніхто мені не вірить. А ти?» (Nikt mi nie wierzy. A ty?)",
+     "q_en": "Маккуїн тихо: «Ніхто мені не вірить. А ти?» (Nobody believes me. Do you?)",
+     "scene": "Друзі сміються з новини.",
+     "scene_pl": "Przyjaciele śmieją się z nowiny.",
+     "scene_en": "The friends laugh at the news.",
+     "choices": [
+      {
+       "t": "Я тобі вірю! У Дока кілька кубків.",
+       "ok": true,
+       "next": "s4",
+       "fb": "Ти справжній друг.",
+       "fb_pl": "Jesteś prawdziwym przyjacielem.",
+       "fb_en": "You're a real friend."
+      },
+      {
+       "t": "Це жарт. Док просто тихий.",
+       "ok": false,
+       "next": "end_mid",
+       "fb": "Маккуїну сумно…",
+       "fb_pl": "Zygzakowi jest smutno…",
+       "fb_en": "McQueen feels sad…"
+      }
+     ]
+    },
+    "s4": {
+     "q": "Маккуїн: «Я хочу заплатити. Скільки грошей?»",
+     "q_pl": "Маккуїн: «Я хочу заплатити. Скільки грошей?» (Chcę zapłacić. Ile pieniędzy?)",
+     "q_en": "Маккуїн: «Я хочу заплатити. Скільки грошей?» (I want to pay. How much money?)",
+     "scene": "Фло хитає головою й всміхається.",
+     "scene_pl": "Flo kręci głową i się uśmiecha.",
+     "scene_en": "Flo shakes her head and smiles.",
+     "choices": [
+      {
+       "t": "У мене багато гроші!",
+       "ok": false,
+       "next": "end_mid",
+       "fb": "Багато + родовий: грошей.",
+       "fb_pl": "Багато + dopełniacz: грошей.",
+       "fb_en": "Багато + genitive: грошей."
+      },
+      {
+       "t": "Для друзів — безкоштовно!",
+       "ok": true,
+       "next": "end_good",
+       "fb": "Так каже Фло!",
+       "fb_pl": "Tak mówi Flo!",
+       "fb_en": "That's what Flo says!"
+      }
+     ]
+    }
+   },
+   "endings": {
+    "end_good": {
+     "good": true,
+     "title": "Кінцівка: Своя компанія",
+     "title_pl": "Zakończenie: Swoja paczka",
+     "title_en": "Ending: One of the Gang",
+     "text": "Фло всміхається, Рамон підморгує, Метр сміється. Маккуїн каже тобі: «Мені тут добре». Ти теж частина містечка.",
+     "text_pl": "Flo się uśmiecha, Ramone puszcza oko, Złomek się śmieje. Zygzak mówi ci: „Dobrze mi tu”. Ty też jesteś częścią miasteczka.",
+     "text_en": "Flo smiles, Ramone winks, Mater laughs. McQueen tells you: “I feel good here.” You're part of the town too."
+    },
+    "end_mid": {
+     "good": true,
+     "title": "Кінцівка: Майже",
+     "title_pl": "Zakończenie: Prawie",
+     "title_en": "Ending: Almost",
+     "text": "Обід смачний, але Маккуїн трохи сумний. Наступного разу підтримай його — і пам'ятай: багато грошей, трохи оливи.",
+     "text_pl": "Obiad jest smaczny, ale Zygzak jest trochę smutny. Następnym razem go wesprzyj — i pamiętaj: багато грошей, трохи оливи.",
+     "text_en": "Lunch is tasty, but McQueen is a bit sad. Next time back him up — and remember: багато грошей, трохи оливи."
+    },
+    "end_bad": {
+     "good": false,
+     "title": "Кінцівка: Без обіду",
+     "title_pl": "Zakończenie: Bez obiadu",
+     "title_en": "Ending: No Lunch",
+     "text": "Фло нічого не розуміє, і ти лишаєшся без пального. Спробуй ще раз: «Трохи пального, будь ласка».",
+     "text_pl": "Flo nic nie rozumie i zostajesz bez paliwa. Spróbuj jeszcze raz: „Трохи пального, будь ласка”.",
+     "text_en": "Flo doesn't understand, and you're left with no fuel. Try again: “Трохи пального, будь ласка”."
+    }
+   }
+  },
+  {
+   "type": "drill",
+   "kind": "set",
+   "items": [
+    {
+     "k": "type",
+     "q": "Напиши українською: «Some fuel, please.»",
+     "q_pl": "Napisz po ukraińsku: „Trochę paliwa, proszę.”",
+     "q_en": "Write in Ukrainian: “Some fuel, please.”",
+     "options": [
+      "Трохи пального, будь ласка.",
+      "Трохи пального, будь ласка",
+      "трохи пального, будь ласка"
+     ],
+     "exp": "Трохи пального, будь ласка.",
+     "exp_pl": "Трохи пального, будь ласка.",
+     "exp_en": "Трохи пального, будь ласка.",
+     "tag": "Напиши",
+     "tag_pl": "Napisz",
+     "tag_en": "Write"
+    },
+    {
+     "k": "order",
+     "q": "Склади репліку: «Anything with rust, please!»",
+     "q_pl": "Ułóż kwestię: „Cokolwiek z rdzą, proszę!”",
+     "q_en": "Build the line: “Anything with rust, please!”",
+     "options": [
+      "Будь-що",
+      "з",
+      "іржею,",
+      "будь",
+      "ласка!"
+     ],
+     "exp": "Будь-що з іржею, будь ласка!",
+     "exp_pl": "Будь-що з іржею, будь ласка!",
+     "exp_en": "Будь-що з іржею, будь ласка!",
+     "tag": "Склади",
+     "tag_pl": "Ułóż",
+     "tag_en": "Build"
+    },
+    {
+     "k": "type",
+     "q": "Напиши українською: «Nobody believes me!»",
+     "q_pl": "Napisz po ukraińsku: „Nikt mi nie wierzy!”",
+     "q_en": "Write in Ukrainian: “Nobody believes me!”",
+     "options": [
+      "Ніхто мені не вірить!",
+      "Ніхто мені не вірить",
+      "Мені ніхто не вірить!",
+      "Мені ніхто не вірить"
+     ],
+     "exp": "Ніхто мені не вірить!",
+     "exp_pl": "Ніхто мені не вірить!",
+     "exp_en": "Ніхто мені не вірить!",
+     "tag": "Напиши",
+     "tag_pl": "Napisz",
+     "tag_en": "Write"
+    },
+    {
+     "k": "order",
+     "q": "Склади репліку: «Doc has a few cups!»",
+     "q_pl": "Ułóż kwestię: „Doc ma kilka pucharów!”",
+     "q_en": "Build the line: “Doc has a few cups!”",
+     "options": [
+      "У",
+      "Дока",
+      "кілька",
+      "кубків!"
+     ],
+     "exp": "У Дока кілька кубків!",
+     "exp_pl": "У Дока кілька кубків!",
+     "exp_en": "У Дока кілька кубків!",
+     "tag": "Склади",
+     "tag_pl": "Ułóż",
+     "tag_en": "Build"
+    },
+    {
+     "k": "type",
+     "q": "Напиши українською: «There isn't any oil.»",
+     "q_pl": "Napisz po ukraińsku: „Nie ma oleju.”",
+     "q_en": "Write in Ukrainian: “There isn't any oil.”",
+     "options": [
+      "Оливи немає.",
+      "Оливи немає",
+      "Немає оливи.",
+      "Немає оливи"
+     ],
+     "exp": "Оливи немає.",
+     "exp_pl": "Оливи немає.",
+     "exp_en": "Оливи немає.",
+     "tag": "Напиши",
+     "tag_pl": "Napisz",
+     "tag_en": "Write"
+    },
+    {
+     "k": "order",
+     "q": "Склади репліку: «It's free for you.»",
+     "q_pl": "Ułóż kwestię: „Dla ciebie to za darmo.”",
+     "q_en": "Build the line: “It's free for you.”",
+     "options": [
+      "Для",
+      "тебе",
+      "це",
+      "безкоштовно."
+     ],
+     "exp": "Для тебе це безкоштовно.",
+     "exp_pl": "Для тебе це безкоштовно.",
+     "exp_en": "Для тебе це безкоштовно.",
+     "tag": "Склади",
+     "tag_pl": "Ułóż",
+     "tag_en": "Build"
+    },
+    {
+     "k": "type",
+     "q": "Напиши українською: «It's true!»",
+     "q_pl": "Napisz po ukraińsku: „To prawda!”",
+     "q_en": "Write in Ukrainian: “It's true!”",
+     "options": [
+      "Це правда!",
+      "Це правда"
+     ],
+     "exp": "Це правда!",
+     "exp_pl": "Це правда!",
+     "exp_en": "Це правда!",
+     "tag": "Напиши",
+     "tag_pl": "Napisz",
+     "tag_en": "Write"
+    },
+    {
+     "k": "order",
+     "q": "Склади репліку: «I'm part of the town.»",
+     "q_pl": "Ułóż kwestię: „Jestem częścią miasteczka.”",
+     "q_en": "Build the line: “I'm part of the town.”",
+     "options": [
+      "Я",
+      "частина",
+      "містечка."
+     ],
+     "exp": "Я частина містечка.",
+     "exp_pl": "Я частина містечка.",
+     "exp_en": "Я частина містечка.",
+     "tag": "Склади",
+     "tag_pl": "Ułóż",
+     "tag_en": "Build"
+    }
+   ],
+   "label": "ПИШИ Й СКЛАДАЙ",
+   "label_pl": "PISZ I UKŁADAJ",
+   "label_en": "WRITE AND BUILD",
+   "q": "Фло записує замовлення. Напиши й склади репліки українською.",
+   "q_pl": "Flo zapisuje zamówienia. Napisz i ułóż kwestie po ukraińsku.",
+   "q_en": "Flo writes down the orders. Write and build the lines in Ukrainian.",
+   "ins": "Пиши й складай репліки",
+   "ins_pl": "Pisz i układaj kwestie",
+   "ins_en": "Write and build the lines",
+   "tip": "Потрібно 70%+.",
+   "tip_pl": "Potrzeba 70%+.",
+   "tip_en": "You need 70%+."
+  },
+  {
+   "type": "speaking",
+   "say": "У мене новина! Док — чемпіон! Це правда!",
+   "label": "ГОВОРІННЯ",
+   "label_pl": "MÓWIENIE",
+   "label_en": "SPEAKING",
+   "q": "Скажи вголос, як Маккуїн у кафе.",
+   "q_pl": "Powiedz na głos jak Zygzak w kawiarni.",
+   "q_en": "Say it out loud, like McQueen in the café.",
+   "qt_pl": "Powiedz na głos jak Zygzak w kawiarni.",
+   "qt_en": "Say it out loud, like McQueen in the café.",
+   "ins": "Прочитай і скажи вголос",
+   "ins_pl": "Przeczytaj i powiedz na głos",
+   "ins_en": "Read it and say it aloud",
+   "tip": "Переклад: I've got news! Doc is a champion! It's true!",
+   "tip_pl": "Tłumaczenie: Mam nowinę! Doc jest mistrzem! To prawda!",
+   "tip_en": "Translation: I've got news! Doc is a champion! It's true!"
+  },
+  {
+   "type": "speaking",
+   "say": "Трохи пального, будь ласка. А оливи немає?",
+   "label": "ГОВОРІННЯ",
+   "label_pl": "MÓWIENIE",
+   "label_en": "SPEAKING",
+   "q": "Замов у Фло вголос.",
+   "q_pl": "Zamów u Flo na głos.",
+   "q_en": "Order from Flo out loud.",
+   "qt_pl": "Zamów u Flo na głos.",
+   "qt_en": "Order from Flo out loud.",
+   "ins": "Прочитай і скажи вголос",
+   "ins_pl": "Przeczytaj i powiedz na głos",
+   "ins_en": "Read it and say it aloud",
+   "tip": "Переклад: Some fuel, please. Isn't there any oil?",
+   "tip_pl": "Tłumaczenie: Trochę paliwa, proszę. A oleju nie ma?",
+   "tip_en": "Translation: Some fuel, please. Isn't there any oil?"
+  },
+  {
+   "type": "drill",
+   "kind": "set",
+   "items": [
+    {
+     "q": "Дружина Рамона — ____.",
+     "options": [
+      "Саллі",
+      "Фло",
+      "Ліззі"
+     ],
+     "answer": 1,
+     "exp": "Фло — дружина Рамона.",
+     "exp_pl": "Flo jest żoną Ramone'a.",
+     "exp_en": "Flo is Ramone's wife.",
+     "tr": "Ramone's wife is…",
+     "tr_pl": "Żona Ramone'a to…",
+     "tr_en": "Ramone's wife is…",
+     "tag": "Слово",
+     "tag_pl": "Słowo",
+     "tag_en": "Word"
+    },
+    {
+     "q": "Метр любить ____.",
+     "options": [
+      "оливу",
+      "воду",
+      "іржу"
+     ],
+     "answer": 2,
+     "exp": "Іржа = rust.",
+     "exp_pl": "Іржа = rdza.",
+     "exp_en": "Іржа = rust.",
+     "tr": "Mater loves…",
+     "tr_pl": "Złomek lubi…",
+     "tr_en": "Mater loves…",
+     "tag": "Слово",
+     "tag_pl": "Słowo",
+     "tag_en": "Word"
+    },
+    {
+     "q": "Коли щось нічого не коштує, воно ____.",
+     "options": [
+      "безкоштовне",
+      "дороге",
+      "тихе"
+     ],
+     "answer": 0,
+     "exp": "Безкоштовний = free.",
+     "exp_pl": "Безкоштовний = darmowy.",
+     "exp_en": "Безкоштовний = free.",
+     "tr": "When something costs nothing, it's…",
+     "tr_pl": "Kiedy coś nic nie kosztuje, jest…",
+     "tr_en": "When something costs nothing, it's…",
+     "tag": "Слово",
+     "tag_pl": "Słowo",
+     "tag_en": "Word"
+    },
+    {
+     "q": "Коли ніхто не вірить, люди думають, що це ____.",
+     "options": [
+      "обід",
+      "жарт",
+      "пляшка"
+     ],
+     "answer": 1,
+     "exp": "Жарт = joke.",
+     "exp_pl": "Жарт = żart.",
+     "exp_en": "Жарт = joke.",
+     "tr": "When nobody believes it, people think it's a…",
+     "tr_pl": "Kiedy nikt nie wierzy, ludzie myślą, że to…",
+     "tr_en": "When nobody believes it, people think it's a…",
+     "tag": "Слово",
+     "tag_pl": "Słowo",
+     "tag_en": "Word"
+    },
+    {
+     "q": "Сьогодні Рамон ____.",
+     "options": [
+      "тихий",
+      "правдивий",
+      "фіолетовий"
+     ],
+     "answer": 2,
+     "exp": "Фіолетовий = purple.",
+     "exp_pl": "Фіолетовий = fioletowy.",
+     "exp_en": "Фіолетовий = purple.",
+     "tr": "Today Ramone is…",
+     "tr_pl": "Dziś Ramone jest…",
+     "tr_en": "Today Ramone is…",
+     "tag": "Слово",
+     "tag_pl": "Słowo",
+     "tag_en": "Word"
+    },
+    {
+     "q": "Опівдні друзі їдуть у кафе на ____.",
+     "options": [
+      "обід",
+      "новину",
+      "іржу"
+     ],
+     "answer": 0,
+     "exp": "Обід = lunch.",
+     "exp_pl": "Обід = obiad.",
+     "exp_en": "Обід = lunch.",
+     "tr": "At noon the friends go to the café for…",
+     "tr_pl": "W południe przyjaciele jadą do kawiarni na…",
+     "tr_en": "At noon the friends go to the café for…",
+     "tag": "Слово",
+     "tag_pl": "Słowo",
+     "tag_en": "Word"
+    },
+    {
+     "q": "Олива часто стоїть у ____.",
+     "options": [
+      "новині",
+      "пляшці",
+      "частині"
+     ],
+     "answer": 1,
+     "exp": "Пляшка = bottle.",
+     "exp_pl": "Пляшка = butelka.",
+     "exp_en": "Пляшка = bottle.",
+     "tr": "Oil often comes in a…",
+     "tr_pl": "Olej często stoi w…",
+     "tr_en": "Oil often comes in a…",
+     "tag": "Слово",
+     "tag_pl": "Słowo",
+     "tag_en": "Word"
+    },
+    {
+     "q": "У кафе ми ____ за обід.",
+     "options": [
+      "віримо",
+      "сміємося",
+      "платимо"
+     ],
+     "answer": 2,
+     "exp": "Платити = to pay.",
+     "exp_pl": "Платити = płacić.",
+     "exp_en": "Платити = to pay.",
+     "tr": "In a café we pay for lunch.",
+     "tr_pl": "W kawiarni płacimy za obiad.",
+     "tr_en": "In a café we pay for lunch.",
+     "tag": "Слово",
+     "tag_pl": "Słowo",
+     "tag_en": "Word"
+    },
+    {
+     "q": "Док мало говорить. Він ____.",
+     "options": [
+      "тихий",
+      "фіолетовий",
+      "безкоштовний"
+     ],
+     "answer": 0,
+     "exp": "Тихий = quiet.",
+     "exp_pl": "Тихий = cichy.",
+     "exp_en": "Тихий = quiet.",
+     "tr": "Doc doesn't talk much. He's…",
+     "tr_pl": "Doc mało mówi. Jest…",
+     "tr_en": "Doc doesn't talk much. He's…",
+     "tag": "Слово",
+     "tag_pl": "Słowo",
+     "tag_en": "Word"
+    }
+   ],
+   "label": "ПІСЛЯ ОБІДУ",
+   "label_pl": "PO OBIEDZIE",
+   "label_en": "AFTER LUNCH",
+   "q": "Ліззі питає тебе про обід у Фло. Відповідай.",
+   "q_pl": "Lizzie pyta cię o obiad u Flo. Odpowiadaj.",
+   "q_en": "Lizzie asks you about lunch at Flo's. Answer.",
+   "ins": "Дев'ять питань на слова уроку",
+   "ins_pl": "Dziewięć pytań na słowa lekcji",
+   "ins_en": "Nine questions on the lesson words",
+   "tip": "Потрібно 70%+.",
+   "tip_pl": "Potrzeba 70%+.",
+   "tip_en": "You need 70%+."
+  },
+  {
+   "type": "final",
+   "img": "letter",
+   "answer": 25,
+   "label": "ЛИСТ КОМАНДІ",
+   "label_pl": "LIST DO EKIPY",
+   "label_en": "A LETTER TO THE CREW",
+   "q": "Напиши листа своїй команді механіків (25+ слів): де ти обідаєш? що ти замовляєш? чого немає? хто сидить за столом? яка новина в Маккуїна?",
+   "q_pl": "Napisz list do swojej ekipy mechaników — po ukraińsku (25+ słów): gdzie jesz obiad? co zamawiasz? czego nie ma? kto siedzi przy stole? jaką nowinę ma Zygzak?",
+   "q_en": "Write a letter to your pit crew — in Ukrainian (25+ words): where are you having lunch? what do you order? what isn't there? who's sitting at the table? what news does McQueen have?",
+   "ins": "Напиши листа",
+   "ins_pl": "Napisz list po ukraińsku",
+   "ins_en": "Write the letter in Ukrainian",
+   "tip": "Привіт, команда! Я обідаю в кафе Фло. Я замовляю трохи… На жаль, … немає. За столом… У Маккуїна новина: …",
+   "tip_pl": "Привіт, команда! Я обідаю в кафе Фло. Я замовляю трохи… На жаль, … немає. За столом… У Маккуїна новина: …",
+   "tip_en": "Привіт, команда! Я обідаю в кафе Фло. Я замовляю трохи… На жаль, … немає. За столом… У Маккуїна новина: …"
+  }
+ ]
+}

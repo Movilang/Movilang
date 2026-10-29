@@ -1,0 +1,1451 @@
+{
+ "lesson_id": "572050c9-a30b-4a5d-ae12-7ee5ae453292",
+ "tg": "uk",
+ "tasks": [
+  {
+   "ref": 0
+  },
+  {
+   "type": "intro",
+   "label": "ТВОЯ РОЛЬ",
+   "label_pl": "TWOJA ROLA",
+   "label_en": "YOUR ROLE",
+   "q": "Ти — новачок із команди Маккуїна, і ти теж у Радіатор-Спрінгс. Ніч. Маккуїн кладе новий асфальт на головній вулиці, а ти тримаєш ліхтар. Уранці все містечко побачить нову дорогу.",
+   "q_pl": "Jesteś nowicjuszem z ekipy Zygzaka i też jesteś w Chłodnicy Górskiej. Noc. Zygzak kładzie nowy asfalt na głównej ulicy, a ty trzymasz latarkę. Rano całe miasteczko zobaczy nową drogę.",
+   "q_en": "You're the rookie from McQueen's crew, and you're in Radiator Springs too. It's night. McQueen is laying new asphalt on Main Street while you hold the flashlight. In the morning the whole town will see the new road."
+  },
+  {
+   "ref": 1
+  },
+  {
+   "type": "match",
+   "options": [
+    "працював=worked",
+    "закінчив=finished",
+    "втомлений=tired",
+    "робота=job",
+    "минулої ночі=last night"
+   ],
+   "options_pl": [
+    "працював=pracował",
+    "закінчив=skończył",
+    "втомлений=zmęczony",
+    "робота=praca",
+    "минулої ночі=zeszłej nocy"
+   ],
+   "options_en": [
+    "працював=worked",
+    "закінчив=finished",
+    "втомлений=tired",
+    "робота=job",
+    "минулої ночі=last night"
+   ],
+   "label": "СЦЕНА 1 · СЛОВА",
+   "label_pl": "SCENA 1 · SŁOWA",
+   "label_en": "SCENE 1 · WORDS",
+   "q": "З'єднай слова сцени з перекладом.",
+   "q_pl": "Połącz słowa sceny z tłumaczeniem.",
+   "q_en": "Match the scene words with their translations.",
+   "qt_pl": "Połącz słowa sceny z tłumaczeniem.",
+   "qt_en": "Match the scene words with their translations.",
+   "ins": "П'ять пар зі сцени",
+   "ins_pl": "Pięć par ze sceny",
+   "ins_en": "Five pairs from the scene",
+   "tip": "Не впевнений? Повернись до словника сцени.",
+   "tip_pl": "Nie masz pewności? Wróć do słownika sceny.",
+   "tip_en": "Not sure? Go back to the scene glossary."
+  },
+  {
+   "type": "drill",
+   "kind": "set",
+   "items": [
+    {
+     "q": "Маккуїн: «Я ____ усю ніч.»",
+     "options": [
+      "спав",
+      "працював",
+      "плакав"
+     ],
+     "answer": 1,
+     "exp": "Працював = worked.",
+     "exp_pl": "Працював = pracował.",
+     "exp_en": "Працював = worked.",
+     "tr": "McQueen: “I worked all night.”",
+     "tr_pl": "Zygzak: „Pracowałem całą noc.”",
+     "tr_en": "McQueen: “I worked all night.”",
+     "tag": "Репліка",
+     "tag_pl": "Kwestia",
+     "tag_en": "Line"
+    },
+    {
+     "q": "Маккуїн: «Я ____!»",
+     "options": [
+      "закінчив",
+      "зупинявся",
+      "прокинувся"
+     ],
+     "answer": 0,
+     "exp": "Закінчив = finished.",
+     "exp_pl": "Закінчив = skończył.",
+     "exp_en": "Закінчив = finished.",
+     "tr": "McQueen: “I finished!”",
+     "tr_pl": "Zygzak: „Skończyłem!”",
+     "tr_en": "McQueen: “I finished!”",
+     "tag": "Репліка",
+     "tag_pl": "Kwestia",
+     "tag_en": "Line"
+    },
+    {
+     "q": "Маккуїн: «Я втомлений, але ____.»",
+     "options": [
+      "сердитий",
+      "порожній",
+      "щасливий"
+     ],
+     "answer": 2,
+     "exp": "Щасливий = happy.",
+     "exp_pl": "Щасливий = szczęśliwy.",
+     "exp_en": "Щасливий = happy.",
+     "tr": "McQueen: “I'm tired but happy.”",
+     "tr_pl": "Zygzak: „Jestem zmęczony, ale szczęśliwy.”",
+     "tr_en": "McQueen: “I'm tired but happy.”",
+     "tag": "Репліка",
+     "tag_pl": "Kwestia",
+     "tag_en": "Line"
+    },
+    {
+     "q": "Маккуїн спав усю ніч.",
+     "options": [
+      "Правда",
+      "Неправда"
+     ],
+     "answer": 1,
+     "exp": "Він не спав — він працював.",
+     "exp_pl": "Nie spał — pracował.",
+     "exp_en": "He didn't sleep — he worked.",
+     "tr": "McQueen slept all night.",
+     "tr_pl": "Zygzak spał całą noc.",
+     "tr_en": "McQueen slept all night.",
+     "tag": "Правда чи ні?",
+     "tag_pl": "Prawda czy nie?",
+     "tag_en": "True or false?"
+    },
+    {
+     "q": "Маккуїн: «Я хотів допомогти.» Для кого він працював?",
+     "options": [
+      "Для друзів",
+      "Для Чіка Хікса",
+      "Для журналістів"
+     ],
+     "answer": 0,
+     "exp": "Він хотів зробити дорогу для друзів.",
+     "exp_pl": "Chciał zrobić drogę dla przyjaciół.",
+     "exp_en": "He wanted to make the road for his friends.",
+     "tr": "McQueen: “I wanted to help.” Who did he work for?",
+     "tr_pl": "Zygzak: „Chciałem pomóc.” Dla kogo pracował?",
+     "tr_en": "McQueen: “I wanted to help.” Who did he work for?",
+     "tag": "Зрозумій героя",
+     "tag_pl": "Zrozum bohatera",
+     "tag_en": "Read the hero"
+    },
+    {
+     "q": "Третя година ночі. Маккуїн: «Ще трохи!» Що ти робиш?",
+     "options": [
+      "Іду спати",
+      "Тримаю ліхтар і допомагаю",
+      "Їду в Каліфорнію"
+     ],
+     "answer": 1,
+     "exp": "Ти — його команда!",
+     "exp_pl": "Jesteś jego zespołem!",
+     "exp_en": "You're his crew!",
+     "tr": "3 a.m. McQueen: “A little more!” What do you do?",
+     "tr_pl": "Trzecia w nocy. Zygzak: „Jeszcze trochę!” Co robisz?",
+     "tr_en": "3 a.m. McQueen: “A little more!” What do you do?",
+     "tag": "Твій вибір",
+     "tag_pl": "Twój wybór",
+     "tag_en": "Your call"
+    }
+   ],
+   "label": "СЦЕНА 1 · НІЧ",
+   "label_pl": "SCENA 1 · NOC",
+   "label_en": "SCENE 1 · NIGHT",
+   "q": "Ніч на головній вулиці. Маккуїн працює, ти світиш ліхтарем.",
+   "q_pl": "Noc na głównej ulicy. Zygzak pracuje, ty świecisz latarką.",
+   "q_en": "Night on Main Street. McQueen works, you hold the light.",
+   "ins": "Встав слово, обери правду, зрозумій героя",
+   "ins_pl": "Wstaw słowo, oceń prawdę, zrozum bohatera",
+   "ins_en": "Fill the gap, judge true/false, understand the hero",
+   "tip": "Потрібно 70%+.",
+   "tip_pl": "Potrzeba 70%+.",
+   "tip_en": "You need 70%+."
+  },
+  {
+   "ref": 2
+  },
+  {
+   "type": "match",
+   "options": [
+    "кричати=to shout",
+    "стрибати=to jump",
+    "дякувати=to thank",
+    "ідеальний=perfect",
+    "радість=joy"
+   ],
+   "options_pl": [
+    "кричати=krzyczeć",
+    "стрибати=skakać",
+    "дякувати=dziękować",
+    "ідеальний=idealny",
+    "радість=radość"
+   ],
+   "options_en": [
+    "кричати=to shout",
+    "стрибати=to jump",
+    "дякувати=to thank",
+    "ідеальний=perfect",
+    "радість=joy"
+   ],
+   "label": "СЦЕНА 2 · СЛОВА",
+   "label_pl": "SCENA 2 · SŁOWA",
+   "label_en": "SCENE 2 · WORDS",
+   "q": "З'єднай слова сцени з перекладом.",
+   "q_pl": "Połącz słowa sceny z tłumaczeniem.",
+   "q_en": "Match the scene words with their translations.",
+   "qt_pl": "Połącz słowa sceny z tłumaczeniem.",
+   "qt_en": "Match the scene words with their translations.",
+   "ins": "П'ять пар зі сцени",
+   "ins_pl": "Pięć par ze sceny",
+   "ins_en": "Five pairs from the scene",
+   "tip": "Не впевнений? Повернись до словника сцени.",
+   "tip_pl": "Nie masz pewności? Wróć do słownika sceny.",
+   "tip_en": "Not sure? Go back to the scene glossary."
+  },
+  {
+   "type": "drill",
+   "kind": "set",
+   "items": [
+    {
+     "q": "Фло: «Дорога ____!»",
+     "options": [
+      "ідеальна",
+      "втомлена",
+      "порожня"
+     ],
+     "answer": 0,
+     "exp": "Ідеальна = perfect.",
+     "exp_pl": "Ідеальна = idealna.",
+     "exp_en": "Ідеальна = perfect.",
+     "tr": "Flo: “The road is perfect!”",
+     "tr_pl": "Flo: „Droga jest idealna!”",
+     "tr_en": "Flo: “The road is perfect!”",
+     "tag": "Репліка",
+     "tag_pl": "Kwestia",
+     "tag_en": "Line"
+    },
+    {
+     "q": "Метр голосно ____: «Ого!»",
+     "options": [
+      "заплакав",
+      "закричав",
+      "заснув"
+     ],
+     "answer": 1,
+     "exp": "Закричав = shouted.",
+     "exp_pl": "Закричав = krzyknął.",
+     "exp_en": "Закричав = shouted.",
+     "tr": "Mater shouted loudly: “Wow!”",
+     "tr_pl": "Złomek głośno krzyknął: „Ojej!”",
+     "tr_en": "Mater shouted loudly: “Wow!”",
+     "tag": "Репліка",
+     "tag_pl": "Kwestia",
+     "tag_en": "Line"
+    },
+    {
+     "q": "Фло ____ від радості.",
+     "options": [
+      "працювала",
+      "закінчила",
+      "підстрибнула"
+     ],
+     "answer": 2,
+     "exp": "Підстрибнула = jumped.",
+     "exp_pl": "Підстрибнула = podskoczyła.",
+     "exp_en": "Підстрибнула = jumped.",
+     "tr": "Flo jumped with joy.",
+     "tr_pl": "Flo podskoczyła z radości.",
+     "tr_en": "Flo jumped with joy.",
+     "tag": "Репліка",
+     "tag_pl": "Kwestia",
+     "tag_en": "Line"
+    },
+    {
+     "q": "Сардж ____ — як солдат.",
+     "options": [
+      "заплакав",
+      "відсалютував",
+      "відчинив"
+     ],
+     "answer": 1,
+     "exp": "Відсалютував = saluted.",
+     "exp_pl": "Відсалютував = zasalutował.",
+     "exp_en": "Відсалютував = saluted.",
+     "tr": "Sarge saluted — like a soldier.",
+     "tr_pl": "Sierżant zasalutował — jak żołnierz.",
+     "tr_en": "Sarge saluted — like a soldier.",
+     "tag": "Репліка",
+     "tag_pl": "Kwestia",
+     "tag_en": "Line"
+    },
+    {
+     "q": "Червоний заплакав від щастя.",
+     "options": [
+      "Правда",
+      "Неправда"
+     ],
+     "answer": 0,
+     "exp": "Червоний — пожежна машина. Він часто плаче.",
+     "exp_pl": "Red to wóz strażacki. Często płacze.",
+     "exp_en": "Red is the fire truck. He often cries.",
+     "tr": "Red cried with happiness.",
+     "tr_pl": "Red rozpłakał się ze szczęścia.",
+     "tr_en": "Red cried with happiness.",
+     "tag": "Правда чи ні?",
+     "tag_pl": "Prawda czy nie?",
+     "tag_en": "True or false?"
+    },
+    {
+     "q": "Містяни дивляться на дорогу, а потім кричать «Ура!». Що вони відчувають?",
+     "options": [
+      "Злість",
+      "Втому",
+      "Радість"
+     ],
+     "answer": 2,
+     "exp": "Радість = joy.",
+     "exp_pl": "Радість = radość.",
+     "exp_en": "Радість = joy.",
+     "tr": "The townsfolk look at the road, then shout “Hooray!”. What do they feel?",
+     "tr_pl": "Mieszkańcy patrzą na drogę, a potem krzyczą „Hura!”. Co czują?",
+     "tr_en": "The townsfolk look at the road, then shout “Hooray!”. What do they feel?",
+     "tag": "Зрозумій героя",
+     "tag_pl": "Zrozum bohatera",
+     "tag_en": "Read the hero"
+    }
+   ],
+   "label": "СЦЕНА 2 · РАНОК",
+   "label_pl": "SCENA 2 · PORANEK",
+   "label_en": "SCENE 2 · MORNING",
+   "q": "Ранок. Містяни прокидаються й бачать нову дорогу.",
+   "q_pl": "Rano. Mieszkańcy budzą się i widzą nową drogę.",
+   "q_en": "Morning. The townsfolk wake up and see the new road.",
+   "ins": "Встав слово, обери правду, зрозумій героя",
+   "ins_pl": "Wstaw słowo, oceń prawdę, zrozum bohatera",
+   "ins_en": "Fill the gap, judge true/false, understand the hero",
+   "tip": "Потрібно 70%+.",
+   "tip_pl": "Potrzeba 70%+.",
+   "tip_en": "You need 70%+."
+  },
+  {
+   "ref": 3
+  },
+  {
+   "type": "match",
+   "options": [
+    "вирішувати=to decide",
+    "ще один=one more",
+    "дружба=friendship",
+    "усміхатися=to smile",
+    "відвідувати=to visit"
+   ],
+   "options_pl": [
+    "вирішувати=decydować",
+    "ще один=jeszcze jeden",
+    "дружба=przyjaźń",
+    "усміхатися=uśmiechać się",
+    "відвідувати=odwiedzać"
+   ],
+   "options_en": [
+    "вирішувати=to decide",
+    "ще один=one more",
+    "дружба=friendship",
+    "усміхатися=to smile",
+    "відвідувати=to visit"
+   ],
+   "label": "СЦЕНА 3 · СЛОВА",
+   "label_pl": "SCENA 3 · SŁOWA",
+   "label_en": "SCENE 3 · WORDS",
+   "q": "З'єднай слова сцени з перекладом.",
+   "q_pl": "Połącz słowa sceny z tłumaczeniem.",
+   "q_en": "Match the scene words with their translations.",
+   "qt_pl": "Połącz słowa sceny z tłumaczeniem.",
+   "qt_en": "Match the scene words with their translations.",
+   "ins": "П'ять пар зі сцени",
+   "ins_pl": "Pięć par ze sceny",
+   "ins_en": "Five pairs from the scene",
+   "tip": "Не впевнений? Повернись до словника сцени.",
+   "tip_pl": "Nie masz pewności? Wróć do słownika sceny.",
+   "tip_en": "Not sure? Go back to the scene glossary."
+  },
+  {
+   "type": "drill",
+   "kind": "set",
+   "items": [
+    {
+     "q": "Маккуїн: «Я вирішив ____.»",
+     "options": [
+      "поспішати",
+      "залишитися",
+      "плакати"
+     ],
+     "answer": 1,
+     "exp": "Залишитися = to stay.",
+     "exp_pl": "Залишитися = zostać.",
+     "exp_en": "Залишитися = to stay.",
+     "tr": "McQueen: “I decided to stay.”",
+     "tr_pl": "Zygzak: „Postanowiłem zostać.”",
+     "tr_en": "McQueen: “I decided to stay.”",
+     "tag": "Репліка",
+     "tag_pl": "Kwestia",
+     "tag_en": "Line"
+    },
+    {
+     "q": "Маккуїн: «____ день!»",
+     "options": [
+      "Робота",
+      "Минулої ночі",
+      "Ще один"
+     ],
+     "answer": 2,
+     "exp": "Ще один = one more.",
+     "exp_pl": "Ще один = jeszcze jeden.",
+     "exp_en": "Ще один = one more.",
+     "tr": "McQueen: “One more day!”",
+     "tr_pl": "Zygzak: „Jeszcze jeden dzień!”",
+     "tr_en": "McQueen: “One more day!”",
+     "tag": "Репліка",
+     "tag_pl": "Kwestia",
+     "tag_en": "Line"
+    },
+    {
+     "q": "Маккуїн дуже поспішає до Каліфорнії.",
+     "options": [
+      "Правда",
+      "Неправда"
+     ],
+     "answer": 1,
+     "exp": "Чомусь він не хоче поспішати.",
+     "exp_pl": "Jakoś nie chce się spieszyć.",
+     "exp_en": "Somehow he doesn't want to hurry.",
+     "tr": "McQueen is in a big hurry to get to California.",
+     "tr_pl": "Zygzak bardzo spieszy się do Kalifornii.",
+     "tr_en": "McQueen is in a big hurry to get to California.",
+     "tag": "Правда чи ні?",
+     "tag_pl": "Prawda czy nie?",
+     "tag_en": "True or false?"
+    },
+    {
+     "q": "Саллі бачить дорогу й усміхається.",
+     "options": [
+      "Правда",
+      "Неправда"
+     ],
+     "answer": 0,
+     "exp": "Усміхається = smiles.",
+     "exp_pl": "Усміхається = uśmiecha się.",
+     "exp_en": "Усміхається = smiles.",
+     "tr": "Sally sees the road and smiles.",
+     "tr_pl": "Sally widzi drogę i się uśmiecha.",
+     "tr_en": "Sally sees the road and smiles.",
+     "tag": "Правда чи ні?",
+     "tag_pl": "Prawda czy nie?",
+     "tag_en": "True or false?"
+    },
+    {
+     "q": "Маккуїн відвідав усіх друзів у містечку. Що змінилося?",
+     "options": [
+      "Він думає тільки про кубок",
+      "Дружба тепер для нього важлива",
+      "Він сердитий на всіх"
+     ],
+     "answer": 1,
+     "exp": "Яка зміна! Дружба важливіша за гонку.",
+     "exp_pl": "Co za zmiana! Przyjaźń jest ważniejsza niż wyścig.",
+     "exp_en": "What a change! Friendship matters more than a race.",
+     "tr": "McQueen visited all his friends in town. What has changed?",
+     "tr_pl": "Zygzak odwiedził wszystkich przyjaciół w miasteczku. Co się zmieniło?",
+     "tr_en": "McQueen visited all his friends in town. What has changed?",
+     "tag": "Зрозумій героя",
+     "tag_pl": "Zrozum bohatera",
+     "tag_en": "Read the hero"
+    },
+    {
+     "q": "Маккуїн питає тебе: «Може, ще один день?» Що ти кажеш?",
+     "options": [
+      "Так! Ще один день!",
+      "Ні! Їдьмо негайно!",
+      "Я не знаю, хто ти."
+     ],
+     "answer": 0,
+     "exp": "Ти бачиш: тут він щасливий.",
+     "exp_pl": "Widzisz: tu jest szczęśliwy.",
+     "exp_en": "You can see he's happy here.",
+     "tr": "McQueen asks you: “Maybe one more day?” What do you say?",
+     "tr_pl": "Zygzak pyta cię: „Może jeszcze jeden dzień?” Co mówisz?",
+     "tr_en": "McQueen asks you: “Maybe one more day?” What do you say?",
+     "tag": "Твій вибір",
+     "tag_pl": "Twój wybór",
+     "tag_en": "Your call"
+    }
+   ],
+   "label": "СЦЕНА 3 · ШЛЯХ ВІЛЬНИЙ",
+   "label_pl": "SCENA 3 · DROGA WOLNA",
+   "label_en": "SCENE 3 · FREE TO GO",
+   "q": "Дорога готова. Маккуїн може їхати… але не поспішає.",
+   "q_pl": "Droga gotowa. Zygzak może jechać… ale się nie spieszy.",
+   "q_en": "The road is done. McQueen can leave… but he's in no hurry.",
+   "ins": "Встав слово, обери правду, зрозумій героя",
+   "ins_pl": "Wstaw słowo, oceń prawdę, zrozum bohatera",
+   "ins_en": "Fill the gap, judge true/false, understand the hero",
+   "tip": "Потрібно 70%+.",
+   "tip_pl": "Potrzeba 70%+.",
+   "tip_en": "You need 70%+."
+  },
+  {
+   "type": "intro",
+   "label": "ПРАВИЛО",
+   "label_pl": "ZASADA",
+   "label_en": "RULE",
+   "q": "Минулий час: дієслово змінюється за родом і числом. Він працював, вона працювала, вони працювали. Він закінчив, вона закінчила, вони закінчили. Заперечення: не + дієслово — Він не спав. З фільму: Маккуїн працював усю ніч. Фло підстрибнула. Містяни прокинулися.",
+   "q_pl": "Czas przeszły po ukraińsku zmienia się według rodzaju i liczby: він працював (on pracował), вона працювала (ona pracowała), вони працювали (oni pracowali). Він закінчив, вона закінчила, вони закінчили. Przeczenie: не + czasownik — Він не спав (nie spał). Z filmu: Маккуїн працював усю ніч. Фло підстрибнула. Містяни прокинулися.",
+   "q_en": "Ukrainian past tense changes by gender and number: він працював (he worked), вона працювала (she worked), вони працювали (they worked). Він закінчив, вона закінчила, вони закінчили. Negative: не + verb — Він не спав (he didn't sleep). From the film: Маккуїн працював усю ніч. Фло підстрибнула. Містяни прокинулися."
+  },
+  {
+   "type": "drill",
+   "kind": "set",
+   "items": [
+    {
+     "q": "Маккуїн ____ усю ніч.",
+     "options": [
+      "працювала",
+      "працював",
+      "працювали"
+     ],
+     "answer": 1,
+     "exp": "Маккуїн — він: працював.",
+     "exp_pl": "Zygzak to on: працював.",
+     "exp_en": "McQueen is “he”: працював.",
+     "tr": "McQueen worked all night.",
+     "tr_pl": "Zygzak pracował całą noc.",
+     "tr_en": "McQueen worked all night."
+    },
+    {
+     "q": "Фло ____ від радості.",
+     "options": [
+      "підстрибнув",
+      "підстрибнули",
+      "підстрибнула"
+     ],
+     "answer": 2,
+     "exp": "Фло — вона: підстрибнула.",
+     "exp_pl": "Flo to ona: підстрибнула.",
+     "exp_en": "Flo is “she”: підстрибнула.",
+     "tr": "Flo jumped with joy.",
+     "tr_pl": "Flo podskoczyła z radości.",
+     "tr_en": "Flo jumped with joy."
+    },
+    {
+     "q": "Містяни ____ рано.",
+     "options": [
+      "прокинулися",
+      "прокинувся",
+      "прокинулася"
+     ],
+     "answer": 0,
+     "exp": "Містяни — вони: прокинулися.",
+     "exp_pl": "Mieszkańcy to oni: прокинулися.",
+     "exp_en": "Townsfolk are “they”: прокинулися.",
+     "tr": "The townsfolk woke up early.",
+     "tr_pl": "Mieszkańcy obudzili się wcześnie.",
+     "tr_en": "The townsfolk woke up early."
+    },
+    {
+     "q": "Саллі ____.",
+     "options": [
+      "усміхнувся",
+      "усміхнулася",
+      "усміхнулися"
+     ],
+     "answer": 1,
+     "exp": "Саллі — вона: усміхнулася.",
+     "exp_pl": "Sally to ona: усміхнулася.",
+     "exp_en": "Sally is “she”: усміхнулася.",
+     "tr": "Sally smiled.",
+     "tr_pl": "Sally się uśmiechnęła.",
+     "tr_en": "Sally smiled."
+    },
+    {
+     "q": "Маккуїн: «Я ____ дорогу!»",
+     "options": [
+      "закінчив",
+      "закінчила",
+      "закінчили"
+     ],
+     "answer": 0,
+     "exp": "Маккуїн про себе: я закінчив.",
+     "exp_pl": "Zygzak o sobie: я закінчив.",
+     "exp_en": "McQueen about himself: я закінчив.",
+     "tr": "McQueen: “I finished the road!”",
+     "tr_pl": "Zygzak: „Skończyłem drogę!”",
+     "tr_en": "McQueen: “I finished the road!”"
+    },
+    {
+     "q": "Маккуїн не ____ минулої ночі.",
+     "options": [
+      "спала",
+      "спав",
+      "спали"
+     ],
+     "answer": 1,
+     "exp": "Не + дієслово: він не спав.",
+     "exp_pl": "Не + czasownik: він не спав.",
+     "exp_en": "Не + verb: він не спав.",
+     "tr": "McQueen didn't sleep last night.",
+     "tr_pl": "Zygzak nie spał zeszłej nocy.",
+     "tr_en": "McQueen didn't sleep last night."
+    },
+    {
+     "q": "Луїджі ____ свій магазин.",
+     "options": [
+      "відчинила",
+      "відчинили",
+      "відчинив"
+     ],
+     "answer": 2,
+     "exp": "Луїджі — він: відчинив.",
+     "exp_pl": "Luigi to on: відчинив.",
+     "exp_en": "Luigi is “he”: відчинив.",
+     "tr": "Luigi opened his shop.",
+     "tr_pl": "Luigi otworzył swój sklep.",
+     "tr_en": "Luigi opened his shop."
+    },
+    {
+     "q": "Ти й Маккуїн: «Ми ____ разом!»",
+     "options": [
+      "працювали",
+      "працював",
+      "працювала"
+     ],
+     "answer": 0,
+     "exp": "Ми — множина: працювали.",
+     "exp_pl": "Ми — liczba mnoga: працювали.",
+     "exp_en": "Ми is plural: працювали.",
+     "tr": "You and McQueen: “We worked together!”",
+     "tr_pl": "Ty i Zygzak: „Pracowaliśmy razem!”",
+     "tr_en": "You and McQueen: “We worked together!”"
+    },
+    {
+     "q": "Червоний ____ від щастя.",
+     "options": [
+      "заплакала",
+      "заплакав",
+      "заплакали"
+     ],
+     "answer": 1,
+     "exp": "Червоний — він: заплакав.",
+     "exp_pl": "Red to on: заплакав.",
+     "exp_en": "Red is “he”: заплакав.",
+     "tr": "Red cried with happiness.",
+     "tr_pl": "Red rozpłakał się ze szczęścia.",
+     "tr_en": "Red cried with happiness."
+    },
+    {
+     "q": "Саллі: «Маккуїне, ти сам ____ дорогу?»",
+     "options": [
+      "закінчила",
+      "закінчили",
+      "закінчив"
+     ],
+     "answer": 2,
+     "exp": "Ти — Маккуїн, він: закінчив.",
+     "exp_pl": "Ty to Zygzak, on: закінчив.",
+     "exp_en": "“You” is McQueen, a he: закінчив.",
+     "tr": "Sally: “McQueen, did you finish the road yourself?”",
+     "tr_pl": "Sally: „Zygzak, sam skończyłeś drogę?”",
+     "tr_en": "Sally: “McQueen, did you finish the road yourself?”"
+    }
+   ],
+   "label": "ГРАМАТИКА · ЩО ВОНИ ЗРОБИЛИ",
+   "label_pl": "GRAMATYKA · CO ZROBILI",
+   "label_en": "GRAMMAR · WHAT THEY DID",
+   "q": "Що сталося вночі й уранці? Обери правильну форму.",
+   "q_pl": "Co się stało w nocy i rano? Wybierz poprawną formę.",
+   "q_en": "What happened at night and in the morning? Choose the correct form.",
+   "ins": "Минулий час: рід і число",
+   "ins_pl": "Czas przeszły: rodzaj i liczba",
+   "ins_en": "Past tense: gender and number",
+   "tip": "Потрібно 70%+.",
+   "tip_pl": "Potrzeba 70%+.",
+   "tip_en": "You need 70%+."
+  },
+  {
+   "type": "reading",
+   "items": [
+    {
+     "q": "Минулої ночі в Радіатор-Спрінгс було тихо."
+    },
+    {
+     "q": "Усі спали, а Маккуїн ____.",
+     "options": [
+      "спав",
+      "працював",
+      "плакав"
+     ],
+     "answer": 1
+    },
+    {
+     "q": "Він працював при ____ світлі.",
+     "options": [
+      "місячному",
+      "червоному",
+      "новому"
+     ],
+     "answer": 0
+    },
+    {
+     "q": "Він ні разу не зупинився."
+    },
+    {
+     "q": "Уранці містяни ____ — і побачили нову дорогу.",
+     "options": [
+      "закінчили",
+      "працювали",
+      "прокинулися"
+     ],
+     "answer": 2
+    },
+    {
+     "q": "Дорога була гладка й ____.",
+     "options": [
+      "ідеальна",
+      "втомлена",
+      "сердита"
+     ],
+     "answer": 0
+    },
+    {
+     "q": "Метр голосно ____: «Ого!»",
+     "options": [
+      "закричала",
+      "закричав",
+      "закричали"
+     ],
+     "answer": 1
+    },
+    {
+     "q": "Фло підстрибнула від ____.",
+     "options": [
+      "роботи",
+      "ночі",
+      "радості"
+     ],
+     "answer": 2
+    },
+    {
+     "q": "Сардж відсалютував, а Луїджі відчинив свій магазин."
+    },
+    {
+     "q": "Червоний заплакав від щастя."
+    },
+    {
+     "q": "Усі друзі ____ Маккуїну.",
+     "options": [
+      "подякував",
+      "подякували",
+      "подякувала"
+     ],
+     "answer": 1
+    },
+    {
+     "q": "Маккуїн був утомлений, але щасливий."
+    },
+    {
+     "q": "«Робота ____!» — сказав він.",
+     "options": [
+      "порожня",
+      "втомлена",
+      "виконана"
+     ],
+     "answer": 2
+    },
+    {
+     "q": "Тепер шлях вільний: він може їхати до Каліфорнії."
+    },
+    {
+     "q": "Але він вирішив залишитися ще на один ____.",
+     "options": [
+      "день",
+      "рік",
+      "магазин"
+     ],
+     "answer": 0
+    },
+    {
+     "q": "Чомусь він не хоче ____.",
+     "options": [
+      "дякувати",
+      "поспішати",
+      "працювати"
+     ],
+     "answer": 1
+    }
+   ],
+   "label": "ГАЗЕТА МІСТЕЧКА",
+   "label_pl": "GAZETA MIASTECZKA",
+   "label_en": "THE TOWN PAPER",
+   "q": "Газета містечка пише про нову дорогу. Прочитай статтю й обери правильні слова.",
+   "q_pl": "Gazeta miasteczka pisze o nowej drodze. Przeczytaj artykuł po ukraińsku i wybierz właściwe słowa.",
+   "q_en": "The town paper reports on the new road. Read the article in Ukrainian and choose the right words.",
+   "tip": "Дивись на рід: він — -в, вона — -ла, вони — -ли.",
+   "tip_pl": "Patrz na rodzaj: on — -в, ona — -ла, oni — -ли.",
+   "tip_en": "Watch the gender: he — -в, she — -ла, they — -ли.",
+   "title": "«Вісник Радіатор-Спрінгс»: нова дорога за одну ніч",
+   "title_pl": "„Wiadomości z Chłodnicy”: nowa droga w jedną noc",
+   "title_en": "“Radiator Springs Herald”: a new road in one night"
+  },
+  {
+   "type": "drill",
+   "kind": "set",
+   "items": [
+    {
+     "q": "Коли Маккуїн працював?",
+     "options": [
+      "Уранці",
+      "Минулої ночі",
+      "Удень"
+     ],
+     "answer": 1,
+     "exp": "Він працював минулої ночі.",
+     "exp_pl": "Pracował zeszłej nocy.",
+     "exp_en": "He worked last night.",
+     "tr": "When did McQueen work?",
+     "tr_pl": "Kiedy pracował Zygzak?",
+     "tr_en": "When did McQueen work?",
+     "tag": "Текст",
+     "tag_pl": "Tekst",
+     "tag_en": "Text"
+    },
+    {
+     "q": "Хто відсалютував?",
+     "options": [
+      "Сардж",
+      "Фло",
+      "Метр"
+     ],
+     "answer": 0,
+     "exp": "Сардж відсалютував.",
+     "exp_pl": "Sierżant zasalutował.",
+     "exp_en": "Sarge saluted.",
+     "tr": "Who saluted?",
+     "tr_pl": "Kto zasalutował?",
+     "tr_en": "Who saluted?",
+     "tag": "Текст",
+     "tag_pl": "Tekst",
+     "tag_en": "Text"
+    },
+    {
+     "q": "Що зробив Луїджі?",
+     "options": [
+      "Заплакав",
+      "Відчинив магазин",
+      "Закричав «Ого!»"
+     ],
+     "answer": 1,
+     "exp": "Луїджі відчинив магазин.",
+     "exp_pl": "Luigi otworzył sklep.",
+     "exp_en": "Luigi opened his shop.",
+     "tr": "What did Luigi do?",
+     "tr_pl": "Co zrobił Luigi?",
+     "tr_en": "What did Luigi do?",
+     "tag": "Текст",
+     "tag_pl": "Tekst",
+     "tag_en": "Text"
+    },
+    {
+     "q": "Як почувався Маккуїн уранці?",
+     "options": [
+      "Сердитий",
+      "Сумний",
+      "Втомлений, але щасливий"
+     ],
+     "answer": 2,
+     "exp": "Втомлений, але щасливий.",
+     "exp_pl": "Zmęczony, ale szczęśliwy.",
+     "exp_en": "Tired but happy.",
+     "tr": "How did McQueen feel in the morning?",
+     "tr_pl": "Jak się czuł Zygzak rano?",
+     "tr_en": "How did McQueen feel in the morning?",
+     "tag": "Текст",
+     "tag_pl": "Tekst",
+     "tag_en": "Text"
+    },
+    {
+     "q": "Що вирішив Маккуїн?",
+     "options": [
+      "Поїхати негайно",
+      "Залишитися ще на день",
+      "Продати дорогу"
+     ],
+     "answer": 1,
+     "exp": "Він вирішив залишитися ще на один день.",
+     "exp_pl": "Postanowił zostać jeszcze jeden dzień.",
+     "exp_en": "He decided to stay one more day.",
+     "tr": "What did McQueen decide?",
+     "tr_pl": "Co postanowił Zygzak?",
+     "tr_en": "What did McQueen decide?",
+     "tag": "Текст",
+     "tag_pl": "Tekst",
+     "tag_en": "Text"
+    }
+   ],
+   "label": "РОЗУМІННЯ ТЕКСТУ",
+   "label_pl": "ROZUMIENIE TEKSTU",
+   "label_en": "READING COMPREHENSION",
+   "q": "Питання до статті. Обери правильну відповідь.",
+   "q_pl": "Pytania do artykułu. Wybierz poprawną odpowiedź.",
+   "q_en": "Questions about the article. Choose the right answer.",
+   "ins": "П'ять питань до тексту",
+   "ins_pl": "Pięć pytań do tekstu",
+   "ins_en": "Five questions about the text",
+   "tip": "Потрібно 70%+.",
+   "tip_pl": "Potrzeba 70%+.",
+   "tip_en": "You need 70%+."
+  },
+  {
+   "type": "quest",
+   "img": "stone",
+   "start": "s1",
+   "q": "Ніч, ліхтар, гарячий асфальт. Допоможи Маккуїну — і розкажи друзям уранці, що сталося. Українською!",
+   "q_pl": "Noc, latarka, gorący asfalt. Pomóż Zygzakowi — a rano opowiedz przyjaciołom, co się stało. Po ukraińsku!",
+   "q_en": "Night, a flashlight, hot asphalt. Help McQueen — and in the morning tell your friends what happened. In Ukrainian!",
+   "label": "КВЕСТ: НІЧНА РОБОТА",
+   "label_pl": "QUEST: NOCNA PRACA",
+   "label_en": "QUEST: NIGHT SHIFT",
+   "ins": "Кожен вибір веде далі. Обирай уважно — українською",
+   "ins_pl": "Każdy wybór prowadzi dalej. Wybieraj uważnie — po ukraińsku",
+   "ins_en": "Every choice leads on. Choose carefully — in Ukrainian",
+   "tip": "Квест перевіряє слова й граматику уроку.",
+   "tip_pl": "Quest sprawdza słowa i gramatykę lekcji.",
+   "tip_en": "The quest checks the lesson's words and grammar.",
+   "steps": {
+    "s1": {
+     "q": "Маккуїн: «Ти не спиш? Що ти робиш?»",
+     "q_pl": "Zygzak: „Ти не спиш? Що ти робиш?” (Nie śpisz? Co robisz?)",
+     "q_en": "McQueen: “Ти не спиш? Що ти робиш?” (You're not asleep? What are you doing?)",
+     "scene": "Друга година ночі. Темно.",
+     "scene_pl": "Druga w nocy. Ciemno.",
+     "scene_en": "2 a.m. It's dark.",
+     "choices": [
+      {
+       "t": "Я допомагаю! Ми працюємо разом.",
+       "ok": true,
+       "next": "s2",
+       "fb": "Так, ти — його команда.",
+       "fb_pl": "Tak, jesteś jego zespołem.",
+       "fb_en": "Yes, you're his crew."
+      },
+      {
+       "t": "Ми працювали завтра.",
+       "ok": false,
+       "next": "s1b",
+       "fb": "«Завтра» — це не минуле.",
+       "fb_pl": "„Завтра” (jutro) to nie przeszłość.",
+       "fb_en": "“Завтра” (tomorrow) isn't the past."
+      }
+     ]
+    },
+    "s1b": {
+     "q": "Маккуїн: «Завтра? Що?»",
+     "q_pl": "Zygzak: „Завтра? Що?” (Jutro? Co?)",
+     "q_en": "McQueen: “Завтра? Що?” (Tomorrow? What?)",
+     "scene": "Він не розуміє.",
+     "scene_pl": "Nie rozumie.",
+     "scene_en": "He doesn't understand.",
+     "choices": [
+      {
+       "t": "Ні, ми працюємо зараз!",
+       "ok": true,
+       "next": "s2",
+       "fb": "Так, зараз!",
+       "fb_pl": "Tak, teraz!",
+       "fb_en": "Yes, now!"
+      },
+      {
+       "t": "Ми спали вчора завтра.",
+       "ok": false,
+       "next": "end_bad",
+       "fb": "Так не кажуть.",
+       "fb_pl": "Tak się nie mówi.",
+       "fb_en": "That's not how we say it."
+      }
+     ]
+    },
+    "s2": {
+     "q": "Ранок. Метр: «Ого! Хто це зробив?»",
+     "q_pl": "Rano. Złomek: „Ого! Хто це зробив?” (Ojej! Kto to zrobił?)",
+     "q_en": "Morning. Mater: “Ого! Хто це зробив?” (Wow! Who did this?)",
+     "scene": "Усе містечко на вулиці.",
+     "scene_pl": "Całe miasteczko jest na ulicy.",
+     "scene_en": "The whole town is out on the street.",
+     "choices": [
+      {
+       "t": "Маккуїн зробила.",
+       "ok": false,
+       "next": "s3",
+       "fb": "Маккуїн — він: зробив.",
+       "fb_pl": "Zygzak to on: зробив.",
+       "fb_en": "McQueen is “he”: зробив."
+      },
+      {
+       "t": "Маккуїн! Він працював усю ніч.",
+       "ok": true,
+       "next": "s3",
+       "fb": "Так!",
+       "fb_pl": "Tak!",
+       "fb_en": "Yes!"
+      }
+     ]
+    },
+    "s3": {
+     "q": "Фло: «Він не спав?»",
+     "q_pl": "Flo: „Він не спав?” (Nie spał?)",
+     "q_en": "Flo: “Він не спав?” (He didn't sleep?)",
+     "scene": "Маккуїн утомлений, але усміхається.",
+     "scene_pl": "Zygzak jest zmęczony, ale się uśmiecha.",
+     "scene_en": "McQueen is tired but smiling.",
+     "choices": [
+      {
+       "t": "Ні, він не спав. Він закінчив дорогу.",
+       "ok": true,
+       "next": "s4",
+       "fb": "Правильно: не спав, закінчив.",
+       "fb_pl": "Dobrze: не спав, закінчив.",
+       "fb_en": "Right: не спав, закінчив."
+      },
+      {
+       "t": "Так, він спав усю ніч.",
+       "ok": false,
+       "next": "s4",
+       "fb": "Ні, він працював!",
+       "fb_pl": "Nie, pracował!",
+       "fb_en": "No, he worked!"
+      }
+     ]
+    },
+    "s4": {
+     "q": "Маккуїн тихо: «Шлях вільний… Мені їхати?»",
+     "q_pl": "Zygzak cicho: „Шлях вільний… Мені їхати?” (Droga wolna… Mam jechać?)",
+     "q_en": "McQueen quietly: “Шлях вільний… Мені їхати?” (The way is clear… Should I go?)",
+     "scene": "Саллі дивиться на нього.",
+     "scene_pl": "Sally na niego patrzy.",
+     "scene_en": "Sally is looking at him.",
+     "choices": [
+      {
+       "t": "Залишся ще на один день!",
+       "ok": true,
+       "next": "end_good",
+       "fb": "Добре слово: ще один.",
+       "fb_pl": "Dobre słowo: ще один.",
+       "fb_en": "Good words: ще один."
+      },
+      {
+       "t": "Їдь! Каліфорнія чекає.",
+       "ok": true,
+       "next": "end_mid",
+       "fb": "Можна й так…",
+       "fb_pl": "Można i tak…",
+       "fb_en": "That works too…"
+      }
+     ]
+    }
+   },
+   "endings": {
+    "end_good": {
+     "good": true,
+     "title": "Кінцівка: Ще один день",
+     "title_pl": "Zakończenie: Jeszcze jeden dzień",
+     "title_en": "Ending: One More Day",
+     "text": "Маккуїн усміхається: «Ще один день!» Він відвідує всі магазини, а Саллі усміхається йому.",
+     "text_pl": "Zygzak się uśmiecha: „Ще один день!” Odwiedza wszystkie sklepy, a Sally uśmiecha się do niego.",
+     "text_en": "McQueen smiles: “Ще один день!” He visits all the shops, and Sally smiles at him."
+    },
+    "end_mid": {
+     "good": true,
+     "title": "Кінцівка: Серце каже «ні»",
+     "title_pl": "Zakończenie: Serce mówi „nie”",
+     "title_en": "Ending: The Heart Says No",
+     "text": "Маккуїн їде до виїзду… і зупиняється. Він дивиться на Саллі й повертається. Чомусь він не хоче поспішати.",
+     "text_pl": "Zygzak jedzie do wyjazdu… i się zatrzymuje. Patrzy na Sally i wraca. Jakoś nie chce się spieszyć.",
+     "text_en": "McQueen drives to the edge of town… and stops. He looks at Sally and comes back. Somehow he doesn't want to hurry."
+    },
+    "end_bad": {
+     "good": false,
+     "title": "Кінцівка: Тебе не зрозуміли",
+     "title_pl": "Zakończenie: Nie zrozumiano cię",
+     "title_en": "Ending: Nobody Understood You",
+     "text": "Маккуїн тільки хитає головою. Спробуй ще раз: «Ми працюємо разом».",
+     "text_pl": "Zygzak tylko kręci głową. Spróbuj jeszcze raz: „Ми працюємо разом”.",
+     "text_en": "McQueen just shakes his head. Try again: “Ми працюємо разом”."
+    }
+   }
+  },
+  {
+   "type": "drill",
+   "kind": "set",
+   "items": [
+    {
+     "k": "type",
+     "q": "Напиши українською: «He worked all night.»",
+     "q_pl": "Napisz po ukraińsku: „Pracował całą noc.”",
+     "q_en": "Write in Ukrainian: “He worked all night.”",
+     "options": [
+      "Він працював усю ніч.",
+      "Він працював усю ніч",
+      "Він працював всю ніч.",
+      "Він працював всю ніч"
+     ],
+     "exp": "Він працював усю ніч.",
+     "exp_pl": "Він працював усю ніч.",
+     "exp_en": "Він працював усю ніч.",
+     "tag": "Напиши",
+     "tag_pl": "Napisz",
+     "tag_en": "Write"
+    },
+    {
+     "k": "order",
+     "q": "Склади репліку: «I finished the road!»",
+     "q_pl": "Ułóż kwestię: „Skończyłem drogę!”",
+     "q_en": "Build the line: “I finished the road!”",
+     "options": [
+      "Я",
+      "закінчив",
+      "дорогу!"
+     ],
+     "exp": "Я закінчив дорогу!",
+     "exp_pl": "Я закінчив дорогу!",
+     "exp_en": "Я закінчив дорогу!",
+     "tag": "Склади",
+     "tag_pl": "Ułóż",
+     "tag_en": "Build"
+    },
+    {
+     "k": "type",
+     "q": "Напиши українською: «The road is perfect!»",
+     "q_pl": "Napisz po ukraińsku: „Droga jest idealna!”",
+     "q_en": "Write in Ukrainian: “The road is perfect!”",
+     "options": [
+      "Дорога ідеальна!",
+      "Дорога ідеальна"
+     ],
+     "exp": "Дорога ідеальна!",
+     "exp_pl": "Дорога ідеальна!",
+     "exp_en": "Дорога ідеальна!",
+     "tag": "Напиши",
+     "tag_pl": "Napisz",
+     "tag_en": "Write"
+    },
+    {
+     "k": "order",
+     "q": "Склади репліку: «Flo jumped with joy.»",
+     "q_pl": "Ułóż kwestię: „Flo podskoczyła z radości.”",
+     "q_en": "Build the line: “Flo jumped with joy.”",
+     "options": [
+      "Фло",
+      "підстрибнула",
+      "від",
+      "радості."
+     ],
+     "exp": "Фло підстрибнула від радості.",
+     "exp_pl": "Фло підстрибнула від радості.",
+     "exp_en": "Фло підстрибнула від радості.",
+     "tag": "Склади",
+     "tag_pl": "Ułóż",
+     "tag_en": "Build"
+    },
+    {
+     "k": "type",
+     "q": "Напиши українською: «One more day!»",
+     "q_pl": "Napisz po ukraińsku: „Jeszcze jeden dzień!”",
+     "q_en": "Write in Ukrainian: “One more day!”",
+     "options": [
+      "Ще один день!",
+      "Ще один день"
+     ],
+     "exp": "Ще один день!",
+     "exp_pl": "Ще один день!",
+     "exp_en": "Ще один день!",
+     "tag": "Напиши",
+     "tag_pl": "Napisz",
+     "tag_en": "Write"
+    },
+    {
+     "k": "order",
+     "q": "Склади репліку: «He didn't sleep last night.»",
+     "q_pl": "Ułóż kwestię: „Nie spał zeszłej nocy.”",
+     "q_en": "Build the line: “He didn't sleep last night.”",
+     "options": [
+      "Він",
+      "не",
+      "спав",
+      "минулої",
+      "ночі."
+     ],
+     "exp": "Він не спав минулої ночі.",
+     "exp_pl": "Він не спав минулої ночі.",
+     "exp_en": "Він не спав минулої ночі.",
+     "tag": "Склади",
+     "tag_pl": "Ułóż",
+     "tag_en": "Build"
+    },
+    {
+     "k": "type",
+     "q": "Напиши українською: «Sally smiled.»",
+     "q_pl": "Napisz po ukraińsku: „Sally się uśmiechnęła.”",
+     "q_en": "Write in Ukrainian: “Sally smiled.”",
+     "options": [
+      "Саллі усміхнулася.",
+      "Саллі усміхнулася",
+      "Саллі всміхнулася.",
+      "Саллі всміхнулася"
+     ],
+     "exp": "Саллі усміхнулася.",
+     "exp_pl": "Саллі усміхнулася.",
+     "exp_en": "Саллі усміхнулася.",
+     "tag": "Напиши",
+     "tag_pl": "Napisz",
+     "tag_en": "Write"
+    },
+    {
+     "k": "order",
+     "q": "Склади репліку: «The friends thanked McQueen.»",
+     "q_pl": "Ułóż kwestię: „Przyjaciele podziękowali Zygzakowi.”",
+     "q_en": "Build the line: “The friends thanked McQueen.”",
+     "options": [
+      "Друзі",
+      "подякували",
+      "Маккуїну."
+     ],
+     "exp": "Друзі подякували Маккуїну.",
+     "exp_pl": "Друзі подякували Маккуїну.",
+     "exp_en": "Друзі подякували Маккуїну.",
+     "tag": "Склади",
+     "tag_pl": "Ułóż",
+     "tag_en": "Build"
+    }
+   ],
+   "label": "РАДІО КОМАНДИ",
+   "label_pl": "RADIO ZESPOŁU",
+   "label_en": "TEAM RADIO",
+   "q": "Ти пишеш новини для команди. Напиши й склади речення українською.",
+   "q_pl": "Piszesz wiadomości dla ekipy. Napisz i ułóż zdania po ukraińsku.",
+   "q_en": "You're writing news for the crew. Write and build the sentences in Ukrainian.",
+   "ins": "Пиши й складай репліки",
+   "ins_pl": "Pisz i układaj kwestie",
+   "ins_en": "Write and build the lines",
+   "tip": "Потрібно 70%+.",
+   "tip_pl": "Potrzeba 70%+.",
+   "tip_en": "You need 70%+."
+  },
+  {
+   "type": "speaking",
+   "say": "Я працював усю ніч. Робота виконана!",
+   "label": "ГОВОРІННЯ",
+   "label_pl": "MÓWIENIE",
+   "label_en": "SPEAKING",
+   "q": "Скажи вголос, як утомлений Маккуїн уранці.",
+   "q_pl": "Powiedz na głos jak zmęczony Zygzak rano.",
+   "q_en": "Say it out loud, like a tired McQueen in the morning.",
+   "qt_pl": "Powiedz na głos jak zmęczony Zygzak rano.",
+   "qt_en": "Say it out loud, like a tired McQueen in the morning.",
+   "ins": "Прочитай і скажи вголос",
+   "ins_pl": "Przeczytaj i powiedz na głos",
+   "ins_en": "Read it and say it aloud",
+   "tip": "Переклад: I worked all night. The job is done!",
+   "tip_pl": "Tłumaczenie: Pracowałem całą noc. Robota skończona!",
+   "tip_en": "Translation: I worked all night. The job is done!"
+  },
+  {
+   "type": "speaking",
+   "say": "Дорога ідеальна! Дякуємо, Маккуїне!",
+   "label": "ГОВОРІННЯ",
+   "label_pl": "MÓWIENIE",
+   "label_en": "SPEAKING",
+   "q": "Скажи вголос, як радісна Фло.",
+   "q_pl": "Powiedz na głos jak radosna Flo.",
+   "q_en": "Say it out loud, like a joyful Flo.",
+   "qt_pl": "Powiedz na głos jak radosna Flo.",
+   "qt_en": "Say it out loud, like a joyful Flo.",
+   "ins": "Прочитай і скажи вголос",
+   "ins_pl": "Przeczytaj i powiedz na głos",
+   "ins_en": "Read it and say it aloud",
+   "tip": "Переклад: The road is perfect! Thank you, McQueen!",
+   "tip_pl": "Tłumaczenie: Droga jest idealna! Dziękujemy, Zygzaku!",
+   "tip_en": "Translation: The road is perfect! Thank you, McQueen!"
+  },
+  {
+   "type": "drill",
+   "kind": "set",
+   "items": [
+    {
+     "q": "Після ночі без сну Маккуїн ____.",
+     "options": [
+      "ідеальний",
+      "втомлений",
+      "швидкий"
+     ],
+     "answer": 1,
+     "exp": "Втомлений = tired.",
+     "exp_pl": "Втомлений = zmęczony.",
+     "exp_en": "Втомлений = tired.",
+     "tr": "After a night without sleep McQueen is tired.",
+     "tr_pl": "Po nocy bez snu Zygzak jest zmęczony.",
+     "tr_en": "After a night without sleep McQueen is tired."
+    },
+    {
+     "q": "Сардж — солдат. Він часто ____.",
+     "options": [
+      "салютує",
+      "плаче",
+      "танцює"
+     ],
+     "answer": 0,
+     "exp": "Салютувати = to salute.",
+     "exp_pl": "Салютувати = salutować.",
+     "exp_en": "Салютувати = to salute.",
+     "tr": "Sarge is a soldier. He often salutes.",
+     "tr_pl": "Sierżant to żołnierz. Często salutuje.",
+     "tr_en": "Sarge is a soldier. He often salutes."
+    },
+    {
+     "q": "«Дякую!» — так ми ____.",
+     "options": [
+      "кричимо",
+      "плачемо",
+      "дякуємо"
+     ],
+     "answer": 2,
+     "exp": "Дякувати = to thank.",
+     "exp_pl": "Дякувати = dziękować.",
+     "exp_en": "Дякувати = to thank.",
+     "tr": "“Thank you!” — that's how we thank.",
+     "tr_pl": "„Dziękuję!” — tak dziękujemy.",
+     "tr_en": "“Thank you!” — that's how we thank."
+    },
+    {
+     "q": "Луїджі ____ свій магазин о восьмій.",
+     "options": [
+      "відчиняє",
+      "стрибає",
+      "кричить"
+     ],
+     "answer": 0,
+     "exp": "Відчиняти = to open.",
+     "exp_pl": "Відчиняти = otwierać.",
+     "exp_en": "Відчиняти = to open.",
+     "tr": "Luigi opens his shop at eight.",
+     "tr_pl": "Luigi otwiera sklep o ósmej.",
+     "tr_en": "Luigi opens his shop at eight."
+    },
+    {
+     "q": "Не сьогодні вночі, а ____ ночі.",
+     "options": [
+      "ідеальної",
+      "ще одної",
+      "минулої"
+     ],
+     "answer": 2,
+     "exp": "Минулої ночі = last night.",
+     "exp_pl": "Минулої ночі = zeszłej nocy.",
+     "exp_en": "Минулої ночі = last night.",
+     "tr": "Not tonight, but last night.",
+     "tr_pl": "Nie dziś w nocy, ale zeszłej nocy.",
+     "tr_en": "Not tonight, but last night."
+    },
+    {
+     "q": "Маккуїн і Метр — найкращі друзі. Це ____.",
+     "options": [
+      "робота",
+      "дружба",
+      "радість"
+     ],
+     "answer": 1,
+     "exp": "Дружба = friendship.",
+     "exp_pl": "Дружба = przyjaźń.",
+     "exp_en": "Дружба = friendship.",
+     "tr": "McQueen and Mater are best friends. That's friendship.",
+     "tr_pl": "Zygzak i Złomek to najlepsi przyjaciele. To przyjaźń.",
+     "tr_en": "McQueen and Mater are best friends. That's friendship."
+    },
+    {
+     "q": "Раніше Маккуїн був сам, а тепер має друзів. Яка ____!",
+     "options": [
+      "зміна",
+      "ніч",
+      "шина"
+     ],
+     "answer": 0,
+     "exp": "Зміна = change.",
+     "exp_pl": "Зміна = zmiana.",
+     "exp_en": "Зміна = change.",
+     "tr": "Before, McQueen was alone; now he has friends. What a change!",
+     "tr_pl": "Wcześniej Zygzak był sam, a teraz ma przyjaciół. Co za zmiana!",
+     "tr_en": "Before, McQueen was alone; now he has friends. What a change!"
+    },
+    {
+     "q": "Дорога рівна, гладка, без ям. Вона ____.",
+     "options": [
+      "втомлена",
+      "сердита",
+      "ідеальна"
+     ],
+     "answer": 2,
+     "exp": "Ідеальна = perfect.",
+     "exp_pl": "Ідеальна = idealna.",
+     "exp_en": "Ідеальна = perfect.",
+     "tr": "The road is smooth, flat, no potholes. It's perfect.",
+     "tr_pl": "Droga jest równa, gładka, bez dziur. Jest idealna.",
+     "tr_en": "The road is smooth, flat, no potholes. It's perfect."
+    }
+   ],
+   "label": "ПІСЛЯ СЦЕНИ · СЛОВА",
+   "label_pl": "PO SCENIE · SŁOWNICTWO",
+   "label_en": "AFTER THE SCENE · WORDS",
+   "q": "Обід у кафе Фло. Друзі говорять про ніч і ранок. Встав слово.",
+   "q_pl": "Obiad w kafejce Flo. Przyjaciele rozmawiają o nocy i poranku. Wstaw słowo.",
+   "q_en": "Lunch at Flo's café. The friends talk about the night and the morning. Fill in the word.",
+   "ins": "Вісім питань на слова уроку",
+   "ins_pl": "Osiem pytań na słowa lekcji",
+   "ins_en": "Eight questions on the lesson words",
+   "tip": "Потрібно 70%+.",
+   "tip_pl": "Potrzeba 70%+.",
+   "tip_en": "You need 70%+."
+  },
+  {
+   "type": "final",
+   "img": "letter",
+   "answer": 25,
+   "label": "ЛИСТ КОМАНДІ",
+   "label_pl": "LIST DO EKIPY",
+   "label_en": "LETTER TO THE CREW",
+   "q": "Напиши листа команді в Каліфорнію (25+ слів): що Маккуїн робив минулої ночі? Що побачили містяни? Що зробили Фло, Метр, Сардж? Що вирішив Маккуїн?",
+   "q_pl": "Napisz po ukraińsku list do ekipy w Kalifornii (25+ słów): co Zygzak robił zeszłej nocy? Co zobaczyli mieszkańcy? Co zrobili Flo, Złomek, Sierżant? Co postanowił Zygzak?",
+   "q_en": "Write a letter in Ukrainian to the crew in California (25+ words): what did McQueen do last night? What did the townsfolk see? What did Flo, Mater and Sarge do? What did McQueen decide?",
+   "ins": "Напиши листа",
+   "ins_pl": "Napisz list po ukraińsku",
+   "ins_en": "Write the letter in Ukrainian",
+   "tip": "Привіт, команда! Минулої ночі Маккуїн… Уранці містяни… Фло… Метр… Маккуїн вирішив…",
+   "tip_pl": "Привіт, команда! Минулої ночі Маккуїн… Уранці містяни… Фло… Метр… Маккуїн вирішив…",
+   "tip_en": "Привіт, команда! Минулої ночі Маккуїн… Уранці містяни… Фло… Метр… Маккуїн вирішив…"
+  }
+ ]
+}

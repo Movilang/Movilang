@@ -1,0 +1,1557 @@
+{
+ "lesson_id": "1e7fd1b0-f555-4326-9bfb-cd410edd228d",
+ "tg": "uk",
+ "tasks": [
+  {
+   "ref": 0
+  },
+  {
+   "type": "intro",
+   "label": "ТВОЯ РОЛЬ",
+   "label_pl": "TWOJA ROLA",
+   "label_en": "YOUR ROLE",
+   "q": "Ти досі в Радіатор-Спрінгс разом із Маккуїном — команда без механіка не їде. О шостій ранку тебе будить марш Сарджа. Ти їдеш у кафе Фло на сніданок і дивишся, як живе це маленьке містечко.",
+   "q_pl": "Wciąż jesteś w Chłodnicy Górskiej razem z Zygzakiem — zespół nie jedzie bez mechanika. O szóstej rano budzi cię marsz Sierżanta. Jedziesz do kawiarni Flo na śniadanie i patrzysz, jak żyje to małe miasteczko.",
+   "q_en": "You're still in Radiator Springs with McQueen — the team doesn't leave without its mechanic. At six in the morning Sarge's march wakes you up. You drive to Flo's café for breakfast and watch how this little town lives."
+  },
+  {
+   "ref": 1
+  },
+  {
+   "type": "match",
+   "options": [
+    "прапор=flag",
+    "армія=army",
+    "сперечатися=to argue",
+    "марш=march",
+    "мир=peace"
+   ],
+   "options_pl": [
+    "прапор=flaga",
+    "армія=wojsko",
+    "сперечатися=kłócić się",
+    "марш=marsz",
+    "мир=pokój"
+   ],
+   "options_en": [
+    "прапор=flag",
+    "армія=army",
+    "сперечатися=to argue",
+    "марш=march",
+    "мир=peace"
+   ],
+   "label": "СЦЕНА 1 · СЛОВА",
+   "label_pl": "SCENA 1 · SŁOWA",
+   "label_en": "SCENE 1 · WORDS",
+   "q": "З'єднай слова сцени з перекладом.",
+   "q_pl": "Połącz słowa sceny z tłumaczeniem.",
+   "q_en": "Match the scene words with their translations.",
+   "qt_pl": "Połącz słowa sceny z tłumaczeniem.",
+   "qt_en": "Match the scene words with their translations.",
+   "ins": "П'ять пар зі сцени",
+   "ins_pl": "Pięć par ze sceny",
+   "ins_en": "Five pairs from the scene",
+   "tip": "Не впевнений? Повернись до словника сцени.",
+   "tip_pl": "Nie masz pewności? Wróć do słownika sceny.",
+   "tip_en": "Not sure? Go back to the scene glossary."
+  },
+  {
+   "type": "drill",
+   "kind": "set",
+   "items": [
+    {
+     "q": "Сардж: «Я ____ встаю о шостій.»",
+     "options": [
+      "вчора",
+      "завжди",
+      "ніколи"
+     ],
+     "answer": 1,
+     "exp": "Завжди = always.",
+     "exp_pl": "Завжди = zawsze.",
+     "exp_en": "Завжди = always.",
+     "tr": "Sarge: “I always get up at six.”",
+     "tr_pl": "Sierżant: „Zawsze wstaję o szóstej.”",
+     "tr_en": "Sarge: “I always get up at six.”",
+     "tag": "Репліка",
+     "tag_pl": "Kwestia",
+     "tag_en": "Line"
+    },
+    {
+     "q": "Філмор: «____ і любов, друже.»",
+     "options": [
+      "Мир",
+      "Марш",
+      "Армія"
+     ],
+     "answer": 0,
+     "exp": "Мир = peace.",
+     "exp_pl": "Мир = pokój.",
+     "exp_en": "Мир = peace.",
+     "tr": "Fillmore: “Peace and love, man.”",
+     "tr_pl": "Fillmore: „Pokój i miłość, stary.”",
+     "tr_en": "Fillmore: “Peace and love, man.”",
+     "tag": "Репліка",
+     "tag_pl": "Kwestia",
+     "tag_en": "Line"
+    },
+    {
+     "q": "Сардж: «Вимкни цю ____!»",
+     "options": [
+      "армію",
+      "музику",
+      "квітку"
+     ],
+     "answer": 1,
+     "exp": "Сардж не любить музику Філмора.",
+     "exp_pl": "Sierżant nie lubi muzyki Fillmore’a.",
+     "exp_en": "Sarge doesn't like Fillmore's music.",
+     "tr": "Sarge: “Turn off that music!”",
+     "tr_pl": "Sierżant: „Wyłącz tę muzykę!”",
+     "tr_en": "Sarge: “Turn off that music!”",
+     "tag": "Репліка",
+     "tag_pl": "Kwestia",
+     "tag_en": "Line"
+    },
+    {
+     "q": "Як часто Сардж і Філмор сперечаються?",
+     "options": [
+      "Ніколи",
+      "Раз на рік",
+      "Щоранку"
+     ],
+     "answer": 2,
+     "exp": "Щоранку = every morning.",
+     "exp_pl": "Щоранку = co rano.",
+     "exp_en": "Щоранку = every morning.",
+     "tr": "How often do Sarge and Fillmore argue?",
+     "tr_pl": "Jak często Sierżant i Fillmore się kłócą?",
+     "tr_en": "How often do Sarge and Fillmore argue?",
+     "tag": "Сюжет",
+     "tag_pl": "Fabuła",
+     "tag_en": "Plot"
+    },
+    {
+     "q": "Філмор — старий армійський джип.",
+     "options": [
+      "Правда",
+      "Неправда"
+     ],
+     "answer": 1,
+     "exp": "Ні: Філмор — автобус-хіпі. Джип — це Сардж.",
+     "exp_pl": "Nie: Fillmore to autobus-hipis. Jeep to Sierżant.",
+     "exp_en": "No: Fillmore is a hippie bus. Sarge is the jeep.",
+     "tr": "Fillmore is an old army jeep.",
+     "tr_pl": "Fillmore to stary wojskowy jeep.",
+     "tr_en": "Fillmore is an old army jeep.",
+     "tag": "Правда чи ні?",
+     "tag_pl": "Prawda czy nie?",
+     "tag_en": "True or false?"
+    },
+    {
+     "q": "Марш і музика грають разом. Що ти кажеш?",
+     "options": [
+      "Доброго ранку, друзі! Мир!",
+      "Я ніколи не встаю!",
+      "Де мій прапор?"
+     ],
+     "answer": 0,
+     "exp": "Ти добрий новий сусід.",
+     "exp_pl": "Jesteś miłym nowym sąsiadem.",
+     "exp_en": "You're a friendly new neighbour.",
+     "tr": "The march and the music play together. What do you say?",
+     "tr_pl": "Marsz i muzyka grają naraz. Co mówisz?",
+     "tr_en": "The march and the music play together. What do you say?",
+     "tag": "Твій вибір",
+     "tag_pl": "Twój wybór",
+     "tag_en": "Your call"
+    }
+   ],
+   "label": "СЦЕНА 1 · ПРАПОР",
+   "label_pl": "SCENA 1 · FLAGA",
+   "label_en": "SCENE 1 · THE FLAG",
+   "q": "Шоста ранку. Сардж і Філмор знову починають день.",
+   "q_pl": "Szósta rano. Sierżant i Fillmore znowu zaczynają dzień.",
+   "q_en": "Six in the morning. Sarge and Fillmore start the day again.",
+   "ins": "Встав слово, обери правду, зрозумій героя",
+   "ins_pl": "Wstaw słowo, oceń prawdę, zrozum bohatera",
+   "ins_en": "Fill the gap, judge true/false, understand the hero",
+   "tip": "Потрібно 70%+.",
+   "tip_pl": "Potrzeba 70%+.",
+   "tip_en": "You need 70%+."
+  },
+  {
+   "ref": 2
+  },
+  {
+   "type": "match",
+   "options": [
+    "склянка=glass",
+    "часто=often",
+    "іноді=sometimes",
+    "свіжий=fresh",
+    "стіл=table"
+   ],
+   "options_pl": [
+    "склянка=szklanka",
+    "часто=często",
+    "іноді=czasami",
+    "свіжий=świeży",
+    "стіл=stół"
+   ],
+   "options_en": [
+    "склянка=glass",
+    "часто=often",
+    "іноді=sometimes",
+    "свіжий=fresh",
+    "стіл=table"
+   ],
+   "label": "СЦЕНА 2 · СЛОВА",
+   "label_pl": "SCENA 2 · SŁOWA",
+   "label_en": "SCENE 2 · WORDS",
+   "q": "З'єднай слова сцени з перекладом.",
+   "q_pl": "Połącz słowa sceny z tłumaczeniem.",
+   "q_en": "Match the scene words with their translations.",
+   "qt_pl": "Połącz słowa sceny z tłumaczeniem.",
+   "qt_en": "Match the scene words with their translations.",
+   "ins": "П'ять пар зі сцени",
+   "ins_pl": "Pięć par ze sceny",
+   "ins_en": "Five pairs from the scene",
+   "tip": "Не впевнений? Повернись до словника сцени.",
+   "tip_pl": "Nie masz pewności? Wróć do słownika sceny.",
+   "tip_en": "Not sure? Go back to the scene glossary."
+  },
+  {
+   "type": "drill",
+   "kind": "set",
+   "items": [
+    {
+     "q": "Фло: «Що тобі ____, любий?»",
+     "options": [
+      "подати",
+      "забути",
+      "полити"
+     ],
+     "answer": 0,
+     "exp": "Подати = to serve.",
+     "exp_pl": "Подати = podać.",
+     "exp_en": "Подати = to serve.",
+     "tr": "Flo: “What can I get you, honey?”",
+     "tr_pl": "Flo: „Co ci podać, kochanie?”",
+     "tr_en": "Flo: “What can I get you, honey?”",
+     "tag": "Репліка",
+     "tag_pl": "Kwestia",
+     "tag_en": "Line"
+    },
+    {
+     "q": "Фло: «Тут завжди ____!»",
+     "options": [
+      "сумно",
+      "старе",
+      "свіже"
+     ],
+     "answer": 2,
+     "exp": "Свіже = fresh.",
+     "exp_pl": "Свіже = świeże.",
+     "exp_en": "Свіже = fresh.",
+     "tr": "Flo: “It’s always fresh here!”",
+     "tr_pl": "Flo: „Tu zawsze jest świeże!”",
+     "tr_en": "Flo: “It’s always fresh here!”",
+     "tag": "Репліка",
+     "tag_pl": "Kwestia",
+     "tag_en": "Line"
+    },
+    {
+     "q": "Фло: «Сідай за мій ____!»",
+     "options": [
+      "столик",
+      "прапор",
+      "цукор"
+     ],
+     "answer": 0,
+     "exp": "Столик = table.",
+     "exp_pl": "Столик = stolik.",
+     "exp_en": "Столик = table.",
+     "tr": "Flo: “Sit at my table!”",
+     "tr_pl": "Flo: „Siadaj przy moim stoliku!”",
+     "tr_en": "Flo: “Sit at my table!”",
+     "tag": "Репліка",
+     "tag_pl": "Kwestia",
+     "tag_en": "Line"
+    },
+    {
+     "q": "Фло дає тобі пальне: «Тримай, ____.»",
+     "options": [
+      "марш",
+      "любий",
+      "стіл"
+     ],
+     "answer": 1,
+     "exp": "Фло каже всім «любий» = honey.",
+     "exp_pl": "Flo mówi do wszystkich „любий” = kochanie.",
+     "exp_en": "Flo calls everyone “любий” = honey.",
+     "tr": "Flo gives you fuel: “Here you go, honey.”",
+     "tr_pl": "Flo daje ci paliwo: „Proszę, kochanie.”",
+     "tr_en": "Flo gives you fuel: “Here you go, honey.”",
+     "tag": "Репліка",
+     "tag_pl": "Kwestia",
+     "tag_en": "Line"
+    },
+    {
+     "q": "Фло зазвичай наливає пальне друзям.",
+     "options": [
+      "Правда",
+      "Неправда"
+     ],
+     "answer": 0,
+     "exp": "Так, це її кафе.",
+     "exp_pl": "Tak, to jej kawiarnia.",
+     "exp_en": "Yes, it's her café.",
+     "tr": "Flo usually serves fuel to her friends.",
+     "tr_pl": "Flo zwykle nalewa paliwo przyjaciołom.",
+     "tr_en": "Flo usually serves fuel to her friends.",
+     "tag": "Правда чи ні?",
+     "tag_pl": "Prawda czy nie?",
+     "tag_en": "True or false?"
+    },
+    {
+     "q": "У Фло дуже довге меню.",
+     "options": [
+      "Правда",
+      "Неправда"
+     ],
+     "answer": 1,
+     "exp": "Ні, у Фло коротке меню.",
+     "exp_pl": "Nie, Flo ma krótkie menu.",
+     "exp_en": "No, Flo has a short menu.",
+     "tr": "Flo has a very long menu.",
+     "tr_pl": "Flo ma bardzo długie menu.",
+     "tr_en": "Flo has a very long menu.",
+     "tag": "Правда чи ні?",
+     "tag_pl": "Prawda czy nie?",
+     "tag_en": "True or false?"
+    }
+   ],
+   "label": "СЦЕНА 2 · КАФЕ ФЛО",
+   "label_pl": "SCENA 2 · KAWIARNIA FLO",
+   "label_en": "SCENE 2 · FLO'S CAFÉ",
+   "q": "Сніданок для машин. Фло вже чекає за стійкою.",
+   "q_pl": "Śniadanie dla aut. Flo już czeka za ladą.",
+   "q_en": "Breakfast for cars. Flo is already waiting at the counter.",
+   "ins": "Встав слово, обери правду, зрозумій героя",
+   "ins_pl": "Wstaw słowo, oceń prawdę, zrozum bohatera",
+   "ins_en": "Fill the gap, judge true/false, understand the hero",
+   "tip": "Потрібно 70%+.",
+   "tip_pl": "Potrzeba 70%+.",
+   "tip_en": "You need 70%+."
+  },
+  {
+   "ref": 3
+  },
+  {
+   "type": "match",
+   "options": [
+    "квітка=flower",
+    "поливати=to water",
+    "сором'язливий=shy",
+    "плакати=to cry",
+    "забувати=to forget"
+   ],
+   "options_pl": [
+    "квітка=kwiat",
+    "поливати=podlewać",
+    "сором'язливий=nieśmiały",
+    "плакати=płakać",
+    "забувати=zapominać"
+   ],
+   "options_en": [
+    "квітка=flower",
+    "поливати=to water",
+    "сором'язливий=shy",
+    "плакати=to cry",
+    "забувати=to forget"
+   ],
+   "label": "СЦЕНА 3 · СЛОВА",
+   "label_pl": "SCENA 3 · SŁOWA",
+   "label_en": "SCENE 3 · WORDS",
+   "q": "З'єднай слова сцени з перекладом.",
+   "q_pl": "Połącz słowa sceny z tłumaczeniem.",
+   "q_en": "Match the scene words with their translations.",
+   "qt_pl": "Połącz słowa sceny z tłumaczeniem.",
+   "qt_en": "Match the scene words with their translations.",
+   "ins": "П'ять пар зі сцени",
+   "ins_pl": "Pięć par ze sceny",
+   "ins_en": "Five pairs from the scene",
+   "tip": "Не впевнений? Повернись до словника сцени.",
+   "tip_pl": "Nie masz pewności? Wróć do słownika sceny.",
+   "tip_en": "Not sure? Go back to the scene glossary."
+  },
+  {
+   "type": "drill",
+   "kind": "set",
+   "items": [
+    {
+     "q": "Червоний тихо: «Подивись на мої ____.»",
+     "options": [
+      "шини",
+      "сувеніри",
+      "квіти"
+     ],
+     "answer": 2,
+     "exp": "Квіти = flowers.",
+     "exp_pl": "Квіти = kwiaty.",
+     "exp_en": "Квіти = flowers.",
+     "tr": "Red, quietly: “Look at my flowers.”",
+     "tr_pl": "Red cicho: „Popatrz na moje kwiaty.”",
+     "tr_en": "Red, quietly: “Look at my flowers.”",
+     "tag": "Репліка",
+     "tag_pl": "Kwestia",
+     "tag_en": "Line"
+    },
+    {
+     "q": "Ліззі: «Я тут ____.»",
+     "options": [
+      "найстаріша",
+      "найшвидша",
+      "найновіша"
+     ],
+     "answer": 0,
+     "exp": "Найстаріша = the oldest.",
+     "exp_pl": "Найстаріша = najstarsza.",
+     "exp_en": "Найстаріша = the oldest.",
+     "tr": "Lizzie: “I’m the oldest here.”",
+     "tr_pl": "Lizzie: „Jestem tu najstarsza.”",
+     "tr_en": "Lizzie: “I’m the oldest here.”",
+     "tag": "Репліка",
+     "tag_pl": "Kwestia",
+     "tag_en": "Line"
+    },
+    {
+     "q": "Ліззі: «Я ____ забуваю!»",
+     "options": [
+      "ніколи",
+      "вчора",
+      "завжди"
+     ],
+     "answer": 2,
+     "exp": "«Ніколи» потребує «не»; тут — завжди.",
+     "exp_pl": "„Ніколи” wymaga „не”; tu: завжди.",
+     "exp_en": "“Ніколи” needs “не”; here: завжди.",
+     "tr": "Lizzie: “I always forget!”",
+     "tr_pl": "Lizzie: „Zawsze zapominam!”",
+     "tr_en": "Lizzie: “I always forget!”",
+     "tag": "Репліка",
+     "tag_pl": "Kwestia",
+     "tag_en": "Line"
+    },
+    {
+     "q": "Червоний плаче. Ти кажеш: «Не ____, Червоний.»",
+     "options": [
+      "плач",
+      "поливай",
+      "забувай"
+     ],
+     "answer": 0,
+     "exp": "Не плач = don't cry.",
+     "exp_pl": "Не плач = nie płacz.",
+     "exp_en": "Не плач = don't cry.",
+     "tr": "Red is crying. You say: “Don’t cry, Red.”",
+     "tr_pl": "Red płacze. Mówisz: „Nie płacz, Red.”",
+     "tr_en": "Red is crying. You say: “Don’t cry, Red.”",
+     "tag": "Репліка",
+     "tag_pl": "Kwestia",
+     "tag_en": "Line"
+    },
+    {
+     "q": "Червоний — пожежна машина.",
+     "options": [
+      "Правда",
+      "Неправда"
+     ],
+     "answer": 0,
+     "exp": "Пожежна машина = fire truck.",
+     "exp_pl": "Пожежна машина = wóz strażacki.",
+     "exp_en": "Пожежна машина = fire truck.",
+     "tr": "Red is a fire truck.",
+     "tr_pl": "Red to wóz strażacki.",
+     "tr_en": "Red is a fire truck.",
+     "tag": "Правда чи ні?",
+     "tag_pl": "Prawda czy nie?",
+     "tag_en": "True or false?"
+    },
+    {
+     "q": "Маккуїн дивиться: тут ніколи не поспішають. Що він робить?",
+     "options": [
+      "Уперше всміхається",
+      "Кричить на Ліззі",
+      "Плаче з Червоним"
+     ],
+     "answer": 0,
+     "exp": "Містечко повільне — і йому це подобається.",
+     "exp_pl": "Miasteczko jest powolne — i to mu się podoba.",
+     "exp_en": "The town is slow — and he likes it.",
+     "tr": "McQueen watches: nobody is ever in a hurry here. What does he do?",
+     "tr_pl": "Zygzak patrzy: tu nikt się nigdy nie spieszy. Co robi?",
+     "tr_en": "McQueen watches: nobody is ever in a hurry here. What does he do?",
+     "tag": "Зрозумій героя",
+     "tag_pl": "Zrozum bohatera",
+     "tag_en": "Read the hero"
+    }
+   ],
+   "label": "СЦЕНА 3 · КВІТИ",
+   "label_pl": "SCENA 3 · KWIATY",
+   "label_en": "SCENE 3 · FLOWERS",
+   "q": "Червоний поливає квіти, Ліззі сидить біля крамниці.",
+   "q_pl": "Red podlewa kwiaty, Lizzie siedzi przy sklepiku.",
+   "q_en": "Red waters the flowers, Lizzie sits by her shop.",
+   "ins": "Встав слово, обери правду, зрозумій героя",
+   "ins_pl": "Wstaw słowo, oceń prawdę, zrozum bohatera",
+   "ins_en": "Fill the gap, judge true/false, understand the hero",
+   "tip": "Потрібно 70%+.",
+   "tip_pl": "Potrzeba 70%+.",
+   "tip_en": "You need 70%+."
+  },
+  {
+   "type": "intro",
+   "label": "ПРАВИЛО",
+   "label_pl": "ZASADA",
+   "label_en": "RULE",
+   "q": "Як часто? завжди, зазвичай, часто, іноді, ніколи не. Слово стоїть перед дієсловом: Сардж завжди встає першим. Фло зазвичай наливає пальне. Червоний часто поливає квіти. «Ніколи» — тільки з «не»: Містечко ніколи не поспішає.",
+   "q_pl": "Jak często? завжди (zawsze), зазвичай (zwykle), часто (często), іноді (czasami), ніколи не (nigdy). Słowo stoi przed czasownikiem: Сардж завжди встає першим. Фло зазвичай наливає пальне. Червоний часто поливає квіти. „Ніколи” — tylko z „не”, jak po polsku „nigdy nie”: Містечко ніколи не поспішає.",
+   "q_en": "How often? завжди (always), зазвичай (usually), часто (often), іноді (sometimes), ніколи не (never). The word goes before the verb: Сардж завжди встає першим. Фло зазвичай наливає пальне. Червоний часто поливає квіти. “Ніколи” always comes with “не” (a double negative): Містечко ніколи не поспішає."
+  },
+  {
+   "type": "drill",
+   "kind": "set",
+   "items": [
+    {
+     "q": "Сардж ____ встає першим.",
+     "options": [
+      "завжди",
+      "ніколи",
+      "вчора"
+     ],
+     "answer": 0,
+     "exp": "Щоранку першим — завжди.",
+     "exp_pl": "Codziennie pierwszy — завжди (zawsze).",
+     "exp_en": "First every morning — завжди (always).",
+     "tr": "Sarge always gets up first.",
+     "tr_pl": "Sierżant zawsze wstaje pierwszy.",
+     "tr_en": "Sarge always gets up first.",
+     "tag": "Граматика",
+     "tag_pl": "Gramatyka",
+     "tag_en": "Grammar"
+    },
+    {
+     "q": "Містечко ніколи ____ поспішає.",
+     "options": [
+      "ні",
+      "не",
+      "так"
+     ],
+     "answer": 1,
+     "exp": "Ніколи + не.",
+     "exp_pl": "Ніколи + не (jak „nigdy nie”).",
+     "exp_en": "Ніколи + не (double negative).",
+     "tr": "The town is never in a hurry.",
+     "tr_pl": "Miasteczko nigdy się nie spieszy.",
+     "tr_en": "The town is never in a hurry.",
+     "tag": "Граматика",
+     "tag_pl": "Gramatyka",
+     "tag_en": "Grammar"
+    },
+    {
+     "q": "Фло ____ наливає пальне друзям.",
+     "options": [
+      "ніколи",
+      "зазвичай",
+      "вчора"
+     ],
+     "answer": 1,
+     "exp": "Зазвичай = usually.",
+     "exp_pl": "Зазвичай = zwykle.",
+     "exp_en": "Зазвичай = usually.",
+     "tr": "Flo usually serves fuel to her friends.",
+     "tr_pl": "Flo zwykle nalewa paliwo przyjaciołom.",
+     "tr_en": "Flo usually serves fuel to her friends.",
+     "tag": "Граматика",
+     "tag_pl": "Gramatyka",
+     "tag_en": "Grammar"
+    },
+    {
+     "q": "Червоний ____ поливає квіти.",
+     "options": [
+      "часто",
+      "ніколи",
+      "вчора"
+     ],
+     "answer": 0,
+     "exp": "«Ніколи» без «не» — помилка. Часто = often.",
+     "exp_pl": "„Ніколи” bez „не” to błąd. Часто = często.",
+     "exp_en": "“Ніколи” without “не” is wrong. Часто = often.",
+     "tr": "Red often waters the flowers.",
+     "tr_pl": "Red często podlewa kwiaty.",
+     "tr_en": "Red often waters the flowers.",
+     "tag": "Граматика",
+     "tag_pl": "Gramatyka",
+     "tag_en": "Grammar"
+    },
+    {
+     "q": "Ліззі ____ все забуває.",
+     "options": [
+      "іноді",
+      "ніколи",
+      "ні"
+     ],
+     "answer": 0,
+     "exp": "Іноді = sometimes.",
+     "exp_pl": "Іноді = czasami.",
+     "exp_en": "Іноді = sometimes.",
+     "tr": "Lizzie sometimes forgets everything.",
+     "tr_pl": "Lizzie czasami wszystko zapomina.",
+     "tr_en": "Lizzie sometimes forgets everything.",
+     "tag": "Граматика",
+     "tag_pl": "Gramatyka",
+     "tag_en": "Grammar"
+    },
+    {
+     "q": "Сардж: «Я ніколи не ____ пізно!»",
+     "options": [
+      "встаю",
+      "встає",
+      "встають"
+     ],
+     "answer": 0,
+     "exp": "Я → встаю.",
+     "exp_pl": "Я (ja) → встаю.",
+     "exp_en": "Я (I) → встаю.",
+     "tr": "Sarge: “I never get up late!”",
+     "tr_pl": "Sierżant: „Nigdy nie wstaję późno!”",
+     "tr_en": "Sarge: “I never get up late!”",
+     "tag": "Граматика",
+     "tag_pl": "Gramatyka",
+     "tag_en": "Grammar"
+    },
+    {
+     "q": "Сардж і Філмор ____ сперечаються.",
+     "options": [
+      "ніколи",
+      "ні",
+      "щоранку"
+     ],
+     "answer": 2,
+     "exp": "Щоранку = every morning.",
+     "exp_pl": "Щоранку = co rano.",
+     "exp_en": "Щоранку = every morning.",
+     "tr": "Sarge and Fillmore argue every morning.",
+     "tr_pl": "Sierżant i Fillmore kłócą się co rano.",
+     "tr_en": "Sarge and Fillmore argue every morning.",
+     "tag": "Граматика",
+     "tag_pl": "Gramatyka",
+     "tag_en": "Grammar"
+    },
+    {
+     "q": "Маккуїн: «Я ____ не відпочиваю!»",
+     "options": [
+      "завжди",
+      "ніколи",
+      "часто"
+     ],
+     "answer": 1,
+     "exp": "Ніколи не = never.",
+     "exp_pl": "Ніколи не = nigdy nie.",
+     "exp_en": "Ніколи не = never.",
+     "tr": "McQueen: “I never rest!”",
+     "tr_pl": "Zygzak: „Nigdy nie odpoczywam!”",
+     "tr_en": "McQueen: “I never rest!”",
+     "tag": "Граматика",
+     "tag_pl": "Gramatyka",
+     "tag_en": "Grammar"
+    },
+    {
+     "q": "Фло: «У мене пальне ____ свіже.»",
+     "options": [
+      "завжди",
+      "ніколи",
+      "ні"
+     ],
+     "answer": 0,
+     "exp": "Завжди = always.",
+     "exp_pl": "Завжди = zawsze.",
+     "exp_en": "Завжди = always.",
+     "tr": "Flo: “My fuel is always fresh.”",
+     "tr_pl": "Flo: „U mnie paliwo jest zawsze świeże.”",
+     "tr_en": "Flo: “My fuel is always fresh.”",
+     "tag": "Граматика",
+     "tag_pl": "Gramatyka",
+     "tag_en": "Grammar"
+    },
+    {
+     "q": "Яке речення правильне?",
+     "options": [
+      "Червоний плаче іноді не.",
+      "Іноді не Червоний плаче.",
+      "Червоний іноді плаче."
+     ],
+     "answer": 2,
+     "exp": "Слово частоти — перед дієсловом.",
+     "exp_pl": "Słowo częstotliwości — przed czasownikiem.",
+     "exp_en": "The frequency word goes before the verb.",
+     "tr": "Which sentence is correct?",
+     "tr_pl": "Które zdanie jest poprawne?",
+     "tr_en": "Which sentence is correct?",
+     "tag": "Граматика",
+     "tag_pl": "Gramatyka",
+     "tag_en": "Grammar"
+    },
+    {
+     "q": "Філмор: «Я ніколи не ____ марш!»",
+     "options": [
+      "слухаю",
+      "слухає",
+      "слухати"
+     ],
+     "answer": 0,
+     "exp": "Я → слухаю.",
+     "exp_pl": "Я → слухаю (słucham).",
+     "exp_en": "Я → слухаю (I listen).",
+     "tr": "Fillmore: “I never listen to marches!”",
+     "tr_pl": "Fillmore: „Nigdy nie słucham marszów!”",
+     "tr_en": "Fillmore: “I never listen to marches!”",
+     "tag": "Граматика",
+     "tag_pl": "Gramatyka",
+     "tag_en": "Grammar"
+    }
+   ],
+   "label": "ГРАМАТИКА · ЯК ЧАСТО?",
+   "label_pl": "GRAMATYKA · JAK CZĘSTO?",
+   "label_en": "GRAMMAR · HOW OFTEN?",
+   "q": "Звичайний ранок у містечку. Обери правильне слово.",
+   "q_pl": "Zwykły poranek w miasteczku. Wybierz właściwe słowo.",
+   "q_en": "An ordinary morning in town. Choose the right word.",
+   "ins": "Завжди, часто, іноді, ніколи не",
+   "ins_pl": "Zawsze, często, czasami, nigdy nie",
+   "ins_en": "Always, often, sometimes, never",
+   "tip": "Потрібно 70%+.",
+   "tip_pl": "Potrzeba 70%+.",
+   "tip_en": "You need 70%+."
+  },
+  {
+   "type": "reading",
+   "items": [
+    {
+     "q": "Привіт, команда! Я досі в Радіатор-Спрінгс із Маккуїном."
+    },
+    {
+     "q": "Тут ранок ____ однаковий.",
+     "options": [
+      "завжди",
+      "ніколи",
+      "вчора"
+     ],
+     "answer": 0
+    },
+    {
+     "q": "О шостій Сардж піднімає ____ і вмикає марш.",
+     "options": [
+      "склянку",
+      "квітку",
+      "прапор"
+     ],
+     "answer": 2
+    },
+    {
+     "q": "Філмор — автобус-хіпі. Він вмикає свою музику."
+    },
+    {
+     "q": "Вони щоранку ____.",
+     "options": [
+      "сперечається",
+      "сперечатися",
+      "сперечаються"
+     ],
+     "answer": 2
+    },
+    {
+     "q": "Потім я їду в кафе Фло."
+    },
+    {
+     "q": "Фло зазвичай ____ пальне друзям.",
+     "options": [
+      "наливають",
+      "наливати",
+      "наливає"
+     ],
+     "answer": 2
+    },
+    {
+     "q": "Вона каже всім: «Тримай, ____!»",
+     "options": [
+      "любий",
+      "стіл",
+      "прапор"
+     ],
+     "answer": 0
+    },
+    {
+     "q": "Пальне в неї завжди ____.",
+     "options": [
+      "свіжий",
+      "свіжа",
+      "свіже"
+     ],
+     "answer": 2
+    },
+    {
+     "q": "Червоний — пожежна машина. Він дуже ____.",
+     "options": [
+      "сором'язлива",
+      "сором'язливі",
+      "сором'язливий"
+     ],
+     "answer": 2
+    },
+    {
+     "q": "Він часто ____ квіти біля кафе.",
+     "options": [
+      "забуває",
+      "поливає",
+      "сперечається"
+     ],
+     "answer": 1
+    },
+    {
+     "q": "Іноді він плаче, але це нормально."
+    },
+    {
+     "q": "Ліззі — найстаріша машина в містечку. Вона продає сувеніри."
+    },
+    {
+     "q": "Вона ____ все забуває.",
+     "options": [
+      "іноді",
+      "ніколи",
+      "ні"
+     ],
+     "answer": 0
+    },
+    {
+     "q": "Маккуїн дивиться на все це й уперше ____.",
+     "options": [
+      "усміхається",
+      "сперечається",
+      "плаче"
+     ],
+     "answer": 0
+    },
+    {
+     "q": "Тут ніколи ____ поспішають. Мені подобається!",
+     "options": [
+      "не",
+      "ні",
+      "так"
+     ],
+     "answer": 0
+    }
+   ],
+   "title": "Лист команді: звичайний ранок",
+   "title_pl": "List do zespołu: zwykły poranek",
+   "title_en": "A letter to the team: an ordinary morning",
+   "label": "ЛИСТ З МІСТЕЧКА",
+   "label_pl": "LIST Z MIASTECZKA",
+   "label_en": "A LETTER FROM TOWN",
+   "q": "Ти пишеш лист команді про ранок у Радіатор-Спрінгс. Прочитай і обери правильні слова.",
+   "q_pl": "Piszesz list do zespołu o poranku w Chłodnicy Górskiej. Przeczytaj go po ukraińsku i wybierz właściwe słowa.",
+   "q_en": "You write a letter to the team about a morning in Radiator Springs. Read it in Ukrainian and choose the right words.",
+   "tip": "Пам’ятай: ніколи + не.",
+   "tip_pl": "Pamiętaj: ніколи + не.",
+   "tip_en": "Remember: ніколи + не."
+  },
+  {
+   "type": "drill",
+   "kind": "set",
+   "items": [
+    {
+     "q": "Хто піднімає прапор?",
+     "options": [
+      "Філмор",
+      "Фло",
+      "Сардж"
+     ],
+     "answer": 2,
+     "exp": "Сардж — армійський джип.",
+     "exp_pl": "Sierżant to wojskowy jeep.",
+     "exp_en": "Sarge is the army jeep.",
+     "tr": "Who raises the flag?",
+     "tr_pl": "Kto wciąga flagę?",
+     "tr_en": "Who raises the flag?",
+     "tag": "Текст",
+     "tag_pl": "Tekst",
+     "tag_en": "Text"
+    },
+    {
+     "q": "Що робить Філмор щоранку?",
+     "options": [
+      "Вмикає свою музику",
+      "Піднімає прапор",
+      "Поливає квіти"
+     ],
+     "answer": 0,
+     "exp": "І сперечається із Сарджем.",
+     "exp_pl": "I kłóci się z Sierżantem.",
+     "exp_en": "And argues with Sarge.",
+     "tr": "What does Fillmore do every morning?",
+     "tr_pl": "Co Fillmore robi co rano?",
+     "tr_en": "What does Fillmore do every morning?",
+     "tag": "Текст",
+     "tag_pl": "Tekst",
+     "tag_en": "Text"
+    },
+    {
+     "q": "Яке пальне в кафе Фло?",
+     "options": [
+      "Ніколи не свіже",
+      "Завжди свіже",
+      "Дуже старе"
+     ],
+     "answer": 1,
+     "exp": "«Пальне в неї завжди свіже».",
+     "exp_pl": "„Paliwo u niej jest zawsze świeże”.",
+     "exp_en": "“Her fuel is always fresh.”",
+     "tr": "What is the fuel like at Flo’s café?",
+     "tr_pl": "Jakie jest paliwo w kawiarni Flo?",
+     "tr_en": "What is the fuel like at Flo’s café?",
+     "tag": "Текст",
+     "tag_pl": "Tekst",
+     "tag_en": "Text"
+    },
+    {
+     "q": "Який Червоний?",
+     "options": [
+      "Сердитий",
+      "Сором'язливий",
+      "Найстаріший"
+     ],
+     "answer": 1,
+     "exp": "Червоний дуже сором'язливий.",
+     "exp_pl": "Red jest bardzo nieśmiały.",
+     "exp_en": "Red is very shy.",
+     "tr": "What is Red like?",
+     "tr_pl": "Jaki jest Red?",
+     "tr_en": "What is Red like?",
+     "tag": "Текст",
+     "tag_pl": "Tekst",
+     "tag_en": "Text"
+    },
+    {
+     "q": "Що Маккуїн бачить у містечку?",
+     "options": [
+      "Тут ніколи не поспішають",
+      "Тут усі завжди поспішають",
+      "Тут ніхто не працює"
+     ],
+     "answer": 0,
+     "exp": "І вперше всміхається.",
+     "exp_pl": "I pierwszy raz się uśmiecha.",
+     "exp_en": "And he smiles for the first time.",
+     "tr": "What does McQueen see in the town?",
+     "tr_pl": "Co Zygzak widzi w miasteczku?",
+     "tr_en": "What does McQueen see in the town?",
+     "tag": "Текст",
+     "tag_pl": "Tekst",
+     "tag_en": "Text"
+    }
+   ],
+   "label": "РОЗУМІННЯ ТЕКСТУ",
+   "label_pl": "ROZUMIENIE TEKSTU",
+   "label_en": "READING CHECK",
+   "q": "Питання до листа про ранок.",
+   "q_pl": "Pytania do listu o poranku.",
+   "q_en": "Questions about the letter.",
+   "ins": "П'ять питань до тексту",
+   "ins_pl": "Pięć pytań do tekstu",
+   "ins_en": "Five questions about the text",
+   "tip": "Потрібно 70%+.",
+   "tip_pl": "Potrzeba 70%+.",
+   "tip_en": "You need 70%+."
+  },
+  {
+   "type": "quest",
+   "img": "cake",
+   "start": "s1",
+   "q": "Ранок у кафе Фло. Говори з містянами українською.",
+   "q_pl": "Poranek w kawiarni Flo. Rozmawiaj z mieszkańcami po ukraińsku.",
+   "q_en": "Morning at Flo's café. Talk to the townsfolk in Ukrainian.",
+   "label": "КВЕСТ: СНІДАНОК У ФЛО",
+   "label_pl": "QUEST: ŚNIADANIE U FLO",
+   "label_en": "QUEST: BREAKFAST AT FLO'S",
+   "ins": "Кожен вибір веде далі. Обирай уважно — українською",
+   "ins_pl": "Każdy wybór prowadzi dalej. Wybieraj uważnie — po ukraińsku",
+   "ins_en": "Every choice leads on. Choose carefully — in Ukrainian",
+   "tip": "Квест перевіряє слова й граматику уроку.",
+   "tip_pl": "Quest sprawdza słowa i gramatykę lekcji.",
+   "tip_en": "The quest checks the lesson's words and grammar.",
+   "steps": {
+    "s1": {
+     "q": "Фло: «Доброго ранку, любий! Що тобі подати?»",
+     "q_pl": "Фло: «Доброго ранку, любий! Що тобі подати?» (Dzień dobry, kochanie! Co ci podać?)",
+     "q_en": "Фло: «Доброго ранку, любий! Що тобі подати?» (Good morning, honey! What can I get you?)",
+     "scene": "Кафе Фло, сьома ранку.",
+     "scene_pl": "Kawiarnia Flo, siódma rano.",
+     "scene_en": "Flo's café, seven in the morning.",
+     "choices": [
+      {
+       "t": "Склянку пального, будь ласка!",
+       "ok": true,
+       "next": "s2",
+       "fb": "Чудово!",
+       "fb_pl": "Świetnie!",
+       "fb_en": "Great!"
+      },
+      {
+       "t": "Склянку прапора, будь ласка!",
+       "ok": false,
+       "next": "s1b",
+       "fb": "Прапор не п’ють!",
+       "fb_pl": "Flagi się nie pije!",
+       "fb_en": "You can't drink a flag!"
+      }
+     ]
+    },
+    "s1b": {
+     "q": "Фло сміється: «Прапора? Ні, любий. Що ти п’єш?»",
+     "q_pl": "Фло сміється: «Прапора? Ні, любий. Що ти п’єш?» (Flagę? Nie, kochanie. Co pijesz?)",
+     "q_en": "Фло сміється: «Прапора? Ні, любий. Що ти п’єш?» (A flag? No, honey. What do you drink?)",
+     "scene": "Філмор теж сміється.",
+     "scene_pl": "Fillmore też się śmieje.",
+     "scene_en": "Fillmore laughs too.",
+     "choices": [
+      {
+       "t": "Пальне. Я завжди п’ю пальне.",
+       "ok": true,
+       "next": "s2",
+       "fb": "Так!",
+       "fb_pl": "Tak!",
+       "fb_en": "Yes!"
+      },
+      {
+       "t": "Я ніколи п’ю.",
+       "ok": false,
+       "next": "end_bad",
+       "fb": "Бракує «не»: ніколи не.",
+       "fb_pl": "Brakuje „не”: ніколи не.",
+       "fb_en": "Missing “не”: ніколи не."
+      }
+     ]
+    },
+    "s2": {
+     "q": "Фло: «Ти часто сюди приходиш?»",
+     "q_pl": "Фло: «Ти часто сюди приходиш?» (Często tu przychodzisz?)",
+     "q_en": "Фло: «Ти часто сюди приходиш?» (Do you come here often?)",
+     "scene": "Вона наливає свіже пальне.",
+     "scene_pl": "Nalewa świeże paliwo.",
+     "scene_en": "She pours fresh fuel.",
+     "choices": [
+      {
+       "t": "Так, я часто сюди приходжу!",
+       "ok": true,
+       "next": "s3",
+       "fb": "Часто = often.",
+       "fb_pl": "Часто = często.",
+       "fb_en": "Часто = often."
+      },
+      {
+       "t": "Так, я ніколи не приходжу!",
+       "ok": false,
+       "next": "s3",
+       "fb": "«Так» і «ніколи» — це дивно!",
+       "fb_pl": "„Tak” i „nigdy” — to dziwne!",
+       "fb_en": "“Yes” and “never” — that’s strange!"
+      }
+     ]
+    },
+    "s3": {
+     "q": "Маккуїн: «Сардж і Філмор знову? Вони завжди так?»",
+     "q_pl": "Маккуїн: «Сардж і Філмор знову? Вони завжди так?» (Sierżant i Fillmore znowu? Zawsze tak mają?)",
+     "q_en": "Маккуїн: «Сардж і Філмор знову? Вони завжди так?» (Sarge and Fillmore again? Are they always like this?)",
+     "scene": "Марш і музика грають разом.",
+     "scene_pl": "Marsz i muzyka grają naraz.",
+     "scene_en": "The march and the music play together.",
+     "choices": [
+      {
+       "t": "Так, вони щоранку сперечаються.",
+       "ok": true,
+       "next": "s4",
+       "fb": "Щоранку = every morning.",
+       "fb_pl": "Щоранку = co rano.",
+       "fb_en": "Щоранку = every morning."
+      },
+      {
+       "t": "Ні, вони ніколи сперечаються.",
+       "ok": false,
+       "next": "s4",
+       "fb": "Бракує «не» — і це неправда.",
+       "fb_pl": "Brakuje „не” — i to nieprawda.",
+       "fb_en": "Missing “не” — and it’s not true."
+      }
+     ]
+    },
+    "s4": {
+     "q": "Біля кафе Червоний тихо плаче над квітами.",
+     "q_pl": "Біля кафе Червоний тихо плаче над квітами. (Przy kawiarni Red cicho płacze nad kwiatami)",
+     "q_en": "Біля кафе Червоний тихо плаче над квітами. (By the café Red is quietly crying over his flowers)",
+     "scene": "Що ти кажеш?",
+     "scene_pl": "Co mówisz?",
+     "scene_en": "What do you say?",
+     "choices": [
+      {
+       "t": "Чому ти завжди плачеш? Ти дивний!",
+       "ok": false,
+       "next": "end_mid",
+       "fb": "Це не дуже добре…",
+       "fb_pl": "To niezbyt miłe…",
+       "fb_en": "That's not very kind…"
+      },
+      {
+       "t": "Не плач, Червоний. Твої квіти гарні!",
+       "ok": true,
+       "next": "end_good",
+       "fb": "Як добре!",
+       "fb_pl": "Jak miło!",
+       "fb_en": "How kind!"
+      }
+     ]
+    }
+   },
+   "endings": {
+    "end_good": {
+     "good": true,
+     "title": "Кінцівка: Новий друг",
+     "title_pl": "Zakończenie: Nowy przyjaciel",
+     "title_en": "Ending: A New Friend",
+     "text": "Червоний усміхається і дає тобі квітку. Маккуїн каже: «Знаєш, тут добре. Тут ніколи не поспішають».",
+     "text_pl": "Red się uśmiecha i daje ci kwiatek. Zygzak mówi: „Wiesz, tu jest dobrze. Tu nikt się nigdy nie spieszy”.",
+     "text_en": "Red smiles and gives you a flower. McQueen says: “You know, it’s nice here. Nobody’s ever in a hurry here.”"
+    },
+    "end_mid": {
+     "good": true,
+     "title": "Кінцівка: Червоний ховається",
+     "title_pl": "Zakończenie: Red się chowa",
+     "title_en": "Ending: Red Hides",
+     "text": "Червоний їде за кафе. Фло тихо каже: «Він сором’язливий, любий. Будь добрішим». Завтра спробуй ще раз.",
+     "text_pl": "Red odjeżdża za kawiarnię. Flo mówi cicho: „On jest nieśmiały, kochanie. Bądź milszy”. Jutro spróbuj jeszcze raz.",
+     "text_en": "Red drives behind the café. Flo says quietly: “He’s shy, honey. Be kinder.” Try again tomorrow."
+    },
+    "end_bad": {
+     "good": false,
+     "title": "Кінцівка: Фло не розуміє",
+     "title_pl": "Zakończenie: Flo nie rozumie",
+     "title_en": "Ending: Flo Doesn't Understand",
+     "text": "Фло знизує плечима й обслуговує Сарджа. Спробуй ще раз — і пам’ятай: ніколи не.",
+     "text_pl": "Flo wzrusza ramionami i obsługuje Sierżanta. Spróbuj jeszcze raz — i pamiętaj: ніколи не.",
+     "text_en": "Flo shrugs and serves Sarge. Try again — and remember: ніколи не."
+    }
+   }
+  },
+  {
+   "type": "drill",
+   "kind": "set",
+   "items": [
+    {
+     "k": "type",
+     "q": "Напиши українською: «I always get up at six.»",
+     "q_pl": "Napisz po ukraińsku: „Zawsze wstaję o szóstej.”",
+     "q_en": "Write in Ukrainian: “I always get up at six.”",
+     "options": [
+      "Я завжди встаю о шостій.",
+      "Я завжди встаю о шостій",
+      "я завжди встаю о шостій.",
+      "я завжди встаю о шостій"
+     ],
+     "exp": "Я завжди встаю о шостій.",
+     "exp_pl": "Я завжди встаю о шостій.",
+     "exp_en": "Я завжди встаю о шостій.",
+     "tag": "Напиши",
+     "tag_pl": "Napisz",
+     "tag_en": "Write"
+    },
+    {
+     "k": "order",
+     "q": "Склади репліку: «They always argue!»",
+     "q_pl": "Ułóż kwestię: „Oni zawsze się kłócą!”",
+     "q_en": "Build the line: “They always argue!”",
+     "options": [
+      "Вони",
+      "завжди",
+      "сперечаються!"
+     ],
+     "exp": "Вони завжди сперечаються!",
+     "exp_pl": "Вони завжди сперечаються!",
+     "exp_en": "Вони завжди сперечаються!",
+     "tag": "Склади",
+     "tag_pl": "Ułóż",
+     "tag_en": "Build"
+    },
+    {
+     "k": "type",
+     "q": "Напиши українською: «It's always fresh here!»",
+     "q_pl": "Napisz po ukraińsku: „Tu zawsze jest świeże!”",
+     "q_en": "Write in Ukrainian: “It's always fresh here!”",
+     "options": [
+      "Тут завжди свіже!",
+      "Тут завжди свіже",
+      "тут завжди свіже!",
+      "тут завжди свіже"
+     ],
+     "exp": "Тут завжди свіже!",
+     "exp_pl": "Тут завжди свіже!",
+     "exp_en": "Тут завжди свіже!",
+     "tag": "Напиши",
+     "tag_pl": "Napisz",
+     "tag_en": "Write"
+    },
+    {
+     "k": "order",
+     "q": "Склади репліку: «Red often waters the flowers.»",
+     "q_pl": "Ułóż kwestię: „Red często podlewa kwiaty.”",
+     "q_en": "Build the line: “Red often waters the flowers.”",
+     "options": [
+      "Червоний",
+      "часто",
+      "поливає",
+      "квіти."
+     ],
+     "exp": "Червоний часто поливає квіти.",
+     "exp_pl": "Червоний часто поливає квіти.",
+     "exp_en": "Червоний часто поливає квіти.",
+     "tag": "Склади",
+     "tag_pl": "Ułóż",
+     "tag_en": "Build"
+    },
+    {
+     "k": "type",
+     "q": "Напиши українською: «I sometimes forget.»",
+     "q_pl": "Napisz po ukraińsku: „Czasami zapominam.”",
+     "q_en": "Write in Ukrainian: “I sometimes forget.”",
+     "options": [
+      "Я іноді забуваю.",
+      "Я іноді забуваю",
+      "я іноді забуваю.",
+      "я іноді забуваю",
+      "Іноді я забуваю.",
+      "Іноді я забуваю",
+      "іноді я забуваю.",
+      "іноді я забуваю"
+     ],
+     "exp": "Я іноді забуваю.",
+     "exp_pl": "Я іноді забуваю.",
+     "exp_en": "Я іноді забуваю.",
+     "tag": "Напиши",
+     "tag_pl": "Napisz",
+     "tag_en": "Write"
+    },
+    {
+     "k": "order",
+     "q": "Склади репліку: «The town is never in a hurry.»",
+     "q_pl": "Ułóż kwestię: „Miasteczko nigdy się nie spieszy.”",
+     "q_en": "Build the line: “The town is never in a hurry.”",
+     "options": [
+      "Містечко",
+      "ніколи",
+      "не",
+      "поспішає."
+     ],
+     "exp": "Містечко ніколи не поспішає.",
+     "exp_pl": "Містечко ніколи не поспішає.",
+     "exp_en": "Містечко ніколи не поспішає.",
+     "tag": "Склади",
+     "tag_pl": "Ułóż",
+     "tag_en": "Build"
+    },
+    {
+     "k": "type",
+     "q": "Напиши українською: «Peace and love, man.»",
+     "q_pl": "Napisz po ukraińsku: „Pokój i miłość, stary.”",
+     "q_en": "Write in Ukrainian: “Peace and love, man.”",
+     "options": [
+      "Мир і любов, друже.",
+      "Мир і любов, друже",
+      "мир і любов, друже.",
+      "мир і любов, друже",
+      "Мир і любов, друже!",
+      "мир і любов, друже!"
+     ],
+     "exp": "Мир і любов, друже.",
+     "exp_pl": "Мир і любов, друже.",
+     "exp_en": "Мир і любов, друже.",
+     "tag": "Напиши",
+     "tag_pl": "Napisz",
+     "tag_en": "Write"
+    },
+    {
+     "k": "order",
+     "q": "Склади репліку: «Flo usually serves fuel.»",
+     "q_pl": "Ułóż kwestię: „Flo zwykle podaje paliwo.”",
+     "q_en": "Build the line: “Flo usually serves fuel.”",
+     "options": [
+      "Фло",
+      "зазвичай",
+      "подає",
+      "пальне."
+     ],
+     "exp": "Фло зазвичай подає пальне.",
+     "exp_pl": "Фло зазвичай подає пальне.",
+     "exp_en": "Фло зазвичай подає пальне.",
+     "tag": "Склади",
+     "tag_pl": "Ułóż",
+     "tag_en": "Build"
+    }
+   ],
+   "label": "ПИШИ Й СКЛАДАЙ",
+   "label_pl": "PISZ I UKŁADAJ",
+   "label_en": "WRITE AND BUILD",
+   "q": "Ти записуєш у блокнот, що бачиш у містечку. Напиши й склади репліки українською.",
+   "q_pl": "Zapisujesz w notesie, co widzisz w miasteczku. Napisz i ułóż kwestie po ukraińsku.",
+   "q_en": "You note down what you see in town. Write and build the lines in Ukrainian.",
+   "ins": "Пиши й складай репліки",
+   "ins_pl": "Pisz i układaj kwestie",
+   "ins_en": "Write and build the lines",
+   "tip": "Потрібно 70%+.",
+   "tip_pl": "Potrzeba 70%+.",
+   "tip_en": "You need 70%+."
+  },
+  {
+   "type": "speaking",
+   "say": "Доброго ранку, Фло! Склянку пального, будь ласка.",
+   "label": "ГОВОРІННЯ",
+   "label_pl": "MÓWIENIE",
+   "label_en": "SPEAKING",
+   "q": "Скажи вголос у кафе Фло.",
+   "q_pl": "Powiedz na głos w kawiarni Flo.",
+   "q_en": "Say it out loud at Flo's café.",
+   "qt_pl": "Powiedz na głos w kawiarni Flo.",
+   "qt_en": "Say it out loud at Flo's café.",
+   "ins": "Прочитай і скажи вголос",
+   "ins_pl": "Przeczytaj i powiedz na głos",
+   "ins_en": "Read it and say it aloud",
+   "tip": "Переклад: Good morning, Flo! A glass of fuel, please.",
+   "tip_pl": "Tłumaczenie: Dzień dobry, Flo! Szklankę paliwa, poproszę.",
+   "tip_en": "Translation: Good morning, Flo! A glass of fuel, please."
+  },
+  {
+   "type": "speaking",
+   "say": "Я завжди встаю рано. Я ніколи не поспішаю.",
+   "label": "ГОВОРІННЯ",
+   "label_pl": "MÓWIENIE",
+   "label_en": "SPEAKING",
+   "q": "Скажи вголос, як справжній містянин.",
+   "q_pl": "Powiedz na głos jak prawdziwy mieszkaniec.",
+   "q_en": "Say it out loud like a real local.",
+   "qt_pl": "Powiedz na głos jak prawdziwy mieszkaniec.",
+   "qt_en": "Say it out loud like a real local.",
+   "ins": "Прочитай і скажи вголос",
+   "ins_pl": "Przeczytaj i powiedz na głos",
+   "ins_en": "Read it and say it aloud",
+   "tip": "Переклад: I always get up early. I’m never in a hurry.",
+   "tip_pl": "Tłumaczenie: Zawsze wstaję wcześnie. Nigdy się nie spieszę.",
+   "tip_en": "Translation: I always get up early. I’m never in a hurry."
+  },
+  {
+   "type": "drill",
+   "kind": "set",
+   "items": [
+    {
+     "q": "Сардж — старий джип з ____.",
+     "options": [
+      "кафе",
+      "поля",
+      "армії"
+     ],
+     "answer": 2,
+     "exp": "Армія = army.",
+     "exp_pl": "Армія = wojsko.",
+     "exp_en": "Армія = army.",
+     "tr": "Sarge is an old jeep from the army.",
+     "tr_pl": "Sierżant to stary jeep z wojska.",
+     "tr_en": "Sarge is an old jeep from the army.",
+     "tag": "Слово",
+     "tag_pl": "Słowo",
+     "tag_en": "Word"
+    },
+    {
+     "q": "Філмор любить ____ і музику.",
+     "options": [
+      "марш",
+      "армію",
+      "мир"
+     ],
+     "answer": 2,
+     "exp": "Мир = peace.",
+     "exp_pl": "Мир = pokój.",
+     "exp_en": "Мир = peace.",
+     "tr": "Fillmore loves peace and music.",
+     "tr_pl": "Fillmore kocha pokój i muzykę.",
+     "tr_en": "Fillmore loves peace and music.",
+     "tag": "Слово",
+     "tag_pl": "Słowo",
+     "tag_en": "Word"
+    },
+    {
+     "q": "Ліззі продає ____.",
+     "options": [
+      "сувеніри",
+      "квіти",
+      "шини"
+     ],
+     "answer": 0,
+     "exp": "Сувенір = souvenir.",
+     "exp_pl": "Сувенір = pamiątka.",
+     "exp_en": "Сувенір = souvenir.",
+     "tr": "Lizzie sells souvenirs.",
+     "tr_pl": "Lizzie sprzedaje pamiątki.",
+     "tr_en": "Lizzie sells souvenirs.",
+     "tag": "Слово",
+     "tag_pl": "Słowo",
+     "tag_en": "Word"
+    },
+    {
+     "q": "У Фло ми сидимо за ____.",
+     "options": [
+      "прапором",
+      "столиком",
+      "квіткою"
+     ],
+     "answer": 1,
+     "exp": "Столик = table.",
+     "exp_pl": "Столик = stolik.",
+     "exp_en": "Столик = table.",
+     "tr": "At Flo’s we sit at a table.",
+     "tr_pl": "U Flo siedzimy przy stoliku.",
+     "tr_en": "At Flo’s we sit at a table.",
+     "tag": "Слово",
+     "tag_pl": "Słowo",
+     "tag_en": "Word"
+    },
+    {
+     "q": "Фло наливає пальне в ____.",
+     "options": [
+      "склянку",
+      "квітку",
+      "армію"
+     ],
+     "answer": 0,
+     "exp": "Склянка = glass.",
+     "exp_pl": "Склянка = szklanka.",
+     "exp_en": "Склянка = glass.",
+     "tr": "Flo pours fuel into a glass.",
+     "tr_pl": "Flo nalewa paliwo do szklanki.",
+     "tr_en": "Flo pours fuel into a glass.",
+     "tag": "Слово",
+     "tag_pl": "Słowo",
+     "tag_en": "Word"
+    },
+    {
+     "q": "Червоний — ____ машина.",
+     "options": [
+      "армійська",
+      "гоночна",
+      "пожежна"
+     ],
+     "answer": 2,
+     "exp": "Пожежна машина = fire truck.",
+     "exp_pl": "Пожежна машина = wóz strażacki.",
+     "exp_en": "Пожежна машина = fire truck.",
+     "tr": "Red is a fire truck.",
+     "tr_pl": "Red to wóz strażacki.",
+     "tr_en": "Red is a fire truck.",
+     "tag": "Слово",
+     "tag_pl": "Słowo",
+     "tag_en": "Word"
+    },
+    {
+     "q": "Квіти треба часто ____.",
+     "options": [
+      "забувати",
+      "плакати",
+      "поливати"
+     ],
+     "answer": 2,
+     "exp": "Поливати = to water.",
+     "exp_pl": "Поливати = podlewać.",
+     "exp_en": "Поливати = to water.",
+     "tr": "Flowers need watering often.",
+     "tr_pl": "Kwiaty trzeba często podlewać.",
+     "tr_en": "Flowers need watering often.",
+     "tag": "Слово",
+     "tag_pl": "Słowo",
+     "tag_en": "Word"
+    },
+    {
+     "q": "Ліззі — ____ машина в містечку.",
+     "options": [
+      "найстаріша",
+      "найшвидша",
+      "найновіша"
+     ],
+     "answer": 0,
+     "exp": "Найстаріша = the oldest.",
+     "exp_pl": "Найстаріша = najstarsza.",
+     "exp_en": "Найстаріша = the oldest.",
+     "tr": "Lizzie is the oldest car in town.",
+     "tr_pl": "Lizzie to najstarsze auto w miasteczku.",
+     "tr_en": "Lizzie is the oldest car in town.",
+     "tag": "Слово",
+     "tag_pl": "Słowo",
+     "tag_en": "Word"
+    },
+    {
+     "q": "Червоний майже не говорить. Він ____.",
+     "options": [
+      "гучний",
+      "сердитий",
+      "сором'язливий"
+     ],
+     "answer": 2,
+     "exp": "Сором'язливий = shy.",
+     "exp_pl": "Сором'язливий = nieśmiały.",
+     "exp_en": "Сором'язливий = shy.",
+     "tr": "Red hardly talks. He’s shy.",
+     "tr_pl": "Red prawie nie mówi. Jest nieśmiały.",
+     "tr_en": "Red hardly talks. He’s shy.",
+     "tag": "Слово",
+     "tag_pl": "Słowo",
+     "tag_en": "Word"
+    }
+   ],
+   "label": "ПІСЛЯ СНІДАНКУ",
+   "label_pl": "PO ŚNIADANIU",
+   "label_en": "AFTER BREAKFAST",
+   "q": "Маккуїн питає тебе про нових сусідів. Відповідай.",
+   "q_pl": "Zygzak pyta cię o nowych sąsiadów. Odpowiadaj.",
+   "q_en": "McQueen asks you about the new neighbours. Answer.",
+   "ins": "Дев'ять питань на слова уроку",
+   "ins_pl": "Dziewięć pytań na słowa lekcji",
+   "ins_en": "Nine questions on the lesson words",
+   "tip": "Потрібно 70%+.",
+   "tip_pl": "Potrzeba 70%+.",
+   "tip_en": "You need 70%+."
+  },
+  {
+   "type": "final",
+   "img": "diary",
+   "answer": 25,
+   "label": "МІЙ РАНОК",
+   "label_pl": "MÓJ PORANEK",
+   "label_en": "MY MORNING",
+   "q": "Напиши команді про свій ранок у Радіатор-Спрінгс (25+ слів): що ти завжди робиш? що часто? що іноді? чого ніколи не робиш?",
+   "q_pl": "Napisz do zespołu o swoim poranku w Chłodnicy Górskiej — po ukraińsku (25+ słów): co zawsze robisz? co często? co czasami? czego nigdy nie robisz?",
+   "q_en": "Write to the team about your morning in Radiator Springs — in Ukrainian (25+ words): what do you always do? what often? what sometimes? what do you never do?",
+   "ins": "Напиши текст",
+   "ins_pl": "Napisz tekst po ukraińsku",
+   "ins_en": "Write the text in Ukrainian",
+   "tip": "Щоранку я… Я завжди… Я часто… Іноді я… Я ніколи не…",
+   "tip_pl": "Щоранку я… Я завжди… Я часто… Іноді я… Я ніколи не…",
+   "tip_en": "Щоранку я… Я завжди… Я часто… Іноді я… Я ніколи не…"
+  }
+ ]
+}

@@ -1,0 +1,1652 @@
+{
+ "lesson_id": "e52e2b40-751d-4856-8d08-2e4fdf86bc02",
+ "tg": "pl",
+ "tasks": [
+  {
+   "ref": 0
+  },
+  {
+   "type": "intro",
+   "label": "ТВОЯ РОЛЬ",
+   "label_pl": "TWOJA ROLA",
+   "label_en": "YOUR ROLE",
+   "q": "Ти приїхав у Радіатор-Спрінгс слідом за Маккуїном — ти ж його механік. Уже вечір, і тобі теж потрібне місце на ніч. Саллі відчиняє мотель «Затишний конус», а ти стоїш поруч із Маккуїном і ловиш кожне польське слово.",
+   "q_pl": "Przyjechałeś do Chłodnicy Górskiej za Zygzakiem — przecież jesteś jego mechanikiem. Jest wieczór i ty też potrzebujesz miejsca na noc. Sally otwiera motel „Przytulny Pachołek”, a ty stoisz obok Zygzaka i łapiesz każde słowo.",
+   "q_en": "You followed McQueen to Radiator Springs — you are his mechanic, after all. It's evening and you need a place for the night too. Sally opens the Cozy Cone Motel, and you stand next to McQueen catching every Polish word."
+  },
+  {
+   "ref": 1
+  },
+  {
+   "type": "match",
+   "options": [
+    "pokój=кімната",
+    "łóżko=ліжко",
+    "noc=ніч",
+    "klucz=ключ",
+    "cena=ціна"
+   ],
+   "options_pl": [
+    "pokój=room",
+    "łóżko=bed",
+    "noc=night",
+    "klucz=key",
+    "cena=price"
+   ],
+   "options_en": [
+    "pokój=room",
+    "łóżko=bed",
+    "noc=night",
+    "klucz=key",
+    "cena=price"
+   ],
+   "options_uk": [
+    "pokój=кімната",
+    "łóżko=ліжко",
+    "noc=ніч",
+    "klucz=ключ",
+    "cena=ціна"
+   ],
+   "label": "СЦЕНА 1 · СЛОВА",
+   "label_pl": "SCENA 1 · SŁOWA",
+   "label_en": "SCENE 1 · WORDS",
+   "q": "З'єднай польські слова сцени з перекладом.",
+   "q_pl": "Połącz słowa sceny z tłumaczeniem.",
+   "q_en": "Match the Polish scene words with their translations.",
+   "qt_pl": "Połącz słowa sceny z tłumaczeniem.",
+   "qt_en": "Match the Polish scene words with their translations.",
+   "ins": "П'ять пар зі сцени",
+   "ins_pl": "Pięć par ze sceny",
+   "ins_en": "Five pairs from the scene",
+   "tip": "Не впевнений? Повернись до словника сцени.",
+   "tip_pl": "Nie masz pewności? Wróć do słownika sceny.",
+   "tip_en": "Not sure? Go back to the scene glossary."
+  },
+  {
+   "type": "drill",
+   "kind": "set",
+   "items": [
+    {
+     "q": "Sally: „Podoba ci się ____?”",
+     "options": [
+      "noc",
+      "pokój",
+      "klucz"
+     ],
+     "answer": 1,
+     "exp": "Pokój = кімната.",
+     "exp_pl": "Pokój = room.",
+     "exp_en": "Pokój = room.",
+     "tr": "Тобі подобається кімната?",
+     "tr_pl": "Do you like the room?",
+     "tr_en": "Do you like the room?",
+     "tag": "Репліка",
+     "tag_pl": "Kwestia",
+     "tag_en": "Line"
+    },
+    {
+     "q": "Sally: „Oto twój ____.”",
+     "options": [
+      "klucz",
+      "cena",
+      "noc"
+     ],
+     "answer": 0,
+     "exp": "Klucz = ключ.",
+     "exp_pl": "Klucz = key.",
+     "exp_en": "Klucz = key.",
+     "tr": "Ось твій ключ.",
+     "tr_pl": "Here's your key.",
+     "tr_en": "Here's your key.",
+     "tag": "Репліка",
+     "tag_pl": "Kwestia",
+     "tag_en": "Line"
+    },
+    {
+     "q": "Zygzak: „Dobrze. Tylko jedna ____.”",
+     "options": [
+      "noc",
+      "klucz",
+      "pokój"
+     ],
+     "answer": 0,
+     "exp": "Noc = ніч; «jedna» — жіночий рід.",
+     "exp_pl": "Noc = night; „jedna” — rodzaj żeński.",
+     "exp_en": "Noc = night; “jedna” is feminine.",
+     "tr": "Гаразд. Тільки одна ніч.",
+     "tr_pl": "Fine. Just one night.",
+     "tr_en": "Fine. Just one night.",
+     "tag": "Репліка",
+     "tag_pl": "Kwestia",
+     "tag_en": "Line"
+    },
+    {
+     "q": "Pokój w motelu jest duży.",
+     "options": [
+      "Prawda",
+      "Fałsz"
+     ],
+     "answer": 1,
+     "exp": "Кімната мала, але затишна.",
+     "exp_pl": "Pokój jest mały, ale przytulny.",
+     "exp_en": "The room is small but cozy.",
+     "tr": "Кімната в мотелі велика.",
+     "tr_pl": "The motel room is big.",
+     "tr_en": "The motel room is big.",
+     "tag": "Правда чи ні?",
+     "tag_pl": "Prawda czy nie?",
+     "tag_en": "True or false?"
+    },
+    {
+     "q": "Cena pokoju jest niska.",
+     "options": [
+      "Prawda",
+      "Fałsz"
+     ],
+     "answer": 0,
+     "exp": "Ціна невисока.",
+     "exp_pl": "Cena jest niska.",
+     "exp_en": "The price is low.",
+     "tr": "Ціна кімнати низька.",
+     "tr_pl": "The price of the room is low.",
+     "tr_en": "The price of the room is low.",
+     "tag": "Правда чи ні?",
+     "tag_pl": "Prawda czy nie?",
+     "tag_en": "True or false?"
+    },
+    {
+     "q": "Zygzak: „Gdzie jest łóżko?” Sally: „Auta nie mają łóżek!” Co to znaczy?",
+     "options": [
+      "Auta śpią na podłodze",
+      "Łóżko jest bardzo drogie",
+      "Sally nie ma klucza"
+     ],
+     "answer": 0,
+     "exp": "Машини просто стоять на підлозі.",
+     "exp_pl": "Auta po prostu stoją na podłodze.",
+     "exp_en": "Cars just park on the floor.",
+     "tr": "Маккуїн: «Де ліжко?» Саллі: «У машин немає ліжок!» Що це означає?",
+     "tr_pl": "McQueen: “Where's the bed?” Sally: “Cars don't have beds!” What does it mean?",
+     "tr_en": "McQueen: “Where's the bed?” Sally: “Cars don't have beds!” What does it mean?",
+     "tag": "Зрозумій героя",
+     "tag_pl": "Zrozum bohatera",
+     "tag_en": "Read the hero"
+    },
+    {
+     "q": "Sally pyta ciebie: „Potrzebujesz czegoś?” Ty też nie masz gdzie spać. Co mówisz?",
+     "options": [
+      "Tak, potrzebuję pokoju na noc.",
+      "Nie, nie potrzebuję niczego.",
+      "Tak, potrzebuję nowej opony."
+     ],
+     "answer": 0,
+     "exp": "Тобі потрібна кімната на ніч.",
+     "exp_pl": "Potrzebujesz pokoju na noc.",
+     "exp_en": "You need a room for the night.",
+     "tr": "Саллі питає тебе: «Тобі щось потрібно?» Тобі теж ніде спати. Що ти кажеш?",
+     "tr_pl": "Sally asks you: “Do you need anything?” You have nowhere to sleep either. What do you say?",
+     "tr_en": "Sally asks you: “Do you need anything?” You have nowhere to sleep either. What do you say?",
+     "tag": "Твій вибір",
+     "tag_pl": "Twój wybór",
+     "tag_en": "Your call"
+    }
+   ],
+   "label": "СЦЕНА 1 · КІМНАТА-КОНУС",
+   "label_pl": "SCENA 1 · POKÓJ-PACHOŁEK",
+   "label_en": "SCENE 1 · THE CONE ROOM",
+   "q": "Саллі показує Маккуїну кімнату в мотелі. Ти поруч.",
+   "q_pl": "Sally pokazuje Zygzakowi pokój w motelu. Jesteś obok.",
+   "q_en": "Sally shows McQueen a room in the motel. You're right there.",
+   "ins": "Встав слово, обери правду, зрозумій героя",
+   "ins_pl": "Wstaw słowo, oceń prawdę, zrozum bohatera",
+   "ins_en": "Fill the gap, judge true/false, understand the hero",
+   "tip": "Потрібно 70%+.",
+   "tip_pl": "Potrzeba 70%+.",
+   "tip_en": "You need 70%+."
+  },
+  {
+   "ref": 2
+  },
+  {
+   "type": "match",
+   "options": [
+    "tęsknić=сумувати",
+    "wielkie miasto=велике місто",
+    "pracować=працювати",
+    "cichy=тихий",
+    "kochać=любити"
+   ],
+   "options_pl": [
+    "tęsknić=to miss",
+    "wielkie miasto=big city",
+    "pracować=to work",
+    "cichy=quiet",
+    "kochać=to love"
+   ],
+   "options_en": [
+    "tęsknić=to miss",
+    "wielkie miasto=big city",
+    "pracować=to work",
+    "cichy=quiet",
+    "kochać=to love"
+   ],
+   "options_uk": [
+    "tęsknić=сумувати",
+    "wielkie miasto=велике місто",
+    "pracować=працювати",
+    "cichy=тихий",
+    "kochać=любити"
+   ],
+   "label": "СЦЕНА 2 · СЛОВА",
+   "label_pl": "SCENA 2 · SŁOWA",
+   "label_en": "SCENE 2 · WORDS",
+   "q": "З'єднай польські слова сцени з перекладом.",
+   "q_pl": "Połącz słowa sceny z tłumaczeniem.",
+   "q_en": "Match the Polish scene words with their translations.",
+   "qt_pl": "Połącz słowa sceny z tłumaczeniem.",
+   "qt_en": "Match the Polish scene words with their translations.",
+   "ins": "П'ять пар зі сцени",
+   "ins_pl": "Pięć par ze sceny",
+   "ins_en": "Five pairs from the scene",
+   "tip": "Не впевнений? Повернись до словника сцени.",
+   "tip_pl": "Nie masz pewności? Wróć do słownika sceny.",
+   "tip_en": "Not sure? Go back to the scene glossary."
+  },
+  {
+   "type": "drill",
+   "kind": "set",
+   "items": [
+    {
+     "q": "Sally: „Nie ____ za tym.”",
+     "options": [
+      "pracuję",
+      "tęsknię",
+      "kocham"
+     ],
+     "answer": 1,
+     "exp": "Tęsknić za = сумувати за.",
+     "exp_pl": "Tęsknić za = to miss.",
+     "exp_en": "Tęsknić za = to miss.",
+     "tr": "Я за цим не сумую.",
+     "tr_pl": "I don't miss it.",
+     "tr_en": "I don't miss it.",
+     "tag": "Репліка",
+     "tag_pl": "Kwestia",
+     "tag_en": "Line"
+    },
+    {
+     "q": "Sally: „____ to miasteczko.”",
+     "options": [
+      "Tęsknię",
+      "Myślę",
+      "Kocham"
+     ],
+     "answer": 2,
+     "exp": "Kochać = любити.",
+     "exp_pl": "Kochać = to love.",
+     "exp_en": "Kochać = to love.",
+     "tr": "Я люблю це містечко.",
+     "tr_pl": "I love this town.",
+     "tr_en": "I love this town.",
+     "tag": "Репліка",
+     "tag_pl": "Kwestia",
+     "tag_en": "Line"
+    },
+    {
+     "q": "Sally: „Już tam nie ____.”",
+     "options": [
+      "kocham",
+      "wierzę",
+      "pracuję"
+     ],
+     "answer": 2,
+     "exp": "Pracować = працювати.",
+     "exp_pl": "Pracować = to work.",
+     "exp_en": "Pracować = to work.",
+     "tr": "Я там уже не працюю.",
+     "tr_pl": "I don't work there anymore.",
+     "tr_en": "I don't work there anymore.",
+     "tag": "Репліка",
+     "tag_pl": "Kwestia",
+     "tag_en": "Line"
+    },
+    {
+     "q": "Kiedyś Sally mieszkała w wielkim mieście.",
+     "options": [
+      "Prawda",
+      "Fałsz"
+     ],
+     "answer": 0,
+     "exp": "Вона жила в Лос-Анджелесі.",
+     "exp_pl": "Mieszkała w Los Angeles.",
+     "exp_en": "She lived in Los Angeles.",
+     "tr": "Колись Саллі жила у великому місті.",
+     "tr_pl": "Sally once lived in a big city.",
+     "tr_en": "Sally once lived in a big city.",
+     "tag": "Правда чи ні?",
+     "tag_pl": "Prawda czy nie?",
+     "tag_en": "True or false?"
+    },
+    {
+     "q": "Wielkie miasto jest ciche.",
+     "options": [
+      "Prawda",
+      "Fałsz"
+     ],
+     "answer": 1,
+     "exp": "Велике місто гамірне, тихе — містечко.",
+     "exp_pl": "Wielkie miasto jest ruchliwe, a miasteczko ciche.",
+     "exp_en": "The big city is busy; the little town is quiet.",
+     "tr": "Велике місто тихе.",
+     "tr_pl": "The big city is quiet.",
+     "tr_en": "The big city is quiet.",
+     "tag": "Правда чи ні?",
+     "tag_pl": "Prawda czy nie?",
+     "tag_en": "True or false?"
+    },
+    {
+     "q": "Zygzak: „Nie tęsknisz za wielkim miastem?” Sally: „Nie.” Co czuje Sally?",
+     "options": [
+      "Tęskni za Los Angeles",
+      "Chce jechać do Kalifornii",
+      "Kocha to ciche miasteczko"
+     ],
+     "answer": 2,
+     "exp": "Саллі щаслива тут.",
+     "exp_pl": "Sally jest tu szczęśliwa.",
+     "exp_en": "Sally is happy here.",
+     "tr": "Маккуїн: «Ти не сумуєш за великим містом?» Саллі: «Ні». Що відчуває Саллі?",
+     "tr_pl": "McQueen: “Don't you miss the big city?” Sally: “No.” How does Sally feel?",
+     "tr_en": "McQueen: “Don't you miss the big city?” Sally: “No.” How does Sally feel?",
+     "tag": "Зрозумій героя",
+     "tag_pl": "Zrozum bohatera",
+     "tag_en": "Read the hero"
+    },
+    {
+     "q": "Zygzak: „Naprawdę? Tutaj?” Co myśli Zygzak?",
+     "options": [
+      "Nie wierzy Sally",
+      "Kocha to miasteczko",
+      "Chce tu pracować"
+     ],
+     "answer": 0,
+     "exp": "Naprawdę = справді. Він дивується.",
+     "exp_pl": "Naprawdę = really. Jest zdziwiony.",
+     "exp_en": "Naprawdę = really. He's surprised.",
+     "tr": "Маккуїн: «Справді? Тут?» Що думає Маккуїн?",
+     "tr_pl": "McQueen: “Really? Here?” What does McQueen think?",
+     "tr_en": "McQueen: “Really? Here?” What does McQueen think?",
+     "tag": "Зрозумій героя",
+     "tag_pl": "Zrozum bohatera",
+     "tag_en": "Read the hero"
+    }
+   ],
+   "label": "СЦЕНА 2 · ВЕЛИКЕ МІСТО",
+   "label_pl": "SCENA 2 · WIELKIE MIASTO",
+   "label_en": "SCENE 2 · THE BIG CITY",
+   "q": "Маккуїн питає Саллі про її минуле. Ти слухаєш.",
+   "q_pl": "Zygzak pyta Sally o jej przeszłość. Słuchasz.",
+   "q_en": "McQueen asks Sally about her past. You listen.",
+   "ins": "Встав слово, обери правду, зрозумій героя",
+   "ins_pl": "Wstaw słowo, oceń prawdę, zrozum bohatera",
+   "ins_en": "Fill the gap, judge true/false, understand the hero",
+   "tip": "Потрібно 70%+.",
+   "tip_pl": "Potrzeba 70%+.",
+   "tip_en": "You need 70%+."
+  },
+  {
+   "ref": 3
+  },
+  {
+   "type": "match",
+   "options": [
+    "gwiazda=зірка",
+    "niebo=небо",
+    "cisza=тиша",
+    "sąsiad=сусід",
+    "samotny=самотній"
+   ],
+   "options_pl": [
+    "gwiazda=star",
+    "niebo=sky",
+    "cisza=silence",
+    "sąsiad=neighbour",
+    "samotny=lonely"
+   ],
+   "options_en": [
+    "gwiazda=star",
+    "niebo=sky",
+    "cisza=silence",
+    "sąsiad=neighbour",
+    "samotny=lonely"
+   ],
+   "options_uk": [
+    "gwiazda=зірка",
+    "niebo=небо",
+    "cisza=тиша",
+    "sąsiad=сусід",
+    "samotny=самотній"
+   ],
+   "label": "СЦЕНА 3 · СЛОВА",
+   "label_pl": "SCENA 3 · SŁOWA",
+   "label_en": "SCENE 3 · WORDS",
+   "q": "З'єднай польські слова сцени з перекладом.",
+   "q_pl": "Połącz słowa sceny z tłumaczeniem.",
+   "q_en": "Match the Polish scene words with their translations.",
+   "qt_pl": "Połącz słowa sceny z tłumaczeniem.",
+   "qt_en": "Match the Polish scene words with their translations.",
+   "ins": "П'ять пар зі сцени",
+   "ins_pl": "Pięć par ze sceny",
+   "ins_en": "Five pairs from the scene",
+   "tip": "Не впевнений? Повернись до словника сцени.",
+   "tip_pl": "Nie masz pewności? Wróć do słownika sceny.",
+   "tip_en": "Not sure? Go back to the scene glossary."
+  },
+  {
+   "type": "drill",
+   "kind": "set",
+   "items": [
+    {
+     "q": "Ty: „Spójrz na ____ na niebie!”",
+     "options": [
+      "cenę",
+      "gwiazdy",
+      "podłogę"
+     ],
+     "answer": 1,
+     "exp": "Gwiazda = зірка.",
+     "exp_pl": "Gwiazda = star.",
+     "exp_en": "Gwiazda = star.",
+     "tr": "Подивись на зірки на небі!",
+     "tr_pl": "Look at the stars in the sky!",
+     "tr_en": "Look at the stars in the sky!",
+     "tag": "Репліка",
+     "tag_pl": "Kwestia",
+     "tag_en": "Line"
+    },
+    {
+     "q": "Sally: „Posłuchaj ____.”",
+     "options": [
+      "ciszy",
+      "lampy",
+      "ceny"
+     ],
+     "answer": 0,
+     "exp": "Cisza = тиша.",
+     "exp_pl": "Cisza = silence.",
+     "exp_en": "Cisza = silence.",
+     "tr": "Послухай тишу.",
+     "tr_pl": "Listen to the silence.",
+     "tr_en": "Listen to the silence.",
+     "tag": "Репліка",
+     "tag_pl": "Kwestia",
+     "tag_en": "Line"
+    },
+    {
+     "q": "Złomek: „Cześć, ____!”",
+     "options": [
+      "kluczu",
+      "sąsiedzie",
+      "niebo"
+     ],
+     "answer": 1,
+     "exp": "Sąsiad → sąsiedzie (звертання).",
+     "exp_pl": "Sąsiad → sąsiedzie (wołacz).",
+     "exp_en": "Sąsiad → sąsiedzie (calling someone).",
+     "tr": "Привіт, сусіде!",
+     "tr_pl": "Hi, neighbour!",
+     "tr_en": "Hi, neighbour!",
+     "tag": "Репліка",
+     "tag_pl": "Kwestia",
+     "tag_en": "Line"
+    },
+    {
+     "q": "Zygzak ogląda telewizję w motelu.",
+     "options": [
+      "Prawda",
+      "Fałsz"
+     ],
+     "answer": 1,
+     "exp": "Тут він не дивиться телевізор.",
+     "exp_pl": "Tu nie ogląda telewizji.",
+     "exp_en": "He doesn't watch TV here.",
+     "tr": "Маккуїн дивиться телевізор у мотелі.",
+     "tr_pl": "McQueen watches TV in the motel.",
+     "tr_en": "McQueen watches TV in the motel.",
+     "tag": "Правда чи ні?",
+     "tag_pl": "Prawda czy nie?",
+     "tag_en": "True or false?"
+    },
+    {
+     "q": "Zygzak ziewa: „Dobranoc!” Co on teraz robi?",
+     "options": [
+      "Pracuje na drodze",
+      "Idzie spać",
+      "Jedzie na wyścig"
+     ],
+     "answer": 1,
+     "exp": "Ziewać = позіхати → він іде спати.",
+     "exp_pl": "Ziewać = to yawn → idzie spać.",
+     "exp_en": "Ziewać = to yawn → he's going to sleep.",
+     "tr": "Маккуїн позіхає: «На добраніч!» Що він зараз робить?",
+     "tr_pl": "McQueen yawns: “Good night!” What is he doing now?",
+     "tr_en": "McQueen yawns: “Good night!” What is he doing now?",
+     "tag": "Зрозумій героя",
+     "tag_pl": "Zrozum bohatera",
+     "tag_en": "Read the hero"
+    },
+    {
+     "q": "Zygzak: „Nie jestem ____.” Ale w nocy jest sam.",
+     "options": [
+      "gwiazda",
+      "cisza",
+      "samotny"
+     ],
+     "answer": 2,
+     "exp": "Samotny = самотній.",
+     "exp_pl": "Samotny = lonely.",
+     "exp_en": "Samotny = lonely.",
+     "tr": "Маккуїн: «Я не самотній». Але вночі він сам.",
+     "tr_pl": "McQueen: “I'm not lonely.” But at night he's alone.",
+     "tr_en": "McQueen: “I'm not lonely.” But at night he's alone.",
+     "tag": "Репліка",
+     "tag_pl": "Kwestia",
+     "tag_en": "Line"
+    },
+    {
+     "q": "Zygzak jest sam i smutny. Co mówisz przez radio?",
+     "options": [
+      "Nie jesteś sam. Jestem obok.",
+      "Dobranoc. Nie potrzebuję cię.",
+      "Czy masz klucz do mojej lampy?"
+     ],
+     "answer": 0,
+     "exp": "Ти поруч — це головне.",
+     "exp_pl": "Jesteś obok — to najważniejsze.",
+     "exp_en": "You're right next door — that matters most.",
+     "tr": "Маккуїн сам і сумний. Що ти кажеш по радіо?",
+     "tr_pl": "McQueen is alone and sad. What do you say on the radio?",
+     "tr_en": "McQueen is alone and sad. What do you say on the radio?",
+     "tag": "Твій вибір",
+     "tag_pl": "Twój wybór",
+     "tag_en": "Your call"
+    }
+   ],
+   "label": "СЦЕНА 3 · НІЧ У МОТЕЛІ",
+   "label_pl": "SCENA 3 · NOC W MOTELU",
+   "label_en": "SCENE 3 · NIGHT AT THE MOTEL",
+   "q": "Ніч. Маккуїн у своєму конусі, ти — у сусідньому.",
+   "q_pl": "Noc. Zygzak jest w swoim pachołku, ty — w sąsiednim.",
+   "q_en": "Night. McQueen is in his cone, you're in the next one.",
+   "ins": "Встав слово, обери правду, зрозумій героя",
+   "ins_pl": "Wstaw słowo, oceń prawdę, zrozum bohatera",
+   "ins_en": "Fill the gap, judge true/false, understand the hero",
+   "tip": "Потрібно 70%+.",
+   "tip_pl": "Potrzeba 70%+.",
+   "tip_en": "You need 70%+."
+  },
+  {
+   "type": "intro",
+   "label": "ПРАВИЛО",
+   "label_pl": "ZASADA",
+   "label_en": "RULE",
+   "q": "Питання «так/ні» польською часто починаємо з «czy»: Czy lubisz ten pokój? (Тобі подобається ця кімната?) Czy masz klucz? Заперечення: «nie» стоїть прямо перед дієсловом: Nie tęsknię. Zygzak nie lubi małych pokoi. Увага: після «nie» додаток змінює закінчення: Mam klucz → Nie mam klucza.",
+   "q_pl": "Pytania „tak/nie” często zaczynamy od „czy”: Czy lubisz ten pokój? Czy masz klucz? Przeczenie: „nie” stoi tuż przed czasownikiem: Nie tęsknię. Zygzak nie lubi małych pokoi. Uwaga: po „nie” dopełnienie zmienia końcówkę (dopełniacz): Mam klucz → Nie mam klucza.",
+   "q_en": "Polish yes/no questions often start with “czy”: Czy lubisz ten pokój? (Do you like this room?) Czy masz klucz? Negation: “nie” goes right before the verb: Nie tęsknię (I don't miss it). Zygzak nie lubi małych pokoi. Note: after “nie” the object changes its ending: Mam klucz → Nie mam klucza."
+  },
+  {
+   "type": "drill",
+   "kind": "set",
+   "items": [
+    {
+     "q": "Sally: „____ lubisz ten pokój?”",
+     "options": [
+      "Czy",
+      "Co",
+      "Gdzie"
+     ],
+     "answer": 0,
+     "exp": "Питання так/ні → czy.",
+     "exp_pl": "Pytanie tak/nie → czy.",
+     "exp_en": "Yes/no question → czy.",
+     "tr": "Тобі подобається ця кімната?",
+     "tr_pl": "Do you like this room?",
+     "tr_en": "Do you like this room?",
+     "tag": "Граматика",
+     "tag_pl": "Gramatyka",
+     "tag_en": "Grammar"
+    },
+    {
+     "q": "Zygzak: „Nie ____ małych pokoi.”",
+     "options": [
+      "lubię",
+      "lubi",
+      "lubisz"
+     ],
+     "answer": 0,
+     "exp": "Я → nie lubię.",
+     "exp_pl": "Ja → nie lubię.",
+     "exp_en": "I → nie lubię.",
+     "tr": "Я не люблю маленьких кімнат.",
+     "tr_pl": "I don't like small rooms.",
+     "tr_en": "I don't like small rooms.",
+     "tag": "Граматика",
+     "tag_pl": "Gramatyka",
+     "tag_en": "Grammar"
+    },
+    {
+     "q": "Sally: „Nie ____ za wielkim miastem.”",
+     "options": [
+      "tęsknisz",
+      "tęsknię",
+      "tęskni"
+     ],
+     "answer": 1,
+     "exp": "Я → nie tęsknię.",
+     "exp_pl": "Ja → nie tęsknię.",
+     "exp_en": "I → nie tęsknię.",
+     "tr": "Я не сумую за великим містом.",
+     "tr_pl": "I don't miss the big city.",
+     "tr_en": "I don't miss the big city.",
+     "tag": "Граматика",
+     "tag_pl": "Gramatyka",
+     "tag_en": "Grammar"
+    },
+    {
+     "q": "Zygzak: „Czy ty naprawdę tu ____?”",
+     "options": [
+      "mieszka",
+      "mieszkasz",
+      "mieszkam"
+     ],
+     "answer": 1,
+     "exp": "Ти → mieszkasz.",
+     "exp_pl": "Ty → mieszkasz.",
+     "exp_en": "You → mieszkasz.",
+     "tr": "Ти справді тут живеш?",
+     "tr_pl": "Do you really live here?",
+     "tr_en": "Do you really live here?",
+     "tag": "Граматика",
+     "tag_pl": "Gramatyka",
+     "tag_en": "Grammar"
+    },
+    {
+     "q": "Ty do Sally: „Czy ____ drugi klucz?”",
+     "options": [
+      "masz",
+      "mam",
+      "mają"
+     ],
+     "answer": 0,
+     "exp": "Ти → masz.",
+     "exp_pl": "Ty → masz.",
+     "exp_en": "You → masz.",
+     "tr": "У тебе є другий ключ?",
+     "tr_pl": "Do you have a second key?",
+     "tr_en": "Do you have a second key?",
+     "tag": "Граматика",
+     "tag_pl": "Gramatyka",
+     "tag_en": "Grammar"
+    },
+    {
+     "q": "Zygzak: „Gdzie jest klucz? Nie mam ____!”",
+     "options": [
+      "klucza",
+      "klucz",
+      "kluczem"
+     ],
+     "answer": 0,
+     "exp": "Після nie: klucz → klucza.",
+     "exp_pl": "Po nie: klucz → klucza (dopełniacz).",
+     "exp_en": "After nie: klucz → klucza.",
+     "tr": "Де ключ? У мене немає ключа!",
+     "tr_pl": "Where's the key? I don't have the key!",
+     "tr_en": "Where's the key? I don't have the key!",
+     "tag": "Граматика",
+     "tag_pl": "Gramatyka",
+     "tag_en": "Grammar"
+    },
+    {
+     "q": "Sally: „Zygzak mi nie ____.”",
+     "options": [
+      "wierzę",
+      "wierzysz",
+      "wierzy"
+     ],
+     "answer": 2,
+     "exp": "Він → nie wierzy.",
+     "exp_pl": "On → nie wierzy.",
+     "exp_en": "He → nie wierzy.",
+     "tr": "Маккуїн мені не вірить.",
+     "tr_pl": "McQueen doesn't believe me.",
+     "tr_en": "McQueen doesn't believe me.",
+     "tag": "Граматика",
+     "tag_pl": "Gramatyka",
+     "tag_en": "Grammar"
+    },
+    {
+     "q": "Ty: „Czy Sally ____ tu sama?”",
+     "options": [
+      "pracuje",
+      "pracujesz",
+      "pracuję"
+     ],
+     "answer": 0,
+     "exp": "Вона → pracuje.",
+     "exp_pl": "Ona → pracuje.",
+     "exp_en": "She → pracuje.",
+     "tr": "Саллі працює тут сама?",
+     "tr_pl": "Does Sally work here alone?",
+     "tr_en": "Does Sally work here alone?",
+     "tag": "Граматика",
+     "tag_pl": "Gramatyka",
+     "tag_en": "Grammar"
+    },
+    {
+     "q": "Jak powiesz: „I don't watch TV”?",
+     "options": [
+      "Nie oglądam telewizji.",
+      "Oglądam nie telewizji.",
+      "Nie oglądam telewizja."
+     ],
+     "answer": 0,
+     "exp": "Nie перед дієсловом + telewizji.",
+     "exp_pl": "Nie przed czasownikiem + telewizji.",
+     "exp_en": "Nie before the verb + telewizji.",
+     "tr": "Як сказати: «Я не дивлюся телевізор»?",
+     "tr_pl": "How do you say: “I don't watch TV”?",
+     "tr_en": "How do you say: “I don't watch TV”?",
+     "tag": "Граматика",
+     "tag_pl": "Gramatyka",
+     "tag_en": "Grammar"
+    },
+    {
+     "q": "Jak zapytasz Zygzaka, czy jest samotny?",
+     "options": [
+      "Nie jesteś czy samotny?",
+      "Czy jesteś samotny?",
+      "Czy samotny jest ty?"
+     ],
+     "answer": 1,
+     "exp": "Czy + дієслово + решта.",
+     "exp_pl": "Czy + czasownik + reszta.",
+     "exp_en": "Czy + verb + the rest.",
+     "tr": "Як запитати Маккуїна, чи він самотній?",
+     "tr_pl": "How do you ask McQueen if he's lonely?",
+     "tr_en": "How do you ask McQueen if he's lonely?",
+     "tag": "Граматика",
+     "tag_pl": "Gramatyka",
+     "tag_en": "Grammar"
+    },
+    {
+     "q": "Zygzak: „Nie ____ spać na podłodze!”",
+     "options": [
+      "chcą",
+      "chcę",
+      "chce"
+     ],
+     "answer": 1,
+     "exp": "Я → nie chcę.",
+     "exp_pl": "Ja → nie chcę.",
+     "exp_en": "I → nie chcę.",
+     "tr": "Я не хочу спати на підлозі!",
+     "tr_pl": "I don't want to sleep on the floor!",
+     "tr_en": "I don't want to sleep on the floor!",
+     "tag": "Граматика",
+     "tag_pl": "Gramatyka",
+     "tag_en": "Grammar"
+    },
+    {
+     "q": "Sally do ciebie i Zygzaka: „Czy ____ czegoś?”",
+     "options": [
+      "potrzebuje",
+      "potrzebuję",
+      "potrzebujecie"
+     ],
+     "answer": 2,
+     "exp": "Ви → potrzebujecie.",
+     "exp_pl": "Wy → potrzebujecie.",
+     "exp_en": "You (plural) → potrzebujecie.",
+     "tr": "Вам щось потрібно?",
+     "tr_pl": "Do you two need anything?",
+     "tr_en": "Do you two need anything?",
+     "tag": "Граматика",
+     "tag_pl": "Gramatyka",
+     "tag_en": "Grammar"
+    }
+   ],
+   "label": "ГРАМАТИКА · CZY? / NIE",
+   "label_pl": "GRAMATYKA · CZY? / NIE",
+   "label_en": "GRAMMAR · CZY? / NIE",
+   "q": "Репліки з мотелю. Обери правильну форму.",
+   "q_pl": "Kwestie z motelu. Wybierz poprawną formę.",
+   "q_en": "Lines from the motel. Choose the correct form.",
+   "ins": "Питання з czy, заперечення з nie",
+   "ins_pl": "Pytania z czy, przeczenia z nie",
+   "ins_en": "Questions with czy, negatives with nie",
+   "tip": "Потрібно 70%+.",
+   "tip_pl": "Potrzeba 70%+.",
+   "tip_en": "You need 70%+."
+  },
+  {
+   "type": "reading",
+   "items": [
+    {
+     "q": "Dziś wieczorem Zygzak McQueen śpi w motelu „Przytulny Pachołek”."
+    },
+    {
+     "q": "Motel prowadzi Sally. Ona daje Zygzakowi ____ do pokoju.",
+     "options": [
+      "cenę",
+      "klucz",
+      "gwiazdę"
+     ],
+     "answer": 1
+    },
+    {
+     "q": "Pokój jest mały, ale ____.",
+     "options": [
+      "przytulny",
+      "ruchliwy",
+      "samotny"
+     ],
+     "answer": 0
+    },
+    {
+     "q": "„Czy ____ ci się pokój?” — pyta Sally.",
+     "options": [
+      "podoba",
+      "podobam",
+      "podobasz"
+     ],
+     "answer": 0
+    },
+    {
+     "q": "Zygzak nie ____ małych pokoi.",
+     "options": [
+      "lubi",
+      "lubię",
+      "lubisz"
+     ],
+     "answer": 0
+    },
+    {
+     "q": "W pokoju nie ma ____ — auta śpią na podłodze.",
+     "options": [
+      "łóżkiem",
+      "łóżka",
+      "łóżko"
+     ],
+     "answer": 1
+    },
+    {
+     "q": "Ale Zygzak mówi: „Dobrze. Tylko jedna noc”."
+    },
+    {
+     "q": "Potem Zygzak pyta: „____ nie tęsknisz za wielkim miastem?”",
+     "options": [
+      "Gdzie",
+      "Kto",
+      "Czy"
+     ],
+     "answer": 2
+    },
+    {
+     "q": "Kiedyś Sally pracowała w Los Angeles, w wielkim mieście."
+    },
+    {
+     "q": "Tam wszyscy są bardzo ____.",
+     "options": [
+      "cisi",
+      "przytulni",
+      "zajęci"
+     ],
+     "answer": 2
+    },
+    {
+     "q": "„Nie, nie ____” — mówi Sally.",
+     "options": [
+      "tęsknią",
+      "tęsknię",
+      "tęskni"
+     ],
+     "answer": 1
+    },
+    {
+     "q": "„____ to ciche miasteczko.”",
+     "options": [
+      "Kocham",
+      "Kochasz",
+      "Kocha"
+     ],
+     "answer": 0
+    },
+    {
+     "q": "Zygzak jej nie ____. „Naprawdę? Tutaj?”",
+     "options": [
+      "wierzę",
+      "wierzą",
+      "wierzy"
+     ],
+     "answer": 2
+    },
+    {
+     "q": "W nocy nad pustynią świecą gwiazdy."
+    },
+    {
+     "q": "W miasteczku jest ____.",
+     "options": [
+      "cena",
+      "cisza",
+      "gwiazda"
+     ],
+     "answer": 1
+    },
+    {
+     "q": "Zygzak mówi: „Nie jestem ____”, ale jest trochę smutny.",
+     "options": [
+      "samotna",
+      "samotni",
+      "samotny"
+     ],
+     "answer": 2
+    }
+   ],
+   "label": "ГАЗЕТА МІСТЕЧКА",
+   "label_pl": "GAZETA MIASTECZKA",
+   "label_en": "TOWN NEWSPAPER",
+   "q": "Місцева газета пише про першу ніч Маккуїна в мотелі. Прочитай польською й обери правильні слова.",
+   "q_pl": "Lokalna gazeta pisze o pierwszej nocy Zygzaka w motelu. Przeczytaj i wybierz właściwe słowa.",
+   "q_en": "The local paper writes about McQueen's first night in the motel. Read it in Polish and choose the right words.",
+   "tip": "Czy — питання; nie — заперечення.",
+   "tip_pl": "Czy — pytanie; nie — przeczenie.",
+   "tip_en": "Czy — question; nie — negative.",
+   "title": "«Голос Радіатор-Спрінгс»: гонщик у мотелі-конусі",
+   "title_pl": "„Głos Chłodnicy”: gwiazdor wyścigów w motelu-pachołku",
+   "title_en": "“Radiator Springs Voice”: a racing star in a cone motel"
+  },
+  {
+   "type": "drill",
+   "kind": "set",
+   "items": [
+    {
+     "q": "Kto prowadzi motel?",
+     "options": [
+      "Sally",
+      "Złomek",
+      "Doc"
+     ],
+     "answer": 0,
+     "exp": "Мотель веде Саллі.",
+     "exp_pl": "Motel prowadzi Sally.",
+     "exp_en": "Sally runs the motel.",
+     "tr": "Хто веде мотель?",
+     "tr_pl": "Who runs the motel?",
+     "tr_en": "Who runs the motel?",
+     "tag": "Текст",
+     "tag_pl": "Tekst",
+     "tag_en": "Text"
+    },
+    {
+     "q": "Jaki jest pokój?",
+     "options": [
+      "Mały, ale przytulny",
+      "Duży i ruchliwy",
+      "Bardzo drogi"
+     ],
+     "answer": 0,
+     "exp": "Mały = маленький, przytulny = затишний.",
+     "exp_pl": "Mały i przytulny.",
+     "exp_en": "Small and cozy.",
+     "tr": "Яка кімната?",
+     "tr_pl": "What is the room like?",
+     "tr_en": "What is the room like?",
+     "tag": "Текст",
+     "tag_pl": "Tekst",
+     "tag_en": "Text"
+    },
+    {
+     "q": "Gdzie śpią auta w motelu?",
+     "options": [
+      "W ciężarówce",
+      "Na podłodze",
+      "W łóżku"
+     ],
+     "answer": 1,
+     "exp": "Ліжка немає.",
+     "exp_pl": "Nie ma łóżka.",
+     "exp_en": "There's no bed.",
+     "tr": "Де сплять машини в мотелі?",
+     "tr_pl": "Where do cars sleep in the motel?",
+     "tr_en": "Where do cars sleep in the motel?",
+     "tag": "Текст",
+     "tag_pl": "Tekst",
+     "tag_en": "Text"
+    },
+    {
+     "q": "Czy Sally tęskni za wielkim miastem?",
+     "options": [
+      "Nie, nie tęskni.",
+      "Tak, bardzo tęskni.",
+      "Tak, chce tam pracować."
+     ],
+     "answer": 0,
+     "exp": "«Ні, я не сумую».",
+     "exp_pl": "„Nie, nie tęsknię”.",
+     "exp_en": "“No, I don't miss it.”",
+     "tr": "Чи сумує Саллі за великим містом?",
+     "tr_pl": "Does Sally miss the big city?",
+     "tr_en": "Does Sally miss the big city?",
+     "tag": "Текст",
+     "tag_pl": "Tekst",
+     "tag_en": "Text"
+    },
+    {
+     "q": "Co jest w nocy w miasteczku?",
+     "options": [
+      "Ruchliwa ulica",
+      "Gwiazdy i cisza",
+      "Wielki tłum"
+     ],
+     "answer": 1,
+     "exp": "Зірки й тиша.",
+     "exp_pl": "Gwiazdy i cisza.",
+     "exp_en": "Stars and silence.",
+     "tr": "Що є вночі в містечку?",
+     "tr_pl": "What is there at night in the town?",
+     "tr_en": "What is there at night in the town?",
+     "tag": "Текст",
+     "tag_pl": "Tekst",
+     "tag_en": "Text"
+    }
+   ],
+   "label": "РОЗУМІННЯ ТЕКСТУ",
+   "label_pl": "ROZUMIENIE TEKSTU",
+   "label_en": "READING CHECK",
+   "q": "П'ять питань до статті.",
+   "q_pl": "Pięć pytań do artykułu.",
+   "q_en": "Five questions about the article.",
+   "ins": "Відповідай за текстом",
+   "ins_pl": "Odpowiadaj według tekstu",
+   "ins_en": "Answer from the text",
+   "tip": "Потрібно 70%+.",
+   "tip_pl": "Potrzeba 70%+.",
+   "tip_en": "You need 70%+."
+  },
+  {
+   "type": "quest",
+   "img": "candles",
+   "start": "s1",
+   "steps": {
+    "s1": {
+     "q": "Саллі: «Czy potrzebujesz pokoju?» (Тобі потрібна кімната?)",
+     "q_pl": "Sally: „Czy potrzebujesz pokoju?”",
+     "q_en": "Sally: “Czy potrzebujesz pokoju?” (Do you need a room?)",
+     "scene": "Ти стоїш біля рецепції мотелю.",
+     "scene_pl": "Stoisz przy recepcji motelu.",
+     "scene_en": "You're at the motel desk.",
+     "choices": [
+      {
+       "t": "Tak, potrzebuję pokoju na noc.",
+       "ok": true,
+       "next": "s2",
+       "fb": "Так! Potrzebuję + pokoju.",
+       "fb_pl": "Tak! Potrzebuję + pokoju.",
+       "fb_en": "Yes! Potrzebuję + pokoju."
+      },
+      {
+       "t": "Tak, ja potrzebuje pokój.",
+       "ok": false,
+       "next": "s1b",
+       "fb": "Я → potrzebuję, і pokoju.",
+       "fb_pl": "Ja → potrzebuję, i „pokoju”.",
+       "fb_en": "I → potrzebuję, and “pokoju”."
+      }
+     ]
+    },
+    "s1b": {
+     "q": "Саллі: «Słucham? Czy potrzebujesz pokoju?» (Перепрошую? Тобі потрібна кімната?)",
+     "q_pl": "Sally: „Słucham? Czy potrzebujesz pokoju?”",
+     "q_en": "Sally: “Słucham? Czy potrzebujesz pokoju?” (Sorry? Do you need a room?)",
+     "scene": "Саллі не зрозуміла.",
+     "scene_pl": "Sally nie zrozumiała.",
+     "scene_en": "Sally didn't understand.",
+     "choices": [
+      {
+       "t": "Tak, proszę. Tylko jedna noc.",
+       "ok": true,
+       "next": "s2",
+       "fb": "Просто й правильно!",
+       "fb_pl": "Prosto i poprawnie!",
+       "fb_en": "Simple and correct!"
+      },
+      {
+       "t": "Nie potrzebuję. Śpię na drodze.",
+       "ok": false,
+       "next": "end_bad",
+       "fb": "Ніч на дорозі? Холодно!",
+       "fb_pl": "Noc na drodze? Zimno!",
+       "fb_en": "A night on the road? Cold!"
+      }
+     ]
+    },
+    "s2": {
+     "q": "Саллі: «Czy lubisz małe pokoje?» (Ти любиш маленькі кімнати?)",
+     "q_pl": "Sally: „Czy lubisz małe pokoje?”",
+     "q_en": "Sally: “Czy lubisz małe pokoje?” (Do you like small rooms?)",
+     "scene": "Вона дає тобі ключ.",
+     "scene_pl": "Daje ci klucz.",
+     "scene_en": "She hands you a key.",
+     "choices": [
+      {
+       "t": "Tak, lubię. Mały pokój jest przytulny.",
+       "ok": true,
+       "next": "s3",
+       "fb": "Чудово!",
+       "fb_pl": "Świetnie!",
+       "fb_en": "Great!"
+      },
+      {
+       "t": "Nie lubię małych pokoi, ale dobrze.",
+       "ok": true,
+       "next": "s3",
+       "fb": "Чесно й правильно: nie + pokoi.",
+       "fb_pl": "Szczerze i poprawnie.",
+       "fb_en": "Honest and correct: nie + pokoi."
+      },
+      {
+       "t": "Czy lubię nie małe pokoje.",
+       "ok": false,
+       "next": "s3",
+       "fb": "Nie стоїть перед дієсловом.",
+       "fb_pl": "Nie stoi przed czasownikiem.",
+       "fb_en": "Nie goes before the verb."
+      }
+     ]
+    },
+    "s3": {
+     "q": "Маккуїн: «Nie śpisz? Ja nie mogę spać.» (Ти не спиш? Я не можу заснути.)",
+     "q_pl": "Zygzak: „Nie śpisz? Ja nie mogę spać.”",
+     "q_en": "McQueen: “Nie śpisz? Ja nie mogę spać.” (You're not asleep? I can't sleep.)",
+     "scene": "Ніч. Маккуїн говорить по радіо із сусіднього конуса.",
+     "scene_pl": "Noc. Zygzak mówi przez radio z sąsiedniego pachołka.",
+     "scene_en": "Night. McQueen talks on the radio from the next cone.",
+     "choices": [
+      {
+       "t": "Ja też nie śpię. Spójrz na gwiazdy!",
+       "ok": true,
+       "next": "end_good",
+       "fb": "Гарна ідея!",
+       "fb_pl": "Dobry pomysł!",
+       "fb_en": "Nice idea!"
+      },
+      {
+       "t": "Czy jesteś samotny? Jestem obok.",
+       "ok": true,
+       "next": "end_good",
+       "fb": "Ти справжній друг.",
+       "fb_pl": "Jesteś prawdziwym przyjacielem.",
+       "fb_en": "You're a real friend."
+      },
+      {
+       "t": "Nie rozmawiam. Dobranoc.",
+       "ok": true,
+       "next": "end_mid",
+       "fb": "Коротко…",
+       "fb_pl": "Krótko…",
+       "fb_en": "Short…"
+      }
+     ]
+    }
+   },
+   "endings": {
+    "end_good": {
+     "good": true,
+     "title": "Кінцівка: Зірки над пустелею",
+     "title_pl": "Zakończenie: Gwiazdy nad pustynią",
+     "title_en": "Ending: Stars over the desert",
+     "text": "Маккуїн дивиться на небо. «Тут… тихо. Гарно», — каже він тихо. Уперше він не думає про Каліфорнію.",
+     "text_pl": "Zygzak patrzy w niebo. „Tu jest… cicho. Ładnie” — mówi cicho. Pierwszy raz nie myśli o Kalifornii.",
+     "text_en": "McQueen looks at the sky. “It's… quiet here. Nice,” he says softly. For the first time he isn't thinking about California."
+    },
+    "end_mid": {
+     "good": true,
+     "title": "Кінцівка: Кожен у своєму конусі",
+     "title_pl": "Zakończenie: Każdy w swoim pachołku",
+     "title_en": "Ending: Everyone in their own cone",
+     "text": "Ви спите кожен окремо. Завтра знову робота на дорозі.",
+     "text_pl": "Śpicie osobno. Jutro znowu praca na drodze.",
+     "text_en": "You each sleep alone. Tomorrow it's back to work on the road."
+    },
+    "end_bad": {
+     "good": false,
+     "title": "Кінцівка: Ніч на дорозі",
+     "title_pl": "Zakończenie: Noc na drodze",
+     "title_en": "Ending: A night on the road",
+     "text": "Ти спиш на холодній дорозі. Спробуй ще раз: «Tak, potrzebuję pokoju».",
+     "text_pl": "Śpisz na zimnej drodze. Spróbuj jeszcze raz: „Tak, potrzebuję pokoju”.",
+     "text_en": "You sleep on the cold road. Try again: “Tak, potrzebuję pokoju.”"
+    }
+   },
+   "label": "КВЕСТ: НІЧ У КОНУСІ",
+   "label_pl": "QUEST: NOC W PACHOŁKU",
+   "label_en": "QUEST: A NIGHT IN THE CONE",
+   "q": "Тобі теж потрібна кімната. Говори із Саллі й Маккуїном польською.",
+   "q_pl": "Ty też potrzebujesz pokoju. Rozmawiaj z Sally i Zygzakiem.",
+   "q_en": "You need a room too. Talk to Sally and McQueen in Polish.",
+   "ins": "Кожен вибір веде далі. Обирай уважно — польською",
+   "ins_pl": "Każdy wybór prowadzi dalej. Wybieraj uważnie",
+   "ins_en": "Every choice leads on. Choose carefully — in Polish",
+   "tip": "Квест перевіряє слова й граматику уроку.",
+   "tip_pl": "Quest sprawdza słowa i gramatykę lekcji.",
+   "tip_en": "The quest checks the lesson's words and grammar."
+  },
+  {
+   "type": "drill",
+   "kind": "set",
+   "items": [
+    {
+     "k": "type",
+     "q": "Напиши польською: «Я не сумую.»",
+     "q_pl": "Napisz po polsku: „I don't miss it.”",
+     "q_en": "Write in Polish: “I don't miss it.”",
+     "options": [
+      "Nie tęsknię.",
+      "Nie tęsknię",
+      "nie tęsknię.",
+      "nie tęsknię",
+      "Nie tesknie.",
+      "Nie tesknie",
+      "nie tesknie"
+     ],
+     "exp": "Nie tęsknię.",
+     "exp_pl": "Nie tęsknię.",
+     "exp_en": "Nie tęsknię.",
+     "tag": "Напиши",
+     "tag_pl": "Napisz",
+     "tag_en": "Write"
+    },
+    {
+     "k": "order",
+     "q": "Склади репліку: «Тобі подобається кімната?»",
+     "q_pl": "Ułóż kwestię: „Do you like the room?”",
+     "q_en": "Build the line: “Do you like the room?”",
+     "options": [
+      "Czy",
+      "podoba",
+      "ci",
+      "się",
+      "pokój?"
+     ],
+     "exp": "Czy podoba ci się pokój?",
+     "exp_pl": "Czy podoba ci się pokój?",
+     "exp_en": "Czy podoba ci się pokój?",
+     "tag": "Склади",
+     "tag_pl": "Ułóż",
+     "tag_en": "Build"
+    },
+    {
+     "k": "type",
+     "q": "Напиши польською: «Ось твій ключ.»",
+     "q_pl": "Napisz po polsku: „Here's your key.”",
+     "q_en": "Write in Polish: “Here's your key.”",
+     "options": [
+      "Oto twój klucz.",
+      "Oto twój klucz",
+      "oto twój klucz.",
+      "oto twój klucz",
+      "Oto twoj klucz.",
+      "Oto twoj klucz",
+      "oto twoj klucz"
+     ],
+     "exp": "Oto twój klucz.",
+     "exp_pl": "Oto twój klucz.",
+     "exp_en": "Oto twój klucz.",
+     "tag": "Напиши",
+     "tag_pl": "Napisz",
+     "tag_en": "Write"
+    },
+    {
+     "k": "order",
+     "q": "Склади репліку: «Я люблю це містечко.»",
+     "q_pl": "Ułóż kwestię: „I love this town.”",
+     "q_en": "Build the line: “I love this town.”",
+     "options": [
+      "Kocham",
+      "to",
+      "miasteczko."
+     ],
+     "exp": "Kocham to miasteczko.",
+     "exp_pl": "Kocham to miasteczko.",
+     "exp_en": "Kocham to miasteczko.",
+     "tag": "Склади",
+     "tag_pl": "Ułóż",
+     "tag_en": "Build"
+    },
+    {
+     "k": "type",
+     "q": "Напиши польською: «Ти не сумуєш?»",
+     "q_pl": "Napisz po polsku: „Don't you miss it?”",
+     "q_en": "Write in Polish: “Don't you miss it?”",
+     "options": [
+      "Nie tęsknisz?",
+      "Nie tęsknisz",
+      "nie tęsknisz?",
+      "nie tęsknisz",
+      "Nie tesknisz?",
+      "Nie tesknisz",
+      "nie tesknisz"
+     ],
+     "exp": "Nie tęsknisz?",
+     "exp_pl": "Nie tęsknisz?",
+     "exp_en": "Nie tęsknisz?",
+     "tag": "Напиши",
+     "tag_pl": "Napisz",
+     "tag_en": "Write"
+    },
+    {
+     "k": "order",
+     "q": "Склади репліку: «Маккуїн не любить маленьких кімнат.»",
+     "q_pl": "Ułóż kwestię: „McQueen doesn't like small rooms.”",
+     "q_en": "Build the line: “McQueen doesn't like small rooms.”",
+     "options": [
+      "Zygzak",
+      "nie",
+      "lubi",
+      "małych",
+      "pokoi."
+     ],
+     "exp": "Zygzak nie lubi małych pokoi.",
+     "exp_pl": "Zygzak nie lubi małych pokoi.",
+     "exp_en": "Zygzak nie lubi małych pokoi.",
+     "tag": "Склади",
+     "tag_pl": "Ułóż",
+     "tag_en": "Build"
+    },
+    {
+     "k": "type",
+     "q": "Напиши польською: «Подивись на зірки!»",
+     "q_pl": "Napisz po polsku: „Look at the stars!”",
+     "q_en": "Write in Polish: “Look at the stars!”",
+     "options": [
+      "Spójrz na gwiazdy!",
+      "Spójrz na gwiazdy",
+      "spójrz na gwiazdy!",
+      "spójrz na gwiazdy",
+      "Spojrz na gwiazdy!",
+      "Spojrz na gwiazdy",
+      "spojrz na gwiazdy"
+     ],
+     "exp": "Spójrz na gwiazdy!",
+     "exp_pl": "Spójrz na gwiazdy!",
+     "exp_en": "Spójrz na gwiazdy!",
+     "tag": "Напиши",
+     "tag_pl": "Napisz",
+     "tag_en": "Write"
+    },
+    {
+     "k": "order",
+     "q": "Склади репліку: «Я не самотній.»",
+     "q_pl": "Ułóż kwestię: „I'm not lonely.”",
+     "q_en": "Build the line: “I'm not lonely.”",
+     "options": [
+      "Nie",
+      "jestem",
+      "samotny."
+     ],
+     "exp": "Nie jestem samotny.",
+     "exp_pl": "Nie jestem samotny.",
+     "exp_en": "Nie jestem samotny.",
+     "tag": "Склади",
+     "tag_pl": "Ułóż",
+     "tag_en": "Build"
+    }
+   ],
+   "label": "ПИШИ Й СКЛАДАЙ",
+   "label_pl": "PISZ I UKŁADAJ",
+   "label_en": "WRITE AND BUILD",
+   "q": "Ти записуєш репліки зі сцени в блокнот механіка.",
+   "q_pl": "Zapisujesz kwestie ze sceny w notesie mechanika.",
+   "q_en": "You note the scene's lines in your mechanic's notebook.",
+   "ins": "Пиши й складай репліки польською",
+   "ins_pl": "Pisz i układaj kwestie",
+   "ins_en": "Write and build the lines in Polish",
+   "tip": "Потрібно 70%+.",
+   "tip_pl": "Potrzeba 70%+.",
+   "tip_en": "You need 70%+."
+  },
+  {
+   "type": "speaking",
+   "say": "Czy podoba ci się pokój? Oto twój klucz.",
+   "label": "ГОВОРІННЯ",
+   "label_pl": "MÓWIENIE",
+   "label_en": "SPEAKING",
+   "q": "Скажи вголос, як Саллі.",
+   "q_pl": "Powiedz na głos jak Sally.",
+   "q_en": "Say it aloud like Sally.",
+   "qt_pl": "Powiedz na głos jak Sally.",
+   "qt_en": "Say it aloud like Sally.",
+   "ins": "Прочитай і скажи вголос польською",
+   "ins_pl": "Przeczytaj i powiedz na głos",
+   "ins_en": "Read it and say it aloud in Polish",
+   "tip": "Переклад: Тобі подобається кімната? Ось твій ключ.",
+   "tip_pl": "Tłumaczenie (EN): Do you like the room? Here's your key.",
+   "tip_en": "Translation: Do you like the room? Here's your key."
+  },
+  {
+   "type": "speaking",
+   "say": "Nie tęsknię za wielkim miastem. Kocham to miasteczko.",
+   "label": "ГОВОРІННЯ",
+   "label_pl": "MÓWIENIE",
+   "label_en": "SPEAKING",
+   "q": "Скажи вголос, як Саллі.",
+   "q_pl": "Powiedz na głos jak Sally.",
+   "q_en": "Say it aloud like Sally.",
+   "qt_pl": "Powiedz na głos jak Sally.",
+   "qt_en": "Say it aloud like Sally.",
+   "ins": "Прочитай і скажи вголос польською",
+   "ins_pl": "Przeczytaj i powiedz na głos",
+   "ins_en": "Read it and say it aloud in Polish",
+   "tip": "Переклад: Я не сумую за великим містом. Я люблю це містечко.",
+   "tip_pl": "Tłumaczenie (EN): I don't miss the big city. I love this town.",
+   "tip_en": "Translation: I don't miss the big city. I love this town."
+  },
+  {
+   "type": "drill",
+   "kind": "set",
+   "items": [
+    {
+     "q": "Żeby otworzyć pokój, potrzebujesz ____.",
+     "options": [
+      "nieba",
+      "ciszy",
+      "klucza"
+     ],
+     "answer": 2,
+     "exp": "Klucz = ключ.",
+     "exp_pl": "Klucz = key.",
+     "exp_en": "Klucz = key.",
+     "tr": "Щоб відчинити кімнату, тобі потрібен ключ.",
+     "tr_pl": "To open the room you need a key.",
+     "tr_en": "To open the room you need a key.",
+     "tag": "Слово",
+     "tag_pl": "Słowo",
+     "tag_en": "Word"
+    },
+    {
+     "q": "W nocy na niebie są ____.",
+     "options": [
+      "łóżka",
+      "gwiazdy",
+      "lampy"
+     ],
+     "answer": 1,
+     "exp": "Gwiazdy = зірки.",
+     "exp_pl": "Gwiazdy = stars.",
+     "exp_en": "Gwiazdy = stars.",
+     "tr": "Уночі на небі зірки.",
+     "tr_pl": "At night there are stars in the sky.",
+     "tr_en": "At night there are stars in the sky.",
+     "tag": "Слово",
+     "tag_pl": "Słowo",
+     "tag_en": "Word"
+    },
+    {
+     "q": "Los Angeles to ____.",
+     "options": [
+      "wielkie miasto",
+      "mały pokój",
+      "cichy motel"
+     ],
+     "answer": 0,
+     "exp": "Wielkie miasto = велике місто.",
+     "exp_pl": "Wielkie miasto = big city.",
+     "exp_en": "Wielkie miasto = big city.",
+     "tr": "Лос-Анджелес — велике місто.",
+     "tr_pl": "Los Angeles is a big city.",
+     "tr_en": "Los Angeles is a big city.",
+     "tag": "Слово",
+     "tag_pl": "Słowo",
+     "tag_en": "Word"
+    },
+    {
+     "q": "Złomek mieszka obok. To mój ____.",
+     "options": [
+      "sąsiad",
+      "klucz",
+      "pokój"
+     ],
+     "answer": 0,
+     "exp": "Sąsiad = сусід.",
+     "exp_pl": "Sąsiad = neighbour.",
+     "exp_en": "Sąsiad = neighbour.",
+     "tr": "Метр живе поруч. Це мій сусід.",
+     "tr_pl": "Mater lives next door. He's my neighbour.",
+     "tr_en": "Mater lives next door. He's my neighbour.",
+     "tag": "Слово",
+     "tag_pl": "Słowo",
+     "tag_en": "Word"
+    },
+    {
+     "q": "Nikt nic nie mówi. Jest ____.",
+     "options": [
+      "cena",
+      "lampa",
+      "cisza"
+     ],
+     "answer": 2,
+     "exp": "Cisza = тиша.",
+     "exp_pl": "Cisza = silence.",
+     "exp_en": "Cisza = silence.",
+     "tr": "Ніхто нічого не каже. Тиша.",
+     "tr_pl": "Nobody says anything. It's silent.",
+     "tr_en": "Nobody says anything. It's silent.",
+     "tag": "Слово",
+     "tag_pl": "Słowo",
+     "tag_en": "Word"
+    },
+    {
+     "q": "Ile kosztuje pokój? Jaka jest ____?",
+     "options": [
+      "noc",
+      "gwiazda",
+      "cena"
+     ],
+     "answer": 2,
+     "exp": "Cena = ціна.",
+     "exp_pl": "Cena = price.",
+     "exp_en": "Cena = price.",
+     "tr": "Скільки коштує кімната? Яка ціна?",
+     "tr_pl": "How much is the room? What's the price?",
+     "tr_en": "How much is the room? What's the price?",
+     "tag": "Слово",
+     "tag_pl": "Słowo",
+     "tag_en": "Word"
+    },
+    {
+     "q": "Jest ciemno. Włącz ____!",
+     "options": [
+      "lampę",
+      "podłogę",
+      "ciszę"
+     ],
+     "answer": 0,
+     "exp": "Lampa = лампа.",
+     "exp_pl": "Lampa = lamp.",
+     "exp_en": "Lampa = lamp.",
+     "tr": "Темно. Увімкни лампу!",
+     "tr_pl": "It's dark. Turn on the lamp!",
+     "tr_en": "It's dark. Turn on the lamp!",
+     "tag": "Слово",
+     "tag_pl": "Słowo",
+     "tag_en": "Word"
+    },
+    {
+     "q": "Sally nie tęskni za miastem. Ona ____ to miasteczko.",
+     "options": [
+      "tęskni",
+      "ziewa",
+      "kocha"
+     ],
+     "answer": 2,
+     "exp": "Kochać = любити.",
+     "exp_pl": "Kochać = to love.",
+     "exp_en": "Kochać = to love.",
+     "tr": "Саллі не сумує за містом. Вона любить це містечко.",
+     "tr_pl": "Sally doesn't miss the city. She loves this town.",
+     "tr_en": "Sally doesn't miss the city. She loves this town.",
+     "tag": "Слово",
+     "tag_pl": "Słowo",
+     "tag_en": "Word"
+    },
+    {
+     "q": "Jestem zmęczony i ____. Dobranoc!",
+     "options": [
+      "tęsknię",
+      "ziewam",
+      "wierzę"
+     ],
+     "answer": 1,
+     "exp": "Ziewać = позіхати.",
+     "exp_pl": "Ziewać = to yawn.",
+     "exp_en": "Ziewać = to yawn.",
+     "tr": "Я втомився і позіхаю. На добраніч!",
+     "tr_pl": "I'm tired and I'm yawning. Good night!",
+     "tr_en": "I'm tired and I'm yawning. Good night!",
+     "tag": "Слово",
+     "tag_pl": "Słowo",
+     "tag_en": "Word"
+    }
+   ],
+   "label": "ПІСЛЯ СЦЕНИ · СЛОВА",
+   "label_pl": "PO SCENIE · SŁOWNICTWO",
+   "label_en": "AFTER THE SCENE · WORDS",
+   "q": "Ранок. Саллі питає, як минула ніч. Відповідай.",
+   "q_pl": "Rano. Sally pyta, jak minęła noc. Odpowiadaj.",
+   "q_en": "Morning. Sally asks how the night went. Answer.",
+   "ins": "Слова уроку в нових реченнях",
+   "ins_pl": "Słowa lekcji w nowych zdaniach",
+   "ins_en": "The lesson words in new sentences",
+   "tip": "Потрібно 70%+.",
+   "tip_pl": "Potrzeba 70%+.",
+   "tip_en": "You need 70%+."
+  },
+  {
+   "type": "final",
+   "img": "letter",
+   "answer": 25,
+   "label": "ЗАПИСКА ДЛЯ САЛЛІ",
+   "label_pl": "LIŚCIK DO SALLY",
+   "label_en": "A NOTE FOR SALLY",
+   "q": "Ти ночував у сусідньому конусі. Напиши польською записку Саллі (25+ слів): чи подобається тобі кімната? чого тобі не вистачає? чи сумуєш ти за великим містом? що ти любиш у цьому містечку?",
+   "q_pl": "Nocowałeś w sąsiednim pachołku. Napisz liścik do Sally (25+ słów): czy podoba ci się pokój? czego potrzebujesz? czy tęsknisz za wielkim miastem? co kochasz w tym miasteczku?",
+   "q_en": "You spent the night in the next cone. Write a note to Sally in Polish (25+ words): do you like the room? what do you need? do you miss the big city? what do you love about this town?",
+   "ins": "Напиши записку польською",
+   "ins_pl": "Napisz liścik",
+   "ins_en": "Write the note in Polish",
+   "tip": "Cześć, Sally! Pokój jest… Czy masz…? Nie potrzebuję… Nie tęsknię za… Kocham…",
+   "tip_pl": "Cześć, Sally! Pokój jest… Czy masz…? Nie potrzebuję… Nie tęsknię za… Kocham…",
+   "tip_en": "Cześć, Sally! Pokój jest… Czy masz…? Nie potrzebuję… Nie tęsknię za… Kocham…"
+  }
+ ]
+}
