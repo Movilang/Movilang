@@ -51,8 +51,7 @@ def special(a, tg, m, s, kind, rnd, tag):
         ws = full.split()
         if not 3 <= len(ws) <= 9: kind = 'type'
         else:
-            it = {'k': 'order', 'q': 'Склади репліку|Ułóż kwestię|Build the line'.split('|')[I[tg]] + ': «%s»' % (h[2] if tg != 'en' else h[0]),
-                  'q_pl': 'Ułóż kwestię: „%s”' % h[1], 'q_en': 'Build the line: “%s”' % (h[2] if tg != 'en' else h[0]), 'options': ws}
+            it = {'k': 'order', 'q': 'Склади репліку: «%s»' % h[0], 'q_pl': 'Ułóż kwestię: „%s”' % h[1], 'q_en': 'Build the line: “%s”' % h[2], 'options': ws}
             put(it, 'exp', exp); put(it, 'tr', '|'.join(h)); put(it, 'tag', 'Склади|Ułóż|Build'); return it
     q = clean(s[:m.start()] + ('____' if MODE == 'b' else ans[:1] + '____') + s[m.end():])
     it = {'k': 'type', 'q': q, 'q_pl': q, 'q_en': q, 'options': list(dict.fromkeys([ans, ans.rstrip('.!?')]))}
@@ -74,7 +73,7 @@ def build(num, d, tgs, boss=False):
             L.match('СЦЕНА %d · СЛОВА|SCENA %d · SŁOWA|SCENE %d · WORDS' % (n + 1, n + 1, n + 1), pr)
             own = {m.split('/')[0].lower() for t in sents for m in M.findall(sp(t)[k]) if '/' not in m}
             sub = [w for w in pool if w.lower() not in own]  # dystraktory spoza tej sceny = mniej dwuznaczności
-            kind = 'mc' if (not MODE or n == 0) else ('order' if MODE == 'a' and n == 1 else 'type')
+            kind = 'mc' if (not MODE or n == 0) else ('order' if n == 1 else 'type')
             its = [gapitem(t, tg, sub if len(sub) >= 6 else pool, rnd, 'line',
                            FORMS.get((num, tg, (M.search(sp(t)[k]).group(1) if M.search(sp(t)[k]) else '').lower())), kind) for t in sents]
             l3 = sp(lab)
@@ -112,14 +111,12 @@ def build(num, d, tgs, boss=False):
         L.set('ПИШИ Й СКЛАДАЙ|PISZ I UKŁADAJ|WRITE AND BUILD', d['where'], 'Впиши й склади|Wpisz i ułóż|Type and build', ws)
         for t in d['speak']: a = sp(t); L.speak(a[k], hint(a, tg))
         vs = [sp(v) for sc in d['sc'] for v in sc[1].split(';')]; rnd.shuffle(vs); wi = []
-        mi = 2 if tg != 'en' else 0
+        # pytanie w języku interfejsu, opcje w języku nauki (bez angielskiego dla uczniów PL/UA)
         for a in vs[:8]:
-            o = [a[mi]] + [b[mi] for b in vs if b[mi] != a[mi]][:0]
-            oth = [b[mi] for b in vs if b[mi] != a[mi]]; rnd.shuffle(oth); o = [a[mi]] + oth[:2]; rnd.shuffle(o)
-            if tg != 'en': wi.append(mc('«%s» = ?' % a[k], o, o.index(a[mi]), '%s = %s' % (a[k], a[mi]), None, 'word'))
-            else:
-                o = [a[2]] + [b[2] for b in vs if b[2] != a[2]]; o = o[:1] + rnd.sample(o[1:], 2); rnd.shuffle(o)
-                it = mc('«%s» = ?' % a[0], o, o.index(a[2]), a[0] + ' = ' + a[2], None, 'word'); it['q_pl'] = '«%s» = ?' % a[1]; it['q_en'] = it['q']; wi.append(it)
+            oth = list(dict.fromkeys(b[k] for b in vs if b[k].lower() != a[k].lower())); rnd.shuffle(oth); o = [a[k]] + oth[:2]; rnd.shuffle(o)
+            ui = lambda j: a[j] if j != k else a[2 if k != 2 else 0]
+            it = mc('«%s» = ?' % ui(0), o, o.index(a[k]), '%s = %s|%s = %s|%s = %s' % (ui(0), a[k], ui(1), a[k], ui(2), a[k]), None, 'word')
+            it['q_pl'] = '«%s» = ?' % ui(1); it['q_en'] = '«%s» = ?' % ui(2); wi.append(it)
         L.set('СЛОВА УРОКУ|SŁOWA LEKCJI|LESSON WORDS', 'Що означає слово?|Co znaczy słowo?|What does the word mean?', 'Вісім слів|Osiem słów|Eight words', wi)
         f = sp(d['fin'][1])
         L.final('ФІНАЛ|FINAŁ|FINAL', d['fin'][0], f[k], d.get('words', CFG['words']))

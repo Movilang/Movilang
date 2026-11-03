@@ -62,12 +62,12 @@ def gap(line, tr, opts, ans, exp): return mc(line, opts, ans, exp, tr, 'line')
 def tf(tg, stmt, tr, true, exp): return mc(stmt, TFW[tg], 0 if true else 1, exp, tr, 'tf')
 def typ(tg, ans, tr, alts=()):
     a = T(tr); l = LN[tg]
-    it = {'k': 'type', 'q': 'Напиши %s: «%s»' % (l[0], a[2] if tg != 'en' else a[0]), 'q_pl': 'Napisz %s: „%s”' % (l[1], a[1]), 'q_en': 'Write %s: “%s”' % (l[2], a[2] if tg != 'en' else a[0]),
+    it = {'k': 'type', 'q': 'Напиши %s: «%s»' % (l[0], a[0]), 'q_pl': 'Napisz %s: „%s”' % (l[1], a[1]), 'q_en': 'Write %s: “%s”' % (l[2], a[2]),
           'options': [ans] + [x for x in alts] + [ans.rstrip('.!?')]}
     it['options'] = list(dict.fromkeys(it['options'])); put(it, 'exp', ans); put(it, 'tag', LBL['write']); return it
 def order(tg, words, tr):
     a = T(tr)
-    it = {'k': 'order', 'q': 'Склади репліку: «%s»' % (a[2] if tg != 'en' else a[0]), 'q_pl': 'Ułóż kwestię: „%s”' % a[1], 'q_en': 'Build the line: “%s”' % (a[2] if tg != 'en' else a[0]), 'options': words}
+    it = {'k': 'order', 'q': 'Склади репліку: «%s»' % a[0], 'q_pl': 'Ułóż kwestię: „%s”' % a[1], 'q_en': 'Build the line: “%s”' % a[2], 'options': words}
     put(it, 'exp', ' '.join(words)); put(it, 'tag', LBL['build']); return it
 def S(text, opts=None, ans=0):
     return {'q': text} if opts is None else {'q': text, 'options': opts, 'answer': ans}
