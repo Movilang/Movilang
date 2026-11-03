@@ -64,4 +64,4 @@ build(13, dict(where='Ти в мотелі «Затишний конус».|Jest
  qend='Ти засинаєш у затишному конусі під тисячами зірок.|Zasypiasz w przytulnym pachołku pod tysiącami gwiazd.|You fall asleep in a cozy cone under thousands of stars.',
  speak=['Мені потрібен номер на одну ніч.|Potrzebuję pokoju na jedną noc.|I need a room for one night.', 'Ти сумуєш за великим містом?|Tęsknisz za dużym miastem?|Do you miss the big city?'],
  fin=('Напиши відгук про мотель (25+ слів): який номер, що ти бачиш уночі, чи любиш ти тишу?|Napisz opinię o motelu (25+ słów): jaki jest pokój, co widzisz w nocy, czy lubisz ciszę?|Write a review of the motel (25+ words): what the room is like, what you see at night, do you like silence?',
-      'Мотель «Затишний конус» — це… Номер…|Motel „Przytulny Pachołek” to… Pokój…|The Cozy Cone Motel is… The room…')), ['uk'])
+      'Мотель «Затишний конус» — це… Номер…|Motel „Przytulny Pachołek” to… Pokój…|The Cozy Cone Motel is… The room…')), ['uk', 'pl', 'en'])

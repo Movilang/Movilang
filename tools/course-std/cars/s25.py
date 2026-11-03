@@ -64,4 +64,4 @@ build(25, dict(where='Ти на ґрунтовій трасі вночі.|Jeste�
  qend='Док киває. Між вами з\'явилася довіра.|Doc kiwa głową. Między wami pojawiło się zaufanie.|Doc nods. Now there is trust between you.',
  speak=['Док був чемпіоном багато років тому.|Doc był mistrzem wiele lat temu.|Doc was a champion many years ago.', 'Аварія була страшна, і він був у лікарні.|Wypadek był straszny i był w szpitalu.|The accident was terrible, and he was in hospital.'],
  fin=('Перекажи історію Дока (25+ слів): ким він був, що сталося, де він був.|Opowiedz historię Doca (25+ słów): kim był, co się stało, gdzie był.|Retell Doc\'s story (25+ words): who he was, what happened, where he was.',
-      'Док був… У 1954 році була…|Doc był… W 1954 roku był…|Doc was… In 1954 there was…')), ['uk', 'pl'])
+      'Док був… У 1954 році була…|Doc był… W 1954 roku był…|Doc was… In 1954 there was…')), ['uk', 'pl', 'en'])

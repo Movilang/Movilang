@@ -8,7 +8,7 @@ build(32, dict(where='Ти в боксі Маккуїна на гонці.|Jeste
    'Він [програє]!|[Przegrywa]!|He\'s [losing]!',
    'Тихо в [навушниках].|Cisza w [słuchawkach].|The [headset] is quiet.',
    'Ще одне [коло].|Jeszcze jedno [okrążenie].|One more [lap].',
-   'Зосередься!|Skup się!|[Focus]!']),
+   '[Зосередься]!|[Skup się]!|[Focus]!']),
   ('Док повернувся|Doc wrócił|Doc is back', 'голос|głos|voice;шеф команди|szef zespołu|crew chief;кольори|barwy|colours;легенда|legenda|legend;впізнавати|rozpoznawać|to recognise', [
    'Цей [голос] знайомий!|Ten [głos] jest znajomy!|That [voice] is familiar!',
    'Док — новий [шеф команди].|Doc to nowy [szef zespołu].|Doc is the new [crew chief].',

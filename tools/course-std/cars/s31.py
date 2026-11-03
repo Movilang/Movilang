@@ -64,4 +64,4 @@ build(31, dict(where='Ти на великому стадіоні в Каліф�
  qend='Глядачі аплодують твоєму коментарю. Гонка починається!|Widzowie oklaskują twój komentarz. Wyścig się zaczyna!|The crowd applauds your commentary. The race begins!',
  speak=['Стадіон більший і гучніший, ніж я думав.|Stadion jest większy i głośniejszy, niż myślałem.|The stadium is bigger and louder than I thought.', 'Друзі важливіші, ніж слава.|Przyjaciele są ważniejsi niż sława.|Friends are more important than fame.'],
  fin=('Порівняй трьох гонщиків (25+ слів): хто швидший, старший, досвідченіший, кращий?|Porównaj trzech kierowców (25+ słów): kto jest szybszy, starszy, bardziej doświadczony, lepszy?|Compare the three racers (25+ words): who is faster, older, more experienced, better?',
-      'Маккуїн швидший, ніж… Король старший за…|Zygzak jest szybszy niż… Król jest starszy od…|McQueen is faster than… The King is older than…')), ['uk', 'pl'])
+      'Маккуїн швидший, ніж… Король старший за…|Zygzak jest szybszy niż… Król jest starszy od…|McQueen is faster than… The King is older than…')), ['uk', 'pl', 'en'])

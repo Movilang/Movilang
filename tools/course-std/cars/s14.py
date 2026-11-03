@@ -64,4 +64,4 @@ build(14, dict(where='Ти в кафе Фло вранці.|Jesteś rano w kawia
  qend='Фло усміхається й приносить тістечко. Хороший ранок!|Flo się uśmiecha i przynosi ciastko. Dobry poranek!|Flo smiles and brings a cake. A good morning!',
  speak=['Я завжди п\'ю каву без цукру.|Zawsze piję kawę bez cukru.|I always drink coffee without sugar.', 'Сардж і Філмор часто сперечаються.|Sierżant i Fillmore często się kłócą.|Sarge and Fillmore often argue.'],
  fin=('Опиши свій ранок (25+ слів) зі словами завжди, часто, іноді, ніколи.|Opisz swój poranek (25+ słów) ze słowami zawsze, często, czasem, nigdy.|Describe your morning (25+ words) using always, often, sometimes, never.',
-      'Я завжди… Іноді я… Я ніколи не…|Zawsze… Czasem… Nigdy nie…|I always… Sometimes I… I never…')), ['pl', 'en'])
+      'Я завжди… Іноді я… Я ніколи не…|Zawsze… Czasem… Nigdy nie…|I always… Sometimes I… I never…')), ['uk', 'pl', 'en'])

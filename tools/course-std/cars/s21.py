@@ -41,7 +41,7 @@ build(21, dict(where='Ти в магазині шин Луїджі.|Jesteś w sk
  rt='Найкращий день Луїджі|Najlepszy dzień Luigiego|Luigi\'s best day',
  read=['Луїджі продає шини, але в нього мало [клієнтів].|Luigi sprzedaje opony, ale ma mało [klientów].|Luigi sells tyres, but he has few [customers].',
   'Сьогодні приходить Маккуїн. Він хоче [купити] шини!|Dziś przychodzi Zygzak. Chce [kupić] opony!|Today McQueen comes. He wants to [buy] tyres!',
-  'Луїджі кричить: «Гвідо! Перший [клієнт]!»|Luigi krzyczy: „Guido! Pierwszy [klient]!”|Luigi shouts: “Guido! A customer!”',
+  'Луїджі кричить: «Гвідо! Перший [клієнт]!»|Luigi krzyczy: „Guido! Pierwszy [klient]!”|Luigi shouts: “Guido! A [customer]!”',
   'У магазині високий [стос] шин.|W sklepie jest wysoki [stos] opon.|There\'s a tall [stack] of tyres in the shop.',
   'Маккуїн питає: «[Скільки] у вас шин?»|Zygzak pyta: „[Ile] macie opon?”|McQueen asks: “[How many] tyres do you have?”',
   '«Дуже багато! Чорні, [білі], нові!»|„Bardzo dużo! Czarne, [białe], nowe!”|“Lots! Black, [white], new!”',

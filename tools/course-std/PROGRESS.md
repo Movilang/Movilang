@@ -1,0 +1,11 @@
+# Postęp (wznowienie)
+- Auta: kompletne (36×3), opublikowane.
+- Harry Potter (B1): pliki h01..hNN.py, generator tri.py (CSLUG=harry-potter-1 CIMG=castle CWORDS=60), uruchom: bash hrun.sh hNN.py; publikacja: bash publish.sh "msg".
+- Harry Potter: kompletne (36×3), opublikowane.
+- Friends (A2–B1): pliki f01..f36.py, bash frun.sh fNN.py. GOTOWE CAŁY KURS 1-36 (opublikowane).
+- Vampire Diaries (B1–B2): pliki v01..v36.py, bash vrun.sh vNN.py (img=diary, 70 słów). Rola: nowy uczeń, siedzi obok Eleny, pisze pamiętnik. GOTOWE CAŁY KURS 1-36 (opublikowane).
+- HIMYM (B1–B2): pliki m01..m36.py, bash mrun.sh mNN.py (img=ring, 70 słów). Rola: nowy barman w MacLaren's, słyszy wszystkie historie. GOTOWE CAŁY KURS 1-36 (opublikowane).
+- Home Alone (A2): pliki a01..a36.py, bash arun.sh aNN.py (img=stairs, 40 słów). Rola: sąsiad-rówieśnik Kevina z krótkofalówką. Gotowe 1-36 (KOMPLET).
+- Zootopia (A1–A2): pliki z01..z36.py, bash zrun.sh zNN.py (img=train, 30 słów). Rola: młody kadet/partner Judy. Gotowe 1-36 (KOMPLET).
+- Potem: STRESS TEST wszystkich kursów (prośba usera, raport na 6:00).
+- UWAGA Zootopia: luki UA muszą testować formy ukraińskie (rodzaj/przypadek/czas), nie „—” dla być.

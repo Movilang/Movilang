@@ -64,4 +64,4 @@ build(20, dict(where='Ти обідаєш у кафе Фло.|Jesz obiad w kawia
  qend='Ти їси, смієшся і відчуваєш: це твоя нова компанія.|Jesz, śmiejesz się i czujesz: to twoja nowa paczka.|You eat, laugh and feel it: this is your new group.',
  speak=['Одну каву і трохи оливи, будь ласка.|Jedną kawę i trochę oleju, proszę.|A coffee and some oil, please.', 'Є якісь новини? Так, у мене є новина!|Są jakieś wiadomości? Tak, mam wiadomość!|Is there any news? Yes, I have some news!'],
  fin=('Напиши, що ти замовив у Фло і яку новину почув (25+ слів).|Napisz, co zamówiłeś u Flo i jaką wiadomość usłyszałeś (25+ słów).|Write what you ordered at Flo\'s and what news you heard (25+ words). Use a/an/some/any.',
-      'У Фло я замовив…|U Flo zamówiłem…|At Flo\'s I ordered a… and some…')), ['pl', 'en'])
+      'У Фло я замовив…|U Flo zamówiłem…|At Flo\'s I ordered a… and some…')), ['uk', 'pl', 'en'])

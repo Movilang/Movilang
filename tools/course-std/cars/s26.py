@@ -64,4 +64,4 @@ build(26, dict(where='Ти на новій головній вулиці.|Jeste�
  qend='Так! Сьогодні ввечері буде неонова ніч!|Tak! Dziś wieczorem będzie neonowa noc!|Yes! Tonight there will be a neon night!',
  speak=['Маккуїн працював усю ніч і закінчив дорогу.|Zygzak pracował całą noc i skończył drogę.|McQueen worked all night and finished the road.', 'Усі подякували йому, а Саллі усміхнулася.|Wszyscy mu podziękowali, a Sally się uśmiechnęła.|Everyone thanked him, and Sally smiled.'],
  fin=('Напиши, що сталося сьогодні вранці (25+ слів), у минулому часі.|Napisz, co się stało dziś rano (25+ słów), w czasie przeszłym.|Write what happened this morning (25+ words) in the past simple.',
-      'Минулої ночі… Уранці…|Zeszłej nocy… Rano…|Last night McQueen worked… In the morning…')), ['pl', 'en'])
+      'Минулої ночі… Уранці…|Zeszłej nocy… Rano…|Last night McQueen worked… In the morning…')), ['uk', 'pl', 'en'])

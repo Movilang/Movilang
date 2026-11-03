@@ -1,7 +1,9 @@
 # Generator trójjęzyczny: jedna specyfikacja -> lekcje uk/pl/en.
 import re, random, sys
 sys.path.insert(0, '/home/claude/work/std'); from lib import *
-IDS = [l.strip().split(':')[-1] for l in open('/home/claude/work/std/cars_ids.txt') if l.strip()]
+import os
+CFG = {'slug': os.environ.get('CSLUG', 'cars'), 'img': os.environ.get('CIMG', 'alley'), 'words': int(os.environ.get('CWORDS', '25'))}
+IDS = [l.strip().split(':')[-1] for l in open('/home/claude/work/std/%s_ids.txt' % CFG['slug']) if l.strip()]
 I = {'uk': 0, 'pl': 1, 'en': 2}
 M = re.compile(r'\[([^\]]+)\]')
 
@@ -15,7 +17,16 @@ def gapitem(tri, tg, pool, rnd, tag='line'):
     if not m: return None
     ops = m.group(1).split('/')
     if len(ops) == 1:
-        c = list({w.lower(): w for w in pool if w.lower() != ops[0].lower()}.values()); rnd.shuffle(c); ops = ops + c[:2]
+        c = list({w.lower(): w for w in pool if w.lower() != ops[0].lower()}.values()); rnd.shuffle(c)
+        up = ops[0][:1].isupper(); nw = len(ops[0].split())
+        same = [w for w in c if w[:1].isupper() == up and len(w.split()) == nw]
+        same += [w for w in c if w[:1].isupper() == up and w not in same]
+        if len(same) < 2:  # dopasuj wielkość liter, żeby nie zdradzać odpowiedzi
+            same += [(w[:1].upper() if up else w[:1].lower()) + w[1:] for w in c if w not in same]
+        seen = {ops[0].lower()}; pick = []
+        for w in same:
+            if w.lower() not in seen: seen.add(w.lower()); pick.append(w)
+        ops = ops + pick[:2]
     q = s[:m.start()] + '____' + s[m.end():]; q = clean(q)
     full = clean(s); h = hint(a, tg).split('|')
     o = ops[:]; rnd.shuffle(o)
@@ -35,13 +46,16 @@ def build(num, d, tgs, boss=False):
             for v in voc.split(';'):
                 a = sp(v); pr.append(a[k] + '=' + '/'.join(a))
             L.match('СЦЕНА %d · СЛОВА|SCENA %d · SŁOWA|SCENE %d · WORDS' % (n + 1, n + 1, n + 1), pr)
-            its = [gapitem(t, tg, pool, rnd) for t in sents]
+            own = {m.split('/')[0].lower() for t in sents for m in M.findall(sp(t)[k]) if '/' not in m}
+            sub = [w for w in pool if w.lower() not in own]  # dystraktory spoza tej sceny = mniej dwuznaczności
+            its = [gapitem(t, tg, sub if len(sub) >= 6 else pool, rnd) for t in sents]
             l3 = sp(lab)
             L.set('СЦЕНА %d · %s|SCENA %d · %s|SCENE %d · %s' % (n + 1, l3[0].upper(), n + 1, l3[1].upper(), n + 1, l3[2].upper()),
                   d['where'], 'Встав слово в репліку|Wstaw słowo do kwestii|Put the word into the line', [x for x in its if x])
+        scs = {(j, clean(sp(t)[j]).lower()) for sc in d['sc'] for t in sc[2] for j in range(3)}  # bez powtórek scena→gramatyka (wspólnie dla 3 języków)
         r = d['rule'][tg]; L.intro('ПРАВИЛО|ZASADA|RULE', r + '|' + r + '|' + r)
         L.set('ГРАМАТИКА|GRAMATYKA|GRAMMAR', d['where'], 'Обери правильну форму|Wybierz poprawną formę|Choose the correct form',
-              [gapitem(t, tg, pool, rnd, 'gram') for t in d['gram']])
+              [gapitem(t, tg, pool, rnd, 'gram') for t in d['gram'] if not any((j, clean(sp(t)[j]).lower()) in scs for j in range(3))])
         rs = []
         for t in d['read']:
             a = sp(t); s = a[k]; m = M.search(s)
@@ -60,7 +74,7 @@ def build(num, d, tgs, boss=False):
             c = [ch(ga[k], True, nx, 'Так!|Tak!|Yes!'), ch(ba[k], False, nx if n < len(qs) - 1 else 'end_bad', 'Краще: %s|Lepiej: %s|Better: %s' % (ga[k], ga[k], ga[k]))]
             if n % 2: c.reverse()
             h = hint(la, tg).split('|'); st['s%d' % (n + 1)] = step(la[k], '|'.join(h), d['where'], c)
-        L.quest('КВЕСТ|QUEST|QUEST', d['qq'], 'alley', st, {'end_good': end(True, 'Місію виконано!|Misja wykonana!|Mission complete!', d['qend']),
+        L.quest('КВЕСТ|QUEST|QUEST', d['qq'], d.get('img', CFG['img']), st, {'end_good': end(True, 'Місію виконано!|Misja wykonana!|Mission complete!', d['qend']),
                  'end_bad': end(False, 'Спробуй ще|Spróbuj jeszcze|Try again', 'Майже! Пройди квест ще раз.|Prawie! Przejdź quest jeszcze raz.|Almost! Play the quest again.')})
         ss = [sp(t) for sc in d['sc'] for t in sc[2]] + [sp(t) for t in d['read'][:6]]
         ws = []
@@ -80,5 +94,5 @@ def build(num, d, tgs, boss=False):
                 it = mc('«%s» = ?' % a[0], o, o.index(a[2]), a[0] + ' = ' + a[2], None, 'word'); it['q_pl'] = '«%s» = ?' % a[1]; it['q_en'] = it['q']; wi.append(it)
         L.set('СЛОВА УРОКУ|SŁOWA LEKCJI|LESSON WORDS', 'Що означає слово?|Co znaczy słowo?|What does the word mean?', 'Вісім слів|Osiem słów|Eight words', wi)
         f = sp(d['fin'][1])
-        L.final('ФІНАЛ|FINAŁ|FINAL', d['fin'][0], f[k], 25)
-        print(L.save('cars', num))
+        L.final('ФІНАЛ|FINAŁ|FINAL', d['fin'][0], f[k], d.get('words', CFG['words']))
+        print(L.save(CFG['slug'], num))
