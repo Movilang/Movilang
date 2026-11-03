@@ -5,6 +5,14 @@ import os
 CFG = {'slug': os.environ.get('CSLUG', 'cars'), 'img': os.environ.get('CIMG', 'alley'), 'words': int(os.environ.get('CWORDS', '25'))}
 IDS = [l.strip().split(':')[-1] for l in open('/home/claude/work/std/%s_ids.txt' % CFG['slug']) if l.strip()]
 I = {'uk': 0, 'pl': 1, 'en': 2}
+MODE = os.environ.get('CMODE', '')  # '' = stare; 'b' = B1-B2: sc1 formy, sc2-3 wpisz; 'a' = A1-A2: sc1 formy, sc2 ułóż, sc3 wpisz z 1. literą
+FORMS = {}
+_fp = '/home/claude/work/std/forms/%s.txt' % CFG['slug']
+if MODE and os.path.exists(_fp):
+    for _l in open(_fp, encoding='utf-8'):
+        if '=' in _l:
+            _k, _v = _l.rstrip('\n').split('=', 1); _n, _lg, _w = _k.split(' ', 2)
+            FORMS[(int(_n), _lg, _w.lower())] = [x.strip() for x in _v.split('/') if x.strip()]
 M = re.compile(r'\[([^\]]+)\]')
 
 def sp(t): a = [x.strip() for x in t.split('|')]; assert len(a) == 3, t; return a
@@ -12,11 +20,15 @@ def clean(s): return M.sub(lambda m: m.group(1).split('/')[0], s)
 def hint(tri, tg):
     h = [clean(x) for x in tri]; h[I[tg]] = h[2] if tg != 'en' else h[0]; return '|'.join(h)
 
-def gapitem(tri, tg, pool, rnd, tag='line'):
+def gapitem(tri, tg, pool, rnd, tag='line', forms=None, kind='mc', num=0):
     a = sp(tri); s = a[I[tg]]; m = M.search(s)
     if not m: return None
     ops = m.group(1).split('/')
-    if len(ops) == 1:
+    if len(ops) == 1 and kind in ('type', 'order'):
+        return special(a, tg, m, s, kind, rnd, tag)
+    if len(ops) == 1 and forms and len([f for f in forms if f.lower() != ops[0].lower()]) >= 2:
+        ops = ops + [f for f in forms if f.lower() != ops[0].lower()][:2]
+    elif len(ops) == 1:
         c = list({w.lower(): w for w in pool if w.lower() != ops[0].lower()}.values()); rnd.shuffle(c)
         up = ops[0][:1].isupper(); nw = len(ops[0].split())
         same = [w for w in c if w[:1].isupper() == up and len(w.split()) == nw]
@@ -31,6 +43,20 @@ def gapitem(tri, tg, pool, rnd, tag='line'):
     full = clean(s); h = hint(a, tg).split('|')
     o = ops[:]; rnd.shuffle(o)
     return mc(q, o, o.index(ops[0]), '%s — %s|%s — %s|%s — %s' % (full, h[0], full, h[1], full, h[2]), '|'.join(h), tag)
+
+def special(a, tg, m, s, kind, rnd, tag):
+    full = clean(s); h = hint(a, tg).split('|'); ans = m.group(1)
+    exp = '%s — %s|%s — %s|%s — %s' % (full, h[0], full, h[1], full, h[2])
+    if kind == 'order':
+        ws = full.split()
+        if not 3 <= len(ws) <= 9: kind = 'type'
+        else:
+            it = {'k': 'order', 'q': 'Склади репліку|Ułóż kwestię|Build the line'.split('|')[I[tg]] + ': «%s»' % (h[2] if tg != 'en' else h[0]),
+                  'q_pl': 'Ułóż kwestię: „%s”' % h[1], 'q_en': 'Build the line: “%s”' % (h[2] if tg != 'en' else h[0]), 'options': ws}
+            put(it, 'exp', exp); put(it, 'tr', '|'.join(h)); put(it, 'tag', 'Склади|Ułóż|Build'); return it
+    q = clean(s[:m.start()] + ('____' if MODE == 'b' else ans[:1] + '____') + s[m.end():])
+    it = {'k': 'type', 'q': q, 'q_pl': q, 'q_en': q, 'options': list(dict.fromkeys([ans, ans.rstrip('.!?')]))}
+    put(it, 'exp', exp); put(it, 'tr', '|'.join(h)); put(it, 'tag', 'Впиши|Wpisz|Type'); return it
 
 def build(num, d, tgs, boss=False):
     lid = IDS[num - 1]
@@ -48,7 +74,9 @@ def build(num, d, tgs, boss=False):
             L.match('СЦЕНА %d · СЛОВА|SCENA %d · SŁOWA|SCENE %d · WORDS' % (n + 1, n + 1, n + 1), pr)
             own = {m.split('/')[0].lower() for t in sents for m in M.findall(sp(t)[k]) if '/' not in m}
             sub = [w for w in pool if w.lower() not in own]  # dystraktory spoza tej sceny = mniej dwuznaczności
-            its = [gapitem(t, tg, sub if len(sub) >= 6 else pool, rnd) for t in sents]
+            kind = 'mc' if (not MODE or n == 0) else ('order' if MODE == 'a' and n == 1 else 'type')
+            its = [gapitem(t, tg, sub if len(sub) >= 6 else pool, rnd, 'line',
+                           FORMS.get((num, tg, (M.search(sp(t)[k]).group(1) if M.search(sp(t)[k]) else '').lower())), kind) for t in sents]
             l3 = sp(lab)
             L.set('СЦЕНА %d · %s|SCENA %d · %s|SCENE %d · %s' % (n + 1, l3[0].upper(), n + 1, l3[1].upper(), n + 1, l3[2].upper()),
                   d['where'], 'Встав слово в репліку|Wstaw słowo do kwestii|Put the word into the line', [x for x in its if x])
