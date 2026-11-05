@@ -408,9 +408,10 @@ function SupabaseBackend(url, key) {
     getCourse: function (id) { return sb.from('courses').select('*').eq('id', id).maybeSingle().then(ok); },
     saveCourse: function (c) { var row = {slug:c.slug, title:c.title, title_pl:c.title_pl || null, description_pl:c.description_pl || null, kind:c.kind, level:c.level, price:c.price, poster:c.poster, published:!!c.published, description:c.description}; if (c.id) row.id = c.id; return sb.from('courses').upsert(row).select().single().then(ok); },
     deleteCourse: function (id) { return sb.from('courses').delete().eq('id', id).then(ok); },
-    listLessons: function (courseId) { return sb.from('lessons').select('*').eq('course_id', courseId).order('num').then(ok); },
+    listLessons: function (courseId) { return sb.rpc('list_lessons_lite', {p_course: courseId, p_target: TARGET}).then(ok).then(function (r) { return r || []; }); },
+    listLessonsFull: function (courseId) { return sb.from('lessons').select('*').eq('course_id', courseId).order('num').then(ok); },
     getLesson: function (id) { return sb.from('lessons').select('*').eq('id', id).maybeSingle().then(ok); },
-    saveLesson: function (l) { var row = {course_id:l.course_id, num:l.num, title:l.title, title_pl:l.title_pl || null, scene_pl:l.scene_pl || null, grammar:l.grammar}; if (l.title_en !== undefined) { row.title_en = l.title_en; row.scene_en = l.scene_en; } row = Object.assign(row, {scene:l.scene, tasks:l.tasks}); if (l.variants !== undefined) row.variants = l.variants; if (l.id) row.id = l.id; return sb.from('lessons').upsert(row).select().single().then(ok); },
+    saveLesson: function (l) { if (l && l._lite) return Promise.reject(new Error('lite lesson — reload page')); var row = {course_id:l.course_id, num:l.num, title:l.title, title_pl:l.title_pl || null, scene_pl:l.scene_pl || null, grammar:l.grammar}; if (l.title_en !== undefined) { row.title_en = l.title_en; row.scene_en = l.scene_en; } row = Object.assign(row, {scene:l.scene, tasks:l.tasks}); if (l.variants !== undefined) row.variants = l.variants; if (l.id) row.id = l.id; return sb.from('lessons').upsert(row).select().single().then(ok); },
     deleteLesson: function (id) { return sb.from('lessons').delete().eq('id', id).then(ok); },
     myEnrollments: function () { if (!cachedUser) return Promise.resolve([]); return sb.from('enrollments').select('course_id').eq('user_id', cachedUser.id).then(ok).then(function (r) { return r.map(function (x) { return x.course_id; }); }); },
     ttsList: function () { var out = []; function pg(o) { return sb.from('tts_clips').select('path').range(o, o + 999).then(function (r) { if (r.error) throw r.error; out = out.concat(r.data.map(function (x) { return x.path; })); return r.data.length === 1000 ? pg(o + 1000) : out; }); } return pg(0); },
@@ -458,24 +459,28 @@ var cfg = window.MOVILANG_CONFIG || {};
 var API = (cfg.SUPABASE_URL && cfg.SUPABASE_ANON_KEY && window.supabase) ? SupabaseBackend(cfg.SUPABASE_URL, cfg.SUPABASE_ANON_KEY) : DemoBackend();
 /* ---- read cache: makes navigation instant after the first load ---- */
 (function () {
-  var C = {}, TTL = 5 * 60 * 1000, READS = {listCourses:1, getCourse:1, listLessons:1, getLesson:1, myEnrollments:1, myProgress:1, myLangs:1, getSettings:1};
+  var C = {}, TTL = 5 * 60 * 1000, READS = {listCourses:1, getCourse:1, listLessons:1, getLesson:1, myEnrollments:1, myProgress:1, myLangs:1, getSettings:1, adminAnalytics:1, adminTimes:1};
+  var INV = {saveProgress:['myProgress'], adminSetProgress:['myProgress'], adminResetOwn:['myProgress'], activateKey:['myEnrollments','myProgress','listCourses'], removeCourse:['myEnrollments','myProgress'], addLang:['myLangs'], removeLang:['myLangs'], saveSettings:['getSettings'], ttsList:[], ttsAdd:[], token:[], knownList:[], setKnown:[], saveWriting:[], updateWriting:[], myWritings:[], saveTimes:[], adminUser:[], adminData:[], createKeys:[], deleteKey:[], setRole:[], listLessonsFull:[]};
   var keep = {getUser:1, mode:1, signIn:0};
-  function memo(name, fn) { return function () { var k = name + '|' + JSON.stringify([].slice.call(arguments)) + (name === 'myProgress' && !arguments.length ? '|' + TARGET : ''), e = C[k];
+  function memo(name, fn) { return function () { var k = name + '|' + JSON.stringify([].slice.call(arguments)) + ((name === 'myProgress' && !arguments.length) || name === 'listLessons' ? '|' + TARGET : ''), e = C[k];
     if (e && Date.now() - e.t < TTL) return e.p;
     var pr = fn.apply(API, arguments); C[k] = {t:Date.now(), p:pr}; pr.catch(function () { delete C[k]; }); return pr; }; }
   Object.keys(API).forEach(function (n) {
     if (typeof API[n] !== 'function') return; var fn = API[n];
     if (READS[n]) API[n] = memo(n, fn);
-    else if (n !== 'getUser') API[n] = function () { C = {}; return fn.apply(API, arguments); };
+    else if (n !== 'getUser') API[n] = function () {
+      var inv = INV[n];
+      if (!inv) { C = {}; window.CHK_CACHE = null; } else inv.forEach(function (pre) { Object.keys(C).forEach(function (k) { if (k.indexOf(pre + '|') === 0) delete C[k]; }); });
+      return fn.apply(API, arguments); };
   });
   var gl = API.getLesson, gc = API.getCourse;
-  API.getLesson = function (id) { for (var k in C) if (k.indexOf('listLessons|') === 0 && C[k].done) { var l = C[k].done.filter(function (x) { return x.id === id; })[0]; if (l) return Promise.resolve(l); } return gl(id); };
+  API.getLesson = function (id) { if (!/^#\/admin/.test(location.hash)) for (var k in C) if (k.indexOf('listLessons|') === 0 && k.slice(-('|' + TARGET).length) === '|' + TARGET && C[k].done) { var l = C[k].done.filter(function (x) { return x.id === id; })[0]; if (l) return Promise.resolve(l); } return gl(id); };
   API.getCourse = function (id) { for (var k in C) if (k.indexOf('listCourses|') === 0 && C[k].done) { var c = C[k].done.filter(function (x) { return x.id === id; })[0]; if (c) return Promise.resolve(c); } return gc(id); };
   var ll = API.listLessons, lc = API.listCourses;
-  API.listLessons = function (cid) { var p = ll(cid); var k = 'listLessons|' + JSON.stringify([cid]); p.then(function (r) { if (C[k]) C[k].done = r; }); return p; };
+  API.listLessons = function (cid) { var p = ll(cid); var k = 'listLessons|' + JSON.stringify([cid]) + '|' + TARGET; p.then(function (r) { if (C[k]) C[k].done = r; }); return p; };
   API.listCourses = function (all) { var p = lc(all); var k = 'listCourses|' + JSON.stringify(all === undefined ? [] : [all]); p.then(function (r) { if (C[k]) C[k].done = r; }); return p; };
-  API.clearCache = function () { C = {}; };
-  API.prefetch = function () { API.listCourses(false).then(function (cs) { cs.forEach(function (c) { if (c.lessons_count) API.listLessons(c.id); }); }).catch(function () {}); };
+  API.clearCache = function () { C = {}; window.CHK_CACHE = null; };
+  API.prefetch = function () { Promise.all([API.listCourses(false), API.myEnrollments().catch(function () { return []; })]).then(function (r) { var mine = r[1] || []; r[0].forEach(function (c) { if (c.lessons_count && mine.indexOf(c.id) > -1) API.listLessons(c.id); }); }).catch(function () {}); };
 })();
 if (API.mode === 'demo') document.getElementById('demoBar').hidden = false;
 var USER = null, SETTINGS = DEFAULT_SETTINGS;
@@ -1831,7 +1836,7 @@ function posterResize(file) {
     img.onerror = function () { rej(new Error('bad image')); }; img.src = u; });
 }
 function courseEditor(body, id) {
-  var p = id ? Promise.all([API.getCourse(id), API.listLessons(id)]) : Promise.resolve([{title:'', kind:'film', level:'A2', price:'49 zł', poster:'p1', published:false, description:'', slug:''}, []]);
+  var p = id ? Promise.all([API.getCourse(id), (API.listLessonsFull || API.listLessons)(id)]) : Promise.resolve([{title:'', kind:'film', level:'A2', price:'49 zł', poster:'p1', published:false, description:'', slug:''}, []]);
   return p.then(function (r) {
     var c = r[0], ls = r[1];
     body.innerHTML = t('<div style="display:grid;gap:18px"><button class="btn btn-ghost btn-sm" type="button" id="back" style="justify-self:start">← Усі курси</button>') +
@@ -2062,6 +2067,7 @@ function adminLook(body) {
   function render() {
     body.innerHTML = '<div class="look"><div class="look-side panel">' +
       '<div class="row" style="justify-content:space-between"><h3>' + t('Кольори') + '</h3><div class="row" style="gap:6px"><button class="tgl' + (mode === 'dark' ? ' on' : '') + '" type="button" data-m="dark">☾ ' + t('Темна') + '</button><button class="tgl' + (mode === 'light' ? ' on' : '') + '" type="button" data-m="light">☀ ' + t('Світла') + '</button></div></div>' +
+      '<div class="row" style="justify-content:space-between;margin:6px 0 10px"><b class="small">' + L3('Вигляд сайту (лише для адміна)', 'Wygląd strony (tylko admin)', 'Site look (admin only)') + '</b>' + uiSwitchHtml() + '</div>' +
       '<p class="muted small">' + t('Кожен елемент має власний колір. ↺ повертає стандартний.') + '</p>' +
       '<div class="picked" id="picked"' + (picked.length ? '' : ' hidden') + '><span class="small muted">' + t('Вибраний елемент') + ':</span>' + picked.map(function (k) { return '<button class="tgl" type="button" data-jump="' + k + '">' + tokenLabel(k) + '</button>'; }).join('') + '</div>' +
       THEME_GROUPS.map(function (g, gi) { return '<details class="grp"' + (open[gi] || gi === 0 ? ' open' : '') + ' data-g="' + gi + '"><summary>' + t(g[0]) + '</summary><div class="swatches">' + g[1].map(swRow).join('') + '</div></details>'; }).join('') +
@@ -2852,7 +2858,8 @@ function stdImportPanel(host, lessonIds) {
 
 function admCheck(body) {
   if (needSb(body)) return Promise.resolve();
-  return Promise.all([API.listCourses(true), q(SB().from('lessons').select('id,num,course_id,title,title_pl,title_en,scene,scene_pl,scene_en,grammar,tasks,variants'))]).then(function (r) {
+  if (!window.CHK_CACHE || Date.now() - window.CHK_CACHE.t > 5 * 60 * 1000) window.CHK_CACHE = {t:Date.now(), p:q(SB().from('lessons').select('id,num,course_id,title,title_pl,title_en,scene,scene_pl,scene_en,grammar,tasks,variants'))};
+  return Promise.all([API.listCourses(true), window.CHK_CACHE.p]).then(function (r) {
     var cs = r[0], ls = r[1] || []; if (!CHK_C) CHK_C = 'all'; var ALL = CHK_C === 'all', cn = {}; cs.forEach(function (c) { cn[c.id] = tr(c, 'title'); });
     var cl = ls.filter(function (l) { return ALL || l.course_id === CHK_C; }).sort(function (a, b) { return (a.course_id === b.course_id ? 0 : (cn[a.course_id] || '') < (cn[b.course_id] || '') ? -1 : 1) || a.num - b.num; });
     var probs = []; cl.forEach(function (l) { checkLesson(l).forEach(function (p) { p.l = l; probs.push(p); }); });
@@ -3236,7 +3243,9 @@ function uiSwitchHtml() {
 var _renderNavUI = renderNav;
 renderNav = function () {
   _renderNavUI();
-  var nu = document.getElementById('navuser'); if (nu && !nu.querySelector('.uisw')) nu.insertAdjacentHTML('afterbegin', uiSwitchHtml());
+  /* вигляд 1/2 обирає лише адмін (вкладка «Кольори»); решта завжди бачить 2 */
+  var want = (USER && USER.role === 'admin') ? (String(lsGet('ml_ui', '2')) === '1' ? '1' : '2') : '2';
+  if (want !== UI) { UI = want; document.documentElement.setAttribute('data-ui', UI); ROUTE_LAST = null; setTimeout(route, 0); }
 };
 document.addEventListener('click', function (e) { var b = e.target.closest && e.target.closest('[data-ui-set]'); if (!b) return; e.preventDefault(); if (b.dataset.uiSet !== UI) setUI(b.dataset.uiSet); });
 window.addEventListener('scroll', function () { var n = document.querySelector('nav.top'); if (n) n.classList.toggle('scrolled', window.scrollY > 4); }, {passive:true});
@@ -3358,8 +3367,7 @@ renderNav = function () {
   _renderNavUI2();
   var w = document.querySelector('nav.top .wrap'); if (!w) return;
   var m = w.querySelector('.v2-mtools'); if (!m) { m = document.createElement('div'); m.className = 'v2-mtools'; w.appendChild(m); }
-  m.innerHTML = '<button type="button" class="v2-ib" data-ui-set="' + (UI === '2' ? '1' : '2') + '" title="' + esc(L3('Змінити версію сайту', 'Zmień wersję strony', 'Switch site version')) + '"><small>' + L3('вигляд', 'wygląd', 'look') + '</small>' + UI + '</button>' +
-    '<button type="button" class="v2-ib" id="v2Theme" aria-label="' + esc(THEME === 'dark' ? L3('Світла тема', 'Jasny motyw', 'Light theme') : L3('Темна тема', 'Ciemny motyw', 'Dark theme')) + '">' + (THEME === 'dark' ? '☀' : '☾') + '</button>';
+  m.innerHTML = '<button type="button" class="v2-ib" id="v2Theme" aria-label="' + esc(THEME === 'dark' ? L3('Світла тема', 'Jasny motyw', 'Light theme') : L3('Темна тема', 'Ciemny motyw', 'Dark theme')) + '">' + (THEME === 'dark' ? '☀' : '☾') + '</button>';
   m.querySelector('#v2Theme').onclick = toggleTheme;
 };
 
