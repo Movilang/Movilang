@@ -3303,6 +3303,100 @@ function viewHomeV2() {
 var _viewHomeV1 = viewHome;
 viewHome = function () { return UI === '2' ? viewHomeV2() : _viewHomeV1(); };
 
+/* ---------- профіль 2: мобільні інструменти, фільтр курсів, дашборд ---------- */
+var LV_ORDER = ['A1', 'A2', 'B1', 'B2', 'C1', 'C2'];
+function courseLevels(c) {
+  var m = String(c.level || '').toUpperCase().match(/[ABC][12]/g) || []; if (!m.length) return [];
+  var a = LV_ORDER.indexOf(m[0]), b = LV_ORDER.indexOf(m[m.length - 1]); if (a < 0) return m; if (b < a) b = a;
+  return LV_ORDER.slice(a, b + 1);
+}
+function catalogV2(courses, compact) {
+  var have = {}; courses.forEach(function (c) { courseLevels(c).forEach(function (l) { have[l] = 1; }); });
+  var lv = lsGet('ml_v2_lvl', 'all'), kind = lsGet('ml_v2_kind', 'all'); if (lv !== 'all' && !have[lv]) lv = 'all';
+  var my = lsGet('ml_level', null);
+  var chip = function (grp, v, label, on) { return '<button type="button" class="v2-chip' + (on ? ' on' : '') + '" data-f="' + grp + '" data-v="' + v + '">' + label + '</button>'; };
+  var grid = '<div class="grid-films">' + courses.map(function (c) {
+    return '<a class="film" data-lv="' + courseLevels(c).join(' ') + '" data-kind="' + esc(c.kind || '') + '" data-q="' + esc((tr(c, 'title') + ' ' + (c.title || '') + ' ' + (c.title_pl || '')).toLowerCase()) + '" href="#/course/' + esc(c.id) + '">' + posterHtml(c) + '<div class="film-meta"><span>' + (c.lessons_count || 0) + t(' уроків</span><b>') + esc(priceTxt(c)) + '</b></div></a>';
+  }).join('') + '</div>';
+  return '<div class="v2-cat"><div class="v2-filters">' +
+    '<div class="v2-chips" role="group" aria-label="' + esc(L3('Рівень', 'Poziom', 'Level')) + '">' + chip('lv', 'all', L3('Усі рівні', 'Wszystkie poziomy', 'All levels'), lv === 'all') +
+      LV_ORDER.filter(function (l) { return have[l]; }).map(function (l) { return chip('lv', l, l + (my === l ? ' ★' : ''), lv === l); }).join('') + '</div>' +
+    (compact ? '' : '<div class="v2-chips">' + chip('kind', 'all', L3('Усе', 'Wszystko', 'All'), kind === 'all') + chip('kind', 'film', L3('Фільми', 'Filmy', 'Films'), kind === 'film') + chip('kind', 'series', L3('Серіали', 'Seriale', 'Series'), kind === 'series') +
+      '<input class="v2-search" type="search" placeholder="' + esc(L3('Пошук…', 'Szukaj…', 'Search…')) + '" aria-label="' + esc(L3('Пошук курсу', 'Szukaj kursu', 'Search courses')) + '"></div>') +
+    '</div>' + grid + '<div class="empty v2-none" hidden>' + L3('Немає курсів для цього фільтра.', 'Brak kursów dla tego filtra.', 'No courses match this filter.') + '</div></div>';
+}
+function catalogV2Bind(root) {
+  root.querySelectorAll('.v2-cat').forEach(function (cat) {
+    var st = {lv:lsGet('ml_v2_lvl', 'all'), kind:cat.querySelector('[data-f="kind"]') ? lsGet('ml_v2_kind', 'all') : 'all', q:''};
+    if (!cat.querySelector('[data-f="lv"][data-v="' + st.lv + '"]')) st.lv = 'all';
+    function apply() {
+      var n = 0;
+      cat.querySelectorAll('.film').forEach(function (f) {
+        var ok = (st.lv === 'all' || (' ' + f.dataset.lv + ' ').indexOf(' ' + st.lv + ' ') > -1) && (st.kind === 'all' || f.dataset.kind === st.kind) && (!st.q || f.dataset.q.indexOf(st.q) > -1);
+        f.hidden = !ok; if (ok) n++;
+      });
+      cat.querySelector('.v2-none').hidden = n > 0;
+      cat.querySelectorAll('.v2-chip').forEach(function (b) { b.classList.toggle('on', st[b.dataset.f] === b.dataset.v); });
+    }
+    cat.addEventListener('click', function (e) { var b = e.target.closest('.v2-chip'); if (!b) return; st[b.dataset.f] = b.dataset.v; lsSet(b.dataset.f === 'lv' ? 'ml_v2_lvl' : 'ml_v2_kind', b.dataset.v); apply(); });
+    var s = cat.querySelector('.v2-search'); if (s) s.addEventListener('input', function () { st.q = s.value.trim().toLowerCase(); apply(); });
+    apply();
+  });
+}
+var _viewCatalogV1 = viewCatalog;
+viewCatalog = function () {
+  if (UI !== '2') return _viewCatalogV1();
+  return API.listCourses(false).then(function (c) {
+    $app.innerHTML = '<div class="page v2p"><div class="v2-pagehead"><span class="eyebrow">' + L3('Каталог', 'Katalog', 'Catalogue') + '</span><h1>' + L3('Фільми та серіали', 'Filmy i seriale', 'Films & series') + '</h1><p class="muted">' + L3('Обери рівень — покажемо курси, що підходять. Не знаєш рівня? ', 'Wybierz poziom — pokażemy pasujące kursy. Nie znasz poziomu? ', 'Pick a level and we’ll show matching courses. Not sure? ') + '<a href="#/test">' + L3('Пройди тест (2 хв)', 'Zrób test (2 min)', 'Take the test (2 min)') + '</a></p></div>' + catalogV2(c) + '</div>';
+    catalogV2Bind($app);
+  });
+};
+
+/* мобільні кнопки теми та версії — завжди видно в шапці */
+var _renderNavUI2 = renderNav;
+renderNav = function () {
+  _renderNavUI2();
+  var w = document.querySelector('nav.top .wrap'); if (!w) return;
+  var m = w.querySelector('.v2-mtools'); if (!m) { m = document.createElement('div'); m.className = 'v2-mtools'; w.appendChild(m); }
+  m.innerHTML = '<button type="button" class="v2-ib" data-ui-set="' + (UI === '2' ? '1' : '2') + '" title="' + esc(L3('Змінити версію сайту', 'Zmień wersję strony', 'Switch site version')) + '"><small>' + L3('вигляд', 'wygląd', 'look') + '</small>' + UI + '</button>' +
+    '<button type="button" class="v2-ib" id="v2Theme" aria-label="' + esc(THEME === 'dark' ? L3('Світла тема', 'Jasny motyw', 'Light theme') : L3('Темна тема', 'Ciemny motyw', 'Dark theme')) + '">' + (THEME === 'dark' ? '☀' : '☾') + '</button>';
+  m.querySelector('#v2Theme').onclick = toggleTheme;
+};
+
+/* головна для залогіненого учня: «Сьогодні» */
+function viewTodayV2() {
+  return Promise.all([API.listCourses(false), (API.myEnrollments ? API.myEnrollments().catch(function () { return []; }) : Promise.resolve([]))]).then(function (r) {
+    var courses = r[0], name = (USER.name || '').split(' ')[0], adm = USER.role === 'admin';
+    var tile = function (href, ico, b, s) { return '<a class="v2-tile" href="' + href + '"><span class="i">' + ico + '</span><b>' + b + '</b><small>' + s + '</small></a>'; };
+    $app.innerHTML = '<div class="page v2p v2-today">' +
+      '<div class="v2-pagehead"><span class="eyebrow">' + new Date().toLocaleDateString(LANG === 'uk' ? 'uk-UA' : LANG === 'en' ? 'en-GB' : 'pl-PL', {weekday:'long', day:'numeric', month:'long'}) + '</span><h1>' + L3('Привіт', 'Cześć', 'Hi') + (name ? ', ' + esc(name) : '') + '!</h1></div>' +
+      '<div id="contCard"></div>' +
+      '<div class="v2-tiles">' +
+        tile('#/cabinet', '🔥', L3('Мій прогрес', 'Mój postęp', 'My progress'), L3('серія, ціль, досягнення', 'seria, cel, osiągnięcia', 'streak, goal, badges')) +
+        tile('#/words', '🧠', L3('Повторення', 'Powtórka', 'Review'), L3('мої слова', 'moje słówka', 'my words')) +
+        tile('#/chats', '💬', L3('Чати', 'Czaty', 'Chats'), L3('з героями', 'z bohaterami', 'with characters')) +
+        tile('#/guide', '📘', L3('Граматика', 'Gramatyka', 'Grammar'), L3('посібник', 'poradnik', 'guide')) +
+        (adm ? tile('#/admin', '🛠', L3('Адмін', 'Admin', 'Admin'), L3('курси, продажі, учні', 'kursy, sprzedaż, uczniowie', 'courses, sales, students')) : tile('#/test', '🎯', L3('Тест рівня', 'Test poziomu', 'Level test'), L3('2 хвилини', '2 minuty', '2 minutes'))) +
+      '</div>' +
+      '<section><div class="v2-head"><h2>' + L3('Курси', 'Kursy', 'Courses') + '</h2><a class="btn btn-ghost btn-sm" href="#/catalog">' + L3('Усі', 'Wszystkie', 'All') + '</a></div>' + catalogV2(courses, true) + '</section></div>';
+    fillContinue(); catalogV2Bind($app);
+  });
+}
+viewHome = function () { return UI !== '2' ? _viewHomeV1() : USER ? viewTodayV2() : viewHomeV2().then(function () { var g = $app.querySelector('.v2h section .grid-films'); if (!g) return; return API.listCourses(false).then(function (c) { var w = document.createElement('div'); w.innerHTML = catalogV2(c, true); g.replaceWith(w.firstChild); catalogV2Bind($app); }); }); };
+
+/* адмінка v2: компактна шапка з швидкими діями */
+var _viewAdminV1 = viewAdmin;
+viewAdmin = function () {
+  return Promise.resolve(_viewAdminV1()).then(function () {
+    if (UI !== '2' || !USER || USER.role !== 'admin') return;
+    var head = $app.querySelector('.sec-head'); if (!head || $app.querySelector('.v2-aq')) return;
+    head.classList.add('v2-adhead');
+    head.insertAdjacentHTML('beforeend', '<div class="v2-aq"><a class="btn btn-ghost btn-sm" href="#/">' + L3('На сайт', 'Na stronę', 'To site') + '</a><button type="button" class="btn btn-red btn-sm" data-aq="courses">+ ' + L3('Курс / урок', 'Kurs / lekcja', 'Course / lesson') + '</button></div>');
+    $app.querySelector('[data-aq]').onclick = function () { adminTab = 'courses'; ADM_UID = null; viewAdmin(); };
+    var tabs = $app.querySelector('.tabs'); if (tabs) { var on = tabs.querySelector('.tab.on,.tab[aria-selected="true"]'); if (on && on.scrollIntoView) try { on.scrollIntoView({block:'nearest', inline:'center'}); } catch (e) {} }
+  });
+};
+
 function route() {
   var h = location.hash.replace(/^#\/?/, ''), parts = h.split('/'), p;
   var nav = ROUTE_LAST !== h; ROUTE_LAST = h;

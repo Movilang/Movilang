@@ -95,14 +95,7 @@ html[data-ui="2"] .toast{border-radius:14px}
 
 /* ---------- постери й каталог ---------- */
 html[data-ui="2"] .grid-films{gap:22px}
-html[data-ui="2"] .poster{border-radius:var(--r-m);border:0;padding:16px}
-html[data-ui="2"] .poster .perf{display:none}
-html[data-ui="2"] .poster .ptitle{font:800 24px/1.02 var(--f-display);letter-spacing:-.03em}
-html[data-ui="2"] .poster .tag{font:600 11px var(--f-body);border-radius:999px;padding:4px 9px;background:rgba(0,0,0,.42);backdrop-filter:blur(6px)}
-html[data-ui="2"] .poster .new{background:var(--red);color:var(--btnfg)}
 html[data-ui="2"] .film-meta{font-size:14px}
-html[data-ui="2"] .p1{background:#2C3E8F}html[data-ui="2"] .p2{background:#5B1A2A}html[data-ui="2"] .p3{background:#2E8B6A}html[data-ui="2"] .p4{background:#2F5D3A}
-html[data-ui="2"] .p5{background:#B3261E}html[data-ui="2"] .p6{background:#A8660E}html[data-ui="2"] .p7{background:#33306B}html[data-ui="2"] .p8{background:#7A2D63}
 
 /* ---------- курс і уроки ---------- */
 html[data-ui="2"] .lessons li{border-radius:14px;background:var(--bg2);border:1px solid var(--line);min-height:62px}
@@ -223,3 +216,65 @@ html[data-ui="2"] .v2-feats{grid-template-columns:repeat(3,minmax(0,1fr))}
 @media (max-width:560px){html[data-ui="2"] .v2-feats{grid-template-columns:1fr}
 html[data-ui="2"] .grid-films{grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
 html[data-ui="2"] .poster .ptitle{font-size:18px}}
+
+/* ===== v2.1: app-like layout ===== */
+html[data-ui="2"] .v2-mtools{display:none;gap:6px;margin-left:auto}
+html[data-ui="2"] .v2-ib{height:38px;min-width:38px;padding:0 10px;border-radius:999px;border:1px solid var(--line);background:var(--bg2);color:var(--fg);font:600 14px var(--f-body);display:inline-flex;align-items:center;gap:5px;cursor:pointer}
+html[data-ui="2"] .v2-ib small{font-size:10px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted)}
+html:not([data-ui="2"]) .v2-mtools{display:none!important}
+/* filters */
+html[data-ui="2"] .v2-filters{display:grid;gap:10px;margin-bottom:22px}
+html[data-ui="2"] .v2-chips{display:flex;gap:8px;overflow-x:auto;scrollbar-width:none;-webkit-overflow-scrolling:touch;padding-bottom:2px;align-items:center}
+html[data-ui="2"] .v2-chips::-webkit-scrollbar{display:none}
+html[data-ui="2"] .v2-chip{flex:0 0 auto;height:38px;padding:0 16px;border-radius:999px;border:1px solid var(--line);background:var(--bg2);color:var(--fg);font:600 14px var(--f-body);cursor:pointer;white-space:nowrap}
+html[data-ui="2"] .v2-chip.on{background:var(--fg);color:var(--bg);border-color:var(--fg)}
+html[data-ui="2"] .v2-search{flex:1 1 180px;min-width:150px;height:38px;border-radius:999px;border:1px solid var(--line);background:var(--bg2);color:var(--fg);padding:0 16px;font:15px var(--f-body);margin-left:auto;max-width:280px}
+html[data-ui="2"] .film[hidden]{display:none!important}
+/* page heads */
+html[data-ui="2"] .v2-pagehead{display:grid;gap:8px;margin:8px 0 26px}
+html[data-ui="2"] .v2-pagehead h1{font:800 clamp(34px,5vw,56px)/1 var(--f-display);letter-spacing:-.035em;margin:0}
+html[data-ui="2"] .v2-pagehead .eyebrow::first-letter{text-transform:uppercase}
+html[data-ui="2"] .v2-today section{margin-top:34px}
+/* today tiles */
+html[data-ui="2"] .v2-tiles{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:12px;margin-top:18px}
+html[data-ui="2"] .v2-tile{display:grid;gap:4px;padding:18px;border-radius:20px;background:var(--bg2);border:1px solid var(--line);color:var(--fg);text-decoration:none;transition:transform .15s,border-color .15s}
+html[data-ui="2"] .v2-tile:hover{transform:translateY(-2px);border-color:var(--fg)}
+html[data-ui="2"] .v2-tile .i{font-size:22px;line-height:1}
+html[data-ui="2"] .v2-tile b{font:700 16px var(--f-display);margin-top:8px}
+html[data-ui="2"] .v2-tile small{color:var(--muted);font-size:13px}
+/* admin */
+html[data-ui="2"] .v2-adhead{display:flex;flex-wrap:wrap;align-items:flex-end;justify-content:space-between;gap:12px}
+html[data-ui="2"] .v2-aq{display:flex;gap:8px}
+html[data-ui="2"] .tabs{display:flex;flex-wrap:nowrap;overflow-x:auto;scrollbar-width:none;gap:6px;position:sticky;top:64px;z-index:20;background:var(--bg);padding:8px 0;margin-bottom:18px}
+html[data-ui="2"] .tabs::-webkit-scrollbar{display:none}
+html[data-ui="2"] .tabs .tab{flex:0 0 auto;white-space:nowrap}
+html[data-ui="2"] #adminBody table,html[data-ui="2"] .page .tbl{display:block;overflow-x:auto;max-width:100%}
+html[data-ui="2"] .stats .stat b{font-family:var(--f-display);letter-spacing:-.02em}
+
+@media (max-width:1000px){html[data-ui="2"] .v2-tiles{grid-template-columns:repeat(3,minmax(0,1fr))}}
+@media (max-width:760px){
+  html[data-ui="2"] .v2-mtools{display:flex}
+  html[data-ui="2"] nav.top .wrap{gap:10px}
+  html[data-ui="2"] .tabs{top:56px}
+  html[data-ui="2"] .v2-tiles{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+  html[data-ui="2"] .v2-tile{padding:14px;border-radius:16px}
+  html[data-ui="2"] .v2-search{max-width:none;margin-left:0}
+  /* simpler home on phones */
+  html[data-ui="2"] .v2-hero{gap:22px;padding-top:6px}
+  html[data-ui="2"] .v2-hero h1{font-size:40px}
+  html[data-ui="2"] .v2-hero .lead{font-size:16px}
+  html[data-ui="2"] .v2-cta{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+  html[data-ui="2"] .v2-cta .btn{width:100%;justify-content:center}
+  html[data-ui="2"] .v2-trust span:nth-child(n+3){display:none}
+  html[data-ui="2"] .v2-steps,html[data-ui="2"] .v2-feats{display:flex!important;overflow-x:auto;scroll-snap-type:x mandatory;gap:10px;margin:0 -16px;padding:0 16px 6px;scrollbar-width:none}
+  html[data-ui="2"] .v2-steps::-webkit-scrollbar,html[data-ui="2"] .v2-feats::-webkit-scrollbar{display:none}
+  html[data-ui="2"] .v2-step,html[data-ui="2"] .v2-feat{flex:0 0 78%;scroll-snap-align:start}
+  html[data-ui="2"] .v2h section,html[data-ui="2"] .v2-today section{margin-top:40px}
+  html[data-ui="2"] .v2-head h2{font-size:26px}
+  /* lesson player on phones */
+  html[data-ui="2"] .tcard{padding:18px;border-radius:20px}
+  html[data-ui="2"] .tcard .topts,html[data-ui="2"] .tcard .opts{grid-template-columns:1fr!important}
+  html[data-ui="2"] .topt{min-height:54px;font-size:17px}
+}
+@media (max-width:760px){html[data-ui="2"] .v2-tile:nth-child(5){grid-column:span 2}}
+@media (max-width:900px){html[data-ui="2"] .v2-hero{grid-template-columns:minmax(0,1fr)!important}html[data-ui="2"] .v2h,html[data-ui="2"] .v2h section,html[data-ui="2"] .v2-today{min-width:0;max-width:100%}}
