@@ -3220,6 +3220,89 @@ function wtShow(hit) {
   document.addEventListener('keydown', function (e) { if (e.key === 'Escape') wtClose(); });
 })();
 
+/* =====================  Профіль 1 / 2 (старий / новий мінімалістичний вигляд)  ===================== */
+var UI = (function () { var v = lsGet('ml_ui', null); return v === '1' || v === 1 ? '1' : '2'; })();
+document.documentElement.setAttribute('data-ui', UI);
+(function () { var saved = null; try { saved = localStorage.getItem('ml_theme'); } catch (e) {} if (UI === '2' && !saved) { THEME = 'light'; applyTheme(); } })();
+function setUI(v) {
+  UI = v === '1' ? '1' : '2'; lsSet('ml_ui', UI); document.documentElement.setAttribute('data-ui', UI);
+  renderNav(); ROUTE_LAST = null; route();
+  toast(UI === '2' ? L3('Профіль 2 · новий вигляд', 'Profil 2 · nowy wygląd', 'Profile 2 · new look') : L3('Профіль 1 · класичний вигляд', 'Profil 1 · klasyczny wygląd', 'Profile 1 · classic look'), 'info');
+}
+function uiSwitchHtml() {
+  return '<div class="uisw" role="group" aria-label="' + esc(L3('Версія сайту', 'Wersja strony', 'Site version')) + '"><span class="uisw-l">' + L3('ВИГЛЯД', 'WYGLĄD', 'LOOK') + '</span>' +
+    ['1', '2'].map(function (v) { return '<button type="button" data-ui-set="' + v + '" class="' + (UI === v ? 'on' : '') + '" aria-pressed="' + (UI === v) + '" title="' + esc(v === '1' ? L3('Профіль 1 — класичний', 'Profil 1 — klasyczny', 'Profile 1 — classic') : L3('Профіль 2 — новий', 'Profil 2 — nowy', 'Profile 2 — new')) + '">' + v + '</button>'; }).join('') + '</div>';
+}
+var _renderNavUI = renderNav;
+renderNav = function () {
+  _renderNavUI();
+  var nu = document.getElementById('navuser'); if (nu && !nu.querySelector('.uisw')) nu.insertAdjacentHTML('afterbegin', uiSwitchHtml());
+};
+document.addEventListener('click', function (e) { var b = e.target.closest && e.target.closest('[data-ui-set]'); if (!b) return; e.preventDefault(); if (b.dataset.uiSet !== UI) setUI(b.dataset.uiSet); });
+window.addEventListener('scroll', function () { var n = document.querySelector('nav.top'); if (n) n.classList.toggle('scrolled', window.scrollY > 4); }, {passive:true});
+
+/* ---------- нова головна, що продає ---------- */
+var V2I = {
+  play:'<svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="M10 8.5v7l6-3.5z"></path></svg>',
+  tap:'<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 11V5.5a1.5 1.5 0 0 1 3 0V11"></path><path d="M12 10.5V9a1.5 1.5 0 0 1 3 0v2"></path><path d="M15 10.5a1.5 1.5 0 0 1 3 0V15a6 6 0 0 1-6 6h-1a6 6 0 0 1-5.2-3l-1.6-2.8a1.5 1.5 0 0 1 2.6-1.5L9 15"></path></svg>',
+  mic:'<svg viewBox="0 0 24 24" aria-hidden="true"><rect x="9" y="3" width="6" height="11" rx="3"></rect><path d="M5 11a7 7 0 0 0 14 0M12 18v3"></path></svg>',
+  people:'<svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="9" cy="8" r="3.5"></circle><path d="M2.5 20c.8-3.5 3.4-5.5 6.5-5.5s5.7 2 6.5 5.5"></path><circle cx="17" cy="9" r="2.8"></circle><path d="M16 14.6c2.6.2 4.6 2 5.3 4.9"></path></svg>',
+  cert:'<svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="9" r="5.5"></circle><path d="M8.5 13.5L7 21l5-2.5 5 2.5-1.5-7.5"></path></svg>',
+  gift:'<svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="8" width="18" height="13" rx="2"></rect><path d="M3 12h18M12 8v13M12 8c-1.5-3-5-4-5.5-1.5S9.5 8 12 8zM12 8c1.5-3 5-4 5.5-1.5S14.5 8 12 8z"></path></svg>',
+  globe:'<svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="M3 12h18M12 3c2.5 2.6 3.8 5.6 3.8 9s-1.3 6.4-3.8 9c-2.5-2.6-3.8-5.6-3.8-9S9.5 5.6 12 3z"></path></svg>'
+};
+function viewHomeV2() {
+  return API.listCourses(false).then(function (courses) {
+    var lessons = courses.reduce(function (a, c) { return a + (+c.lessons_count || 0); }, 0);
+    var prices = courses.map(function (c) { return c.price; }).filter(function (p) { return p && !isFreeCourse({price:p}); });
+    var one = prices.sort(function (a, b) { return prices.filter(function (x) { return x === b; }).length - prices.filter(function (x) { return x === a; }).length; })[0] || '49 zł';
+    var bundle = (SETTINGS && SETTINGS.bundle_price) || '149 zł';
+    var demo = {uk:{q:'Кажуть так, коли дають пораду.', ok:'Так! «If I were you» — на твоєму місці.', no:'Майже. Тут правильно «were»: if I were you.'},
+                pl:{q:'Tak mówi się, dając radę.', ok:'Tak! „If I were you” — na twoim miejscu.', no:'Prawie. Tu pasuje „were”: if I were you.'},
+                en:{q:'People say it when giving advice.', ok:'Yes! “If I were you” — giving advice.', no:'Almost. It’s “were”: if I were you.'}}[LANG] || {};
+    var top = courses.slice(0, 8);
+    $app.innerHTML = '<div class="v2h">' +
+      '<section class="v2-hero"><div class="copy"><div id="contCard"></div><span class="eyebrow">' + L3('Англійська · польська · українська', 'Angielski · polski · ukraiński', 'English · Polish · Ukrainian') + '</span>' +
+        '<h1>' + L3('Вчи мову зі сцен, які <em>ти вже любиш.</em>', 'Ucz się języka ze scen, które <em>już kochasz.</em>', 'Learn a language from scenes <em>you already love.</em>') + '</h1>' +
+        '<p class="lead">' + L3('Короткі інтерактивні уроки за фільмами й серіалами. Слова з контексту, граматика без зубріння й говоріння вголос — 10 хвилин на день.', 'Krótkie interaktywne lekcje z filmów i seriali. Słówka z kontekstu, gramatyka bez wkuwania i mówienie na głos — 10 minut dziennie.', 'Short interactive lessons built on films and series. Words in context, grammar without cramming and speaking out loud — 10 minutes a day.') + '</p>' +
+        '<div class="v2-cta"><a class="btn btn-red" href="#/trial">' + L3('Безкоштовний урок', 'Darmowa lekcja', 'Free lesson') + '</a><a class="btn btn-ghost" href="#/test">' + L3('Визначити рівень', 'Sprawdź poziom', 'Find your level') + '</a></div>' +
+        '<div class="v2-trust"><span><b>' + courses.length + '</b>' + L3('курсів', 'kursów', 'courses') + '</span><span><b>' + lessons + '</b>' + L3('уроків', 'lekcji', 'lessons') + '</span><span><b>3</b>' + L3('мови', 'języki', 'languages') + '</span><span>' + L3('Перший урок — безкоштовно', 'Pierwsza lekcja za darmo', 'First lesson free') + '</span></div></div>' +
+      '<div class="v2-screen"><div class="meta"><span>' + L3('Приклад завдання', 'Przykładowe zadanie', 'Sample task') + '</span><span>B1</span></div>' +
+        '<p class="line">“If I ____ you, I’d stay home.”</p><p class="hint2">' + esc(demo.q || '') + ' ' + L3('Натисни будь-яке слово — побачиш переклад.', 'Kliknij dowolne słowo — zobaczysz tłumaczenie.', 'Tap any word to see a translation.') + '</p>' +
+        '<div class="v2-opts">' + ['was', 'were', 'would be', 'am'].map(function (o, i) { return '<button type="button" class="v2-opt" data-v2demo="' + i + '">' + o + '</button>'; }).join('') + '</div><div id="v2fb"></div></div></section>' +
+
+      '<section><div class="v2-head"><h2>' + L3('Обери свій сеанс', 'Wybierz swój seans', 'Pick your screening') + '</h2><a class="btn btn-ghost" href="#/catalog">' + L3('Усі курси', 'Wszystkie kursy', 'All courses') + '</a></div>' + catalogGrid(top) + '</section>' +
+
+      '<section><div class="v2-head"><h2>' + L3('Як проходить урок', 'Jak wygląda lekcja', 'How a lesson works') + '</h2></div><div class="v2-steps">' +
+        [[L3('Сцена й слова', 'Scena i słówka', 'Scene and words'), L3('Короткий опис сцени та словничок із вимовою.', 'Krótki opis sceny i słowniczek z wymową.', 'A short scene description and a glossary with pronunciation.')],
+         [L3('Ігрові завдання', 'Zadania jak gra', 'Game-like tasks'), L3('Вікторини, пари, речення зі слів, квести з вибором кінцівки.', 'Quizy, pary, układanie zdań, questy z wyborem zakończenia.', 'Quizzes, matching, building sentences, quests with branching endings.')],
+         [L3('Говоріння', 'Mówienie', 'Speaking'), L3('Повторюєш репліки, мікрофон перевіряє вимову.', 'Powtarzasz kwestie, mikrofon sprawdza wymowę.', 'Repeat the lines; the microphone checks your pronunciation.')],
+         [L3('Щодня потроху', 'Codziennie po trochu', 'A little every day'), L3('Серія днів, повторення слів і рейтинг із друзями.', 'Seria dni, powtórki słówek i ranking ze znajomymi.', 'A daily streak, word reviews and a leaderboard with friends.')]]
+        .map(function (s, i) { return '<div class="v2-step"><span class="n">' + L3('Крок ', 'Krok ', 'Step ') + (i + 1) + '</span><b>' + s[0] + '</b><p>' + s[1] + '</p></div>'; }).join('') + '</div></section>' +
+
+      '<section><div class="v2-head"><h2>' + L3('Чому це працює', 'Dlaczego to działa', 'Why it works') + '</h2></div><div class="v2-feats">' +
+        '<div class="v2-feat dark">' + V2I.tap + '<b>' + L3('Переклад будь-якого слова', 'Tłumaczenie każdego słowa', 'Translate any word') + '</b><p>' + L3('Торкнись слова — переклад саме в цьому реченні, а не з словника.', 'Dotknij słowa — tłumaczenie w kontekście tego zdania, nie ze słownika.', 'Tap a word — translated in the context of the sentence, not a dictionary.') + '</p></div>' +
+        '<div class="v2-feat">' + V2I.mic + '<b>' + L3('Говориш з першого уроку', 'Mówisz od pierwszej lekcji', 'Speak from lesson one') + '</b><p>' + L3('Вимова й інтонація героїв — твоя тренувальна база.', 'Wymowa i intonacja bohaterów to Twoja baza treningowa.', 'The characters’ pronunciation and intonation become your training ground.') + '</p></div>' +
+        '<div class="v2-feat">' + V2I.globe + '<b>' + L3('Три мови в одному ключі', 'Trzy języki w jednym kluczu', 'Three languages, one key') + '</b><p>' + L3('Вчиш англійську, польську чи українську — з поясненнями своєю мовою.', 'Uczysz się angielskiego, polskiego lub ukraińskiego — z wyjaśnieniami w swoim języku.', 'Learn English, Polish or Ukrainian with explanations in your own language.') + '</p></div>' +
+        '<div class="v2-feat">' + V2I.people + '<b>' + L3('Разом веселіше', 'Razem raźniej', 'Better together') + '</b><p>' + L3('Дует із другом, очки тижня й рейтинг.', 'Duet ze znajomym, punkty tygodnia i ranking.', 'Duo with a friend, weekly points and a leaderboard.') + '</p></div>' +
+        '<div class="v2-feat">' + V2I.cert + '<b>' + L3('Сертифікат у кінці', 'Certyfikat na koniec', 'A certificate at the end') + '</b><p>' + L3('Фінальний іспит курсу — і сертифікат з твоїм ім’ям.', 'Egzamin końcowy kursu — i certyfikat z Twoim imieniem.', 'A final exam — and a certificate with your name.') + '</p></div>' +
+        '<div class="v2-feat">' + V2I.gift + '<b>' + L3('Можна подарувати', 'Można podarować', 'Give it as a gift') + '</b><p>' + L3('Подарунковий код і листівка для друку.', 'Kod prezentowy i kartka do wydruku.', 'A gift code and a printable card.') + '</p></div></div></section>' +
+
+      '<section id="pricing"><div class="v2-price"><div style="display:grid;gap:14px"><h2>' + L3('Усі курси. Один ключ.', 'Wszystkie kursy. Jeden klucz.', 'Every course. One key.') + '</h2><p>' + L3('Кожен курс трьома мовами й усі нові курси. Доступ без обмеження в часі.', 'Każdy kurs w trzech językach i wszystkie nowe kursy. Dostęp bez limitu czasu.', 'Every course in three languages, plus every new one. No time limit.') + '</p></div>' +
+        '<div class="v2-plans"><div class="v2-plan"><span>' + L3('Один курс', 'Jeden kurs', 'One course') + '</span><span class="amt">' + esc(one) + '</span><a class="btn btn-o" href="#/catalog">' + L3('Обрати курс', 'Wybierz kurs', 'Choose a course') + '</a></div>' +
+        '<div class="v2-plan hot"><span>' + L3('Пакет — усе', 'Pakiet — wszystko', 'Bundle — everything') + '</span><span class="amt">' + esc(bundle) + '</span><button class="btn btn-w" type="button" data-buy-bundle>' + L3('Купити пакет', 'Kup pakiet', 'Buy the bundle') + '</button></div></div></div>' +
+        '<p class="v2-pay">BLIK · Przelewy24 · ' + L3('картка', 'karta', 'card') + ' · <a href="#/gift">' + L3('подарувати', 'podaruj', 'gift it') + '</a> · <a href="#/buy">' + L3('є ключ?', 'masz klucz?', 'have a key?') + '</a></p></section>' +
+
+      '<section><div class="v2-head"><h2>' + L3('Питання й відповіді', 'Pytania i odpowiedzi', 'Questions & answers') + '</h2></div>' + faqHtml() + '</section>' +
+
+      '<section class="v2-final"><h2>' + L3('Перший урок — за 5 хвилин і безкоштовно.', 'Pierwsza lekcja — w 5 minut i za darmo.', 'Your first lesson — five minutes, free.') + '</h2><p class="lead">' + L3('Без реєстрації. Спробуй і вирішуй.', 'Bez rejestracji. Spróbuj i zdecyduj.', 'No sign-up. Try it, then decide.') + '</p><a class="btn btn-red" href="#/trial" style="height:56px;padding:0 30px;font-size:16px">' + L3('Почати безкоштовно', 'Zacznij za darmo', 'Start for free') + '</a></section></div>';
+    fillContinue();
+    $app.querySelectorAll('[data-v2demo]').forEach(function (b) { b.onclick = function () { var i = +b.dataset.v2demo; $app.querySelectorAll('[data-v2demo]').forEach(function (x, j) { x.disabled = true; if (j === 1) x.classList.add('right'); else if (j === i) x.classList.add('wrong'); }); var fb = document.getElementById('v2fb'); if (fb) fb.innerHTML = '<div class="v2-fb">' + esc(i === 1 ? demo.ok : demo.no) + '</div>'; }; });
+  });
+}
+var _viewHomeV1 = viewHome;
+viewHome = function () { return UI === '2' ? viewHomeV2() : _viewHomeV1(); };
+
 function route() {
   var h = location.hash.replace(/^#\/?/, ''), parts = h.split('/'), p;
   var nav = ROUTE_LAST !== h; ROUTE_LAST = h;
