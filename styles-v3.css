@@ -170,3 +170,9 @@ html[data-skin="3"] .logo-mark span::after{border-left-color:var(--plum)}
 .v3h .v3-f:not(.d) h3{color:#1B1233}
 .v3h .v3-final .ims{flex-direction:row;flex-wrap:nowrap;align-items:flex-start}
 .v3h .v3-final .ims img{flex:0 0 31%;width:31%;height:auto;max-height:240px}
+
+/* a11y: kontrast WCAG AA w jasnym motywie */
+html[data-skin="3"]:not([data-theme="dark"]) main p a,html[data-skin="3"]:not([data-theme="dark"]) .v3-pay a,html[data-skin="3"]:not([data-theme="dark"]) .v2-pay a{color:#B4361A}
+html[data-skin="3"]:not([data-theme="dark"]) .poster .tag.new{background:#C2391C;color:#fff}
+html[data-skin="3"]:not([data-theme="dark"]) #footSlogan,html[data-skin="3"]:not([data-theme="dark"]) #discl,html[data-skin="3"]:not([data-theme="dark"]) #legalLinks{color:#5f5774}
+html[data-skin="3"]:not([data-theme="dark"]) #demoBar,html[data-skin="3"]:not([data-theme="dark"]) .tscene>b{color:#8a4e08}
