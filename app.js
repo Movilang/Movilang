@@ -3429,6 +3429,32 @@ viewAdmin = function () {
   });
 };
 
+/* ---------- «що далі» після безкоштовного уроку: пропозиція купити ---------- */
+(function () {
+  var busy = false;
+  function upsell(card) {
+    var m = (location.hash || '').match(/^#\/lesson\/([^/?]+)/); if (!m || busy || card.dataset.up) return;
+    if (USER && USER.role === 'admin') return;
+    card.dataset.up = 1; busy = true;
+    API.getLesson(m[1]).then(function (l) {
+      if (!l || !l.course_id) return;
+      return Promise.all([API.getCourse(l.course_id), USER ? API.myEnrollments().catch(function () { return []; }) : Promise.resolve([]), API.listLessons(l.course_id)]).then(function (r) {
+        var c = r[0], own = (r[1] || []).indexOf(l.course_id) > -1, ls = r[2] || [];
+        if (!c || own || isFreeCourse(c)) return;
+        var host = card.querySelector('#tresExtra') || card; if (host.querySelector('.upsell')) return;
+        var bundle = (SETTINGS && SETTINGS.bundle_price) || '';
+        host.insertAdjacentHTML('beforeend', '<div class="upsell" style="margin-top:18px;padding:18px;border:1px solid var(--line);border-radius:18px;background:var(--panel);display:grid;gap:10px;text-align:left">' +
+          '<b style="font-size:19px">' + L3('Сподобалось? Попереду ще ', 'Podobało się? Przed Tobą jeszcze ', 'Enjoyed it? There are ') + Math.max(ls.length - 1, 0) + L3(' уроків', ' lekcji', ' more lessons') + ' „' + esc(tr(c, 'title')) + '”.</b>' +
+          '<span class="muted">' + L3('Квести, говоріння, повторення слів і сертифікат у кінці. Платиш один раз — без підписки, доступ назавжди.', 'Questy, mówienie, powtórki słówek i certyfikat na koniec. Płacisz raz — bez subskrypcji, dostęp na zawsze.', 'Quests, speaking, word reviews and a certificate at the end. Pay once — no subscription, lifetime access.') + '</span>' +
+          '<div class="row" style="gap:8px;flex-wrap:wrap"><a class="btn btn-red" href="#/course/' + esc(c.id) + '">' + L3('Відкрити курс за ', 'Odblokuj kurs za ', 'Unlock the course for ') + esc(c.price || '') + '</a>' +
+          (bundle ? '<button class="btn btn-ghost" type="button" data-buy-bundle>' + L3('Усі курси за ', 'Wszystkie kursy za ', 'All courses for ') + esc(bundle) + '</button>' : '') + '</div>' +
+          '<span class="muted" style="font-size:13px">BLIK · Przelewy24 · ' + L3('картка', 'karta', 'card') + (USER ? '' : ' · ' + L3('<a href="#/register">створи акаунт</a>, щоб зберегти прогрес', '<a href="#/register">załóż konto</a>, by zapisać postęp', '<a href="#/register">create an account</a> to keep your progress')) + '</span></div>');
+      });
+    }).catch(function () {}).then(function () { busy = false; });
+  }
+  new MutationObserver(function () { var r = document.querySelector('.tres'); if (r) upsell(r.closest('.tcard') || r); }).observe(document.getElementById('app') || document.body, {childList:true, subtree:true});
+})();
+
 function route() {
   var h = location.hash.replace(/^#\/?/, ''), parts = h.split('/'), p;
   var nav = ROUTE_LAST !== h; ROUTE_LAST = h;
