@@ -1113,3 +1113,11 @@ html .tq.tq-info.tq-rule{font-size:18px;line-height:1.6;color:var(--fg);font-wei
 .wt-toggle{display:inline-flex;align-self:flex-start;width:fit-content!important;max-width:100%;align-items:center;gap:8px;min-height:44px;margin:0 0 12px;padding:0 16px;border-radius:999px;border:1px solid var(--line);background:var(--bg2,var(--bg));color:var(--fg);font:600 15px var(--f-body,inherit);cursor:pointer}
 .wt-toggle.on{background:var(--red);border-color:var(--red);color:var(--btnfg,#fff)}
 html.wt-on #player .tq,html.wt-on #player .tscene,html.wt-on #player .sayline,html.wt-on #player .tins,html.wt-on #player .rulebox,html.wt-on #player .qtrt{text-decoration:underline dotted color-mix(in srgb,var(--red) 70%,transparent);text-decoration-thickness:2px;text-underline-offset:5px;cursor:help}
+
+.tktools{display:flex;flex-wrap:wrap;gap:8px;align-items:flex-start;margin:0 0 14px}
+.tktools:empty{display:none}
+.tktools .qtrw,.tktools .rulew{margin:0}
+.tktools .rulew{flex-basis:auto}
+.tktools .rulew:has(.rulebox:not([hidden])),.tktools .qtrw:has(.qtrt:not([hidden])){flex-basis:100%;order:9}
+.qtrb.wtbtn{opacity:1;border-style:solid;font-weight:600}
+.qtrb.wtbtn.on{background:var(--red);border-color:var(--red);color:var(--btnfg,#fff)}
