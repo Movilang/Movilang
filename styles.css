@@ -1104,3 +1104,7 @@ html.print-journal body *{visibility:hidden}html.print-journal .w-book,html.prin
 .task-hl{outline:2px solid var(--red);outline-offset:4px;border-radius:12px}.task-hl-msg{background:color-mix(in srgb,var(--red) 18%,transparent);color:var(--fg);padding:8px 12px;border-radius:8px;font-weight:600;margin-bottom:8px}
 .fld-hl{border-color:var(--red)!important;box-shadow:0 0 0 2px color-mix(in srgb,var(--red) 40%,transparent)}
 .rtitle{margin:4px 0 10px;font-family:var(--f-display)}
+
+/* мобільне меню: закриваємо смугу під плаваючою панеллю, щоб текст не просвічував знизу */
+@media (max-width:760px){.mnav::after{content:'';position:absolute;left:-10px;right:-10px;top:100%;height:calc(10px + env(safe-area-inset-bottom,0px));background:var(--nav-bg,var(--bg));pointer-events:none}}
+html .tq.tq-info.tq-rule{font-size:18px;line-height:1.6;color:var(--fg);font-weight:500;letter-spacing:0}

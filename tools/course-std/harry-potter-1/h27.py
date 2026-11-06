@@ -52,7 +52,7 @@ build(27, dict(where='Ти в Забороненому лісі вночі.|Jest
   'Шрам Гаррі, який роками мовчав, раптом страшенно [заболів].|Blizna Harry\'ego, która latami milczała, nagle strasznie [zabolała].|Harry\'s scar, which had been quiet for years, suddenly [hurt] terribly.',
   'Постать рушила до нас, але тут вискочив [кентавр].|Postać ruszyła w naszą stronę, ale wtedy wyskoczył [centaur].|The figure came towards us, but then a [centaur] leapt out.',
   'Це був Фіренце, який [урятував] нас.|To był Firenzo, który nas [uratował].|It was Firenze, who [saved] us.',
-  '«Той, хто вбиває єдинорога, отримує лише [напівжиття]. Проклятe життя».|„Kto zabija jednorożca, dostaje tylko [półżycie]. Przeklęte życie”.|“Whoever kills a unicorn gets only a [half-life]. A cursed life.”',
+  '«Той, хто вбиває єдинорога, отримує лише [напівжиття]. Прокляте життя».|„Kto zabija jednorożca, dostaje tylko [półżycie]. Przeklęte życie”.|“Whoever kills a unicorn gets only a [half-life]. A cursed life.”',
   'Гаррі зрозумів: це був Волдеморт, який чекав на Філософський [камінь].|Harry zrozumiał: to był Voldemort, który czekał na Kamień [Filozoficzny].|Harry understood: it was Voldemort, who was waiting for the Philosopher\'s [Stone].'],
  chk=[('Що знайшов Геґрід?|Co znalazł Hagrid?|What had Hagrid found?', ['Срібну кров єдинорога|Srebrną krew jednorożca|Silver unicorn blood', 'Яйце дракона|Jajo smoka|A dragon egg', 'Мантію|Pelerynę|A cloak']),
   ('З ким ішов автор?|Z kim szedł autor?|Who did the writer go with?', ['З Гаррі, Мелфоєм і Іклом|Z Harrym, Malfoyem i Kłem|Harry, Malfoy and Fang', 'З Герміоною|Z Hermioną|Hermione', 'Сам|Sam|Alone']),

@@ -32,7 +32,7 @@ to understand|/ˌʌndəˈstænd/|verb|A1|розуміти|rozumieć|Тепер �
 already|/ɔːlˈredi/|adverb|A2|уже|już|Хтось уже використав квіти.|Ktoś już użył kwiatów.|Someone has already used the flowers.|I've already told you.|I've already eaten.|Już ci mówiłam.|Już jadłam.|Я вже казала.|Я вже поїла.
 poison|/ˈpɔɪzn/|noun|B1|отрута|trucizna|Квітка — як отрута для звірів.|Kwiat jest jak trucizna dla zwierząt.|The flower is like poison for animals.|It's like poison!|Some mushrooms have poison.|Jest jak trucizna!|Niektóre grzyby są trujące.|Це як отрута!|Деякі гриби отруйні.
 aunt|/ɑːnt/|noun|A1|тітка|ciocia|Тітка злякалася.|Ciocia się przestraszyła.|Auntie got scared.|My aunt!|My aunt is a teacher.|Moja ciocia!|Moja ciocia jest nauczycielką.|Моя тітка!|Моя тітка — вчителька.
-story|/ˈstɔːri/|noun|A1|історія|historia|Це старa сімейна історія.|To stara rodzinna historia.|It's an old family story.|What a story!|Tell me a story.|Co za historia!|Opowiedz mi historię.|Яка історія!|Розкажи мені історію.
+story|/ˈstɔːri/|noun|A1|історія|historia|Це стара сімейна історія.|To stara rodzinna historia.|It's an old family story.|What a story!|Tell me a story.|Co za historia!|Opowiedz mi historię.|Яка історія!|Розкажи мені історію.
 """),
   gloss(("Сцена 3 · Машина · Назад до міста!", "Scena 3 · Samochód · Z powrotem do miasta!", "Scene 3 · The truck · Back to the city!"), """
 to use|/juːz/|verb|A1|використовувати|używać|Хтось використовує квіти.|Ktoś używa kwiatów.|Someone is using the flowers.|They've used the flowers!|Can I use your phone?|Użyli kwiatów!|Mogę użyć twojego telefonu?|Вони використали квіти!|Можна скористатися твоїм телефоном?
