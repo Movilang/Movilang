@@ -3205,13 +3205,27 @@ function wtShow(hit) {
 (function () {
   if (lsGet('ml_wt_off', false)) return;
   var t0 = null, timer = null, fired = false, sx = 0, sy = 0;
+  /* Tryb tłumacza: dotknięcie tłumaczy tylko po włączeniu przycisku 🌐; przytrzymanie działa zawsze, ale nie na przyciskach */
+  var WT_ON = !!lsGet('ml_wt_mode', false);
+  function wtApply() { document.documentElement.classList.toggle('wt-on', WT_ON); var b = document.getElementById('wtToggle'); if (b) { b.setAttribute('aria-pressed', String(WT_ON)); b.classList.toggle('on', WT_ON); } }
+  function wtBtn() {
+    var pl = document.getElementById('player'); if (!pl || document.getElementById('wtToggle')) return;
+    var b = document.createElement('button'); b.type = 'button'; b.id = 'wtToggle'; b.className = 'wt-toggle';
+    b.innerHTML = '🌐 <span>' + L3('Перекладати слова', 'Tłumacz słowa', 'Translate words') + '</span>';
+    b.title = L3('Увімкни й торкнись слова, щоб побачити переклад', 'Włącz i dotknij słowa, żeby zobaczyć tłumaczenie', 'Turn on, then tap a word to see its translation');
+    b.onclick = function (e) { e.stopPropagation(); WT_ON = !WT_ON; lsSet('ml_wt_mode', WT_ON); wtApply(); if (!WT_ON) wtClose(); toast(WT_ON ? L3('Торкнись слова, щоб перекласти', 'Dotknij słowa, żeby przetłumaczyć', 'Tap a word to translate it') : L3('Переклад слів вимкнено', 'Tłumaczenie słów wyłączone', 'Word translation off'), 'info'); };
+    pl.parentNode.insertBefore(b, pl); wtApply();
+  }
+  try { new MutationObserver(wtBtn).observe(document.getElementById('app'), {childList: true, subtree: true}); } catch (e) {}
+  wtApply();
   var SKIP = 'input,textarea,select,option,#wtPop,.lmodal .lbox input,[contenteditable],code,.keycode,nav.top,.mnav';
   var INTER = 'button,a,label,summary,[role=button],[data-go],[data-st],.topt,.tstep';
   function inApp(el) { return el && el.closest && (el.closest('#app') || el.closest('.lmodal')) && !el.closest(SKIP); }
   document.addEventListener('pointerdown', function (e) {
     if (e.button && e.button !== 0) return; fired = false; if (!inApp(e.target)) return;
     sx = e.clientX; sy = e.clientY; clearTimeout(timer);
-    timer = setTimeout(function () { var h = wtWordAt(sx, sy); if (h) { fired = true; try { navigator.vibrate && navigator.vibrate(15); } catch (er) {} wtShow(h); } }, 480);
+    if (e.target.closest(INTER)) return; // przytrzymanie na przycisku odpowiedzi nic nie tłumaczy
+    timer = setTimeout(function () { var h = wtWordAt(sx, sy); if (h) { fired = true; try { navigator.vibrate && navigator.vibrate(15); } catch (er) {} wtShow(h); } }, 600);
   }, true);
   document.addEventListener('pointermove', function (e) { if (timer && (Math.abs(e.clientX - sx) > 10 || Math.abs(e.clientY - sy) > 10)) { clearTimeout(timer); timer = null; } }, true);
   ['pointerup', 'pointercancel'].forEach(function (ev) { document.addEventListener(ev, function () { clearTimeout(timer); timer = null; }, true); });
@@ -3219,7 +3233,7 @@ function wtShow(hit) {
   document.addEventListener('click', function (e) {
     if (fired) { e.preventDefault(); e.stopPropagation(); fired = false; return; } // утримання не натискає кнопку
     var pop = document.getElementById('wtPop'); if (pop && !pop.contains(e.target)) { wtClose(); }
-    if (!inApp(e.target) || e.target.closest(INTER)) return; // звичайний клік по кнопці — як раніше; переклад — утриманням
+    if (!WT_ON || !inApp(e.target) || e.target.closest(INTER)) return; // dotknięcie tłumaczy tylko w trybie tłumacza
     var sel = window.getSelection && String(window.getSelection()); if (sel && sel.length > 1) return;
     var h = wtWordAt(e.clientX, e.clientY); if (h) wtShow(h);
   }, true);
