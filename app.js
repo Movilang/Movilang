@@ -3460,7 +3460,7 @@ Promise.all([API.getUser().catch(function () { return null; }), API.getSettings(
    Технічно це профіль 2 (UI === '2') з власною головною і палітрою: html[data-skin="3"].
    Вибір зберігається в localStorage 'ml_ui' = '3'. Шаблони 1 і 2 не змінюються. */
 (function () {
-  var SKIN3 = lsGet('ml_ui', null) === '3';
+  var _ui0 = lsGet('ml_ui', null); var SKIN3 = _ui0 == null || _ui0 === '3'; // шаблон 3 — за замовчуванням для всіх
   function applySkin() { if (SKIN3) document.documentElement.setAttribute('data-skin', '3'); else document.documentElement.removeAttribute('data-skin'); }
   applySkin();
   window.isSkin3 = function () { return SKIN3; };
