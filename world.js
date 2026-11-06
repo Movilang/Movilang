@@ -246,6 +246,43 @@ window.MOVILANG_WORLDS = {
     }
   },
 
+  'game-of-thrones-1': {
+    theme: null,
+    points: {icon: '🪶', uk: 'сторінки хроніки', pl: 'strony kroniki', en: 'chronicle pages'},
+    ritual: {
+      icon: '🐺',
+      title: {uk: 'Твій дім у Вестеросі', pl: 'Twój ród w Westeros', en: 'Your house in Westeros'},
+      intro: {uk: 'Свічка, пергамент, ворон на вікні. П\'ять питань англійською — і стародавня книга родоводів покаже, під чиїм прапором ти стоїш.', pl: 'Świeca, pergamin, kruk na parapecie. Pięć pytań po angielsku — a stara księga rodów pokaże, pod czyją chorągwią stoisz.', en: 'A candle, parchment, a raven at the window. Five questions, and the old book of lineages shows whose banner you stand under.'},
+      reveal: {uk: 'Мейстер гортає книгу родоводів. Твій дім:', pl: 'Maester kartkuje księgę rodów. Twój ród:', en: 'The maester turns the pages of the book of lineages. Your house:'},
+      questions: [
+        {q: 'What matters most to you?', hint: {uk: 'Що для тебе найважливіше?', pl: 'Co jest dla ciebie najważniejsze?', en: ''},
+          a: [['Honour and my family.', 'stark'], ['Power, and a clever plan.', 'lannister'], ['Freedom, and fire in my heart.', 'targaryen'], ['My vows, and the people I protect.', 'watch']]},
+        {q: 'Where would you like to live?', hint: {uk: 'Де б ти хоті(в/ла) жити?', pl: 'Gdzie chciał(a)byś mieszkać?', en: ''},
+          a: [['In an old castle in the snowy North.', 'stark'], ['In a rich city with golden towers.', 'lannister'], ['Somewhere far across the sea.', 'targaryen'], ['On top of a great wall of ice.', 'watch']]},
+        {q: 'Your enemy has made a mistake. You…', hint: {uk: 'Твій ворог помилився. Ти…', pl: 'Twój wróg popełnił błąd. Ty…', en: ''},
+          a: [['…tell him the truth to his face.', 'stark'], ['…wait, smile and use it later.', 'lannister'], ['…give him one chance to kneel.', 'targaryen'], ['…stay on guard. Real danger is coming.', 'watch']]},
+        {q: 'Choose an animal.', hint: {uk: 'Обери тварину.', pl: 'Wybierz zwierzę.', en: ''},
+          a: [['A wolf.', 'stark'], ['A lion.', 'lannister'], ['A dragon.', 'targaryen'], ['A raven.', 'watch']]},
+        {q: 'Finish the sentence: “Winter is…”', hint: {uk: 'Закінчи речення: «Зима…»', pl: 'Dokończ zdanie: „Zima…”', en: ''},
+          a: [['…coming. We must be ready.', 'stark'], ['…a good time to make plans.', 'lannister'], ['…nothing to me. I am the blood of the dragon.', 'targaryen'], ['…where my watch begins.', 'watch']]}
+      ]
+    },
+    factions: {
+      stark: {icon: '🐺', color: '#5b6b78', uk: 'Дім Старків', pl: 'Ród Starków', en: 'House Stark', motto: {uk: 'Зима близько', pl: 'Zima nadchodzi', en: 'Winter is coming'}},
+      lannister: {icon: '🦁', color: '#b8892b', uk: 'Дім Ланністерів', pl: 'Ród Lannisterów', en: 'House Lannister', motto: {uk: 'Почуй мій рик!', pl: 'Usłysz mój ryk!', en: 'Hear me roar!'}},
+      targaryen: {icon: '🐉', color: '#9b2226', uk: 'Дім Таргарієнів', pl: 'Ród Targaryenów', en: 'House Targaryen', motto: {uk: 'Вогонь і кров', pl: 'Ogień i krew', en: 'Fire and blood'}},
+      watch: {icon: '🪶', color: '#22262b', uk: 'Нічна варта', pl: 'Nocna Straż', en: 'The Night\'s Watch', motto: {uk: 'Я — меч у темряві', pl: 'Jestem mieczem w ciemności', en: 'I am the sword in the darkness'}}
+    },
+    standings: {uk: 'Рада великих домів', pl: 'Rada wielkich rodów', en: 'Council of the great houses'},
+    collection: {uk: 'Печатки великих домів', pl: 'Pieczęcie wielkich rodów', en: 'Seals of the great houses'}, cardIcon: '🛡️',
+    artifacts: {uk: 'Скарби Вестеросу', pl: 'Skarby Westeros', en: 'Treasures of Westeros'},
+    journal: {
+      title: {uk: 'Хроніка писаря', pl: 'Kronika pisarza', en: 'The scribe\'s chronicle'}, icon: '📜',
+      open: 'From the chronicle:', sign: '— the scribe of Winterfell',
+      lines: ['Today: {scene_en}. Word for the chronicle: “{w1}”.', 'New words for the chronicle: {w1}, {w2}, {w3}.']
+    }
+  },
+
   'zootopia': {
     theme: null,
     points: {icon: '🥕', uk: 'морквини', pl: 'marchewki', en: 'carrots'},
