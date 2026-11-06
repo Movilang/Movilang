@@ -1623,7 +1623,7 @@ function viewGuide(tg, id) {
 
 function viewLesson(id) {
   return loadDefs().then(function () { return API.getLesson(id); }).then(function (l) {
-    if (!l) { $app.innerHTML = t('<div class="page"><div class="empty">Урок не знайдено.</div></div>'); return; }
+    if (!l) { $app.innerHTML = '<div class="page"><div class="empty">' + tx({uk:'Цей урок відкривається після покупки курсу або активації ключа.', pl:'Ta lekcja otwiera się po zakupie kursu lub aktywacji klucza.', en:'This lesson unlocks once you buy the course or activate a key.'}) + ' <a href="#/catalog">' + tx({uk:'До каталогу', pl:'Do katalogu', en:'To the catalogue'}) + '</a></div></div>'; return; }
     return Promise.all([API.getCourse(l.course_id), API.listLessons(l.course_id), API.myEnrollments(), API.myProgress().catch(function () { return []; })]).then(function (r) {
       var prevDone = {}; (r[3] || []).forEach(function (p) { prevDone[p.lesson_id] = p; });
       var c = r[0], ls = r[1], enrolled = r[2].indexOf(l.course_id) > -1 || isAdm() || isFreeCourse(c);
@@ -1651,7 +1651,7 @@ function viewLesson(id) {
 
 function viewTrial() {
   return API.listCourses(false).then(function (cs) {
-    var c = cs.filter(function (x) { return x.lessons_count; })[0];
+    var c = cs.filter(function (x) { return x.lessons_count && x.free_first !== false; })[0] || cs.filter(function (x) { return x.lessons_count; })[0];
     if (!c) { $app.innerHTML = t('<div class="page"><div class="empty">Пробний урок з\'явиться, щойно буде створено перший курс.</div></div>'); return; }
     return API.listLessons(c.id).then(function (ls) { location.replace('#/lesson/' + ls[0].id); });
   });
@@ -3544,7 +3544,7 @@ Promise.all([API.getUser().catch(function () { return null; }), API.getSettings(
               '<div class="v3-say"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><rect x="9" y="3" width="6" height="11" rx="3"/><path d="M5 11a7 7 0 0 0 14 0M12 18v3"/></svg><span>' + L3('Повтори вголос', 'Powtórz na głos', 'Say it out loud') + '</span><span class="v3-wave" aria-hidden="true">' + wave([10, 20, 14, 24, 12, 18, 9]) + '</span></div></div>' +
             '<div class="v3-chip a">stay = ' + L3('залишитися', 'zostać', 'not leave') + '</div><div class="v3-chip b">+20 ' + L3('очок', 'pkt', 'points') + '</div></div>' +
         '</div></div>' +
-        '<div class="v3-mqw" aria-hidden="true"><div class="v3-mq">' + names + names + names + names + '</div></div></div>' +
+        '</div>' +
 
         '<section class="v3-sec" id="courses3"><div class="v3-head rv"><h2 class="v3-h2">' + L3('Обери фільм за своїм рівнем', 'Wybierz film na swoim poziomie', 'Pick a film at your level') + '</h2>' +
           '<div class="v3-pills" role="group" aria-label="' + esc(L3('Фільтр за рівнем', 'Filtr poziomu', 'Level filter')) + '">' + ['all'].concat(levels).map(function (l) { return '<button type="button" class="v3-pill" data-v3lv="' + l + '" aria-pressed="' + (LV === l) + '">' + (l === 'all' ? L3('Усі', 'Wszystkie', 'All') : l) + '</button>'; }).join('') + '</div></div>' +
