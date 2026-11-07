@@ -1202,7 +1202,7 @@ html.fx-side .tside{animation:fxTaskIn .3s cubic-bezier(.22,1,.36,1)}
 .fx-say{margin-left:8px;border:0;background:transparent;cursor:pointer;font-size:16px;opacity:.6;vertical-align:middle;padding:2px 4px}.fx-say:hover{opacity:1}
 @media (hover:hover){[data-fxk]{position:relative}[data-fxk]::after{content:attr(data-fxk);position:absolute;top:4px;right:6px;font:600 10px var(--f-body,inherit);opacity:.45}}
 /* kolor kursu */
-html[data-course] #app{--red:var(--fx-course);--link:var(--fx-course);--eyebrow-dot:var(--fx-course)}
+html[data-course] #app{--red:var(--fx-course);--coral:var(--fx-course);--link:var(--fx-course);--eyebrow-dot:var(--fx-course)}
 /* ekran wyniku */
 .tres .big{animation:fxPop .6s cubic-bezier(.3,1.6,.5,1)}
 .fx-resbar{width:min(320px,80%);height:12px;border-radius:9px;background:var(--line);overflow:hidden;margin:4px auto 0}
