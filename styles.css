@@ -1225,3 +1225,5 @@ html[data-course] #app{--red:var(--fx-course);--coral:var(--fx-course);--link:va
 .fx-fc-btns{gap:10px;justify-content:center}
 @media (max-width:860px){.fx-side-b span{display:none}}
 @media (prefers-reduced-motion:reduce){.topt.right,.dr-o.right,.topt.wrong,.dr-o.wrong,.tcard.tin,.tcard.fx-shake,.ochip.in,.fx-streak.go span,.nu-dd,.tres .big,.fx-resbar i,.dr-prog i{animation:none!important}.fx-card .fx-in,.fx-fprog i{transition:none}}
+/* menu konta: ukryte, dopóki się go nie otworzy (display:flex nadpisywał atrybut hidden) */
+.nu-dd[hidden]{display:none!important}

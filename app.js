@@ -3762,6 +3762,7 @@ renderNav = function () {
   dd.addEventListener('click', function (e) { if (e.target.closest('a,#logoutBtn')) dd.hidden = true; });
   fxStreakChip();
 };
+document.addEventListener('keydown', function (e) { if (e.key !== 'Escape') return; var dd = document.querySelector('.nu-dd'); if (dd && !dd.hidden) { dd.hidden = true; var b = document.querySelector('.nu-btn'); if (b) { b.setAttribute('aria-expanded', 'false'); b.focus(); } } });
 document.addEventListener('click', function (e) { var dd = document.querySelector('.nu-dd'); if (dd && !dd.hidden && !e.target.closest('.nu-dd,.nu-btn')) { dd.hidden = true; var b = document.querySelector('.nu-btn'); if (b) b.setAttribute('aria-expanded', 'false'); } });
 
 /* tryb skupienia w lekcji + kolory kursów */
