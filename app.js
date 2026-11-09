@@ -507,22 +507,39 @@ function renderMobileNav() {
   mActive();
   document.getElementById('mMore').onclick = function () {
     var adm = USER && USER.role === 'admin';
-    var w = mbox('<div class="msheet">' + (USER ? '<div class="mrow muted small">' + esc(USER.name || '') + ' · ' + esc(USER.email || '') + '</div>' : '') +
-      '<button type="button" class="mitemrow" id="msLang">🌐 ' + L('Мови', 'Języki', 'Languages') + '<b>🎬 ' + FLAG[TARGET] + ' · 💬 ' + FLAG[LANG] + '</b></button>' +
-      '<button type="button" class="mitemrow" id="msTheme">' + (THEME === 'dark' ? '☀ ' + L('Світла тема', 'Jasny motyw', 'Light theme') : '☾ ' + L('Темна тема', 'Ciemny motyw', 'Dark theme')) + '</button>' +
-      (USER ? '<a class="mitemrow" href="#/chats">💬 ' + L('Чати з героями', 'Czaty z bohaterami', 'Chats with characters') + '</a>' : '') +
-      '<button type="button" class="mitemrow" id="msWt">👆 ' + L('Переклад слова дотиком', 'Tłumaczenie słowa dotykiem', 'Tap-to-translate') + '<b>' + (lsGet('ml_wt_off', false) ? L('вимк.', 'wył.', 'off') : L('увімк.', 'wł.', 'on')) + '</b></button>' +
-      '<a class="mitemrow" href="#/guide">📘 ' + L('Посібник з граматики', 'Poradnik gramatyczny', 'Grammar guide') + '</a>' +
-      (USER ? '<a class="mitemrow" href="#/words">📖 ' + L('Мій словник', 'Mój słownik', 'My words') + '</a>' : '') +
-      '<a class="mitemrow" href="#/pricing">💳 ' + L('Тарифи', 'Cennik', 'Pricing') + '</a>' +
-      (adm ? '<button type="button" class="mitemrow" id="msAdm">⚙ ' + L('Режим адміна', 'Tryb admina', 'Admin mode') + '<b>' + (ADMIN_MODE ? L('увімк.', 'wł.', 'on') : L('вимк.', 'wył.', 'off')) + '</b></button>' + (ADMIN_MODE ? '<a class="mitemrow" href="#/admin">🛠 ' + L('Адмін-панель', 'Panel admina', 'Admin panel') + '</a>' : '') : '') +
-      (USER ? '<button type="button" class="mitemrow" id="msOut">↩ ' + L('Вийти', 'Wyloguj', 'Log out') + '</button>' : '<a class="mitemrow" href="#/register">✦ ' + L('Реєстрація', 'Rejestracja', 'Sign up') + '</a>') + '</div>');
+    var ic = function (bg, fg, d) { return '<span class="ms-ic" style="background:' + bg + ';color:' + fg + '"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">' + d + '</svg></span>'; };
+    var P = {chat:'<path d="M21 12a8 8 0 0 1-11.6 7.1L4 20l1-4.6A8 8 0 1 1 21 12z"/>', book:'<path d="M4 5a2 2 0 0 1 2-2h13v16H6a2 2 0 0 0-2 2z"/><path d="M4 19V5"/>', guide:'<circle cx="12" cy="12" r="9"/><path d="M12 7v10M7 12h10"/>',
+      globe:'<circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.5 2.6 3.8 5.6 3.8 9s-1.3 6.4-3.8 9c-2.5-2.6-3.8-5.6-3.8-9S9.5 5.6 12 3z"/>', sun:'<circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/>',
+      tap:'<path d="M4 5h7M7.5 5v2c0 4-2 7-4.5 8M5.5 9c1 2.5 3 4 6 5M13 19l4-9 4 9M14.3 16.5h5.4"/>', card:'<rect x="3" y="6" width="18" height="13" rx="2"/><path d="M3 10h18"/>', gear:'<circle cx="12" cy="12" r="3"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3M4.9 4.9 7 7M17 17l2.1 2.1M4.9 19.1 7 17M17 7l2.1-2.1"/>', tool:'<path d="M14.7 6.3a4 4 0 0 0-5.4 5.4L3 18l3 3 6.3-6.3a4 4 0 0 0 5.4-5.4l-2.6 2.6-2.4-.6-.6-2.4z"/>'};
+    var go = '<span class="ms-go" aria-hidden="true">›</span>';
+    var sw = function (id, on, label, icon) { return '<button type="button" class="ms-row" id="' + id + '" role="switch" aria-checked="' + on + '">' + icon + '<span class="ms-l">' + label + '</span><span class="ms-sw' + (on ? ' on' : '') + '"><i></i></span></button>'; };
+    var link = function (href, icon, label, extra) { return '<a class="ms-row" href="' + href + '">' + icon + '<span class="ms-l">' + label + '</span>' + (extra || '') + go + '</a>'; };
+    var st = fxStreak();
+    var head = USER
+      ? '<div class="ms-prof"><div class="ms-top"><span class="ms-ava">' + esc((USER.name || '?')[0].toUpperCase()) + '</span><span class="ms-who"><b>' + esc(USER.name || '') + '</b><small>' + esc(USER.email || '') + '</small></span><a class="ms-fire' + (st.today ? '' : ' off') + '" href="#/cabinet" title="' + esc(L('Днів поспіль', 'Dni z rzędu', 'Day streak')) + '">🔥 ' + st.n + '</a></div><div id="contCard"></div></div>'
+      : '<div class="ms-prof"><b style="font-size:17px">' + L('Вчи мову за фільмами', 'Ucz się języka z filmów', 'Learn from films') + '</b><div class="ms-auth"><a class="btn btn-red" href="#/register">' + L('Реєстрація', 'Rejestracja', 'Sign up') + '</a><a class="btn ms-ghost" href="#/login">' + L('Увійти', 'Zaloguj się', 'Log in') + '</a></div></div>';
+    var w = mbox('<div class="msheet ms2"><div class="ms-grip" aria-hidden="true"></div>' + head +
+      (USER ? '<div class="ms-h">' + L('Навчання', 'Nauka', 'Learning') + '</div><div class="ms-grp">' +
+        link('#/chats', ic('#FFE9E1', '#C2391C', P.chat), L('Чати з героями', 'Czaty z bohaterami', 'Chats with characters')) +
+        link('#/words', ic('#F2ECFA', '#4B2A9C', P.book), L('Мій словник', 'Mój słownik', 'My words')) +
+        link('#/guide', ic('#FFF3E0', '#8A4E08', P.guide), L('Посібник з граматики', 'Poradnik gramatyczny', 'Grammar guide')) + '</div>'
+        : '<div class="ms-grp">' + link('#/guide', ic('#FFF3E0', '#8A4E08', P.guide), L('Посібник з граматики', 'Poradnik gramatyczny', 'Grammar guide')) + '</div>') +
+      '<div class="ms-h">' + L('Налаштування', 'Ustawienia', 'Settings') + '</div><div class="ms-grp">' +
+        '<button type="button" class="ms-row" id="msLang">' + ic('#E6F4EF', '#0E7A55', P.globe) + '<span class="ms-l">' + L('Мови', 'Języki', 'Languages') + '</span><span class="ms-v">' + FLAG[TARGET] + ' · ' + L('підказки', 'podpowiedzi', 'hints') + ' ' + FLAG[LANG] + '</span>' + go + '</button>' +
+        sw('msTheme', THEME !== 'dark', L('Світла тема', 'Jasny motyw', 'Light theme'), ic('#F2ECFA', '#4B2A9C', P.sun)) +
+        sw('msWt', !!lsGet('ml_wt_mode', false), L('Переклад слова дотиком', 'Tłumaczenie słów dotykiem', 'Tap to translate'), ic('#F2ECFA', '#4B2A9C', P.tap)) + '</div>' +
+      '<div class="ms-h">' + L('Акаунт', 'Konto', 'Account') + '</div><div class="ms-grp">' +
+        link('#/pricing', ic('#FFF3E0', '#8A4E08', P.card), L('Тарифи і ключі', 'Cennik i klucze', 'Pricing & keys')) +
+        (adm ? sw('msAdm', !!ADMIN_MODE, L('Режим адміна', 'Tryb admina', 'Admin mode'), ic('#EEE8F5', '#5C5470', P.gear)) + link('#/admin', ic('#EEE8F5', '#5C5470', P.tool), L('Адмін-панель', 'Panel admina', 'Admin panel'), '<span class="ms-tag">admin</span>') : '') + '</div>' +
+      (USER ? '<button type="button" class="ms-out" id="msOut">' + L('Вийти', 'Wyloguj', 'Log out') + '</button>' : '') + '</div>');
     w.classList.add('msheetw');
-    w.querySelectorAll('a').forEach(function (a) { a.addEventListener('click', function () { w.remove(); }); });
+    if (USER) try { fillContinue(); } catch (e) {}
+    w.addEventListener('click', function (e) { if (e.target.closest('a')) w.remove(); });
     w.querySelector('#msLang').onclick = function () { w.remove(); langModal(false); };
-    w.querySelector('#msTheme').onclick = function () { w.remove(); toggleTheme(); };
-    w.querySelector('#msWt').onclick = function () { lsSet('ml_wt_off', !lsGet('ml_wt_off', false)); w.remove(); location.reload(); };
-    var ma = w.querySelector('#msAdm'); if (ma) ma.onclick = function () { w.remove(); setAdminMode(!ADMIN_MODE); };
+    var flip = function (b) { var on = b.getAttribute('aria-checked') !== 'true'; b.setAttribute('aria-checked', on); b.querySelector('.ms-sw').classList.toggle('on', on); return on; };
+    w.querySelector('#msTheme').onclick = function () { flip(this); toggleTheme(); };
+    w.querySelector('#msWt').onclick = function () { var on = flip(this); if (window.wtSet) window.wtSet(on); else lsSet('ml_wt_mode', on); };
+    var ma = w.querySelector('#msAdm'); if (ma) ma.onclick = function () { flip(this); setAdminMode(!ADMIN_MODE); };
     var mo = w.querySelector('#msOut'); if (mo) mo.onclick = function () { w.remove(); API.signOut().then(function () { USER = null; location.hash = '#/'; renderNav(); route(); }); };
   };
 }
@@ -3220,6 +3237,7 @@ function wtShow(hit) {
     if (slot) { b.className = 'qtrb wtbtn'; slot.appendChild(b); } else pl.parentNode.insertBefore(b, pl); wtApply();
   }
   try { new MutationObserver(wtBtn).observe(document.getElementById('app'), {childList: true, subtree: true}); } catch (e) {}
+  window.wtSet = function (v) { WT_ON = !!v; lsSet('ml_wt_mode', WT_ON); wtApply(); if (!WT_ON) wtClose(); };
   wtApply();
   var SKIP = 'input,textarea,select,option,#wtPop,.lmodal .lbox input,[contenteditable],code,.keycode,nav.top,.mnav';
   var INTER = 'button,a,label,summary,[role=button],[data-go],[data-st],.topt,.tstep';
