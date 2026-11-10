@@ -188,6 +188,13 @@ function loadFont(name) {
   l.href = 'https://fonts.googleapis.com/css2?family=' + encodeURIComponent(name).replace(/%20/g, '+') + ':wght@400;600;700&display=swap';
   document.head.appendChild(l);
 }
+/* czcionki starszych szablonów 1 i 2 — ładowane tylko wtedy, gdy ktoś ich używa */
+function legacyFonts() {
+  if (document.querySelector('link[data-legacy-fonts]')) return;
+  var l = document.createElement('link'); l.rel = 'stylesheet'; l.setAttribute('data-legacy-fonts', '1');
+  l.href = 'https://fonts.googleapis.com/css2?family=Dela+Gothic+One&family=JetBrains+Mono:wght@400;600&family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,700;12..96,800&family=Figtree:wght@400;500;600;700&display=swap';
+  document.head.appendChild(l);
+}
 function applyCustomTheme(ct) {
   ct = ct || parseCustomTheme(SETTINGS.theme_custom);
   var el = document.getElementById('customTheme');
@@ -401,9 +408,9 @@ function SupabaseBackend(url, key) {
     getSettings: function () { return sb.from('site_settings').select('*').then(function (r) { var o = {}; for (var k in DEFAULT_SETTINGS) o[k] = DEFAULT_SETTINGS[k]; (r.data || []).forEach(function (x) { o[x.key] = x.value; }); return o; }); },
     saveSettings: function (obj) { var rows = Object.keys(obj).map(function (k) { return {key:k, value:obj[k]}; }); return sb.from('site_settings').upsert(rows).then(ok); },
     listCourses: function (all) {
-      var q = sb.from('courses').select('*, lessons(count)').order('created_at');
+      var q = sb.from('courses').select('*, lessons_count').order('created_at');
       if (!all) q = q.eq('published', true);
-      return q.then(ok).then(function (rows) { return rows.map(function (c) { c.lessons_count = c.lessons && c.lessons[0] ? c.lessons[0].count : 0; delete c.lessons; return c; }); });
+      return q.then(ok).then(function (rows) { return rows.map(function (c) { c.lessons_count = +c.lessons_count || 0; return c; }); });
     },
     getCourse: function (id) { return sb.from('courses').select('*').eq('id', id).maybeSingle().then(ok); },
     saveCourse: function (c) { var row = {slug:c.slug, title:c.title, title_pl:c.title_pl || null, description_pl:c.description_pl || null, kind:c.kind, level:c.level, price:c.price, poster:c.poster, published:!!c.published, description:c.description}; if (c.id) row.id = c.id; return sb.from('courses').upsert(row).select().single().then(ok); },
@@ -479,6 +486,14 @@ var API = (cfg.SUPABASE_URL && cfg.SUPABASE_ANON_KEY && window.supabase) ? Supab
   var ll = API.listLessons, lc = API.listCourses;
   API.listLessons = function (cid) { var p = ll(cid); var k = 'listLessons|' + JSON.stringify([cid]) + '|' + TARGET; p.then(function (r) { if (C[k]) C[k].done = r; }); return p; };
   API.listCourses = function (all) { var p = lc(all); var k = 'listCourses|' + JSON.stringify(all === undefined ? [] : [all]); p.then(function (r) { if (C[k]) C[k].done = r; }); return p; };
+  /* szybki start: lista kursów z poprzedniej wizyty od razu, świeża dociąga się w tle */
+  var lcNet = API.listCourses, lcSeeded = false;
+  API.listCourses = function (all) {
+    if (all || API.mode === 'demo') return lcNet(all);
+    var p = lcNet(false); p.then(function (rows) { lsSet('ml_boot_courses', {t:Date.now(), rows:rows}); }).catch(function () {});
+    if (!lcSeeded) { lcSeeded = true; var c = lsGet('ml_boot_courses', null); if (c && c.rows && c.rows.length && Date.now() - c.t < 7 * 864e5) return Promise.resolve(JSON.parse(JSON.stringify(c.rows))); }
+    return p;
+  };
   API.clearCache = function () { C = {}; window.CHK_CACHE = null; };
   API.prefetch = function () { Promise.all([API.listCourses(false), API.myEnrollments().catch(function () { return []; })]).then(function (r) { var mine = r[1] || []; r[0].forEach(function (c) { if (c.lessons_count && mine.indexOf(c.id) > -1) API.listLessons(c.id); }); }).catch(function () {}); };
 })();
@@ -544,6 +559,7 @@ function renderMobileNav() {
   };
 }
 function renderNav() {
+  lsSet('ml_boot_u', USER ? {id:USER.id, email:USER.email, name:USER.name, role:USER.role, gender:USER.gender || ''} : null);
   var links = '<a href="#/">' + tx({uk:'Головна', pl:'Strona główna', en:'Home'}) + '</a><a href="#/catalog">' + tx({uk:'Каталог', pl:'Katalog', en:'Catalogue'}) + '</a><a href="#/trial">' + tx({uk:'Пробний урок', pl:'Lekcja próbna', en:'Trial lesson'}) + '</a>' + (USER ? '' : '<a href="#/test">' + tx({uk:'Тест рівня', pl:'Test poziomu', en:'Level test'}) + '</a>') + '<a href="#/guide">' + tx({uk:'Посібник', pl:'Poradnik', en:'Guide'}) + '</a>' + (USER ? '<a href="#/chats">' + tx({uk:'Чати', pl:'Czaty', en:'Chats'}) + '</a><a href="#/words">' + tx({uk:'Словник', pl:'Słownik', en:'Words'}) + '</a>' : '') + '<a href="#/pricing">' + tx({uk:'Тарифи', pl:'Cennik', en:'Pricing'}) + '</a>';
   if (USER) links += '<a href="#/cabinet">' + tx({uk:'Кабінет', pl:'Konto', en:'Account'}) + '</a>';
   if (isAdm()) links += '<a href="#/admin" style="color:var(--nav-admin)">' + tx({uk:'Адмін', pl:'Admin', en:'Admin'}) + '</a>';
@@ -3032,6 +3048,12 @@ function wBindCards(root) {
   root.querySelectorAll('.spk[data-say]').forEach(function (s) { s.onclick = function (e) { e.stopPropagation(); say(s.dataset.say); }; });
 }
 
+/* dzienniki kursów (300 KB) ładują się po starcie strony, a nie razem z nią */
+var JOURNAL_FILES = ['hp:2', 'tvd:2', 'himym:2', 'friends:2', 'homealone:2', 'zootopia:2', 'cars:2', 'got:1'], JOURNALS_P = null;
+function loadJournals() {
+  if (!JOURNALS_P) JOURNALS_P = Promise.all(JOURNAL_FILES.map(function (f) { return new Promise(function (res) { var s = document.createElement('script'), a = f.split(':'); s.src = 'content/journal-' + a[0] + '.js?v=' + a[1]; s.async = true; s.onload = s.onerror = function () { res(); }; document.head.appendChild(s); }); }));
+  return JOURNALS_P;
+}
 /* ---- запис журналу ---- */
 function wJournalHand(slug, l, F) {
   var e = ((window.MOVILANG_JOURNALS || {})[slug] || {})[l.num]; if (!e) return null;
@@ -3065,7 +3087,7 @@ function wJournalEntry(W, l, p, F, slug) {
 /* ---- сторінка «Мій світ» ---- */
 function viewWorld(cid, tab) {
   tab = tab || 'me';
-  return Promise.all([API.getCourse(cid), API.listLessons(cid), API.myProgress()]).then(function (r) {
+  return Promise.all([API.getCourse(cid), API.listLessons(cid), API.myProgress(), loadJournals()]).then(function (r) {
     var c = r[0], ls = r[1] || [], done = {}, W = worldOf(c);
     if (!c || !W) { $app.innerHTML = '<div class="page"><div class="empty">' + tx({uk:'Для цього курсу ігрового світу ще немає.', pl:'Ten kurs nie ma jeszcze świata gry.', en:'This course has no game world yet.'}) + '</div></div>'; return; }
     setAmbient(ambTheme(c)); if (typeof fxCourse === 'function') fxCourse(c);
@@ -3516,16 +3538,38 @@ window.addEventListener('hashchange', route);
 $app.innerHTML = t('<div class="page"><p class="muted">Завантаження…</p></div>');
 applyStatic();
 if (/[?&]preview=1/.test(location.search)) document.documentElement.classList.add('is-preview');
-Promise.all([API.getUser().catch(function () { return null; }), API.getSettings().catch(function () { return DEFAULT_SETTINGS; })]).then(function (r) {
-  USER = r[0]; SETTINGS = r[1]; applyCustomTheme();
-  var h = location.hash;
-  if (/access_token=|type=signup|#\/confirmed/.test(h)) { history.replaceState(null, '', location.pathname + (USER ? '#/cabinet' : '#/login')); toast(USER ? t('Пошту підтверджено! Ласкаво просимо до MoviLang.') : t('Пошту підтверджено! Тепер увійди.')); }
-  else if (/error_description=/.test(h)) { history.replaceState(null, '', location.pathname + '#/login'); toast(t('Посилання недійсне або застаріле. Увійди або зареєструйся ще раз.'), 'err'); }
-  renderNav(); route();
-  if (!LANG_SET) langModal(true);
-  setTimeout(function () { API.prefetch(); }, 300);
-  setTimeout(processPendingWritings, 4000); setTimeout(processReplies, 9000); setInterval(processReplies, 4 * 60 * 1000); setTimeout(loadTtsSet, 1500); setInterval(processPendingWritings, 5 * 60 * 1000);
-});
+/* Szybki start: jeśli znamy ustawienia i użytkownika z poprzedniej wizyty, rysujemy stronę od razu,
+   a prawdziwe dane dociągamy w tle i odświeżamy widok tylko wtedy, gdy coś się zmieniło. */
+(function () {
+  var special = /access_token=|type=signup|#\/confirmed|error_description=/.test(location.hash);
+  var cs = lsGet('ml_boot_s', null), cu = lsGet('ml_boot_u', undefined), fast = !special && cs && cu !== undefined, started = false;
+  var uKey = function (u) { return u ? [u.id, u.role, u.name, u.gender].join('|') : ''; };
+  function background() {
+    if (!LANG_SET) langModal(true);
+    setTimeout(function () { API.prefetch(); }, 300);
+    setTimeout(processPendingWritings, 4000); setTimeout(processReplies, 9000); setInterval(processReplies, 4 * 60 * 1000); setTimeout(loadTtsSet, 1500); setInterval(processPendingWritings, 5 * 60 * 1000);
+    var idle = window.requestIdleCallback || function (f) { return setTimeout(f, 1800); }; idle(function () { loadJournals(); });
+  }
+  /* mikrozadanie: reszta app.js (szablon 3, FX) musi się najpierw wykonać i podmienić widoki */
+  if (fast) { USER = cu; SETTINGS = Object.assign({}, DEFAULT_SETTINGS, cs); Promise.resolve().then(function () { applyCustomTheme(); renderNav(); route(); started = true; }); }
+  Promise.all([API.getUser().catch(function () { return fast ? cu : null; }), API.getSettings().catch(function () { return fast ? SETTINGS : DEFAULT_SETTINGS; })]).then(function (r) {
+    var uChanged = uKey(r[0]) !== uKey(USER), sChanged = JSON.stringify(r[1]) !== JSON.stringify(SETTINGS);
+    USER = r[0]; SETTINGS = r[1]; lsSet('ml_boot_s', SETTINGS);
+    if (!started) {
+      applyCustomTheme();
+      var h = location.hash;
+      if (/access_token=|type=signup|#\/confirmed/.test(h)) { history.replaceState(null, '', location.pathname + (USER ? '#/cabinet' : '#/login')); toast(USER ? t('Пошту підтверджено! Ласкаво просимо до MoviLang.') : t('Пошту підтверджено! Тепер увійди.')); }
+      else if (/error_description=/.test(h)) { history.replaceState(null, '', location.pathname + '#/login'); toast(t('Посилання недійсне або застаріле. Увійди або зареєструйся ще раз.'), 'err'); }
+      renderNav(); route();
+    } else if (uChanged || sChanged) {
+      if (sChanged) applyCustomTheme();
+      renderNav();
+      var busy = /^#\/(lesson|trial|admin\/edit)/.test(location.hash) || document.querySelector('.lbox'); /* nie przerywamy lekcji ani otwartego okna */
+      if (uChanged || !busy) { ROUTE_LAST = null; route(); }
+    }
+    background();
+  });
+})();
 
 /* =====================  Шаблон 3  ===================== */
 /* MoviLang · шаблон 3 (сливовий + кораловий, анімації).
@@ -3534,13 +3578,13 @@ Promise.all([API.getUser().catch(function () { return null; }), API.getSettings(
 (function () {
   var _ui0 = String(lsGet('ml_skin_admin', '3')); var SKIN3 = _ui0 === '3'; if (!SKIN3) UI = _ui0 === '1' ? '1' : '2'; // шаблон 3 — за замовчуванням для всіх
   function applySkin() { if (SKIN3) document.documentElement.setAttribute('data-skin', '3'); else document.documentElement.removeAttribute('data-skin'); }
-  applySkin();
+  applySkin(); if (!SKIN3) legacyFonts();
   window.isSkin3 = function () { return SKIN3; };
 
   /* перемикач 1 · 2 · 3 */
   setUI = function (v) {
     v = String(v); SKIN3 = v === '3'; UI = v === '1' ? '1' : '2';
-    lsSet('ml_skin_admin', SKIN3 ? '3' : UI); lsSet('ml_ui', UI); document.documentElement.setAttribute('data-ui', UI); applySkin();
+    lsSet('ml_skin_admin', SKIN3 ? '3' : UI); lsSet('ml_ui', UI); document.documentElement.setAttribute('data-ui', UI); applySkin(); if (!SKIN3) legacyFonts();
     if (UI === '2' && THEME !== 'light') { try { if (!localStorage.getItem('ml_theme')) { THEME = 'light'; applyTheme(); } } catch (e) {} }
     renderNav(); ROUTE_LAST = null; route();
     toast(SKIN3 ? L3('Шаблон 3 · новий дизайн', 'Szablon 3 · nowy wygląd', 'Template 3 · new design') : UI === '2' ? L3('Профіль 2 · новий вигляд', 'Profil 2 · nowy wygląd', 'Profile 2 · new look') : L3('Профіль 1 · класичний вигляд', 'Profil 1 · klasyczny wygląd', 'Profile 1 · classic look'), 'info');
@@ -3879,5 +3923,134 @@ function fxFlashcards() {
 
 /* PWA */
 if ('serviceWorker' in navigator && location.protocol === 'https:') window.addEventListener('load', function () { navigator.serviceWorker.register('/sw.js').catch(function () {}); });
+
+/* =====================  UX 2026-11-11: pasek ładowania, pojawianie się kart, tilt, paleta Ctrl+K, wygodna lekcja  ===================== */
+(function () {
+  var root = document.documentElement, fine = window.matchMedia && matchMedia('(hover:hover) and (pointer:fine)').matches;
+
+  /* pasek ładowania: pokazuje się dopiero, gdy strona wczytuje się dłużej niż 140 ms */
+  var bar = document.createElement('div'); bar.id = 'uxBar'; bar.setAttribute('aria-hidden', 'true'); document.body.appendChild(bar);
+  var barT = null, barMax = null, barOn = false;
+  function barDone() { clearTimeout(barT); clearTimeout(barMax); if (!barOn) return; barOn = false; bar.className = 'end'; bar.style.width = '100%'; setTimeout(function () { if (!barOn) { bar.className = ''; bar.style.width = '0'; } }, 480); }
+  window.addEventListener('hashchange', function () {
+    clearTimeout(barT); clearTimeout(barMax);
+    barT = setTimeout(function () { barOn = true; bar.className = ''; bar.style.width = '0'; void bar.offsetWidth; bar.className = 'on'; bar.style.width = '78%'; }, 140);
+    barMax = setTimeout(barDone, 9000);
+  });
+
+  /* pojawianie się kart (katalog, lista lekcji, cennik) */
+  var io = 'IntersectionObserver' in window ? new IntersectionObserver(function (es) { es.forEach(function (x) { if (x.isIntersecting) { show(x.target, 0); io.unobserve(x.target); } }); }, {rootMargin:'0px 0px -6% 0px'}) : null;
+  function show(el, d) { el.style.setProperty('--d', d + 'ms'); el.classList.add('ux-on'); setTimeout(function () { el.classList.remove('ux-rv', 'ux-on'); el.style.removeProperty('--d'); }, 700 + d); }
+  function reveal() {
+    if (root.classList.contains('fx-focus')) return;
+    var els = $app.querySelectorAll('.film:not([data-ux]),.lessons li:not([data-ux]),.v2-plan:not([data-ux]),.plan:not([data-ux]),.ttype:not([data-ux])'), n = 0, vh = window.innerHeight;
+    Array.prototype.forEach.call(els, function (el) {
+      el.setAttribute('data-ux', '1'); el.classList.add('ux-rv');
+      if (!io || el.getBoundingClientRect().top < vh) { var d = Math.min(n++, 9) * 45; setTimeout(function () { show(el, d); }, 20); } else io.observe(el);
+    });
+  }
+
+  /* lekcja na telefonie: po odpowiedzi komentarz sam wjeżdża w pole widzenia */
+  var fbSeen = '';
+  function feedback() {
+    var f = document.getElementById('tfb'), txt = f ? f.textContent.trim() : '';
+    if (txt && txt !== fbSeen && window.innerWidth <= 760 && f.scrollIntoView) { try { f.scrollIntoView({block:'nearest', behavior:'smooth'}); } catch (e) {} }
+    fbSeen = txt;
+  }
+  var moT = null;
+  new MutationObserver(function () {
+    if ($app.classList.contains('pg-in')) barDone();
+    clearTimeout(moT); moT = setTimeout(function () { reveal(); feedback(); }, 40);
+  }).observe($app, {childList:true, subtree:true, attributes:true, attributeFilter:['class']});
+
+  /* plakaty reagują na kursor (tylko komputer) */
+  if (fine) {
+    var tilted = null;
+    document.addEventListener('pointermove', function (e) {
+      var c = e.target.closest && e.target.closest('.film,.v3-c:not(.all)'), el = c ? (c.classList.contains('film') ? c.querySelector('.poster') : c) : null;
+      if (tilted && tilted !== el) { tilted.classList.remove('ux-tilt'); tilted = null; }
+      if (!el) return;
+      var r = el.getBoundingClientRect(), x = (e.clientX - r.left) / r.width, y = (e.clientY - r.top) / r.height;
+      el.style.setProperty('--ry', ((x - .5) * 10).toFixed(2) + 'deg'); el.style.setProperty('--rx', ((.5 - y) * 8).toFixed(2) + 'deg');
+      el.style.setProperty('--gx', (x * 100).toFixed(0) + '%'); el.style.setProperty('--gy', (y * 100).toFixed(0) + '%');
+      el.classList.add('ux-tilt'); tilted = el;
+    }, {passive:true});
+    document.addEventListener('pointerleave', function () { if (tilted) { tilted.classList.remove('ux-tilt'); tilted = null; } });
+  }
+
+  /* najechanie lub dotknięcie linku kursu / lekcji zaczyna pobieranie wcześniej — strona otwiera się od razu */
+  var pfT = null, pfDone = {};
+  function prefetch(a) {
+    var m = (a.getAttribute('href') || '').split('/'), k = m[1] + m[2]; if (!m[2] || pfDone[k]) return; pfDone[k] = 1;
+    try { (m[1] === 'course' ? API.listLessons(m[2]) : API.getLesson(m[2])).catch(function () {}); } catch (e) {}
+  }
+  var pfSel = 'a[href^="#/course/"],a[href^="#/lesson/"]';
+  document.addEventListener('pointerover', function (e) { var a = e.target.closest && e.target.closest(pfSel); if (!a) return; clearTimeout(pfT); pfT = setTimeout(function () { prefetch(a); }, 90); }, {passive:true});
+  document.addEventListener('touchstart', function (e) { var a = e.target.closest && e.target.closest(pfSel); if (a) prefetch(a); }, {passive:true});
+
+  /* nagłówek na telefonie: znika przy przewijaniu w dół, wraca przy przewijaniu w górę */
+  var lastY = 0;
+  window.addEventListener('scroll', function () { var y = window.scrollY; if (Math.abs(y - lastY) < 10) return; root.classList.toggle('ux-nav-hide', y > lastY && y > 140); lastY = y; }, {passive:true});
+  window.addEventListener('hashchange', function () { root.classList.remove('ux-nav-hide'); lastY = 0; });
+
+  /* paleta poleceń: Ctrl+K lub „/” — szybkie przejście do kursu, strony albo ustawienia */
+  var I = {page:'<path d="M5 12h14M13 6l6 6-6 6"/>', course:'<rect x="3" y="4" width="18" height="16" rx="2"/><path d="M10 9v6l5-3z"/>', act:'<path d="M13 2 4 14h7l-1 8 9-12h-7z"/>'};
+  function ico(k) { return '<span class="ux-pi"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">' + I[k] + '</svg></span>'; }
+  function palette() {
+    if (document.getElementById('uxPal')) return;
+    var pages = [['#/', L3('Головна', 'Strona główna', 'Home')], ['#/catalog', L3('Каталог курсів', 'Katalog kursów', 'Course catalogue')], ['#/trial', L3('Пробний урок', 'Lekcja próbna', 'Trial lesson')], ['#/test', L3('Тест рівня', 'Test poziomu', 'Level test')], ['#/guide', L3('Посібник з граматики', 'Poradnik gramatyczny', 'Grammar guide')], ['#/pricing', L3('Тарифи', 'Cennik', 'Pricing')]];
+    if (USER) pages = pages.concat([['#/cabinet', L3('Кабінет і прогрес', 'Konto i postęp', 'Account & progress')], ['#/words', L3('Мій словник', 'Mój słownik', 'My words')], ['#/review', L3('Повторення слів', 'Powtórka słów', 'Word review')], ['#/chats', L3('Чати з героями', 'Czaty z bohaterami', 'Chats with characters')], ['#/achievements', L3('Нагороди й сертифікати', 'Nagrody i certyfikaty', 'Awards & certificates')], ['#/top', L3('Рейтинг тижня', 'Ranking tygodnia', 'Weekly leaderboard')], ['#/support', L3('Допомога', 'Pomoc', 'Help')]]);
+    else pages = pages.concat([['#/login', L3('Увійти', 'Zaloguj się', 'Log in')], ['#/register', L3('Реєстрація', 'Rejestracja', 'Sign up')]]);
+    if (isAdm()) pages.push(['#/admin', L3('Адмін-панель', 'Panel admina', 'Admin panel')]);
+    var items = pages.map(function (p) { return {k:'page', t:p[1], go:p[0], g:L3('Сторінки', 'Strony', 'Pages')}; });
+    items.push({k:'act', t:THEME === 'dark' ? L3('Світла тема', 'Jasny motyw', 'Light theme') : L3('Темна тема', 'Ciemny motyw', 'Dark theme'), run:toggleTheme, g:L3('Дії', 'Akcje', 'Actions')});
+    items.push({k:'act', t:L3('Змінити мови', 'Zmień języki', 'Change languages'), run:function () { langModal(false); }, g:L3('Дії', 'Akcje', 'Actions')});
+    var w = document.createElement('div'); w.id = 'uxPal'; w.className = 'ux-palw';
+    w.innerHTML = '<div class="ux-pal" role="dialog" aria-modal="true" aria-label="' + esc(L3('Пошук', 'Szukaj', 'Search')) + '"><div class="ux-pal-in"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.500-3.500"/></svg><input type="text" id="uxPalQ" autocomplete="off" spellcheck="false" placeholder="' + esc(L3('Курс, сторінка або дія…', 'Kurs, strona albo akcja…', 'Course, page or action…')) + '"><kbd>Esc</kbd></div><div class="ux-pal-list" id="uxPalL" role="listbox"></div><div class="ux-pal-foot"><span><kbd>↑</kbd> <kbd>↓</kbd> ' + L3('вибір', 'wybór', 'select') + '</span><span><kbd>Enter</kbd> ' + L3('відкрити', 'otwórz', 'open') + '</span></div></div>';
+    document.body.appendChild(w);
+    var q = w.querySelector('#uxPalQ'), list = w.querySelector('#uxPalL'), sel = 0, shown = [];
+    function close() { w.remove(); }
+    function pick(it) { close(); if (it.run) it.run(); else location.hash = it.go; }
+    function draw() {
+      var s = q.value.trim().toLowerCase(), lastG = null, html = '';
+      shown = items.filter(function (it) { return !s || (it.t + ' ' + (it.x || '')).toLowerCase().indexOf(s) > -1; }).slice(0, 40);
+      if (sel >= shown.length) sel = 0;
+      shown.forEach(function (it, i) { if (it.g !== lastG) { html += '<div class="ux-pal-h">' + esc(it.g) + '</div>'; lastG = it.g; } html += '<button type="button" class="ux-pal-it' + (i === sel ? ' sel' : '') + '" data-i="' + i + '" role="option" aria-selected="' + (i === sel) + '">' + ico(it.k) + '<span>' + esc(it.t) + '</span>' + (it.x ? '<small>' + esc(it.x) + '</small>' : '') + '</button>'; });
+      list.innerHTML = html || '<div class="ux-pal-empty">' + L3('Нічого не знайдено', 'Nic nie znaleziono', 'Nothing found') + '</div>';
+      var cur = list.querySelector('.sel'); if (cur && cur.scrollIntoView) cur.scrollIntoView({block:'nearest'});
+    }
+    q.oninput = function () { sel = 0; draw(); };
+    q.onkeydown = function (e) {
+      if (e.key === 'ArrowDown') { e.preventDefault(); sel = Math.min(sel + 1, shown.length - 1); draw(); }
+      else if (e.key === 'ArrowUp') { e.preventDefault(); sel = Math.max(sel - 1, 0); draw(); }
+      else if (e.key === 'Enter') { e.preventDefault(); if (shown[sel]) pick(shown[sel]); }
+      else if (e.key === 'Escape') { e.preventDefault(); e.stopPropagation(); close(); }
+    };
+    list.onclick = function (e) { var b = e.target.closest('.ux-pal-it'); if (b) pick(shown[+b.dataset.i]); };
+    list.onmousemove = function (e) { var b = e.target.closest('.ux-pal-it'); if (b && +b.dataset.i !== sel) { sel = +b.dataset.i; Array.prototype.forEach.call(list.querySelectorAll('.ux-pal-it'), function (x, i) { x.classList.toggle('sel', +x.dataset.i === sel); }); } };
+    w.onclick = function (e) { if (e.target === w) close(); };
+    draw(); q.focus();
+    API.listCourses(false).then(function (cs) {
+      if (!document.getElementById('uxPal')) return;
+      var g = L3('Курси', 'Kursy', 'Courses');
+      items = cs.map(function (c) { return {k:'course', t:tr(c, 'title'), x:c.level || '', go:'#/course/' + c.id, g:g}; }).concat(items); sel = 0; draw();
+    }).catch(function () {});
+  }
+  document.addEventListener('keydown', function (e) {
+    var typing = /^(INPUT|TEXTAREA|SELECT)$/.test((e.target && e.target.tagName) || '') || (e.target && e.target.isContentEditable);
+    if ((e.key === 'k' || e.key === 'K') && (e.ctrlKey || e.metaKey)) { e.preventDefault(); palette(); }
+    else if (e.key === '/' && !typing && !e.ctrlKey && !e.metaKey && !root.classList.contains('fx-focus')) { e.preventDefault(); palette(); }
+  });
+  var _rnUx = renderNav;
+  renderNav = function () {
+    _rnUx();
+    var nu = document.getElementById('navuser'); if (!nu || document.getElementById('uxK')) return;
+    var b = document.createElement('button'); b.type = 'button'; b.id = 'uxK'; b.className = 'ux-kbtn';
+    b.title = L3('Пошук', 'Szukaj', 'Search') + ' (Ctrl+K)'; b.setAttribute('aria-label', L3('Пошук', 'Szukaj', 'Search'));
+    b.innerHTML = '<svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.500-3.500"/></svg>';
+    b.onclick = palette; nu.insertBefore(b, nu.firstChild);
+  };
+  window.uxPalette = palette;
+})();
 
 })();
