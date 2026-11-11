@@ -1126,3 +1126,102 @@ nav.top{transition:transform .38s cubic-bezier(.22,1,.36,1),opacity .3s ease,box
 nav.top.nav-hide{transform:translateY(calc(-100% - 12px));opacity:0;pointer-events:none}
 nav.top.scrolled:not(.nav-hide){box-shadow:0 8px 24px -14px rgba(0,0,0,.35)}
 @media (prefers-reduced-motion:reduce){nav.top{transition:none}}
+
+/* ===== FX 2026-11-07: animacje, tryb skupienia, menu, fiszki ===== */
+/* poprawna / błędna odpowiedź */
+@keyframes fxPop{0%{transform:scale(1)}40%{transform:scale(1.08)}100%{transform:scale(1)}}
+@keyframes fxShake{20%,60%{transform:translateX(-6px)}40%,80%{transform:translateX(6px)}}
+.topt.right,.dr-o.right,.mitem.right,.ochip-line.good,.v2-opt.right{animation:fxPop .45s cubic-bezier(.3,1.6,.5,1)}
+.topt.wrong,.dr-o.wrong,.v2-opt.wrong{animation:fxShake .4s}
+.tcard.fx-shake{animation:fxShake .4s}
+.fx-spark{position:fixed;z-index:9999;width:7px;height:7px;border-radius:2px;pointer-events:none;animation:fxFly .85s ease-out forwards}
+@keyframes fxFly{to{transform:translate(var(--dx),var(--dy)) rotate(280deg);opacity:0}}
+.fx-conf{position:fixed;top:-12px;z-index:9999;width:8px;height:12px;border-radius:2px;pointer-events:none;animation:fxFall 2.4s cubic-bezier(.25,.6,.4,1) forwards}
+@keyframes fxFall{to{transform:translate(var(--x),105vh) rotate(var(--r));opacity:.9}}
+/* pasek postępu ćwiczeń */
+.dr-prog i{transition:background-color .4s}
+.dr-prog i.ok,.dr-prog i.bad{animation:fxSeg .55s cubic-bezier(.22,1,.36,1)}
+@keyframes fxSeg{from{transform:scaleX(.2);transform-origin:left}to{transform:scaleX(1)}}
+.dr-prog i.ok{background:linear-gradient(90deg,var(--ok),color-mix(in srgb,var(--ok) 60%,#fff))}
+/* przejście między zadaniami: wjazd z prawej */
+.tcard.tin{animation:fxTaskIn .38s cubic-bezier(.22,1,.36,1) both}
+@keyframes fxTaskIn{from{opacity:0;transform:translateX(26px)}to{opacity:1;transform:none}}
+/* kafelki */
+.ochip{transition:transform .22s cubic-bezier(.3,1.5,.5,1),opacity .2s}
+.ochip:active{transform:scale(.9)}
+.ochip.in{animation:fxTile .3s cubic-bezier(.3,1.5,.5,1)}
+@keyframes fxTile{from{transform:translateY(14px) scale(.85);opacity:0}}
+.ochip:disabled:not(.in){opacity:.35;transform:scale(.94)}
+/* mikrofon */
+#micBtn{position:relative}
+#micBtn.fx-rec::before,#micBtn.fx-rec::after{content:"";position:absolute;inset:-6px;border-radius:inherit;border:2px solid var(--red);animation:fxRing 1.4s infinite ease-out;pointer-events:none}
+#micBtn.fx-rec::after{animation-delay:.7s}
+@keyframes fxRing{from{transform:scale(.96);opacity:.9}to{transform:scale(1.25);opacity:0}}
+/* szkielet ładowania */
+.fx-skel{display:grid;gap:14px;padding-top:12px}
+.fx-skel i{display:block;height:14px;border-radius:8px;background:linear-gradient(90deg,var(--line) 25%,color-mix(in srgb,var(--line) 40%,transparent) 50%,var(--line) 75%);background-size:200% 100%;animation:fxSh 1.2s infinite linear}
+.fx-skel .sk-h{height:34px;width:55%}.fx-skel .sk-s{width:70%}
+.fx-skel .sk-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:14px;margin-top:10px}.fx-skel .sk-grid i{height:160px;border-radius:18px}
+@keyframes fxSh{to{background-position:-200% 0}}
+/* menu w jednej linii */
+nav.top .wrap{flex-wrap:nowrap}
+#navuser.nu-fx{display:flex;flex-wrap:nowrap;align-items:center;gap:8px;position:relative}
+.fx-streak{display:inline-flex;align-items:center;gap:4px;padding:6px 12px;border-radius:999px;border:1px solid var(--line);text-decoration:none;color:var(--fg);font-weight:700}
+.fx-streak.off span{filter:grayscale(1);opacity:.6}
+.fx-streak.go span{animation:fxFlame .8s ease-out}.fx-streak.go b{animation:fxPop .5s .2s}
+@keyframes fxFlame{0%{transform:scale(1)}30%{transform:scale(1.6) rotate(-10deg)}60%{transform:scale(.9) rotate(6deg)}100%{transform:scale(1)}}
+.nu-btn{display:inline-flex;align-items:center;gap:8px;background:transparent;border:1px solid var(--line);border-radius:999px;padding:4px 12px 4px 4px;color:var(--fg);font:inherit;cursor:pointer}
+.nu-btn .muted{max-width:120px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.nu-car{font-size:11px;opacity:.7;transition:transform .2s}.nu-btn[aria-expanded="true"] .nu-car{transform:rotate(180deg)}
+.nu-dd{position:absolute;right:0;top:calc(100% + 8px);z-index:30;min-width:240px;display:flex;flex-direction:column;align-items:stretch;gap:8px;padding:12px;border-radius:16px;background:var(--card-bg,var(--bg2));border:1px solid var(--line);box-shadow:0 18px 40px -16px rgba(0,0,0,.45);animation:fxDd .22s cubic-bezier(.22,1,.36,1)}
+.nu-dd>*{width:100%;justify-content:center}.nu-dd .row{justify-content:space-between}
+.nu-dd .nu-link{padding:8px 10px;border-radius:10px;text-decoration:none;color:var(--fg);font-weight:600}.nu-dd .nu-link:hover{background:var(--panel)}
+@keyframes fxDd{from{opacity:0;transform:translateY(-6px) scale(.98)}}
+/* tryb skupienia w lekcji */
+html.fx-focus nav.top:not(.nav-peek){transform:translateY(calc(-100% - 12px));opacity:0;pointer-events:none}
+html.fx-focus .app-main{padding-top:8px}
+html.fx-focus .sec-head{margin-bottom:16px;gap:6px}
+html.fx-focus .sec-head>a,html.fx-focus .sec-head .lead{display:none}
+html.fx-focus .sec-head h2{font-size:clamp(20px,2.4vw,26px)}
+.fx-fbar{position:sticky;top:env(safe-area-inset-top,0px);z-index:15;display:flex;align-items:center;gap:12px;padding:10px 0;margin-bottom:8px;background:color-mix(in srgb,var(--page-bg,var(--bg)) 90%,transparent);backdrop-filter:blur(10px)}
+.fx-x{display:grid;place-items:center;width:38px;height:38px;border-radius:50%;border:1px solid var(--line);text-decoration:none;color:var(--fg);font-size:16px;flex:none}
+.fx-fprog{flex:1;height:10px;border-radius:9px;background:var(--line);overflow:hidden}
+.fx-fprog i{display:block;height:100%;width:0;border-radius:9px;background:linear-gradient(90deg,var(--red),#FFB03C);transition:width .6s cubic-bezier(.22,1,.36,1)}
+.fx-side-b{flex:none;border:1px solid var(--line);background:transparent;color:var(--fg);border-radius:999px;padding:8px 14px;font:600 14px var(--f-body,inherit);cursor:pointer}
+html.fx-focus:not(.fx-side) .trial{grid-template-columns:minmax(0,1fr)}
+html.fx-focus:not(.fx-side) .tside{display:none}
+html.fx-focus .trial>.tcard{max-width:860px;width:100%;margin:0 auto}
+html.fx-side .tside{animation:fxTaskIn .3s cubic-bezier(.22,1,.36,1)}
+/* kwestia jak napisy w filmie + większe odpowiedzi */
+.dr-q{font-size:19px;line-height:1.45;font-weight:500}
+.dr-tr{font-size:14px;opacity:.75}
+.dr-o{min-height:46px;padding:10px 18px;font-size:16px;transition:transform .15s,border-color .15s}
+.dr-o:not(:disabled):hover{transform:translateY(-2px);border-color:var(--red)}
+.topt:not(:disabled):hover{transform:translateY(-2px)}
+.topt{transition:transform .15s,border-color .15s;position:relative}
+.fx-say{margin-left:8px;border:0;background:transparent;cursor:pointer;font-size:16px;opacity:.6;vertical-align:middle;padding:2px 4px}.fx-say:hover{opacity:1}
+@media (hover:hover){[data-fxk]{position:relative}[data-fxk]::after{content:attr(data-fxk);position:absolute;top:4px;right:6px;font:600 10px var(--f-body,inherit);opacity:.45}}
+/* kolor kursu */
+html[data-course] #app{--red:var(--fx-course);--link:var(--fx-course);--eyebrow-dot:var(--fx-course)}
+/* ekran wyniku */
+.tres .big{animation:fxPop .6s cubic-bezier(.3,1.6,.5,1)}
+.fx-resbar{width:min(320px,80%);height:12px;border-radius:9px;background:var(--line);overflow:hidden;margin:4px auto 0}
+.fx-resbar i{display:block;height:100%;width:var(--p);border-radius:9px;background:linear-gradient(90deg,var(--red),#FFB03C);animation:fxBar 1s cubic-bezier(.22,1,.36,1)}
+@keyframes fxBar{from{width:0}}
+.fx-words{display:grid;gap:10px;margin-top:18px;text-align:left}
+.fx-wl{display:flex;flex-wrap:wrap;gap:6px}
+.fx-w{padding:6px 10px;border-radius:10px;background:var(--panel);border:1px solid var(--line);font-size:14px}.fx-w small{opacity:.7}
+.fx-words .btn{justify-self:start}
+/* fiszki */
+.fx-fcbtn{margin:6px 0 12px}
+.fx-fc{display:grid;gap:14px;justify-items:center;text-align:center;min-width:min(380px,80vw)}
+.fx-fc-top{width:100%;text-align:right}
+.fx-card{width:min(340px,78vw);height:200px;perspective:900px;border:0;background:none;padding:0;cursor:pointer;color:inherit}
+.fx-card .fx-in{position:relative;display:block;width:100%;height:100%;transition:transform .6s cubic-bezier(.22,1,.36,1);transform-style:preserve-3d}
+.fx-card.on .fx-in{transform:rotateY(180deg)}
+.fx-card .fx-f,.fx-card .fx-b{position:absolute;inset:0;display:flex;flex-direction:column;gap:8px;align-items:center;justify-content:center;border-radius:18px;backface-visibility:hidden;border:1px solid var(--line);background:var(--panel);padding:16px}
+.fx-card b{font-size:26px}.fx-card small{opacity:.6}
+.fx-card .fx-b{transform:rotateY(180deg);background:var(--red);color:var(--btnfg,#fff);border-color:var(--red)}
+.fx-fc-btns{gap:10px;justify-content:center}
+@media (max-width:860px){.fx-side-b span{display:none}}
+@media (prefers-reduced-motion:reduce){.topt.right,.dr-o.right,.topt.wrong,.dr-o.wrong,.tcard.tin,.tcard.fx-shake,.ochip.in,.fx-streak.go span,.nu-dd,.tres .big,.fx-resbar i,.dr-prog i{animation:none!important}.fx-card .fx-in,.fx-fprog i{transition:none}}

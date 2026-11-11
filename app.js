@@ -714,7 +714,7 @@ function viewCabinet() {
 function viewCourse(id) {
   return Promise.all([API.getCourse(id), API.listLessons(id), API.myEnrollments(), API.myProgress()]).then(function (r) {
     var c = r[0], ls = r[1], enrolled = r[2].indexOf(id) > -1 || isAdm() || isFreeCourse(c), done = {};
-    setAmbient(ambTheme(c));
+    setAmbient(ambTheme(c)); if (typeof fxCourse === 'function') fxCourse(c);
     if (!c) { $app.innerHTML = t('<div class="page"><div class="empty">Курс не знайдено. <a href="#/catalog">До каталогу</a></div></div>'); return; }
     r[3].forEach(function (p) { done[p.lesson_id] = p; });
     var types = {}; ls.forEach(function (l) { (l.tasks || []).forEach(function (t) { types[t.type] = 1; }); });
@@ -1518,6 +1518,7 @@ function runPlayer(container, lesson, onFinish, ctxLs) {
     var n = card.querySelector('#tnext'); n.hidden = false; n.textContent = cur < tasks.length - 1 ? t('Далі') : t('Показати результат');
     snaps[cur] = card.innerHTML; lpSave();
     renderSide(); n.onclick = next; n.focus();
+    if (typeof fxDone === 'function') fxDone(ok, card);
   }
   function answerMC(b) {
     var tk = tasks[cur], ok;
@@ -1534,6 +1535,7 @@ function runPlayer(container, lesson, onFinish, ctxLs) {
     if (typeof sessTrack === 'function') sessTrack(lesson.id, tasks.length, tasks.length, true);
     var sc = res.filter(function (x) { return x === true; }).length, pct = scored ? Math.round(sc / scored * 100) : 0; cur = tasks.length; renderSide();
     card.innerHTML = '<div class="tres"><span class="ttag">' + t('РЕЗУЛЬТАТ') + '</span><div class="big">' + sc + ' / ' + scored + '</div><p class="lead" style="text-align:center" id="tresText">' + pct + '%</p><div id="tresExtra" style="width:100%"></div><div class="row" style="justify-content:center" id="tresBtns"></div></div>';
+    setTimeout(function () { if (typeof fxFinish === 'function') fxFinish(card, sc, scored, pct, lesson); }, 0);
     onFinish(pct, finalText, card.querySelector('#tresText'), card.querySelector('#tresBtns'), function () { cur = 0; res = []; snaps = []; hints = {}; finalText = ''; maxReached = FREE ? tasks.length - 1 : 0; tStart = {}; durs = {}; render(); }, card.querySelector('#tresExtra'));
   }
   var LPK = 'ml_lp_' + lesson.id + '_' + TARGET;
@@ -1627,7 +1629,7 @@ function viewLesson(id) {
     return Promise.all([API.getCourse(l.course_id), API.listLessons(l.course_id), API.myEnrollments(), API.myProgress().catch(function () { return []; })]).then(function (r) {
       var prevDone = {}; (r[3] || []).forEach(function (p) { prevDone[p.lesson_id] = p; });
       var c = r[0], ls = r[1], enrolled = r[2].indexOf(l.course_id) > -1 || isAdm() || isFreeCourse(c);
-      setAmbient(ambTheme(c));
+      setAmbient(ambTheme(c)); if (typeof fxCourse === 'function') fxCourse(c);
       var isFirst = ls.length && ls[0].id === l.id && !(c && c.free_first === false), idx = ls.map(function (x) { return x.id; }).indexOf(l.id), nextL = ls[idx + 1];
       if (!lessonTasks(l)) { $app.innerHTML = '<div class="page"><div class="empty">' + t('Цей урок ще недоступний обраною мовою. Скоро!') + ' <a href="#/course/' + esc(l.course_id) + '">' + t('До марафону') + '</a></div></div>'; return; }
       if (!enrolled && !isFirst) { $app.innerHTML = t('<div class="page"><div class="empty">Цей урок відкривається після активації ключа. <a href="#/course/') + esc(l.course_id) + t('">До марафону</a></div></div>'); return; }
@@ -3049,7 +3051,7 @@ function viewWorld(cid, tab) {
   return Promise.all([API.getCourse(cid), API.listLessons(cid), API.myProgress()]).then(function (r) {
     var c = r[0], ls = r[1] || [], done = {}, W = worldOf(c);
     if (!c || !W) { $app.innerHTML = '<div class="page"><div class="empty">' + tx({uk:'Для цього курсу ігрового світу ще немає.', pl:'Ten kurs nie ma jeszcze świata gry.', en:'This course has no game world yet.'}) + '</div></div>'; return; }
-    setAmbient(ambTheme(c));
+    setAmbient(ambTheme(c)); if (typeof fxCourse === 'function') fxCourse(c);
     (r[2] || []).forEach(function (p) { done[p.lesson_id] = p; });
     return wFaction(c).then(function (f) {
       var F = f && W.factions[f], pts = wPoints(ls, done);
@@ -3486,6 +3488,8 @@ function route() {
     case 'world': p = viewWorld(parts[1], parts[2]); break;
     default: $app.innerHTML = t('<div class="page"><div class="empty">Сторінку не знайдено. <a href="#/">На головну</a></div></div>'); p = Promise.resolve();
   }
+  if (nav) { var fxFirst = $app.firstElementChild, fxDoneP = false; Promise.resolve(p).then(function () { fxDoneP = true; }, function () { fxDoneP = true; });
+    setTimeout(function () { if (!fxDoneP && $app.firstElementChild === fxFirst) { $app.innerHTML = '<div class="page fx-skel" aria-busy="true"><i class="sk-h"></i><i></i><i class="sk-s"></i><div class="sk-grid"><i></i><i></i><i></i></div></div>'; $app.classList.remove('pg-leave'); } }, 160); }
   Promise.resolve(p).catch(function (e) { $app.innerHTML = t('<div class="page"><div class="empty">Помилка: ') + esc(e.message) + '</div></div>'; })
     .then(function () { if (!nav) return; $app.classList.remove('pg-leave'); void $app.offsetWidth; $app.classList.add('pg-in'); });
 }
@@ -3643,5 +3647,214 @@ Promise.all([API.getUser().catch(function () { return null; }), API.getSettings(
   var _viewHomeV3prev = viewHome;
   viewHome = function () { return SKIN3 ? viewHomeV3() : _viewHomeV3prev(); };
 })();
+
+/* =====================  FX: animacje, tryb skupienia, skróty, fiszki, PWA (2026-11-07)  ===================== */
+var FX_RM = window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches;
+var FX_AC = null;
+function fxSound(kind) {
+  if (lsGet('ml_snd_off', false)) return;
+  try {
+    FX_AC = FX_AC || new (window.AudioContext || window.webkitAudioContext)();
+    var notes = kind === 'ok' ? [660, 880] : kind === 'win' ? [523, 659, 784, 1047] : [220, 180];
+    notes.forEach(function (f, i) {
+      var o = FX_AC.createOscillator(), g = FX_AC.createGain(), t0 = FX_AC.currentTime + i * 0.09;
+      o.type = kind === 'bad' ? 'triangle' : 'sine'; o.frequency.value = f;
+      g.gain.setValueAtTime(0.0001, t0); g.gain.exponentialRampToValueAtTime(kind === 'bad' ? 0.05 : 0.07, t0 + 0.02); g.gain.exponentialRampToValueAtTime(0.0001, t0 + 0.22);
+      o.connect(g); g.connect(FX_AC.destination); o.start(t0); o.stop(t0 + 0.25);
+    });
+  } catch (e) {}
+}
+function fxSparks(el, n, spread) {
+  if (FX_RM || !el) return; var r = el.getBoundingClientRect(); if (!r.width) return;
+  var cols = ['#FF5B40', '#FFB03C', '#3CC796', '#8F6BFF', '#4FC3F7'];
+  for (var i = 0; i < (n || 14); i++) {
+    var s = document.createElement('i'); s.className = 'fx-spark';
+    s.style.left = (r.left + r.width / 2) + 'px'; s.style.top = (r.top + r.height / 2) + 'px';
+    var a = Math.random() * Math.PI * 2, d = (spread || 50) * (0.5 + Math.random());
+    s.style.setProperty('--dx', Math.cos(a) * d + 'px'); s.style.setProperty('--dy', (Math.sin(a) * d - (spread || 50) * 0.3) + 'px');
+    s.style.background = cols[i % cols.length]; document.body.appendChild(s);
+    setTimeout(function (x) { x.remove(); }.bind(null, s), 900);
+  }
+}
+function fxConfetti() {
+  if (FX_RM) return; var cols = ['#FF5B40', '#FFB03C', '#3CC796', '#8F6BFF', '#4FC3F7', '#FFFFFF'];
+  for (var i = 0; i < 90; i++) {
+    var s = document.createElement('i'); s.className = 'fx-conf';
+    s.style.left = (Math.random() * 100) + 'vw'; s.style.background = cols[i % cols.length];
+    s.style.setProperty('--x', (Math.random() * 160 - 80) + 'px'); s.style.setProperty('--r', (Math.random() * 720 - 360) + 'deg');
+    s.style.animationDelay = (Math.random() * 0.5) + 's'; s.style.animationDuration = (1.8 + Math.random() * 1.4) + 's';
+    document.body.appendChild(s); setTimeout(function (x) { x.remove(); }.bind(null, s), 3800);
+  }
+}
+/* wywoływane z done() w odtwarzaczu lekcji */
+function fxDone(ok, card) {
+  fxSound(ok ? 'ok' : 'bad');
+  if (ok) { var t = card.querySelector('.topt.right,.dr-o.right,.ochip-line.good,.oline.good') || card.querySelector('#tfb'); fxSparks(t, 16, 60); }
+  else if (!FX_RM) { card.classList.remove('fx-shake'); void card.offsetWidth; card.classList.add('fx-shake'); setTimeout(function () { card.classList.remove('fx-shake'); }, 500); }
+}
+/* klik w odpowiedź w ćwiczeniach z kilkoma pytaniami (drill) też daje dźwięk i iskry */
+document.addEventListener('click', function (e) {
+  var b = e.target.closest && e.target.closest('.dr-o'); if (!b) return;
+  setTimeout(function () { if (b.classList.contains('right')) { fxSound('ok'); fxSparks(b, 10, 40); } else if (b.classList.contains('wrong')) fxSound('bad'); }, 20);
+}, true);
+
+/* animowany licznik + konfetti + nowe słowa na ekranie wyniku */
+function fxCount(el, to, suffix) {
+  if (!el) return; if (FX_RM) { el.textContent = to + (suffix || ''); return; }
+  var t0 = null, dur = 900; function st(ts) { if (!t0) t0 = ts; var k = Math.min(1, (ts - t0) / dur), e = 1 - Math.pow(1 - k, 3); el.textContent = Math.round(to * e) + (suffix || ''); if (k < 1) requestAnimationFrame(st); }
+  requestAnimationFrame(st);
+}
+function fxFinish(card, sc, scored, pct, lesson) {
+  var big = card.querySelector('.tres .big'); if (big) { big.innerHTML = '<span class="fx-n">0</span> / ' + scored; fxCount(big.querySelector('.fx-n'), sc); }
+  var bar = document.createElement('div'); bar.className = 'fx-resbar'; bar.innerHTML = '<i style="--p:' + pct + '%"></i>';
+  if (big) big.insertAdjacentElement('afterend', bar);
+  if (pct >= 70) { fxSound('win'); setTimeout(fxConfetti, 250); }
+  try {
+    var ws = wordsOf([lesson]).filter(function (w) { return w.m; }).slice(0, 12);
+    if (ws.length) {
+      var box = document.createElement('div'); box.className = 'fx-words';
+      box.innerHTML = '<div class="eyebrow">' + L3('Нові слова з уроку', 'Nowe słowa z lekcji', 'New words from this lesson') + '</div><div class="fx-wl">' + ws.map(function (w) { return '<span class="fx-w"><b>' + esc(w.w) + '</b> <small>' + esc(w.m) + '</small></span>'; }).join('') + '</div>' +
+        '<button type="button" class="btn btn-ghost btn-sm" id="fxAddW">🧠 ' + L3('Додати всі до повторення', 'Dodaj wszystkie do powtórek', 'Add all to review') + '</button>';
+      var ex = card.querySelector('#tresExtra'); (ex || card.querySelector('.tres')).appendChild(box);
+      box.querySelector('#fxAddW').onclick = function () { var b = this; ws.forEach(function (w) { srsSave({word:w.w, meaning:w.m, step:0, due:todayStr()}); }); b.disabled = true; b.textContent = '✓ ' + L3('Додано', 'Dodano', 'Added') + ' (' + ws.length + ')'; };
+    }
+  } catch (e) {}
+  setTimeout(fxStreakChip, 600);
+}
+
+/* seria dni 🔥 w menu */
+function fxStreak() {
+  var a = lsGet('ml_act', {}), n = 0, off = a[todayStr()] ? 0 : -1;
+  while (a[todayStr(off - n)]) n++; return {n:n, today:!!a[todayStr()]};
+}
+function fxStreakChip() {
+  var c = document.getElementById('fxStreak'); if (!c) return; var s = fxStreak(), old = +c.dataset.n || 0;
+  c.dataset.n = s.n; c.querySelector('b').textContent = s.n; c.classList.toggle('off', !s.today);
+  if (s.n > old && old >= 0 && c.dataset.ready) { c.classList.remove('go'); void c.offsetWidth; c.classList.add('go'); }
+  c.dataset.ready = '1';
+}
+
+/* lżejsze menu: jedna linia, reszta pod avatarem */
+var _renderNavFx = renderNav;
+renderNav = function () {
+  _renderNavFx();
+  var nu = document.getElementById('navuser'); if (!nu) return;
+  var chip = nu.querySelector('.userchip'); nu.classList.add('nu-fx');
+  var st = fxStreak();
+  var sHtml = '<a class="fx-streak' + (st.today ? '' : ' off') + '" id="fxStreak" href="#/cabinet" data-n="' + st.n + '" title="' + esc(L3('Днів поспіль', 'Dni z rzędu', 'Day streak')) + '"><span>🔥</span><b>' + st.n + '</b></a>';
+  var dd = document.createElement('div'); dd.className = 'nu-dd'; dd.hidden = true;
+  [].slice.call(nu.children).forEach(function (k) { if (k !== chip) dd.appendChild(k); });
+  var snd = document.createElement('button'); snd.type = 'button'; snd.className = 'tgl'; snd.id = 'fxSnd';
+  var sndTxt = function () { snd.textContent = (lsGet('ml_snd_off', false) ? '🔇 ' : '🔊 ') + L3('Звуки', 'Dźwięki', 'Sounds') + ': ' + (lsGet('ml_snd_off', false) ? L3('вимк.', 'wył.', 'off') : L3('увімк.', 'wł.', 'on')); };
+  sndTxt(); snd.onclick = function (e) { e.stopPropagation(); lsSet('ml_snd_off', !lsGet('ml_snd_off', false)); sndTxt(); if (!lsGet('ml_snd_off', false)) fxSound('ok'); };
+  dd.appendChild(snd);
+  if (!chip) { /* gość: język i motyw zostają widoczne, ale w jednej linii */ [].slice.call(dd.children).forEach(function (k) { if (k !== snd) nu.appendChild(k); }); return; }
+  var btn = document.createElement('button'); btn.type = 'button'; btn.className = 'nu-btn'; btn.setAttribute('aria-haspopup', 'true'); btn.setAttribute('aria-expanded', 'false');
+  btn.innerHTML = chip.innerHTML + '<span class="nu-car">▾</span>';
+  var cab = document.createElement('a'); cab.href = '#/cabinet'; cab.className = 'nu-link'; cab.textContent = '👤 ' + L3('Кабінет', 'Konto', 'Account');
+  dd.insertBefore(cab, dd.firstChild);
+  nu.innerHTML = sHtml; nu.appendChild(btn); nu.appendChild(dd);
+  btn.onclick = function (e) { e.stopPropagation(); dd.hidden = !dd.hidden; btn.setAttribute('aria-expanded', String(!dd.hidden)); };
+  dd.addEventListener('click', function (e) { if (e.target.closest('a,#logoutBtn')) dd.hidden = true; });
+  fxStreakChip();
+};
+document.addEventListener('click', function (e) { var dd = document.querySelector('.nu-dd'); if (dd && !dd.hidden && !e.target.closest('.nu-dd,.nu-btn')) { dd.hidden = true; var b = document.querySelector('.nu-btn'); if (b) b.setAttribute('aria-expanded', 'false'); } });
+
+/* tryb skupienia w lekcji + kolory kursów */
+var FX_COURSE = {'cars':'#E63B2E', 'zootopia':'#2FA36B', 'home-alone':'#C8312F', 'friends':'#7B4FD6', 'harry-potter':'#B8862B', 'himym':'#2F7BD6', 'vampire-diaries':'#B0203A', 'game-of-thrones':'#8A9BA8', 'got':'#8A9BA8'};
+function fxCourse(c) {
+  var col = c && (FX_COURSE[c.slug] || (c.slug && FX_COURSE[String(c.slug).replace(/-(en|pl|uk)$/, '')]));
+  var r = document.documentElement; if (col) { r.style.setProperty('--fx-course', col); r.setAttribute('data-course', c.slug); } else { r.style.removeProperty('--fx-course'); r.removeAttribute('data-course'); }
+}
+function fxRoute() {
+  var h = location.hash, r = document.documentElement, les = /^#\/lesson\//.test(h);
+  r.classList.toggle('fx-focus', les); r.classList.remove('fx-side');
+  if (!les && !/^#\/course\//.test(h)) fxCourse(null);
+  var n = document.querySelector('nav.top'); if (n) n.classList.remove('nav-peek');
+}
+window.addEventListener('hashchange', fxRoute); fxRoute();
+document.addEventListener('mousemove', function (e) {
+  if (!document.documentElement.classList.contains('fx-focus')) return; var n = document.querySelector('nav.top'); if (!n) return;
+  if (e.clientY < 28) n.classList.add('nav-peek'); else if (e.clientY > n.offsetHeight + 40 && !n.querySelector('.nu-dd:not([hidden])')) n.classList.remove('nav-peek');
+}, {passive:true});
+
+/* ulepszenia wewnątrz #app: pasek skupienia, mikrofon, 🔊 kwestii, cyfry skrótów, przycisk fiszek */
+var FX_LANG = {uk:'uk-UA', pl:'pl-PL', en:'en-GB'};
+function fxSay(txt) {
+  try { if (!window.speechSynthesis) return toast(L3('Браузер не підтримує озвучення', 'Przeglądarka nie obsługuje czytania na głos', 'Your browser cannot read aloud'), 'info');
+    speechSynthesis.cancel(); var u = new SpeechSynthesisUtterance(String(txt).replace(/_{2,}|…/g, ' … ')); u.lang = FX_LANG[TARGET] || 'en-GB'; u.rate = 0.92;
+    var v = speechSynthesis.getVoices().filter(function (x) { return x.lang && x.lang.replace('_', '-').indexOf(u.lang.slice(0, 2)) === 0; })[0]; if (v) u.voice = v; speechSynthesis.speak(u); } catch (e) {}
+}
+function fxEnhance() {
+  var app = document.getElementById('app'); if (!app) return;
+  if (document.documentElement.classList.contains('fx-focus')) {
+    var pl = document.getElementById('player'), bar = document.getElementById('fxFocusBar');
+    if (pl && !bar) {
+      var back = app.querySelector('.sec-head a[href^="#/course/"]');
+      bar = document.createElement('div'); bar.id = 'fxFocusBar'; bar.className = 'fx-fbar';
+      bar.innerHTML = '<a class="fx-x" href="' + (back ? back.getAttribute('href') : '#/') + '" aria-label="' + esc(L3('Вийти з уроку', 'Wyjdź z lekcji', 'Leave the lesson')) + '">✕</a><div class="fx-fprog"><i></i></div><button type="button" class="fx-side-b" id="fxSideB">☰ <span>' + L3('Завдання', 'Zadania', 'Tasks') + '</span></button>';
+      pl.parentNode.insertBefore(bar, pl.parentNode.firstChild);
+      bar.querySelector('#fxSideB').onclick = function () { document.documentElement.classList.toggle('fx-side'); };
+    }
+    if (bar) { var steps = app.querySelectorAll('.tside .tstep'), done = app.querySelectorAll('.tside .tstep.ok,.tside .tstep.bad').length; var fi = bar.querySelector('.fx-fprog i'); if (fi && steps.length) fi.style.width = Math.round(done / steps.length * 100) + '%'; }
+  }
+  var mic = document.getElementById('micBtn'); if (mic) mic.classList.toggle('fx-rec', /^🔴/.test(mic.textContent || ''));
+  app.querySelectorAll('.dr-q:not([data-fx]),.q-line:not([data-fx])').forEach(function (q) {
+    q.setAttribute('data-fx', '1'); var b = document.createElement('button'); b.type = 'button'; b.className = 'fx-say'; b.textContent = '🔊';
+    b.setAttribute('aria-label', L3('Прослухати', 'Odsłuchaj', 'Listen'));
+    b.onclick = function (e) { e.stopPropagation(); var c = q.cloneNode(true); [].slice.call(c.querySelectorAll('.fx-say,.dr-n')).forEach(function (x) { x.remove(); }); fxSay(c.textContent); };
+    q.appendChild(b);
+  });
+  var grp = fxKeyGroup(); app.querySelectorAll('[data-fxk]').forEach(function (x) { if (!grp || grp.indexOf(x) < 0) x.removeAttribute('data-fxk'); });
+  if (grp) grp.forEach(function (x, i) { if (i < 9) x.setAttribute('data-fxk', i + 1); });
+  if (/^#\/(review|words)/.test(location.hash) && !document.getElementById('fxFcBtn')) {
+    var head = app.querySelector('.page h1, .page h2'); if (head) {
+      var fb = document.createElement('button'); fb.type = 'button'; fb.id = 'fxFcBtn'; fb.className = 'btn btn-ghost btn-sm fx-fcbtn'; fb.textContent = '🃏 ' + L3('Флеш-картки', 'Fiszki', 'Flashcards');
+      fb.onclick = fxFlashcards; head.insertAdjacentElement('afterend', fb);
+    }
+  }
+}
+var FX_T = null;
+try { new MutationObserver(function () { if (FX_T) return; FX_T = requestAnimationFrame(function () { FX_T = null; fxEnhance(); }); }).observe(document.getElementById('app'), {childList:true, subtree:true, characterData:true}); } catch (e) {}
+
+/* skróty klawiszowe: 1–9 odpowiedź, Enter dalej/sprawdź, T tłumacz słów */
+function fxKeyGroup() {
+  var card = document.getElementById('tcard'); if (!card) return null;
+  var it = [].slice.call(card.querySelectorAll('.dr-it')).filter(function (x) { return !x.classList.contains('ok') && !x.classList.contains('bad') && x.querySelector('.dr-o:not(:disabled)'); })[0];
+  var list = it ? it.querySelectorAll('.dr-o:not(:disabled)') : card.querySelectorAll('.topt:not(:disabled),[data-oi]:not(:disabled)');
+  return list.length ? [].slice.call(list) : null;
+}
+document.addEventListener('keydown', function (e) {
+  if (e.ctrlKey || e.metaKey || e.altKey) return; var tg = e.target, typing = tg && (tg.tagName === 'INPUT' || tg.tagName === 'TEXTAREA' || tg.isContentEditable);
+  var card = document.getElementById('tcard'); if (!card || document.getElementById('mBox')) return;
+  if (!typing && /^[1-9]$/.test(e.key)) { var g = fxKeyGroup(), b = g && g[+e.key - 1]; if (b) { e.preventDefault(); b.click(); } return; }
+  if (!typing && (e.key === 't' || e.key === 'T')) { var w = document.getElementById('wtToggle'); if (w) { e.preventDefault(); w.click(); } return; }
+  if (e.key === 'Enter' && !(typing && tg.tagName === 'TEXTAREA')) {
+    var nx = card.querySelector('#tnext:not([hidden])'); if (nx && document.activeElement !== nx) { e.preventDefault(); nx.click(); return; }
+    if (!typing) { var ck = card.querySelector('#tcheck:not(:disabled),#tsubmit:not(:disabled),#tstart'); if (ck) { e.preventDefault(); ck.click(); } }
+  }
+});
+
+/* fiszki 3D ze słów z ukończonych lekcji */
+function fxFlashcards() {
+  var w = mbox('<div class="fx-fc"><p class="muted">…</p></div>');
+  srsPool().then(function (ws) {
+    ws = shuffle(ws.slice()).slice(0, 30); var box = w.querySelector('.fx-fc'), i = 0, known = 0;
+    if (!ws.length) { box.innerHTML = '<p>' + L3('Пройди хоча б один урок, щоб з’явилися картки.', 'Ukończ choć jedną lekcję, żeby pojawiły się fiszki.', 'Finish at least one lesson to get flashcards.') + '</p>'; return; }
+    function draw() {
+      if (i >= ws.length) { box.innerHTML = '<h3>🎉 ' + L3('Готово!', 'Gotowe!', 'Done!') + '</h3><p>' + L3('Знаю: ', 'Znam: ', 'Known: ') + known + ' / ' + ws.length + '</p>'; if (known === ws.length) fxConfetti(); return; }
+      var c = ws[i];
+      box.innerHTML = '<div class="fx-fc-top"><span class="muted small">' + (i + 1) + ' / ' + ws.length + '</span></div><button type="button" class="fx-card" id="fxCard"><span class="fx-in"><span class="fx-f"><b>' + esc(c.w) + '</b><small>' + L3('натисни, щоб перевернути', 'kliknij, żeby obrócić', 'tap to flip') + '</small></span><span class="fx-b"><b>' + esc(c.m) + '</b></span></span></button>' +
+        '<div class="row fx-fc-btns"><button type="button" class="btn btn-ghost btn-sm" id="fxNo">↺ ' + L3('Ще вчу', 'Jeszcze się uczę', 'Still learning') + '</button><button type="button" class="btn btn-red btn-sm" id="fxYes">✓ ' + L3('Знаю', 'Znam', 'I know it') + '</button></div>';
+      var cd = box.querySelector('#fxCard'); cd.onclick = function () { cd.classList.toggle('on'); };
+      box.querySelector('#fxYes').onclick = function () { known++; fxSound('ok'); i++; draw(); };
+      box.querySelector('#fxNo').onclick = function () { srsSave({word:c.w, meaning:c.m, step:0, due:todayStr()}); i++; draw(); };
+    }
+    draw();
+  }).catch(function () { w.querySelector('.fx-fc').innerHTML = '<p>' + L3('Не вдалося завантажити слова.', 'Nie udało się wczytać słów.', 'Could not load words.') + '</p>'; });
+}
+
+/* PWA */
+if ('serviceWorker' in navigator && location.protocol === 'https:') window.addEventListener('load', function () { navigator.serviceWorker.register('/sw.js').catch(function () {}); });
 
 })();
