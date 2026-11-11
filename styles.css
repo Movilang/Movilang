@@ -1228,3 +1228,35 @@ html[data-course] #app{--red:var(--fx-course);--coral:var(--fx-course);--link:va
 /* menu konta: ukryte, dopóki się go nie otworzy (display:flex nadpisywał atrybut hidden) */
 .nu-dd[hidden]{display:none!important}
 .ch-grp .ch-gn{display:inline-block;min-width:20px;margin-left:6px;padding:0 6px;border-radius:999px;background:var(--panel);color:var(--muted);font-size:12px;text-align:center}
+/* menu „Więcej” na telefonie — wariant A (grupy, przełączniki) */
+.ms2{gap:0!important;color:var(--fg)}
+.ms2 .ms-grip{align-self:center;width:40px;height:5px;border-radius:5px;background:var(--line);margin:0 0 12px}
+.ms2 .ms-prof{background:#1B1233;color:#fff;border-radius:18px;padding:16px;display:flex;flex-direction:column;gap:12px;margin-bottom:6px}
+.ms2 .ms-top{display:flex;align-items:center;gap:12px}
+.ms2 .ms-ava{flex:0 0 44px;height:44px;border-radius:50%;background:#FF7A59;color:#1B1233;font-weight:800;font-size:18px;display:flex;align-items:center;justify-content:center}
+.ms2 .ms-who{flex:1;min-width:0;display:flex;flex-direction:column}
+.ms2 .ms-who b{font-size:16px;color:#fff}
+.ms2 .ms-who small{font-size:12px;color:#B9AFD3;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.ms2 .ms-fire{background:#34235F;color:#FFC27A;border-radius:999px;padding:6px 12px;font-weight:700;font-size:14px;text-decoration:none}
+.ms2 .ms-fire.off{color:#B9AFD3}
+.ms2 #contCard:empty{display:none}
+.ms2 #contCard .contc{background:#FF7A59;color:#1B1233;border:0}
+.ms2 #contCard .contc *{color:#1B1233}
+.ms2 .ms-auth{display:flex;gap:8px;flex-wrap:wrap}
+.ms2 .ms-ghost{border:1px solid #6B5C94;color:#fff;background:transparent}
+.ms2 .ms-h{margin:14px 6px 6px;font-size:13px;font-weight:600;color:var(--muted)}
+.ms2 .ms-grp{background:var(--bg2);border:1px solid var(--line);border-radius:16px;overflow:hidden}
+.ms2 .ms-row{display:flex;align-items:center;gap:12px;width:100%;min-height:54px;padding:0 14px;border:0;background:none;color:var(--fg);font:500 16px var(--f-body,inherit);text-align:left;text-decoration:none;cursor:pointer;box-sizing:border-box}
+.ms2 .ms-row+.ms-row{border-top:1px solid var(--line)}
+.ms2 .ms-ic{flex:0 0 32px;height:32px;border-radius:9px;display:flex;align-items:center;justify-content:center}
+.ms2 .ms-l{flex:1;min-width:0}
+.ms2 .ms-v{color:var(--muted);font-size:13px;white-space:nowrap}
+.ms2 .ms-go{color:var(--dim);font-size:20px;line-height:1}
+.ms2 .ms-tag{font-size:12px;color:var(--muted);border:1px solid var(--line);border-radius:999px;padding:1px 8px}
+.ms2 .ms-sw{flex:0 0 46px;height:28px;border-radius:999px;background:var(--line);position:relative;transition:background-color .2s}
+.ms2 .ms-sw i{position:absolute;top:3px;left:3px;width:22px;height:22px;border-radius:50%;background:#fff;box-shadow:0 1px 3px rgba(0,0,0,.25);transition:left .2s}
+.ms2 .ms-sw.on{background:#FF7A59}
+.ms2 .ms-sw.on i{left:21px}
+.ms2 .ms-out{margin-top:12px;min-height:48px;border:0;background:none;color:#C2391C;font:600 16px var(--f-body,inherit);cursor:pointer}
+html[data-theme="dark"] .ms2 .ms-out{color:#FF8A6B}
+.msheetw .lbox{max-height:88vh;overflow-y:auto}
