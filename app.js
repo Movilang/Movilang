@@ -3767,7 +3767,7 @@ document.addEventListener('click', function (e) { var dd = document.querySelecto
 /* tryb skupienia w lekcji + kolory kursów */
 var FX_COURSE = {'cars':'#E63B2E', 'zootopia':'#2FA36B', 'home-alone':'#C8312F', 'friends':'#7B4FD6', 'harry-potter':'#B8862B', 'himym':'#2F7BD6', 'vampire-diaries':'#B0203A', 'game-of-thrones':'#8A9BA8', 'got':'#8A9BA8'};
 function fxCourse(c) {
-  var col = c && (FX_COURSE[c.slug] || (c.slug && FX_COURSE[String(c.slug).replace(/-(en|pl|uk)$/, '')]));
+  var col = null; if (c && c.slug) { var sl = String(c.slug); Object.keys(FX_COURSE).forEach(function (k) { if (!col && (sl === k || sl.indexOf(k + '-') === 0)) col = FX_COURSE[k]; }); }
   var r = document.documentElement; if (col) { r.style.setProperty('--fx-course', col); r.setAttribute('data-course', c.slug); } else { r.style.removeProperty('--fx-course'); r.removeAttribute('data-course'); }
 }
 function fxRoute() {
