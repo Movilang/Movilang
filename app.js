@@ -1316,8 +1316,8 @@ function runPlayer(container, lesson, onFinish, ctxLs) {
       (tk.img ? '<div class="illu">' + illu(tk.img) + '</div>' : '') +
       (tk.ins ? '<div class="tins">' + esc(lf(tk, 'ins')) + '</div>' : TASK_INS[tk.type] ? '<div class="tins">' + t(TASK_INS[tk.type]) + '</div>' : '') +
       (tk.scene ? '<div class="tscene"><b>' + t('Сцена:') + '</b> ' + esc(lf(tk, 'scene')) + '</div>' : '') + '<div class="tq' + ((isInfo(tk.type) && (tk.type !== 'intro' || String(lf(tk, 'q') || '').length > 110)) || tk.type === 'quest' ? ' tq-info' : '') + (tk.type === 'intro' && String(lf(tk, 'q') || '').length > 110 ? ' tq-rule' : '') + '">' + (isInfo(tk.type) ? esc(lf(tk, 'q') || '') : qHtml(tk)) + '</div>' +
-      (!isInfo(tk.type) && !tk['q_' + LANG] && tk['qt_' + LANG] ? '<div class="qtrw"><button type="button" class="qtrb" id="qtrBtn">🌐 ' + tx({uk:'Перекласти питання', pl:'Przetłumacz pytanie', en:'Translate the question'}) + '</button><div class="qtrt" id="qtrText" hidden>' + esc(tk['qt_' + LANG]).replace(/&lt;(\/?)(b|i)&gt;/g, '<$1$2>').replace(/_{3,}/g, '<span class="gap">____</span>') + '</div></div>' : '') +
-      (gRuleTask(tk, lesson) ? '<div class="rulew"><button type="button" class="qtrb rulebtn" id="ruleBtn">📘 ' + tx({uk:'Нагадати правило', pl:'Przypomnij zasadę', en:'Show the rule'}) + '</button><div class="rulebox" id="ruleBox" hidden></div></div>' : '') +
+      '<div class="tktools">' + (!isInfo(tk.type) ? '<span id="wtSlot"></span>' : '') + (!isInfo(tk.type) && !tk['q_' + LANG] && tk['qt_' + LANG] ? '<div class="qtrw"><button type="button" class="qtrb" id="qtrBtn">🌐 ' + tx({uk:'Перекласти питання', pl:'Przetłumacz pytanie', en:'Translate the question'}) + '</button><div class="qtrt" id="qtrText" hidden>' + esc(tk['qt_' + LANG]).replace(/&lt;(\/?)(b|i)&gt;/g, '<$1$2>').replace(/_{3,}/g, '<span class="gap">____</span>') + '</div></div>' : '') +
+      (gRuleTask(tk, lesson) ? '<div class="rulew"><button type="button" class="qtrb rulebtn" id="ruleBtn">📘 ' + tx({uk:'Нагадати правило', pl:'Przypomnij zasadę', en:'Show the rule'}) + '</button><div class="rulebox" id="ruleBox" hidden></div></div>' : '') + '</div>' +
       (tk.say && (tk.type === 'speaking' || tk.type === 'listening') ? '<div class="sayline">' + esc(tk.say) + '</div>' : '');
   }
   function foot() { var tk0 = tasks[cur] || {}; return '<div class="tfb" id="tfb"></div><div class="tnav"><span class="hint">' + (SKIPPABLE[tk0.type] && tk0.type !== 'speaking' ? '<button type="button" class="skipb" id="skipErr">' + tx({uk:'Не можу зараз (пропустити)', pl:'Nie mogę teraz (pomiń)', en:'Can\'t do it now (skip)'}) + '</button> ' : '') + (isInfo(tk0.type) ? '' : '<button type="button" class="skipb askb" data-ask-lid="' + esc(lesson.id) + '" data-ask-n="' + cur + '">❓ ' + tx({uk:'Не зрозумів', pl:'Nie rozumiem', en:'I don\'t get it'}) + '</button> ') + '<span class="hint">' + t('Завдання') + ': ' + FLAG[TARGET] + ' · ' + t('Підказки') + ': ' + FLAG[LANG] + '</span></span><button class="btn btn-red" type="button" id="tnext" hidden>' + t('Далі') + '</button></div>'; }
@@ -3209,12 +3209,13 @@ function wtShow(hit) {
   var WT_ON = !!lsGet('ml_wt_mode', false);
   function wtApply() { document.documentElement.classList.toggle('wt-on', WT_ON); var b = document.getElementById('wtToggle'); if (b) { b.setAttribute('aria-pressed', String(WT_ON)); b.classList.toggle('on', WT_ON); } }
   function wtBtn() {
-    var pl = document.getElementById('player'); if (!pl || document.getElementById('wtToggle')) return;
+    var slot = document.getElementById('wtSlot'), pl = document.getElementById('player'), old = document.getElementById('wtToggle');
+    if (old && (!slot || slot.contains(old))) return; if (old) old.remove(); if (!slot && !pl) return;
     var b = document.createElement('button'); b.type = 'button'; b.id = 'wtToggle'; b.className = 'wt-toggle';
     b.innerHTML = '🌐 <span>' + L3('Перекладати слова', 'Tłumacz słowa', 'Translate words') + '</span>';
     b.title = L3('Увімкни й торкнись слова, щоб побачити переклад', 'Włącz i dotknij słowa, żeby zobaczyć tłumaczenie', 'Turn on, then tap a word to see its translation');
     b.onclick = function (e) { e.stopPropagation(); WT_ON = !WT_ON; lsSet('ml_wt_mode', WT_ON); wtApply(); if (!WT_ON) wtClose(); toast(WT_ON ? L3('Торкнись слова, щоб перекласти', 'Dotknij słowa, żeby przetłumaczyć', 'Tap a word to translate it') : L3('Переклад слів вимкнено', 'Tłumaczenie słów wyłączone', 'Word translation off'), 'info'); };
-    pl.parentNode.insertBefore(b, pl); wtApply();
+    if (slot) { b.className = 'qtrb wtbtn'; slot.appendChild(b); } else pl.parentNode.insertBefore(b, pl); wtApply();
   }
   try { new MutationObserver(wtBtn).observe(document.getElementById('app'), {childList: true, subtree: true}); } catch (e) {}
   wtApply();
