@@ -1134,10 +1134,10 @@ function chLoad() {
     return Promise.all(Object.keys(lessonIds).map(function (id) { return API.getLesson(id).catch(function () { return null; }); })).then(function (ls) {
       var LC = {}; ls.forEach(function (l) { if (l) { LC[l.id] = l.course_id; if (cids.indexOf(l.course_id) < 0) cids.push(l.course_id); } });
       ws.forEach(function (w) { var p = chParseTask(w.task); if (p && p.cid && cids.indexOf(p.cid) < 0) cids.push(p.cid); });
-      return Promise.all(cids.map(function (cid) { return Promise.all([API.getCourse(cid).catch(function () { return null; }), API.listLessons(cid).catch(function () { return []; })]); })).then(function (cs) {
+      return Promise.all(cids.map(function (cid) { return Promise.all([API.getCourse(cid).catch(function () { return null; }), []]); })).then(function (cs) {
         var contacts = [], byKey = {};
         function add(cid, course, name, role, alias) { var al = [name].concat(alias || []).filter(Boolean); var ex = contacts.filter(function (c) { return c.cid === cid && c.alias.some(function (a) { return al.some(function (b) { return chSame(a, b); }); }); })[0]; if (ex) { if (role && !ex.role) ex.role = role; al.forEach(function (a) { if (ex.alias.indexOf(a) < 0) ex.alias.push(a); }); return ex; } var c = {key:cid + '~' + chNorm(al[al.length - 1]).replace(/ /g, '-'), cid:cid, course:course, name:name, aiName:al[al.length - 1], alias:al, role:role || '', threads:[]}; contacts.push(c); byKey[c.key] = c; return c; }
-        cs.forEach(function (x, i) { var c = x[0]; if (!c) return; (x[1] || []).forEach(function (l) { (lessonTasks(l) || l.tasks || []).forEach(function (tk) { if (tk.type === 'cards') (tk.cards || []).forEach(function (cd) { add(cids[i], c, LANG === 'uk' ? (cd.uk || cd.en) : (cd.en || cd.uk), lf(cd, 'role'), [cd.uk, cd.en]); }); }); }); });
+        /* kontakty tylko z listów pisanych w zadaniach — bez całej obsady kursu */
         var CM = {}; cs.forEach(function (x, i) { if (x[0]) CM[cids[i]] = x[0]; });
         ws.forEach(function (w) {
           var p = chParseTask(w.task), cid = p ? p.cid : LC[w.lesson_id], who = p ? p.who : (w.reply && w.reply.who);
@@ -1188,11 +1188,11 @@ function viewChats(key) {
       '<div class="chats' + (cur ? ' has-cur' : '') + '" id="chats"><aside class="ch-list"><input class="inp-s ch-q" id="chQ" type="search" placeholder="' + L('Пошук героя…', 'Szukaj bohatera…', 'Find a character…') + '"><div id="chL"></div></aside><section class="ch-win" id="chW"></section></div></div>';
     var listEl = document.getElementById('chL'), win = document.getElementById('chW'), wrap = document.getElementById('chats');
     function drawList() {
-      if (!D.contacts.length) { listEl.innerHTML = '<p class="muted small" style="padding:12px">' + L('Ще немає героїв. Почни будь-який курс — і герої з\'являться тут.', 'Brak bohaterów. Zacznij dowolny kurs — pojawią się tutaj.', 'No characters yet. Start a course and they will appear here.') + '</p>'; return; }
+      if (!D.contacts.some(function (c) { return c.threads.length; })) { listEl.innerHTML = '<p class="muted small" style="padding:12px">' + L('Тут поки порожньо. Коли в уроці напишеш лист героєві, він з\'явиться тут і відповість — тоді можна листуватися далі.', 'Na razie pusto. Gdy w lekcji napiszesz list do bohatera, pojawi się tutaj i odpisze — wtedy możecie rozmawiać dalej.', 'Nothing here yet. When you write a letter to a character in a lesson, they will appear here and reply, and you can keep chatting.') + '</p>'; return; }
       var ql = q.toLowerCase(), groups = {}, order = [];
-      D.contacts.forEach(function (c) { if (ql && (c.name + ' ' + tr(c.course, 'title')).toLowerCase().indexOf(ql) < 0) return; var g = c.last ? '_active' : c.cid; if (!groups[g]) { groups[g] = []; order.push(g); } groups[g].push(c); });
-      order.sort(function (a, b) { return a === '_active' ? -1 : b === '_active' ? 1 : 0; });
-      listEl.innerHTML = order.map(function (g) { return '<div class="ch-grp">' + (g === '_active' ? L('Листування', 'Rozmowy', 'Conversations') : esc(tr(groups[g][0].course, 'title'))) + '</div>' + groups[g].map(function (c) {
+      D.contacts.forEach(function (c) { if (!c.threads.length) return; if (ql && (c.name + ' ' + tr(c.course, 'title')).toLowerCase().indexOf(ql) < 0) return; var g = c.cid; if (!groups[g]) { groups[g] = []; order.push(g); } groups[g].push(c); });
+      /* kontakty są już posortowane od najnowszej rozmowy, więc kolejność kursów też idzie od najnowszego */
+      listEl.innerHTML = order.map(function (g) { return '<div class="ch-grp">' + esc(tr(groups[g][0].course, 'title')) + ' <span class="ch-gn">' + groups[g].length + '</span></div>' + groups[g].map(function (c) {
         return '<a class="ch-item' + (c === cur ? ' on' : '') + '" href="#/chats/' + encodeURIComponent(c.key) + '">' + chAva(c.name) + '<span class="ch-it"><b>' + esc(c.name) + '</b><span class="muted small">' + (c.last ? (c.last.r === 'me' ? L('Ти: ', 'Ty: ', 'You: ') : '') + esc(String(c.last.t).slice(0, 48)) : esc(c.role || tr(c.course, 'title'))) + '</span></span><span class="ch-meta">' + (c.last ? '<span class="muted small">' + chTime(c.last.at) + '</span>' : '') + (c.unread ? '<i class="ch-badge">' + c.unread + '</i>' : '') + '</span></a>'; }).join(''); }).join('') || '<p class="muted small" style="padding:12px">' + L('Нічого не знайдено.', 'Nic nie znaleziono.', 'Nothing found.') + '</p>';
     }
     function drawWin() {
