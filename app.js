@@ -1721,7 +1721,7 @@ function viewAdmin() {
     t('</div><div id="adminBody"><p class="muted">Завантаження…</p></div></div>');
   $app.querySelectorAll('.tab').forEach(function (b) { b.onclick = function () { adminTab = b.dataset.t; ADM_UID = null; viewAdmin(); }; });
   var body = document.getElementById('adminBody');
-  var f = {stats:adminStats, users:adminUsers, courses:adminCourses, keys:adminKeys, site:adminSite, look:adminLook, times:adminTimes, analytics:adminAnalytics, sales:adminSales}[adminTab];
+  var f = {stats:adminStats, users:adminUsers, courses:adminCourses, keys:adminKeys, site:adminSite, look:adminLook, times:adminTimes, analytics:adminAnalytics, sales:adminSales}[adminTab] || function () { return Promise.resolve(); };
   return f(body).catch(function (e) { body.innerHTML = t('<div class="empty">Помилка: ') + esc(e.message) + '</div>'; });
 }
 
@@ -2679,7 +2679,7 @@ var _viewAdmin = viewAdmin;
 var ADM_EXTRA = {questions:['❓ Питання', '❓ Pytania', '❓ Questions'], support:['🛟 Підтримка', '🛟 Pomoc', '🛟 Support'], reviews:['⭐ Відгуки', '⭐ Opinie', '⭐ Reviews'], drops:['🚪 Де кидають', '🚪 Gdzie porzucają', '🚪 Drop-offs'], report:['💰 Звіт за місяць', '💰 Raport miesięczny', '💰 Monthly report'], check:['🧪 Перевірка курсів', '🧪 Kontrola kursów', '🧪 Course check']};
 viewAdmin = function () {
   if (ADM_EXTRA[adminTab]) {
-    var keep = adminTab; adminTab = 'stats';
+    var keep = adminTab; adminTab = '_shell'; /* sama rama panelu, bez ładowania statystyk przed właściwą zakładką */
     return Promise.resolve(_viewAdmin()).then(function () { adminTab = keep; admExtraTabs(); var body = document.getElementById('adminBody'); if (!body) return; body.innerHTML = '<p class="muted">…</p>'; $app.querySelectorAll('.tab').forEach(function (b) { b.classList.toggle('on', b.dataset.t === keep); b.setAttribute('aria-selected', b.dataset.t === keep); });
       var f = {questions:admQuestions, support:admSupport, reviews:admReviews, drops:admDrops, report:admReport, check:admCheck}[keep]; return f(body).catch(function (e) { body.innerHTML = '<div class="empty">' + esc(e.message) + '</div>'; }); });
   }
