@@ -40,7 +40,7 @@ build(3, dict(where='Ти в «МакЛарен\'с» у п\'ятницю вве
   'Потяг назад [відходить/відійшов/відходив би] о сьомій ранку.|Pociąg z powrotem [odjeżdża/odjechał/odjeżdżałby] o siódmej rano.|The train back [leaves/is going leave/will leaving] at seven a.m.'],
  rt='Легендарна ніч|Legendarna noc|A legendary night',
  read=['О дев\'ятій Барні [увірвався] в бар у новому костюмі.|O dziewiątej Barney [wpadł] do baru w nowym garniturze.|At nine Barney [burst] into the bar in a new suit.',
-  '«Тедe, ця ніч [буде] легендарною!»|„Ted, ta noc [będzie] legendarna!”|“Ted, tonight is [going] to be legendary!”',
+  '«Теде, ця ніч [буде] легендарною!»|„Ted, ta noc [będzie] legendarna!”|“Ted, tonight is [going] to be legendary!”',
   '«Спочатку ми [йдемо] на таємну вечірку в Мідтауні».|„Najpierw [idziemy] na tajną imprezę w Midtown”.|“First we\'re [going] to a secret party in Midtown.”',
   '«А потім — аеропорт. Рейс до Філадельфії [вилітає] о першій».|„A potem lotnisko. Lot do Filadelfii [odlatuje] o pierwszej”.|“And then the airport. The flight to Philadelphia [leaves] at one.”',
   'Тед сказав, що [збирається] лягти спати рано.|Ted powiedział, że [zamierza] wcześnie iść spać.|Ted said he was [going] to go to bed early.',
