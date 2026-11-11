@@ -1121,3 +1121,8 @@ html.wt-on #player .tq,html.wt-on #player .tscene,html.wt-on #player .sayline,ht
 .tktools .rulew:has(.rulebox:not([hidden])),.tktools .qtrw:has(.qtrt:not([hidden])){flex-basis:100%;order:9}
 .qtrb.wtbtn{opacity:1;border-style:solid;font-weight:600}
 .qtrb.wtbtn.on{background:var(--red);border-color:var(--red);color:var(--btnfg,#fff)}
+
+nav.top{transition:transform .38s cubic-bezier(.22,1,.36,1),opacity .3s ease,box-shadow .3s ease,background-color .3s ease}
+nav.top.nav-hide{transform:translateY(calc(-100% - 12px));opacity:0;pointer-events:none}
+nav.top.scrolled:not(.nav-hide){box-shadow:0 8px 24px -14px rgba(0,0,0,.35)}
+@media (prefers-reduced-motion:reduce){nav.top{transition:none}}

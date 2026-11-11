@@ -3263,7 +3263,16 @@ renderNav = function () {
   if (want !== UI) { UI = want; document.documentElement.setAttribute('data-ui', UI); ROUTE_LAST = null; setTimeout(route, 0); }
 };
 document.addEventListener('click', function (e) { var b = e.target.closest && e.target.closest('[data-ui-set]'); if (!b) return; e.preventDefault(); if (b.dataset.uiSet !== UI) setUI(b.dataset.uiSet); });
-window.addEventListener('scroll', function () { var n = document.querySelector('nav.top'); if (n) n.classList.toggle('scrolled', window.scrollY > 4); }, {passive:true});
+(function () { var lastY = window.scrollY, acc = 0, tick = false;
+  function upd() { tick = false; var n = document.querySelector('nav.top'); if (!n) return; var y = Math.max(0, window.scrollY), d = y - lastY; lastY = y;
+    n.classList.toggle('scrolled', y > 4);
+    if (y < 80 || n.contains(document.activeElement) || document.querySelector('.mnav.open,.mmenu.open')) { n.classList.remove('nav-hide'); acc = 0; return; }
+    acc = (d > 0) === (acc > 0) ? acc + d : d;
+    if (acc > 24) n.classList.add('nav-hide'); else if (acc < -12) n.classList.remove('nav-hide'); }
+  window.addEventListener('scroll', function () { if (!tick) { tick = true; requestAnimationFrame(upd); } }, {passive:true});
+  document.addEventListener('mousemove', function (e) { if (e.clientY < 24) { var n = document.querySelector('nav.top'); if (n) n.classList.remove('nav-hide'); } }, {passive:true});
+  window.addEventListener('hashchange', function () { var n = document.querySelector('nav.top'); if (n) n.classList.remove('nav-hide'); });
+})();
 
 /* ---------- нова головна, що продає ---------- */
 var V2I = {
