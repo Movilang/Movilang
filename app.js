@@ -517,8 +517,7 @@ function renderMobileNav() {
   n.innerHTML = '<a href="#/" data-m="#/">' + MI.home + '<span>' + L('Головна', 'Start', 'Home') + '</span></a>' +
     '<a href="#/catalog" data-m="#/catalog">' + MI.cat + '<span>' + L('Каталог', 'Katalog', 'Catalogue') + '</span></a>' +
     '<a href="#/trial" data-m="#/trial">' + MI.play + '<span>' + L('Урок', 'Lekcja', 'Lesson') + '</span></a>' +
-    '<a href="' + (USER ? '#/cabinet' : '#/login') + '" data-m="' + (USER ? '#/cabinet' : '#/login') + '">' + MI.user + '<span>' + (USER ? L('Кабінет', 'Konto', 'Account') : L('Увійти', 'Zaloguj', 'Log in')) + '</span></a>' +
-    '<button type="button" id="mMore">' + MI.more + '<span>' + L('Ще', 'Więcej', 'More') + '</span></button>';
+    '<button type="button" id="mMore">' + MI.user + '<span>' + (USER ? L('Профіль', 'Profil', 'Profile') : L('Меню', 'Menu', 'Menu')) + '</span></button>';
   mActive();
   document.getElementById('mMore').onclick = function () {
     var adm = USER && USER.role === 'admin';
@@ -544,6 +543,7 @@ function renderMobileNav() {
         sw('msTheme', THEME !== 'dark', L('Світла тема', 'Jasny motyw', 'Light theme'), ic('#F2ECFA', '#4B2A9C', P.sun)) +
         sw('msWt', !!lsGet('ml_wt_mode', false), L('Переклад слова дотиком', 'Tłumaczenie słów dotykiem', 'Tap to translate'), ic('#F2ECFA', '#4B2A9C', P.tap)) + '</div>' +
       '<div class="ms-h">' + L('Акаунт', 'Konto', 'Account') + '</div><div class="ms-grp">' +
+        (USER ? link('#/cabinet', ic('#FFE9E1', '#C2391C', '<circle cx="12" cy="8" r="4"/><path d="M4 21a8 8 0 0 1 16 0"/>'), L('Кабінет і прогрес', 'Konto i postęp', 'Account & progress')) : '') +
         link('#/pricing', ic('#FFF3E0', '#8A4E08', P.card), L('Тарифи і ключі', 'Cennik i klucze', 'Pricing & keys')) +
         (adm ? sw('msAdm', !!ADMIN_MODE, L('Режим адміна', 'Tryb admina', 'Admin mode'), ic('#EEE8F5', '#5C5470', P.gear)) + link('#/admin', ic('#EEE8F5', '#5C5470', P.tool), L('Адмін-панель', 'Panel admina', 'Admin panel'), '<span class="ms-tag">admin</span>') : '') + '</div>' +
       (USER ? '<button type="button" class="ms-out" id="msOut">' + L('Вийти', 'Wyloguj', 'Log out') + '</button>' : '') + '</div>');
@@ -4051,6 +4051,132 @@ if ('serviceWorker' in navigator && location.protocol === 'https:') window.addEv
     b.onclick = palette; nu.insertBefore(b, nu.firstChild);
   };
   window.uxPalette = palette;
+})();
+
+/* =====================  KINO 2026-11-11: ciemny kinowy interfejs szablonu 3 (start ucznia, kurs z łukami)  ===================== */
+(function () {
+  if (!window.isSkin3) return;
+  var root = document.documentElement;
+  function on() { return window.isSkin3(); }
+  function sync() { root.classList.toggle('kino', on()); try { if (on() && !localStorage.getItem('ml_theme') && THEME !== 'dark') { THEME = 'dark'; applyTheme(); } } catch (e) {} }
+  sync();
+  var _suK = setUI; setUI = function (v) { _suK(v); sync(); };
+  function pSrc(c) { if (!c) return ''; if (c.poster_url && /^https:\/\//.test(c.poster_url)) return c.poster_url; return POSTER_ART.indexOf(c.slug) > -1 ? 'assets/posters/' + c.slug + '.svg?v=1' : ''; }
+  function svg(d, sz) { return '<svg viewBox="0 0 24 24" width="' + (sz || 18) + '" height="' + (sz || 18) + '" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">' + d + '</svg>'; }
+  var PLAY = '<svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg>';
+
+  /* następna lekcja: przerwana (ml_resume) albo pierwsza nieukończona z kursu ucznia */
+  function nextLesson() {
+    var r = null; try { r = JSON.parse(localStorage.getItem('ml_resume') || 'null'); } catch (e) {}
+    var first = r && r.tg === TARGET && r.lid ? API.getLesson(r.lid).then(function (l) { if (!l || !lessonTasks(l)) return null; return API.getCourse(l.course_id).then(function (c) { return {l:l, c:c, idx:r.idx || 0, n:r.n || 0}; }); }).catch(function () { return null; }) : Promise.resolve(null);
+    return first.then(function (x) {
+      if (x) return x;
+      return API.myEnrollments().then(function (cids) {
+        if (!cids.length) return null;
+        return Promise.all([API.listLessons(cids[0]), API.myProgress(), API.getCourse(cids[0])]).then(function (y) {
+          var done = {}; y[1].forEach(function (p) { done[p.lesson_id] = 1; });
+          var nx = y[0].filter(function (l) { var tk = lessonTasks(l); return !done[l.id] && tk && tk.length; })[0];
+          return nx ? {l:nx, c:y[2], idx:0, n:0, doneN:y[0].filter(function (l) { return done[l.id]; }).length, total:y[0].length} : null;
+        });
+      }).catch(function () { return null; });
+    });
+  }
+
+  function viewHomeKino() {
+    return Promise.all([API.listCourses(false), API.myEnrollments().catch(function () { return []; }), nextLesson()]).then(function (r) {
+      var courses = r[0], mine = r[1] || [], nx = r[2], name = (USER.name || '').split(' ')[0], h = new Date().getHours();
+      var hello = h < 12 ? L3('Доброго ранку', 'Dzień dobry', 'Good morning') : h < 18 ? L3('Добрий день', 'Dzień dobry', 'Good afternoon') : L3('Добрий вечір', 'Dobry wieczór', 'Good evening');
+      var date = new Date().toLocaleDateString(LANG === 'uk' ? 'uk-UA' : LANG === 'en' ? 'en-GB' : 'pl-PL', {weekday:'long', day:'numeric', month:'long'});
+      var lv = lsGet('ml_level', null), fit = function (c) { return lv && String(c.level || '').indexOf(lv) > -1; };
+      var sorted = courses.filter(function (c) { return c.lessons_count; }).sort(function (a, b) { return (mine.indexOf(b.id) > -1) - (mine.indexOf(a.id) > -1) || fit(b) - fit(a); });
+      var hero, art;
+      if (nx) {
+        var pct = nx.idx && nx.n ? Math.round(nx.idx / nx.n * 100) : nx.total ? Math.round((nx.doneN || 0) / nx.total * 100) : 0; art = pSrc(nx.c);
+        hero = '<a class="k-hero" href="#/lesson/' + esc(nx.l.id) + '">' + (art ? '<img src="' + esc(art) + '" alt="">' : '') + '<span class="k-hero-in"><span class="k-chip">' + (nx.idx ? L3('Продовжити', 'Kontynuuj', 'Continue') : L3('Наступний урок', 'Następna lekcja', 'Next lesson')) + (nx.c && nx.c.level ? ' · ' + esc(nx.c.level) : '') + '</span><span class="k-hero-t">' + esc(nx.c ? tr(nx.c, 'title') : '') + '</span><span class="k-hero-s">' + L3('Урок', 'Lekcja', 'Lesson') + ' ' + nx.l.num + ' · ' + esc(tr(nx.l, 'title')) + (nx.idx ? ' · ' + L3('завдання', 'zadanie', 'task') + ' ' + (nx.idx + 1) + ' / ' + nx.n : '') + '</span><span class="k-hero-row"><span class="k-play">' + PLAY + '<span>' + L3('Продовжити', 'Kontynuuj', 'Continue') + '</span></span><i class="k-bar"><i style="width:' + pct + '%"></i></i></span></span></a>';
+      } else {
+        var fc = sorted.filter(pSrc)[0]; art = pSrc(fc);
+        hero = '<a class="k-hero" href="#/trial">' + (art ? '<img src="' + esc(art) + '" alt="">' : '') + '<span class="k-hero-in"><span class="k-chip">' + L3('Почни тут', 'Zacznij tutaj', 'Start here') + '</span><span class="k-hero-t">' + L3('Перший урок безкоштовний', 'Pierwsza lekcja jest darmowa', 'Your first lesson is free') + '</span><span class="k-hero-s">' + L3('5 хвилин. Спробуй і вирішуй.', '5 minut. Spróbuj i zdecyduj.', 'Five minutes. Try it, then decide.') + '</span><span class="k-hero-row"><span class="k-play">' + PLAY + '<span>' + L3('Почати', 'Zacznij', 'Start') + '</span></span></span></span></a>';
+      }
+      var q = function (href, d, label) { return '<a href="' + href + '">' + svg(d) + label + '</a>'; };
+      $app.innerHTML = '<div class="page kino-home">' +
+        '<header class="k-hello"><div><span class="k-date">' + esc(date) + '</span><h1>' + hello + (name ? ', ' + esc(name) : '') + '</h1></div></header>' +
+        '<div class="k-bento">' + hero + '<div class="k-side">' +
+          '<a class="k-tile" href="#/cabinet"><span class="k-lab">' + L3('Серія', 'Seria', 'Streak') + '</span><span class="k-big" id="kStreak">–<small>' + L3('днів', 'dni', 'days') + '</small></span><span class="k-week" id="kWeek" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i></span></a>' +
+          '<a class="k-tile" href="#/cabinet"><span class="k-lab">' + L3('Ціль на сьогодні', 'Cel na dziś', 'Today’s goal') + '</span><span class="k-goal-row" id="kGoal"><svg width="72" height="72" viewBox="0 0 72 72" aria-hidden="true"><circle cx="36" cy="36" r="29" fill="none" stroke="var(--line)" stroke-width="8"/></svg></span></a>' +
+          '<a class="k-tile k-rev" href="#/review"><span class="k-ic">' + svg('<path d="M4 5a2 2 0 0 1 2-2h13v16H6a2 2 0 0 0-2 2z"/><path d="M4 19V5"/>', 20) + '</span><span><b id="kDue">' + L3('Повторення слів', 'Powtórka słów', 'Word review') + '</b><span>' + L3('картки зі слів із пройдених уроків', 'fiszki ze słów z ukończonych lekcji', 'flashcards from lessons you finished') + '</span></span><span class="k-go" aria-hidden="true">›</span></a>' +
+        '</div></div>' +
+        '<nav class="k-quick" aria-label="' + esc(L3('Швидкі посилання', 'Szybkie linki', 'Quick links')) + '">' +
+          q('#/chats', '<path d="M21 12a8 8 0 0 1-11.6 7.1L4 20l1-4.6A8 8 0 1 1 21 12z"/>', L3('Чати з героями', 'Czaty z bohaterami', 'Chats')) +
+          q('#/words', '<path d="M4 5a2 2 0 0 1 2-2h13v16H6a2 2 0 0 0-2 2z"/><path d="M4 19V5"/>', L3('Мій словник', 'Mój słownik', 'My words')) +
+          q('#/guide', '<circle cx="12" cy="12" r="9"/><path d="M12 7v10M7 12h10"/>', L3('Граматика', 'Gramatyka', 'Grammar')) +
+          q('#/achievements', '<path d="M8 21h8M12 17v4M7 4h10v5a5 5 0 0 1-10 0z"/>', L3('Нагороди', 'Osiągnięcia', 'Awards')) +
+          q('#/top', '<path d="M4 20V10M10 20V4M16 20v-7M22 20H2"/>', L3('Рейтинг', 'Ranking', 'Leaderboard')) +
+          (isAdm() ? q('#/admin', '<circle cx="12" cy="12" r="3"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3"/>', L3('Адмін-панель', 'Panel admina', 'Admin panel')) : '') +
+        '</nav>' +
+        '<section><div class="k-h"><h2>' + (mine.length ? L3('Твої курси та інші', 'Twoje kursy i pozostałe', 'Your courses and more') : lv ? L3('На твоєму рівні', 'Na twoim poziomie', 'At your level') : L3('Курси', 'Kursy', 'Courses')) + '</h2><a href="#/catalog">' + L3('Увесь каталог', 'Cały katalog', 'Full catalogue') + '</a></div><div class="k-row">' +
+          sorted.map(function (c) { var a = pSrc(c); return '<a class="k-pc" href="#/course/' + esc(c.id) + '"><span class="k-im">' + (a ? '<img src="' + esc(a) + '" alt="" loading="lazy">' : esc(tr(c, 'title'))) + (mine.indexOf(c.id) > -1 ? '<span class="k-mine">' + L3('Мій курс', 'Mój kurs', 'My course') + '</span>' : '') + '</span><b>' + esc(tr(c, 'title')) + '</b><small>' + esc(c.level || '') + ' · ' + c.lessons_count + ' ' + L3('уроків', 'lekcji', 'lessons') + '</small></a>'; }).join('') +
+        '</div></section></div>';
+
+      /* kafelki dociągają dane po narysowaniu strony */
+      loadActivity().then(function (a) {
+        var st = document.getElementById('kStreak'); if (!st) return;
+        st.firstChild.nodeValue = String(a.streak);
+        var idx = (new Date().getDay() + 6) % 7, cells = document.querySelectorAll('#kWeek i');
+        Array.prototype.forEach.call(cells, function (el, i) { var off = i - idx, act = off <= 0 && a.days[todayStr(off)]; el.className = act ? (off === 0 ? 'now' : 'on') : off === 0 ? 'wait' : ''; });
+        var g = goalOf(), tl = a.today.l, trv = a.today.r, pct = Math.round(Math.min(1, (Math.min(tl, g.l) + Math.min(trv, g.r) / Math.max(g.r, 1) * Math.max(g.l, 1)) / (g.l * 2)) * 100), C = 2 * Math.PI * 29;
+        document.getElementById('kGoal').innerHTML = '<svg width="72" height="72" viewBox="0 0 72 72" role="img" aria-label="' + pct + '%"><circle cx="36" cy="36" r="29" fill="none" stroke="var(--line)" stroke-width="8"/><circle cx="36" cy="36" r="29" fill="none" stroke="#FFC27A" stroke-width="8" stroke-linecap="round" stroke-dasharray="' + C.toFixed(1) + '" stroke-dashoffset="' + (C * (1 - pct / 100)).toFixed(1) + '" transform="rotate(-90 36 36)"/><text x="36" y="42" text-anchor="middle" fill="currentColor" font-weight="800" font-size="17">' + pct + '%</text></svg><span><span><b>' + Math.min(tl, g.l) + ' / ' + g.l + '</b> ' + L3('уроків', 'lekcji', 'lessons') + '</span><span><b>' + Math.min(trv, g.r) + ' / ' + g.r + '</b> ' + L3('слів', 'słów', 'words') + '</span></span>';
+      }).catch(function () {});
+      srsRows().then(function (rows) {
+        var d = document.getElementById('kDue'); if (!d) return; var today = todayStr(), n = Object.keys(rows).filter(function (k) { return rows[k].due <= today; }).length;
+        if (n) d.textContent = n + ' ' + L3('слів до повторення', 'słów do powtórki', 'words to review');
+      }).catch(function () {});
+    });
+  }
+  var _vhK = viewHome;
+  viewHome = function () { return on() && USER ? viewHomeKino() : _vhK(); };
+
+  /* strona kursu: postęp, łuki w zakładkach, przycisk „Kontynuuj” */
+  function dropCta() { var o = document.getElementById('kCta'); if (o) o.remove(); }
+  /* kurs z pamięci rysuje się, zanim ten listener się wykona — dlatego przycisk usuwamy tylko po wyjściu ze strony kursu */
+  window.addEventListener('hashchange', function () { if (!/^#\/course\//.test(location.hash)) dropCta(); });
+  function kinoCourse() {
+    dropCta();
+    var page = $app.querySelector('.page'), ul = $app.querySelector('.mcard ul.lessons'), head = $app.querySelector('.mhead-info'); if (!page || !head || !ul) return;
+    page.classList.add('kino-course');
+    var groups = [], g = null, items = [];
+    Array.prototype.forEach.call(ul.children, function (el) {
+      if (el.classList.contains('arc-h')) { g = {name:el.textContent.trim(), els:[el], items:[]}; groups.push(g); return; }
+      var li = el.tagName === 'LI' ? el : el.querySelector('li'); if (!li) return;
+      if (!g) { g = {name:'', els:[], items:[]}; groups.push(g); }
+      var it = {el:el, li:li, link:el.tagName === 'A' ? el : null, done:li.classList.contains('done')}; g.els.push(el); g.items.push(it); items.push(it);
+    });
+    if (!items.length) return;
+    if (groups.length === 1 && items.length > 12) { groups = []; items.forEach(function (it, i) { if (i % 6 === 0) groups.push({name:'', els:[], items:[]}); var gg = groups[groups.length - 1]; gg.els.push(it.el); gg.items.push(it); }); }
+    var doneN = items.filter(function (x) { return x.done; }).length, next = items.filter(function (x) { return x.link && !x.done; })[0];
+    var h2 = head.querySelector('h2');
+    if (h2 && doneN) h2.insertAdjacentHTML('afterend', '<div class="k-prog"><i class="k-bar"><i style="width:' + Math.round(doneN / items.length * 100) + '%"></i></i><span>' + doneN + ' / ' + items.length + '</span></div>');
+    if (next) {
+      next.li.classList.add('k-cur');
+      var num = parseInt((next.li.querySelector('.lnum') || {}).textContent, 10) || '', label = (doneN ? L3('Продовжити · урок', 'Kontynuuj · lekcja', 'Continue · lesson') : L3('Почати урок', 'Zacznij lekcję', 'Start lesson')) + ' ' + num, href = next.link.getAttribute('href');
+      head.insertAdjacentHTML('beforeend', '<a class="k-cta-in" href="' + esc(href) + '">' + PLAY + esc(label) + '</a>');
+      var b = document.createElement('a'); b.id = 'kCta'; b.href = href; b.innerHTML = PLAY + esc(label); document.body.appendChild(b);
+    }
+    if (groups.length > 1) {
+      var cur = 0; groups.forEach(function (gg, i) { if (next && gg.items.indexOf(next) > -1) cur = i; });
+      var tabs = document.createElement('div'); tabs.className = 'k-arcs'; tabs.setAttribute('role', 'tablist');
+      tabs.innerHTML = groups.map(function (gg, i) { var all = gg.items.length && gg.items.every(function (x) { return x.done; }); return '<button type="button" role="tab" data-g="' + i + '">' + (all ? '✓ ' : '') + esc(gg.name || (L3('Арка', 'Łuk', 'Arc') + ' ' + (i + 1))) + '</button>'; }).join('');
+      ul.parentNode.insertBefore(tabs, ul);
+      var showG = function (n) {
+        groups.forEach(function (gg, i) { gg.els.forEach(function (el) { el.hidden = i !== n || el.classList.contains('arc-h'); el.style.display = el.hidden ? 'none' : ''; }); });
+        Array.prototype.forEach.call(tabs.children, function (bt, i) { bt.setAttribute('aria-selected', String(i === n)); });
+        var act = tabs.children[n]; if (act && act.scrollIntoView && tabs.scrollWidth > tabs.clientWidth) tabs.scrollLeft = Math.max(0, act.offsetLeft - 16);
+      };
+      tabs.onclick = function (e) { var bt = e.target.closest('button'); if (bt) showG(+bt.dataset.g); };
+      showG(cur);
+    }
+  }
+  var _vcK = viewCourse;
+  viewCourse = function (id) { return Promise.resolve(_vcK(id)).then(function () { if (on()) { try { kinoCourse(); } catch (e) {} } }); };
 })();
 
 })();
