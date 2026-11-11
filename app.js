@@ -3514,7 +3514,7 @@ Promise.all([API.getUser().catch(function () { return null; }), API.getSettings(
    Технічно це профіль 2 (UI === '2') з власною головною і палітрою: html[data-skin="3"].
    Вибір зберігається в localStorage 'ml_ui' = '3'. Шаблони 1 і 2 не змінюються. */
 (function () {
-  var _ui0 = lsGet('ml_ui', null); var SKIN3 = _ui0 == null || _ui0 === '3'; // шаблон 3 — за замовчуванням для всіх
+  var _ui0 = String(lsGet('ml_skin_admin', '3')); var SKIN3 = _ui0 === '3'; if (!SKIN3) UI = _ui0 === '1' ? '1' : '2'; // шаблон 3 — за замовчуванням для всіх
   function applySkin() { if (SKIN3) document.documentElement.setAttribute('data-skin', '3'); else document.documentElement.removeAttribute('data-skin'); }
   applySkin();
   window.isSkin3 = function () { return SKIN3; };
@@ -3522,7 +3522,7 @@ Promise.all([API.getUser().catch(function () { return null; }), API.getSettings(
   /* перемикач 1 · 2 · 3 */
   setUI = function (v) {
     v = String(v); SKIN3 = v === '3'; UI = v === '1' ? '1' : '2';
-    lsSet('ml_ui', SKIN3 ? '3' : UI); document.documentElement.setAttribute('data-ui', UI); applySkin();
+    lsSet('ml_skin_admin', SKIN3 ? '3' : UI); lsSet('ml_ui', UI); document.documentElement.setAttribute('data-ui', UI); applySkin();
     if (UI === '2' && THEME !== 'light') { try { if (!localStorage.getItem('ml_theme')) { THEME = 'light'; applyTheme(); } } catch (e) {} }
     renderNav(); ROUTE_LAST = null; route();
     toast(SKIN3 ? L3('Шаблон 3 · новий дизайн', 'Szablon 3 · nowy wygląd', 'Template 3 · new design') : UI === '2' ? L3('Профіль 2 · новий вигляд', 'Profil 2 · nowy wygląd', 'Profile 2 · new look') : L3('Профіль 1 · класичний вигляд', 'Profil 1 · klasyczny wygląd', 'Profile 1 · classic look'), 'info');
@@ -3538,7 +3538,11 @@ Promise.all([API.getUser().catch(function () { return null; }), API.getSettings(
     e.preventDefault(); e.stopImmediatePropagation();
     if (b.dataset.uiSet !== (SKIN3 ? '3' : UI)) setUI(b.dataset.uiSet);
   }, true);
-  if (SKIN3) { try { renderNav(); } catch (e) {} }
+  var _rnSkin = renderNav;
+  renderNav = function () { _rnSkin(); var adm = USER && USER.role === 'admin';
+    var want3 = !adm || String(lsGet('ml_skin_admin', '3')) === '3';
+    if (want3 !== SKIN3) { SKIN3 = want3; if (!adm) { UI = '2'; document.documentElement.setAttribute('data-ui', '2'); } applySkin(); ROUTE_LAST = null; setTimeout(route, 0); } };
+  try { renderNav(); } catch (e) {}
 
   /* головна шаблону 3 */
   function posterSrc(c) {
